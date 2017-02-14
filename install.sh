@@ -59,3 +59,7 @@ if [ ! -f miniconda.installed ]; then
 else
     echo "[install] skipping miniconda installation"
 fi
+
+# check to see how much space needed for cache
+du -hs ./*
+du -hs ./*/*

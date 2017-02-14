@@ -3,6 +3,7 @@ sudo: false
 install: ./install.sh
 
 cache:
+  timeout: 1000
   directories:
   - dependencies
 
