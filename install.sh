@@ -46,6 +46,7 @@ if [ ! -f miniconda.installed ]; then
     conda upgrade --yes conda
 
     # create default scientific Python environment
+    conda config --add channels bioconda
     conda config --add channels conda-forge
     conda create --yes --name=scipy python=3.5
     source activate scipy
