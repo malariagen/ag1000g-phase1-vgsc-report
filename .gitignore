@@ -1,2 +1,5 @@
 texlive
+*.aux
+*.log
+*.pdf
 
