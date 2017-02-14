@@ -1,0 +1,7 @@
+install: ./install-dependencies.sh
+
+cache:
+  directories:
+  - texlive
+
+script: ./build.sh
