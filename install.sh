@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ensure script errors if any command fails
-set -xeo pipefail
+set -eo pipefail
 
 # descend into dependencies directory
 mkdir -pv dependencies

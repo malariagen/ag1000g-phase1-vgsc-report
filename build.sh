@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ensure any errors cause build to fail
-set -xeo pipefail
+set -eo pipefail
 
 # add texlive to the path
 export PATH=./dependencies/texlive/2016/bin/x86_64-linux:$PATH
