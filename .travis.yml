@@ -1,7 +1,10 @@
+sudo: false
+
 install: ./install.sh
 
 cache:
   directories:
   - texlive
+  - conda
 
 script: ./build.sh
