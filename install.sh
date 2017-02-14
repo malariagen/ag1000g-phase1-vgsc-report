@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# ensure script errors if any command fails
+set -xeuo pipefail
+
 # install texlive
 if [ ! -f texlive/installed ]; then
     echo "[install] installing texlive"
@@ -16,6 +19,7 @@ if [ ! -f texlive/installed ]; then
     ./install-tl-20160523/install-tl --profile=../texlive.profile
     # mark successful installation
     touch ./installed
+    cd ..
 else
     echo "[install] skipping texlive installation"
 fi
