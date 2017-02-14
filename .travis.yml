@@ -1,4 +1,4 @@
-install: ./install-dependencies.sh
+install: ./install.sh
 
 cache:
   directories:
