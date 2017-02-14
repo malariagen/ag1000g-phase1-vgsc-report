@@ -4,7 +4,6 @@ install: ./install.sh
 
 cache:
   directories:
-  - texlive
-  - conda
+  - dependencies
 
 script: ./build.sh

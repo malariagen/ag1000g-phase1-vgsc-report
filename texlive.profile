@@ -1,10 +1,10 @@
 selected_scheme scheme-small
-TEXDIR 2016
+TEXDIR texlive/2016
 TEXMFCONFIG $TEXMFSYSCONFIG
 TEXMFHOME $TEXMFLOCAL
-TEXMFLOCAL texmf-local
-TEXMFSYSCONFIG 2016/texmf-config
-TEXMFSYSVAR 2016/texmf-var
+TEXMFLOCAL texlive/texmf-local
+TEXMFSYSCONFIG texlive/2016/texmf-config
+TEXMFSYSVAR texlive/2016/texmf-var
 TEXMFVAR $TEXMFSYSVAR
 binary_x86_64-linux 1
 collection-basic 1

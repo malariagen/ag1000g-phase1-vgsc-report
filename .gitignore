@@ -1,4 +1,4 @@
-texlive
+dependencies
 *.aux
 *.log
 *.pdf
