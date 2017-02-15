@@ -3,15 +3,16 @@ sudo: false
 branches:
   only:
   - master
+  - /^deploy-.*$/
 
-install: "./install.sh"
+install: ./install.sh
 
 cache:
   timeout: 1000
   directories:
   - dependencies
 
-script: "./build.sh"
+script: ./build.sh
 
 deploy:
   provider: releases
