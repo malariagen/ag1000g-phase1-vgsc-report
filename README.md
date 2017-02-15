@@ -9,9 +9,7 @@
 ```bash
 $ clone git@github.com:alimanfoo/agam-vgsc-report.git
 $ cd agam-vgsc-report
-$ git remote -v
 $ git remote add upstream git@github.com:malariagen/agam-vgsc-report.git
-$ git remote -v
 ```
 
 **Step 3**: Install dependencies (TeX Live, Miniconda):
@@ -58,3 +56,21 @@ $ ./build.sh
 
 Then go to github.com and create a pull request from the branch on
 your repository to malariagen/agam-vgsc-report master branch.
+
+### Running a Jupyter notebook server
+
+The install script will install Miniconda locally and create an
+environment with various scientific Python packages installed. You can
+activate this environment at any time, e.g.:
+
+```bash
+$ export PATH=./dependencies/miniconda/bin:$PATH
+$ source activate agam-vgsc-report
+(agam-vgsc-report) $ jupyter notebook &
+```
+
+If there are any Python packages you need to install, you will need to
+add them to either 'config/conda.txt' if the packages can be installed
+via conda, or 'config/pypi.txt' if the packages can only be installed
+via pip.
+
