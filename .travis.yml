@@ -3,7 +3,7 @@ sudo: false
 branches:
   only:
   - master
-  - /^deploy-.*$/
+  - /^draft-.*$/
 
 install: ./install.sh
 
