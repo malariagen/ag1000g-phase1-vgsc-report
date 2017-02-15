@@ -6,6 +6,11 @@ cache:
   timeout: 1000
   directories:
   - dependencies
-  - build
 
 script: ./build.sh
+
+addons:
+  artifacts:
+    paths:
+    - build/main.PR.$TRAVIS_PULL_REQUEST.pdf
+    debug: true
