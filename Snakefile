@@ -9,7 +9,7 @@ rule manuscript:
     output:
         "build/main.pdf"
     shell:
-        "pdflatex --output-directory=build manuscript/main.tex"
+        "pdflatex -output-directory=build -interaction=errorstopmode -halt-on-error manuscript/main.tex"
 
 rule notebooks:
     output:
