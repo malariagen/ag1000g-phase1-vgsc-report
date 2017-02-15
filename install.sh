@@ -53,6 +53,9 @@ if [ ! -f miniconda.installed ]; then
     conda install --yes --name=scipy --file ../scipy.conda.txt
     pip install -r ../scipy.pypi.txt
 
+    # clean conda caches
+    conda clean --yes --all
+
     # mark success
     touch miniconda.installed
 
