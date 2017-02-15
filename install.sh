@@ -23,6 +23,17 @@ if [ ! -f texlive.installed ]; then
     # run installation
     ./install-tl-20160523/install-tl --profile=../config/texlive.profile
 
+    # install additional packages
+    export PATH=./texlive/2016/bin/x86_64-linux:$PATH
+    tlmgr install csquotes
+    tlmgr install biblatex
+    tlmgr install logreq
+    tlmgr install xstring
+    tlmgr install adjustbox
+    tlmgr install collectbox
+    tlmgr install todonotes
+    tlmgr install siunitx
+
     # mark successful installation
     touch texlive.installed
 
