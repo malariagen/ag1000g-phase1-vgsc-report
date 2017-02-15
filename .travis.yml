@@ -6,5 +6,6 @@ cache:
   timeout: 1000
   directories:
   - dependencies
+  - build
 
 script: ./build.sh
