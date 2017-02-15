@@ -1,0 +1,5 @@
+dependencies
+build
+.snakemake
+*.log
+
