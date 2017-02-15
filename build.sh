@@ -12,6 +12,9 @@ export PATH=./dependencies/texlive/2016/bin/x86_64-linux:$PATH
 # ensure build directory exists
 mkdir -pv build
 
+# activate conda environment
+source activate agam-vgsc-report
+
 # build
 snakemake all
 
