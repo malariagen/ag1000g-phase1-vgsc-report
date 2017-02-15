@@ -21,7 +21,7 @@ if [ ! -f texlive.installed ]; then
     tar zxvf install-tl-unx.tar.gz
 
     # run installation
-    ./install-tl-20160523/install-tl --profile=../texlive.profile
+    ./install-tl-20160523/install-tl --profile=../config/texlive.profile
 
     # mark successful installation
     touch texlive.installed
@@ -48,10 +48,10 @@ if [ ! -f miniconda.installed ]; then
     # create default scientific Python environment
     conda config --add channels bioconda
     conda config --add channels conda-forge
-    conda create --yes --name=scipy python=3.5
-    source activate scipy
-    conda install --yes --name=scipy --file ../scipy.conda.txt
-    pip install -r ../scipy.pypi.txt
+    conda create --yes --name=agam-vgsc-report python=3.5
+    source activate agam-vgsc-report
+    conda install --yes --file ../config/conda.txt
+    pip install -r ../config/pypi.txt
 
     # clean conda caches
     conda clean --yes --all
