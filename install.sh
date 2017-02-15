@@ -7,9 +7,6 @@ set -eo pipefail
 mkdir -pv dependencies
 cd dependencies
 
-# one-time re-install texlive
-rm -v texlive.installed
-
 # install texlive
 if [ ! -f texlive.installed ]; then
     echo "[install] installing texlive"
