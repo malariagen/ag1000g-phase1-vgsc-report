@@ -33,6 +33,7 @@ $ git checkout master
 $ git pull
 $ git fetch upstream
 $ git rebase upstream/master
+$ git push
 $ git checkout -b edit-results-section
 $ git push -u origin edit-results-section
 ```
