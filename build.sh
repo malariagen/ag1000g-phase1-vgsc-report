@@ -19,6 +19,6 @@ source activate agam-vgsc-report
 snakemake all
 
 # copy manuscript file
-if [[ -n "$TRAVIS_PULL_REQUEST" && "$TRAVIS_PULL_REQUEST" -ne "false" ]]; then 
+if [[ -n "$TRAVIS_PULL_REQUEST"  ]]; then 
     cp -v build/main.pdf build/main.PR.${TRAVIS_PULL_REQUEST}.pdf
 fi
