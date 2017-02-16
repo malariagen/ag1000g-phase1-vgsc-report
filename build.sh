@@ -24,3 +24,6 @@ fi
 # build manuscript
 echo "[build] building manuscript"
 snakemake manuscript
+
+# copy back into version control
+cp -v build/main.pdf manuscript
