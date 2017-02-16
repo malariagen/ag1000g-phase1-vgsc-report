@@ -2,4 +2,5 @@ dependencies
 build
 .snakemake
 *.log
+external
 
