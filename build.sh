@@ -16,4 +16,4 @@ mkdir -pv build
 source activate agam-vgsc-report
 
 # build
-snakemake all
+snakemake manuscript
