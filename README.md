@@ -49,16 +49,25 @@ $ git commit -m 'corrected typo in results paragraph 1'
 $ git push
 ```
 
-**Step 7**: When the work is ready for review, make sure all changes
-are committed and pushed up to your working branch, then check you can
+**Step 7**: When the work is ready for review, check you can
 build the manuscript locally:
 
 ```bash
 $ ./build.sh
 ```
 
-Then go to github.com and create a pull request from the branch on
-your repository to malariagen/agam-vgsc-report master branch.
+Then make sure all local changes are committed and pushed up to 
+your remote branch:
+
+```bash
+$ git status
+$ # if anything to commit...
+$ git commit -a -m 'rebuild'
+$ git push
+```
+
+Then go to github.com and [create a pull request](https://github.com/malariagen/agam-vgsc-report/compare) 
+from the branch on your repository to malariagen/agam-vgsc-report master branch.
 
 ### Running a Jupyter notebook server
 
