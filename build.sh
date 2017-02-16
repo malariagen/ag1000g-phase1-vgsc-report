@@ -15,5 +15,11 @@ mkdir -pv build
 # activate conda environment
 source activate agam-vgsc-report
 
+# diagnostics
+ls -al notebooks
+ls -al data
+ls -al artwork
+ls -al build
+
 # build
 snakemake manuscript

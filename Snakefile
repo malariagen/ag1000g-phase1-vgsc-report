@@ -11,6 +11,20 @@ rule manuscript:
         "pdflatex -output-directory=build -interaction=errorstopmode -halt-on-error manuscript/main.tex"
 
 
+# This rule ensures any changes to setup or utility files will trigger
+# a rebuild.
+
+rule py_setup:
+    output:
+        "src/python/zcache.py",
+        "src/python/veff.py",
+        "src/python/ag1k/phase1_ar3.py",
+        "src/python/ag1k/phase1_ar31.py",
+        "src/python/ag1k/phase2_ar1.py",
+        "src/python/ag1k/util.py",
+        "notebooks/setup.ipynb",
+    
+
 # This rule is an example of how to include a Jupyter notebook in the
 # build. This notebook does not require any data from outside the
 # repository, so it can also be run during continuous integration
@@ -21,7 +35,8 @@ rule manuscript:
 
 rule notebook_demo:
     input:
-        "notebooks/demo.ipynb"
+        rules.py_setup.output,
+        "notebooks/demo.ipynb",
     output:
         "build/notebooks/demo.ipynb",
         "artwork/demo.png",
@@ -39,7 +54,8 @@ rule notebook_demo:
 
 rule notebook_data_demo:
     input:
-        "notebooks/data_demo.ipynb"
+        rules.py_setup.output,
+        "notebooks/data_demo.ipynb",
     output:
         "data/demo.npy"
     shell:
