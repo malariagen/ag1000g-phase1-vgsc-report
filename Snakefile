@@ -18,15 +18,15 @@ rule py_setup:
 # repository, so it can also be run during continuous integration
 # checks.
 
-rule notebook_demo:
+rule artwork_demo:
     input:
         rules.py_setup.output,
-        "notebooks/demo.ipynb",
+        "notebooks/artwork_demo.ipynb",
     output:
-        "build/notebooks/demo.ipynb",
+        "build/notebooks/artwork_demo.ipynb",
         "artwork/demo.png",
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/demo.ipynb"
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/artwork_demo.ipynb"
 
 
 # This rule is an example of how to include a Jupyter notebook in the
@@ -44,6 +44,20 @@ rule data_demo:
         "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/data_demo.ipynb"
 
 
+# Demo of a notebook that builds a table for inclusion in the
+# manuscript.
+
+rule table_demo:
+    input:
+        rules.py_setup.output,
+	"notebooks/table_demo.ipynb",
+    output:
+        "build/notebooks/table_demo.ipynb",
+        "manuscript/table.tex"
+    shell:
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/table_demo.ipynb"
+    
+
 # This rule builds all data, indicating success by touching a
 # flag file.
 
@@ -60,7 +74,8 @@ rule data:
 
 rule notebooks:
     input:
-        rules.notebook_demo.output,
+        rules.artwork_demo.output,
+        rules.table_demo.output,
 	# add more inputs here
     output:
         touch("build/notebooks.done")
@@ -72,8 +87,8 @@ rule notebooks:
 rule manuscript:
     input:
         "manuscript/main.tex",
-        "build/notebooks.done"
+        rules.notebooks.output,
     output:
         "build/main.pdf"
     shell:
-        "pdflatex -output-directory=build -interaction=errorstopmode -halt-on-error manuscript/main.tex"
+        "pdflatex -output-directory=build -interaction=nonstopmode -halt-on-error manuscript/main.tex"

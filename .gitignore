@@ -5,4 +5,5 @@ build
 external
 *~
 *.pyc
+.ipynb_checkpoints
 
