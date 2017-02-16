@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""
-This module contains convenience variables relating to the Ag1000G phase 1 AR3 data release.
+"""This module contains convenience variables relating to the Ag1000G
+phase 1 AR3 data release.
 
 Use this module in notebooks and scripts as follows:
 
@@ -53,15 +53,23 @@ geneset_fn = os.path.join(geneset_dir, 'Anopheles-gambiae-PEST_BASEFEATURES_Agam
 
 
 def load_geneset():
-    """Function to load data from GFF into a structured array. Can take a few seconds so put this
-    into a function so user can decide whether to execute."""
+    """Function to load data from GFF into a structured array. Can take a
+    few seconds so put this into a function so user can decide whether
+    to execute.
+
+    """
+
     global geneset
     if os.path.exists(geneset_fn):
         geneset = allel.FeatureTable.from_gff3(geneset_fn)
 
 
 def get_geneset_features(chrom, start=None, stop=None):
-    """Function to load geneset features for a specific genome region via petl."""
+    """Function to load geneset features for a specific genome region via
+    petl.
+
+    """
+    
     if start and stop:
         region = '%s:%s-%s' % (chrom, start, stop)
     else:

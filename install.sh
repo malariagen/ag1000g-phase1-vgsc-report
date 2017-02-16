@@ -62,7 +62,7 @@ if [ ! -f miniconda.installed ]; then
     conda create --yes --name=agam-vgsc-report python=3.5
     source activate agam-vgsc-report
     conda install --yes --file ../config/conda.txt
-    pip install -r ../config/pypi.txt
+    pip install --no-cache-dir -r ../config/pypi.txt
 
     # clean conda caches
     conda clean --yes --all

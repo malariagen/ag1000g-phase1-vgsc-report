@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-"""
-This module contains convenience variables relating to the Ag1000G phase 2 AR1 data release.
+"""This module contains convenience variables relating to the Ag1000G
+phase 2 AR1 data release.
 
 Use this module in notebooks and scripts as follows:
 
