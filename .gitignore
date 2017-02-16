@@ -3,4 +3,6 @@ build
 .snakemake
 *.log
 external
+*~
+*.pyc
 
