@@ -50,7 +50,7 @@ rule data_demo:
 rule table_demo:
     input:
         rules.py_setup.output,
-	"notebooks/table_demo.ipynb",
+        "notebooks/table_demo.ipynb",
     output:
         "build/notebooks/table_demo.ipynb",
         "manuscript/table.tex"
@@ -74,6 +74,19 @@ rule data_variants_phase1:
         "jupyter nbconvert --execute --ExecutePreprocessor.timeout=1000 --output-dir=build/notebooks --to=notebook notebooks/data_variants_phase1.ipynb"
 
 
+# Run the notebook generating the LaTex table of missense variants.
+
+rule table_variants_missense:
+    input:
+        rules.py_setup.output,
+        "notebooks/table_variants_missense.ipynb",
+    output:
+        "build/notebooks/table_variants_missense.ipynb",
+        "manuscript/table_variants_missense.tex"
+    shell:
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/table_variants_missense.ipynb"
+
+
 # This rule builds all data, indicating success by touching a
 # flag file.
 
@@ -93,6 +106,7 @@ rule notebooks:
     input:
         rules.artwork_demo.output,
         rules.table_demo.output,
+        rules.table_variants_missense.output,
         # add more inputs here
     output:
         touch("build/notebooks.done")

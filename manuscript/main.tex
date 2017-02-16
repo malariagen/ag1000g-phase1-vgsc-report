@@ -13,8 +13,12 @@
 \usepackage[labelsep=period,font=small,labelfont=bf,format=plain]{caption}
 \usepackage[group-separator={,}]{siunitx}
 \usepackage{booktabs}
+\usepackage{pdflscape}
+\usepackage{tablefootnote}
 
-\title{The evolution and spread of target-site resistance to DDT and pyrethroids in the malaria vectors \emph{Anopheles gambiae} and \emph{Anopheles coluzzii}}
+\title{The genetic architecture of target-site resistance to DDT and
+  pyrethroids in the malaria vectors \emph{Anopheles gambiae} and
+  \emph{Anopheles coluzzii}}
 
 \subtitle{DRAFT}
 
@@ -74,6 +78,26 @@ ewqipo eqwpio eqwipo ewqoip ewqoip ewqiop eqw
 
 Isn't Figure \ref{fig:demo} interesting! Table \ref{table:demo} is
 pretty interesting too.
+
+\begin{landscape}
+\begin{table}[h]
+  \small
+  \centering
+  \input{manuscript/table_variants_missense.tex}
+  \caption{\textbf{Non-synonymous mutations in the voltage-gated
+      sodium channel gene}. All mutations are at 5\% frequency or
+    above in one or more of the 9 Ag1000G phase 1 populations, with
+    the exception of \texttt{2,400,071 G>T} which is at 0.4\%
+    frequency in the CM\emph{Ag} population but is included because
+    another mutation (\texttt{2,400,071 G>A}) is found at the same
+    position causing the same amino acid substitution
+    (\texttt{M490I}). Substitutions marked with an asterisk (*) failed
+    conservative variant filters applied genome-wide in the Ag1000G
+    phase 1 AR3 callset, but appeared sound on manual inspection of
+    read alignments.}
+  \label{table:variants_missense}
+\end{table}
+\end{landscape}
 
 \begin{figure}[t!]
   \includegraphics[width=1.1\linewidth,center]{artwork/demo.png}

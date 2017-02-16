@@ -7,6 +7,9 @@ set -eo pipefail
 mkdir -pv dependencies
 cd dependencies
 
+# force texlive re-install
+rm -v texlive.installed
+
 # install texlive
 if [ ! -f texlive.installed ]; then
     echo "[install] installing texlive"
@@ -33,13 +36,19 @@ if [ ! -f texlive.installed ]; then
     tlmgr install collectbox
     tlmgr install todonotes
     tlmgr install siunitx
-
+    tlmgr install tablefootnote
+    tlmgr install xifthen
+    tlmgr install ifmtarg
+    
     # mark successful installation
     touch texlive.installed
 
 else
     echo "[install] skipping texlive installation"
 fi
+
+# force miniconda re-install
+# rm -v miniconda.installed
 
 # install miniconda
 if [ ! -f miniconda.installed ]; then
