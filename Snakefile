@@ -18,15 +18,15 @@ rule py_setup:
 # repository, so it can also be run during continuous integration
 # checks.
 
-rule notebook_demo:
+rule artwork_demo:
     input:
         rules.py_setup.output,
-        "notebooks/demo.ipynb",
+        "notebooks/artwork_demo.ipynb",
     output:
-        "build/notebooks/demo.ipynb",
+        "build/notebooks/artwork_demo.ipynb",
         "artwork/demo.png",
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/demo.ipynb"
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/artwork_demo.ipynb"
 
 
 # This rule is an example of how to include a Jupyter notebook in the
@@ -74,7 +74,7 @@ rule data:
 
 rule notebooks:
     input:
-        rules.notebook_demo.output,
+        rules.artwork_demo.output,
         rules.table_demo.output,
 	# add more inputs here
     output:
@@ -87,7 +87,7 @@ rule notebooks:
 rule manuscript:
     input:
         "manuscript/main.tex",
-        "build/notebooks.done"
+        rules.notebooks.output,
     output:
         "build/main.pdf"
     shell:
