@@ -9,14 +9,14 @@ import pyfasta
 from Bio.Seq import Seq
 
 
-class Genome(object):
+class Annotator(object):
 
     def __init__(self,
                  fasta_path,
                  gff3_path,
                  seqid=None):
         """
-        An annotated reference genome.
+        An annotator.
 
         Parameters
         ----------
@@ -136,7 +136,7 @@ VariantEffect = collections.namedtuple('VariantEffect',
 null_effect = VariantEffect(*([None] * len(VariantEffect._fields)))
 
 
-def get_effects(genome, chrom, pos, ref, alt,
+def get_effects(annotator, chrom, pos, ref, alt,
                 gff3_gene_types={'gene', 'pseudogene'},
                 gff3_transcript_types={'mRNA', 'rRNA',
                                        'pseudogenic_transcript'},
@@ -166,7 +166,7 @@ def get_effects(genome, chrom, pos, ref, alt,
     alt = str(alt).upper()
 
     # obtain start and stop coordinates of the reference allele
-    ref_start, ref_stop = genome.get_ref_allele_coords(chrom, pos, ref)
+    ref_start, ref_stop = annotator.get_ref_allele_coords(chrom, pos, ref)
 
     # setup common effect parameters
     base_effect = null_effect._replace(chrom=chrom,
@@ -178,25 +178,29 @@ def get_effects(genome, chrom, pos, ref, alt,
                                        ref_stop=ref_stop)
 
     # find overlapping genome features
-    features = genome.find(chrom, ref_start, ref_stop)
+    features = annotator.find(chrom, ref_start, ref_stop)
 
     # filter to find overlapping genes
     genes = [f for f in features if f.type in gff3_gene_types]
 
     if not genes:
-        for effect in _get_intergenic_effects(genome, base_effect):
+        for effect in _get_intergenic_effects(annotator, base_effect):
             yield effect
 
     else:
         for gene in genes:
-            for effect in _get_gene_effects(genome, base_effect, gene,
+            for effect in _get_gene_effects(annotator, base_effect, gene,
                                             gff3_transcript_types,
                                             gff3_cds_types,
                                             transcript_ids):
                 yield effect
 
 
-def _get_intergenic_effects(genome, base_effect):
+# add as method
+Annotator.get_effects = get_effects
+
+
+def _get_intergenic_effects(annotator, base_effect):
 
     # TODO
     # UPSTREAM and DOWNSTREAM
@@ -207,7 +211,7 @@ def _get_intergenic_effects(genome, base_effect):
     yield effect
 
 
-def _get_gene_effects(genome, base_effect, gene, gff3_transcript_types,
+def _get_gene_effects(annotator, base_effect, gene, gff3_transcript_types,
                       gff3_cds_types, transcript_ids):
 
     # setup common effect parameters
@@ -217,7 +221,7 @@ def _get_gene_effects(genome, base_effect, gene, gff3_transcript_types,
                                        gene_strand=gene.strand)
 
     # obtain transcripts that are children of the current gene
-    transcripts = [t for t in genome.get_children(gene.feature_id)
+    transcripts = [t for t in annotator.get_children(gene.feature_id)
                    if t.type in gff3_transcript_types]
 
     if not transcript_ids and not transcripts:
@@ -234,12 +238,12 @@ def _get_gene_effects(genome, base_effect, gene, gff3_transcript_types,
             transcripts = [t for t in transcripts if t.feature_id in transcript_ids]
 
         for transcript in transcripts:
-            for effect in _get_transcript_effects(genome, base_effect,
+            for effect in _get_transcript_effects(annotator, base_effect,
                                                   transcript, gff3_cds_types):
                 yield effect
 
 
-def _get_transcript_effects(genome, base_effect, transcript, gff3_cds_types):
+def _get_transcript_effects(annotator, base_effect, transcript, gff3_cds_types):
 
     # setup common effect parameters
     base_effect = base_effect._replace(
@@ -300,12 +304,12 @@ def _get_transcript_effects(genome, base_effect, transcript, gff3_cds_types):
 
         # reference allele falls within current transcript
         assert transcript_start <= ref_start <= ref_stop <= transcript_stop
-        for effect in _get_within_transcript_effects(genome, base_effect, transcript,
+        for effect in _get_within_transcript_effects(annotator, base_effect, transcript,
                                                      gff3_cds_types):
             yield effect
 
 
-def _get_within_transcript_effects(genome, base_effect, transcript,
+def _get_within_transcript_effects(annotator, base_effect, transcript,
                                    gff3_cds_types):
 
     # convenience
@@ -313,7 +317,7 @@ def _get_within_transcript_effects(genome, base_effect, transcript,
     ref_stop = base_effect.ref_stop
 
     # obtain coding sequences that are children of the current transcript
-    cdss = sorted([f for f in genome.get_children(transcript.feature_id)
+    cdss = sorted([f for f in annotator.get_children(transcript.feature_id)
                    if f.type in gff3_cds_types], key=lambda v: v.start)
 
     # derive introns, assuming between CDSs
@@ -355,7 +359,7 @@ def _get_within_transcript_effects(genome, base_effect, transcript,
                 assert len(overlapping_cdss) == 1
                 cds = overlapping_cdss[0]
 
-                yield _get_cds_effect(genome, base_effect, cds, cdss)
+                yield _get_cds_effect(annotator, base_effect, cds, cdss)
 
         # intron effects
 
@@ -374,10 +378,10 @@ def _get_within_transcript_effects(genome, base_effect, transcript,
                 assert len(overlapping_introns) == 1
                 intron = overlapping_introns[0]
 
-                yield _get_intron_effect(genome, base_effect, intron, cdss)
+                yield _get_intron_effect(annotator, base_effect, intron, cdss)
 
 
-def _get_cds_effect(genome, base_effect, cds, cdss):
+def _get_cds_effect(annotator, base_effect, cds, cdss):
 
     # setup common effect parameters
     base_effect = base_effect._replace(
@@ -419,10 +423,10 @@ def _get_cds_effect(genome, base_effect, cds, cdss):
 
         # reference allele falls within current transcript
         assert cds_start <= ref_start <= ref_stop <= cds_stop
-        return _get_within_cds_effect(genome, base_effect, cds, cdss)
+        return _get_within_cds_effect(annotator, base_effect, cds, cdss)
 
 
-def _get_within_cds_effect(genome, base_effect, cds, cdss):
+def _get_within_cds_effect(annotator, base_effect, cds, cdss):
 
     # convenience
     chrom = base_effect.chrom
@@ -433,7 +437,7 @@ def _get_within_cds_effect(genome, base_effect, cds, cdss):
 
     # obtain amino acid change
     ref_cds_start, ref_cds_stop, ref_start_phase, ref_codon, alt_codon, \
-        aa_pos, ref_aa, alt_aa = _get_aa_change(genome, chrom, pos, ref, alt,
+        aa_pos, ref_aa, alt_aa = _get_aa_change(annotator, chrom, pos, ref, alt,
                                                 cds, cdss)
 
     # setup common effect parameters
@@ -570,11 +574,11 @@ def _get_within_cds_effect(genome, base_effect, cds, cdss):
     return effect
 
 
-def _get_aa_change(genome, chrom, pos, ref, alt, cds, cdss):
+def _get_aa_change(annotator, chrom, pos, ref, alt, cds, cdss):
 
     # obtain codon change
     ref_cds_start, ref_cds_stop, ref_start_phase, ref_codon, alt_codon = \
-        _get_codon_change(genome, chrom, pos, ref, alt, cds, cdss)
+        _get_codon_change(annotator, chrom, pos, ref, alt, cds, cdss)
 
     # translate codon change to amino acid change
     ref_aa = str(Seq(ref_codon).translate())
@@ -585,13 +589,13 @@ def _get_aa_change(genome, chrom, pos, ref, alt, cds, cdss):
         aa_pos, ref_aa, alt_aa
 
 
-def _get_codon_change(genome, chrom, pos, ref, alt, cds, cdss):
+def _get_codon_change(annotator, chrom, pos, ref, alt, cds, cdss):
 
     # convenience
-    fasta = genome._fasta
+    fasta = annotator._fasta
 
     # obtain reference allele coords relative to coding sequence
-    ref_start, ref_stop = genome.get_ref_allele_coords(chrom, pos, ref)
+    ref_start, ref_stop = annotator.get_ref_allele_coords(chrom, pos, ref)
     ref_cds_start, ref_cds_stop = _get_coding_position(ref_start, ref_stop, cds, cdss)
 
     # calculate position of reference allele start within codon
@@ -711,7 +715,7 @@ def _get_coding_position(ref_start, ref_stop, cds, cdss):
     return ref_cds_start, ref_cds_stop
 
 
-def _get_intron_effect(genome, base_effect, intron, cdss):
+def _get_intron_effect(annotator, base_effect, intron, cdss):
 
     # convenience
     ref_start = base_effect.ref_start
@@ -744,10 +748,10 @@ def _get_intron_effect(genome, base_effect, intron, cdss):
 
         # reference allele falls within current intron
         assert intron_start <= ref_start <= ref_stop <= intron_stop
-        return _get_within_intron_effect(genome, base_effect, intron, cdss)
+        return _get_within_intron_effect(annotator, base_effect, intron, cdss)
 
 
-def _get_within_intron_effect(genome, base_effect, intron, cdss):
+def _get_within_intron_effect(annotator, base_effect, intron, cdss):
 
     # convenience
     ref_start = base_effect.ref_start

@@ -11,7 +11,7 @@ rule py_setup:
         "src/python/ag1k/phase2_ar1.py",
         "src/python/ag1k/util.py",
         "notebooks/setup.ipynb",
-    
+
 
 # This rule is an example of how to include a Jupyter notebook in the
 # build. This notebook does not require any data from outside the
@@ -56,7 +56,23 @@ rule table_demo:
         "manuscript/table.tex"
     shell:
         "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/table_demo.ipynb"
-    
+
+
+# Run the notebook extracting information about VGSC variants.
+
+rule data_variants_phase1:
+    input:
+        rules.py_setup.output,
+        "notebooks/data_variants_phase1.ipynb",
+    output:
+        "build/notebooks/data_variants_phase1.ipynb",
+        "data/tbl_variants_phase1.pkl",
+        "data/tbl_variants_phase1.txt",
+        "data/Anopheles-gambiae-PEST_BASEFEATURES_AgamP4.4.gff3.gz",
+        "data/davies_vgsc_model_20170125.gff3",
+    shell:
+        "jupyter nbconvert --execute --ExecutePreprocessor.timeout=1000 --output-dir=build/notebooks --to=notebook notebooks/data_variants_phase1.ipynb"
+
 
 # This rule builds all data, indicating success by touching a
 # flag file.
@@ -64,7 +80,8 @@ rule table_demo:
 rule data:
     input:
         rules.data_demo.output,
-	# add more inputs here
+        rules.data_variants_phase1.output,
+        # add more inputs here
     output:
         touch("build/data.done")
 
@@ -76,7 +93,7 @@ rule notebooks:
     input:
         rules.artwork_demo.output,
         rules.table_demo.output,
-	# add more inputs here
+        # add more inputs here
     output:
         touch("build/notebooks.done")
 

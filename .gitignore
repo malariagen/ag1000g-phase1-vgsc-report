@@ -6,4 +6,5 @@ external
 *~
 *.pyc
 .ipynb_checkpoints
+.idea
 
