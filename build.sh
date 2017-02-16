@@ -15,11 +15,12 @@ mkdir -pv build
 # activate conda environment
 source activate agam-vgsc-report
 
-# diagnostics
-ls -al notebooks
-ls -al data
-ls -al artwork
-ls -al build
+# build data (but not on travis)
+if [ -z "$TRAVIS" ]; then
+    echo "[build] building data"
+    snakemake data
+fi
 
-# build
+# build manuscript
+echo "[build] building manuscript"
 snakemake manuscript

@@ -1,15 +1,3 @@
-# This rule builds the manuscript file. It depends on all the
-# notebooks having run successfully.
-
-rule manuscript:
-    input:
-        "manuscript/main.tex",
-        "build/notebooks.done"
-    output:
-        "build/main.pdf"
-    shell:
-        "pdflatex -output-directory=build -interaction=errorstopmode -halt-on-error manuscript/main.tex"
-
 
 # This rule ensures any changes to setup or utility files will trigger
 # a rebuild.
@@ -28,10 +16,7 @@ rule py_setup:
 # This rule is an example of how to include a Jupyter notebook in the
 # build. This notebook does not require any data from outside the
 # repository, so it can also be run during continuous integration
-# checks. To make this happen, *do* include the executed notebook
-# ("build/notebooks/demo.ipynb") in the rule output. *Do* also include
-# in the rule output any other files produced by the notebook such as
-# image files (e.g., "artwork/demo.png").
+# checks.
 
 rule notebook_demo:
     input:
@@ -45,21 +30,29 @@ rule notebook_demo:
 
 
 # This rule is an example of how to include a Jupyter notebook in the
-# build. This notebook *does* require data from outside the
-# repository, so it *cannot* be run during continuous integration
-# checks. To make this happen, *do* include any data files produced by
-# the notebook that get checked in via git (e.g., "data/demo.npy") but
-# *do not* include the executed notebook
-# ("build/notebooks/data_demo.ipynb") in the rule output.
+# build. This notebook requires data from outside the repository, so
+# it cannot be run during continuous integration checks.
 
-rule notebook_data_demo:
+rule data_demo:
     input:
         rules.py_setup.output,
         "notebooks/data_demo.ipynb",
     output:
+        "build/notebooks/data_demo.ipynb",
         "data/demo.npy"
     shell:
         "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/data_demo.ipynb"
+
+
+# This rule builds all data, indicating success by touching a
+# flag file.
+
+rule data:
+    input:
+        rules.data_demo.output,
+	# add more inputs here
+    output:
+        touch("build/data.done")
 
 
 # This rule builds all notebooks, indicating success by touching a
@@ -68,6 +61,19 @@ rule notebook_data_demo:
 rule notebooks:
     input:
         rules.notebook_demo.output,
-        rules.notebook_data_demo.output,
+	# add more inputs here
     output:
         touch("build/notebooks.done")
+
+
+# This rule builds the manuscript file. It depends on all the
+# notebooks having run successfully.
+
+rule manuscript:
+    input:
+        "manuscript/main.tex",
+        "build/notebooks.done"
+    output:
+        "build/main.pdf"
+    shell:
+        "pdflatex -output-directory=build -interaction=errorstopmode -halt-on-error manuscript/main.tex"
