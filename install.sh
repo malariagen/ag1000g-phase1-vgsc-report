@@ -49,6 +49,7 @@ tlmgr install siunitx
 tlmgr install tablefootnote
 tlmgr install xifthen
 tlmgr install ifmtarg
+tlmgr install preprint
     
 # force miniconda re-install
 #rm -v miniconda.installed
