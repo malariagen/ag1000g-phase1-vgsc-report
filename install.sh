@@ -8,7 +8,7 @@ mkdir -pv dependencies
 cd dependencies
 
 # force texlive re-install
-rm -v texlive.installed
+#rm -v texlive.installed
 
 # install texlive
 if [ ! -f texlive.installed ]; then
@@ -48,7 +48,7 @@ else
 fi
 
 # force miniconda re-install
-# rm -v miniconda.installed
+#rm -v miniconda.installed
 
 # install miniconda
 if [ ! -f miniconda.installed ]; then
