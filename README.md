@@ -1,5 +1,7 @@
 # agam-vgsc-report
 
+[![Build Status](https://travis-ci.org/malariagen/agam-vgsc-report.svg?branch=master)](https://travis-ci.org/malariagen/agam-vgsc-report)
+
 ## Contributor guide
 
 **Step 1**: Fork this repository into your own GitHub account.
@@ -61,8 +63,14 @@ your repository to malariagen/agam-vgsc-report master branch.
 ### Running a Jupyter notebook server
 
 The install script will install Miniconda locally and create an
-environment with various scientific Python packages installed. You can
-activate this environment at any time, e.g.:
+environment with various scientific Python packages installed. There is
+a convenience script to launch a Jupyter notebook server:
+
+```bash
+$ ./jupyter.sh
+```
+
+Alternatively you can manually activate the conda environment, e.g.:
 
 ```bash
 $ export PATH=./dependencies/miniconda/bin:$PATH
@@ -74,4 +82,3 @@ If there are any Python packages you need to install, you will need to
 add them to either 'config/conda.txt' if the packages can be installed
 via conda, or 'config/pypi.txt' if the packages can only be installed
 via pip.
-
