@@ -14,14 +14,17 @@ rule manuscript:
 # This rule is an example of how to include a Jupyter notebook in the
 # build. This notebook does not require any data from outside the
 # repository, so it can also be run during continuous integration
-# checks. To make this happen, include the executed notebook
-# ("build/notebooks/demo.ipynb") in the rule output.
+# checks. To make this happen, *do* include the executed notebook
+# ("build/notebooks/demo.ipynb") in the rule output. *Do* also include
+# in the rule output any other files produced by the notebook such as
+# image files (e.g., "artwork/demo.png").
 
 rule notebook_demo:
     input:
         "notebooks/demo.ipynb"
     output:
-        "build/notebooks/demo.ipynb"
+        "build/notebooks/demo.ipynb",
+        "artwork/demo.png",
     shell:
         "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/demo.ipynb"
 
@@ -52,4 +55,3 @@ rule notebooks:
         rules.notebook_data_demo.output,
     output:
         touch("build/notebooks.done")
-
