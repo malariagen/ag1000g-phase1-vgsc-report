@@ -44,6 +44,20 @@ rule data_demo:
         "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/data_demo.ipynb"
 
 
+# Demo of a notebook that builds a table for inclusion in the
+# manuscript.
+
+rule table_demo:
+    input:
+        rules.py_setup.output,
+	"notebooks/table_demo.ipynb",
+    output:
+        "build/notebooks/table_demo.ipynb",
+        "manuscript/table.tex"
+    shell:
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/table_demo.ipynb"
+    
+
 # This rule builds all data, indicating success by touching a
 # flag file.
 
@@ -61,6 +75,7 @@ rule data:
 rule notebooks:
     input:
         rules.notebook_demo.output,
+        rules.table_demo.output,
 	# add more inputs here
     output:
         touch("build/notebooks.done")
@@ -76,4 +91,4 @@ rule manuscript:
     output:
         "build/main.pdf"
     shell:
-        "pdflatex -output-directory=build -interaction=errorstopmode -halt-on-error manuscript/main.tex"
+        "pdflatex -output-directory=build -interaction=nonstopmode -halt-on-error manuscript/main.tex"
