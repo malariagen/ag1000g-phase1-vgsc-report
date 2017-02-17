@@ -125,4 +125,4 @@ rule manuscript:
     output:
         "build/main.pdf"
     shell:
-        "pdflatex -output-directory=build -interaction=nonstopmode -halt-on-error manuscript/main.tex"
+        "./latex.sh"
