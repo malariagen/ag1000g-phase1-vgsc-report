@@ -2,9 +2,10 @@ dependencies
 build
 .snakemake
 *.log
-external
 *~
 *.pyc
 .ipynb_checkpoints
 .idea
 
+# external data
+ngs.sanger.ac.uk
