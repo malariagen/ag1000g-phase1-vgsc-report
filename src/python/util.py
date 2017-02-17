@@ -2,12 +2,6 @@
 """
 General purpose utility functions.
 
-Use this module in notebooks and scripts as follows:
-
-    >>> import sys
-    >>> sys.path.insert(0, '/path/to/malariagen/ag1000g/src/python')
-    >>> from ag1k.util import *
-
 """
 from __future__ import absolute_import, print_function, division
 
