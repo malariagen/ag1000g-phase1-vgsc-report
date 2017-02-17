@@ -31,7 +31,6 @@ rule data_demo:
         "notebooks/data_demo.ipynb",
     output:
         "build/notebooks/data_demo.ipynb",
-        "data/demo.npy"
     shell:
         "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/data_demo.ipynb"
 
@@ -44,10 +43,6 @@ rule data_variants_phase1:
         "notebooks/data_variants_phase1.ipynb",
     output:
         "build/notebooks/data_variants_phase1.ipynb",
-        "data/tbl_variants_phase1.pkl",
-        "data/tbl_variants_phase1.txt",
-        "data/Anopheles-gambiae-PEST_BASEFEATURES_AgamP4.4.gff3.gz",
-        "data/davies_vgsc_model_20170125.gff3",
     shell:
         "jupyter nbconvert --execute --ExecutePreprocessor.timeout=1000 --output-dir=build/notebooks --to=notebook notebooks/data_variants_phase1.ipynb"
 
