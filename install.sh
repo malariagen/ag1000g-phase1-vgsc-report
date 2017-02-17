@@ -50,6 +50,7 @@ tlmgr install tablefootnote
 tlmgr install xifthen
 tlmgr install ifmtarg
 tlmgr install preprint
+tlmgr install biber
     
 # force miniconda re-install
 #rm -v miniconda.installed
