@@ -76,7 +76,7 @@ rule data:
 
 
 # This rule is an example of how to include a Jupyter notebook in the
-# manuscript build. 
+# manuscript build.
 
 rule artwork_demo:
     input:
@@ -109,6 +109,7 @@ rule table_variants_missense:
     input:
         rules.py_setup.output,
         "notebooks/table_variants_missense.ipynb",
+        "data/tbl_variants_phase1.pkl",
     output:
         "build/notebooks/table_variants_missense.ipynb",
         "manuscript/table_variants_missense.tex"
