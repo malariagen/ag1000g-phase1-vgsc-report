@@ -12,7 +12,9 @@ cache:
   directories:
   - dependencies
 
-script: ./build.sh
+script:
+  - source env.sh
+  - snakemake manuscript
 
 deploy:
   provider: releases

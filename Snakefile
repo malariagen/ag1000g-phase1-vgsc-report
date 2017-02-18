@@ -93,7 +93,7 @@ rule table_demo:
         "notebooks/table_demo.ipynb",
     output:
         "build/notebooks/table_demo.ipynb",
-        "manuscript/table.tex"
+        "tables/demo.tex"
     shell:
         "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/table_demo.ipynb"
 
@@ -107,7 +107,7 @@ rule table_variants_missense:
         "data/tbl_variants_phase1.pkl",
     output:
         "build/notebooks/table_variants_missense.ipynb",
-        "manuscript/table_variants_missense.tex"
+        "tables/variants_missense.tex"
     shell:
         "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/table_variants_missense.ipynb"
 
@@ -117,7 +117,7 @@ rule table_variants_missense:
 
 rule manuscript:
     input:
-        "manuscript/main.tex",
+        "main.tex",
         rules.artwork_demo.output,
         rules.table_demo.output,
         rules.table_variants_missense.output,
