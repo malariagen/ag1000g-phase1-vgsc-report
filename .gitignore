@@ -31,3 +31,4 @@ ngs.sanger.ac.uk
 *.blg
 *.run.xml
 *.bak
+*.synctex*
