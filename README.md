@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/malariagen/agam-vgsc-report.svg?branch=master)](https://travis-ci.org/malariagen/agam-vgsc-report)
 
+This is a work in progress. It has not been reviewed, approved or endorsed by anyone. If you have 
+any questions, please contact Alistair Miles (alimanfoo@googlemail.com).
+
 ## Contributor guide
 
 ### Getting started
@@ -51,7 +54,7 @@ If you have the necessary files mirrored locally, you can run:
 
 ```bash
 $ source env.sh
-(agam-vgsc-report) $ snakemake data
+$ snakemake data
 ```
 
 ### Working on the manuscript
@@ -89,7 +92,8 @@ $ git push
 build the manuscript locally:
 
 ```bash
-$ ./build.sh
+$ source env.sh
+$ snakemake manuscript
 ```
 
 Then make sure all local changes are committed and pushed up to 
@@ -119,7 +123,7 @@ Alternatively you can manually activate the conda environment and run jupyter, e
 
 ```bash
 $ source env.sh
-(agam-vgsc-report) $ jupyter notebook
+$ jupyter notebook
 ```
 
 ### Installing LaTeX packages

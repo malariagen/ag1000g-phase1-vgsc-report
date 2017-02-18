@@ -2,10 +2,14 @@
 
 set -eo pipefail
 
+# setup environment
 source env.sh
+
+# run pdflatex + biber + pdflatex
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+biber main
+pdflatex -interaction=nonstopmode -halt-on-error main.tex
+
+# copy out to build directory 
 mkdir -pv build
-cp -v manuscript/* build
-pdflatex -output-directory=build -interaction=nonstopmode -halt-on-error build/main.tex
-biber build/main
-pdflatex -output-directory=build -interaction=nonstopmode -halt-on-error build/main.tex
-cp -v build/main.pdf manuscript
+cp -v main.pdf build

@@ -1,11 +1,34 @@
+
+# excluded folders
 dependencies
 build
+
+# snakemake
 .snakemake
+
+# general ignores
 *.log
+
+# emacs
 *~
+
+# python
 *.pyc
+
+# jupyter
 .ipynb_checkpoints
+
+# pycharm
 .idea
 
 # external data
 ngs.sanger.ac.uk
+
+# latex
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.run.xml
+*.bak
+*.synctex*
