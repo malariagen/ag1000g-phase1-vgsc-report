@@ -2,6 +2,9 @@
 
 [![Build Status](https://travis-ci.org/malariagen/agam-vgsc-report.svg?branch=master)](https://travis-ci.org/malariagen/agam-vgsc-report)
 
+This is a work in progress. It has not been reviewed, approved or endorsed by anyone. If you have 
+any questions, please contact Alistair Miles (alimanfoo@googlemail.com).
+
 ## Contributor guide
 
 ### Getting started
