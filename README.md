@@ -38,10 +38,11 @@ root directory.
 To build the manuscript, from the repository root directory, run:
 
 ```bash
-$ ./build.sh
+$ source env.sh
+$ snakemake manuscript
 ```
 
-This should rebuild the file ``manuscript/main.pdf``, also running any supporting notebooks as 
+This should rebuild the file ``main.pdf``, also running any supporting notebooks as 
 required.
 
 ### Building the data
@@ -82,8 +83,8 @@ $ git push -u origin edit-results-section
 **Step 3**: Do some work, then add, commit and push, e.g.:
 
 ```bash
-$ # edit manuscript/main.tex
-$ git add manuscript/main.tex
+$ # edit main.tex
+$ git add main.tex
 $ git commit -m 'corrected typo in results paragraph 1'
 $ git push
 ```
@@ -112,14 +113,8 @@ from the branch on your repository to malariagen/agam-vgsc-report master branch.
 ### Running a Jupyter notebook server
 
 The install script will install Miniconda locally and create an
-environment with various scientific Python packages installed. There is
-a convenience script to launch a Jupyter notebook server:
-
-```bash
-$ ./jupyter.sh
-```
-
-Alternatively you can manually activate the conda environment and run jupyter, e.g.:
+environment with various scientific Python packages installed. To launch 
+a Jupyter notebook server:
 
 ```bash
 $ source env.sh
@@ -129,11 +124,11 @@ $ jupyter notebook
 ### Installing LaTeX packages
 
 If there are any LaTeX packages you need to install, edit the ``install.sh`` script by adding 
-another ``tlmgr install ...`` command. Then rerun ``install.sh``.
+another ``tlmgr install ...`` command. Then rerun ``./install.sh``.
 
 
 ### Installing Python packages
 
 If there are any Python packages you need to install, add them to either 
 ``config/conda.txt`` if the packages can be installed via conda, or ``config/pypi.txt`` if the 
-packages can only be installed via pip. Then rerun ``install.sh``.
+packages can only be installed via pip. Then rerun ``./install.sh``.
