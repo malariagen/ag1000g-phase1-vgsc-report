@@ -15,6 +15,7 @@ cache:
 script:
   - source env.sh
   - snakemake manuscript
+  - git status
 
 deploy:
   provider: releases
