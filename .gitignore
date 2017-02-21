@@ -1,7 +1,6 @@
 
-# excluded folders
+# installed software
 dependencies
-build
 
 # snakemake
 .snakemake
