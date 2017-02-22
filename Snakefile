@@ -30,9 +30,9 @@ rule data_demo:
         rules.py_setup.output,
         "notebooks/data_demo.ipynb",
     output:
-        "build/notebooks/data_demo.ipynb",
+        "build/notebooks/data_demo.md",
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/data_demo.ipynb"
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/data_demo.ipynb"
 
 
 # Extract data on VGSC variants.
@@ -42,9 +42,9 @@ rule data_variants_phase1:
         rules.py_setup.output,
         "notebooks/data_variants_phase1.ipynb",
     output:
-        "build/notebooks/data_variants_phase1.ipynb",
+        "build/notebooks/data_variants_phase1.md",
     shell:
-        "jupyter nbconvert --execute --ExecutePreprocessor.timeout=1000 --output-dir=build/notebooks --to=notebook notebooks/data_variants_phase1.ipynb"
+        "jupyter nbconvert --execute --ExecutePreprocessor.timeout=1000 --output-dir=build/notebooks --to=markdown notebooks/data_variants_phase1.ipynb"
 
 
 # This rule builds all data, indicating success by touching a flag
@@ -78,10 +78,10 @@ rule artwork_demo:
         rules.py_setup.output,
         "notebooks/artwork_demo.ipynb",
     output:
-        "build/notebooks/artwork_demo.ipynb",
+        "build/notebooks/artwork_demo.md",
         "artwork/demo.png",
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/artwork_demo.ipynb"
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/artwork_demo.ipynb"
 
 
 # Demo of a notebook that builds a table for inclusion in the
@@ -92,10 +92,10 @@ rule table_demo:
         rules.py_setup.output,
         "notebooks/table_demo.ipynb",
     output:
-        "build/notebooks/table_demo.ipynb",
+        "build/notebooks/table_demo.md",
         "tables/demo.tex"
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/table_demo.ipynb"
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/table_demo.ipynb"
 
 
 # Build the LaTex table of missense variants in VGSC.
@@ -106,10 +106,10 @@ rule table_variants_missense:
         "notebooks/table_variants_missense.ipynb",
         "data/tbl_variants_phase1.pkl",
     output:
-        "build/notebooks/table_variants_missense.ipynb",
+        "build/notebooks/table_variants_missense.md",
         "tables/variants_missense.tex"
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/table_variants_missense.ipynb"
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/table_variants_missense.ipynb"
 
 
 # This rule builds the manuscript PDF file. It depends on all the
