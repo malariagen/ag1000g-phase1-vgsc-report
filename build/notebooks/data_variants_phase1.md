@@ -488,15 +488,7 @@ annotator = veff.Annotator(
                '../data/davies_vgsc_model_20170125.gff3'],
     seqid='2L'
 )
-annotator
 ```
-
-
-
-
-    <veff.Annotator at 0x7f11ce3cfb38>
-
-
 
 
 ```python
