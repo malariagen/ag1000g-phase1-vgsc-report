@@ -1,13 +1,23 @@
 
-# This rule ensures any changes to setup or utility files will trigger
+# These rules ensures any changes to setup or utility files will trigger
 # a rebuild.
 
-rule py_setup:
+rule src:
     output:
         "src/python/zcache.py",
         "src/python/veff.py",
         "src/python/util.py",
+
+
+rule setup:
+    input:
+        rules.src.output,
         "notebooks/setup.ipynb",
+    output:
+        "build/notebooks/setup.md",
+    shell:
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/setup.ipynb"
+
 
 
 ########
@@ -27,24 +37,24 @@ rule py_setup:
 
 rule data_demo:
     input:
-        rules.py_setup.output,
+        rules.setup.output,
         "notebooks/data_demo.ipynb",
     output:
-        "build/notebooks/data_demo.ipynb",
+        "build/notebooks/data_demo.md",
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/data_demo.ipynb"
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/data_demo.ipynb"
 
 
 # Extract data on VGSC variants.
 
 rule data_variants_phase1:
     input:
-        rules.py_setup.output,
+        rules.setup.output,
         "notebooks/data_variants_phase1.ipynb",
     output:
-        "build/notebooks/data_variants_phase1.ipynb",
+        "build/notebooks/data_variants_phase1.md",
     shell:
-        "jupyter nbconvert --execute --ExecutePreprocessor.timeout=1000 --output-dir=build/notebooks --to=notebook notebooks/data_variants_phase1.ipynb"
+        "jupyter nbconvert --execute --ExecutePreprocessor.timeout=1000 --output-dir=build/notebooks --to=markdown notebooks/data_variants_phase1.ipynb"
 
 
 # This rule builds all data, indicating success by touching a flag
@@ -75,13 +85,13 @@ rule data:
 
 rule artwork_demo:
     input:
-        rules.py_setup.output,
+        rules.setup.output,
         "notebooks/artwork_demo.ipynb",
     output:
-        "build/notebooks/artwork_demo.ipynb",
+        "build/notebooks/artwork_demo.md",
         "artwork/demo.png",
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/artwork_demo.ipynb"
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/artwork_demo.ipynb"
 
 
 # Demo of a notebook that builds a table for inclusion in the
@@ -89,40 +99,58 @@ rule artwork_demo:
 
 rule table_demo:
     input:
-        rules.py_setup.output,
+        rules.setup.output,
         "notebooks/table_demo.ipynb",
     output:
-        "build/notebooks/table_demo.ipynb",
+        "build/notebooks/table_demo.md",
         "tables/demo.tex"
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/table_demo.ipynb"
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/table_demo.ipynb"
 
 
 # Build the LaTex table of missense variants in VGSC.
 
 rule table_variants_missense:
     input:
-        rules.py_setup.output,
+        rules.setup.output,
         "notebooks/table_variants_missense.ipynb",
         "data/tbl_variants_phase1.pkl",
     output:
-        "build/notebooks/table_variants_missense.ipynb",
+        "build/notebooks/table_variants_missense.md",
         "tables/variants_missense.tex"
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=notebook notebooks/table_variants_missense.ipynb"
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/table_variants_missense.ipynb"
 
+
+# This rule runs all notebooks (excluding those that generate data).
+
+rule notebooks:
+    input:
+        rules.artwork_demo.output,
+        rules.table_demo.output,
+        rules.table_variants_missense.output,
+        # add more inputs here as required
+    output:
+        touch("build/notebooks.done")
+	
 
 # This rule builds the manuscript PDF file. It depends on all the
 # manuscript notebooks.
 
 rule manuscript:
     input:
+        rules.notebooks.output,
         "main.tex",
-        rules.artwork_demo.output,
-        rules.table_demo.output,
-        rules.table_variants_missense.output,
         # add more inputs here as required
     output:
-        "build/main.pdf"
+        "build/main.pdf",
+	touch("build/main.done")
     shell:
         "./latex.sh"
+
+
+# This rule cleans out the build folder.
+
+rule clean:
+    shell:
+        "rm -rvf build/*"
