@@ -122,17 +122,35 @@ rule table_variants_missense:
         "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/table_variants_missense.ipynb"
 
 
-# This rule builds the manuscript PDF file. It depends on all the
-# manuscript notebooks.
+# This rule runs all notebooks (excluding those that generate data).
 
-rule manuscript:
+rule notebooks:
     input:
-        "main.tex",
         rules.artwork_demo.output,
         rules.table_demo.output,
         rules.table_variants_missense.output,
         # add more inputs here as required
     output:
-        "build/main.pdf"
+        touch("build/notebooks.done")
+	
+
+# This rule builds the manuscript PDF file. It depends on all the
+# manuscript notebooks.
+
+rule manuscript:
+    input:
+        rules.notebooks.output,
+        "main.tex",
+        # add more inputs here as required
+    output:
+        "build/main.pdf",
+	touch("build/main.done")
     shell:
         "./latex.sh"
+
+
+# This rule cleans out the build folder.
+
+rule clean:
+    shell:
+        "rm -rvf build/*"
