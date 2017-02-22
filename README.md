@@ -80,6 +80,9 @@ $ git checkout -b edit-results-section
 $ git push -u origin edit-results-section
 ```
 
+...replacing "edit-results-section" with an appropriate branch name
+for the work you want to do.
+
 **Step 3**: Do some work, then add, commit and push, e.g.:
 
 ```bash
@@ -89,8 +92,8 @@ $ git commit -m 'corrected typo in results paragraph 1'
 $ git push
 ```
 
-**Step 4**: When the work is ready for review, check you can
-build the manuscript locally:
+**Step 4**: When the work is ready for review, build the manuscript
+locally:
 
 ```bash
 $ source env.sh
