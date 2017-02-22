@@ -1,13 +1,23 @@
 
-# This rule ensures any changes to setup or utility files will trigger
+# These rules ensures any changes to setup or utility files will trigger
 # a rebuild.
 
-rule py_setup:
+rule src:
     output:
         "src/python/zcache.py",
         "src/python/veff.py",
         "src/python/util.py",
+
+
+rule setup:
+    input:
+        rules.src.output,
         "notebooks/setup.ipynb",
+    output:
+        "build/notebooks/setup.md",
+    shell:
+        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/setup.ipynb"
+
 
 
 ########
@@ -27,7 +37,7 @@ rule py_setup:
 
 rule data_demo:
     input:
-        rules.py_setup.output,
+        rules.setup.output,
         "notebooks/data_demo.ipynb",
     output:
         "build/notebooks/data_demo.md",
@@ -39,7 +49,7 @@ rule data_demo:
 
 rule data_variants_phase1:
     input:
-        rules.py_setup.output,
+        rules.setup.output,
         "notebooks/data_variants_phase1.ipynb",
     output:
         "build/notebooks/data_variants_phase1.md",
@@ -75,7 +85,7 @@ rule data:
 
 rule artwork_demo:
     input:
-        rules.py_setup.output,
+        rules.setup.output,
         "notebooks/artwork_demo.ipynb",
     output:
         "build/notebooks/artwork_demo.md",
@@ -89,7 +99,7 @@ rule artwork_demo:
 
 rule table_demo:
     input:
-        rules.py_setup.output,
+        rules.setup.output,
         "notebooks/table_demo.ipynb",
     output:
         "build/notebooks/table_demo.md",
@@ -102,7 +112,7 @@ rule table_demo:
 
 rule table_variants_missense:
     input:
-        rules.py_setup.output,
+        rules.setup.output,
         "notebooks/table_variants_missense.ipynb",
         "data/tbl_variants_phase1.pkl",
     output:
