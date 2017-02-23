@@ -16,8 +16,7 @@ rule setup:
     output:
         "build/notebooks/setup.md",
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/setup.ipynb"
-
+        "./nbexec.sh notebooks/setup.ipynb"
 
 
 ########
@@ -42,7 +41,7 @@ rule data_demo:
     output:
         "build/notebooks/data_demo.md",
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/data_demo.ipynb"
+        "./nbexec.sh notebooks/data_demo.ipynb"
 
 
 # Extract data on VGSC variants.
@@ -54,7 +53,7 @@ rule data_variants_phase1:
     output:
         "build/notebooks/data_variants_phase1.md",
     shell:
-        "jupyter nbconvert --execute --ExecutePreprocessor.timeout=1000 --output-dir=build/notebooks --to=markdown notebooks/data_variants_phase1.ipynb"
+        "./nbexec.sh notebooks/data_variants_phase1.ipynb"
 
 
 # This rule builds all data, indicating success by touching a flag
@@ -69,19 +68,18 @@ rule data:
         touch("build/data.done")
 
 
-##############
-# Manuscript #
-##############
+###########
+# Artwork #
+###########
 
-# The rules in this section build the manuscript and all required
-# artwork and tables. These rules assume that any data required has
-# been produced previously by the data build and is present in the
-# 'data' folder and checked into the GitHub repo. Hence the manuscript
-# build can be run during continuous integration checks.
+# The rules in this section build artwork (figures, figure components,
+# etc.). N.B., These rules assume that any data required has been
+# produced previously by the data build and is present in the 'data'
+# folder and checked into the GitHub repo. 
 
 
 # This rule is an example of how to include a Jupyter notebook in the
-# manuscript build.
+# artwork build.
 
 rule artwork_demo:
     input:
@@ -91,7 +89,27 @@ rule artwork_demo:
         "build/notebooks/artwork_demo.md",
         "artwork/demo.png",
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/artwork_demo.ipynb"
+        "./nbexec.sh notebooks/artwork_demo.ipynb"
+
+
+# This rule builds all artwork.
+
+rule artwork:
+    input:
+        rules.artwork_demo.output,
+        # add more inputs here as required
+    output:
+        touch("build/artwork.done")
+	
+
+##########
+# Tables #
+##########
+
+# The rules in this section build tables for the manuscript. N.B.,
+# These rules assume that any data required has been produced
+# previously by the data build and is present in the 'data' folder and
+# checked into the GitHub repo.
 
 
 # Demo of a notebook that builds a table for inclusion in the
@@ -105,7 +123,7 @@ rule table_demo:
         "build/notebooks/table_demo.md",
         "tables/demo.tex"
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/table_demo.ipynb"
+        "./nbexec.sh notebooks/table_demo.ipynb"
 
 
 # Build the LaTex table of missense variants in VGSC.
@@ -119,34 +137,44 @@ rule table_variants_missense:
         "build/notebooks/table_variants_missense.md",
         "tables/variants_missense.tex"
     shell:
-        "jupyter nbconvert --execute --output-dir=build/notebooks --to=markdown notebooks/table_variants_missense.ipynb"
+        "./nbexec.sh notebooks/table_variants_missense.ipynb"
 
 
-# This rule runs all notebooks (excluding those that generate data).
+# This rule builds all tables.
 
-rule notebooks:
+rule tables:
     input:
-        rules.artwork_demo.output,
         rules.table_demo.output,
         rules.table_variants_missense.output,
         # add more inputs here as required
     output:
-        touch("build/notebooks.done")
+        touch("build/tables.done")
 	
 
-# This rule builds the manuscript PDF file. It depends on all the
-# manuscript notebooks.
+##############
+# Manuscript #
+##############
+
+# This rule builds the manuscript PDF file. It should depend on all
+# the artwork and tables.
 
 rule manuscript:
     input:
-        rules.notebooks.output,
+        rules.artwork.output,
+        rules.tables.output,
         "main.tex",
+        "refs.bib",
         # add more inputs here as required
     output:
         "build/main.pdf",
 	touch("build/main.done")
     shell:
         "./latex.sh"
+
+
+#########
+# Clean #
+#########
 
 
 # This rule cleans out the build folder.

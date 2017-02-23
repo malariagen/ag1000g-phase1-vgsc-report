@@ -13,8 +13,8 @@ cache:
   - dependencies
 
 script:
-  - rm -rvf build/*
   - source env.sh
+  - snakemake clean
   - snakemake manuscript
   - git status
 

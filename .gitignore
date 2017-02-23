@@ -31,7 +31,7 @@ ngs.sanger.ac.uk
 *.run.xml
 *.bak
 *.synctex*
-main.pdf
+/main.pdf
 
 # ignore flag files
 *.done
