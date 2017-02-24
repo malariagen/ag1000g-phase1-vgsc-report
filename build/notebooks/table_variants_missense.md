@@ -5068,66 +5068,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 
 
 
-
-```python
-# tbl_variants_display = (
-#     tbl_variants_selected
-#     .cut(['POS', 'REF', 'ALT', 'FILTER_PASS', 'AGAP004707-RA'] + ['AF_' + p for p in pop_ids])
-#     .convert(['AF_' + p for p in pop_ids], lambda v: int(np.rint(v * 100)))
-#     .addfield('substitution', lambda row: '{:,} {}>{}'.format(row['POS'], row['REF'], row['ALT']), index=0)
-#     .convert('substitution', lambda v, row: v + '*' if not row['FILTER_PASS'] else v, pass_row=True)
-#     .convert(['substitution', 'AGAP004707-RA'], lambda v: r'\texttt{%s}' % v)
-#     .cutout('POS', 'REF', 'ALT', 'FILTER_PASS')
-# )
-# tbl_variants_display.displayall()
-```
-
-
-```python
-# prologue = r"""
-# \begin{tabular}{lllrrrrrrrrrrr}
-# \toprule
-# \multicolumn{3}{c}{Mutation} &
-# \multicolumn{9}{c}{Population allele frequency (\%)} &
-# \multicolumn{2}{c}{LD ($D'$)} \\
-# \cmidrule(r){1-3}
-# \cmidrule(r){4-12}
-# \cmidrule(r){13-14}
-# Position\tablefootnote{Position relative to AgamP3 reference sequence, chromosome arm 2L.} & 
-# \emph{Ag}\tablefootnote{Codon numbering according to transcript \texttt{AGAP004707-RA} in geneset AgamP4.4.} & 
-# \emph{Md}\tablefootnote{Codon numbering according to @@TODO.} & 
-# AO\emph{Ac} & 
-# BF\emph{Ac} & 
-# GN\emph{Ag} & 
-# BF\emph{Ag} & 
-# CM\emph{Ag} & 
-# GA\emph{Ag} & 
-# UG\emph{Ag} & 
-# KE & 
-# GW & 
-# \texttt{L995F} & 
-# \texttt{L995S} \\
-# \midrule
-# """
-# template = r"""
-# {substitution} & {AGAP004707-RA} & NA & {AF_AOM} & {AF_BFM} & {AF_GNS} & {AF_BFS} & {AF_CMS} & {AF_GAS} & {AF_UGS} & {AF_KES} & {AF_GWA} & NA & NA \\
-# """
-# epilogue = r"""
-# \bottomrule
-# \end{tabular}
-# """
-# tbl_variants_display.totext('../tables/variants_missense.tex', 
-#                             encoding='ascii',
-#                             prologue=prologue, 
-#                             template=template,
-#                             epilogue=epilogue)
-```
-
-
-```python
-# !cat ../tables/variants_missense.tex
-```
-
 # add housefly numbering
 
 
@@ -5139,7 +5079,7 @@ import re
 
 ```python
 #load the codon map from the blog post (with the header info removed)
-md_tbl = etl.fromtsv('/home/chris/Git/agam-vgsc-report/data/domestica_gambiae_map.txt')
+md_tbl = etl.fromtsv('../data/domestica_gambiae_map.txt')
 
 #get codons
 dom = list(md_tbl['domestica_codon'])
@@ -5155,7 +5095,7 @@ map_dict = {a: d for a, d in zip(ano, dom)}
 
 ```python
 #get the snpeff annotations
-gam_cod = list(tbl_variants_selected['SNPEFF_HGVS_p'])
+gam_cod = list(tbl_variants_selected['AGAP004707-RA'])
 ```
 
 
@@ -5165,7 +5105,7 @@ gam_cod_cl = []
 r = re.compile("([a-zA-Z]+)([0-9]+)")
 for c in gam_cod:
     if c:
-        d = c[2:10]
+        d = c[0:6]
         m = r.match(d)
         g = m.group(2)
         gam_cod_cl.append(g)
@@ -5175,7 +5115,7 @@ len(gam_cod_cl)
 
 
 
-    20
+    22
 
 
 
@@ -5190,7 +5130,9 @@ MD
 
     ['261',
      '410',
+     '410',
      '.',
+     '508',
      '508',
      '810',
      '1014',
@@ -5214,7 +5156,7 @@ MD
 
 ```python
 #get the musca codon letter at these positions and add
-fs = pyfasta.Fasta('/home/chris/Git/agam-vgsc-report/data/domestica_gambiae_PROT_MEGA.fas')
+fs = pyfasta.Fasta('../data/domestica_gambiae_PROT_MEGA.fas')
 ```
 
 
@@ -5248,7 +5190,7 @@ dom_fix[261-1],dom_fix[1945-1]
 MD_fix = []
 for p in MD:
     if p == '.':
-        MD_fix.append(p)
+        MD_fix.append('-')
     if p != '.':
         MD_fix.append(dom_fix[int(p)-1]+p)
 ```
@@ -5263,7 +5205,9 @@ MD_fix
 
     ['R261',
      'V410',
-     '.',
+     'V410',
+     '-',
+     'M508',
      'M508',
      'T810',
      'L1014',
@@ -5286,39 +5230,11 @@ MD_fix
 
 
 ```python
-#because of the multi-allelics there are a couple of repeated jobbys, do these by hand...
-#also add the 
-MD_fixed = ['R261',
-      'V410',
-      'V410',
-      '.',
-      'M508',
-      'M508',
-      'T810',
-      'L1014',
-      'L1014',
-      'K1133',
-      'I1262',
-      'I1532',
-      'N1575',
-      'E1602',
-      'K1608',
-      'A1751',
-      'V1858',
-      'I1873',
-      'P1879',
-      'P1879',
-      'A1939',
-      'I1945']
-```
-
-
-```python
 tbl_variants_display = (
     tbl_variants_selected
     .cut(['POS', 'REF', 'ALT', 'FILTER_PASS', 'AGAP004707-RA'] + ['AF_' + p for p in pop_ids])
     .convert(['AF_' + p for p in pop_ids], lambda v: int(np.rint(v * 100)))
-    .addcolumn('Md', MD_fixed, index=5)
+    .addcolumn('Md', MD_fix, index=5)
     .addfield('substitution', lambda row: '{:,} {}>{}'.format(row['POS'], row['REF'], row['ALT']), index=0)
     .convert('substitution', lambda v, row: v + '*' if not row['FILTER_PASS'] else v, pass_row=True)
     .convert(['substitution', 'Md', 'AGAP004707-RA'], lambda v: r'\texttt{%s}' % v)
@@ -5391,7 +5307,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,399,997 G>C}</td>
 <td>\texttt{D466H}</td>
-<td>\texttt{.}</td>
+<td>\texttt{-}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5672,7 +5588,7 @@ prologue = r"""
 \cmidrule(r){13-14}
 Position\tablefootnote{Position relative to AgamP3 reference sequence, chromosome arm 2L.} & 
 \emph{Ag}\tablefootnote{Codon numbering according to transcript \texttt{AGAP004707-RA} in geneset AgamP4.4.} & 
-\emph{Md}\tablefootnote{Codon numbering according to \emph{Musca Domesticus Vgsc}.} & 
+\emph{Md}\tablefootnote{Codon numbering according to \emph{Musca Domestica Vgsc} EMBL accession X96668 (Williamson \emph{et al}., 1996).} & 
 AO\emph{Ac} & 
 BF\emph{Ac} & 
 GN\emph{Ag} & 
@@ -5716,7 +5632,7 @@ tbl_variants_display.totext('../tables/variants_missense.tex',
     \cmidrule(r){13-14}
     Position\tablefootnote{Position relative to AgamP3 reference sequence, chromosome arm 2L.} & 
     \emph{Ag}\tablefootnote{Codon numbering according to transcript \texttt{AGAP004707-RA} in geneset AgamP4.4.} & 
-    \emph{Md}\tablefootnote{Codon numbering according to \emph{Musca Domesticus Vgsc}.} & 
+    \emph{Md}\tablefootnote{Codon numbering according to \emph{Musca Domestica Vgsc} EMBL accession X96668 (Williamson \emph{et al}., 1996).} & 
     AO\emph{Ac} & 
     BF\emph{Ac} & 
     GN\emph{Ag} & 
@@ -5736,7 +5652,7 @@ tbl_variants_display.totext('../tables/variants_missense.tex',
     
     \texttt{2,391,228 G>T} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,399,997 G>C} & \texttt{D466H} & \texttt{.} & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,399,997 G>C} & \texttt{D466H} & \texttt{-} & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & NA & NA \\
     
     \texttt{2,400,071 G>A} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 18 & 0 & NA & NA \\
     
