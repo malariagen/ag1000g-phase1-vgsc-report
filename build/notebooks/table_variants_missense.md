@@ -5588,7 +5588,7 @@ prologue = r"""
 \cmidrule(r){13-14}
 Position\tablefootnote{Position relative to AgamP3 reference sequence, chromosome arm 2L.} & 
 \emph{Ag}\tablefootnote{Codon numbering according to transcript \texttt{AGAP004707-RA} in geneset AgamP4.4.} & 
-\emph{Md}\tablefootnote{Codon numbering according to \emph{Musca Domestica Vgsc} EMBL accession X96668 (Williamson \emph{et al}., 1996).} & 
+\emph{Md}\tablefootnote{Codon numbering according to \emph{Musca domestica Vgsc} EMBL accession X96668 \cite{williamson1996}.} & 
 AO\emph{Ac} & 
 BF\emph{Ac} & 
 GN\emph{Ag} & 
@@ -5632,7 +5632,7 @@ tbl_variants_display.totext('../tables/variants_missense.tex',
     \cmidrule(r){13-14}
     Position\tablefootnote{Position relative to AgamP3 reference sequence, chromosome arm 2L.} & 
     \emph{Ag}\tablefootnote{Codon numbering according to transcript \texttt{AGAP004707-RA} in geneset AgamP4.4.} & 
-    \emph{Md}\tablefootnote{Codon numbering according to \emph{Musca Domestica Vgsc} EMBL accession X96668 (Williamson \emph{et al}., 1996).} & 
+    \emph{Md}\tablefootnote{Codon numbering according to \emph{Musca domestica Vgsc} EMBL accession X96668 \cite{williamson1996}.} & 
     AO\emph{Ac} & 
     BF\emph{Ac} & 
     GN\emph{Ag} & 
