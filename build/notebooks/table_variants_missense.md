@@ -5068,10 +5068,165 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 
 
 
+# add housefly numbering
+
 
 ```python
-
+#to easily split the codon numbers from the codon letters
+import re
 ```
+
+
+```python
+#load the codon map from the blog post (with the header info removed)
+md_tbl = etl.fromtsv('../data/domestica_gambiae_map.txt')
+
+#get codons
+dom = list(md_tbl['domestica_codon'])
+ano = list(md_tbl['gambiae_codon'])
+```
+
+
+```python
+#make a dictionary with a as the key and d as the value
+map_dict = {a: d for a, d in zip(ano, dom)}
+```
+
+
+```python
+#get the snpeff annotations
+gam_cod = list(tbl_variants_selected['AGAP004707-RA'])
+```
+
+
+```python
+#ditch the codon letters - using re the regex module - LOVELY
+gam_cod_cl = []
+r = re.compile("([a-zA-Z]+)([0-9]+)")
+for c in gam_cod:
+    if c:
+        d = c[0:6]
+        m = r.match(d)
+        g = m.group(2)
+        gam_cod_cl.append(g)
+len(gam_cod_cl)
+```
+
+
+
+
+    22
+
+
+
+
+```python
+MD = [map_dict[c] for c in gam_cod_cl]
+MD
+```
+
+
+
+
+    ['261',
+     '410',
+     '410',
+     '.',
+     '508',
+     '508',
+     '810',
+     '1014',
+     '1014',
+     '1133',
+     '1262',
+     '1532',
+     '1575',
+     '1602',
+     '1608',
+     '1751',
+     '1858',
+     '1873',
+     '1879',
+     '1879',
+     '1939',
+     '1945']
+
+
+
+
+```python
+#get the musca codon letter at these positions and add
+fs = pyfasta.Fasta('../data/domestica_gambiae_PROT_MEGA.fas')
+```
+
+
+```python
+#grab the right sample
+dom = fs.get('domestica_vgsc')
+```
+
+
+```python
+#remove the '-' from the aligned fasta so the numbering makes sense
+dom_fix = [p for p in dom if p != '-']
+#check
+dom_fix[261-1],dom_fix[1945-1]
+```
+
+
+
+
+    ('R', 'I')
+
+
+
+
+```python
+#add them to the position
+```
+
+
+```python
+MD_fix = []
+for p in MD:
+    if p == '.':
+        MD_fix.append('-')
+    if p != '.':
+        MD_fix.append(dom_fix[int(p)-1]+p)
+```
+
+
+```python
+MD_fix
+```
+
+
+
+
+    ['R261',
+     'V410',
+     'V410',
+     '-',
+     'M508',
+     'M508',
+     'T810',
+     'L1014',
+     'L1014',
+     'K1133',
+     'I1262',
+     'I1532',
+     'N1575',
+     'E1602',
+     'K1608',
+     'A1751',
+     'V1858',
+     'I1873',
+     'P1879',
+     'P1879',
+     'A1939',
+     'I1945']
+
+
 
 
 ```python
@@ -5079,9 +5234,10 @@ tbl_variants_display = (
     tbl_variants_selected
     .cut(['POS', 'REF', 'ALT', 'FILTER_PASS', 'AGAP004707-RA'] + ['AF_' + p for p in pop_ids])
     .convert(['AF_' + p for p in pop_ids], lambda v: int(np.rint(v * 100)))
+    .addcolumn('Md', MD_fix, index=5)
     .addfield('substitution', lambda row: '{:,} {}>{}'.format(row['POS'], row['REF'], row['ALT']), index=0)
     .convert('substitution', lambda v, row: v + '*' if not row['FILTER_PASS'] else v, pass_row=True)
-    .convert(['substitution', 'AGAP004707-RA'], lambda v: r'\texttt{%s}' % v)
+    .convert(['substitution', 'Md', 'AGAP004707-RA'], lambda v: r'\texttt{%s}' % v)
     .cutout('POS', 'REF', 'ALT', 'FILTER_PASS')
 )
 tbl_variants_display.displayall()
@@ -5093,21 +5249,23 @@ tbl_variants_display.displayall()
 <tr>
 <th>0|substitution</th>
 <th>1|AGAP004707-RA</th>
-<th>2|AF_AOM</th>
-<th>3|AF_BFM</th>
-<th>4|AF_GWA</th>
-<th>5|AF_GNS</th>
-<th>6|AF_BFS</th>
-<th>7|AF_CMS</th>
-<th>8|AF_GAS</th>
-<th>9|AF_UGS</th>
-<th>10|AF_KES</th>
+<th>2|Md</th>
+<th>3|AF_AOM</th>
+<th>4|AF_BFM</th>
+<th>5|AF_GWA</th>
+<th>6|AF_GNS</th>
+<th>7|AF_BFS</th>
+<th>8|AF_CMS</th>
+<th>9|AF_GAS</th>
+<th>10|AF_UGS</th>
+<th>11|AF_KES</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>\texttt{2,390,177 G>A}</td>
 <td>\texttt{R254K}</td>
+<td>\texttt{R261}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5121,6 +5279,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,391,228 G>C}</td>
 <td>\texttt{V402L}</td>
+<td>\texttt{V410}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>7</td>
 <td style='text-align: right'>0</td>
@@ -5134,6 +5293,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,391,228 G>T}</td>
 <td>\texttt{V402L}</td>
+<td>\texttt{V410}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>7</td>
 <td style='text-align: right'>0</td>
@@ -5147,6 +5307,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,399,997 G>C}</td>
 <td>\texttt{D466H}</td>
+<td>\texttt{-}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5160,6 +5321,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,400,071 G>A}</td>
 <td>\texttt{M490I}</td>
+<td>\texttt{M508}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5173,6 +5335,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,400,071 G>T}</td>
 <td>\texttt{M490I}</td>
+<td>\texttt{M508}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5186,6 +5349,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,416,980 C>T}</td>
 <td>\texttt{T791M}</td>
+<td>\texttt{T810}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>1</td>
 <td style='text-align: right'>0</td>
@@ -5199,6 +5363,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,422,651 T>C}</td>
 <td>\texttt{L995S}</td>
+<td>\texttt{L1014}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5212,6 +5377,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,422,652 A>T}</td>
 <td>\texttt{L995F}</td>
+<td>\texttt{L1014}</td>
 <td style='text-align: right'>86</td>
 <td style='text-align: right'>85</td>
 <td style='text-align: right'>0</td>
@@ -5225,6 +5391,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,424,384 C>T}</td>
 <td>\texttt{A1125V}</td>
+<td>\texttt{K1133}</td>
 <td style='text-align: right'>9</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5238,6 +5405,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,425,077 G>A}</td>
 <td>\texttt{V1254I}</td>
+<td>\texttt{I1262}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>5</td>
@@ -5251,6 +5419,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,429,617 T>C}</td>
 <td>\texttt{I1527T}</td>
+<td>\texttt{I1532}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>14</td>
 <td style='text-align: right'>0</td>
@@ -5264,6 +5433,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,429,745 A>T*}</td>
 <td>\texttt{N1570Y}</td>
+<td>\texttt{N1575}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>26</td>
 <td style='text-align: right'>0</td>
@@ -5277,6 +5447,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,429,897 A>G}</td>
 <td>\texttt{E1597G}</td>
+<td>\texttt{E1602}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5290,6 +5461,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,429,915 A>C}</td>
 <td>\texttt{K1603T}</td>
+<td>\texttt{K1608}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>5</td>
 <td style='text-align: right'>0</td>
@@ -5303,6 +5475,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,430,424 G>T}</td>
 <td>\texttt{A1746S}</td>
+<td>\texttt{A1751}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5316,6 +5489,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,430,817 G>A}</td>
 <td>\texttt{V1853I}</td>
+<td>\texttt{V1858}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5329,6 +5503,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,430,863 T>C}</td>
 <td>\texttt{I1868T}</td>
+<td>\texttt{I1873}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5342,6 +5517,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,430,880 C>T}</td>
 <td>\texttt{P1874S}</td>
+<td>\texttt{P1879}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>21</td>
 <td style='text-align: right'>0</td>
@@ -5355,6 +5531,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,430,881 C>T}</td>
 <td>\texttt{P1874L}</td>
+<td>\texttt{P1879}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>7</td>
 <td style='text-align: right'>0</td>
@@ -5368,6 +5545,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,431,061 C>T}</td>
 <td>\texttt{A1934V}</td>
+<td>\texttt{A1939}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>12</td>
 <td style='text-align: right'>0</td>
@@ -5381,6 +5559,7 @@ tbl_variants_display.displayall()
 <tr>
 <td>\texttt{2,431,079 T>C}</td>
 <td>\texttt{I1940T}</td>
+<td>\texttt{I1945}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>4</td>
 <td style='text-align: right'>0</td>
@@ -5409,7 +5588,7 @@ prologue = r"""
 \cmidrule(r){13-14}
 Position\tablefootnote{Position relative to AgamP3 reference sequence, chromosome arm 2L.} & 
 \emph{Ag}\tablefootnote{Codon numbering according to transcript \texttt{AGAP004707-RA} in geneset AgamP4.4.} & 
-\emph{Md}\tablefootnote{Codon numbering according to @@TODO.} & 
+\emph{Md}\tablefootnote{Codon numbering according to \emph{Musca domestica Vgsc} EMBL accession X96668 \cite{williamson1996}.} & 
 AO\emph{Ac} & 
 BF\emph{Ac} & 
 GN\emph{Ag} & 
@@ -5424,7 +5603,7 @@ GW &
 \midrule
 """
 template = r"""
-{substitution} & {AGAP004707-RA} & NA & {AF_AOM} & {AF_BFM} & {AF_GNS} & {AF_BFS} & {AF_CMS} & {AF_GAS} & {AF_UGS} & {AF_KES} & {AF_GWA} & NA & NA \\
+{substitution} & {AGAP004707-RA} & {Md} & {AF_AOM} & {AF_BFM} & {AF_GNS} & {AF_BFS} & {AF_CMS} & {AF_GAS} & {AF_UGS} & {AF_KES} & {AF_GWA} & NA & NA \\
 """
 epilogue = r"""
 \bottomrule
@@ -5453,7 +5632,7 @@ tbl_variants_display.totext('../tables/variants_missense.tex',
     \cmidrule(r){13-14}
     Position\tablefootnote{Position relative to AgamP3 reference sequence, chromosome arm 2L.} & 
     \emph{Ag}\tablefootnote{Codon numbering according to transcript \texttt{AGAP004707-RA} in geneset AgamP4.4.} & 
-    \emph{Md}\tablefootnote{Codon numbering according to @@TODO.} & 
+    \emph{Md}\tablefootnote{Codon numbering according to \emph{Musca domestica Vgsc} EMBL accession X96668 \cite{williamson1996}.} & 
     AO\emph{Ac} & 
     BF\emph{Ac} & 
     GN\emph{Ag} & 
@@ -5467,49 +5646,49 @@ tbl_variants_display.totext('../tables/variants_missense.tex',
     \texttt{L995S} \\
     \midrule
     
-    \texttt{2,390,177 G>A} & \texttt{R254K} & NA & 0 & 0 & 0 & 0 & 32 & 21 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,390,177 G>A} & \texttt{R254K} & \texttt{R261} & 0 & 0 & 0 & 0 & 32 & 21 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,391,228 G>C} & \texttt{V402L} & NA & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,391,228 G>C} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,391,228 G>T} & \texttt{V402L} & NA & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,391,228 G>T} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,399,997 G>C} & \texttt{D466H} & NA & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,399,997 G>C} & \texttt{D466H} & \texttt{-} & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,400,071 G>A} & \texttt{M490I} & NA & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 18 & 0 & NA & NA \\
+    \texttt{2,400,071 G>A} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 18 & 0 & NA & NA \\
     
-    \texttt{2,400,071 G>T} & \texttt{M490I} & NA & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,400,071 G>T} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,416,980 C>T} & \texttt{T791M} & NA & 0 & 1 & 13 & 14 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,416,980 C>T} & \texttt{T791M} & \texttt{T810} & 0 & 1 & 13 & 14 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,422,651 T>C} & \texttt{L995S} & NA & 0 & 0 & 0 & 0 & 15 & 64 & 100 & 76 & 0 & NA & NA \\
+    \texttt{2,422,651 T>C} & \texttt{L995S} & \texttt{L1014} & 0 & 0 & 0 & 0 & 15 & 64 & 100 & 76 & 0 & NA & NA \\
     
-    \texttt{2,422,652 A>T} & \texttt{L995F} & NA & 86 & 85 & 100 & 100 & 53 & 36 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,422,652 A>T} & \texttt{L995F} & \texttt{L1014} & 86 & 85 & 100 & 100 & 53 & 36 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,424,384 C>T} & \texttt{A1125V} & NA & 9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,424,384 C>T} & \texttt{A1125V} & \texttt{K1133} & 9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,425,077 G>A} & \texttt{V1254I} & NA & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 5 & NA & NA \\
+    \texttt{2,425,077 G>A} & \texttt{V1254I} & \texttt{I1262} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 5 & NA & NA \\
     
-    \texttt{2,429,617 T>C} & \texttt{I1527T} & NA & 0 & 14 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,429,617 T>C} & \texttt{I1527T} & \texttt{I1532} & 0 & 14 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,429,745 A>T*} & \texttt{N1570Y} & NA & 0 & 26 & 10 & 22 & 6 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,429,745 A>T*} & \texttt{N1570Y} & \texttt{N1575} & 0 & 26 & 10 & 22 & 6 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,429,897 A>G} & \texttt{E1597G} & NA & 0 & 0 & 6 & 4 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,429,897 A>G} & \texttt{E1597G} & \texttt{E1602} & 0 & 0 & 6 & 4 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,429,915 A>C} & \texttt{K1603T} & NA & 0 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,429,915 A>C} & \texttt{K1603T} & \texttt{K1608} & 0 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,430,424 G>T} & \texttt{A1746S} & NA & 0 & 0 & 11 & 13 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,424 G>T} & \texttt{A1746S} & \texttt{A1751} & 0 & 0 & 11 & 13 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,430,817 G>A} & \texttt{V1853I} & NA & 0 & 0 & 8 & 5 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,817 G>A} & \texttt{V1853I} & \texttt{V1858} & 0 & 0 & 8 & 5 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,430,863 T>C} & \texttt{I1868T} & NA & 0 & 0 & 18 & 25 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,863 T>C} & \texttt{I1868T} & \texttt{I1873} & 0 & 0 & 18 & 25 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,430,880 C>T} & \texttt{P1874S} & NA & 0 & 21 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,880 C>T} & \texttt{P1874S} & \texttt{P1879} & 0 & 21 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,430,881 C>T} & \texttt{P1874L} & NA & 0 & 7 & 45 & 26 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,881 C>T} & \texttt{P1874L} & \texttt{P1879} & 0 & 7 & 45 & 26 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,431,061 C>T} & \texttt{A1934V} & NA & 0 & 12 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,431,061 C>T} & \texttt{A1934V} & \texttt{A1939} & 0 & 12 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
     
-    \texttt{2,431,079 T>C} & \texttt{I1940T} & NA & 0 & 4 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,431,079 T>C} & \texttt{I1940T} & \texttt{I1945} & 0 & 4 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & NA & NA \\
     
     \bottomrule
     \end{tabular}
