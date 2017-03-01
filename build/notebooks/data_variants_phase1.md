@@ -167,8 +167,8 @@ geneset_agamp44_vgsc.type.value_counts()
 
 
 
-    exon    93
     CDS     93
+    exon    93
     mRNA     3
     gene     1
     Name: type, dtype: int64
@@ -2488,6 +2488,550 @@ tbl_variants_phase1_eff.display(20)
 <p><strong>...</strong></p>
 
 
+## Add LD with kdr mutations
+
+### Setup haplotype data
+
+
+```python
+# these are the biallelics phased with shapeit2
+callset_vgsc_phased = h5py.File('../ngs.sanger.ac.uk/production/ag1000g/phase1/AR3.1/haplotypes/specific_regions/PARA/2L_2358158_2431617.h5', mode='r')
+callset_vgsc_phased
+```
+
+
+
+
+    <HDF5 file "2L_2358158_2431617.h5" (mode r)>
+
+
+
+
+```python
+# positions of all biallelic SNPs in the shapeit2 callset
+pos_biallelic = allel.SortedIndex(callset_vgsc_phased['2L/variants/POS'])
+pos_biallelic
+```
+
+
+
+
+<div class="allel allel-DisplayAs1D"><span>&lt;SortedIndex shape=(1967,) dtype=int32&gt;</span><table><tr><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">1962</th><th style="text-align: center">1963</th><th style="text-align: center">1964</th><th style="text-align: center">1965</th><th style="text-align: center">1966</th></tr><tr><td style="text-align: center">2353212</td><td style="text-align: center">2353223</td><td style="text-align: center">2353234</td><td style="text-align: center">2353251</td><td style="text-align: center">2353288</td><td style="text-align: center">...</td><td style="text-align: center">2436544</td><td style="text-align: center">2436545</td><td style="text-align: center">2436558</td><td style="text-align: center">2436585</td><td style="text-align: center">2436615</td></tr></table></div>
+
+
+
+
+```python
+# N.B., exclude cross parents (last 16 haplotypes)
+haplotypes_biallelic = allel.GenotypeArray(callset_vgsc_phased['2L/calldata/genotype']).to_haplotypes()[:, :1530]
+haplotypes_biallelic
+```
+
+
+
+
+<div class="allel allel-DisplayAs2D"><span>&lt;HaplotypeArray shape=(1967, 1530) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">1525</th><th style="text-align: center">1526</th><th style="text-align: center">1527</th><th style="text-align: center">1528</th><th style="text-align: center">1529</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">2</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">...</th><td style="text-align: center" colspan="12">...</td></tr><tr><th style="text-align: center">1964</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1965</th><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">...</td><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">1</td></tr><tr><th style="text-align: center">1966</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr></table></div>
+
+
+
+
+```python
+# these are the multiallelics phased with mvncall
+callset_vgsc_phased_multiallelics = np.load('../data/missense_multiallelics.mvncall.200.npz')
+callset_vgsc_phased_multiallelics
+```
+
+
+
+
+    <numpy.lib.npyio.NpzFile at 0x7f0d514ccac8>
+
+
+
+
+```python
+# positions of multiallelic SNPs in the mvncall callset
+pos_multiallelic = allel.SortedIndex(callset_vgsc_phased_multiallelics['variants']['POS'])
+pos_multiallelic
+```
+
+
+
+
+<div class="allel allel-DisplayAs1D"><span>&lt;SortedIndex shape=(2,) dtype=int32&gt;</span><table><tr><th style="text-align: center">0</th><th style="text-align: center">1</th></tr><tr><td style="text-align: center">2391228</td><td style="text-align: center">2400071</td></tr></table></div>
+
+
+
+
+```python
+# haplotypes at all phased multiallelic sites
+haplotypes_multiallelic = allel.GenotypeArray(callset_vgsc_phased_multiallelics['calldata']['genotype']).to_haplotypes()
+haplotypes_multiallelic
+```
+
+
+
+
+<div class="allel allel-DisplayAs2D"><span>&lt;HaplotypeArray shape=(2, 1530) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">1525</th><th style="text-align: center">1526</th><th style="text-align: center">1527</th><th style="text-align: center">1528</th><th style="text-align: center">1529</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">2</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr></table></div>
+
+
+
+
+```python
+# combine haplotypes for bi- and multi-allelic SNPs: just add multiallelics on at the end
+haplotypes_combined = haplotypes_biallelic.concatenate(haplotypes_multiallelic)
+haplotypes_combined
+```
+
+
+
+
+<div class="allel allel-DisplayAs2D"><span>&lt;HaplotypeArray shape=(1969, 1530) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">1525</th><th style="text-align: center">1526</th><th style="text-align: center">1527</th><th style="text-align: center">1528</th><th style="text-align: center">1529</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">2</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">...</th><td style="text-align: center" colspan="12">...</td></tr><tr><th style="text-align: center">1966</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1967</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">2</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1968</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr></table></div>
+
+
+
+
+```python
+pos_combined = list(pos_biallelic) + list(pos_multiallelic)
+pos_combined[:5], len(pos_combined)
+```
+
+
+
+
+    ([2353212, 2353223, 2353234, 2353251, 2353288], 1969)
+
+
+
+### Add LD columns
+
+
+```python
+def lewontin_d_prime(h, i, j, a=1, b=1):
+    
+    # setup
+    h = allel.HaplotypeArray(h)
+    n_a = n_b = 0  # allele counts
+    n_ab = 0  # haplotype counts
+    n = 0  # allele number (i.e., number of calls)
+    
+    # iterate over haplotypes, counting alleles and haplotypes
+    for k in range(h.n_haplotypes):
+        
+        # access alleles
+        allele_ik = h[i, k]
+        allele_jk = h[j, k]
+        
+        # only count if allele non-missing at both sites
+        if allele_ik < 0 or allele_jk < 0:
+            continue
+            
+        # accumulate
+        if allele_ik == a:
+            n_a += 1
+        if allele_jk == b:
+            n_b += 1
+        if allele_ik == a and allele_jk == b:
+            n_ab += 1
+        n += 1
+        
+    # bail out if no data or either allele is absent or fixed
+    if n == 0 or n_a == 0 or n_b == 0 or n == n_a or n == n_b:
+        return None
+    
+    # N.B., compute D prime using counts rather than frequencies to avoid floating-point errors
+    # N.B., preserve the sign of D prime to retain information about linkage versus repulsion
+    
+    # compute coefficient of linkage disequilibrium * n**2
+    D_ab = (n * n_ab) - (n_a * n_b)
+    
+    # compute normalisation coefficient * n**2
+    if D_ab >= 0:
+        D_max = min(n_a * (n - n_b), (n - n_a) * n_b)
+    else:
+        D_max = min(n_a * n_b, (n - n_a) * (n - n_b))
+
+    # compute D prime
+    return D_ab / D_max
+
+```
+
+
+```python
+def _list_index(l, i):
+    try:
+        return l.index(i)
+    except ValueError:
+        return None
+    
+    
+def _mkfield_dprime(i):
+    def _f(row):
+        if row.haps_vidx is not None:
+            return lewontin_d_prime(haplotypes_combined, i=i, j=row.haps_vidx, a=1, b=row.ALTIX+1)  
+        else:
+            return None
+    return _f
+
+tbl_variants_phase1_eff_ld = (
+    tbl_variants_phase1_eff
+    .addfield('haps_vidx', lambda row: _list_index(pos_combined, row['POS']))
+    .addfield('dprime_L995S', _mkfield_dprime(1613))
+    .addfield('dprime_L995F', _mkfield_dprime(1614))  
+    .cache()
+)
+tbl_variants_phase1_eff_ld
+```
+
+
+
+
+<table class='petl'>
+<thead>
+<tr>
+<th>0|CHROM</th>
+<th>1|POS</th>
+<th>2|num_alleles</th>
+<th>3|REF</th>
+<th>4|ALT</th>
+<th>5|AC</th>
+<th>6|ALTIX</th>
+<th>7|FILTER_PASS</th>
+<th>8|NoCoverage</th>
+<th>9|LowCoverage</th>
+<th>10|HighCoverage</th>
+<th>11|LowMQ</th>
+<th>12|HighMQ0</th>
+<th>13|RepeatDUST</th>
+<th>14|RepeatMasker</th>
+<th>15|RepeatTRF</th>
+<th>16|FS</th>
+<th>17|HRun</th>
+<th>18|QD</th>
+<th>19|ReadPosRankSum</th>
+<th>20|SNPEFF_Allele</th>
+<th>21|SNPEFF_Annotation</th>
+<th>22|SNPEFF_HGVS_c</th>
+<th>23|SNPEFF_HGVS_p</th>
+<th>24|SNPEFF_Feature_ID</th>
+<th>25|AF_AOM</th>
+<th>26|AF_BFM</th>
+<th>27|AF_GWA</th>
+<th>28|AF_GNS</th>
+<th>29|AF_BFS</th>
+<th>30|AF_CMS</th>
+<th>31|AF_GAS</th>
+<th>32|AF_UGS</th>
+<th>33|AF_KES</th>
+<th>34|check_allele</th>
+<th>35|exon_start</th>
+<th>36|exon_end</th>
+<th>37|exon</th>
+<th>38|AGAP004707-RA</th>
+<th>39|AGAP004707-RB</th>
+<th>40|AGAP004707-RC</th>
+<th>41|Davies-C1N2</th>
+<th>42|Davies-C3N2</th>
+<th>43|Davies-C5N2</th>
+<th>44|Davies-C7N2</th>
+<th>45|Davies-C8N2</th>
+<th>46|Davies-C10N2</th>
+<th>47|Davies-C11N2</th>
+<th>48|Davies-C1N9</th>
+<th>49|Davies-C8N9</th>
+<th>50|Davies-C1N9ck</th>
+<th>51|haps_vidx</th>
+<th>52|dprime_L995S</th>
+<th>53|dprime_L995F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2L</td>
+<td>2358254</td>
+<td>2</td>
+<td>G</td>
+<td>A</td>
+<td>1</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
+<td>0</td>
+<td>0</td>
+<td>10</td>
+<td>0</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>9.8672</td>
+<td>1</td>
+<td>17.547</td>
+<td>-0.049988</td>
+<td>A</td>
+<td>missense_variant</td>
+<td>n.97G>A</td>
+<td>p.Asp33Asn</td>
+<td>AGAP004707-RA</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.00181818181818</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td>True</td>
+<td style='text-align: right'>2358158</td>
+<td style='text-align: right'>2358304</td>
+<td>1</td>
+<td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td style='text-align: right'>83</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
+</tr>
+<tr>
+<td>2L</td>
+<td>2358316</td>
+<td>2</td>
+<td>T</td>
+<td>G</td>
+<td>73</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
+<td>0</td>
+<td>0</td>
+<td>15</td>
+<td>0</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>2.4844</td>
+<td>0</td>
+<td>16.438</td>
+<td>1.4219</td>
+<td>G</td>
+<td>intron_variant</td>
+<td>n.147+12T>G</td>
+<td>None</td>
+<td>AGAP004707-RA</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.132727272727</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td>True</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>('INTRONIC', 'AGAP004707-PA', 12, 'AGAP004707-PA', -3691)</td>
+<td>('INTRONIC', 'AGAP004707-PB', 12, 'AGAP004707-PB', -3691)</td>
+<td>('INTRONIC', 'AGAP004707-PC', 12, 'AGAP004707-PC', -3691)</td>
+<td>('INTRONIC', '1', 12, '3', -3673)</td>
+<td>('INTRONIC', '1', 12, '3', -3673)</td>
+<td>('INTRONIC', '1', 12, '3', -3673)</td>
+<td>('INTRONIC', '1', 12, '3', -3673)</td>
+<td>('INTRONIC', '1', 12, '2j', -1324)</td>
+<td>('INTRONIC', '1', 12, '3', -3673)</td>
+<td>('INTRONIC', '1', 12, '3', -3673)</td>
+<td>('INTRONIC', '1', 12, '3', -3673)</td>
+<td>('INTRONIC', '1', 12, '2j', -1324)</td>
+<td>('INTRONIC', '1', 12, '3', -3673)</td>
+<td style='text-align: right'>84</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
+</tr>
+<tr>
+<td>2L</td>
+<td>2358328</td>
+<td>2</td>
+<td>T</td>
+<td>C</td>
+<td>2</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
+<td>0</td>
+<td>0</td>
+<td>14</td>
+<td>0</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>2.7363</td>
+<td>0</td>
+<td>16.062</td>
+<td>-0.646</td>
+<td>C</td>
+<td>intron_variant</td>
+<td>n.147+24T>C</td>
+<td>None</td>
+<td>AGAP004707-RA</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.00724637681159</td>
+<td style='text-align: right'>0.0108695652174</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td>True</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>('INTRONIC', 'AGAP004707-PA', 24, 'AGAP004707-PA', -3679)</td>
+<td>('INTRONIC', 'AGAP004707-PB', 24, 'AGAP004707-PB', -3679)</td>
+<td>('INTRONIC', 'AGAP004707-PC', 24, 'AGAP004707-PC', -3679)</td>
+<td>('INTRONIC', '1', 24, '3', -3661)</td>
+<td>('INTRONIC', '1', 24, '3', -3661)</td>
+<td>('INTRONIC', '1', 24, '3', -3661)</td>
+<td>('INTRONIC', '1', 24, '3', -3661)</td>
+<td>('INTRONIC', '1', 24, '2j', -1312)</td>
+<td>('INTRONIC', '1', 24, '3', -3661)</td>
+<td>('INTRONIC', '1', 24, '3', -3661)</td>
+<td>('INTRONIC', '1', 24, '3', -3661)</td>
+<td>('INTRONIC', '1', 24, '2j', -1312)</td>
+<td>('INTRONIC', '1', 24, '3', -3661)</td>
+<td style='text-align: right'>85</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
+</tr>
+<tr>
+<td>2L</td>
+<td>2358353</td>
+<td>2</td>
+<td>C</td>
+<td>T</td>
+<td>1</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
+<td>0</td>
+<td>1</td>
+<td>15</td>
+<td>0</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>1.9512</td>
+<td>0</td>
+<td>9.8594</td>
+<td>1.1582</td>
+<td>T</td>
+<td>intron_variant</td>
+<td>n.147+49C>T</td>
+<td>None</td>
+<td>AGAP004707-RA</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0108695652174</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td>True</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>('INTRONIC', 'AGAP004707-PA', 49, 'AGAP004707-PA', -3654)</td>
+<td>('INTRONIC', 'AGAP004707-PB', 49, 'AGAP004707-PB', -3654)</td>
+<td>('INTRONIC', 'AGAP004707-PC', 49, 'AGAP004707-PC', -3654)</td>
+<td>('INTRONIC', '1', 49, '3', -3636)</td>
+<td>('INTRONIC', '1', 49, '3', -3636)</td>
+<td>('INTRONIC', '1', 49, '3', -3636)</td>
+<td>('INTRONIC', '1', 49, '3', -3636)</td>
+<td>('INTRONIC', '1', 49, '2j', -1287)</td>
+<td>('INTRONIC', '1', 49, '3', -3636)</td>
+<td>('INTRONIC', '1', 49, '3', -3636)</td>
+<td>('INTRONIC', '1', 49, '3', -3636)</td>
+<td>('INTRONIC', '1', 49, '2j', -1287)</td>
+<td>('INTRONIC', '1', 49, '3', -3636)</td>
+<td style='text-align: right'>86</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
+</tr>
+<tr>
+<td>2L</td>
+<td>2358405</td>
+<td>2</td>
+<td>T</td>
+<td>A</td>
+<td>1</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
+<td>0</td>
+<td>6</td>
+<td>14</td>
+<td>0</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>20.844</td>
+<td>1</td>
+<td>10.859</td>
+<td>1.1562</td>
+<td>A</td>
+<td>intron_variant</td>
+<td>n.147+101T>A</td>
+<td>None</td>
+<td>AGAP004707-RA</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0108695652174</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td style='text-align: right'>0.0</td>
+<td>True</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>('INTRONIC', 'AGAP004707-PA', 101, 'AGAP004707-PA', -3602)</td>
+<td>('INTRONIC', 'AGAP004707-PB', 101, 'AGAP004707-PB', -3602)</td>
+<td>('INTRONIC', 'AGAP004707-PC', 101, 'AGAP004707-PC', -3602)</td>
+<td>('INTRONIC', '1', 101, '3', -3584)</td>
+<td>('INTRONIC', '1', 101, '3', -3584)</td>
+<td>('INTRONIC', '1', 101, '3', -3584)</td>
+<td>('INTRONIC', '1', 101, '3', -3584)</td>
+<td>('INTRONIC', '1', 101, '2j', -1235)</td>
+<td>('INTRONIC', '1', 101, '3', -3584)</td>
+<td>('INTRONIC', '1', 101, '3', -3584)</td>
+<td>('INTRONIC', '1', 101, '3', -3584)</td>
+<td>('INTRONIC', '1', 101, '2j', -1235)</td>
+<td>('INTRONIC', '1', 101, '3', -3584)</td>
+<td style='text-align: right'>87</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>...</strong></p>
+
+
+
 ## Inspect missense variants
 
 
@@ -2521,7 +3065,7 @@ def tr_style(row):
 
 
 tbl_variants_phase1_missense = (
-    tbl_variants_phase1_eff
+    tbl_variants_phase1_eff_ld
     .select(lambda row: any(row[t] and row[t][0] == 'NON_SYNONYMOUS_CODING' for t in transcript_ids))
     .convert(transcript_ids, simplify_missense_effect)
 )
@@ -2583,6 +3127,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <th>48|Davies-C1N9</th>
 <th>49|Davies-C8N9</th>
 <th>50|Davies-C1N9ck</th>
+<th>51|haps_vidx</th>
+<th>52|dprime_L995S</th>
+<th>53|dprime_L995F</th>
 </tr>
 </thead>
 <tbody>
@@ -2638,6 +3185,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>D33N</td>
 <td>D33N</td>
 <td>D33N</td>
+<td style='text-align: right'>83</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.070)'>
 <td>2L</td>
@@ -2691,6 +3241,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td></td>
 <td>E60K</td>
 <td></td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.020)'>
 <td>2L</td>
@@ -2744,6 +3297,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>D54V</td>
 <td>D65V</td>
 <td>D54V</td>
+<td style='text-align: right'>223</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.020)'>
 <td>2L</td>
@@ -2797,6 +3353,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>G60C</td>
 <td>G71C</td>
 <td>G60C</td>
+<td style='text-align: right'>225</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -2850,6 +3409,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>P61L</td>
 <td>P72L</td>
 <td>P61L</td>
+<td style='text-align: right'>226</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.020)'>
 <td>2L</td>
@@ -2903,6 +3465,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>K257R</td>
 <td>K268R</td>
 <td>K257R</td>
+<td style='text-align: right'>899</td>
+<td style='text-align: right'>0.30454545454545456</td>
+<td style='text-align: right'>-0.012903225806451613</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 1.000)'>
 <td>2L</td>
@@ -2956,6 +3521,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>R260K</td>
 <td>R271K</td>
 <td>R260K</td>
+<td style='text-align: right'>900</td>
+<td style='text-align: right'>-0.9820295983086681</td>
+<td style='text-align: right'>0.9590608067429259</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -3009,6 +3577,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>E305K</td>
 <td>E316K</td>
 <td>E305K</td>
+<td style='text-align: right'>904</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.060)'>
 <td>2L</td>
@@ -3062,6 +3633,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>G323S</td>
 <td>G334S</td>
 <td>G323S</td>
+<td style='text-align: right'>911</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.100)'>
 <td>2L</td>
@@ -3115,6 +3689,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>V408L</td>
 <td>V419L</td>
 <td>V408L</td>
+<td style='text-align: right'>1967</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-0.40774193548387094</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.090)'>
 <td>2L</td>
@@ -3168,6 +3745,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>V408L</td>
 <td>V419L</td>
 <td>V408L</td>
+<td style='text-align: right'>1967</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>0.09933774834437085</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.380)'>
 <td>2L</td>
@@ -3221,6 +3801,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>D472H</td>
 <td>D483H</td>
 <td>D472H</td>
+<td style='text-align: right'>1162</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.160)'>
 <td>2L</td>
@@ -3274,6 +3857,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>M496I</td>
 <td>M507I</td>
 <td>M496I</td>
+<td style='text-align: right'>1968</td>
+<td style='text-align: right'>-0.3328488372093023</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.020)'>
 <td>2L</td>
@@ -3327,6 +3913,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>M496I</td>
 <td>M507I</td>
 <td>M496I</td>
+<td style='text-align: right'>1968</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-0.012903225806451613</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.020)'>
 <td>2L</td>
@@ -3380,6 +3969,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>I498N</td>
 <td>I509N</td>
 <td>I498N</td>
+<td style='text-align: right'>1165</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -3433,6 +4025,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>R550L</td>
 <td></td>
 <td>R550L</td>
+<td style='text-align: right'>1217</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -3486,6 +4081,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>Q558L</td>
 <td></td>
 <td>Q558L</td>
+<td style='text-align: right'>1218</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -3539,6 +4137,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>A599T</td>
 <td>A582T</td>
 <td>A599T</td>
+<td style='text-align: right'>1235</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -3592,6 +4193,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>R683Q</td>
 <td>R666Q</td>
 <td>R683Q</td>
+<td style='text-align: right'>1295</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -3645,6 +4249,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>T692S</td>
 <td>T675S</td>
 <td>T692S</td>
+<td style='text-align: right'>1299</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -3698,6 +4305,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>M717V</td>
 <td>M700V</td>
 <td>M717V</td>
+<td style='text-align: right'>1300</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -3751,6 +4361,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>A737E</td>
 <td>A720E</td>
 <td>A737E</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -3804,6 +4417,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>G741R</td>
 <td>G724R</td>
 <td>G741R</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.320)'>
 <td>2L</td>
@@ -3857,6 +4473,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>T804M</td>
 <td>T787M</td>
 <td>T804M</td>
+<td style='text-align: right'>1516</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -3910,6 +4529,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>I842L</td>
 <td>I825L</td>
 <td>I842L</td>
+<td style='text-align: right'>1530</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -3963,6 +4585,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>A850V</td>
 <td>A833V</td>
 <td>A850V</td>
+<td style='text-align: right'>1531</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -4016,6 +4641,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td></td>
 <td></td>
 <td>M938L</td>
+<td style='text-align: right'>1537</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -4069,6 +4697,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>M916V</td>
 <td>M899V</td>
 <td></td>
+<td style='text-align: right'>1598</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -4122,6 +4753,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>P953H</td>
 <td>P936H</td>
 <td>P953H</td>
+<td style='text-align: right'>1611</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 1.000)'>
 <td>2L</td>
@@ -4175,6 +4809,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>L1008S</td>
 <td>L991S</td>
 <td>L1008S</td>
+<td style='text-align: right'>1613</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 1.000)'>
 <td>2L</td>
@@ -4228,6 +4865,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>L1008F</td>
 <td>L991F</td>
 <td>L1008F</td>
+<td style='text-align: right'>1614</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -4281,6 +4921,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>V1064I</td>
 <td>V1047I</td>
 <td>V1064I</td>
+<td style='text-align: right'>1617</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -4334,6 +4977,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>A1138S</td>
 <td>A1121S</td>
 <td>A1138S</td>
+<td style='text-align: right'>1647</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.110)'>
 <td>2L</td>
@@ -4387,6 +5033,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>A1138V</td>
 <td>A1121V</td>
 <td>A1138V</td>
+<td style='text-align: right'>1648</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.020)'>
 <td>2L</td>
@@ -4440,6 +5089,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>I1144V</td>
 <td>I1127V</td>
 <td>I1144V</td>
+<td style='text-align: right'>1649</td>
+<td style='text-align: right'>0.30454545454545456</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.110)'>
 <td>2L</td>
@@ -4493,6 +5145,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>S1173A</td>
 <td>S1156A</td>
 <td>S1173A</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.050)'>
 <td>2L</td>
@@ -4546,6 +5201,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>V1267I</td>
 <td>V1250I</td>
 <td>V1267I</td>
+<td style='text-align: right'>1664</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -4599,6 +5257,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>V1316A</td>
 <td>V1299A</td>
 <td>V1316A</td>
+<td style='text-align: right'>1668</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.030)'>
 <td>2L</td>
@@ -4652,6 +5313,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>N1358I</td>
 <td>N1341I</td>
 <td>N1358I</td>
+<td style='text-align: right'>1669</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -4705,6 +5369,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>L1379F</td>
 <td>L1362F</td>
 <td></td>
+<td style='text-align: right'>1729</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.190)'>
 <td>2L</td>
@@ -4758,6 +5425,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>I1537T</td>
 <td>I1520T</td>
 <td>I1537T</td>
+<td style='text-align: right'>1755</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -4811,6 +5481,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>F1539L</td>
 <td>F1522L</td>
 <td>F1539L</td>
+<td style='text-align: right'>1756</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 1.000)'>
 <td>2L</td>
@@ -4864,6 +5537,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>N1580Y</td>
 <td>N1563Y</td>
 <td>N1580Y</td>
+<td style='text-align: right'>1757</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>0.9815773630343166</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.020)'>
 <td>2L</td>
@@ -4917,6 +5593,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>I1594T</td>
 <td>I1577T</td>
 <td>I1594T</td>
+<td style='text-align: right'>1758</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.110)'>
 <td>2L</td>
@@ -4970,6 +5649,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>E1607G</td>
 <td>E1590G</td>
 <td>E1607G</td>
+<td style='text-align: right'>1761</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.070)'>
 <td>2L</td>
@@ -5023,6 +5705,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>K1613T</td>
 <td>K1596T</td>
 <td>K1613T</td>
+<td style='text-align: right'>1762</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -5076,6 +5761,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>L1627F</td>
 <td>L1610F</td>
 <td>L1627F</td>
+<td style='text-align: right'>1763</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.030)'>
 <td>2L</td>
@@ -5129,6 +5817,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>L1677M</td>
 <td>L1660M</td>
 <td>L1677M</td>
+<td style='text-align: right'>1764</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.040)'>
 <td>2L</td>
@@ -5182,6 +5873,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>V1691I</td>
 <td>V1674I</td>
 <td>V1691I</td>
+<td style='text-align: right'>1766</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.070)'>
 <td>2L</td>
@@ -5235,6 +5929,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>S1693I</td>
 <td>S1676I</td>
 <td>S1693I</td>
+<td style='text-align: right'>1767</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.280)'>
 <td>2L</td>
@@ -5288,6 +5985,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>A1756S</td>
 <td>A1739S</td>
 <td>A1756S</td>
+<td style='text-align: right'>1772</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -5341,6 +6041,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>H1765Y</td>
 <td>H1748Y</td>
 <td>H1765Y</td>
+<td style='text-align: right'>1773</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.130)'>
 <td>2L</td>
@@ -5394,6 +6097,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>V1863I</td>
 <td>V1846I</td>
 <td>V1863I</td>
+<td style='text-align: right'>1778</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.520)'>
 <td>2L</td>
@@ -5447,6 +6153,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>I1878T</td>
 <td>I1861T</td>
 <td>I1878T</td>
+<td style='text-align: right'>1780</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.290)'>
 <td>2L</td>
@@ -5500,6 +6209,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>P1884S</td>
 <td>P1867S</td>
 <td>P1884S</td>
+<td style='text-align: right'>1781</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.800)'>
 <td>2L</td>
@@ -5553,6 +6265,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>P1884L</td>
 <td>P1867L</td>
 <td>P1884L</td>
+<td style='text-align: right'>1782</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.120)'>
 <td>2L</td>
@@ -5606,6 +6321,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>F1930S</td>
 <td>F1913S</td>
 <td>F1930S</td>
+<td style='text-align: right'>1786</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.160)'>
 <td>2L</td>
@@ -5659,6 +6377,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>A1944V</td>
 <td>A1927V</td>
 <td>A1944V</td>
+<td style='text-align: right'>1787</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.440)'>
 <td>2L</td>
@@ -5712,6 +6433,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>I1950T</td>
 <td>I1933T</td>
 <td>I1950T</td>
+<td style='text-align: right'>1788</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -5765,6 +6489,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>G2001E</td>
 <td>G1984E</td>
 <td>G2001E</td>
+<td style='text-align: right'>1791</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -5818,6 +6545,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>T2034K</td>
 <td>T2017K</td>
 <td>T2034K</td>
+<td style='text-align: right'>1793</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.020)'>
 <td>2L</td>
@@ -5871,6 +6601,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>I2063V</td>
 <td>I2046V</td>
 <td>I2063V</td>
+<td style='text-align: right'>1796</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.050)'>
 <td>2L</td>
@@ -5924,6 +6657,9 @@ tbl_variants_phase1_missense.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>S2086T</td>
 <td>S2069T</td>
 <td>S2086T</td>
+<td style='text-align: right'>1797</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 </tbody>
 </table>
@@ -5966,7 +6702,7 @@ def tr_style(row):
 
 
 tbl_variants_phase1_splice = (
-    tbl_variants_phase1_eff
+    tbl_variants_phase1_eff_ld
     .select(lambda row: any(row[t] and row[t][0] in ['SPLICE_REGION', 'SPLICE_CORE'] for t in transcript_ids))
     .convert(transcript_ids, simplify_intron_effect)
 )
@@ -6028,6 +6764,9 @@ tbl_variants_phase1_splice.displayall(td_styles=td_styles, tr_style=tr_style)
 <th>48|Davies-C1N9</th>
 <th>49|Davies-C8N9</th>
 <th>50|Davies-C1N9ck</th>
+<th>51|haps_vidx</th>
+<th>52|dprime_L995S</th>
+<th>53|dprime_L995F</th>
 </tr>
 </thead>
 <tbody>
@@ -6083,6 +6822,9 @@ tbl_variants_phase1_splice.displayall(td_styles=td_styles, tr_style=tr_style)
 <td></td>
 <td></td>
 <td></td>
+<td style='text-align: right'>223</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.020)'>
 <td>2L</td>
@@ -6136,6 +6878,9 @@ tbl_variants_phase1_splice.displayall(td_styles=td_styles, tr_style=tr_style)
 <td></td>
 <td></td>
 <td></td>
+<td style='text-align: right'>224</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 1.000)'>
 <td>2L</td>
@@ -6189,6 +6934,9 @@ tbl_variants_phase1_splice.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>('5', -7)</td>
 <td>('5', -7)</td>
 <td>('5', -7)</td>
+<td style='text-align: right'>575</td>
+<td style='text-align: right'>0.9916210295728368</td>
+<td style='text-align: right'>-0.9881072677808006</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.020)'>
 <td>2L</td>
@@ -6242,6 +6990,9 @@ tbl_variants_phase1_splice.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>('7', -3)</td>
 <td>('7', -3)</td>
 <td>('7', -3)</td>
+<td style='text-align: right'>896</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.010)'>
 <td>2L</td>
@@ -6295,6 +7046,9 @@ tbl_variants_phase1_splice.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>('11i+', 3)</td>
 <td>('11i+', 3)</td>
 <td>('11i+', 3)</td>
+<td style='text-align: right'>1166</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.040)'>
 <td>2L</td>
@@ -6348,6 +7102,9 @@ tbl_variants_phase1_splice.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>('16', -6)</td>
 <td>('16', -6)</td>
 <td>('16', -6)</td>
+<td style='text-align: right'>1298</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 1.000)'>
 <td>2L</td>
@@ -6401,6 +7158,9 @@ tbl_variants_phase1_splice.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>('19', 4)</td>
 <td>('19', 4)</td>
 <td>('19', 4)</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.790)'>
 <td>2L</td>
@@ -6454,6 +7214,9 @@ tbl_variants_phase1_splice.displayall(td_styles=td_styles, tr_style=tr_style)
 <td></td>
 <td></td>
 <td>('27k', -4)</td>
+<td style='text-align: right'>1680</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color:rgba(0, 255, 0, 0.020)'>
 <td>2L</td>
@@ -6507,6 +7270,9 @@ tbl_variants_phase1_splice.displayall(td_styles=td_styles, tr_style=tr_style)
 <td>('31', -4)</td>
 <td>('31', -4)</td>
 <td>('31', -4)</td>
+<td style='text-align: right'>1759</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 </tbody>
 </table>
@@ -6517,7 +7283,7 @@ tbl_variants_phase1_splice.displayall(td_styles=td_styles, tr_style=tr_style)
 
 
 ```python
-(tbl_variants_phase1_eff
+(tbl_variants_phase1_eff_ld
  .teepickle('../data/tbl_variants_phase1.pkl')
  .convert(transcript_ids, lambda v: ':'.join(map(str, v)))
  .replaceall(None, 'NA')
@@ -6588,6 +7354,9 @@ etl.frompickle('../data/tbl_variants_phase1.pkl')
 <th>48|Davies-C1N9</th>
 <th>49|Davies-C8N9</th>
 <th>50|Davies-C1N9ck</th>
+<th>51|haps_vidx</th>
+<th>52|dprime_L995S</th>
+<th>53|dprime_L995F</th>
 </tr>
 </thead>
 <tbody>
@@ -6643,6 +7412,9 @@ etl.frompickle('../data/tbl_variants_phase1.pkl')
 <td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
 <td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
 <td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td style='text-align: right'>83</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -6696,6 +7468,9 @@ etl.frompickle('../data/tbl_variants_phase1.pkl')
 <td>('INTRONIC', '1', 12, '3', -3673)</td>
 <td>('INTRONIC', '1', 12, '2j', -1324)</td>
 <td>('INTRONIC', '1', 12, '3', -3673)</td>
+<td style='text-align: right'>84</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -6749,6 +7524,9 @@ etl.frompickle('../data/tbl_variants_phase1.pkl')
 <td>('INTRONIC', '1', 24, '3', -3661)</td>
 <td>('INTRONIC', '1', 24, '2j', -1312)</td>
 <td>('INTRONIC', '1', 24, '3', -3661)</td>
+<td style='text-align: right'>85</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -6802,6 +7580,9 @@ etl.frompickle('../data/tbl_variants_phase1.pkl')
 <td>('INTRONIC', '1', 49, '3', -3636)</td>
 <td>('INTRONIC', '1', 49, '2j', -1287)</td>
 <td>('INTRONIC', '1', 49, '3', -3636)</td>
+<td style='text-align: right'>86</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -6855,6 +7636,9 @@ etl.frompickle('../data/tbl_variants_phase1.pkl')
 <td>('INTRONIC', '1', 101, '3', -3584)</td>
 <td>('INTRONIC', '1', 101, '2j', -1235)</td>
 <td>('INTRONIC', '1', 101, '3', -3584)</td>
+<td style='text-align: right'>87</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 </tbody>
 </table>
@@ -6924,6 +7708,9 @@ etl.fromtsv('../data/tbl_variants_phase1.txt')
 <th>48|Davies-C1N9</th>
 <th>49|Davies-C8N9</th>
 <th>50|Davies-C1N9ck</th>
+<th>51|haps_vidx</th>
+<th>52|dprime_L995S</th>
+<th>53|dprime_L995F</th>
 </tr>
 </thead>
 <tbody>
@@ -6979,6 +7766,9 @@ etl.fromtsv('../data/tbl_variants_phase1.txt')
 <td>NON_SYNONYMOUS_CODING:D33N</td>
 <td>NON_SYNONYMOUS_CODING:D33N</td>
 <td>NON_SYNONYMOUS_CODING:D33N</td>
+<td>83</td>
+<td>-1.0</td>
+<td>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -7032,6 +7822,9 @@ etl.fromtsv('../data/tbl_variants_phase1.txt')
 <td>INTRONIC:1:12:3:-3673</td>
 <td>INTRONIC:1:12:2j:-1324</td>
 <td>INTRONIC:1:12:3:-3673</td>
+<td>84</td>
+<td>1.0</td>
+<td>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -7085,6 +7878,9 @@ etl.fromtsv('../data/tbl_variants_phase1.txt')
 <td>INTRONIC:1:24:3:-3661</td>
 <td>INTRONIC:1:24:2j:-1312</td>
 <td>INTRONIC:1:24:3:-3661</td>
+<td>85</td>
+<td>-1.0</td>
+<td>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -7138,6 +7934,9 @@ etl.fromtsv('../data/tbl_variants_phase1.txt')
 <td>INTRONIC:1:49:3:-3636</td>
 <td>INTRONIC:1:49:2j:-1287</td>
 <td>INTRONIC:1:49:3:-3636</td>
+<td>86</td>
+<td>-1.0</td>
+<td>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -7191,6 +7990,9 @@ etl.fromtsv('../data/tbl_variants_phase1.txt')
 <td>INTRONIC:1:101:3:-3584</td>
 <td>INTRONIC:1:101:2j:-1235</td>
 <td>INTRONIC:1:101:3:-3584</td>
+<td>87</td>
+<td>-1.0</td>
+<td>-1.0</td>
 </tr>
 </tbody>
 </table>

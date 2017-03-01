@@ -25,6 +25,7 @@ div#notebook {
 
 
 ```python
+# load up the table of variants for VGSC
 tbl_variants = etl.frompickle('../data/tbl_variants_phase1.pkl')
 tbl_variants.head()
 ```
@@ -86,6 +87,9 @@ tbl_variants.head()
 <th>48|Davies-C1N9</th>
 <th>49|Davies-C8N9</th>
 <th>50|Davies-C1N9ck</th>
+<th>51|haps_vidx</th>
+<th>52|dprime_L995S</th>
+<th>53|dprime_L995F</th>
 </tr>
 </thead>
 <tbody>
@@ -141,6 +145,9 @@ tbl_variants.head()
 <td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
 <td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
 <td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
+<td style='text-align: right'>83</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -194,6 +201,9 @@ tbl_variants.head()
 <td>('INTRONIC', '1', 12, '3', -3673)</td>
 <td>('INTRONIC', '1', 12, '2j', -1324)</td>
 <td>('INTRONIC', '1', 12, '3', -3673)</td>
+<td style='text-align: right'>84</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -247,6 +257,9 @@ tbl_variants.head()
 <td>('INTRONIC', '1', 24, '3', -3661)</td>
 <td>('INTRONIC', '1', 24, '2j', -1312)</td>
 <td>('INTRONIC', '1', 24, '3', -3661)</td>
+<td style='text-align: right'>85</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -300,6 +313,9 @@ tbl_variants.head()
 <td>('INTRONIC', '1', 49, '3', -3636)</td>
 <td>('INTRONIC', '1', 49, '2j', -1287)</td>
 <td>('INTRONIC', '1', 49, '3', -3636)</td>
+<td style='text-align: right'>86</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -353,6 +369,9 @@ tbl_variants.head()
 <td>('INTRONIC', '1', 101, '3', -3584)</td>
 <td>('INTRONIC', '1', 101, '2j', -1235)</td>
 <td>('INTRONIC', '1', 101, '3', -3584)</td>
+<td style='text-align: right'>87</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 </tbody>
 </table>
@@ -386,6 +405,9 @@ pop_ids = 'AOM BFM GWA GNS BFS CMS GAS UGS KES'.split()
 
 
 ```python
+# keep only the missense variants
+
+
 def simplify_missense_effect(v):
     if v and v[0] == 'NON_SYNONYMOUS_CODING':
         return v[1]
@@ -481,6 +503,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <th>48|Davies-C1N9</th>
 <th>49|Davies-C8N9</th>
 <th>50|Davies-C1N9ck</th>
+<th>51|haps_vidx</th>
+<th>52|dprime_L995S</th>
+<th>53|dprime_L995F</th>
 </tr>
 </thead>
 <tbody>
@@ -536,6 +561,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>D33N</td>
 <td>D33N</td>
 <td>D33N</td>
+<td style='text-align: right'>83</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -589,6 +617,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td></td>
 <td>E60K</td>
 <td></td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -642,6 +673,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>D54V</td>
 <td>D65V</td>
 <td>D54V</td>
+<td style='text-align: right'>223</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -695,6 +729,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>G60C</td>
 <td>G71C</td>
 <td>G60C</td>
+<td style='text-align: right'>225</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -748,6 +785,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>P61L</td>
 <td>P72L</td>
 <td>P61L</td>
+<td style='text-align: right'>226</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -801,6 +841,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>K257R</td>
 <td>K268R</td>
 <td>K257R</td>
+<td style='text-align: right'>899</td>
+<td style='text-align: right'>0.30454545454545456</td>
+<td style='text-align: right'>-0.012903225806451613</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -854,6 +897,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>R260K</td>
 <td>R271K</td>
 <td>R260K</td>
+<td style='text-align: right'>900</td>
+<td style='text-align: right'>-0.9820295983086681</td>
+<td style='text-align: right'>0.9590608067429259</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -907,6 +953,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>E305K</td>
 <td>E316K</td>
 <td>E305K</td>
+<td style='text-align: right'>904</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -960,6 +1009,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>G323S</td>
 <td>G334S</td>
 <td>G323S</td>
+<td style='text-align: right'>911</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1013,6 +1065,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V408L</td>
 <td>V419L</td>
 <td>V408L</td>
+<td style='text-align: right'>1967</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-0.40774193548387094</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1066,6 +1121,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V408L</td>
 <td>V419L</td>
 <td>V408L</td>
+<td style='text-align: right'>1967</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>0.09933774834437085</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -1119,6 +1177,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>D472H</td>
 <td>D483H</td>
 <td>D472H</td>
+<td style='text-align: right'>1162</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -1172,6 +1233,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>M496I</td>
 <td>M507I</td>
 <td>M496I</td>
+<td style='text-align: right'>1968</td>
+<td style='text-align: right'>-0.3328488372093023</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1225,6 +1289,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>M496I</td>
 <td>M507I</td>
 <td>M496I</td>
+<td style='text-align: right'>1968</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-0.012903225806451613</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1278,6 +1345,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I498N</td>
 <td>I509N</td>
 <td>I498N</td>
+<td style='text-align: right'>1165</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1331,6 +1401,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>R550L</td>
 <td></td>
 <td>R550L</td>
+<td style='text-align: right'>1217</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1384,6 +1457,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>Q558L</td>
 <td></td>
 <td>Q558L</td>
+<td style='text-align: right'>1218</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1437,6 +1513,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A599T</td>
 <td>A582T</td>
 <td>A599T</td>
+<td style='text-align: right'>1235</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1490,6 +1569,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>R683Q</td>
 <td>R666Q</td>
 <td>R683Q</td>
+<td style='text-align: right'>1295</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1543,6 +1625,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>T692S</td>
 <td>T675S</td>
 <td>T692S</td>
+<td style='text-align: right'>1299</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1596,6 +1681,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>M717V</td>
 <td>M700V</td>
 <td>M717V</td>
+<td style='text-align: right'>1300</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1649,6 +1737,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A737E</td>
 <td>A720E</td>
 <td>A737E</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1702,6 +1793,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>G741R</td>
 <td>G724R</td>
 <td>G741R</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -1755,6 +1849,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>T804M</td>
 <td>T787M</td>
 <td>T804M</td>
+<td style='text-align: right'>1516</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1808,6 +1905,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I842L</td>
 <td>I825L</td>
 <td>I842L</td>
+<td style='text-align: right'>1530</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1861,6 +1961,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A850V</td>
 <td>A833V</td>
 <td>A850V</td>
+<td style='text-align: right'>1531</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1914,6 +2017,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td></td>
 <td></td>
 <td>M938L</td>
+<td style='text-align: right'>1537</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1967,6 +2073,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>M916V</td>
 <td>M899V</td>
 <td></td>
+<td style='text-align: right'>1598</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2020,6 +2129,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>P953H</td>
 <td>P936H</td>
 <td>P953H</td>
+<td style='text-align: right'>1611</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -2073,6 +2185,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1008S</td>
 <td>L991S</td>
 <td>L1008S</td>
+<td style='text-align: right'>1613</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -2126,6 +2241,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1008F</td>
 <td>L991F</td>
 <td>L1008F</td>
+<td style='text-align: right'>1614</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2179,6 +2297,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1064I</td>
 <td>V1047I</td>
 <td>V1064I</td>
+<td style='text-align: right'>1617</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2232,6 +2353,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1138S</td>
 <td>A1121S</td>
 <td>A1138S</td>
+<td style='text-align: right'>1647</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2285,6 +2409,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1138V</td>
 <td>A1121V</td>
 <td>A1138V</td>
+<td style='text-align: right'>1648</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2338,6 +2465,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1144V</td>
 <td>I1127V</td>
 <td>I1144V</td>
+<td style='text-align: right'>1649</td>
+<td style='text-align: right'>0.30454545454545456</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2391,6 +2521,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>S1173A</td>
 <td>S1156A</td>
 <td>S1173A</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2444,6 +2577,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1267I</td>
 <td>V1250I</td>
 <td>V1267I</td>
+<td style='text-align: right'>1664</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2497,6 +2633,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1316A</td>
 <td>V1299A</td>
 <td>V1316A</td>
+<td style='text-align: right'>1668</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2550,6 +2689,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>N1358I</td>
 <td>N1341I</td>
 <td>N1358I</td>
+<td style='text-align: right'>1669</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2603,6 +2745,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1379F</td>
 <td>L1362F</td>
 <td></td>
+<td style='text-align: right'>1729</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -2656,6 +2801,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1537T</td>
 <td>I1520T</td>
 <td>I1537T</td>
+<td style='text-align: right'>1755</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2709,6 +2857,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>F1539L</td>
 <td>F1522L</td>
 <td>F1539L</td>
+<td style='text-align: right'>1756</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -2762,6 +2913,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>N1580Y</td>
 <td>N1563Y</td>
 <td>N1580Y</td>
+<td style='text-align: right'>1757</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>0.9815773630343166</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2815,6 +2969,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1594T</td>
 <td>I1577T</td>
 <td>I1594T</td>
+<td style='text-align: right'>1758</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2868,6 +3025,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>E1607G</td>
 <td>E1590G</td>
 <td>E1607G</td>
+<td style='text-align: right'>1761</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2921,6 +3081,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>K1613T</td>
 <td>K1596T</td>
 <td>K1613T</td>
+<td style='text-align: right'>1762</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2974,6 +3137,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1627F</td>
 <td>L1610F</td>
 <td>L1627F</td>
+<td style='text-align: right'>1763</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3027,6 +3193,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1677M</td>
 <td>L1660M</td>
 <td>L1677M</td>
+<td style='text-align: right'>1764</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3080,6 +3249,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1691I</td>
 <td>V1674I</td>
 <td>V1691I</td>
+<td style='text-align: right'>1766</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3133,6 +3305,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>S1693I</td>
 <td>S1676I</td>
 <td>S1693I</td>
+<td style='text-align: right'>1767</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -3186,6 +3361,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1756S</td>
 <td>A1739S</td>
 <td>A1756S</td>
+<td style='text-align: right'>1772</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3239,6 +3417,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>H1765Y</td>
 <td>H1748Y</td>
 <td>H1765Y</td>
+<td style='text-align: right'>1773</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3292,6 +3473,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1863I</td>
 <td>V1846I</td>
 <td>V1863I</td>
+<td style='text-align: right'>1778</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -3345,6 +3529,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1878T</td>
 <td>I1861T</td>
 <td>I1878T</td>
+<td style='text-align: right'>1780</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -3398,6 +3585,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>P1884S</td>
 <td>P1867S</td>
 <td>P1884S</td>
+<td style='text-align: right'>1781</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -3451,6 +3641,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>P1884L</td>
 <td>P1867L</td>
 <td>P1884L</td>
+<td style='text-align: right'>1782</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3504,6 +3697,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>F1930S</td>
 <td>F1913S</td>
 <td>F1930S</td>
+<td style='text-align: right'>1786</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -3557,6 +3753,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1944V</td>
 <td>A1927V</td>
 <td>A1944V</td>
+<td style='text-align: right'>1787</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -3610,6 +3809,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1950T</td>
 <td>I1933T</td>
 <td>I1950T</td>
+<td style='text-align: right'>1788</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3663,6 +3865,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>G2001E</td>
 <td>G1984E</td>
 <td>G2001E</td>
+<td style='text-align: right'>1791</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3716,6 +3921,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>T2034K</td>
 <td>T2017K</td>
 <td>T2034K</td>
+<td style='text-align: right'>1793</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3769,6 +3977,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I2063V</td>
 <td>I2046V</td>
 <td>I2063V</td>
+<td style='text-align: right'>1796</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3822,6 +4033,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>S2086T</td>
 <td>S2069T</td>
 <td>S2086T</td>
+<td style='text-align: right'>1797</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 </tbody>
 </table>
@@ -3830,6 +4044,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 
 
 ```python
+# select only variants above 5% frequency in one or more populations, except
+# for some manual overrides
+
 manual_overrides = [2400071]
 
 tbl_variants_selected = (
@@ -3894,6 +4111,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <th>48|Davies-C1N9</th>
 <th>49|Davies-C8N9</th>
 <th>50|Davies-C1N9ck</th>
+<th>51|haps_vidx</th>
+<th>52|dprime_L995S</th>
+<th>53|dprime_L995F</th>
 </tr>
 </thead>
 <tbody>
@@ -3949,6 +4169,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>R260K</td>
 <td>R271K</td>
 <td>R260K</td>
+<td style='text-align: right'>900</td>
+<td style='text-align: right'>-0.9820295983086681</td>
+<td style='text-align: right'>0.9590608067429259</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4002,6 +4225,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V408L</td>
 <td>V419L</td>
 <td>V408L</td>
+<td style='text-align: right'>1967</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-0.40774193548387094</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4055,6 +4281,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V408L</td>
 <td>V419L</td>
 <td>V408L</td>
+<td style='text-align: right'>1967</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>0.09933774834437085</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4108,6 +4337,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>D472H</td>
 <td>D483H</td>
 <td>D472H</td>
+<td style='text-align: right'>1162</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4161,6 +4393,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>M496I</td>
 <td>M507I</td>
 <td>M496I</td>
+<td style='text-align: right'>1968</td>
+<td style='text-align: right'>-0.3328488372093023</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4214,6 +4449,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>M496I</td>
 <td>M507I</td>
 <td>M496I</td>
+<td style='text-align: right'>1968</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-0.012903225806451613</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4267,6 +4505,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>T804M</td>
 <td>T787M</td>
 <td>T804M</td>
+<td style='text-align: right'>1516</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4320,6 +4561,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1008S</td>
 <td>L991S</td>
 <td>L1008S</td>
+<td style='text-align: right'>1613</td>
+<td style='text-align: right'>1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4373,6 +4617,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1008F</td>
 <td>L991F</td>
 <td>L1008F</td>
+<td style='text-align: right'>1614</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4426,6 +4673,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1138V</td>
 <td>A1121V</td>
 <td>A1138V</td>
+<td style='text-align: right'>1648</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4479,6 +4729,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1267I</td>
 <td>V1250I</td>
 <td>V1267I</td>
+<td style='text-align: right'>1664</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4532,6 +4785,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1537T</td>
 <td>I1520T</td>
 <td>I1537T</td>
+<td style='text-align: right'>1755</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4585,6 +4841,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>N1580Y</td>
 <td>N1563Y</td>
 <td>N1580Y</td>
+<td style='text-align: right'>1757</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>0.9815773630343166</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4638,6 +4897,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>E1607G</td>
 <td>E1590G</td>
 <td>E1607G</td>
+<td style='text-align: right'>1761</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4691,6 +4953,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>K1613T</td>
 <td>K1596T</td>
 <td>K1613T</td>
+<td style='text-align: right'>1762</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4744,6 +5009,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1756S</td>
 <td>A1739S</td>
 <td>A1756S</td>
+<td style='text-align: right'>1772</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4797,6 +5065,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1863I</td>
 <td>V1846I</td>
 <td>V1863I</td>
+<td style='text-align: right'>1778</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4850,6 +5121,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1878T</td>
 <td>I1861T</td>
 <td>I1878T</td>
+<td style='text-align: right'>1780</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4903,6 +5177,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>P1884S</td>
 <td>P1867S</td>
 <td>P1884S</td>
+<td style='text-align: right'>1781</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4956,6 +5233,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>P1884L</td>
 <td>P1867L</td>
 <td>P1884L</td>
+<td style='text-align: right'>1782</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -5009,6 +5289,9 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1944V</td>
 <td>A1927V</td>
 <td>A1944V</td>
+<td style='text-align: right'>1787</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -5062,13 +5345,16 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1950T</td>
 <td>I1933T</td>
 <td>I1950T</td>
+<td style='text-align: right'>1788</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
 </tr>
 </tbody>
 </table>
 
 
 
-# add housefly numbering
+# Add housefly numbering
 
 
 ```python
@@ -5228,17 +5514,25 @@ MD_fix
 
 
 
+## Build Latex table
+
 
 ```python
 tbl_variants_display = (
     tbl_variants_selected
-    .cut(['POS', 'REF', 'ALT', 'FILTER_PASS', 'AGAP004707-RA'] + ['AF_' + p for p in pop_ids])
+    # keep only the fields we need
+    .cut(['POS', 'REF', 'ALT', 'ALTIX', 'FILTER_PASS', 'AGAP004707-RA', 'dprime_L995S', 'dprime_L995F'] + 
+         ['AF_' + p for p in pop_ids])
     .convert(['AF_' + p for p in pop_ids], lambda v: int(np.rint(v * 100)))
-    .addcolumn('Md', MD_fix, index=5)
-    .addfield('substitution', lambda row: '{:,} {}>{}'.format(row['POS'], row['REF'], row['ALT']), index=0)
+    # add the column of M. domestica codons
+    .addcolumn('Md', MD_fix)
+    # add a formatted "substitution" field
+    .addfield('substitution', lambda row: '{:,} {}>{}'.format(row['POS'], row['REF'], row['ALT']), index=5)
     .convert('substitution', lambda v, row: v + '*' if not row['FILTER_PASS'] else v, pass_row=True)
     .convert(['substitution', 'Md', 'AGAP004707-RA'], lambda v: r'\texttt{%s}' % v)
-    .cutout('POS', 'REF', 'ALT', 'FILTER_PASS')
+    # format D' values
+    .convert(['dprime_L995S', 'dprime_L995F'], lambda v: str(int(v)) if v in [-1, 1] else '{:.2f}'.format(v))
+#    .cutout('POS', 'REF', 'ALT', 'ALTIX', 'FILTER_PASS')
 )
 tbl_variants_display.displayall()
 ```
@@ -5247,25 +5541,38 @@ tbl_variants_display.displayall()
 <table class='petl'>
 <thead>
 <tr>
-<th>0|substitution</th>
-<th>1|AGAP004707-RA</th>
-<th>2|Md</th>
-<th>3|AF_AOM</th>
-<th>4|AF_BFM</th>
-<th>5|AF_GWA</th>
-<th>6|AF_GNS</th>
-<th>7|AF_BFS</th>
-<th>8|AF_CMS</th>
-<th>9|AF_GAS</th>
-<th>10|AF_UGS</th>
-<th>11|AF_KES</th>
+<th>0|POS</th>
+<th>1|REF</th>
+<th>2|ALT</th>
+<th>3|ALTIX</th>
+<th>4|FILTER_PASS</th>
+<th>5|substitution</th>
+<th>6|AGAP004707-RA</th>
+<th>7|dprime_L995S</th>
+<th>8|dprime_L995F</th>
+<th>9|AF_AOM</th>
+<th>10|AF_BFM</th>
+<th>11|AF_GWA</th>
+<th>12|AF_GNS</th>
+<th>13|AF_BFS</th>
+<th>14|AF_CMS</th>
+<th>15|AF_GAS</th>
+<th>16|AF_UGS</th>
+<th>17|AF_KES</th>
+<th>18|Md</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>2390177</td>
+<td>G</td>
+<td>A</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,390,177 G>A}</td>
 <td>\texttt{R254K}</td>
-<td>\texttt{R261}</td>
+<td>-0.98</td>
+<td>0.96</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5275,11 +5582,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>21</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{R261}</td>
 </tr>
 <tr>
+<td>2391228</td>
+<td>G</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,391,228 G>C}</td>
 <td>\texttt{V402L}</td>
-<td>\texttt{V410}</td>
+<td>-1</td>
+<td>-0.41</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>7</td>
 <td style='text-align: right'>0</td>
@@ -5289,11 +5603,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{V410}</td>
 </tr>
 <tr>
+<td>2391228</td>
+<td>G</td>
+<td>T</td>
+<td style='text-align: right'>1</td>
+<td>True</td>
 <td>\texttt{2,391,228 G>T}</td>
 <td>\texttt{V402L}</td>
-<td>\texttt{V410}</td>
+<td>-1</td>
+<td>0.10</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>7</td>
 <td style='text-align: right'>0</td>
@@ -5303,11 +5624,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{V410}</td>
 </tr>
 <tr>
+<td>2399997</td>
+<td>G</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,399,997 G>C}</td>
 <td>\texttt{D466H}</td>
-<td>\texttt{-}</td>
+<td>-1</td>
+<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5317,11 +5645,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{-}</td>
 </tr>
 <tr>
+<td>2400071</td>
+<td>G</td>
+<td>A</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,400,071 G>A}</td>
 <td>\texttt{M490I}</td>
-<td>\texttt{M508}</td>
+<td>-0.33</td>
+<td>-1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5331,25 +5666,39 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>18</td>
+<td>\texttt{M508}</td>
 </tr>
 <tr>
+<td>2400071</td>
+<td>G</td>
+<td>T</td>
+<td style='text-align: right'>1</td>
+<td>True</td>
 <td>\texttt{2,400,071 G>T}</td>
 <td>\texttt{M490I}</td>
+<td>-1</td>
+<td>-0.01</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>0</td>
 <td>\texttt{M508}</td>
-<td style='text-align: right'>0</td>
-<td style='text-align: right'>0</td>
-<td style='text-align: right'>0</td>
-<td style='text-align: right'>0</td>
-<td style='text-align: right'>0</td>
-<td style='text-align: right'>0</td>
-<td style='text-align: right'>0</td>
-<td style='text-align: right'>0</td>
-<td style='text-align: right'>0</td>
 </tr>
 <tr>
+<td>2416980</td>
+<td>C</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,416,980 C>T}</td>
 <td>\texttt{T791M}</td>
-<td>\texttt{T810}</td>
+<td>-1</td>
+<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>1</td>
 <td style='text-align: right'>0</td>
@@ -5359,11 +5708,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{T810}</td>
 </tr>
 <tr>
+<td>2422651</td>
+<td>T</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,422,651 T>C}</td>
 <td>\texttt{L995S}</td>
-<td>\texttt{L1014}</td>
+<td>1</td>
+<td>-1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5373,11 +5729,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>64</td>
 <td style='text-align: right'>100</td>
 <td style='text-align: right'>76</td>
+<td>\texttt{L1014}</td>
 </tr>
 <tr>
+<td>2422652</td>
+<td>A</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,422,652 A>T}</td>
 <td>\texttt{L995F}</td>
-<td>\texttt{L1014}</td>
+<td>-1</td>
+<td>1</td>
 <td style='text-align: right'>86</td>
 <td style='text-align: right'>85</td>
 <td style='text-align: right'>0</td>
@@ -5387,11 +5750,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>36</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{L1014}</td>
 </tr>
 <tr>
+<td>2424384</td>
+<td>C</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,424,384 C>T}</td>
 <td>\texttt{A1125V}</td>
-<td>\texttt{K1133}</td>
+<td>-1</td>
+<td>-1</td>
 <td style='text-align: right'>9</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5401,11 +5771,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{K1133}</td>
 </tr>
 <tr>
+<td>2425077</td>
+<td>G</td>
+<td>A</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,425,077 G>A}</td>
 <td>\texttt{V1254I}</td>
-<td>\texttt{I1262}</td>
+<td>-1</td>
+<td>-1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>5</td>
@@ -5415,11 +5792,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{I1262}</td>
 </tr>
 <tr>
+<td>2429617</td>
+<td>T</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,429,617 T>C}</td>
 <td>\texttt{I1527T}</td>
-<td>\texttt{I1532}</td>
+<td>-1</td>
+<td>-1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>14</td>
 <td style='text-align: right'>0</td>
@@ -5429,11 +5813,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{I1532}</td>
 </tr>
 <tr>
+<td>2429745</td>
+<td>A</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>False</td>
 <td>\texttt{2,429,745 A>T*}</td>
 <td>\texttt{N1570Y}</td>
-<td>\texttt{N1575}</td>
+<td>-1</td>
+<td>0.98</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>26</td>
 <td style='text-align: right'>0</td>
@@ -5443,11 +5834,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{N1575}</td>
 </tr>
 <tr>
+<td>2429897</td>
+<td>A</td>
+<td>G</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,429,897 A>G}</td>
 <td>\texttt{E1597G}</td>
-<td>\texttt{E1602}</td>
+<td>-1</td>
+<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5457,11 +5855,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{E1602}</td>
 </tr>
 <tr>
+<td>2429915</td>
+<td>A</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,429,915 A>C}</td>
 <td>\texttt{K1603T}</td>
-<td>\texttt{K1608}</td>
+<td>-1</td>
+<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>5</td>
 <td style='text-align: right'>0</td>
@@ -5471,11 +5876,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{K1608}</td>
 </tr>
 <tr>
+<td>2430424</td>
+<td>G</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,430,424 G>T}</td>
 <td>\texttt{A1746S}</td>
-<td>\texttt{A1751}</td>
+<td>-1</td>
+<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5485,11 +5897,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{A1751}</td>
 </tr>
 <tr>
+<td>2430817</td>
+<td>G</td>
+<td>A</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,430,817 G>A}</td>
 <td>\texttt{V1853I}</td>
-<td>\texttt{V1858}</td>
+<td>-1</td>
+<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5499,11 +5918,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{V1858}</td>
 </tr>
 <tr>
+<td>2430863</td>
+<td>T</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,430,863 T>C}</td>
 <td>\texttt{I1868T}</td>
-<td>\texttt{I1873}</td>
+<td>-1</td>
+<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5513,11 +5939,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{I1873}</td>
 </tr>
 <tr>
+<td>2430880</td>
+<td>C</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,430,880 C>T}</td>
 <td>\texttt{P1874S}</td>
-<td>\texttt{P1879}</td>
+<td>-1</td>
+<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>21</td>
 <td style='text-align: right'>0</td>
@@ -5527,11 +5960,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{P1879}</td>
 </tr>
 <tr>
+<td>2430881</td>
+<td>C</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,430,881 C>T}</td>
 <td>\texttt{P1874L}</td>
-<td>\texttt{P1879}</td>
+<td>-1</td>
+<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>7</td>
 <td style='text-align: right'>0</td>
@@ -5541,11 +5981,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{P1879}</td>
 </tr>
 <tr>
+<td>2431061</td>
+<td>C</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,431,061 C>T}</td>
 <td>\texttt{A1934V}</td>
-<td>\texttt{A1939}</td>
+<td>-1</td>
+<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>12</td>
 <td style='text-align: right'>0</td>
@@ -5555,11 +6002,18 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{A1939}</td>
 </tr>
 <tr>
+<td>2431079</td>
+<td>T</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
 <td>\texttt{2,431,079 T>C}</td>
 <td>\texttt{I1940T}</td>
-<td>\texttt{I1945}</td>
+<td>-1</td>
+<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>4</td>
 <td style='text-align: right'>0</td>
@@ -5569,6 +6023,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{I1945}</td>
 </tr>
 </tbody>
 </table>
@@ -5598,12 +6053,12 @@ GA\emph{Ag} &
 UG\emph{Ag} & 
 KE & 
 GW & 
-\texttt{L995F} & 
-\texttt{L995S} \\
+\texttt{L995S} & 
+\texttt{L995F} \\
 \midrule
 """
 template = r"""
-{substitution} & {AGAP004707-RA} & {Md} & {AF_AOM} & {AF_BFM} & {AF_GNS} & {AF_BFS} & {AF_CMS} & {AF_GAS} & {AF_UGS} & {AF_KES} & {AF_GWA} & NA & NA \\
+{substitution} & {AGAP004707-RA} & {Md} & {AF_AOM} & {AF_BFM} & {AF_GNS} & {AF_BFS} & {AF_CMS} & {AF_GAS} & {AF_UGS} & {AF_KES} & {AF_GWA} & {dprime_L995S} & {dprime_L995F} \\
 """
 epilogue = r"""
 \bottomrule
@@ -5642,53 +6097,53 @@ tbl_variants_display.totext('../tables/variants_missense.tex',
     UG\emph{Ag} & 
     KE & 
     GW & 
-    \texttt{L995F} & 
-    \texttt{L995S} \\
+    \texttt{L995S} & 
+    \texttt{L995F} \\
     \midrule
     
-    \texttt{2,390,177 G>A} & \texttt{R254K} & \texttt{R261} & 0 & 0 & 0 & 0 & 32 & 21 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,390,177 G>A} & \texttt{R254K} & \texttt{R261} & 0 & 0 & 0 & 0 & 32 & 21 & 0 & 0 & 0 & -0.98 & 0.96 \\
     
-    \texttt{2,391,228 G>C} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,391,228 G>C} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -0.41 \\
     
-    \texttt{2,391,228 G>T} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,391,228 G>T} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 0.10 \\
     
-    \texttt{2,399,997 G>C} & \texttt{D466H} & \texttt{-} & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,399,997 G>C} & \texttt{D466H} & \texttt{-} & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,400,071 G>A} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 18 & 0 & NA & NA \\
+    \texttt{2,400,071 G>A} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 18 & 0 & -0.33 & -1 \\
     
-    \texttt{2,400,071 G>T} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,400,071 G>T} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -0.01 \\
     
-    \texttt{2,416,980 C>T} & \texttt{T791M} & \texttt{T810} & 0 & 1 & 13 & 14 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,416,980 C>T} & \texttt{T791M} & \texttt{T810} & 0 & 1 & 13 & 14 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,422,651 T>C} & \texttt{L995S} & \texttt{L1014} & 0 & 0 & 0 & 0 & 15 & 64 & 100 & 76 & 0 & NA & NA \\
+    \texttt{2,422,651 T>C} & \texttt{L995S} & \texttt{L1014} & 0 & 0 & 0 & 0 & 15 & 64 & 100 & 76 & 0 & 1 & -1 \\
     
-    \texttt{2,422,652 A>T} & \texttt{L995F} & \texttt{L1014} & 86 & 85 & 100 & 100 & 53 & 36 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,422,652 A>T} & \texttt{L995F} & \texttt{L1014} & 86 & 85 & 100 & 100 & 53 & 36 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,424,384 C>T} & \texttt{A1125V} & \texttt{K1133} & 9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,424,384 C>T} & \texttt{A1125V} & \texttt{K1133} & 9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -1 \\
     
-    \texttt{2,425,077 G>A} & \texttt{V1254I} & \texttt{I1262} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 5 & NA & NA \\
+    \texttt{2,425,077 G>A} & \texttt{V1254I} & \texttt{I1262} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 5 & -1 & -1 \\
     
-    \texttt{2,429,617 T>C} & \texttt{I1527T} & \texttt{I1532} & 0 & 14 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,429,617 T>C} & \texttt{I1527T} & \texttt{I1532} & 0 & 14 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -1 \\
     
-    \texttt{2,429,745 A>T*} & \texttt{N1570Y} & \texttt{N1575} & 0 & 26 & 10 & 22 & 6 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,429,745 A>T*} & \texttt{N1570Y} & \texttt{N1575} & 0 & 26 & 10 & 22 & 6 & 0 & 0 & 0 & 0 & -1 & 0.98 \\
     
-    \texttt{2,429,897 A>G} & \texttt{E1597G} & \texttt{E1602} & 0 & 0 & 6 & 4 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,429,897 A>G} & \texttt{E1597G} & \texttt{E1602} & 0 & 0 & 6 & 4 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,429,915 A>C} & \texttt{K1603T} & \texttt{K1608} & 0 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,429,915 A>C} & \texttt{K1603T} & \texttt{K1608} & 0 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,430,424 G>T} & \texttt{A1746S} & \texttt{A1751} & 0 & 0 & 11 & 13 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,424 G>T} & \texttt{A1746S} & \texttt{A1751} & 0 & 0 & 11 & 13 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,430,817 G>A} & \texttt{V1853I} & \texttt{V1858} & 0 & 0 & 8 & 5 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,817 G>A} & \texttt{V1853I} & \texttt{V1858} & 0 & 0 & 8 & 5 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,430,863 T>C} & \texttt{I1868T} & \texttt{I1873} & 0 & 0 & 18 & 25 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,863 T>C} & \texttt{I1868T} & \texttt{I1873} & 0 & 0 & 18 & 25 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,430,880 C>T} & \texttt{P1874S} & \texttt{P1879} & 0 & 21 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,880 C>T} & \texttt{P1874S} & \texttt{P1879} & 0 & 21 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,430,881 C>T} & \texttt{P1874L} & \texttt{P1879} & 0 & 7 & 45 & 26 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,881 C>T} & \texttt{P1874L} & \texttt{P1879} & 0 & 7 & 45 & 26 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,431,061 C>T} & \texttt{A1934V} & \texttt{A1939} & 0 & 12 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,431,061 C>T} & \texttt{A1934V} & \texttt{A1939} & 0 & 12 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,431,079 T>C} & \texttt{I1940T} & \texttt{I1945} & 0 & 4 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,431,079 T>C} & \texttt{I1940T} & \texttt{I1945} & 0 & 4 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
     \bottomrule
     \end{tabular}
