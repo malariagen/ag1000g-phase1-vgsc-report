@@ -25,6 +25,7 @@ div#notebook {
 
 
 ```python
+# load up the table of variants for VGSC
 tbl_variants = etl.frompickle('../data/tbl_variants_phase1.pkl')
 tbl_variants.head()
 ```
@@ -386,6 +387,9 @@ pop_ids = 'AOM BFM GWA GNS BFS CMS GAS UGS KES'.split()
 
 
 ```python
+# keep only the missense variants
+
+
 def simplify_missense_effect(v):
     if v and v[0] == 'NON_SYNONYMOUS_CODING':
         return v[1]
@@ -3830,6 +3834,9 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 
 
 ```python
+# select only variants above 5% frequency in one or more populations, except
+# for some manual overrides
+
 manual_overrides = [2400071]
 
 tbl_variants_selected = (
@@ -5068,7 +5075,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 
 
 
-# add housefly numbering
+# Add housefly numbering
 
 
 ```python
@@ -5228,17 +5235,577 @@ MD_fix
 
 
 
+## Compute LD
+
+### Prepare haplotype data
+
+For phase 1 the haplotypes are in two different datasets. We have to combine the biallelics phased with shapeit with the multiallelics phased with mvncall.
+
+
+```python
+# these are the biallelics phased with shapeit2
+callset_vgsc_phased = h5py.File('../ngs.sanger.ac.uk/production/ag1000g/phase1/AR3.1/haplotypes/specific_regions/PARA/2L_2358158_2431617.h5', mode='r')
+callset_vgsc_phased
+```
+
+
+
+
+    <HDF5 file "2L_2358158_2431617.h5" (mode r)>
+
+
+
+
+```python
+# these are the multiallelics phased with mvncall
+callset_vgsc_phased_multiallelics = np.load('../data/missense_multiallelics.mvncall.200.npz')
+callset_vgsc_phased_multiallelics
+```
+
+
+
+
+    <numpy.lib.npyio.NpzFile at 0x7fa99cd9c320>
+
+
+
+
+```python
+# these are positions of biallelic SNPs we are interested int
+pos_biallelic_selected = tbl_variants_selected.eq('num_alleles', 2).values('POS').list()
+pos_biallelic_selected
+```
+
+
+
+
+    [2390177,
+     2399997,
+     2416980,
+     2422651,
+     2422652,
+     2424384,
+     2425077,
+     2429617,
+     2429745,
+     2429897,
+     2429915,
+     2430424,
+     2430817,
+     2430863,
+     2430880,
+     2430881,
+     2431061,
+     2431079]
+
+
+
+
+```python
+# these are positions of multiallelic SNPs we're interested int
+pos_multiallelic_selected = sorted(tbl_variants_selected.gt('num_alleles', 2).values('POS').set())
+pos_multiallelic_selected
+```
+
+
+
+
+    [2391228, 2400071]
+
+
+
+
+```python
+# positions of all biallelic SNPs
+pos_biallelic = allel.SortedIndex(callset_vgsc_phased['2L/variants/POS'])
+pos_biallelic
+```
+
+
+
+
+<div class="allel allel-DisplayAs1D"><span>&lt;SortedIndex shape=(1967,) dtype=int32&gt;</span><table><tr><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">1962</th><th style="text-align: center">1963</th><th style="text-align: center">1964</th><th style="text-align: center">1965</th><th style="text-align: center">1966</th></tr><tr><td style="text-align: center">2353212</td><td style="text-align: center">2353223</td><td style="text-align: center">2353234</td><td style="text-align: center">2353251</td><td style="text-align: center">2353288</td><td style="text-align: center">...</td><td style="text-align: center">2436544</td><td style="text-align: center">2436545</td><td style="text-align: center">2436558</td><td style="text-align: center">2436585</td><td style="text-align: center">2436615</td></tr></table></div>
+
+
+
+
+```python
+# N.B., exclude cross parents (last 16 haplotypes)
+haplotypes_biallelic = allel.GenotypeArray(callset_vgsc_phased['2L/calldata/genotype']).to_haplotypes()[:, :1530]
+haplotypes_biallelic
+```
+
+
+
+
+<div class="allel allel-DisplayAs2D"><span>&lt;HaplotypeArray shape=(1967, 1530) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">1525</th><th style="text-align: center">1526</th><th style="text-align: center">1527</th><th style="text-align: center">1528</th><th style="text-align: center">1529</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">2</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">...</th><td style="text-align: center" colspan="12">...</td></tr><tr><th style="text-align: center">1964</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1965</th><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">...</td><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">1</td><td style="text-align: center">1</td></tr><tr><th style="text-align: center">1966</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr></table></div>
+
+
+
+
+```python
+# keep only haplotypes for SNPs we're interested in
+haplotypes_biallelic_selected = haplotypes_biallelic[pos_biallelic.locate_keys(pos_biallelic_selected)]
+haplotypes_biallelic_selected
+```
+
+
+
+
+<div class="allel allel-DisplayAs2D"><span>&lt;HaplotypeArray shape=(18, 1530) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">1525</th><th style="text-align: center">1526</th><th style="text-align: center">1527</th><th style="text-align: center">1528</th><th style="text-align: center">1529</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">2</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">...</th><td style="text-align: center" colspan="12">...</td></tr><tr><th style="text-align: center">15</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">16</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">17</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr></table></div>
+
+
+
+
+```python
+# haplotypes at all phased multiallelic sites
+haplotypes_multiallelic = allel.GenotypeArray(callset_vgsc_phased_multiallelics['calldata']['genotype']).to_haplotypes()
+haplotypes_multiallelic
+```
+
+
+
+
+<div class="allel allel-DisplayAs2D"><span>&lt;HaplotypeArray shape=(2, 1530) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">1525</th><th style="text-align: center">1526</th><th style="text-align: center">1527</th><th style="text-align: center">1528</th><th style="text-align: center">1529</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">2</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr></table></div>
+
+
+
+
+```python
+pos_multiallelic = allel.SortedIndex(callset_vgsc_phased_multiallelics['variants']['POS'])
+pos_multiallelic
+```
+
+
+
+
+<div class="allel allel-DisplayAs1D"><span>&lt;SortedIndex shape=(2,) dtype=int32&gt;</span><table><tr><th style="text-align: center">0</th><th style="text-align: center">1</th></tr><tr><td style="text-align: center">2391228</td><td style="text-align: center">2400071</td></tr></table></div>
+
+
+
+
+```python
+# keep only haplotypes for SNPs we're interested in
+haplotypes_multiallelic_selected = haplotypes_multiallelic[pos_multiallelic.locate_keys(pos_multiallelic_selected)]
+haplotypes_multiallelic_selected
+```
+
+
+
+
+<div class="allel allel-DisplayAs2D"><span>&lt;HaplotypeArray shape=(2, 1530) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">1525</th><th style="text-align: center">1526</th><th style="text-align: center">1527</th><th style="text-align: center">1528</th><th style="text-align: center">1529</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">2</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr></table></div>
+
+
+
+
+```python
+# combine haplotypes for bi- and multi-allelic SNPs
+haplotypes_combined = haplotypes_biallelic_selected.concatenate(haplotypes_multiallelic_selected)
+haplotypes_combined
+```
+
+
+
+
+<div class="allel allel-DisplayAs2D"><span>&lt;HaplotypeArray shape=(20, 1530) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">1525</th><th style="text-align: center">1526</th><th style="text-align: center">1527</th><th style="text-align: center">1528</th><th style="text-align: center">1529</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">2</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">...</th><td style="text-align: center" colspan="12">...</td></tr><tr><th style="text-align: center">17</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">18</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">2</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">19</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr></table></div>
+
+
+
+
+```python
+pos_combined = pos_biallelic_selected + pos_multiallelic_selected
+pos_combined
+```
+
+
+
+
+    [2390177,
+     2399997,
+     2416980,
+     2422651,
+     2422652,
+     2424384,
+     2425077,
+     2429617,
+     2429745,
+     2429897,
+     2429915,
+     2430424,
+     2430817,
+     2430863,
+     2430880,
+     2430881,
+     2431061,
+     2431079,
+     2391228,
+     2400071]
+
+
+
+### Compute LD table
+
+
+```python
+def lewontin_d_prime(h, i, j, a=1, b=1):
+    
+    # setup
+    h = allel.HaplotypeArray(h)
+    c_a = c_b = 0  # allele counts
+    c_ab = 0  # haplotype counts
+    n = 0  # allele number (i.e., number of calls)
+    
+    # iterate over haplotypes, counting alleles and haplotypes
+    for k in range(h.n_haplotypes):
+        
+        # access alleles
+        allele_ik = h[i, k]
+        allele_jk = h[j, k]
+        
+        # only count if allele non-missing at both sites
+        if allele_ik < 0 or allele_jk < 0:
+            continue
+            
+        # accumulate
+        if allele_ik == a:
+            c_a += 1
+        if allele_jk == b:
+            c_b += 1
+        if allele_ik == a and allele_jk == b:
+            c_ab += 1
+        n += 1
+        
+    # bail out if no data
+    if n == 0:
+        return np.nan
+    
+    # N.B., compute D prime using counts rather than frequencies to avoid floating-point errors
+    # N.B., preserve the sign of D prime to retain information about linkage versus repulsion
+    
+    # compute coefficient of linkage disequilibrium * n**2
+    D_ab = (n * c_ab) - (c_a * c_b)
+    
+    # compute normalisation coefficient * n**2
+    if D_ab >= 0:
+        D_max = min(c_a * (n - c_b), (n - c_a) * c_b)
+    else:
+        D_max = min(c_a * c_b, (n - c_a) * (n - c_b))
+
+    # compute D prime
+    return D_ab / D_max
+
+```
+
+
+```python
+tbl_ld = (
+    tbl_variants_selected
+    .cut('POS', 'REF', 'ALT', 'ALTIX', 'AGAP004707-RA')
+    .addfield('vidx', lambda row: pos_combined.index(row['POS']))
+    .addfield('dprime_995S', 
+              lambda row: lewontin_d_prime(haplotypes_combined, i=3, j=row.vidx, a=1, b=row.ALTIX+1))
+    .addfield('dprime_995F', 
+              lambda row: lewontin_d_prime(haplotypes_combined, i=4, j=row.vidx, a=1, b=row.ALTIX+1))
+    .convert(['dprime_995S', 'dprime_995F'], lambda v: str(int(v)) if v in (1, -1) else ('%.2f' % v))
+)
+tbl_ld.displayall()
+```
+
+
+<table class='petl'>
+<thead>
+<tr>
+<th>0|POS</th>
+<th>1|REF</th>
+<th>2|ALT</th>
+<th>3|ALTIX</th>
+<th>4|AGAP004707-RA</th>
+<th>5|vidx</th>
+<th>6|dprime_995S</th>
+<th>7|dprime_995F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2390177</td>
+<td>G</td>
+<td>A</td>
+<td style='text-align: right'>0</td>
+<td>R254K</td>
+<td style='text-align: right'>0</td>
+<td>-0.98</td>
+<td>0.96</td>
+</tr>
+<tr>
+<td>2391228</td>
+<td>G</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>V402L</td>
+<td style='text-align: right'>18</td>
+<td>-1</td>
+<td>-0.41</td>
+</tr>
+<tr>
+<td>2391228</td>
+<td>G</td>
+<td>T</td>
+<td style='text-align: right'>1</td>
+<td>V402L</td>
+<td style='text-align: right'>18</td>
+<td>-1</td>
+<td>0.10</td>
+</tr>
+<tr>
+<td>2399997</td>
+<td>G</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>D466H</td>
+<td style='text-align: right'>1</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2400071</td>
+<td>G</td>
+<td>A</td>
+<td style='text-align: right'>0</td>
+<td>M490I</td>
+<td style='text-align: right'>19</td>
+<td>-0.33</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>2400071</td>
+<td>G</td>
+<td>T</td>
+<td style='text-align: right'>1</td>
+<td>M490I</td>
+<td style='text-align: right'>19</td>
+<td>-1</td>
+<td>-0.01</td>
+</tr>
+<tr>
+<td>2416980</td>
+<td>C</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>T791M</td>
+<td style='text-align: right'>2</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2422651</td>
+<td>T</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>L995S</td>
+<td style='text-align: right'>3</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>2422652</td>
+<td>A</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>L995F</td>
+<td style='text-align: right'>4</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2424384</td>
+<td>C</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>A1125V</td>
+<td style='text-align: right'>5</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>2425077</td>
+<td>G</td>
+<td>A</td>
+<td style='text-align: right'>0</td>
+<td>V1254I</td>
+<td style='text-align: right'>6</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>2429617</td>
+<td>T</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>I1527T</td>
+<td style='text-align: right'>7</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>2429745</td>
+<td>A</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>N1570Y</td>
+<td style='text-align: right'>8</td>
+<td>-1</td>
+<td>0.98</td>
+</tr>
+<tr>
+<td>2429897</td>
+<td>A</td>
+<td>G</td>
+<td style='text-align: right'>0</td>
+<td>E1597G</td>
+<td style='text-align: right'>9</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2429915</td>
+<td>A</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>K1603T</td>
+<td style='text-align: right'>10</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2430424</td>
+<td>G</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>A1746S</td>
+<td style='text-align: right'>11</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2430817</td>
+<td>G</td>
+<td>A</td>
+<td style='text-align: right'>0</td>
+<td>V1853I</td>
+<td style='text-align: right'>12</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2430863</td>
+<td>T</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>I1868T</td>
+<td style='text-align: right'>13</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2430880</td>
+<td>C</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>P1874S</td>
+<td style='text-align: right'>14</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2430881</td>
+<td>C</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>P1874L</td>
+<td style='text-align: right'>15</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2431061</td>
+<td>C</td>
+<td>T</td>
+<td style='text-align: right'>0</td>
+<td>A1934V</td>
+<td style='text-align: right'>16</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2431079</td>
+<td>T</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>I1940T</td>
+<td style='text-align: right'>17</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+
+
+
+Visual check...
+
+
+```python
+genotypes_combined = haplotypes_combined.to_genotypes(ploidy=2)
+genotypes_combined.is_phased = np.ones(genotypes_combined.shape[:2], dtype=bool)
+genotypes_combined
+```
+
+
+
+
+<div class="allel allel-DisplayAs2D"><span>&lt;GenotypeArray shape=(20, 765, 2) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">760</th><th style="text-align: center">761</th><th style="text-align: center">762</th><th style="text-align: center">763</th><th style="text-align: center">764</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">...</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">...</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td></tr><tr><th style="text-align: center">2</th><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">...</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td></tr><tr><th style="text-align: center">...</th><td style="text-align: center" colspan="12">...</td></tr><tr><th style="text-align: center">17</th><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">...</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td></tr><tr><th style="text-align: center">18</th><td style="text-align: center">0|0</td><td style="text-align: center">2|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|2</td><td style="text-align: center">...</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td></tr><tr><th style="text-align: center">19</th><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">...</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td></tr></table></div>
+
+
+
+
+```python
+# V402L
+genotypes_combined[[3, 4, 18]].compress(~genotypes_combined[18].is_hom_ref(), axis=1).displayall()
+```
+
+
+<div class="allel allel-DisplayAs2D"><span>&lt;GenotypeArray shape=(3, 19, 2) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">5</th><th style="text-align: center">6</th><th style="text-align: center">7</th><th style="text-align: center">8</th><th style="text-align: center">9</th><th style="text-align: center">10</th><th style="text-align: center">11</th><th style="text-align: center">12</th><th style="text-align: center">13</th><th style="text-align: center">14</th><th style="text-align: center">15</th><th style="text-align: center">16</th><th style="text-align: center">17</th><th style="text-align: center">18</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|0</td><td style="text-align: center">1|0</td></tr><tr><th style="text-align: center">2</th><td style="text-align: center">2|0</td><td style="text-align: center">0|2</td><td style="text-align: center">0|2</td><td style="text-align: center">1|0</td><td style="text-align: center">1|0</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|2</td><td style="text-align: center">0|2</td><td style="text-align: center">1|0</td><td style="text-align: center">2|0</td><td style="text-align: center">1|0</td><td style="text-align: center">2|0</td><td style="text-align: center">1|0</td><td style="text-align: center">0|1</td><td style="text-align: center">0|2</td><td style="text-align: center">1|0</td><td style="text-align: center">2|0</td><td style="text-align: center">0|1</td></tr></table></div>
+
+
+
+```python
+# M490I
+genotypes_combined[[3, 4, 19]].compress(~genotypes_combined[19].is_hom_ref(), axis=1).displayall()
+```
+
+
+<div class="allel allel-DisplayAs2D"><span>&lt;GenotypeArray shape=(3, 16, 2) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">5</th><th style="text-align: center">6</th><th style="text-align: center">7</th><th style="text-align: center">8</th><th style="text-align: center">9</th><th style="text-align: center">10</th><th style="text-align: center">11</th><th style="text-align: center">12</th><th style="text-align: center">13</th><th style="text-align: center">14</th><th style="text-align: center">15</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">1|0</td><td style="text-align: center">0|1</td><td style="text-align: center">1|0</td><td style="text-align: center">1|0</td><td style="text-align: center">0|1</td><td style="text-align: center">1|0</td><td style="text-align: center">0|0</td><td style="text-align: center">1|0</td><td style="text-align: center">0|0</td><td style="text-align: center">1|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|1</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|0</td><td style="text-align: center">0|1</td><td style="text-align: center">0|0</td></tr><tr><th style="text-align: center">2</th><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">1|1</td><td style="text-align: center">0|1</td><td style="text-align: center">1|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|1</td><td style="text-align: center">0|2</td><td style="text-align: center">0|2</td></tr></table></div>
+
+
+## Build Latex table
+
 
 ```python
 tbl_variants_display = (
     tbl_variants_selected
-    .cut(['POS', 'REF', 'ALT', 'FILTER_PASS', 'AGAP004707-RA'] + ['AF_' + p for p in pop_ids])
+    # keep only the fields we need
+    .cut(['POS', 'REF', 'ALT', 'ALTIX', 'FILTER_PASS', 'AGAP004707-RA'] + ['AF_' + p for p in pop_ids])
     .convert(['AF_' + p for p in pop_ids], lambda v: int(np.rint(v * 100)))
+    # add the column of M. domestica codons
     .addcolumn('Md', MD_fix, index=5)
+    # add a formatted "substitution" field
     .addfield('substitution', lambda row: '{:,} {}>{}'.format(row['POS'], row['REF'], row['ALT']), index=0)
     .convert('substitution', lambda v, row: v + '*' if not row['FILTER_PASS'] else v, pass_row=True)
     .convert(['substitution', 'Md', 'AGAP004707-RA'], lambda v: r'\texttt{%s}' % v)
-    .cutout('POS', 'REF', 'ALT', 'FILTER_PASS')
+    # add in the LD data
+    .leftjoin(tbl_ld.cutout('vidx', 'AGAP004707-RA'),
+              key=('POS', 'REF', 'ALT', 'ALTIX'))
+    .cutout('POS', 'REF', 'ALT', 'ALTIX', 'FILTER_PASS')
 )
 tbl_variants_display.displayall()
 ```
@@ -5248,8 +5815,8 @@ tbl_variants_display.displayall()
 <thead>
 <tr>
 <th>0|substitution</th>
-<th>1|AGAP004707-RA</th>
-<th>2|Md</th>
+<th>1|Md</th>
+<th>2|AGAP004707-RA</th>
 <th>3|AF_AOM</th>
 <th>4|AF_BFM</th>
 <th>5|AF_GWA</th>
@@ -5259,13 +5826,15 @@ tbl_variants_display.displayall()
 <th>9|AF_GAS</th>
 <th>10|AF_UGS</th>
 <th>11|AF_KES</th>
+<th>12|dprime_995S</th>
+<th>13|dprime_995F</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>\texttt{2,390,177 G>A}</td>
-<td>\texttt{R254K}</td>
 <td>\texttt{R261}</td>
+<td>\texttt{R254K}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5275,11 +5844,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>21</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-0.98</td>
+<td>0.96</td>
 </tr>
 <tr>
 <td>\texttt{2,391,228 G>C}</td>
-<td>\texttt{V402L}</td>
 <td>\texttt{V410}</td>
+<td>\texttt{V402L}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>7</td>
 <td style='text-align: right'>0</td>
@@ -5289,11 +5860,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>-0.41</td>
 </tr>
 <tr>
 <td>\texttt{2,391,228 G>T}</td>
-<td>\texttt{V402L}</td>
 <td>\texttt{V410}</td>
+<td>\texttt{V402L}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>7</td>
 <td style='text-align: right'>0</td>
@@ -5303,11 +5876,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>0.10</td>
 </tr>
 <tr>
 <td>\texttt{2,399,997 G>C}</td>
-<td>\texttt{D466H}</td>
 <td>\texttt{-}</td>
+<td>\texttt{D466H}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5317,11 +5892,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>\texttt{2,400,071 G>A}</td>
-<td>\texttt{M490I}</td>
 <td>\texttt{M508}</td>
+<td>\texttt{M490I}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5331,11 +5908,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>18</td>
+<td>-0.33</td>
+<td>-1</td>
 </tr>
 <tr>
 <td>\texttt{2,400,071 G>T}</td>
-<td>\texttt{M490I}</td>
 <td>\texttt{M508}</td>
+<td>\texttt{M490I}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5345,11 +5924,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>-0.01</td>
 </tr>
 <tr>
 <td>\texttt{2,416,980 C>T}</td>
-<td>\texttt{T791M}</td>
 <td>\texttt{T810}</td>
+<td>\texttt{T791M}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>1</td>
 <td style='text-align: right'>0</td>
@@ -5359,11 +5940,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>\texttt{2,422,651 T>C}</td>
-<td>\texttt{L995S}</td>
 <td>\texttt{L1014}</td>
+<td>\texttt{L995S}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5373,11 +5956,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>64</td>
 <td style='text-align: right'>100</td>
 <td style='text-align: right'>76</td>
+<td>1</td>
+<td>-1</td>
 </tr>
 <tr>
 <td>\texttt{2,422,652 A>T}</td>
-<td>\texttt{L995F}</td>
 <td>\texttt{L1014}</td>
+<td>\texttt{L995F}</td>
 <td style='text-align: right'>86</td>
 <td style='text-align: right'>85</td>
 <td style='text-align: right'>0</td>
@@ -5387,11 +5972,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>36</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>\texttt{2,424,384 C>T}</td>
-<td>\texttt{A1125V}</td>
 <td>\texttt{K1133}</td>
+<td>\texttt{A1125V}</td>
 <td style='text-align: right'>9</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5401,11 +5988,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>-1</td>
 </tr>
 <tr>
 <td>\texttt{2,425,077 G>A}</td>
-<td>\texttt{V1254I}</td>
 <td>\texttt{I1262}</td>
+<td>\texttt{V1254I}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>5</td>
@@ -5415,11 +6004,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>-1</td>
 </tr>
 <tr>
 <td>\texttt{2,429,617 T>C}</td>
-<td>\texttt{I1527T}</td>
 <td>\texttt{I1532}</td>
+<td>\texttt{I1527T}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>14</td>
 <td style='text-align: right'>0</td>
@@ -5429,11 +6020,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>-1</td>
 </tr>
 <tr>
 <td>\texttt{2,429,745 A>T*}</td>
-<td>\texttt{N1570Y}</td>
 <td>\texttt{N1575}</td>
+<td>\texttt{N1570Y}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>26</td>
 <td style='text-align: right'>0</td>
@@ -5443,11 +6036,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>0.98</td>
 </tr>
 <tr>
 <td>\texttt{2,429,897 A>G}</td>
-<td>\texttt{E1597G}</td>
 <td>\texttt{E1602}</td>
+<td>\texttt{E1597G}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5457,11 +6052,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>\texttt{2,429,915 A>C}</td>
-<td>\texttt{K1603T}</td>
 <td>\texttt{K1608}</td>
+<td>\texttt{K1603T}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>5</td>
 <td style='text-align: right'>0</td>
@@ -5471,11 +6068,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>\texttt{2,430,424 G>T}</td>
-<td>\texttt{A1746S}</td>
 <td>\texttt{A1751}</td>
+<td>\texttt{A1746S}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5485,11 +6084,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>\texttt{2,430,817 G>A}</td>
-<td>\texttt{V1853I}</td>
 <td>\texttt{V1858}</td>
+<td>\texttt{V1853I}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5499,11 +6100,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>\texttt{2,430,863 T>C}</td>
-<td>\texttt{I1868T}</td>
 <td>\texttt{I1873}</td>
+<td>\texttt{I1868T}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5513,11 +6116,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>\texttt{2,430,880 C>T}</td>
-<td>\texttt{P1874S}</td>
 <td>\texttt{P1879}</td>
+<td>\texttt{P1874S}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>21</td>
 <td style='text-align: right'>0</td>
@@ -5527,11 +6132,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>\texttt{2,430,881 C>T}</td>
-<td>\texttt{P1874L}</td>
 <td>\texttt{P1879}</td>
+<td>\texttt{P1874L}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>7</td>
 <td style='text-align: right'>0</td>
@@ -5541,11 +6148,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>\texttt{2,431,061 C>T}</td>
-<td>\texttt{A1934V}</td>
 <td>\texttt{A1939}</td>
+<td>\texttt{A1934V}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>12</td>
 <td style='text-align: right'>0</td>
@@ -5555,11 +6164,13 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>1</td>
 </tr>
 <tr>
 <td>\texttt{2,431,079 T>C}</td>
-<td>\texttt{I1940T}</td>
 <td>\texttt{I1945}</td>
+<td>\texttt{I1940T}</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>4</td>
 <td style='text-align: right'>0</td>
@@ -5569,6 +6180,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>-1</td>
+<td>1</td>
 </tr>
 </tbody>
 </table>
@@ -5598,12 +6211,12 @@ GA\emph{Ag} &
 UG\emph{Ag} & 
 KE & 
 GW & 
-\texttt{L995F} & 
-\texttt{L995S} \\
+\texttt{L995S} & 
+\texttt{L995F} \\
 \midrule
 """
 template = r"""
-{substitution} & {AGAP004707-RA} & {Md} & {AF_AOM} & {AF_BFM} & {AF_GNS} & {AF_BFS} & {AF_CMS} & {AF_GAS} & {AF_UGS} & {AF_KES} & {AF_GWA} & NA & NA \\
+{substitution} & {AGAP004707-RA} & {Md} & {AF_AOM} & {AF_BFM} & {AF_GNS} & {AF_BFS} & {AF_CMS} & {AF_GAS} & {AF_UGS} & {AF_KES} & {AF_GWA} & {dprime_995S} & {dprime_995F} \\
 """
 epilogue = r"""
 \bottomrule
@@ -5642,53 +6255,53 @@ tbl_variants_display.totext('../tables/variants_missense.tex',
     UG\emph{Ag} & 
     KE & 
     GW & 
-    \texttt{L995F} & 
-    \texttt{L995S} \\
+    \texttt{L995S} & 
+    \texttt{L995F} \\
     \midrule
     
-    \texttt{2,390,177 G>A} & \texttt{R254K} & \texttt{R261} & 0 & 0 & 0 & 0 & 32 & 21 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,390,177 G>A} & \texttt{R254K} & \texttt{R261} & 0 & 0 & 0 & 0 & 32 & 21 & 0 & 0 & 0 & -0.98 & 0.96 \\
     
-    \texttt{2,391,228 G>C} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,391,228 G>C} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -0.41 \\
     
-    \texttt{2,391,228 G>T} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,391,228 G>T} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 0.10 \\
     
-    \texttt{2,399,997 G>C} & \texttt{D466H} & \texttt{-} & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,399,997 G>C} & \texttt{D466H} & \texttt{-} & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,400,071 G>A} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 18 & 0 & NA & NA \\
+    \texttt{2,400,071 G>A} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 18 & 0 & -0.33 & -1 \\
     
-    \texttt{2,400,071 G>T} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,400,071 G>T} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -0.01 \\
     
-    \texttt{2,416,980 C>T} & \texttt{T791M} & \texttt{T810} & 0 & 1 & 13 & 14 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,416,980 C>T} & \texttt{T791M} & \texttt{T810} & 0 & 1 & 13 & 14 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,422,651 T>C} & \texttt{L995S} & \texttt{L1014} & 0 & 0 & 0 & 0 & 15 & 64 & 100 & 76 & 0 & NA & NA \\
+    \texttt{2,422,651 T>C} & \texttt{L995S} & \texttt{L1014} & 0 & 0 & 0 & 0 & 15 & 64 & 100 & 76 & 0 & 1 & -1 \\
     
-    \texttt{2,422,652 A>T} & \texttt{L995F} & \texttt{L1014} & 86 & 85 & 100 & 100 & 53 & 36 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,422,652 A>T} & \texttt{L995F} & \texttt{L1014} & 86 & 85 & 100 & 100 & 53 & 36 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,424,384 C>T} & \texttt{A1125V} & \texttt{K1133} & 9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,424,384 C>T} & \texttt{A1125V} & \texttt{K1133} & 9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -1 \\
     
-    \texttt{2,425,077 G>A} & \texttt{V1254I} & \texttt{I1262} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 5 & NA & NA \\
+    \texttt{2,425,077 G>A} & \texttt{V1254I} & \texttt{I1262} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 5 & -1 & -1 \\
     
-    \texttt{2,429,617 T>C} & \texttt{I1527T} & \texttt{I1532} & 0 & 14 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,429,617 T>C} & \texttt{I1527T} & \texttt{I1532} & 0 & 14 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -1 \\
     
-    \texttt{2,429,745 A>T*} & \texttt{N1570Y} & \texttt{N1575} & 0 & 26 & 10 & 22 & 6 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,429,745 A>T*} & \texttt{N1570Y} & \texttt{N1575} & 0 & 26 & 10 & 22 & 6 & 0 & 0 & 0 & 0 & -1 & 0.98 \\
     
-    \texttt{2,429,897 A>G} & \texttt{E1597G} & \texttt{E1602} & 0 & 0 & 6 & 4 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,429,897 A>G} & \texttt{E1597G} & \texttt{E1602} & 0 & 0 & 6 & 4 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,429,915 A>C} & \texttt{K1603T} & \texttt{K1608} & 0 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,429,915 A>C} & \texttt{K1603T} & \texttt{K1608} & 0 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,430,424 G>T} & \texttt{A1746S} & \texttt{A1751} & 0 & 0 & 11 & 13 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,424 G>T} & \texttt{A1746S} & \texttt{A1751} & 0 & 0 & 11 & 13 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,430,817 G>A} & \texttt{V1853I} & \texttt{V1858} & 0 & 0 & 8 & 5 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,817 G>A} & \texttt{V1853I} & \texttt{V1858} & 0 & 0 & 8 & 5 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,430,863 T>C} & \texttt{I1868T} & \texttt{I1873} & 0 & 0 & 18 & 25 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,863 T>C} & \texttt{I1868T} & \texttt{I1873} & 0 & 0 & 18 & 25 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,430,880 C>T} & \texttt{P1874S} & \texttt{P1879} & 0 & 21 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,880 C>T} & \texttt{P1874S} & \texttt{P1879} & 0 & 21 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,430,881 C>T} & \texttt{P1874L} & \texttt{P1879} & 0 & 7 & 45 & 26 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,430,881 C>T} & \texttt{P1874L} & \texttt{P1879} & 0 & 7 & 45 & 26 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,431,061 C>T} & \texttt{A1934V} & \texttt{A1939} & 0 & 12 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,431,061 C>T} & \texttt{A1934V} & \texttt{A1939} & 0 & 12 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
-    \texttt{2,431,079 T>C} & \texttt{I1940T} & \texttt{I1945} & 0 & 4 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & NA & NA \\
+    \texttt{2,431,079 T>C} & \texttt{I1940T} & \texttt{I1945} & 0 & 4 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & -1 & 1 \\
     
     \bottomrule
     \end{tabular}
