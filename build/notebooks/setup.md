@@ -191,6 +191,11 @@ class SeqFeature(object):
         return "(seqid == %r) & (start >= %s) & (end <= %s)" % (self.seqid, self.start, self.end)
 
     @property
+    def region_str(self):
+        """A samtools-style region string."""
+        return "%s:%s-%s" % (self.seqid, self.start, self.end)
+    
+    @property
     def seq(self):
         """The reference sequence."""
         return self.genome[self.seqid][self.loc]

@@ -16,6 +16,7 @@ dependencies
 
 # jupyter
 .ipynb_checkpoints
+*.pem
 
 # pycharm
 .idea

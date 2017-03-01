@@ -56,6 +56,18 @@ rule data_variants_phase1:
         "./nbexec.sh notebooks/data_variants_phase1.ipynb"
 
 
+# Phase multiallelics.
+
+rule data_phase_multiallelics_phase1:
+    input:
+        rules.setup.output,
+        "notebooks/data_phase_multiallelics_phase1.ipynb",
+    output:
+        "build/notebooks/data_phase_multiallelics_phase1.md",
+    shell:
+        "./nbexec.sh notebooks/data_phase_multiallelics_phase1.ipynb"
+
+
 # This rule builds all data, indicating success by touching a flag
 # file.
 
@@ -63,6 +75,7 @@ rule data:
     input:
         rules.data_demo.output,
         rules.data_variants_phase1.output,
+        rules.data_phase_multiallelics_phase1.output,
         # add more inputs here as required
     output:
         touch("build/data.done")
@@ -100,7 +113,7 @@ rule artwork:
         # add more inputs here as required
     output:
         touch("build/artwork.done")
-	
+
 
 ##########
 # Tables #
@@ -149,7 +162,7 @@ rule tables:
         # add more inputs here as required
     output:
         touch("build/tables.done")
-	
+
 
 ##############
 # Manuscript #
@@ -167,7 +180,7 @@ rule manuscript:
         # add more inputs here as required
     output:
         "build/main.pdf",
-	touch("build/main.done")
+        touch("build/main.done")
     shell:
         "./latex.sh"
 
