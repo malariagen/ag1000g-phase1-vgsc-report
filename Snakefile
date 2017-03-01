@@ -145,6 +145,7 @@ rule table_variants_missense:
     input:
         rules.setup.output,
         "notebooks/table_variants_missense.ipynb",
+        "data/missense_multiallelics.mvncall.200.npz",
         "data/tbl_variants_phase1.pkl",
     output:
         "build/notebooks/table_variants_missense.md",
