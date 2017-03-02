@@ -51,6 +51,16 @@ rule demo:
     shell:
         "./nbexec.sh notebooks/data_demo.ipynb"
 
+rule misc:
+    # Misc simple data copies.
+    input:
+        rules.setup.output,
+        "notebooks/data_misc.ipynb",
+    output:
+        "build/notebooks/data_misc.md",
+    shell:
+        "./nbexec.sh notebooks/data_misc.ipynb"
+
 rule variants_phase1:
     # Extract a table of data on VGSC variants.
     input:

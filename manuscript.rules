@@ -49,10 +49,22 @@ rule artwork_demo:
     shell:
         "./nbexec.sh notebooks/artwork_demo.ipynb"
 
+rule hapclust_demo:
+    # Demo notebook using the haplotype clustering functions.
+    input:
+        rules.setup.output,
+        "notebooks/hapclust_utils.ipynb",
+        "notebooks/hapclust_demo.ipynb",
+    output:
+        "build/notebooks/hapclust_demo.md",
+    shell:
+        "./nbexec.sh notebooks/hapclust_demo.ipynb"
+
 rule artwork:
     # Build all artwork.
     input:
         rules.artwork_demo.output,
+        rules.hapclust_demo.output,
         # add more inputs here as required
     output:
         touch("build/manuscript.artwork.done")
