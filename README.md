@@ -39,7 +39,7 @@ To build the manuscript, from the repository root directory, run:
 
 ```bash
 $ source env.sh
-$ snakemake manuscript
+$ snakemake -s manuscript.rules all
 ```
 
 This should rebuild the file ``main.pdf``, also running any supporting notebooks as 
@@ -55,8 +55,10 @@ If you have the necessary files mirrored locally, you can run:
 
 ```bash
 $ source env.sh
-$ snakemake data
+$ snakemake -s data.rules demo
 ```
+
+...replacing "demo" with the name of the rule you want to run.
 
 ### Working on the manuscript
 
@@ -97,7 +99,7 @@ locally:
 
 ```bash
 $ source env.sh
-$ snakemake manuscript
+$ snakemake -s manuscript.rules all
 ```
 
 Then make sure all local changes are committed and pushed up to 

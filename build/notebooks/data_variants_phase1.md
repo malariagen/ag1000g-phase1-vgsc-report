@@ -167,8 +167,8 @@ geneset_agamp44_vgsc.type.value_counts()
 
 
 
-    CDS     93
     exon    93
+    CDS     93
     mRNA     3
     gene     1
     Name: type, dtype: int64
@@ -2544,7 +2544,7 @@ callset_vgsc_phased_multiallelics
 
 
 
-    <numpy.lib.npyio.NpzFile at 0x7f0d514ccac8>
+    <numpy.lib.npyio.NpzFile at 0x7f23217675f8>
 
 
 

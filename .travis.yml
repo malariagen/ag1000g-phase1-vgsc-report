@@ -14,8 +14,8 @@ cache:
 
 script:
   - source env.sh
-  - snakemake clean
-  - snakemake manuscript
+  - snakemake -s manuscript.rules clean
+  - snakemake -s manuscript.rules all
   - git status
 
 deploy:
