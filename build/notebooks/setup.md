@@ -100,6 +100,7 @@ etl.config.display_index_header = True
 import humanize
 from humanize import naturalsize, intcomma, intword
 import zarr
+import graphviz
 ```
 
 

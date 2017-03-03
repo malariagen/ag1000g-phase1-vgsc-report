@@ -49,9 +49,34 @@ loc_995S = haplotypes[pos.locate_key(pos_995S)] == 1
 loc_995F = haplotypes[pos.locate_key(pos_995F)] == 1
 h_vgsc_995F = h_vgsc.compress(loc_995F, axis=1)
 h_vgsc_995S = h_vgsc.compress(loc_995S, axis=1)
+sample_ids = callset['2L']['samples'][:]
+hap_ids = np.array(list(itertools.chain(*[[s + b'a', s + b'b'] for s in sample_ids])))
+hap_ids_995F = hap_ids[loc_995F]
+hap_ids_995S = hap_ids[loc_995S]
+tbl_haplotypes = etl.fromtsv('../data/ag1000g.phase1.AR3.1.haplotypes.meta.txt')
+hap_pops = np.array(tbl_haplotypes.values('population'))
+hap_pops_995S = hap_pops[loc_995S]
+hap_pops_995F = hap_pops[loc_995F]
+# need to use named colors for graphviz
+pop_colors = {
+    'AOM': 'brown',
+    'BFM': 'firebrick1',
+    'GWA': 'goldenrod1',
+    'GNS': 'cadetblue1',
+    'BFS': 'deepskyblue',
+    'CMS': 'dodgerblue3',
+    'UGS': 'palegreen',
+    'GAS': 'olivedrab',
+    'KES': 'grey47',
+    'colony': 'black'
+}
+hap_colors_995S = np.array([pop_colors[p] for p in hap_pops_995S])
+hap_colors_995F = np.array([pop_colors[p] for p in hap_pops_995F])
 ```
 
-## Plot plot plot...
+## Hierarchical clustering
+
+### Plot plot plot...
 
 
 ```python
@@ -63,7 +88,7 @@ fig_haplotypes_clustered(h_vgsc_995S, dpi=150);
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_6_0.png)
+![png](hapclust_demo_files/hapclust_demo_7_0.png)
 
 
 
@@ -73,7 +98,7 @@ fig_haplotypes_clustered(h_vgsc_995S, orientation='left', dpi=150);
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_7_0.png)
+![png](hapclust_demo_files/hapclust_demo_8_0.png)
 
 
 
@@ -83,7 +108,7 @@ fig_haplotypes_clustered(h_vgsc_995S, cut_height=5, dpi=150);
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_8_0.png)
+![png](hapclust_demo_files/hapclust_demo_9_0.png)
 
 
 
@@ -93,7 +118,7 @@ fig_haplotypes_clustered(h_vgsc_995S, dpi=150, highlight_clusters=5);
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_9_0.png)
+![png](hapclust_demo_files/hapclust_demo_10_0.png)
 
 
 
@@ -103,7 +128,7 @@ fig_haplotypes_clustered(h_vgsc_995S, dpi=150, highlight_clusters=[2, 9]);
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_10_0.png)
+![png](hapclust_demo_files/hapclust_demo_11_0.png)
 
 
 
@@ -113,7 +138,7 @@ fig_haplotypes_clustered(h_vgsc_995S, dpi=150, highlight_clusters=5, label_clust
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_11_0.png)
+![png](hapclust_demo_files/hapclust_demo_12_0.png)
 
 
 
@@ -125,37 +150,43 @@ fig_haplotypes_clustered(h_vgsc_995S, dpi=150, highlight_clusters=5, label_clust
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_12_0.png)
+![png](hapclust_demo_files/hapclust_demo_13_0.png)
 
 
-## Return values
+### Return values
 
 
 ```python
 # What does this function return?
-fig, ax_dend, ax_freq, cluster_spans = fig_haplotypes_clustered(h_vgsc_995S, dpi=150, highlight_clusters=5, label_clusters=5)
-```
-
-
-![png](hapclust_demo_files/hapclust_demo_14_0.png)
-
-
-
-```python
-# E.g., customise axes...
-fig, ax_dend, ax_freq, cluster_spans = fig_haplotypes_clustered(h_vgsc_995S, dpi=150, highlight_clusters=5, label_clusters=5)
-ax_dend.set_title('Haplotype structure (L995S)')
-ax_dend.set_ylabel('Distance (no. SNPs)')
-ax_freq.set_ylabel('Haplotype frequency');
+fig, ax_dend, ax_freq, cluster_spans, leaf_obs = fig_haplotypes_clustered(h_vgsc_995S, dpi=150, highlight_clusters=5, label_clusters=5)
 ```
 
 
 ![png](hapclust_demo_files/hapclust_demo_15_0.png)
 
 
+#### Customising axes
+
 
 ```python
-# Cluster spans is most useful...
+# E.g., use returned axes objects to customise labels etc. ...
+cut_height = 2
+fig, ax_dend, ax_freq, cluster_spans, leaf_obs = fig_haplotypes_clustered(h_vgsc_995S, cut_height=cut_height, dpi=150, 
+                                                                          highlight_clusters=5, label_clusters=5)
+ax_dend.set_title('Haplotype structure (L995S)')
+ax_dend.set_ylabel('Distance (no. SNPs)')
+ax_freq.set_ylabel('Haplotype frequency');
+```
+
+
+![png](hapclust_demo_files/hapclust_demo_17_0.png)
+
+
+#### Accessing information about clusters
+
+
+```python
+# cluster_spans is useful for accessing information about each cluster...
 cluster_spans
 ```
 
@@ -224,8 +255,9 @@ cluster_spans
 
 
 ```python
-# E.g., cluster labelled "2" in the plot:
-dend_start, dend_stop, hap_indices = cluster_spans[2]
+# E.g., cluster labelled "17" in the plot:
+cluster_idx = 17
+dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
 ```
 
 
@@ -237,41 +269,45 @@ dend_start, dend_stop
 
 
 
-    (2, 16)
+    (49, 62)
 
 
 
 
 ```python
 # These are the indices of the haplotypes in the cluster
-hap_indices
+cluster_hap_indices
 ```
 
 
 
 
-    array([  0,   1,   3,   4,   5,   7,  11,  15,  16,  19,  21,  23,  25,
-            28,  29,  33,  35,  36,  37,  38,  39,  40,  41,  42,  43,  45,
-            47,  50,  51,  55,  57,  59,  61,  63,  64,  65,  71,  73,  75,
-            77,  79,  82,  83,  86,  87,  88,  89,  91,  94,  95, 100, 101,
-           103, 107, 109, 111, 114, 115, 119, 121, 122, 123, 126, 127, 128,
-           129, 131, 133, 135, 137, 139, 140, 141, 144, 145, 147, 148, 149,
-           151, 157, 158, 159, 163, 164, 165, 167, 169, 171, 172, 173, 176,
-           177, 181, 183, 184, 185, 186, 187, 188, 189, 193, 195, 197, 199,
-           201, 203])
+    array([  2,   6,   8,   9,  10,  12,  13,  14,  18,  20,  22,  24,  26,
+            27,  30,  31,  32,  34,  44,  46,  48,  49,  52,  53,  54,  56,
+            58,  60,  62,  66,  67,  68,  69,  70,  72,  74,  76,  78,  80,
+            81,  84,  90,  92,  93,  96,  97,  98,  99, 102, 104, 105, 106,
+           108, 110, 112, 116, 117, 118, 120, 124, 125, 130, 132, 134, 136,
+           138, 142, 143, 146, 150, 152, 153, 154, 155, 156, 160, 161, 162,
+           166, 168, 170, 174, 175, 178, 179, 180, 182, 190, 191, 192, 194,
+           196, 198, 200, 202, 204, 205, 206, 207, 208, 209, 210, 211, 212,
+           213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225,
+           226, 227, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239,
+           240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252,
+           253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265,
+           266, 267, 268, 269, 270, 271, 272])
 
 
 
 
 ```python
 # How many haplotypes in the cluster?
-len(hap_indices)
+len(cluster_hap_indices)
 ```
 
 
 
 
-    106
+    163
 
 
 
@@ -279,14 +315,153 @@ len(hap_indices)
 ```python
 # N.B., these are relative to the haplotype array passed into the function.
 # To extract only haplotypes in this cluster...
-haps_in_cluster = h_vgsc_995S.take(hap_indices, axis=1)
-haps_in_cluster
+cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
+cluster_haps
 ```
 
 
 
 
-<div class="allel allel-DisplayAs2D"><span>&lt;HaplotypeArray shape=(1718, 106) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">101</th><th style="text-align: center">102</th><th style="text-align: center">103</th><th style="text-align: center">104</th><th style="text-align: center">105</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">2</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">...</th><td style="text-align: center" colspan="12">...</td></tr><tr><th style="text-align: center">1715</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1716</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1717</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr></table></div>
+<div class="allel allel-DisplayAs2D"><span>&lt;HaplotypeArray shape=(1718, 163) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">158</th><th style="text-align: center">159</th><th style="text-align: center">160</th><th style="text-align: center">161</th><th style="text-align: center">162</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">2</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">...</th><td style="text-align: center" colspan="12">...</td></tr><tr><th style="text-align: center">1715</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1716</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1717</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr></table></div>
+
+
+
+#### Outputting haplotype data in other formats
+
+
+```python
+cluster_hap_ids = hap_ids_995S.take(cluster_hap_indices)
+```
+
+
+```python
+sequences = cluster_haps.astype('S1').T
+```
+
+
+```python
+allel.io.write_fasta('../data/demo.hapclust.995S.cut{}.cluster{}.fasta'.format(cut_height, 
+                                                                          cluster_idx),
+                     sequences=list(sequences), 
+                     names=cluster_hap_ids, 
+                     mode='w', 
+                     width=80)
+```
+
+
+```python
+# TODO other formats if needed
+```
+
+#### Mapping dendrogram leaves onto haplotypes
+
+
+```python
+# leaf_obs can also be useful, it maps the leaves of the dendrogram onto indices of original observations...
+# need this if ever you want to plot the haplotypes themselves
+
+# E.g., the first leaf of the dendrogram contains these haplotypes:
+leaf_obs[0]
+```
+
+
+
+
+    [85]
+
+
+
+
+```python
+# E.g., the 8th leaf of the dendrogram contains these haplotypes:
+leaf_obs[7]
+```
+
+
+
+
+    [126, 40, 38, 50, 86, 188]
+
+
+
+
+```python
+# To extract a haplotype array matching the leaves of the dendrogram...
+
+# only need one index per leaf, as all haplotypes per leaf are identical
+indices = [l[0] for l in leaf_obs]
+
+# take unique haplotypes in order shown in dendrogram
+h_vgsc_995S_dend = h_vgsc_995S.take(indices, axis=1)
+h_vgsc_995S_dend
+```
+
+
+
+
+<div class="allel allel-DisplayAs2D"><span>&lt;HaplotypeArray shape=(1718, 62) dtype=int8&gt;</span><table><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">57</th><th style="text-align: center">58</th><th style="text-align: center">59</th><th style="text-align: center">60</th><th style="text-align: center">61</th></tr><tr><th style="text-align: center">0</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">2</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">...</th><td style="text-align: center" colspan="12">...</td></tr><tr><th style="text-align: center">1715</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1716</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center">1717</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr></table></div>
+
+
+
+## Haplotype networks (minimum spanning tree)
+
+
+```python
+# make a network of all L995S haplotypes
+graph = graph_haplotype_network(h_vgsc_995S)
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_35_0.svg)
+
+
+
+
+```python
+# add some color
+graph = graph_haplotype_network(h_vgsc_995S, hap_colors=hap_colors_995S)
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_36_0.svg)
+
+
+
+
+```python
+# change the maximum connection distance
+graph = graph_haplotype_network(h_vgsc_995S, 
+                                hap_colors=hap_colors_995S,
+                                max_dist=10)
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_37_0.svg)
+
+
+
+
+```python
+# plot a network for just a single cluster that we extracted earlier from the dendrogram
+cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors)
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_38_0.svg)
 
 
 
