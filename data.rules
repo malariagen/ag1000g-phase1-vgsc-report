@@ -95,6 +95,7 @@ rule all:
     # Build all data, indicating success by touching a flag file.
     input:
         rules.demo.output,
+        rules.misc.output,
         rules.variants_phase1.output,
         rules.phase_multiallelics_phase1.output,
         # add more inputs here as required
