@@ -1,0 +1,1547 @@
+index	label	ox_code	population	label_aug	country	region	sex	m_s	kt_2la	kt_2rb
+0	AB0085-Ca	AB0085-C	BFS	AB0085-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+1	AB0085-Cb	AB0085-C	BFS	AB0085-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+2	AB0087-Ca	AB0087-C	BFM	AB0087-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+3	AB0087-Cb	AB0087-C	BFM	AB0087-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+4	AB0088-Ca	AB0088-C	BFM	AB0088-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+5	AB0088-Cb	AB0088-C	BFM	AB0088-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+6	AB0089-Ca	AB0089-C	BFM	AB0089-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+7	AB0089-Cb	AB0089-C	BFM	AB0089-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+8	AB0090-Ca	AB0090-C	BFM	AB0090-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+9	AB0090-Cb	AB0090-C	BFM	AB0090-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+10	AB0091-Ca	AB0091-C	BFM	AB0091-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+11	AB0091-Cb	AB0091-C	BFM	AB0091-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+12	AB0092-Ca	AB0092-C	BFM	AB0092-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+13	AB0092-Cb	AB0092-C	BFM	AB0092-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+14	AB0094-Ca	AB0094-C	BFM	AB0094-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+15	AB0094-Cb	AB0094-C	BFM	AB0094-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+16	AB0095-Ca	AB0095-C	BFM	AB0095-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+17	AB0095-Cb	AB0095-C	BFM	AB0095-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+18	AB0097-Ca	AB0097-C	BFM	AB0097-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+19	AB0097-Cb	AB0097-C	BFM	AB0097-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+20	AB0098-Ca	AB0098-C	BFM	AB0098-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+21	AB0098-Cb	AB0098-C	BFM	AB0098-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+22	AB0099-Ca	AB0099-C	BFM	AB0099-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+23	AB0099-Cb	AB0099-C	BFM	AB0099-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+24	AB0100-Ca	AB0100-C	BFM	AB0100-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+25	AB0100-Cb	AB0100-C	BFM	AB0100-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+26	AB0101-Ca	AB0101-C	BFM	AB0101-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+27	AB0101-Cb	AB0101-C	BFM	AB0101-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+28	AB0103-Ca	AB0103-C	BFS	AB0103-Ca [Burkina Faso, Bana, S, F]	Burkina Faso	Bana	F	S	2.0	2.0
+29	AB0103-Cb	AB0103-C	BFS	AB0103-Cb [Burkina Faso, Bana, S, F]	Burkina Faso	Bana	F	S	2.0	2.0
+30	AB0104-Ca	AB0104-C	BFS	AB0104-Ca [Burkina Faso, Bana, S, F]	Burkina Faso	Bana	F	S	2.0	2.0
+31	AB0104-Cb	AB0104-C	BFS	AB0104-Cb [Burkina Faso, Bana, S, F]	Burkina Faso	Bana	F	S	2.0	2.0
+32	AB0109-Ca	AB0109-C	BFM	AB0109-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+33	AB0109-Cb	AB0109-C	BFM	AB0109-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+34	AB0110-Ca	AB0110-C	BFM	AB0110-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+35	AB0110-Cb	AB0110-C	BFM	AB0110-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+36	AB0111-Ca	AB0111-C	BFM	AB0111-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+37	AB0111-Cb	AB0111-C	BFM	AB0111-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+38	AB0112-Ca	AB0112-C	BFM	AB0112-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+39	AB0112-Cb	AB0112-C	BFM	AB0112-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+40	AB0113-Ca	AB0113-C	BFM	AB0113-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	2.0
+41	AB0113-Cb	AB0113-C	BFM	AB0113-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	2.0
+42	AB0114-Ca	AB0114-C	BFM	AB0114-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+43	AB0114-Cb	AB0114-C	BFM	AB0114-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+44	AB0117-Ca	AB0117-C	BFS	AB0117-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	1.0	2.0
+45	AB0117-Cb	AB0117-C	BFS	AB0117-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	1.0	2.0
+46	AB0119-Ca	AB0119-C	BFS	AB0119-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	2.0
+47	AB0119-Cb	AB0119-C	BFS	AB0119-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	2.0
+48	AB0122-Ca	AB0122-C	BFM	AB0122-Ca [Burkina Faso, Bana, M, M]	Burkina Faso	Bana	M	M	2.0	0.0
+49	AB0122-Cb	AB0122-C	BFM	AB0122-Cb [Burkina Faso, Bana, M, M]	Burkina Faso	Bana	M	M	2.0	0.0
+50	AB0123-Ca	AB0123-C	BFM	AB0123-Ca [Burkina Faso, Bana, M, M]	Burkina Faso	Bana	M	M	2.0	0.0
+51	AB0123-Cb	AB0123-C	BFM	AB0123-Cb [Burkina Faso, Bana, M, M]	Burkina Faso	Bana	M	M	2.0	0.0
+52	AB0124-Ca	AB0124-C	BFM	AB0124-Ca [Burkina Faso, Bana, M, M]	Burkina Faso	Bana	M	M	2.0	1.0
+53	AB0124-Cb	AB0124-C	BFM	AB0124-Cb [Burkina Faso, Bana, M, M]	Burkina Faso	Bana	M	M	2.0	1.0
+54	AB0126-Ca	AB0126-C	BFS	AB0126-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	1.0	2.0
+55	AB0126-Cb	AB0126-C	BFS	AB0126-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	1.0	2.0
+56	AB0127-Ca	AB0127-C	BFS	AB0127-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	2.0
+57	AB0127-Cb	AB0127-C	BFS	AB0127-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	2.0
+58	AB0128-Ca	AB0128-C	BFS	AB0128-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	2.0
+59	AB0128-Cb	AB0128-C	BFS	AB0128-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	2.0
+60	AB0129-Ca	AB0129-C	BFS	AB0129-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	1.0
+61	AB0129-Cb	AB0129-C	BFS	AB0129-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	1.0
+62	AB0130-Ca	AB0130-C	BFS	AB0130-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	1.0
+63	AB0130-Cb	AB0130-C	BFS	AB0130-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	1.0
+64	AB0133-Ca	AB0133-C	BFS	AB0133-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+65	AB0133-Cb	AB0133-C	BFS	AB0133-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+66	AB0134-Ca	AB0134-C	BFS	AB0134-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	1.0
+67	AB0134-Cb	AB0134-C	BFS	AB0134-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	1.0
+68	AB0135-Ca	AB0135-C	BFS	AB0135-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+69	AB0135-Cb	AB0135-C	BFS	AB0135-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+70	AB0136-Ca	AB0136-C	BFS	AB0136-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+71	AB0136-Cb	AB0136-C	BFS	AB0136-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+72	AB0137-Ca	AB0137-C	BFM	AB0137-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+73	AB0137-Cb	AB0137-C	BFM	AB0137-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+74	AB0138-Ca	AB0138-C	BFM	AB0138-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+75	AB0138-Cb	AB0138-C	BFM	AB0138-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+76	AB0139-Ca	AB0139-C	BFM	AB0139-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+77	AB0139-Cb	AB0139-C	BFM	AB0139-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+78	AB0140-Ca	AB0140-C	BFM	AB0140-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+79	AB0140-Cb	AB0140-C	BFM	AB0140-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+80	AB0142-Ca	AB0142-C	BFM	AB0142-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+81	AB0142-Cb	AB0142-C	BFM	AB0142-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+82	AB0143-Ca	AB0143-C	BFS	AB0143-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+83	AB0143-Cb	AB0143-C	BFS	AB0143-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+84	AB0145-Ca	AB0145-C	BFS	AB0145-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	1.0	2.0
+85	AB0145-Cb	AB0145-C	BFS	AB0145-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	1.0	2.0
+86	AB0146-Ca	AB0146-C	BFS	AB0146-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+87	AB0146-Cb	AB0146-C	BFS	AB0146-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+88	AB0147-Ca	AB0147-C	BFS	AB0147-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	1.0
+89	AB0147-Cb	AB0147-C	BFS	AB0147-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	1.0
+90	AB0148-Ca	AB0148-C	BFS	AB0148-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	1.0	2.0
+91	AB0148-Cb	AB0148-C	BFS	AB0148-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	1.0	2.0
+92	AB0151-Ca	AB0151-C	BFS	AB0151-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	1.0	1.0
+93	AB0151-Cb	AB0151-C	BFS	AB0151-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	1.0	1.0
+94	AB0153-Ca	AB0153-C	BFS	AB0153-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	1.0	1.0
+95	AB0153-Cb	AB0153-C	BFS	AB0153-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	1.0	1.0
+96	AB0155-Ca	AB0155-C	BFS	AB0155-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	1.0
+97	AB0155-Cb	AB0155-C	BFS	AB0155-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	1.0
+98	AB0157-Ca	AB0157-C	BFS	AB0157-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	1.0	1.0
+99	AB0157-Cb	AB0157-C	BFS	AB0157-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	1.0	1.0
+100	AB0158-Ca	AB0158-C	BFS	AB0158-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	1.0
+101	AB0158-Cb	AB0158-C	BFS	AB0158-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	1.0
+102	AB0159-Ca	AB0159-C	BFS	AB0159-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	2.0
+103	AB0159-Cb	AB0159-C	BFS	AB0159-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	2.0
+104	AB0160-Ca	AB0160-C	BFS	AB0160-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	2.0
+105	AB0160-Cb	AB0160-C	BFS	AB0160-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	2.0
+106	AB0161-Ca	AB0161-C	BFS	AB0161-Ca [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	2.0
+107	AB0161-Cb	AB0161-C	BFS	AB0161-Cb [Burkina Faso, Bana, S, M]	Burkina Faso	Bana	M	S	2.0	2.0
+108	AB0164-Ca	AB0164-C	BFS	AB0164-Ca [Burkina Faso, Pala, S, M]	Burkina Faso	Pala	M	S	2.0	0.0
+109	AB0164-Cb	AB0164-C	BFS	AB0164-Cb [Burkina Faso, Pala, S, M]	Burkina Faso	Pala	M	S	2.0	0.0
+110	AB0166-Ca	AB0166-C	BFS	AB0166-Ca [Burkina Faso, Pala, S, M]	Burkina Faso	Pala	M	S	2.0	1.0
+111	AB0166-Cb	AB0166-C	BFS	AB0166-Cb [Burkina Faso, Pala, S, M]	Burkina Faso	Pala	M	S	2.0	1.0
+112	AB0169-Ca	AB0169-C	BFS	AB0169-Ca [Burkina Faso, Pala, S, M]	Burkina Faso	Pala	M	S	2.0	2.0
+113	AB0169-Cb	AB0169-C	BFS	AB0169-Cb [Burkina Faso, Pala, S, M]	Burkina Faso	Pala	M	S	2.0	2.0
+114	AB0170-Ca	AB0170-C	BFS	AB0170-Ca [Burkina Faso, Pala, S, M]	Burkina Faso	Pala	M	S	1.0	1.0
+115	AB0170-Cb	AB0170-C	BFS	AB0170-Cb [Burkina Faso, Pala, S, M]	Burkina Faso	Pala	M	S	1.0	1.0
+116	AB0171-Ca	AB0171-C	BFS	AB0171-Ca [Burkina Faso, Pala, S, M]	Burkina Faso	Pala	M	S	2.0	1.0
+117	AB0171-Cb	AB0171-C	BFS	AB0171-Cb [Burkina Faso, Pala, S, M]	Burkina Faso	Pala	M	S	2.0	1.0
+118	AB0172-Ca	AB0172-C	BFS	AB0172-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+119	AB0172-Cb	AB0172-C	BFS	AB0172-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+120	AB0173-Ca	AB0173-C	BFS	AB0173-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+121	AB0173-Cb	AB0173-C	BFS	AB0173-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+122	AB0174-Ca	AB0174-C	BFS	AB0174-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+123	AB0174-Cb	AB0174-C	BFS	AB0174-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+124	AB0175-Ca	AB0175-C	BFS	AB0175-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+125	AB0175-Cb	AB0175-C	BFS	AB0175-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+126	AB0176-Ca	AB0176-C	BFS	AB0176-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+127	AB0176-Cb	AB0176-C	BFS	AB0176-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+128	AB0177-Ca	AB0177-C	BFS	AB0177-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+129	AB0177-Cb	AB0177-C	BFS	AB0177-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+130	AB0178-Ca	AB0178-C	BFS	AB0178-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+131	AB0178-Cb	AB0178-C	BFS	AB0178-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+132	AB0179-Ca	AB0179-C	BFS	AB0179-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+133	AB0179-Cb	AB0179-C	BFS	AB0179-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+134	AB0181-Ca	AB0181-C	BFM	AB0181-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+135	AB0181-Cb	AB0181-C	BFM	AB0181-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+136	AB0182-Ca	AB0182-C	BFM	AB0182-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+137	AB0182-Cb	AB0182-C	BFM	AB0182-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+138	AB0183-Ca	AB0183-C	BFM	AB0183-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+139	AB0183-Cb	AB0183-C	BFM	AB0183-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+140	AB0184-Ca	AB0184-C	BFM	AB0184-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+141	AB0184-Cb	AB0184-C	BFM	AB0184-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+142	AB0185-Ca	AB0185-C	BFM	AB0185-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+143	AB0185-Cb	AB0185-C	BFM	AB0185-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+144	AB0186-Ca	AB0186-C	BFM	AB0186-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+145	AB0186-Cb	AB0186-C	BFM	AB0186-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+146	AB0187-Ca	AB0187-C	BFM	AB0187-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+147	AB0187-Cb	AB0187-C	BFM	AB0187-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+148	AB0188-Ca	AB0188-C	BFM	AB0188-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	2.0
+149	AB0188-Cb	AB0188-C	BFM	AB0188-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	2.0
+150	AB0189-Ca	AB0189-C	BFM	AB0189-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+151	AB0189-Cb	AB0189-C	BFM	AB0189-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+152	AB0190-Ca	AB0190-C	BFM	AB0190-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+153	AB0190-Cb	AB0190-C	BFM	AB0190-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+154	AB0191-Ca	AB0191-C	BFM	AB0191-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+155	AB0191-Cb	AB0191-C	BFM	AB0191-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+156	AB0192-Ca	AB0192-C	BFM	AB0192-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+157	AB0192-Cb	AB0192-C	BFM	AB0192-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+158	AB0197-Ca	AB0197-C	BFS	AB0197-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+159	AB0197-Cb	AB0197-C	BFS	AB0197-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+160	AB0198-Ca	AB0198-C	BFS	AB0198-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+161	AB0198-Cb	AB0198-C	BFS	AB0198-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+162	AB0199-Ca	AB0199-C	BFS	AB0199-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+163	AB0199-Cb	AB0199-C	BFS	AB0199-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+164	AB0201-Ca	AB0201-C	BFS	AB0201-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+165	AB0201-Cb	AB0201-C	BFS	AB0201-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+166	AB0202-Ca	AB0202-C	BFS	AB0202-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+167	AB0202-Cb	AB0202-C	BFS	AB0202-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+168	AB0203-Ca	AB0203-C	BFS	AB0203-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+169	AB0203-Cb	AB0203-C	BFS	AB0203-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+170	AB0204-Ca	AB0204-C	BFM	AB0204-Ca [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	0.0
+171	AB0204-Cb	AB0204-C	BFM	AB0204-Cb [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	0.0
+172	AB0205-Ca	AB0205-C	BFS	AB0205-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	1.0	2.0
+173	AB0205-Cb	AB0205-C	BFS	AB0205-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	1.0	2.0
+174	AB0206-Ca	AB0206-C	BFS	AB0206-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+175	AB0206-Cb	AB0206-C	BFS	AB0206-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+176	AB0207-Ca	AB0207-C	BFS	AB0207-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+177	AB0207-Cb	AB0207-C	BFS	AB0207-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+178	AB0208-Ca	AB0208-C	BFS	AB0208-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+179	AB0208-Cb	AB0208-C	BFS	AB0208-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+180	AB0209-Ca	AB0209-C	BFM	AB0209-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+181	AB0209-Cb	AB0209-C	BFM	AB0209-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	0.0
+182	AB0210-Ca	AB0210-C	BFM	AB0210-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+183	AB0210-Cb	AB0210-C	BFM	AB0210-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+184	AB0211-Ca	AB0211-C	BFS	AB0211-Ca [Burkina Faso, Bana, S, F]	Burkina Faso	Bana	F	S	2.0	1.0
+185	AB0211-Cb	AB0211-C	BFS	AB0211-Cb [Burkina Faso, Bana, S, F]	Burkina Faso	Bana	F	S	2.0	1.0
+186	AB0212-Ca	AB0212-C	BFM	AB0212-Ca [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+187	AB0212-Cb	AB0212-C	BFM	AB0212-Cb [Burkina Faso, Bana, M, F]	Burkina Faso	Bana	F	M	2.0	1.0
+188	AB0213-Ca	AB0213-C	BFM	AB0213-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+189	AB0213-Cb	AB0213-C	BFM	AB0213-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+190	AB0217-Ca	AB0217-C	BFS	AB0217-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	1.0
+191	AB0217-Cb	AB0217-C	BFS	AB0217-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	1.0
+192	AB0219-Ca	AB0219-C	BFM	AB0219-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+193	AB0219-Cb	AB0219-C	BFM	AB0219-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+194	AB0221-Ca	AB0221-C	BFM	AB0221-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+195	AB0221-Cb	AB0221-C	BFM	AB0221-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+196	AB0222-Ca	AB0222-C	BFM	AB0222-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	2.0
+197	AB0222-Cb	AB0222-C	BFM	AB0222-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	2.0
+198	AB0223-Ca	AB0223-C	BFM	AB0223-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+199	AB0223-Cb	AB0223-C	BFM	AB0223-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+200	AB0224-Ca	AB0224-C	BFM	AB0224-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	1.0	1.0
+201	AB0224-Cb	AB0224-C	BFM	AB0224-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	1.0	1.0
+202	AB0226-Ca	AB0226-C	BFM	AB0226-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+203	AB0226-Cb	AB0226-C	BFM	AB0226-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+204	AB0227-Ca	AB0227-C	BFM	AB0227-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+205	AB0227-Cb	AB0227-C	BFM	AB0227-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+206	AB0228-Ca	AB0228-C	BFS	AB0228-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+207	AB0228-Cb	AB0228-C	BFS	AB0228-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+208	AB0229-Ca	AB0229-C	BFM	AB0229-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+209	AB0229-Cb	AB0229-C	BFM	AB0229-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+210	AB0231-Ca	AB0231-C	BFS	AB0231-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	1.0	2.0
+211	AB0231-Cb	AB0231-C	BFS	AB0231-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	1.0	2.0
+212	AB0233-Ca	AB0233-C	BFS	AB0233-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	1.0	2.0
+213	AB0233-Cb	AB0233-C	BFS	AB0233-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	1.0	2.0
+214	AB0234-Ca	AB0234-C	BFM	AB0234-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+215	AB0234-Cb	AB0234-C	BFM	AB0234-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+216	AB0235-Ca	AB0235-C	BFS	AB0235-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+217	AB0235-Cb	AB0235-C	BFS	AB0235-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+218	AB0236-Ca	AB0236-C	BFS	AB0236-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	1.0
+219	AB0236-Cb	AB0236-C	BFS	AB0236-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	1.0
+220	AB0237-Ca	AB0237-C	BFM	AB0237-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+221	AB0237-Cb	AB0237-C	BFM	AB0237-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+222	AB0238-Ca	AB0238-C	BFS	AB0238-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+223	AB0238-Cb	AB0238-C	BFS	AB0238-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+224	AB0239-Ca	AB0239-C	BFS	AB0239-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+225	AB0239-Cb	AB0239-C	BFS	AB0239-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+226	AB0240-Ca	AB0240-C	BFM	AB0240-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+227	AB0240-Cb	AB0240-C	BFM	AB0240-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+228	AB0241-Ca	AB0241-C	BFS	AB0241-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+229	AB0241-Cb	AB0241-C	BFS	AB0241-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+230	AB0242-Ca	AB0242-C	BFM	AB0242-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+231	AB0242-Cb	AB0242-C	BFM	AB0242-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+232	AB0243-Ca	AB0243-C	BFM	AB0243-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+233	AB0243-Cb	AB0243-C	BFM	AB0243-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+234	AB0244-Ca	AB0244-C	BFS	AB0244-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+235	AB0244-Cb	AB0244-C	BFS	AB0244-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+236	AB0246-Ca	AB0246-C	BFM	AB0246-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+237	AB0246-Cb	AB0246-C	BFM	AB0246-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	1.0
+238	AB0249-Ca	AB0249-C	BFM	AB0249-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+239	AB0249-Cb	AB0249-C	BFM	AB0249-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+240	AB0250-Ca	AB0250-C	BFM	AB0250-Ca [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+241	AB0250-Cb	AB0250-C	BFM	AB0250-Cb [Burkina Faso, Sourukoudinga, M, F]	Burkina Faso	Sourukoudinga	F	M	2.0	0.0
+242	AB0251-Ca	AB0251-C	BFS	AB0251-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	1.0	2.0
+243	AB0251-Cb	AB0251-C	BFS	AB0251-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	1.0	2.0
+244	AB0252-Ca	AB0252-C	BFS	AB0252-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	1.0
+245	AB0252-Cb	AB0252-C	BFS	AB0252-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	1.0
+246	AB0253-Ca	AB0253-C	BFS	AB0253-Ca [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+247	AB0253-Cb	AB0253-C	BFS	AB0253-Cb [Burkina Faso, Sourukoudinga, S, F]	Burkina Faso	Sourukoudinga	F	S	2.0	2.0
+248	AB0256-Ca	AB0256-C	BFS	AB0256-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	1.0	2.0
+249	AB0256-Cb	AB0256-C	BFS	AB0256-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	1.0	2.0
+250	AB0257-Ca	AB0257-C	BFM	AB0257-Ca [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	2.0
+251	AB0257-Cb	AB0257-C	BFM	AB0257-Cb [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	2.0
+252	AB0258-Ca	AB0258-C	BFM	AB0258-Ca [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	2.0
+253	AB0258-Cb	AB0258-C	BFM	AB0258-Cb [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	2.0
+254	AB0260-Ca	AB0260-C	BFS	AB0260-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+255	AB0260-Cb	AB0260-C	BFS	AB0260-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+256	AB0261-Ca	AB0261-C	BFS	AB0261-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	1.0	2.0
+257	AB0261-Cb	AB0261-C	BFS	AB0261-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	1.0	2.0
+258	AB0262-Ca	AB0262-C	BFM	AB0262-Ca [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	2.0
+259	AB0262-Cb	AB0262-C	BFM	AB0262-Cb [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	2.0
+260	AB0263-Ca	AB0263-C	BFM	AB0263-Ca [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	1.0
+261	AB0263-Cb	AB0263-C	BFM	AB0263-Cb [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	1.0
+262	AB0264-Ca	AB0264-C	BFS	AB0264-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+263	AB0264-Cb	AB0264-C	BFS	AB0264-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+264	AB0265-Ca	AB0265-C	BFS	AB0265-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+265	AB0265-Cb	AB0265-C	BFS	AB0265-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+266	AB0266-Ca	AB0266-C	BFM	AB0266-Ca [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	2.0
+267	AB0266-Cb	AB0266-C	BFM	AB0266-Cb [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	2.0
+268	AB0267-Ca	AB0267-C	BFM	AB0267-Ca [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	0.0
+269	AB0267-Cb	AB0267-C	BFM	AB0267-Cb [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	0.0
+270	AB0268-Ca	AB0268-C	BFS	AB0268-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+271	AB0268-Cb	AB0268-C	BFS	AB0268-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+272	AB0270-Ca	AB0270-C	BFS	AB0270-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	1.0	1.0
+273	AB0270-Cb	AB0270-C	BFS	AB0270-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	1.0	1.0
+274	AB0271-Ca	AB0271-C	BFS	AB0271-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+275	AB0271-Cb	AB0271-C	BFS	AB0271-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+276	AB0272-Ca	AB0272-C	BFS	AB0272-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+277	AB0272-Cb	AB0272-C	BFS	AB0272-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+278	AB0273-Ca	AB0273-C	BFS	AB0273-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+279	AB0273-Cb	AB0273-C	BFS	AB0273-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+280	AB0274-Ca	AB0274-C	BFS	AB0274-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+281	AB0274-Cb	AB0274-C	BFS	AB0274-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+282	AB0276-Ca	AB0276-C	BFM	AB0276-Ca [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	1.0
+283	AB0276-Cb	AB0276-C	BFM	AB0276-Cb [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	1.0
+284	AB0277-Ca	AB0277-C	BFS	AB0277-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+285	AB0277-Cb	AB0277-C	BFS	AB0277-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+286	AB0278-Ca	AB0278-C	BFS	AB0278-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+287	AB0278-Cb	AB0278-C	BFS	AB0278-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	1.0
+288	AB0279-Ca	AB0279-C	BFM	AB0279-Ca [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	1.0
+289	AB0279-Cb	AB0279-C	BFM	AB0279-Cb [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	1.0
+290	AB0280-Ca	AB0280-C	BFS	AB0280-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+291	AB0280-Cb	AB0280-C	BFS	AB0280-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+292	AB0281-Ca	AB0281-C	BFS	AB0281-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	0.0
+293	AB0281-Cb	AB0281-C	BFS	AB0281-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	0.0
+294	AB0282-Ca	AB0282-C	BFM	AB0282-Ca [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	1.0
+295	AB0282-Cb	AB0282-C	BFM	AB0282-Cb [Burkina Faso, Pala, M, F]	Burkina Faso	Pala	F	M	2.0	1.0
+296	AB0283-Ca	AB0283-C	BFS	AB0283-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+297	AB0283-Cb	AB0283-C	BFS	AB0283-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+298	AB0284-Ca	AB0284-C	BFS	AB0284-Ca [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+299	AB0284-Cb	AB0284-C	BFS	AB0284-Cb [Burkina Faso, Pala, S, F]	Burkina Faso	Pala	F	S	2.0	2.0
+300	AC0090-Ca	AC0090-C	UGS	AC0090-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+301	AC0090-Cb	AC0090-C	UGS	AC0090-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+302	AC0091-Ca	AC0091-C	UGS	AC0091-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+303	AC0091-Cb	AC0091-C	UGS	AC0091-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+304	AC0092-Ca	AC0092-C	UGS	AC0092-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	1.0
+305	AC0092-Cb	AC0092-C	UGS	AC0092-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	1.0
+306	AC0093-Ca	AC0093-C	UGS	AC0093-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+307	AC0093-Cb	AC0093-C	UGS	AC0093-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+308	AC0094-Ca	AC0094-C	UGS	AC0094-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+309	AC0094-Cb	AC0094-C	UGS	AC0094-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+310	AC0095-Ca	AC0095-C	UGS	AC0095-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+311	AC0095-Cb	AC0095-C	UGS	AC0095-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+312	AC0096-Ca	AC0096-C	UGS	AC0096-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+313	AC0096-Cb	AC0096-C	UGS	AC0096-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+314	AC0097-Ca	AC0097-C	UGS	AC0097-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	1.0
+315	AC0097-Cb	AC0097-C	UGS	AC0097-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	1.0
+316	AC0098-Ca	AC0098-C	UGS	AC0098-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+317	AC0098-Cb	AC0098-C	UGS	AC0098-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+318	AC0099-Ca	AC0099-C	UGS	AC0099-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+319	AC0099-Cb	AC0099-C	UGS	AC0099-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+320	AC0100-Ca	AC0100-C	UGS	AC0100-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+321	AC0100-Cb	AC0100-C	UGS	AC0100-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+322	AC0101-Ca	AC0101-C	UGS	AC0101-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+323	AC0101-Cb	AC0101-C	UGS	AC0101-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+324	AC0102-Ca	AC0102-C	UGS	AC0102-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+325	AC0102-Cb	AC0102-C	UGS	AC0102-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+326	AC0103-Ca	AC0103-C	UGS	AC0103-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+327	AC0103-Cb	AC0103-C	UGS	AC0103-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+328	AC0104-Ca	AC0104-C	UGS	AC0104-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+329	AC0104-Cb	AC0104-C	UGS	AC0104-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+330	AC0106-Ca	AC0106-C	UGS	AC0106-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+331	AC0106-Cb	AC0106-C	UGS	AC0106-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+332	AC0107-Ca	AC0107-C	UGS	AC0107-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+333	AC0107-Cb	AC0107-C	UGS	AC0107-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+334	AC0108-Ca	AC0108-C	UGS	AC0108-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+335	AC0108-Cb	AC0108-C	UGS	AC0108-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+336	AC0109-Ca	AC0109-C	UGS	AC0109-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	1.0
+337	AC0109-Cb	AC0109-C	UGS	AC0109-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	1.0
+338	AC0110-Ca	AC0110-C	UGS	AC0110-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+339	AC0110-Cb	AC0110-C	UGS	AC0110-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+340	AC0111-Ca	AC0111-C	UGS	AC0111-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	1.0
+341	AC0111-Cb	AC0111-C	UGS	AC0111-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	1.0
+342	AC0112-Ca	AC0112-C	UGS	AC0112-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+343	AC0112-Cb	AC0112-C	UGS	AC0112-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+344	AC0113-Ca	AC0113-C	UGS	AC0113-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+345	AC0113-Cb	AC0113-C	UGS	AC0113-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+346	AC0114-Ca	AC0114-C	UGS	AC0114-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+347	AC0114-Cb	AC0114-C	UGS	AC0114-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+348	AC0115-Ca	AC0115-C	UGS	AC0115-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+349	AC0115-Cb	AC0115-C	UGS	AC0115-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+350	AC0116-Ca	AC0116-C	UGS	AC0116-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+351	AC0116-Cb	AC0116-C	UGS	AC0116-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+352	AC0117-Ca	AC0117-C	UGS	AC0117-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+353	AC0117-Cb	AC0117-C	UGS	AC0117-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+354	AC0118-Ca	AC0118-C	UGS	AC0118-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+355	AC0118-Cb	AC0118-C	UGS	AC0118-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+356	AC0119-Ca	AC0119-C	UGS	AC0119-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+357	AC0119-Cb	AC0119-C	UGS	AC0119-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+358	AC0120-Ca	AC0120-C	UGS	AC0120-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	1.0
+359	AC0120-Cb	AC0120-C	UGS	AC0120-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	1.0
+360	AC0121-Ca	AC0121-C	UGS	AC0121-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+361	AC0121-Cb	AC0121-C	UGS	AC0121-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+362	AC0122-Ca	AC0122-C	UGS	AC0122-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+363	AC0122-Cb	AC0122-C	UGS	AC0122-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+364	AC0123-Ca	AC0123-C	UGS	AC0123-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+365	AC0123-Cb	AC0123-C	UGS	AC0123-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+366	AC0124-Ca	AC0124-C	UGS	AC0124-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+367	AC0124-Cb	AC0124-C	UGS	AC0124-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+368	AC0125-Ca	AC0125-C	UGS	AC0125-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+369	AC0125-Cb	AC0125-C	UGS	AC0125-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+370	AC0126-Ca	AC0126-C	UGS	AC0126-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+371	AC0126-Cb	AC0126-C	UGS	AC0126-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+372	AC0127-Ca	AC0127-C	UGS	AC0127-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+373	AC0127-Cb	AC0127-C	UGS	AC0127-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+374	AC0128-Ca	AC0128-C	UGS	AC0128-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+375	AC0128-Cb	AC0128-C	UGS	AC0128-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+376	AC0129-Ca	AC0129-C	UGS	AC0129-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	2.0
+377	AC0129-Cb	AC0129-C	UGS	AC0129-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	2.0
+378	AC0130-Ca	AC0130-C	UGS	AC0130-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+379	AC0130-Cb	AC0130-C	UGS	AC0130-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+380	AC0131-Ca	AC0131-C	UGS	AC0131-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+381	AC0131-Cb	AC0131-C	UGS	AC0131-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+382	AC0132-Ca	AC0132-C	UGS	AC0132-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+383	AC0132-Cb	AC0132-C	UGS	AC0132-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+384	AC0133-Ca	AC0133-C	UGS	AC0133-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+385	AC0133-Cb	AC0133-C	UGS	AC0133-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+386	AC0135-Ca	AC0135-C	UGS	AC0135-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+387	AC0135-Cb	AC0135-C	UGS	AC0135-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+388	AC0136-Ca	AC0136-C	UGS	AC0136-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+389	AC0136-Cb	AC0136-C	UGS	AC0136-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+390	AC0137-Ca	AC0137-C	UGS	AC0137-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+391	AC0137-Cb	AC0137-C	UGS	AC0137-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+392	AC0138-Ca	AC0138-C	UGS	AC0138-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+393	AC0138-Cb	AC0138-C	UGS	AC0138-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+394	AC0139-Ca	AC0139-C	UGS	AC0139-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+395	AC0139-Cb	AC0139-C	UGS	AC0139-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+396	AC0140-Ca	AC0140-C	UGS	AC0140-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+397	AC0140-Cb	AC0140-C	UGS	AC0140-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+398	AC0142-Ca	AC0142-C	UGS	AC0142-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+399	AC0142-Cb	AC0142-C	UGS	AC0142-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+400	AC0143-Ca	AC0143-C	UGS	AC0143-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+401	AC0143-Cb	AC0143-C	UGS	AC0143-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+402	AC0144-Ca	AC0144-C	UGS	AC0144-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+403	AC0144-Cb	AC0144-C	UGS	AC0144-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+404	AC0145-Ca	AC0145-C	UGS	AC0145-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+405	AC0145-Cb	AC0145-C	UGS	AC0145-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+406	AC0147-Ca	AC0147-C	UGS	AC0147-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+407	AC0147-Cb	AC0147-C	UGS	AC0147-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+408	AC0148-Ca	AC0148-C	UGS	AC0148-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+409	AC0148-Cb	AC0148-C	UGS	AC0148-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+410	AC0149-Ca	AC0149-C	UGS	AC0149-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+411	AC0149-Cb	AC0149-C	UGS	AC0149-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+412	AC0150-Ca	AC0150-C	UGS	AC0150-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+413	AC0150-Cb	AC0150-C	UGS	AC0150-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+414	AC0151-Ca	AC0151-C	UGS	AC0151-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+415	AC0151-Cb	AC0151-C	UGS	AC0151-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+416	AC0152-Ca	AC0152-C	UGS	AC0152-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+417	AC0152-Cb	AC0152-C	UGS	AC0152-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+418	AC0153-Ca	AC0153-C	UGS	AC0153-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+419	AC0153-Cb	AC0153-C	UGS	AC0153-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+420	AC0154-Ca	AC0154-C	UGS	AC0154-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+421	AC0154-Cb	AC0154-C	UGS	AC0154-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+422	AC0156-Ca	AC0156-C	UGS	AC0156-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+423	AC0156-Cb	AC0156-C	UGS	AC0156-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+424	AC0158-Ca	AC0158-C	UGS	AC0158-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+425	AC0158-Cb	AC0158-C	UGS	AC0158-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+426	AC0159-Ca	AC0159-C	UGS	AC0159-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+427	AC0159-Cb	AC0159-C	UGS	AC0159-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+428	AC0160-Ca	AC0160-C	UGS	AC0160-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+429	AC0160-Cb	AC0160-C	UGS	AC0160-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+430	AC0161-Ca	AC0161-C	UGS	AC0161-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+431	AC0161-Cb	AC0161-C	UGS	AC0161-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+432	AC0162-Ca	AC0162-C	UGS	AC0162-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+433	AC0162-Cb	AC0162-C	UGS	AC0162-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+434	AC0163-Ca	AC0163-C	UGS	AC0163-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+435	AC0163-Cb	AC0163-C	UGS	AC0163-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+436	AC0164-Ca	AC0164-C	UGS	AC0164-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+437	AC0164-Cb	AC0164-C	UGS	AC0164-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+438	AC0166-Ca	AC0166-C	UGS	AC0166-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+439	AC0166-Cb	AC0166-C	UGS	AC0166-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+440	AC0167-Ca	AC0167-C	UGS	AC0167-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+441	AC0167-Cb	AC0167-C	UGS	AC0167-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+442	AC0168-Ca	AC0168-C	UGS	AC0168-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+443	AC0168-Cb	AC0168-C	UGS	AC0168-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+444	AC0169-Ca	AC0169-C	UGS	AC0169-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+445	AC0169-Cb	AC0169-C	UGS	AC0169-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+446	AC0170-Ca	AC0170-C	UGS	AC0170-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+447	AC0170-Cb	AC0170-C	UGS	AC0170-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+448	AC0171-Ca	AC0171-C	UGS	AC0171-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+449	AC0171-Cb	AC0171-C	UGS	AC0171-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+450	AC0172-Ca	AC0172-C	UGS	AC0172-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+451	AC0172-Cb	AC0172-C	UGS	AC0172-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+452	AC0173-Ca	AC0173-C	UGS	AC0173-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+453	AC0173-Cb	AC0173-C	UGS	AC0173-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+454	AC0174-Ca	AC0174-C	UGS	AC0174-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+455	AC0174-Cb	AC0174-C	UGS	AC0174-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+456	AC0176-Ca	AC0176-C	UGS	AC0176-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+457	AC0176-Cb	AC0176-C	UGS	AC0176-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+458	AC0178-Ca	AC0178-C	UGS	AC0178-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+459	AC0178-Cb	AC0178-C	UGS	AC0178-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+460	AC0179-Ca	AC0179-C	UGS	AC0179-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+461	AC0179-Cb	AC0179-C	UGS	AC0179-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+462	AC0180-Ca	AC0180-C	UGS	AC0180-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+463	AC0180-Cb	AC0180-C	UGS	AC0180-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+464	AC0181-Ca	AC0181-C	UGS	AC0181-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	1.0
+465	AC0181-Cb	AC0181-C	UGS	AC0181-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	1.0
+466	AC0182-Ca	AC0182-C	UGS	AC0182-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+467	AC0182-Cb	AC0182-C	UGS	AC0182-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+468	AC0183-Ca	AC0183-C	UGS	AC0183-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	2.0
+469	AC0183-Cb	AC0183-C	UGS	AC0183-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	2.0
+470	AC0184-Ca	AC0184-C	UGS	AC0184-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+471	AC0184-Cb	AC0184-C	UGS	AC0184-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+472	AC0186-Ca	AC0186-C	UGS	AC0186-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+473	AC0186-Cb	AC0186-C	UGS	AC0186-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	0.0	0.0
+474	AC0187-Ca	AC0187-C	UGS	AC0187-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+475	AC0187-Cb	AC0187-C	UGS	AC0187-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+476	AC0188-Ca	AC0188-C	UGS	AC0188-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+477	AC0188-Cb	AC0188-C	UGS	AC0188-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+478	AC0189-Ca	AC0189-C	UGS	AC0189-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	1.0
+479	AC0189-Cb	AC0189-C	UGS	AC0189-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	1.0
+480	AC0190-Ca	AC0190-C	UGS	AC0190-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+481	AC0190-Cb	AC0190-C	UGS	AC0190-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+482	AC0191-Ca	AC0191-C	UGS	AC0191-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+483	AC0191-Cb	AC0191-C	UGS	AC0191-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+484	AC0192-Ca	AC0192-C	UGS	AC0192-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+485	AC0192-Cb	AC0192-C	UGS	AC0192-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+486	AC0193-Ca	AC0193-C	UGS	AC0193-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+487	AC0193-Cb	AC0193-C	UGS	AC0193-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+488	AC0194-Ca	AC0194-C	UGS	AC0194-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	1.0
+489	AC0194-Cb	AC0194-C	UGS	AC0194-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	1.0
+490	AC0195-Ca	AC0195-C	UGS	AC0195-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+491	AC0195-Cb	AC0195-C	UGS	AC0195-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+492	AC0196-Ca	AC0196-C	UGS	AC0196-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+493	AC0196-Cb	AC0196-C	UGS	AC0196-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+494	AC0197-Ca	AC0197-C	UGS	AC0197-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+495	AC0197-Cb	AC0197-C	UGS	AC0197-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+496	AC0199-Ca	AC0199-C	UGS	AC0199-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+497	AC0199-Cb	AC0199-C	UGS	AC0199-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+498	AC0200-Ca	AC0200-C	UGS	AC0200-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+499	AC0200-Cb	AC0200-C	UGS	AC0200-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+500	AC0201-Ca	AC0201-C	UGS	AC0201-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+501	AC0201-Cb	AC0201-C	UGS	AC0201-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	2.0	0.0
+502	AC0202-Ca	AC0202-C	UGS	AC0202-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+503	AC0202-Cb	AC0202-C	UGS	AC0202-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	0.0
+504	AC0203-Ca	AC0203-C	UGS	AC0203-Ca [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+505	AC0203-Cb	AC0203-C	UGS	AC0203-Cb [Uganda, Nagongera, Tororo, S, F]	Uganda	Nagongera, Tororo	F	S	1.0	1.0
+506	AJ0023-Ca	AJ0023-C	GWA	AJ0023-Ca [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+507	AJ0023-Cb	AJ0023-C	GWA	AJ0023-Cb [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+508	AJ0024-Ca	AJ0024-C	GWA	AJ0024-Ca [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+509	AJ0024-Cb	AJ0024-C	GWA	AJ0024-Cb [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+510	AJ0032-Ca	AJ0032-C	GWA	AJ0032-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	2.0	0.0
+511	AJ0032-Cb	AJ0032-C	GWA	AJ0032-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	2.0	0.0
+512	AJ0035-Ca	AJ0035-C	GWA	AJ0035-Ca [Guinea-Bissau, Antula, M, F]	Guinea-Bissau	Antula	F	M	1.0	0.0
+513	AJ0035-Cb	AJ0035-C	GWA	AJ0035-Cb [Guinea-Bissau, Antula, M, F]	Guinea-Bissau	Antula	F	M	1.0	0.0
+514	AJ0036-Ca	AJ0036-C	GWA	AJ0036-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+515	AJ0036-Cb	AJ0036-C	GWA	AJ0036-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+516	AJ0039-Ca	AJ0039-C	GWA	AJ0039-Ca [Guinea-Bissau, Antula, M, F]	Guinea-Bissau	Antula	F	M	0.0	0.0
+517	AJ0039-Cb	AJ0039-C	GWA	AJ0039-Cb [Guinea-Bissau, Antula, M, F]	Guinea-Bissau	Antula	F	M	0.0	0.0
+518	AJ0043-Ca	AJ0043-C	GWA	AJ0043-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+519	AJ0043-Cb	AJ0043-C	GWA	AJ0043-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+520	AJ0044-Ca	AJ0044-C	GWA	AJ0044-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+521	AJ0044-Cb	AJ0044-C	GWA	AJ0044-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+522	AJ0045-Ca	AJ0045-C	GWA	AJ0045-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	2.0	0.0
+523	AJ0045-Cb	AJ0045-C	GWA	AJ0045-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	2.0	0.0
+524	AJ0047-Ca	AJ0047-C	GWA	AJ0047-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+525	AJ0047-Cb	AJ0047-C	GWA	AJ0047-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+526	AJ0051-Ca	AJ0051-C	GWA	AJ0051-Ca [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	1.0	0.0
+527	AJ0051-Cb	AJ0051-C	GWA	AJ0051-Cb [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	1.0	0.0
+528	AJ0052-Ca	AJ0052-C	GWA	AJ0052-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+529	AJ0052-Cb	AJ0052-C	GWA	AJ0052-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+530	AJ0056-Ca	AJ0056-C	GWA	AJ0056-Ca [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+531	AJ0056-Cb	AJ0056-C	GWA	AJ0056-Cb [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+532	AJ0061-Ca	AJ0061-C	GWA	AJ0061-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+533	AJ0061-Cb	AJ0061-C	GWA	AJ0061-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+534	AJ0063-Ca	AJ0063-C	GWA	AJ0063-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+535	AJ0063-Cb	AJ0063-C	GWA	AJ0063-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+536	AJ0064-Ca	AJ0064-C	GWA	AJ0064-Ca [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	1.0	0.0
+537	AJ0064-Cb	AJ0064-C	GWA	AJ0064-Cb [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	1.0	0.0
+538	AJ0066-Ca	AJ0066-C	GWA	AJ0066-Ca [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+539	AJ0066-Cb	AJ0066-C	GWA	AJ0066-Cb [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+540	AJ0070-Ca	AJ0070-C	GWA	AJ0070-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+541	AJ0070-Cb	AJ0070-C	GWA	AJ0070-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+542	AJ0071-Ca	AJ0071-C	GWA	AJ0071-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+543	AJ0071-Cb	AJ0071-C	GWA	AJ0071-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+544	AJ0072-Ca	AJ0072-C	GWA	AJ0072-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+545	AJ0072-Cb	AJ0072-C	GWA	AJ0072-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+546	AJ0074-Ca	AJ0074-C	GWA	AJ0074-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	2.0	0.0
+547	AJ0074-Cb	AJ0074-C	GWA	AJ0074-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	2.0	0.0
+548	AJ0075-Ca	AJ0075-C	GWA	AJ0075-Ca [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	1.0	0.0
+549	AJ0075-Cb	AJ0075-C	GWA	AJ0075-Cb [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	1.0	0.0
+550	AJ0076-Ca	AJ0076-C	GWA	AJ0076-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+551	AJ0076-Cb	AJ0076-C	GWA	AJ0076-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+552	AJ0077-Ca	AJ0077-C	GWA	AJ0077-Ca [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	1.0	0.0
+553	AJ0077-Cb	AJ0077-C	GWA	AJ0077-Cb [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	1.0	0.0
+554	AJ0078-Ca	AJ0078-C	GWA	AJ0078-Ca [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	1.0	0.0
+555	AJ0078-Cb	AJ0078-C	GWA	AJ0078-Cb [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	1.0	0.0
+556	AJ0081-Ca	AJ0081-C	GWA	AJ0081-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+557	AJ0081-Cb	AJ0081-C	GWA	AJ0081-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+558	AJ0084-Ca	AJ0084-C	GWA	AJ0084-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+559	AJ0084-Cb	AJ0084-C	GWA	AJ0084-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+560	AJ0085-Ca	AJ0085-C	GWA	AJ0085-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+561	AJ0085-Cb	AJ0085-C	GWA	AJ0085-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+562	AJ0086-Ca	AJ0086-C	GWA	AJ0086-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+563	AJ0086-Cb	AJ0086-C	GWA	AJ0086-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+564	AJ0088-Ca	AJ0088-C	GWA	AJ0088-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+565	AJ0088-Cb	AJ0088-C	GWA	AJ0088-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+566	AJ0090-Ca	AJ0090-C	GWA	AJ0090-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+567	AJ0090-Cb	AJ0090-C	GWA	AJ0090-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+568	AJ0092-Ca	AJ0092-C	GWA	AJ0092-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+569	AJ0092-Cb	AJ0092-C	GWA	AJ0092-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+570	AJ0093-Ca	AJ0093-C	GWA	AJ0093-Ca [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	1.0	0.0
+571	AJ0093-Cb	AJ0093-C	GWA	AJ0093-Cb [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	1.0	0.0
+572	AJ0096-Ca	AJ0096-C	GWA	AJ0096-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+573	AJ0096-Cb	AJ0096-C	GWA	AJ0096-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+574	AJ0097-Ca	AJ0097-C	GWA	AJ0097-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+575	AJ0097-Cb	AJ0097-C	GWA	AJ0097-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+576	AJ0098-Ca	AJ0098-C	GWA	AJ0098-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+577	AJ0098-Cb	AJ0098-C	GWA	AJ0098-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+578	AJ0100-Ca	AJ0100-C	GWA	AJ0100-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+579	AJ0100-Cb	AJ0100-C	GWA	AJ0100-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+580	AJ0101-Ca	AJ0101-C	GWA	AJ0101-Ca [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+581	AJ0101-Cb	AJ0101-C	GWA	AJ0101-Cb [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+582	AJ0102-Ca	AJ0102-C	GWA	AJ0102-Ca [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+583	AJ0102-Cb	AJ0102-C	GWA	AJ0102-Cb [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+584	AJ0103-Ca	AJ0103-C	GWA	AJ0103-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+585	AJ0103-Cb	AJ0103-C	GWA	AJ0103-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+586	AJ0105-Ca	AJ0105-C	GWA	AJ0105-Ca [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+587	AJ0105-Cb	AJ0105-C	GWA	AJ0105-Cb [Guinea-Bissau, Antula, M/S, F]	Guinea-Bissau	Antula	F	M/S	0.0	0.0
+588	AJ0107-Ca	AJ0107-C	GWA	AJ0107-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+589	AJ0107-Cb	AJ0107-C	GWA	AJ0107-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+590	AJ0109-Ca	AJ0109-C	GWA	AJ0109-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+591	AJ0109-Cb	AJ0109-C	GWA	AJ0109-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	0.0	0.0
+592	AJ0113-Ca	AJ0113-C	GWA	AJ0113-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+593	AJ0113-Cb	AJ0113-C	GWA	AJ0113-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+594	AJ0115-Ca	AJ0115-C	GWA	AJ0115-Ca [Guinea-Bissau, Antula, M, F]	Guinea-Bissau	Antula	F	M	0.0	0.0
+595	AJ0115-Cb	AJ0115-C	GWA	AJ0115-Cb [Guinea-Bissau, Antula, M, F]	Guinea-Bissau	Antula	F	M	0.0	0.0
+596	AJ0116-Ca	AJ0116-C	GWA	AJ0116-Ca [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+597	AJ0116-Cb	AJ0116-C	GWA	AJ0116-Cb [Guinea-Bissau, Antula, S, F]	Guinea-Bissau	Antula	F	S	1.0	0.0
+598	AK0065-Ca	AK0065-C	KES	AK0065-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+599	AK0065-Cb	AK0065-C	KES	AK0065-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+600	AK0066-Ca	AK0066-C	KES	AK0066-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+601	AK0066-Cb	AK0066-C	KES	AK0066-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+602	AK0067-Ca	AK0067-C	KES	AK0067-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	0.0	0.0
+603	AK0067-Cb	AK0067-C	KES	AK0067-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	0.0	0.0
+604	AK0068-Ca	AK0068-C	KES	AK0068-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+605	AK0068-Cb	AK0068-C	KES	AK0068-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+606	AK0069-Ca	AK0069-C	KES	AK0069-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	0.0	0.0
+607	AK0069-Cb	AK0069-C	KES	AK0069-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	0.0	0.0
+608	AK0070-Ca	AK0070-C	KES	AK0070-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+609	AK0070-Cb	AK0070-C	KES	AK0070-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+610	AK0072-Ca	AK0072-C	KES	AK0072-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+611	AK0072-Cb	AK0072-C	KES	AK0072-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+612	AK0073-Ca	AK0073-C	KES	AK0073-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+613	AK0073-Cb	AK0073-C	KES	AK0073-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+614	AK0074-Ca	AK0074-C	KES	AK0074-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+615	AK0074-Cb	AK0074-C	KES	AK0074-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+616	AK0075-Ca	AK0075-C	KES	AK0075-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+617	AK0075-Cb	AK0075-C	KES	AK0075-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+618	AK0076-Ca	AK0076-C	KES	AK0076-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+619	AK0076-Cb	AK0076-C	KES	AK0076-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+620	AK0077-Ca	AK0077-C	KES	AK0077-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+621	AK0077-Cb	AK0077-C	KES	AK0077-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+622	AK0078-Ca	AK0078-C	KES	AK0078-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	0.0	0.0
+623	AK0078-Cb	AK0078-C	KES	AK0078-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	0.0	0.0
+624	AK0079-Ca	AK0079-C	KES	AK0079-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+625	AK0079-Cb	AK0079-C	KES	AK0079-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+626	AK0080-Ca	AK0080-C	KES	AK0080-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+627	AK0080-Cb	AK0080-C	KES	AK0080-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+628	AK0081-Ca	AK0081-C	KES	AK0081-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	0.0	0.0
+629	AK0081-Cb	AK0081-C	KES	AK0081-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	0.0	0.0
+630	AK0082-Ca	AK0082-C	KES	AK0082-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+631	AK0082-Cb	AK0082-C	KES	AK0082-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+632	AK0085-Ca	AK0085-C	KES	AK0085-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+633	AK0085-Cb	AK0085-C	KES	AK0085-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+634	AK0086-Ca	AK0086-C	KES	AK0086-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+635	AK0086-Cb	AK0086-C	KES	AK0086-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+636	AK0087-Ca	AK0087-C	KES	AK0087-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+637	AK0087-Cb	AK0087-C	KES	AK0087-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+638	AK0088-Ca	AK0088-C	KES	AK0088-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+639	AK0088-Cb	AK0088-C	KES	AK0088-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+640	AK0089-Ca	AK0089-C	KES	AK0089-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+641	AK0089-Cb	AK0089-C	KES	AK0089-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+642	AK0090-Ca	AK0090-C	KES	AK0090-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+643	AK0090-Cb	AK0090-C	KES	AK0090-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+644	AK0091-Ca	AK0091-C	KES	AK0091-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+645	AK0091-Cb	AK0091-C	KES	AK0091-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+646	AK0092-Ca	AK0092-C	KES	AK0092-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+647	AK0092-Cb	AK0092-C	KES	AK0092-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+648	AK0093-Ca	AK0093-C	KES	AK0093-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+649	AK0093-Cb	AK0093-C	KES	AK0093-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+650	AK0094-Ca	AK0094-C	KES	AK0094-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+651	AK0094-Cb	AK0094-C	KES	AK0094-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+652	AK0095-Ca	AK0095-C	KES	AK0095-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+653	AK0095-Cb	AK0095-C	KES	AK0095-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+654	AK0096-Ca	AK0096-C	KES	AK0096-Ca [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	2.0	0.0
+655	AK0096-Cb	AK0096-C	KES	AK0096-Cb [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	2.0	0.0
+656	AK0098-Ca	AK0098-C	KES	AK0098-Ca [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	2.0	0.0
+657	AK0098-Cb	AK0098-C	KES	AK0098-Cb [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	2.0	0.0
+658	AK0099-Ca	AK0099-C	KES	AK0099-Ca [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	2.0	0.0
+659	AK0099-Cb	AK0099-C	KES	AK0099-Cb [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	2.0	0.0
+660	AK0100-Ca	AK0100-C	KES	AK0100-Ca [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	1.0	0.0
+661	AK0100-Cb	AK0100-C	KES	AK0100-Cb [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	1.0	0.0
+662	AK0101-Ca	AK0101-C	KES	AK0101-Ca [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	2.0	0.0
+663	AK0101-Cb	AK0101-C	KES	AK0101-Cb [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	2.0	0.0
+664	AK0102-Ca	AK0102-C	KES	AK0102-Ca [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	1.0	0.0
+665	AK0102-Cb	AK0102-C	KES	AK0102-Cb [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	1.0	0.0
+666	AK0103-Ca	AK0103-C	KES	AK0103-Ca [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	0.0	0.0
+667	AK0103-Cb	AK0103-C	KES	AK0103-Cb [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	0.0	0.0
+668	AK0104-Ca	AK0104-C	KES	AK0104-Ca [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	1.0	0.0
+669	AK0104-Cb	AK0104-C	KES	AK0104-Cb [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	1.0	0.0
+670	AK0105-Ca	AK0105-C	KES	AK0105-Ca [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	0.0	0.0
+671	AK0105-Cb	AK0105-C	KES	AK0105-Cb [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	0.0	0.0
+672	AK0106-Ca	AK0106-C	KES	AK0106-Ca [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	0.0	0.0
+673	AK0106-Cb	AK0106-C	KES	AK0106-Cb [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	0.0	0.0
+674	AK0108-Ca	AK0108-C	KES	AK0108-Ca [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	1.0	0.0
+675	AK0108-Cb	AK0108-C	KES	AK0108-Cb [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	1.0	0.0
+676	AK0109-Ca	AK0109-C	KES	AK0109-Ca [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	2.0	0.0
+677	AK0109-Cb	AK0109-C	KES	AK0109-Cb [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	2.0	0.0
+678	AK0110-Ca	AK0110-C	KES	AK0110-Ca [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	2.0	0.0
+679	AK0110-Cb	AK0110-C	KES	AK0110-Cb [Kenya, Kilifi-Junju, S, F]	Kenya	Kilifi-Junju	F	S	2.0	0.0
+680	AK0116-Ca	AK0116-C	KES	AK0116-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+681	AK0116-Cb	AK0116-C	KES	AK0116-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+682	AK0119-Ca	AK0119-C	KES	AK0119-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+683	AK0119-Cb	AK0119-C	KES	AK0119-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	1.0	0.0
+684	AK0127-Ca	AK0127-C	KES	AK0127-Ca [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+685	AK0127-Cb	AK0127-C	KES	AK0127-Cb [Kenya, Kilifi-Mbogolo, S, F]	Kenya	Kilifi-Mbogolo	F	S	2.0	0.0
+686	AN0007-Ca	AN0007-C	CMS	AN0007-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+687	AN0007-Cb	AN0007-C	CMS	AN0007-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+688	AN0008-Ca	AN0008-C	CMS	AN0008-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+689	AN0008-Cb	AN0008-C	CMS	AN0008-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+690	AN0009-Ca	AN0009-C	CMS	AN0009-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+691	AN0009-Cb	AN0009-C	CMS	AN0009-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+692	AN0010-Ca	AN0010-C	CMS	AN0010-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+693	AN0010-Cb	AN0010-C	CMS	AN0010-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+694	AN0011-Ca	AN0011-C	CMS	AN0011-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+695	AN0011-Cb	AN0011-C	CMS	AN0011-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+696	AN0012-Ca	AN0012-C	CMS	AN0012-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+697	AN0012-Cb	AN0012-C	CMS	AN0012-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+698	AN0014-Ca	AN0014-C	CMS	AN0014-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+699	AN0014-Cb	AN0014-C	CMS	AN0014-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+700	AN0016-Ca	AN0016-C	CMS	AN0016-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+701	AN0016-Cb	AN0016-C	CMS	AN0016-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+702	AN0017-Ca	AN0017-C	CMS	AN0017-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	2.0
+703	AN0017-Cb	AN0017-C	CMS	AN0017-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	2.0
+704	AN0018-Ca	AN0018-C	CMS	AN0018-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+705	AN0018-Cb	AN0018-C	CMS	AN0018-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+706	AN0019-Ca	AN0019-C	CMS	AN0019-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+707	AN0019-Cb	AN0019-C	CMS	AN0019-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+708	AN0020-Ca	AN0020-C	CMS	AN0020-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+709	AN0020-Cb	AN0020-C	CMS	AN0020-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+710	AN0022-Ca	AN0022-C	CMS	AN0022-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	1.0
+711	AN0022-Cb	AN0022-C	CMS	AN0022-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	1.0
+712	AN0023-Ca	AN0023-C	CMS	AN0023-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	2.0	1.0
+713	AN0023-Cb	AN0023-C	CMS	AN0023-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	2.0	1.0
+714	AN0024-Ca	AN0024-C	CMS	AN0024-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	2.0	2.0
+715	AN0024-Cb	AN0024-C	CMS	AN0024-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	2.0	2.0
+716	AN0025-Ca	AN0025-C	CMS	AN0025-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	0.0
+717	AN0025-Cb	AN0025-C	CMS	AN0025-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	0.0
+718	AN0026-Ca	AN0026-C	CMS	AN0026-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	2.0	1.0
+719	AN0026-Cb	AN0026-C	CMS	AN0026-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	2.0	1.0
+720	AN0027-Ca	AN0027-C	CMS	AN0027-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	2.0
+721	AN0027-Cb	AN0027-C	CMS	AN0027-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	2.0
+722	AN0028-Ca	AN0028-C	CMS	AN0028-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	0.0	1.0
+723	AN0028-Cb	AN0028-C	CMS	AN0028-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	0.0	1.0
+724	AN0029-Ca	AN0029-C	CMS	AN0029-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	1.0
+725	AN0029-Cb	AN0029-C	CMS	AN0029-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	1.0
+726	AN0030-Ca	AN0030-C	CMS	AN0030-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	2.0	0.0
+727	AN0030-Cb	AN0030-C	CMS	AN0030-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	2.0	0.0
+728	AN0031-Ca	AN0031-C	CMS	AN0031-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	1.0
+729	AN0031-Cb	AN0031-C	CMS	AN0031-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	1.0
+730	AN0032-Ca	AN0032-C	CMS	AN0032-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	2.0
+731	AN0032-Cb	AN0032-C	CMS	AN0032-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	2.0
+732	AN0033-Ca	AN0033-C	CMS	AN0033-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	1.0
+733	AN0033-Cb	AN0033-C	CMS	AN0033-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	1.0	1.0
+734	AN0034-Ca	AN0034-C	CMS	AN0034-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	2.0	1.0
+735	AN0034-Cb	AN0034-C	CMS	AN0034-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	2.0	1.0
+736	AN0035-Ca	AN0035-C	CMS	AN0035-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	0.0	1.0
+737	AN0035-Cb	AN0035-C	CMS	AN0035-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	0.0	1.0
+738	AN0036-Ca	AN0036-C	CMS	AN0036-Ca [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	2.0	2.0
+739	AN0036-Cb	AN0036-C	CMS	AN0036-Cb [Cameroon, Gado-Badzere, S, M]	Cameroon	Gado-Badzere	M	S	2.0	2.0
+740	AN0037-Ca	AN0037-C	CMS	AN0037-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+741	AN0037-Cb	AN0037-C	CMS	AN0037-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+742	AN0038-Ca	AN0038-C	CMS	AN0038-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+743	AN0038-Cb	AN0038-C	CMS	AN0038-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+744	AN0039-Ca	AN0039-C	CMS	AN0039-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+745	AN0039-Cb	AN0039-C	CMS	AN0039-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+746	AN0040-Ca	AN0040-C	CMS	AN0040-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+747	AN0040-Cb	AN0040-C	CMS	AN0040-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+748	AN0041-Ca	AN0041-C	CMS	AN0041-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+749	AN0041-Cb	AN0041-C	CMS	AN0041-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+750	AN0042-Ca	AN0042-C	CMS	AN0042-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+751	AN0042-Cb	AN0042-C	CMS	AN0042-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+752	AN0043-Ca	AN0043-C	CMS	AN0043-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+753	AN0043-Cb	AN0043-C	CMS	AN0043-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+754	AN0045-Ca	AN0045-C	CMS	AN0045-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+755	AN0045-Cb	AN0045-C	CMS	AN0045-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+756	AN0046-Ca	AN0046-C	CMS	AN0046-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	1.0
+757	AN0046-Cb	AN0046-C	CMS	AN0046-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	1.0
+758	AN0047-Ca	AN0047-C	CMS	AN0047-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+759	AN0047-Cb	AN0047-C	CMS	AN0047-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+760	AN0048-Ca	AN0048-C	CMS	AN0048-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+761	AN0048-Cb	AN0048-C	CMS	AN0048-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+762	AN0049-Ca	AN0049-C	CMS	AN0049-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+763	AN0049-Cb	AN0049-C	CMS	AN0049-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+764	AN0050-Ca	AN0050-C	CMS	AN0050-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+765	AN0050-Cb	AN0050-C	CMS	AN0050-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+766	AN0051-Ca	AN0051-C	CMS	AN0051-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+767	AN0051-Cb	AN0051-C	CMS	AN0051-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+768	AN0053-Ca	AN0053-C	CMS	AN0053-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+769	AN0053-Cb	AN0053-C	CMS	AN0053-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+770	AN0054-Ca	AN0054-C	CMS	AN0054-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+771	AN0054-Cb	AN0054-C	CMS	AN0054-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+772	AN0055-Ca	AN0055-C	CMS	AN0055-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	1.0
+773	AN0055-Cb	AN0055-C	CMS	AN0055-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	1.0
+774	AN0056-Ca	AN0056-C	CMS	AN0056-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+775	AN0056-Cb	AN0056-C	CMS	AN0056-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+776	AN0057-Ca	AN0057-C	CMS	AN0057-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	2.0
+777	AN0057-Cb	AN0057-C	CMS	AN0057-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	2.0
+778	AN0058-Ca	AN0058-C	CMS	AN0058-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+779	AN0058-Cb	AN0058-C	CMS	AN0058-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+780	AN0059-Ca	AN0059-C	CMS	AN0059-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+781	AN0059-Cb	AN0059-C	CMS	AN0059-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+782	AN0060-Ca	AN0060-C	CMS	AN0060-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+783	AN0060-Cb	AN0060-C	CMS	AN0060-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+784	AN0063-Ca	AN0063-C	CMS	AN0063-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	2.0
+785	AN0063-Cb	AN0063-C	CMS	AN0063-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	2.0
+786	AN0064-Ca	AN0064-C	CMS	AN0064-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	2.0	1.0
+787	AN0064-Cb	AN0064-C	CMS	AN0064-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	2.0	1.0
+788	AN0065-Ca	AN0065-C	CMS	AN0065-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	2.0
+789	AN0065-Cb	AN0065-C	CMS	AN0065-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	2.0
+790	AN0066-Ca	AN0066-C	CMS	AN0066-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	2.0
+791	AN0066-Cb	AN0066-C	CMS	AN0066-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	2.0
+792	AN0067-Ca	AN0067-C	CMS	AN0067-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	2.0	1.0
+793	AN0067-Cb	AN0067-C	CMS	AN0067-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	2.0	1.0
+794	AN0068-Ca	AN0068-C	CMS	AN0068-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	1.0
+795	AN0068-Cb	AN0068-C	CMS	AN0068-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	1.0
+796	AN0069-Ca	AN0069-C	CMS	AN0069-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	2.0
+797	AN0069-Cb	AN0069-C	CMS	AN0069-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	2.0
+798	AN0070-Ca	AN0070-C	CMS	AN0070-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	2.0	2.0
+799	AN0070-Cb	AN0070-C	CMS	AN0070-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	2.0	2.0
+800	AN0071-Ca	AN0071-C	CMS	AN0071-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	2.0	2.0
+801	AN0071-Cb	AN0071-C	CMS	AN0071-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	2.0	2.0
+802	AN0072-Ca	AN0072-C	CMS	AN0072-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	1.0
+803	AN0072-Cb	AN0072-C	CMS	AN0072-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	1.0
+804	AN0073-Ca	AN0073-C	CMS	AN0073-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	1.0
+805	AN0073-Cb	AN0073-C	CMS	AN0073-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	1.0
+806	AN0074-Ca	AN0074-C	CMS	AN0074-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	1.0
+807	AN0074-Cb	AN0074-C	CMS	AN0074-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	1.0
+808	AN0075-Ca	AN0075-C	CMS	AN0075-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	1.0
+809	AN0075-Cb	AN0075-C	CMS	AN0075-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	1.0
+810	AN0076-Ca	AN0076-C	CMS	AN0076-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	2.0	1.0
+811	AN0076-Cb	AN0076-C	CMS	AN0076-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	2.0	1.0
+812	AN0077-Ca	AN0077-C	CMS	AN0077-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	0.0
+813	AN0077-Cb	AN0077-C	CMS	AN0077-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	0.0
+814	AN0079-Ca	AN0079-C	CMS	AN0079-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	1.0
+815	AN0079-Cb	AN0079-C	CMS	AN0079-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	1.0
+816	AN0080-Ca	AN0080-C	CMS	AN0080-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	0.0
+817	AN0080-Cb	AN0080-C	CMS	AN0080-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	0.0
+818	AN0081-Ca	AN0081-C	CMS	AN0081-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	2.0
+819	AN0081-Cb	AN0081-C	CMS	AN0081-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	2.0
+820	AN0082-Ca	AN0082-C	CMS	AN0082-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	2.0	1.0
+821	AN0082-Cb	AN0082-C	CMS	AN0082-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	2.0	1.0
+822	AN0083-Ca	AN0083-C	CMS	AN0083-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	0.0
+823	AN0083-Cb	AN0083-C	CMS	AN0083-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	1.0	0.0
+824	AN0084-Ca	AN0084-C	CMS	AN0084-Ca [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	0.0
+825	AN0084-Cb	AN0084-C	CMS	AN0084-Cb [Cameroon, Zembe-Borongo, S, F]	Cameroon	Zembe-Borongo	F	S	0.0	0.0
+826	AN0085-Ca	AN0085-C	CMS	AN0085-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	1.0
+827	AN0085-Cb	AN0085-C	CMS	AN0085-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	1.0
+828	AN0086-Ca	AN0086-C	CMS	AN0086-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+829	AN0086-Cb	AN0086-C	CMS	AN0086-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+830	AN0087-Ca	AN0087-C	CMS	AN0087-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	0.0
+831	AN0087-Cb	AN0087-C	CMS	AN0087-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	0.0
+832	AN0088-Ca	AN0088-C	CMS	AN0088-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+833	AN0088-Cb	AN0088-C	CMS	AN0088-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+834	AN0089-Ca	AN0089-C	CMS	AN0089-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+835	AN0089-Cb	AN0089-C	CMS	AN0089-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+836	AN0090-Ca	AN0090-C	CMS	AN0090-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+837	AN0090-Cb	AN0090-C	CMS	AN0090-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+838	AN0091-Ca	AN0091-C	CMS	AN0091-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	1.0
+839	AN0091-Cb	AN0091-C	CMS	AN0091-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	1.0
+840	AN0092-Ca	AN0092-C	CMS	AN0092-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	0.0
+841	AN0092-Cb	AN0092-C	CMS	AN0092-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	0.0
+842	AN0093-Ca	AN0093-C	CMS	AN0093-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	1.0
+843	AN0093-Cb	AN0093-C	CMS	AN0093-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	1.0
+844	AN0094-Ca	AN0094-C	CMS	AN0094-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+845	AN0094-Cb	AN0094-C	CMS	AN0094-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+846	AN0095-Ca	AN0095-C	CMS	AN0095-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	1.0
+847	AN0095-Cb	AN0095-C	CMS	AN0095-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	1.0
+848	AN0096-Ca	AN0096-C	CMS	AN0096-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+849	AN0096-Cb	AN0096-C	CMS	AN0096-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+850	AN0097-Ca	AN0097-C	CMS	AN0097-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+851	AN0097-Cb	AN0097-C	CMS	AN0097-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+852	AN0098-Ca	AN0098-C	CMS	AN0098-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+853	AN0098-Cb	AN0098-C	CMS	AN0098-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+854	AN0099-Ca	AN0099-C	CMS	AN0099-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	2.0
+855	AN0099-Cb	AN0099-C	CMS	AN0099-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	2.0
+856	AN0100-Ca	AN0100-C	CMS	AN0100-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+857	AN0100-Cb	AN0100-C	CMS	AN0100-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+858	AN0101-Ca	AN0101-C	CMS	AN0101-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	0.0
+859	AN0101-Cb	AN0101-C	CMS	AN0101-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	0.0
+860	AN0102-Ca	AN0102-C	CMS	AN0102-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+861	AN0102-Cb	AN0102-C	CMS	AN0102-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+862	AN0103-Ca	AN0103-C	CMS	AN0103-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+863	AN0103-Cb	AN0103-C	CMS	AN0103-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+864	AN0104-Ca	AN0104-C	CMS	AN0104-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+865	AN0104-Cb	AN0104-C	CMS	AN0104-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+866	AN0105-Ca	AN0105-C	CMS	AN0105-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+867	AN0105-Cb	AN0105-C	CMS	AN0105-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+868	AN0106-Ca	AN0106-C	CMS	AN0106-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	0.0
+869	AN0106-Cb	AN0106-C	CMS	AN0106-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	0.0
+870	AN0107-Ca	AN0107-C	CMS	AN0107-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	1.0
+871	AN0107-Cb	AN0107-C	CMS	AN0107-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	1.0
+872	AN0108-Ca	AN0108-C	CMS	AN0108-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+873	AN0108-Cb	AN0108-C	CMS	AN0108-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+874	AN0109-Ca	AN0109-C	CMS	AN0109-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+875	AN0109-Cb	AN0109-C	CMS	AN0109-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+876	AN0111-Ca	AN0111-C	CMS	AN0111-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+877	AN0111-Cb	AN0111-C	CMS	AN0111-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+878	AN0112-Ca	AN0112-C	CMS	AN0112-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+879	AN0112-Cb	AN0112-C	CMS	AN0112-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	2.0
+880	AN0113-Ca	AN0113-C	CMS	AN0113-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	1.0
+881	AN0113-Cb	AN0113-C	CMS	AN0113-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	1.0
+882	AN0114-Ca	AN0114-C	CMS	AN0114-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	1.0
+883	AN0114-Cb	AN0114-C	CMS	AN0114-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	1.0
+884	AN0115-Ca	AN0115-C	CMS	AN0115-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	0.0
+885	AN0115-Cb	AN0115-C	CMS	AN0115-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	0.0	0.0
+886	AN0117-Ca	AN0117-C	CMS	AN0117-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+887	AN0117-Cb	AN0117-C	CMS	AN0117-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	1.0
+888	AN0120-Ca	AN0120-C	CMS	AN0120-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+889	AN0120-Cb	AN0120-C	CMS	AN0120-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	1.0	2.0
+890	AN0121-Ca	AN0121-C	CMS	AN0121-Ca [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	1.0
+891	AN0121-Cb	AN0121-C	CMS	AN0121-Cb [Cameroon, Gado-Badzere, S, F]	Cameroon	Gado-Badzere	F	S	2.0	1.0
+892	AN0122-Ca	AN0122-C	CMS	AN0122-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+893	AN0122-Cb	AN0122-C	CMS	AN0122-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+894	AN0123-Ca	AN0123-C	CMS	AN0123-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+895	AN0123-Cb	AN0123-C	CMS	AN0123-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+896	AN0124-Ca	AN0124-C	CMS	AN0124-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+897	AN0124-Cb	AN0124-C	CMS	AN0124-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+898	AN0125-Ca	AN0125-C	CMS	AN0125-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+899	AN0125-Cb	AN0125-C	CMS	AN0125-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+900	AN0126-Ca	AN0126-C	CMS	AN0126-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	1.0
+901	AN0126-Cb	AN0126-C	CMS	AN0126-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	1.0
+902	AN0127-Ca	AN0127-C	CMS	AN0127-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	1.0
+903	AN0127-Cb	AN0127-C	CMS	AN0127-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	1.0
+904	AN0128-Ca	AN0128-C	CMS	AN0128-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	1.0	0.0
+905	AN0128-Cb	AN0128-C	CMS	AN0128-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	1.0	0.0
+906	AN0129-Ca	AN0129-C	CMS	AN0129-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	1.0
+907	AN0129-Cb	AN0129-C	CMS	AN0129-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	1.0
+908	AN0130-Ca	AN0130-C	CMS	AN0130-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+909	AN0130-Cb	AN0130-C	CMS	AN0130-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+910	AN0131-Ca	AN0131-C	CMS	AN0131-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	1.0
+911	AN0131-Cb	AN0131-C	CMS	AN0131-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	1.0
+912	AN0132-Ca	AN0132-C	CMS	AN0132-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+913	AN0132-Cb	AN0132-C	CMS	AN0132-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+914	AN0134-Ca	AN0134-C	CMS	AN0134-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	1.0
+915	AN0134-Cb	AN0134-C	CMS	AN0134-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	1.0
+916	AN0135-Ca	AN0135-C	CMS	AN0135-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	2.0	0.0
+917	AN0135-Cb	AN0135-C	CMS	AN0135-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	2.0	0.0
+918	AN0136-Ca	AN0136-C	CMS	AN0136-Ca [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+919	AN0136-Cb	AN0136-C	CMS	AN0136-Cb [Cameroon, Mayos, S, M]	Cameroon	Mayos	M	S	0.0	0.0
+920	AN0137-Ca	AN0137-C	CMS	AN0137-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+921	AN0137-Cb	AN0137-C	CMS	AN0137-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+922	AN0138-Ca	AN0138-C	CMS	AN0138-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+923	AN0138-Cb	AN0138-C	CMS	AN0138-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+924	AN0139-Ca	AN0139-C	CMS	AN0139-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+925	AN0139-Cb	AN0139-C	CMS	AN0139-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+926	AN0140-Ca	AN0140-C	CMS	AN0140-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+927	AN0140-Cb	AN0140-C	CMS	AN0140-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+928	AN0141-Ca	AN0141-C	CMS	AN0141-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+929	AN0141-Cb	AN0141-C	CMS	AN0141-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+930	AN0143-Ca	AN0143-C	CMS	AN0143-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+931	AN0143-Cb	AN0143-C	CMS	AN0143-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+932	AN0147-Ca	AN0147-C	CMS	AN0147-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+933	AN0147-Cb	AN0147-C	CMS	AN0147-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+934	AN0149-Ca	AN0149-C	CMS	AN0149-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	2.0
+935	AN0149-Cb	AN0149-C	CMS	AN0149-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	2.0
+936	AN0151-Ca	AN0151-C	CMS	AN0151-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+937	AN0151-Cb	AN0151-C	CMS	AN0151-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+938	AN0152-Ca	AN0152-C	CMS	AN0152-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+939	AN0152-Cb	AN0152-C	CMS	AN0152-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+940	AN0153-Ca	AN0153-C	CMS	AN0153-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+941	AN0153-Cb	AN0153-C	CMS	AN0153-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+942	AN0154-Ca	AN0154-C	CMS	AN0154-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+943	AN0154-Cb	AN0154-C	CMS	AN0154-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+944	AN0155-Ca	AN0155-C	CMS	AN0155-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+945	AN0155-Cb	AN0155-C	CMS	AN0155-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+946	AN0156-Ca	AN0156-C	CMS	AN0156-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+947	AN0156-Cb	AN0156-C	CMS	AN0156-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+948	AN0157-Ca	AN0157-C	CMS	AN0157-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+949	AN0157-Cb	AN0157-C	CMS	AN0157-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+950	AN0158-Ca	AN0158-C	CMS	AN0158-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+951	AN0158-Cb	AN0158-C	CMS	AN0158-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+952	AN0159-Ca	AN0159-C	CMS	AN0159-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+953	AN0159-Cb	AN0159-C	CMS	AN0159-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+954	AN0160-Ca	AN0160-C	CMS	AN0160-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+955	AN0160-Cb	AN0160-C	CMS	AN0160-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+956	AN0162-Ca	AN0162-C	CMS	AN0162-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+957	AN0162-Cb	AN0162-C	CMS	AN0162-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+958	AN0163-Ca	AN0163-C	CMS	AN0163-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+959	AN0163-Cb	AN0163-C	CMS	AN0163-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+960	AN0164-Ca	AN0164-C	CMS	AN0164-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+961	AN0164-Cb	AN0164-C	CMS	AN0164-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+962	AN0165-Ca	AN0165-C	CMS	AN0165-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	0.0
+963	AN0165-Cb	AN0165-C	CMS	AN0165-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	0.0
+964	AN0166-Ca	AN0166-C	CMS	AN0166-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+965	AN0166-Cb	AN0166-C	CMS	AN0166-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+966	AN0167-Ca	AN0167-C	CMS	AN0167-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+967	AN0167-Cb	AN0167-C	CMS	AN0167-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+968	AN0168-Ca	AN0168-C	CMS	AN0168-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+969	AN0168-Cb	AN0168-C	CMS	AN0168-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+970	AN0169-Ca	AN0169-C	CMS	AN0169-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	2.0
+971	AN0169-Cb	AN0169-C	CMS	AN0169-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	2.0
+972	AN0170-Ca	AN0170-C	CMS	AN0170-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+973	AN0170-Cb	AN0170-C	CMS	AN0170-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+974	AN0171-Ca	AN0171-C	CMS	AN0171-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+975	AN0171-Cb	AN0171-C	CMS	AN0171-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+976	AN0172-Ca	AN0172-C	CMS	AN0172-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+977	AN0172-Cb	AN0172-C	CMS	AN0172-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+978	AN0173-Ca	AN0173-C	CMS	AN0173-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+979	AN0173-Cb	AN0173-C	CMS	AN0173-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+980	AN0174-Ca	AN0174-C	CMS	AN0174-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+981	AN0174-Cb	AN0174-C	CMS	AN0174-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+982	AN0175-Ca	AN0175-C	CMS	AN0175-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+983	AN0175-Cb	AN0175-C	CMS	AN0175-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+984	AN0176-Ca	AN0176-C	CMS	AN0176-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	0.0
+985	AN0176-Cb	AN0176-C	CMS	AN0176-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	0.0
+986	AN0177-Ca	AN0177-C	CMS	AN0177-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	2.0
+987	AN0177-Cb	AN0177-C	CMS	AN0177-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	2.0
+988	AN0178-Ca	AN0178-C	CMS	AN0178-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+989	AN0178-Cb	AN0178-C	CMS	AN0178-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+990	AN0179-Ca	AN0179-C	CMS	AN0179-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+991	AN0179-Cb	AN0179-C	CMS	AN0179-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+992	AN0180-Ca	AN0180-C	CMS	AN0180-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+993	AN0180-Cb	AN0180-C	CMS	AN0180-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+994	AN0181-Ca	AN0181-C	CMS	AN0181-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+995	AN0181-Cb	AN0181-C	CMS	AN0181-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+996	AN0182-Ca	AN0182-C	CMS	AN0182-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	0.0
+997	AN0182-Cb	AN0182-C	CMS	AN0182-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	0.0
+998	AN0183-Ca	AN0183-C	CMS	AN0183-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+999	AN0183-Cb	AN0183-C	CMS	AN0183-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1000	AN0184-Ca	AN0184-C	CMS	AN0184-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1001	AN0184-Cb	AN0184-C	CMS	AN0184-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1002	AN0185-Ca	AN0185-C	CMS	AN0185-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1003	AN0185-Cb	AN0185-C	CMS	AN0185-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1004	AN0186-Ca	AN0186-C	CMS	AN0186-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1005	AN0186-Cb	AN0186-C	CMS	AN0186-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1006	AN0187-Ca	AN0187-C	CMS	AN0187-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	2.0
+1007	AN0187-Cb	AN0187-C	CMS	AN0187-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	2.0
+1008	AN0188-Ca	AN0188-C	CMS	AN0188-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1009	AN0188-Cb	AN0188-C	CMS	AN0188-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1010	AN0189-Ca	AN0189-C	CMS	AN0189-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1011	AN0189-Cb	AN0189-C	CMS	AN0189-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1012	AN0190-Ca	AN0190-C	CMS	AN0190-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1013	AN0190-Cb	AN0190-C	CMS	AN0190-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1014	AN0191-Ca	AN0191-C	CMS	AN0191-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	2.0
+1015	AN0191-Cb	AN0191-C	CMS	AN0191-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	2.0
+1016	AN0192-Ca	AN0192-C	CMS	AN0192-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1017	AN0192-Cb	AN0192-C	CMS	AN0192-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1018	AN0193-Ca	AN0193-C	CMS	AN0193-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1019	AN0193-Cb	AN0193-C	CMS	AN0193-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1020	AN0194-Ca	AN0194-C	CMS	AN0194-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1021	AN0194-Cb	AN0194-C	CMS	AN0194-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1022	AN0196-Ca	AN0196-C	CMS	AN0196-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	0.0
+1023	AN0196-Cb	AN0196-C	CMS	AN0196-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	0.0
+1024	AN0197-Ca	AN0197-C	CMS	AN0197-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1025	AN0197-Cb	AN0197-C	CMS	AN0197-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1026	AN0198-Ca	AN0198-C	CMS	AN0198-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+1027	AN0198-Cb	AN0198-C	CMS	AN0198-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+1028	AN0199-Ca	AN0199-C	CMS	AN0199-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1029	AN0199-Cb	AN0199-C	CMS	AN0199-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1030	AN0200-Ca	AN0200-C	CMS	AN0200-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1031	AN0200-Cb	AN0200-C	CMS	AN0200-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1032	AN0201-Ca	AN0201-C	CMS	AN0201-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1033	AN0201-Cb	AN0201-C	CMS	AN0201-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1034	AN0202-Ca	AN0202-C	CMS	AN0202-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1035	AN0202-Cb	AN0202-C	CMS	AN0202-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1036	AN0203-Ca	AN0203-C	CMS	AN0203-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1037	AN0203-Cb	AN0203-C	CMS	AN0203-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1038	AN0204-Ca	AN0204-C	CMS	AN0204-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1039	AN0204-Cb	AN0204-C	CMS	AN0204-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1040	AN0205-Ca	AN0205-C	CMS	AN0205-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1041	AN0205-Cb	AN0205-C	CMS	AN0205-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1042	AN0206-Ca	AN0206-C	CMS	AN0206-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1043	AN0206-Cb	AN0206-C	CMS	AN0206-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1044	AN0207-Ca	AN0207-C	CMS	AN0207-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1045	AN0207-Cb	AN0207-C	CMS	AN0207-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1046	AN0208-Ca	AN0208-C	CMS	AN0208-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1047	AN0208-Cb	AN0208-C	CMS	AN0208-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1048	AN0209-Ca	AN0209-C	CMS	AN0209-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+1049	AN0209-Cb	AN0209-C	CMS	AN0209-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+1050	AN0210-Ca	AN0210-C	CMS	AN0210-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1051	AN0210-Cb	AN0210-C	CMS	AN0210-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1052	AN0212-Ca	AN0212-C	CMS	AN0212-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1053	AN0212-Cb	AN0212-C	CMS	AN0212-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1054	AN0213-Ca	AN0213-C	CMS	AN0213-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1055	AN0213-Cb	AN0213-C	CMS	AN0213-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1056	AN0214-Ca	AN0214-C	CMS	AN0214-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+1057	AN0214-Cb	AN0214-C	CMS	AN0214-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	1.0	1.0
+1058	AN0215-Ca	AN0215-C	CMS	AN0215-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1059	AN0215-Cb	AN0215-C	CMS	AN0215-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1060	AN0217-Ca	AN0217-C	CMS	AN0217-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1061	AN0217-Cb	AN0217-C	CMS	AN0217-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1062	AN0218-Ca	AN0218-C	CMS	AN0218-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1063	AN0218-Cb	AN0218-C	CMS	AN0218-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1064	AN0219-Ca	AN0219-C	CMS	AN0219-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1065	AN0219-Cb	AN0219-C	CMS	AN0219-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1066	AN0220-Ca	AN0220-C	CMS	AN0220-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1067	AN0220-Cb	AN0220-C	CMS	AN0220-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	0.0
+1068	AN0221-Ca	AN0221-C	CMS	AN0221-Ca [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1069	AN0221-Cb	AN0221-C	CMS	AN0221-Cb [Cameroon, Mayos, S, F]	Cameroon	Mayos	F	S	0.0	1.0
+1070	AN0222-Ca	AN0222-C	CMS	AN0222-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1071	AN0222-Cb	AN0222-C	CMS	AN0222-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1072	AN0223-Ca	AN0223-C	CMS	AN0223-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1073	AN0223-Cb	AN0223-C	CMS	AN0223-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1074	AN0224-Ca	AN0224-C	CMS	AN0224-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	1.0	1.0
+1075	AN0224-Cb	AN0224-C	CMS	AN0224-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	1.0	1.0
+1076	AN0225-Ca	AN0225-C	CMS	AN0225-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	1.0
+1077	AN0225-Cb	AN0225-C	CMS	AN0225-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	1.0
+1078	AN0226-Ca	AN0226-C	CMS	AN0226-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1079	AN0226-Cb	AN0226-C	CMS	AN0226-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1080	AN0227-Ca	AN0227-C	CMS	AN0227-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	1.0	1.0
+1081	AN0227-Cb	AN0227-C	CMS	AN0227-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	1.0	1.0
+1082	AN0228-Ca	AN0228-C	CMS	AN0228-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1083	AN0228-Cb	AN0228-C	CMS	AN0228-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1084	AN0229-Ca	AN0229-C	CMS	AN0229-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	2.0
+1085	AN0229-Cb	AN0229-C	CMS	AN0229-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	2.0
+1086	AN0230-Ca	AN0230-C	CMS	AN0230-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	2.0	2.0
+1087	AN0230-Cb	AN0230-C	CMS	AN0230-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	2.0	2.0
+1088	AN0231-Ca	AN0231-C	CMS	AN0231-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1089	AN0231-Cb	AN0231-C	CMS	AN0231-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1090	AN0233-Ca	AN0233-C	CMS	AN0233-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1091	AN0233-Cb	AN0233-C	CMS	AN0233-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1092	AN0234-Ca	AN0234-C	CMS	AN0234-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	1.0	0.0
+1093	AN0234-Cb	AN0234-C	CMS	AN0234-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	1.0	0.0
+1094	AN0235-Ca	AN0235-C	CMS	AN0235-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1095	AN0235-Cb	AN0235-C	CMS	AN0235-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	0.0	0.0
+1096	AN0236-Ca	AN0236-C	CMS	AN0236-Ca [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	2.0	2.0
+1097	AN0236-Cb	AN0236-C	CMS	AN0236-Cb [Cameroon, Daiguene, S, M]	Cameroon	Daiguene	M	S	2.0	2.0
+1098	AN0237-Ca	AN0237-C	CMS	AN0237-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	1.0
+1099	AN0237-Cb	AN0237-C	CMS	AN0237-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	1.0
+1100	AN0238-Ca	AN0238-C	CMS	AN0238-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	1.0
+1101	AN0238-Cb	AN0238-C	CMS	AN0238-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	1.0
+1102	AN0239-Ca	AN0239-C	CMS	AN0239-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	0.0
+1103	AN0239-Cb	AN0239-C	CMS	AN0239-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	0.0
+1104	AN0240-Ca	AN0240-C	CMS	AN0240-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1105	AN0240-Cb	AN0240-C	CMS	AN0240-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1106	AN0241-Ca	AN0241-C	CMS	AN0241-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	1.0
+1107	AN0241-Cb	AN0241-C	CMS	AN0241-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	1.0
+1108	AN0242-Ca	AN0242-C	CMS	AN0242-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1109	AN0242-Cb	AN0242-C	CMS	AN0242-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1110	AN0243-Ca	AN0243-C	CMS	AN0243-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1111	AN0243-Cb	AN0243-C	CMS	AN0243-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1112	AN0244-Ca	AN0244-C	CMS	AN0244-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1113	AN0244-Cb	AN0244-C	CMS	AN0244-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1114	AN0245-Ca	AN0245-C	CMS	AN0245-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1115	AN0245-Cb	AN0245-C	CMS	AN0245-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1116	AN0246-Ca	AN0246-C	CMS	AN0246-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1117	AN0246-Cb	AN0246-C	CMS	AN0246-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1118	AN0247-Ca	AN0247-C	CMS	AN0247-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1119	AN0247-Cb	AN0247-C	CMS	AN0247-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1120	AN0248-Ca	AN0248-C	CMS	AN0248-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	0.0
+1121	AN0248-Cb	AN0248-C	CMS	AN0248-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	0.0
+1122	AN0250-Ca	AN0250-C	CMS	AN0250-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1123	AN0250-Cb	AN0250-C	CMS	AN0250-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1124	AN0251-Ca	AN0251-C	CMS	AN0251-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1125	AN0251-Cb	AN0251-C	CMS	AN0251-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1126	AN0252-Ca	AN0252-C	CMS	AN0252-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1127	AN0252-Cb	AN0252-C	CMS	AN0252-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1128	AN0253-Ca	AN0253-C	CMS	AN0253-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	2.0
+1129	AN0253-Cb	AN0253-C	CMS	AN0253-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	2.0
+1130	AN0254-Ca	AN0254-C	CMS	AN0254-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1131	AN0254-Cb	AN0254-C	CMS	AN0254-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1132	AN0255-Ca	AN0255-C	CMS	AN0255-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1133	AN0255-Cb	AN0255-C	CMS	AN0255-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1134	AN0256-Ca	AN0256-C	CMS	AN0256-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1135	AN0256-Cb	AN0256-C	CMS	AN0256-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1136	AN0258-Ca	AN0258-C	CMS	AN0258-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1137	AN0258-Cb	AN0258-C	CMS	AN0258-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1138	AN0259-Ca	AN0259-C	CMS	AN0259-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1139	AN0259-Cb	AN0259-C	CMS	AN0259-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1140	AN0260-Ca	AN0260-C	CMS	AN0260-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	1.0
+1141	AN0260-Cb	AN0260-C	CMS	AN0260-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	1.0
+1142	AN0261-Ca	AN0261-C	CMS	AN0261-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1143	AN0261-Cb	AN0261-C	CMS	AN0261-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1144	AN0262-Ca	AN0262-C	CMS	AN0262-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	0.0
+1145	AN0262-Cb	AN0262-C	CMS	AN0262-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	0.0
+1146	AN0263-Ca	AN0263-C	CMS	AN0263-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1147	AN0263-Cb	AN0263-C	CMS	AN0263-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1148	AN0264-Ca	AN0264-C	CMS	AN0264-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1149	AN0264-Cb	AN0264-C	CMS	AN0264-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1150	AN0266-Ca	AN0266-C	CMS	AN0266-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1151	AN0266-Cb	AN0266-C	CMS	AN0266-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1152	AN0267-Ca	AN0267-C	CMS	AN0267-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	1.0
+1153	AN0267-Cb	AN0267-C	CMS	AN0267-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	1.0
+1154	AN0268-Ca	AN0268-C	CMS	AN0268-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1155	AN0268-Cb	AN0268-C	CMS	AN0268-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1156	AN0269-Ca	AN0269-C	CMS	AN0269-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1157	AN0269-Cb	AN0269-C	CMS	AN0269-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1158	AN0270-Ca	AN0270-C	CMS	AN0270-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1159	AN0270-Cb	AN0270-C	CMS	AN0270-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1160	AN0272-Ca	AN0272-C	CMS	AN0272-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	1.0
+1161	AN0272-Cb	AN0272-C	CMS	AN0272-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	1.0
+1162	AN0275-Ca	AN0275-C	CMS	AN0275-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	1.0
+1163	AN0275-Cb	AN0275-C	CMS	AN0275-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	1.0
+1164	AN0276-Ca	AN0276-C	CMS	AN0276-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1165	AN0276-Cb	AN0276-C	CMS	AN0276-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1166	AN0277-Ca	AN0277-C	CMS	AN0277-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1167	AN0277-Cb	AN0277-C	CMS	AN0277-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1168	AN0280-Ca	AN0280-C	CMS	AN0280-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	2.0
+1169	AN0280-Cb	AN0280-C	CMS	AN0280-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	2.0
+1170	AN0282-Ca	AN0282-C	CMS	AN0282-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1171	AN0282-Cb	AN0282-C	CMS	AN0282-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1172	AN0283-Ca	AN0283-C	CMS	AN0283-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1173	AN0283-Cb	AN0283-C	CMS	AN0283-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1174	AN0284-Ca	AN0284-C	CMS	AN0284-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1175	AN0284-Cb	AN0284-C	CMS	AN0284-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1176	AN0285-Ca	AN0285-C	CMS	AN0285-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1177	AN0285-Cb	AN0285-C	CMS	AN0285-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1178	AN0286-Ca	AN0286-C	CMS	AN0286-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	1.0
+1179	AN0286-Cb	AN0286-C	CMS	AN0286-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	1.0
+1180	AN0287-Ca	AN0287-C	CMS	AN0287-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	1.0
+1181	AN0287-Cb	AN0287-C	CMS	AN0287-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	1.0
+1182	AN0288-Ca	AN0288-C	CMS	AN0288-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1183	AN0288-Cb	AN0288-C	CMS	AN0288-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1184	AN0290-Ca	AN0290-C	CMS	AN0290-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	2.0
+1185	AN0290-Cb	AN0290-C	CMS	AN0290-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	2.0
+1186	AN0291-Ca	AN0291-C	CMS	AN0291-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1187	AN0291-Cb	AN0291-C	CMS	AN0291-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1188	AN0292-Ca	AN0292-C	CMS	AN0292-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1189	AN0292-Cb	AN0292-C	CMS	AN0292-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1190	AN0294-Ca	AN0294-C	CMS	AN0294-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1191	AN0294-Cb	AN0294-C	CMS	AN0294-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1192	AN0295-Ca	AN0295-C	CMS	AN0295-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1193	AN0295-Cb	AN0295-C	CMS	AN0295-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1194	AN0296-Ca	AN0296-C	CMS	AN0296-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1195	AN0296-Cb	AN0296-C	CMS	AN0296-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1196	AN0297-Ca	AN0297-C	CMS	AN0297-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1197	AN0297-Cb	AN0297-C	CMS	AN0297-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1198	AN0298-Ca	AN0298-C	CMS	AN0298-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1199	AN0298-Cb	AN0298-C	CMS	AN0298-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1200	AN0299-Ca	AN0299-C	CMS	AN0299-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1201	AN0299-Cb	AN0299-C	CMS	AN0299-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1202	AN0300-Ca	AN0300-C	CMS	AN0300-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1203	AN0300-Cb	AN0300-C	CMS	AN0300-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1204	AN0301-Ca	AN0301-C	CMS	AN0301-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1205	AN0301-Cb	AN0301-C	CMS	AN0301-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	2.0	2.0
+1206	AN0303-Ca	AN0303-C	CMS	AN0303-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	0.0
+1207	AN0303-Cb	AN0303-C	CMS	AN0303-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	0.0
+1208	AN0304-Ca	AN0304-C	CMS	AN0304-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1209	AN0304-Cb	AN0304-C	CMS	AN0304-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1210	AN0305-Ca	AN0305-C	CMS	AN0305-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1211	AN0305-Cb	AN0305-C	CMS	AN0305-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1212	AN0307-Ca	AN0307-C	CMS	AN0307-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1213	AN0307-Cb	AN0307-C	CMS	AN0307-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1214	AN0308-Ca	AN0308-C	CMS	AN0308-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1215	AN0308-Cb	AN0308-C	CMS	AN0308-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1216	AN0309-Ca	AN0309-C	CMS	AN0309-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1217	AN0309-Cb	AN0309-C	CMS	AN0309-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	1.0
+1218	AN0310-Ca	AN0310-C	CMS	AN0310-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	0.0
+1219	AN0310-Cb	AN0310-C	CMS	AN0310-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	0.0
+1220	AN0312-Ca	AN0312-C	CMS	AN0312-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1221	AN0312-Cb	AN0312-C	CMS	AN0312-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1222	AN0313-Ca	AN0313-C	CMS	AN0313-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	0.0
+1223	AN0313-Cb	AN0313-C	CMS	AN0313-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	0.0
+1224	AN0314-Ca	AN0314-C	CMS	AN0314-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1225	AN0314-Cb	AN0314-C	CMS	AN0314-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1226	AN0315-Ca	AN0315-C	CMS	AN0315-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1227	AN0315-Cb	AN0315-C	CMS	AN0315-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1228	AN0317-Ca	AN0317-C	CMS	AN0317-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1229	AN0317-Cb	AN0317-C	CMS	AN0317-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1230	AN0318-Ca	AN0318-C	CMS	AN0318-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1231	AN0318-Cb	AN0318-C	CMS	AN0318-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1232	AN0319-Ca	AN0319-C	CMS	AN0319-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1233	AN0319-Cb	AN0319-C	CMS	AN0319-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	0.0	0.0
+1234	AN0321-Ca	AN0321-C	CMS	AN0321-Ca [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	0.0
+1235	AN0321-Cb	AN0321-C	CMS	AN0321-Cb [Cameroon, Daiguene, S, F]	Cameroon	Daiguene	F	S	1.0	0.0
+1236	AR0007-Ca	AR0007-C	AOM	AR0007-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1237	AR0007-Cb	AR0007-C	AOM	AR0007-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1238	AR0008-Ca	AR0008-C	AOM	AR0008-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1239	AR0008-Cb	AR0008-C	AOM	AR0008-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1240	AR0009-Ca	AR0009-C	AOM	AR0009-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1241	AR0009-Cb	AR0009-C	AOM	AR0009-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1242	AR0010-Ca	AR0010-C	AOM	AR0010-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1243	AR0010-Cb	AR0010-C	AOM	AR0010-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1244	AR0011-Ca	AR0011-C	AOM	AR0011-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1245	AR0011-Cb	AR0011-C	AOM	AR0011-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1246	AR0012-Ca	AR0012-C	AOM	AR0012-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1247	AR0012-Cb	AR0012-C	AOM	AR0012-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1248	AR0014-Ca	AR0014-C	AOM	AR0014-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	1.0	0.0
+1249	AR0014-Cb	AR0014-C	AOM	AR0014-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	1.0	0.0
+1250	AR0015-Ca	AR0015-C	AOM	AR0015-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1251	AR0015-Cb	AR0015-C	AOM	AR0015-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1252	AR0017-Ca	AR0017-C	AOM	AR0017-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1253	AR0017-Cb	AR0017-C	AOM	AR0017-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1254	AR0019-Ca	AR0019-C	AOM	AR0019-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1255	AR0019-Cb	AR0019-C	AOM	AR0019-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1256	AR0020-Ca	AR0020-C	AOM	AR0020-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1257	AR0020-Cb	AR0020-C	AOM	AR0020-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1258	AR0021-Ca	AR0021-C	AOM	AR0021-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1259	AR0021-Cb	AR0021-C	AOM	AR0021-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1260	AR0022-Ca	AR0022-C	AOM	AR0022-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1261	AR0022-Cb	AR0022-C	AOM	AR0022-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1262	AR0023-Ca	AR0023-C	AOM	AR0023-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1263	AR0023-Cb	AR0023-C	AOM	AR0023-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1264	AR0024-Ca	AR0024-C	AOM	AR0024-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1265	AR0024-Cb	AR0024-C	AOM	AR0024-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1266	AR0026-Ca	AR0026-C	AOM	AR0026-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	1.0	0.0
+1267	AR0026-Cb	AR0026-C	AOM	AR0026-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	1.0	0.0
+1268	AR0027-Ca	AR0027-C	AOM	AR0027-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1269	AR0027-Cb	AR0027-C	AOM	AR0027-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1270	AR0034-Ca	AR0034-C	AOM	AR0034-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1271	AR0034-Cb	AR0034-C	AOM	AR0034-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1272	AR0035-Ca	AR0035-C	AOM	AR0035-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1273	AR0035-Cb	AR0035-C	AOM	AR0035-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1274	AR0042-Ca	AR0042-C	AOM	AR0042-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1275	AR0042-Cb	AR0042-C	AOM	AR0042-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1276	AR0043-Ca	AR0043-C	AOM	AR0043-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1277	AR0043-Cb	AR0043-C	AOM	AR0043-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1278	AR0045-Ca	AR0045-C	AOM	AR0045-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1279	AR0045-Cb	AR0045-C	AOM	AR0045-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1280	AR0047-Ca	AR0047-C	AOM	AR0047-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1281	AR0047-Cb	AR0047-C	AOM	AR0047-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1282	AR0049-Ca	AR0049-C	AOM	AR0049-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1283	AR0049-Cb	AR0049-C	AOM	AR0049-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1284	AR0050-Ca	AR0050-C	AOM	AR0050-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1285	AR0050-Cb	AR0050-C	AOM	AR0050-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1286	AR0051-Ca	AR0051-C	AOM	AR0051-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1287	AR0051-Cb	AR0051-C	AOM	AR0051-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1288	AR0053-Ca	AR0053-C	AOM	AR0053-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1289	AR0053-Cb	AR0053-C	AOM	AR0053-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1290	AR0054-Ca	AR0054-C	AOM	AR0054-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1291	AR0054-Cb	AR0054-C	AOM	AR0054-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1292	AR0057-Ca	AR0057-C	AOM	AR0057-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1293	AR0057-Cb	AR0057-C	AOM	AR0057-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1294	AR0059-Ca	AR0059-C	AOM	AR0059-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1295	AR0059-Cb	AR0059-C	AOM	AR0059-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1296	AR0061-Ca	AR0061-C	AOM	AR0061-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1297	AR0061-Cb	AR0061-C	AOM	AR0061-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1298	AR0062-Ca	AR0062-C	AOM	AR0062-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1299	AR0062-Cb	AR0062-C	AOM	AR0062-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1300	AR0063-Ca	AR0063-C	AOM	AR0063-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1301	AR0063-Cb	AR0063-C	AOM	AR0063-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1302	AR0065-Ca	AR0065-C	AOM	AR0065-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1303	AR0065-Cb	AR0065-C	AOM	AR0065-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1304	AR0066-Ca	AR0066-C	AOM	AR0066-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1305	AR0066-Cb	AR0066-C	AOM	AR0066-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1306	AR0069-Ca	AR0069-C	AOM	AR0069-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1307	AR0069-Cb	AR0069-C	AOM	AR0069-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1308	AR0070-Ca	AR0070-C	AOM	AR0070-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1309	AR0070-Cb	AR0070-C	AOM	AR0070-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1310	AR0071-Ca	AR0071-C	AOM	AR0071-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1311	AR0071-Cb	AR0071-C	AOM	AR0071-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1312	AR0072-Ca	AR0072-C	AOM	AR0072-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1313	AR0072-Cb	AR0072-C	AOM	AR0072-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1314	AR0073-Ca	AR0073-C	AOM	AR0073-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1315	AR0073-Cb	AR0073-C	AOM	AR0073-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1316	AR0074-Ca	AR0074-C	AOM	AR0074-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1317	AR0074-Cb	AR0074-C	AOM	AR0074-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1318	AR0075-Ca	AR0075-C	AOM	AR0075-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1319	AR0075-Cb	AR0075-C	AOM	AR0075-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1320	AR0076-Ca	AR0076-C	AOM	AR0076-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1321	AR0076-Cb	AR0076-C	AOM	AR0076-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1322	AR0078-Ca	AR0078-C	AOM	AR0078-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1323	AR0078-Cb	AR0078-C	AOM	AR0078-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1324	AR0079-Ca	AR0079-C	AOM	AR0079-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1325	AR0079-Cb	AR0079-C	AOM	AR0079-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1326	AR0080-Ca	AR0080-C	AOM	AR0080-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1327	AR0080-Cb	AR0080-C	AOM	AR0080-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1328	AR0081-Ca	AR0081-C	AOM	AR0081-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1329	AR0081-Cb	AR0081-C	AOM	AR0081-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1330	AR0083-Ca	AR0083-C	AOM	AR0083-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1331	AR0083-Cb	AR0083-C	AOM	AR0083-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1332	AR0084-Ca	AR0084-C	AOM	AR0084-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1333	AR0084-Cb	AR0084-C	AOM	AR0084-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1334	AR0086-Ca	AR0086-C	AOM	AR0086-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1335	AR0086-Cb	AR0086-C	AOM	AR0086-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1336	AR0087-Ca	AR0087-C	AOM	AR0087-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1337	AR0087-Cb	AR0087-C	AOM	AR0087-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1338	AR0089-Ca	AR0089-C	AOM	AR0089-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1339	AR0089-Cb	AR0089-C	AOM	AR0089-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1340	AR0090-Ca	AR0090-C	AOM	AR0090-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1341	AR0090-Cb	AR0090-C	AOM	AR0090-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1342	AR0092-Ca	AR0092-C	AOM	AR0092-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1343	AR0092-Cb	AR0092-C	AOM	AR0092-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1344	AR0093-Ca	AR0093-C	AOM	AR0093-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1345	AR0093-Cb	AR0093-C	AOM	AR0093-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1346	AR0095-Ca	AR0095-C	AOM	AR0095-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1347	AR0095-Cb	AR0095-C	AOM	AR0095-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1348	AR0096-Ca	AR0096-C	AOM	AR0096-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1349	AR0096-Cb	AR0096-C	AOM	AR0096-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1350	AR0098-Ca	AR0098-C	AOM	AR0098-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1351	AR0098-Cb	AR0098-C	AOM	AR0098-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1352	AR0099-Ca	AR0099-C	AOM	AR0099-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1353	AR0099-Cb	AR0099-C	AOM	AR0099-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1354	AR0100-Ca	AR0100-C	AOM	AR0100-Ca [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1355	AR0100-Cb	AR0100-C	AOM	AR0100-Cb [Angola, Luanda, M, F]	Angola	Luanda	F	M	0.0	0.0
+1356	AS0001-Ca	AS0001-C	GAS	AS0001-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1357	AS0001-Cb	AS0001-C	GAS	AS0001-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1358	AS0002-Ca	AS0002-C	GAS	AS0002-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1359	AS0002-Cb	AS0002-C	GAS	AS0002-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1360	AS0003-Ca	AS0003-C	GAS	AS0003-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1361	AS0003-Cb	AS0003-C	GAS	AS0003-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1362	AS0004-Ca	AS0004-C	GAS	AS0004-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1363	AS0004-Cb	AS0004-C	GAS	AS0004-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1364	AS0006-Ca	AS0006-C	GAS	AS0006-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1365	AS0006-Cb	AS0006-C	GAS	AS0006-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1366	AS0007-Ca	AS0007-C	GAS	AS0007-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1367	AS0007-Cb	AS0007-C	GAS	AS0007-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1368	AS0008-Ca	AS0008-C	GAS	AS0008-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1369	AS0008-Cb	AS0008-C	GAS	AS0008-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1370	AS0009-Ca	AS0009-C	GAS	AS0009-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1371	AS0009-Cb	AS0009-C	GAS	AS0009-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1372	AS0010-Ca	AS0010-C	GAS	AS0010-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1373	AS0010-Cb	AS0010-C	GAS	AS0010-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1374	AS0011-Ca	AS0011-C	GAS	AS0011-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1375	AS0011-Cb	AS0011-C	GAS	AS0011-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1376	AS0012-Ca	AS0012-C	GAS	AS0012-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1377	AS0012-Cb	AS0012-C	GAS	AS0012-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1378	AS0013-Ca	AS0013-C	GAS	AS0013-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1379	AS0013-Cb	AS0013-C	GAS	AS0013-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1380	AS0014-Ca	AS0014-C	GAS	AS0014-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1381	AS0014-Cb	AS0014-C	GAS	AS0014-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1382	AS0015-Ca	AS0015-C	GAS	AS0015-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1383	AS0015-Cb	AS0015-C	GAS	AS0015-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1384	AS0016-Ca	AS0016-C	GAS	AS0016-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1385	AS0016-Cb	AS0016-C	GAS	AS0016-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1386	AS0017-Ca	AS0017-C	GAS	AS0017-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1387	AS0017-Cb	AS0017-C	GAS	AS0017-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1388	AS0018-Ca	AS0018-C	GAS	AS0018-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1389	AS0018-Cb	AS0018-C	GAS	AS0018-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1390	AS0019-Ca	AS0019-C	GAS	AS0019-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1391	AS0019-Cb	AS0019-C	GAS	AS0019-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1392	AS0020-Ca	AS0020-C	GAS	AS0020-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	1.0	0.0
+1393	AS0020-Cb	AS0020-C	GAS	AS0020-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	1.0	0.0
+1394	AS0021-Ca	AS0021-C	GAS	AS0021-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1395	AS0021-Cb	AS0021-C	GAS	AS0021-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1396	AS0022-Ca	AS0022-C	GAS	AS0022-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1397	AS0022-Cb	AS0022-C	GAS	AS0022-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1398	AS0024-Ca	AS0024-C	GAS	AS0024-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1399	AS0024-Cb	AS0024-C	GAS	AS0024-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1400	AS0026-Ca	AS0026-C	GAS	AS0026-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1401	AS0026-Cb	AS0026-C	GAS	AS0026-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1402	AS0028-Ca	AS0028-C	GAS	AS0028-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	1.0	0.0
+1403	AS0028-Cb	AS0028-C	GAS	AS0028-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	1.0	0.0
+1404	AS0030-Ca	AS0030-C	GAS	AS0030-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1405	AS0030-Cb	AS0030-C	GAS	AS0030-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1406	AS0032-Ca	AS0032-C	GAS	AS0032-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1407	AS0032-Cb	AS0032-C	GAS	AS0032-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1408	AS0033-Ca	AS0033-C	GAS	AS0033-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1409	AS0033-Cb	AS0033-C	GAS	AS0033-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1410	AS0034-Ca	AS0034-C	GAS	AS0034-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1411	AS0034-Cb	AS0034-C	GAS	AS0034-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1412	AS0035-Ca	AS0035-C	GAS	AS0035-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1413	AS0035-Cb	AS0035-C	GAS	AS0035-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1414	AS0036-Ca	AS0036-C	GAS	AS0036-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1415	AS0036-Cb	AS0036-C	GAS	AS0036-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1416	AS0037-Ca	AS0037-C	GAS	AS0037-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1417	AS0037-Cb	AS0037-C	GAS	AS0037-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1418	AS0039-Ca	AS0039-C	GAS	AS0039-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1419	AS0039-Cb	AS0039-C	GAS	AS0039-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1420	AS0042-Ca	AS0042-C	GAS	AS0042-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1421	AS0042-Cb	AS0042-C	GAS	AS0042-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1422	AS0044-Ca	AS0044-C	GAS	AS0044-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1423	AS0044-Cb	AS0044-C	GAS	AS0044-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1424	AS0045-Ca	AS0045-C	GAS	AS0045-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1425	AS0045-Cb	AS0045-C	GAS	AS0045-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1426	AS0047-Ca	AS0047-C	GAS	AS0047-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1427	AS0047-Cb	AS0047-C	GAS	AS0047-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1428	AS0049-Ca	AS0049-C	GAS	AS0049-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1429	AS0049-Cb	AS0049-C	GAS	AS0049-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1430	AS0052-Ca	AS0052-C	GAS	AS0052-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1431	AS0052-Cb	AS0052-C	GAS	AS0052-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1432	AS0053-Ca	AS0053-C	GAS	AS0053-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1433	AS0053-Cb	AS0053-C	GAS	AS0053-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1434	AS0054-Ca	AS0054-C	GAS	AS0054-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	1.0	0.0
+1435	AS0054-Cb	AS0054-C	GAS	AS0054-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	1.0	0.0
+1436	AS0055-Ca	AS0055-C	GAS	AS0055-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1437	AS0055-Cb	AS0055-C	GAS	AS0055-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1438	AS0056-Ca	AS0056-C	GAS	AS0056-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1439	AS0056-Cb	AS0056-C	GAS	AS0056-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1440	AS0058-Ca	AS0058-C	GAS	AS0058-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1441	AS0058-Cb	AS0058-C	GAS	AS0058-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1442	AS0059-Ca	AS0059-C	GAS	AS0059-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1443	AS0059-Cb	AS0059-C	GAS	AS0059-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1444	AS0064-Ca	AS0064-C	GAS	AS0064-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1445	AS0064-Cb	AS0064-C	GAS	AS0064-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1446	AS0065-Ca	AS0065-C	GAS	AS0065-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1447	AS0065-Cb	AS0065-C	GAS	AS0065-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1448	AS0066-Ca	AS0066-C	GAS	AS0066-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1449	AS0066-Cb	AS0066-C	GAS	AS0066-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1450	AS0068-Ca	AS0068-C	GAS	AS0068-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1451	AS0068-Cb	AS0068-C	GAS	AS0068-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1452	AS0069-Ca	AS0069-C	GAS	AS0069-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1453	AS0069-Cb	AS0069-C	GAS	AS0069-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1454	AS0070-Ca	AS0070-C	GAS	AS0070-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1455	AS0070-Cb	AS0070-C	GAS	AS0070-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1456	AS0071-Ca	AS0071-C	GAS	AS0071-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	1.0	0.0
+1457	AS0071-Cb	AS0071-C	GAS	AS0071-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	1.0	0.0
+1458	AS0072-Ca	AS0072-C	GAS	AS0072-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1459	AS0072-Cb	AS0072-C	GAS	AS0072-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1460	AS0073-Ca	AS0073-C	GAS	AS0073-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1461	AS0073-Cb	AS0073-C	GAS	AS0073-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1462	AS0074-Ca	AS0074-C	GAS	AS0074-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1463	AS0074-Cb	AS0074-C	GAS	AS0074-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1464	AS0076-Ca	AS0076-C	GAS	AS0076-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1465	AS0076-Cb	AS0076-C	GAS	AS0076-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1466	AS0077-Ca	AS0077-C	GAS	AS0077-Ca [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1467	AS0077-Cb	AS0077-C	GAS	AS0077-Cb [Gabon, Libreville, S, F]	Gabon	Libreville	F	S	0.0	0.0
+1468	AV0001-Ca	AV0001-C	GNS	AV0001-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	2.0	1.0
+1469	AV0001-Cb	AV0001-C	GNS	AV0001-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	2.0	1.0
+1470	AV0002-Ca	AV0002-C	GNS	AV0002-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	2.0	0.0
+1471	AV0002-Cb	AV0002-C	GNS	AV0002-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	2.0	0.0
+1472	AV0003-Ca	AV0003-C	GNS	AV0003-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	0.0
+1473	AV0003-Cb	AV0003-C	GNS	AV0003-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	0.0
+1474	AV0004-Ca	AV0004-C	GNS	AV0004-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	0.0	1.0
+1475	AV0004-Cb	AV0004-C	GNS	AV0004-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	0.0	1.0
+1476	AV0005-Ca	AV0005-C	GNS	AV0005-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	0.0
+1477	AV0005-Cb	AV0005-C	GNS	AV0005-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	0.0
+1478	AV0007-Ca	AV0007-C	GNS	AV0007-Ca [Guinea, Koraboh, M/S, F]	Guinea	Koraboh	F	M/S	0.0	0.0
+1479	AV0007-Cb	AV0007-C	GNS	AV0007-Cb [Guinea, Koraboh, M/S, F]	Guinea	Koraboh	F	M/S	0.0	0.0
+1480	AV0008-Ca	AV0008-C	GNS	AV0008-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	1.0
+1481	AV0008-Cb	AV0008-C	GNS	AV0008-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	1.0
+1482	AV0009-Ca	AV0009-C	GNS	AV0009-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	1.0
+1483	AV0009-Cb	AV0009-C	GNS	AV0009-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	1.0
+1484	AV0010-Ca	AV0010-C	GNS	AV0010-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	1.0
+1485	AV0010-Cb	AV0010-C	GNS	AV0010-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	1.0
+1486	AV0011-Ca	AV0011-C	GNS	AV0011-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	2.0	1.0
+1487	AV0011-Cb	AV0011-C	GNS	AV0011-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	2.0	1.0
+1488	AV0012-Ca	AV0012-C	GNS	AV0012-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	1.0
+1489	AV0012-Cb	AV0012-C	GNS	AV0012-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	1.0
+1490	AV0013-Ca	AV0013-C	GNS	AV0013-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	1.0
+1491	AV0013-Cb	AV0013-C	GNS	AV0013-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	1.0
+1492	AV0014-Ca	AV0014-C	GNS	AV0014-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	0.0	0.0
+1493	AV0014-Cb	AV0014-C	GNS	AV0014-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	0.0	0.0
+1494	AV0015-Ca	AV0015-C	GNS	AV0015-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	0.0
+1495	AV0015-Cb	AV0015-C	GNS	AV0015-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	0.0
+1496	AV0018-Ca	AV0018-C	GNS	AV0018-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	2.0
+1497	AV0018-Cb	AV0018-C	GNS	AV0018-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	1.0	2.0
+1498	AV0024-Ca	AV0024-C	GNS	AV0024-Ca [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	0.0	0.0
+1499	AV0024-Cb	AV0024-C	GNS	AV0024-Cb [Guinea, Koraboh, S, F]	Guinea	Koraboh	F	S	0.0	0.0
+1500	AV0026-Ca	AV0026-C	GNS	AV0026-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1501	AV0026-Cb	AV0026-C	GNS	AV0026-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1502	AV0027-Ca	AV0027-C	GNS	AV0027-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1503	AV0027-Cb	AV0027-C	GNS	AV0027-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1504	AV0029-Ca	AV0029-C	GNS	AV0029-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	1.0	1.0
+1505	AV0029-Cb	AV0029-C	GNS	AV0029-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	1.0	1.0
+1506	AV0030-Ca	AV0030-C	GNS	AV0030-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	1.0	1.0
+1507	AV0030-Cb	AV0030-C	GNS	AV0030-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	1.0	1.0
+1508	AV0031-Ca	AV0031-C	GNS	AV0031-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	1.0	2.0
+1509	AV0031-Cb	AV0031-C	GNS	AV0031-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	1.0	2.0
+1510	AV0032-Ca	AV0032-C	GNS	AV0032-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1511	AV0032-Cb	AV0032-C	GNS	AV0032-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1512	AV0033-Ca	AV0033-C	GNS	AV0033-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1513	AV0033-Cb	AV0033-C	GNS	AV0033-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1514	AV0034-Ca	AV0034-C	GNS	AV0034-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	2.0	2.0
+1515	AV0034-Cb	AV0034-C	GNS	AV0034-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	2.0	2.0
+1516	AV0035-Ca	AV0035-C	GNS	AV0035-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	2.0	2.0
+1517	AV0035-Cb	AV0035-C	GNS	AV0035-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	2.0	2.0
+1518	AV0036-Ca	AV0036-C	GNS	AV0036-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	2.0	2.0
+1519	AV0036-Cb	AV0036-C	GNS	AV0036-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	2.0	2.0
+1520	AV0039-Ca	AV0039-C	GNS	AV0039-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1521	AV0039-Cb	AV0039-C	GNS	AV0039-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1522	AV0041-Ca	AV0041-C	GNS	AV0041-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1523	AV0041-Cb	AV0041-C	GNS	AV0041-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1524	AV0044-Ca	AV0044-C	GNS	AV0044-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	0.0
+1525	AV0044-Cb	AV0044-C	GNS	AV0044-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	0.0
+1526	AV0045-Ca	AV0045-C	GNS	AV0045-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1527	AV0045-Cb	AV0045-C	GNS	AV0045-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	1.0
+1528	AV0047-Ca	AV0047-C	GNS	AV0047-Ca [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	0.0
+1529	AV0047-Cb	AV0047-C	GNS	AV0047-Cb [Guinea, Koundara, S, F]	Guinea	Koundara	F	S	0.0	0.0
+1530	AD0231-Ca	AD0231-C	colony	AD0231-Ca [None, Ghana, ?, F]		Ghana	F	?		
+1531	AD0231-Cb	AD0231-C	colony	AD0231-Cb [None, Ghana, ?, F]		Ghana	F	?		
+1532	AD0232-Ca	AD0232-C	colony	AD0232-Ca [None, Kisumu, ?, M]		Kisumu	M	?		
+1533	AD0232-Cb	AD0232-C	colony	AD0232-Cb [None, Kisumu, ?, M]		Kisumu	M	?		
+1534	AD0254-Ca	AD0254-C	colony	AD0254-Ca [None, Ghana, ?, F]		Ghana	F	?		
+1535	AD0254-Cb	AD0254-C	colony	AD0254-Cb [None, Ghana, ?, F]		Ghana	F	?		
+1536	AD0255-Ca	AD0255-C	colony	AD0255-Ca [None, Mali, M, M]		Mali	M	M		
+1537	AD0255-Cb	AD0255-C	colony	AD0255-Cb [None, Mali, M, M]		Mali	M	M		
+1538	AD0305-Ca	AD0305-C	colony	AD0305-Ca [None, Mali, M, F]		Mali	F	M		
+1539	AD0305-Cb	AD0305-C	colony	AD0305-Cb [None, Mali, M, F]		Mali	F	M		
+1540	AD0306-Ca	AD0306-C	colony	AD0306-Ca [None, Kisumu, ?, M]		Kisumu	M	?		
+1541	AD0306-Cb	AD0306-C	colony	AD0306-Cb [None, Kisumu, ?, M]		Kisumu	M	?		
+1542	AD0347-Ca	AD0347-C	colony	AD0347-Ca [None, Pimperena, S, F]		Pimperena	F	S		
+1543	AD0347-Cb	AD0347-C	colony	AD0347-Cb [None, Pimperena, S, F]		Pimperena	F	S		
+1544	AD0348-Ca	AD0348-C	colony	AD0348-Ca [None, Mali, M, M]		Mali	M	M		
+1545	AD0348-Cb	AD0348-C	colony	AD0348-Cb [None, Mali, M, M]		Mali	M	M		
