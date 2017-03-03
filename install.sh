@@ -44,7 +44,7 @@ if [ ! -f texlive.installed ]; then
     tlmgr install ifmtarg
     tlmgr install preprint
     tlmgr install biber
-    
+
     # mark successful installation
     touch texlive.installed
 
@@ -53,7 +53,7 @@ else
 fi
 
 # force miniconda re-install
-#rm -v miniconda.installed
+rm -v miniconda.installed
 
 # install miniconda
 if [ ! -f miniconda.installed ]; then
