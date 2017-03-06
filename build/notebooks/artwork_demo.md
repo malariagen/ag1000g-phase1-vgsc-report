@@ -11,14 +11,20 @@ This is an example notebook. It does not require any external data resources, an
 .container {
     width: 100%;
 }
-#maintoolbar {
-    display: none;
+div#notebook {
+    padding-top: 0;
 }
 #header-container {
     display: none;
 }
-div#notebook {
-    padding-top: 0;
+#header-bar {
+    display: none;
+}
+#maintoolbar {
+    display: none;
+}
+#site {
+    height: auto !important;
 }
 </style>
 

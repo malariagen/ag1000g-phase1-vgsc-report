@@ -6,14 +6,20 @@
 .container {
     width: 100%;
 }
-#maintoolbar {
-    display: none;
+div#notebook {
+    padding-top: 0;
 }
 #header-container {
     display: none;
 }
-div#notebook {
-    padding-top: 0;
+#header-bar {
+    display: none;
+}
+#maintoolbar {
+    display: none;
+}
+#site {
+    height: auto !important;
 }
 </style>
 ```
@@ -23,14 +29,20 @@ div#notebook {
 .container {
     width: 100%;
 }
-#maintoolbar {
-    display: none;
+div#notebook {
+    padding-top: 0;
 }
 #header-container {
     display: none;
 }
-div#notebook {
-    padding-top: 0;
+#header-bar {
+    display: none;
+}
+#maintoolbar {
+    display: none;
+}
+#site {
+    height: auto !important;
 }
 </style>
 
@@ -88,6 +100,7 @@ etl.config.display_index_header = True
 import humanize
 from humanize import naturalsize, intcomma, intword
 import zarr
+import graphviz
 ```
 
 
@@ -213,6 +226,11 @@ class SeqFeature(object):
         yield self.start
         yield self.end
         
+```
+
+
+```python
+
 ```
 
 

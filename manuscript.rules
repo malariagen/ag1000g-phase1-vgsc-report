@@ -16,14 +16,12 @@
 #
 
 rule src:
-    # Python sources.
     output:
         "src/python/zcache.py",
         "src/python/veff.py",
         "src/python/util.py",
 
 rule setup:
-    # Setup notebook.
     input:
         rules.src.output,
         "notebooks/setup.ipynb",
@@ -31,6 +29,16 @@ rule setup:
         "build/notebooks/setup.md",
     shell:
         "./nbexec.sh notebooks/setup.ipynb"
+
+rule hapclust_utils:
+    input:
+        rules.src.output,
+        rules.setup.output,
+        "notebooks/hapclust_utils.ipynb",
+    output:
+        "build/notebooks/hapclust_utils.md",
+    shell:
+        "./nbexec.sh notebooks/hapclust_utils.ipynb"
 
 # Artwork
 # -------
@@ -49,10 +57,22 @@ rule artwork_demo:
     shell:
         "./nbexec.sh notebooks/artwork_demo.ipynb"
 
+rule hapclust_demo:
+    # Demo notebook using the haplotype clustering functions.
+    input:
+        rules.setup.output,
+        rules.hapclust_utils.output,
+        "notebooks/hapclust_demo.ipynb",
+    output:
+        "build/notebooks/hapclust_demo.md",
+    shell:
+        "./nbexec.sh notebooks/hapclust_demo.ipynb"
+
 rule artwork:
     # Build all artwork.
     input:
         rules.artwork_demo.output,
+        rules.hapclust_demo.output,
         # add more inputs here as required
     output:
         touch("build/manuscript.artwork.done")
