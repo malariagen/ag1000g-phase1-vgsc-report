@@ -53,7 +53,7 @@ else
 fi
 
 # force miniconda re-install
-#rm -v miniconda.installed
+rm -v miniconda.installed
 
 # install miniconda
 if [ ! -f miniconda.installed ]; then
