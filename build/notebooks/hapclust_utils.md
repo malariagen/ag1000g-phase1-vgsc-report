@@ -316,21 +316,97 @@ def fig_haplotypes_clustered(h,
 
 
 ```python
+def _graph_edges(graph, 
+                 edges, 
+                 hap_counts, 
+                 node_size_factor, 
+                 edge_length,
+                 anon_width,
+                 intermediate_nodes,
+                 edge_attrs,
+                 anon_node_attrs):
+    
+    for i in range(edges.shape[0]):
+
+        for j in range(edges.shape[1]):
+
+            # lookup distance between nodes i and j
+            sep = edges[i, j]
+
+            if sep > 0:
+
+                # lookup number of haplotypes
+                n_i = hap_counts[i]
+                n_j = hap_counts[j]
+
+                # calculate node sizes (needed to adjust edge length)
+                width_i = np.sqrt(n_i * node_size_factor)
+                width_j = np.sqrt(n_j * node_size_factor)
+
+                if sep > 1 and intermediate_nodes:
+
+                    # tricky case, need to add some anonymous nodes to represent intermediate steps
+
+                    # add first intermediate node
+                    nid = 'anon_{}_{}_{}'.format(i, j, 0)
+                    graph.node(nid, label='', width=str(anon_width), **anon_node_attrs)
+
+                    # add edge from node i to first intermediate
+                    el = edge_length + width_i / 2 + anon_width / 2
+                    kwargs = {'len': str(el)}
+                    kwargs.update(edge_attrs)
+                    graph.edge(str(i), 'anon_{}_{}_{}'.format(i, j, 0), **kwargs)
+
+                    # add further intermediate nodes as necessary
+                    for k in range(1, sep-1):
+                        nid = 'anon_{}_{}_{}'.format(i, j, k)
+                        graph.node(nid, label='', width=str(anon_width), **anon_node_attrs)
+                        el = edge_length + anon_width
+                        kwargs = {'len': str(el)}
+                        kwargs.update(edge_attrs)
+                        graph.edge('anon_{}_{}_{}'.format(i, j, k-1), 'anon_{}_{}_{}'.format(i, j, k), **kwargs)
+
+                    # add edge from final intermediate node to node j
+                    el = edge_length + anon_width / 2 + width_j / 2 
+                    kwargs = {'len': str(el)}
+                    kwargs.update(edge_attrs)
+                    graph.edge('anon_{}_{}_{}'.format(i, j, sep-2), str(j), **kwargs)
+
+                else:
+
+                    # simple case, direct edge from node i to j
+
+                    # N.B., adjust edge length so we measure distance from edge of circle rather than center
+                    el = (edge_length * sep) + width_i / 2 + width_j / 2
+                    kwargs = {'len': str(el)}
+                    kwargs.update(edge_attrs)
+                    graph.edge(str(i), str(j), **kwargs)
+
+                    
 def graph_haplotype_network(h,
                             hap_colors='grey',
                             distance_metric='hamming',
+                            network_method='mst',
                             comment=None,
                             engine='neato',
                             format='png',
                             mode='major',
-                            overlap=False,
+                            overlap=True,
                             splines=False,
-                            node_size_factor=0.02,
-                            edge_length=.5,
+                            node_size_factor=0.01,
+                            node_attrs=None,
+                            show_node_labels=False,
+                            edge_length=0.5,
+                            edge_weight=10,
+                            edge_attrs=None,
+                            show_alternate_edges=True,
+                            alternate_edge_attrs=None,
                             anon_width=0.07,
                             anon_fillcolor='white',
+                            anon_node_attrs=None,
                             intermediate_nodes=True,
                             max_dist=5,
+                            debug=False,
                             ):
     """TODO doc me"""
     
@@ -364,18 +440,32 @@ def graph_haplotype_network(h,
     dist *= h.n_variants
     dist = scipy.spatial.distance.squareform(dist).astype(int)
 
-    # compute minimum spanning tree
-    mst = scipy.sparse.csgraph.minimum_spanning_tree(dist).toarray().astype(int)
-    
-    # deal with maximum distance
-    if max_dist:
-        mst[mst > max_dist] = 0
+    if network_method.lower() == 'mst':
+
+        # compute minimum spanning tree
+        edges = scipy.sparse.csgraph.minimum_spanning_tree(dist).toarray().astype(int)
+
+        # deal with maximum distance
+        if max_dist:
+            edges[edges > max_dist] = 0
+
+        # no alternate edges when using mst
+        alternate_edges = None
+        
+    elif network_method.lower() == 'parsimony':
+        
+        # compute network
+        edges, alternate_edges = maximum_parsimony_network(dist, max_dist=max_dist, debug=debug)
 
     # setup graph
     graph = graphviz.Graph(comment=comment, engine=engine, format=format)
     graph.attr('graph', overlap=str(overlap).lower(), splines=str(splines).lower(), mode=mode)
 
     # add the main nodes
+    if node_attrs is None:
+        node_attrs = dict()
+    node_attrs.setdefault('fixedsize', 'true')
+    node_attrs.setdefault('shape', 'circle')
     for i, n in enumerate(hap_counts):
 
         # calculate width from number of items - make width proportional to area
@@ -397,58 +487,135 @@ def graph_haplotype_network(h,
             fillcolor = hap_colors
 
         # add graph node
-        graph.node(str(i), shape='circle', width=str(width), style=style, fillcolor=fillcolor, fixedsize='true', label='')
-        
-    # add edges
-    for i in range(mst.shape[0]):
+        if show_node_labels:
+            label = str(i)
+        else:
+            label = ""
+        kwargs = dict()
+        kwargs.update(node_attrs)
+        kwargs.setdefault('style', style)
+        kwargs.setdefault('fillcolor', fillcolor)
+        kwargs.setdefault('label', label)
+        kwargs.setdefault('width', str(width))
+        graph.node(str(i), **kwargs)
+    
+    # setup defaults
+    if anon_node_attrs is None:
+        anon_node_attrs = dict()
+    anon_node_attrs.setdefault('fixedsize', 'true')
+    anon_node_attrs.setdefault('shape', 'circle')
+    anon_node_attrs.setdefault('style', 'filled')
+    anon_node_attrs.setdefault('fillcolor', anon_fillcolor)
+    if edge_attrs is None:
+        edge_attrs = dict()
+    edge_attrs.setdefault('style', 'normal')
+    edge_attrs.setdefault('weight', str(edge_weight))
+    if alternate_edge_attrs is None:
+        alternate_edge_attrs = dict()
+    alternate_edge_attrs.setdefault('style', 'dashed')
+    alternate_edge_attrs.setdefault('weight', str(edge_weight))
 
-        for j in range(mst.shape[1]):
-
-            # lookup distance between nodes i and j
-            sep = mst[i, j]
-
-            if sep > 0:
-
-                # lookup number of haplotypes
-                n_i = hap_counts[i]
-                n_j = hap_counts[j]
-
-                # calculate node sizes (needed to adjust edge length)
-                width_i = np.sqrt(n_i * node_size_factor)
-                width_j = np.sqrt(n_j * node_size_factor)
-
-                if sep > 1 and intermediate_nodes:
-
-                    # tricky case, need to add some anonymous nodes to represent intermediate steps
-
-                    # add first intermediate node
-                    nid = 'anon_{}_{}_{}'.format(i, j, 0)
-                    graph.node(nid, shape='circle', style='filled', fillcolor=anon_fillcolor, fixedsize='true', label='', width=str(anon_width))
-
-                    # add edge from node i to first intermediate
-                    el = edge_length + width_i / 2 + anon_width / 2
-                    graph.edge(str(i), 'anon_{}_{}_{}'.format(i, j, 0), **{'len': str(el)})
-
-                    # add further intermediate nodes as necessary
-                    for k in range(1, sep-1):
-                        nid = 'anon_{}_{}_{}'.format(i, j, k)
-                        graph.node(nid, shape='circle', style='filled', fillcolor=anon_fillcolor, fixedsize='true', label='', width=str(anon_width))
-                        el = edge_length + anon_width
-                        graph.edge('anon_{}_{}_{}'.format(i, j, k-1), 'anon_{}_{}_{}'.format(i, j, k), **{'len': str(el)})
-
-                    # add edge from final intermediate node to node j
-                    el = edge_length + anon_width / 2 + width_j / 2 
-                    graph.edge('anon_{}_{}_{}'.format(i, j, sep-2), str(j), **{'len': str(el)})
-
-                else:
-
-                    # simple case, direct edge from node i to j
-
-                    # N.B., adjust edge length so we measure distance from edge of circle rather than center
-                    el = (edge_length * sep) + width_i / 2 + width_j / 2
-                    graph.edge(str(i), str(j), **{'len': str(el)})
+    # add main edges
+    _graph_edges(graph, 
+                 edges, 
+                 hap_counts, 
+                 node_size_factor, 
+                 edge_length,
+                 anon_width,
+                 intermediate_nodes,
+                 edge_attrs,
+                 anon_node_attrs)
+    
+    # add alternate edges
+    if show_alternate_edges and alternate_edges is not None:
+        _graph_edges(graph, 
+                     alternate_edges, 
+                     hap_counts, 
+                     node_size_factor, 
+                     edge_length,
+                     anon_width,
+                     intermediate_nodes,
+                     alternate_edge_attrs,
+                     anon_node_attrs)
 
     return graph
+```
+
+
+```python
+def maximum_parsimony_network(dist, max_dist=None, debug=False):
+    """TODO"""
+    
+    # TODO review implementation, see if this can be tidied up
+    
+    # keep only the lower triangle of the distance matrix, to avoid adding the same
+    # edge twice
+    dist = np.tril(dist)
+    
+    # setup the output array of links between nodes
+    edges = np.zeros_like(dist)
+    
+    # setup an array of alternate links
+    alternate_edges = np.zeros_like(dist)
+    
+    # intermediate variable - assignment of haplotypes to clusters (a.k.a. sub-networks)
+    # initially each distinct haplotype is in its own cluster
+    cluster = np.arange(dist.shape[0])
+    
+    # start with haplotypes separated by a single mutation
+    step = 1
+    
+    # iterate until all haplotypes in a single cluster, or max_dist reached
+    while len(set(cluster)) > 1 and (max_dist is None or step <= max_dist):
+        if debug: print('processing step', step, cluster)
+            
+        # keep track of which clusters have been merged at this height
+        merged = set()
+        
+        # remember what cluster assignments were at the previous height
+        prv_cluster = cluster.copy()
+        
+        # iterate over all pairs where distance equals current step size
+        for i, j in zip(*np.nonzero(dist == step)):
+            if debug: print('found potential edge', i, j)
+            
+            # current cluster assignment for each haplotype
+            a = cluster[i]
+            b = cluster[j]
+            
+            # previous cluster assignment for each haplotype
+            pa = prv_cluster[i]
+            pb = prv_cluster[j]
+            
+            # check to see if both nodes already in the same cluster
+            if a != b:
+                
+                # nodes are in different clusters, so we can merge (i.e., connect) the clusters
+                
+                if debug: print('assign an edge')
+                edges[i, j] = dist[i, j]
+                
+                # merge clusters
+                c = cluster.max() + 1
+                loc_a = cluster == a
+                loc_b = cluster == b
+                cluster[loc_a] = c
+                cluster[loc_b] = c
+                merged.add(tuple(sorted([a, b])))
+                if debug: print(cluster, merged)
+
+            elif tuple(sorted([pa, pb])) in merged or step == 1:
+                
+                # the two clusters have already been merged at this level, this is an alternate connection
+                # N.B., special case step = 1 because no previous cluster assignments
+                
+                if debug: print('assign an alternate edge')
+                alternate_edges[i, j] = dist[i, j]
+                    
+        # increment step
+        step += 1
+                
+    return edges, alternate_edges
 ```
 
 
