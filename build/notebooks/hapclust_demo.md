@@ -70,6 +70,7 @@ pop_colors = {
     'KES': 'grey47',
     'colony': 'black'
 }
+hap_colors = np.array([pop_colors[p] for p in hap_pops])
 hap_colors_995S = np.array([pop_colors[p] for p in hap_pops_995S])
 hap_colors_995F = np.array([pop_colors[p] for p in hap_pops_995F])
 ```
@@ -435,10 +436,8 @@ graph
 
 
 ```python
-# change the maximum connection distance
-graph = graph_haplotype_network(h_vgsc_995S, 
-                                hap_colors=hap_colors_995S,
-                                max_dist=10)
+# try a different network building method 
+graph = graph_haplotype_network(h_vgsc_995S, hap_colors=hap_colors_995S, network_method='msn')
 graph
 ```
 
@@ -452,7 +451,7 @@ graph
 
 ```python
 # try a different network building method 
-graph = graph_haplotype_network(h_vgsc_995S, hap_colors=hap_colors_995S, network_method='msn')
+graph = graph_haplotype_network(h_vgsc_995S, hap_colors=hap_colors_995S, network_method='mjn')
 graph
 ```
 
@@ -465,8 +464,10 @@ graph
 
 
 ```python
-# try a different network building method 
-graph = graph_haplotype_network(h_vgsc_995S, hap_colors=hap_colors_995S, network_method='mjn')
+# change the maximum connection distance
+graph = graph_haplotype_network(h_vgsc_995S, 
+                                hap_colors=hap_colors_995S,
+                                max_dist=10)
 graph
 ```
 
@@ -474,6 +475,32 @@ graph
 
 
 ![svg](hapclust_demo_files/hapclust_demo_39_0.svg)
+
+
+
+
+```python
+graph = graph_haplotype_network(h_vgsc_995S, hap_colors=hap_colors_995S, network_method='msn', max_dist=10)
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_40_0.svg)
+
+
+
+
+```python
+graph = graph_haplotype_network(h_vgsc_995S, hap_colors=hap_colors_995S, network_method='mjn', max_dist=10)
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_41_0.svg)
 
 
 
@@ -492,45 +519,13 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_40_0.svg)
-
-
-
-
-```python
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='mjn')
-graph
-```
-
-
-
-
-![svg](hapclust_demo_files/hapclust_demo_41_0.svg)
-
-
-
-
-```python
-# plot a network for just a single cluster that we extracted earlier from the dendrogram
-cluster_idx = 14
-dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
-cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
-cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
-cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=10, network_method='msn')
-graph
-```
-
-
-
-
 ![svg](hapclust_demo_files/hapclust_demo_42_0.svg)
 
 
 
 
 ```python
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=10, network_method='mjn')
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='mjn')
 graph
 ```
 
@@ -544,12 +539,12 @@ graph
 
 ```python
 # plot a network for just a single cluster that we extracted earlier from the dendrogram
-cluster_idx = 12
+cluster_idx = 14
 dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
 cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
 cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
 cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='msn')
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=10, network_method='msn')
 graph
 ```
 
@@ -576,12 +571,12 @@ graph
 
 ```python
 # plot a network for just a single cluster that we extracted earlier from the dendrogram
-cluster_idx = 9
+cluster_idx = 12
 dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
 cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
 cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
 cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='major', edge_weight=20, network_method='msn')
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='msn')
 graph
 ```
 
@@ -594,7 +589,7 @@ graph
 
 
 ```python
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='major', edge_weight=20, network_method='mjn')
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=10, network_method='mjn')
 graph
 ```
 
@@ -602,6 +597,38 @@ graph
 
 
 ![svg](hapclust_demo_files/hapclust_demo_47_0.svg)
+
+
+
+
+```python
+# plot a network for just a single cluster that we extracted earlier from the dendrogram
+cluster_idx = 9
+dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
+cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
+cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='major', edge_weight=20, network_method='msn')
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_48_0.svg)
+
+
+
+
+```python
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='major', edge_weight=20, network_method='mjn')
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_49_0.svg)
 
 
 
@@ -620,7 +647,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_48_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_50_0.svg)
 
 
 
@@ -633,7 +660,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_49_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_51_0.svg)
 
 
 
@@ -646,7 +673,51 @@ fig, ax_dend, ax_freq, cluster_spans, leaf_obs = fig_haplotypes_clustered(h_vgsc
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_50_0.png)
+![png](hapclust_demo_files/hapclust_demo_52_0.png)
+
+
+
+```python
+graph = graph_haplotype_network(h_vgsc_995F, 
+                                hap_colors=hap_colors_995F,
+                                max_dist=4)
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_53_0.svg)
+
+
+
+
+```python
+graph = graph_haplotype_network(h_vgsc_995F, 
+                                hap_colors=hap_colors_995F,
+                                max_dist=10,
+                                network_method='msn')
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_54_0.svg)
+
+
+
+
+```python
+graph = graph_haplotype_network(h_vgsc_995F, hap_colors=hap_colors_995F, max_dist=10, network_method='mjn')
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_55_0.svg)
+
 
 
 
@@ -664,7 +735,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_51_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_56_0.svg)
 
 
 
@@ -677,7 +748,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_52_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_57_0.svg)
 
 
 
@@ -696,7 +767,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_53_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_58_0.svg)
 
 
 
@@ -709,7 +780,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_54_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_59_0.svg)
 
 
 
@@ -728,7 +799,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_55_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_60_0.svg)
 
 
 
@@ -741,7 +812,41 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_56_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_61_0.svg)
+
+
+
+
+```python
+# plot a network for two of the clusters together 
+cluster_hap_indices = []
+for cluster_idx in 7, 8:
+    _, _, cidx = cluster_spans[cluster_idx]
+    cluster_hap_indices.extend(cidx)
+cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
+cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='msn')
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_62_0.svg)
+
+
+
+
+```python
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='mjn')
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_63_0.svg)
 
 
 
@@ -760,7 +865,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_57_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_64_0.svg)
 
 
 
@@ -773,7 +878,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_58_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_65_0.svg)
 
 
 
@@ -794,7 +899,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_59_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_66_0.svg)
 
 
 
@@ -810,7 +915,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_60_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_67_0.svg)
 
 
 
@@ -826,7 +931,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_61_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_68_0.svg)
 
 
 
@@ -836,5 +941,37 @@ graph
 # E.g., look at where nodes 11 and 16 get placed in the MST versus the MSN.
 # E.g., look at how nodes 31, 14 and 20 are connected in the MSN versus the MJN
 # E.g., look at how nodes 2, 5 and 37 are connected in the MSN versus the MJN
+
+```
+
+
+```python
+# just for fun, graph the whole lot...
+graph = graph_haplotype_network(h_vgsc, hap_colors=hap_colors, network_method='msn')
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_70_0.svg)
+
+
+
+
+```python
+graph = graph_haplotype_network(h_vgsc, hap_colors=hap_colors, network_method='mjn')
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_71_0.svg)
+
+
+
+
+```python
 
 ```

@@ -420,6 +420,10 @@ def graph_haplotype_network(h,
     # check inputs
     h = allel.HaplotypeArray(h)
     
+    # optimise - keep only segregating variants
+    ac = h.count_alleles()
+    h = h[ac.is_segregating()]
+    
     # find distinct haplotypes
     h_distinct_sets = h.distinct()
     
@@ -693,13 +697,12 @@ def _remove_obsolete(h, orig_n_haplotypes, max_dist=None, debug=False):
     
 
 def median_joining_network(h, debug=False, max_dist=None):
-    h = allel.HaplotypeArray(h)
+    h = allel.HaplotypeArray(h, dtype='i1')
     orig_n_haplotypes = h.n_haplotypes
     
     n_medians_added = None
     iteration = 0
     while n_medians_added is None or n_medians_added > 0:
-        n_medians_added = 0
 
         # steps 1-3
         h, edges, alt_edges = _remove_obsolete(h, orig_n_haplotypes, max_dist=max_dist, debug=debug)
@@ -708,30 +711,34 @@ def median_joining_network(h, debug=False, max_dist=None):
         # step 4 - add median vectors
 
         # iterate over all triplets
-        for i, j, k in itertools.combinations(range(h.n_haplotypes), 3): 
-            if debug: print(iteration, i, j, k)
-            n_pairs_linked = 0
-            n_pairs_linked += all_edges[i, j] > 0
-            n_pairs_linked += all_edges[i, k] > 0
-            n_pairs_linked += all_edges[j, k] > 0
-            if debug: print(iteration, i, j, k, 'n_pairs_linked', n_pairs_linked)
-            if n_pairs_linked >= 2:
-                if debug: print(iteration, i, j, k, 'computing median vector')
-                uvw = h[:, [i, j, k]]
-                ac = uvw.count_alleles(max_allele=1)
-                # majority consensus haplotype
-                x = np.argmax(ac, axis=1)
-                if debug: print(iteration, i, j, k, 'median vector', x)
-                # test if x already in haps
-                if np.any(np.all(x[:, None] == np.asarray(h), axis=0)):
-                    if debug: print(iteration, i, j, k, 'median vector already present')
-                    pass
-                else:
-                    if debug: print(iteration, i, j, k, 'adding median vector')
-                    h = allel.HaplotypeArray(np.column_stack([h, x]))
-                    n_medians_added += 1
-            if debug: print(iteration, i, j, k, 'n_medians_added', n_medians_added)
-                
+        n = h.n_haplotypes
+        seen = set([hash(h[:, i].tobytes()) for i in range(h.n_haplotypes)])
+        new_haps = list()
+        for i in range(n):
+            for j in range(i + 1, n):
+                if all_edges[i, j]:
+                    for k in range(n):
+                        if all_edges[i, k] or all_edges[j, k]:
+                            if debug: print(iteration, i, j, k, 'computing median vector')
+                            uvw = h[:, [i, j, k]]
+                            ac = uvw.count_alleles(max_allele=1)
+                            # majority consensus haplotype
+                            x = np.argmax(ac, axis=1).astype('i1')
+                            x_hash = hash(x.tobytes())
+                            if debug: print(iteration, i, j, k, 'median vector', x)
+                            # test if x already in haps
+                            if x_hash in seen:
+                                if debug: print(iteration, i, j, k, 'median vector already present')
+                                pass
+                            else:
+                                if debug: print(iteration, i, j, k, 'adding median vector')
+                                new_haps.append(x.tolist())
+                                seen.add(x_hash)
+        n_medians_added = len(new_haps)
+        if debug: print(new_haps)
+        if n_medians_added:
+            h = h.concatenate(allel.HaplotypeArray(np.array(new_haps, dtype='i1').T), axis=1)
+                        
         iteration += 1
                 
     # final pass
@@ -763,7 +770,7 @@ h = h[:]
 
 
 ```python
-graph_haplotype_network(h[:, :-1], network_method='msn', debug=False, show_node_labels=True, node_size_factor=.2)
+graph_haplotype_network(h[:, :-1], network_method='msn', debug=False, show_node_labels=True, node_size_factor=.2, anon_width=.4)
 ```
 
 
@@ -775,7 +782,7 @@ graph_haplotype_network(h[:, :-1], network_method='msn', debug=False, show_node_
 
 
 ```python
-graph_haplotype_network(h[:, :-1], network_method='mjn', debug=False, show_node_labels=True, node_size_factor=.2)
+graph_haplotype_network(h[:, :-1], network_method='mjn', debug=False, show_node_labels=True, node_size_factor=.2, anon_width=.4)
 ```
 
 
@@ -787,7 +794,7 @@ graph_haplotype_network(h[:, :-1], network_method='mjn', debug=False, show_node_
 
 
 ```python
-graph_haplotype_network(h, network_method='msn', debug=False, show_node_labels=True, node_size_factor=.2)
+graph_haplotype_network(h, network_method='msn', debug=False, show_node_labels=True, node_size_factor=.2, anon_width=.4)
 ```
 
 
@@ -799,7 +806,7 @@ graph_haplotype_network(h, network_method='msn', debug=False, show_node_labels=T
 
 
 ```python
-graph_haplotype_network(h[:, :], network_method='mjn', debug=False, show_node_labels=True, node_size_factor=.2)
+graph_haplotype_network(h, network_method='mjn', debug=False, show_node_labels=True, node_size_factor=.2, anon_width=.4)
 ```
 
 
