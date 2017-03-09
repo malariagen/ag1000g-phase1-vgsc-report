@@ -10,7 +10,7 @@
     width: 100%;
 }
 div#notebook {
-    padding-top: 0;
+    padding-top: 1em;
 }
 #header-container {
     display: none;
@@ -20,6 +20,10 @@ div#notebook {
 }
 #maintoolbar {
     display: none;
+}
+#menubar-container {
+    position: fixed;
+    margin-top: 0;
 }
 #site {
     height: auto !important;
@@ -312,7 +316,7 @@ def fig_haplotypes_clustered(h,
 
 ```
 
-## Haplotype networks (via minimum spanning tree)
+## Haplotype networks
 
 
 ```python
@@ -400,9 +404,12 @@ def graph_haplotype_network(h,
                             mode='major',
                             overlap=True,
                             splines=False,
+                            graph_attrs=None,
                             node_size_factor=0.01,
                             node_attrs=None,
                             show_node_labels=False,
+                            fontname='monospace',
+                            fontsize=None,
                             edge_length=0.5,
                             edge_weight=10,
                             edge_attrs=None,
@@ -487,19 +494,28 @@ def graph_haplotype_network(h,
 
     # setup graph
     graph = graphviz.Graph(comment=comment, engine=engine, format=format)
-    graph.attr('graph', overlap=str(overlap).lower(), splines=str(splines).lower(), mode=mode)
+    if graph_attrs is None:
+        graph_attrs = dict()
+    graph_attrs.setdefault('overlap', str(overlap).lower())
+    graph_attrs.setdefault('splines', str(splines).lower())
+    graph_attrs.setdefault('mode', mode)
+    graph.attr('graph', **graph_attrs)
 
     # add the main nodes
     if node_attrs is None:
         node_attrs = dict()
     node_attrs.setdefault('fixedsize', 'true')
     node_attrs.setdefault('shape', 'circle')
+    node_attrs.setdefault('fontname', fontname)
+    node_attrs.setdefault('fontsize', str(fontsize))
     if anon_node_attrs is None:
         anon_node_attrs = dict()
     anon_node_attrs.setdefault('fixedsize', 'true')
     anon_node_attrs.setdefault('shape', 'circle')
     anon_node_attrs.setdefault('style', 'filled')
     anon_node_attrs.setdefault('fillcolor', anon_fillcolor)
+    anon_node_attrs.setdefault('fontname', fontname)
+    anon_node_attrs.setdefault('fontsize', str(fontsize))
     for i in range(edges.shape[0]):
         kwargs = dict()
         
@@ -549,10 +565,14 @@ def graph_haplotype_network(h,
         edge_attrs = dict()
     edge_attrs.setdefault('style', 'normal')
     edge_attrs.setdefault('weight', str(edge_weight))
+    edge_attrs.setdefault('fontname', fontname)
+    edge_attrs.setdefault('fontsize', str(fontsize))
     if alternate_edge_attrs is None:
         alternate_edge_attrs = dict()
     alternate_edge_attrs.setdefault('style', 'dashed')
     alternate_edge_attrs.setdefault('weight', str(edge_weight))
+    alternate_edge_attrs.setdefault('fontname', fontname)
+    alternate_edge_attrs.setdefault('fontsize', str(fontsize))
 
     # add main edges
     _graph_edges(graph, 
@@ -665,8 +685,6 @@ def minimum_spanning_network(dist, max_dist=None, debug=False):
     return edges, alternate_edges
 ```
 
-## Sandbox
-
 
 ```python
 def _remove_obsolete(h, orig_n_haplotypes, max_dist=None, debug=False):
@@ -776,7 +794,7 @@ graph_haplotype_network(h[:, :-1], network_method='msn', debug=False, show_node_
 
 
 
-![svg](hapclust_utils_files/hapclust_utils_12_0.svg)
+![svg](hapclust_utils_files/hapclust_utils_11_0.svg)
 
 
 
@@ -788,7 +806,7 @@ graph_haplotype_network(h[:, :-1], network_method='mjn', debug=False, show_node_
 
 
 
-![svg](hapclust_utils_files/hapclust_utils_13_0.svg)
+![svg](hapclust_utils_files/hapclust_utils_12_0.svg)
 
 
 
@@ -800,7 +818,7 @@ graph_haplotype_network(h, network_method='msn', debug=False, show_node_labels=T
 
 
 
-![svg](hapclust_utils_files/hapclust_utils_14_0.svg)
+![svg](hapclust_utils_files/hapclust_utils_13_0.svg)
 
 
 
@@ -812,9 +830,55 @@ graph_haplotype_network(h, network_method='mjn', debug=False, show_node_labels=T
 
 
 
-![svg](hapclust_utils_files/hapclust_utils_15_0.svg)
+![svg](hapclust_utils_files/hapclust_utils_14_0.svg)
 
 
+
+### Matplotlib integration
+
+
+```python
+import matplotlib.image as mpimg
+import io
+
+
+def plot_gv(graph, ax, size=None, desired_size=False, ratio=None, dpi=None, interpolation='bilinear', aspect='equal'):
+    fig = ax.figure
+    if size is None:
+        # try to match size to ax
+        fw, fh = fig.get_figwidth(), fig.get_figheight()
+        bbox = ax.get_position()
+        w = fw * bbox.width
+        h = fh * bbox.height
+        size = w, h
+    if dpi is None:
+        # match dpi to fig
+        dpi = fig.dpi
+
+    # set size and resolution 
+    size = '%s,%s' % (w, h)
+    if desired_size:
+        size += '!'
+    kwargs = dict(
+        size=size,
+        dpi=str(dpi),
+    )
+    if ratio:
+        kwargs['ratio'] = str(ratio)
+    else:
+        kwargs['ratio'] = ''
+    graph.attr('graph', **kwargs)
+
+    # render the graph as png
+    dat = graph.pipe(format='png')
+    
+    # read the png data into an image array
+    img = mpimg.imread(io.BytesIO(dat))
+    
+    # plot the image
+    ax.imshow(img, interpolation=interpolation, aspect=aspect)
+
+```
 
 
 ```python

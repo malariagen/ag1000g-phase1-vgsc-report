@@ -14,7 +14,7 @@ This notebook demonstrates how to use the haplotype clustering utilities.
     width: 100%;
 }
 div#notebook {
-    padding-top: 0;
+    padding-top: 1em;
 }
 #header-container {
     display: none;
@@ -24,6 +24,10 @@ div#notebook {
 }
 #maintoolbar {
     display: none;
+}
+#menubar-container {
+    position: fixed;
+    margin-top: 0;
 }
 #site {
     height: auto !important;
@@ -969,6 +973,63 @@ graph
 
 ![svg](hapclust_demo_files/hapclust_demo_71_0.svg)
 
+
+
+### Matplotlib integration
+
+
+```python
+cluster_idx = 16
+dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
+cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
+cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', network_method='mjn',
+                                edge_weight=10, overlap='true', splines=False, 
+                                show_node_labels=True, fontsize='8')
+graph  
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_73_0.svg)
+
+
+
+
+```python
+fig = plt.figure(figsize=(10, 12), dpi=120)
+
+ax = fig.add_subplot(2, 2, 1)
+ax.set_axis_off()
+ax.set_title('default options')
+plot_gv(graph, ax)
+
+ax = fig.add_subplot(2, 2, 2)
+ax.set_axis_off()
+ax.set_title('higher res, default interpolation (bilinear)')
+plot_gv(graph, ax, dpi=300)
+
+ax = fig.add_subplot(2, 2, 3)
+# leave frame around to allow comparison with ratio='fill' below
+ax.set_xticks([])
+ax.set_yticks([])
+ax.set_title('higher res, lanczos interpolation')
+plot_gv(graph, ax, dpi=300, interpolation='lanczos')
+
+# using ratio='fill' means graphviz will scale the graph to fill the available space
+ax = fig.add_subplot(2, 2, 4)
+ax.set_xticks([])
+ax.set_yticks([])
+ax.set_title('ratio=fill')
+plot_gv(graph, ax, dpi=300, ratio='fill')
+
+fig.tight_layout()
+```
+
+
+![png](hapclust_demo_files/hapclust_demo_74_0.png)
 
 
 
