@@ -328,7 +328,9 @@ def _graph_edges(graph,
                  anon_width,
                  intermediate_nodes,
                  edge_attrs,
-                 anon_node_attrs):
+                 anon_node_attrs,
+                 h_distinct,
+                 variant_labels):
     
     for i in range(edges.shape[0]):
 
@@ -342,15 +344,19 @@ def _graph_edges(graph,
                 # lookup number of haplotypes
                 # calculate node sizes (needed to adjust edge length)
                 if i < len(hap_counts):
+                    # original observation
                     n_i = hap_counts[i]
                     width_i = np.sqrt(n_i * node_size_factor)
                 else:
+                    # not an original observation
                     n_i = 1
                     width_i = anon_width
                 if j < len(hap_counts):
+                    # original observation
                     n_j = hap_counts[j]
                     width_j = np.sqrt(n_j * node_size_factor)
                 else:
+                    # not an original observation
                     n_j = 1
                     width_j = anon_width
 
@@ -358,30 +364,58 @@ def _graph_edges(graph,
 
                     # tricky case, need to add some anonymous nodes to represent intermediate steps
 
+                    # handle variant labels
+                    if variant_labels is not None:
+                        idx_diff = np.nonzero(h_distinct[:, i] != h_distinct[:, j])[0]
+                        labels = variant_labels[idx_diff]
+                        reverse = h_distinct[idx_diff, i] == 1
+                    else:
+                        labels = [''] * sep
+
                     # add first intermediate node
                     nid = 'anon_{}_{}_{}'.format(i, j, 0)
                     graph.node(nid, label='', width=str(anon_width), **anon_node_attrs)
 
                     # add edge from node i to first intermediate
                     el = edge_length + width_i / 2 + anon_width / 2
-                    kwargs = {'len': str(el)}
+                    edge_from, edge_to = str(i), 'anon_{}_{}_{}'.format(i, j, 0)
+                    kwargs = {'len': str(el), 'label': labels[0]}
                     kwargs.update(edge_attrs)
-                    graph.edge(str(i), 'anon_{}_{}_{}'.format(i, j, 0), **kwargs)
+                    if labels[0]:
+                        # this will be a directed edge
+                        del kwargs['dir']
+                        kwargs.setdefault('arrowsize', '0.5')
+                        if reverse[0]:
+                            edge_from, edge_to = edge_to, edge_from
+                    graph.edge(edge_from, edge_to, **kwargs)
 
                     # add further intermediate nodes as necessary
                     for k in range(1, sep-1):
-                        nid = 'anon_{}_{}_{}'.format(i, j, k)
-                        graph.node(nid, label='', width=str(anon_width), **anon_node_attrs)
+                        edge_from, edge_to = 'anon_{}_{}_{}'.format(i, j, k-1), 'anon_{}_{}_{}'.format(i, j, k)
+                        graph.node(edge_to, label='', width=str(anon_width), **anon_node_attrs)
                         el = edge_length + anon_width
-                        kwargs = {'len': str(el)}
+                        kwargs = {'len': str(el), 'label': labels[k]}
                         kwargs.update(edge_attrs)
-                        graph.edge('anon_{}_{}_{}'.format(i, j, k-1), 'anon_{}_{}_{}'.format(i, j, k), **kwargs)
+                        if labels[k]:
+                            # this will be a directed edge
+                            del kwargs['dir']
+                            kwargs.setdefault('arrowsize', '0.5')
+                            if reverse[k]:
+                                edge_from, edge_to = edge_to, edge_from
+                        graph.edge(edge_from, edge_to, **kwargs)
 
                     # add edge from final intermediate node to node j
+                    edge_from, edge_to = 'anon_{}_{}_{}'.format(i, j, sep-2), str(j)
                     el = edge_length + anon_width / 2 + width_j / 2 
-                    kwargs = {'len': str(el)}
+                    kwargs = {'len': str(el), 'label': labels[-1]}
                     kwargs.update(edge_attrs)
-                    graph.edge('anon_{}_{}_{}'.format(i, j, sep-2), str(j), **kwargs)
+                    if labels[-1]:
+                        # this will be a directed edge
+                        del kwargs['dir']
+                        kwargs.setdefault('arrowsize', '0.5')
+                        if reverse[-1]:
+                            edge_from, edge_to = edge_to, edge_from
+                    graph.edge(edge_from, edge_to, **kwargs)
 
                 else:
 
@@ -391,7 +425,22 @@ def _graph_edges(graph,
                     el = (edge_length * sep) + width_i / 2 + width_j / 2
                     kwargs = {'len': str(el)}
                     kwargs.update(edge_attrs)
-                    graph.edge(str(i), str(j), **kwargs)
+                    edge_from, edge_to = str(i), str(j)
+                    
+                    if variant_labels is not None:
+                        idx_diff = np.nonzero(h_distinct[:, i] != h_distinct[:, j])[0][0]
+                        label = variant_labels[idx_diff]
+                        if label:
+                            # this will be a directed edge
+                            del kwargs['dir']
+                            kwargs.setdefault('arrowsize', '0.5')
+                            if h_distinct[idx_diff, i] == 1:
+                                # reverse direction of edge
+                                edge_from, edge_to = edge_to, edge_from
+                    else:
+                        label = ''
+                    kwargs.setdefault('label', label)
+                    graph.edge(edge_from, edge_to, **kwargs)
 
                     
 def graph_haplotype_network(h,
@@ -420,6 +469,7 @@ def graph_haplotype_network(h,
                             anon_node_attrs=None,
                             intermediate_nodes=True,
                             max_dist=5,
+                            variant_labels=None,
                             debug=False,
                             ):
     """TODO doc me"""
@@ -429,7 +479,10 @@ def graph_haplotype_network(h,
     
     # optimise - keep only segregating variants
     ac = h.count_alleles()
-    h = h[ac.is_segregating()]
+    loc_seg = ac.is_segregating()
+    h = h[loc_seg]
+    if variant_labels is not None:
+        variant_labels = np.asarray(variant_labels, dtype=object)[loc_seg]
     
     # find distinct haplotypes
     h_distinct_sets = h.distinct()
@@ -484,8 +537,8 @@ def graph_haplotype_network(h,
         
     elif network_method.lower() == 'mjn':
         
-        # compute network
-        _, edges, alternate_edges = median_joining_network(h_distinct, max_dist=max_dist, debug=debug)
+        # compute network - N.B., MJN may add new haplotypes
+        h_distinct, edges, alternate_edges = median_joining_network(h_distinct, max_dist=max_dist, debug=debug)
         edges = np.triu(edges)
         alternate_edges = np.triu(alternate_edges)
         
@@ -493,7 +546,7 @@ def graph_haplotype_network(h,
         raise ValueError(network_method)
 
     # setup graph
-    graph = graphviz.Graph(comment=comment, engine=engine, format=format)
+    graph = graphviz.Digraph(comment=comment, engine=engine, format=format)
     if graph_attrs is None:
         graph_attrs = dict()
     graph_attrs.setdefault('overlap', str(overlap).lower())
@@ -520,6 +573,8 @@ def graph_haplotype_network(h,
         kwargs = dict()
         
         if i < len(hap_counts):
+            # original haplotype
+            
             n = hap_counts[i]
 
             # calculate width from number of items - make width proportional to area
@@ -546,6 +601,9 @@ def graph_haplotype_network(h,
             kwargs.setdefault('width', str(width))
         
         else:
+            # not an original haplotype, inferred during network building
+            
+            n = 1
             
             width = anon_width
             fillcolor = anon_fillcolor
@@ -553,7 +611,9 @@ def graph_haplotype_network(h,
             kwargs.setdefault('width', str(anon_width))
 
         # add graph node
-        if show_node_labels:
+        if show_node_labels is True:
+            label = str(i)
+        elif isinstance(show_node_labels, int) and n >= show_node_labels:
             label = str(i)
         else:
             label = ""
@@ -567,12 +627,14 @@ def graph_haplotype_network(h,
     edge_attrs.setdefault('weight', str(edge_weight))
     edge_attrs.setdefault('fontname', fontname)
     edge_attrs.setdefault('fontsize', str(fontsize))
+    edge_attrs.setdefault('dir', 'none')
     if alternate_edge_attrs is None:
         alternate_edge_attrs = dict()
     alternate_edge_attrs.setdefault('style', 'dashed')
     alternate_edge_attrs.setdefault('weight', str(edge_weight))
     alternate_edge_attrs.setdefault('fontname', fontname)
     alternate_edge_attrs.setdefault('fontsize', str(fontsize))
+    alternate_edge_attrs.setdefault('dir', 'none')
 
     # add main edges
     _graph_edges(graph, 
@@ -583,7 +645,9 @@ def graph_haplotype_network(h,
                  anon_width,
                  intermediate_nodes,
                  edge_attrs,
-                 anon_node_attrs)
+                 anon_node_attrs,
+                 h_distinct,
+                 variant_labels)
     
     # add alternate edges
     if show_alternate_edges and alternate_edges is not None:
@@ -595,7 +659,9 @@ def graph_haplotype_network(h,
                      anon_width,
                      intermediate_nodes,
                      alternate_edge_attrs,
-                     anon_node_attrs)
+                     anon_node_attrs,
+                     h_distinct,
+                     variant_labels)
 
     return graph
 ```
@@ -779,16 +845,25 @@ h = h[:]
 
 
 ```python
-# h = np.array([[0, 0, 0, 1, 1],
-#               [0, 0, 1, 0, 1],
-#               [0, 0, 1, 0, 0],
-#               [0, 0, 0, 1, 1],
-#              ])
+graph = graph_haplotype_network(h[:, :-1], network_method='msn', debug=False, 
+                                show_node_labels=True, node_size_factor=.2, anon_width=.4,
+                                variant_labels=['A', 'B', 'C', 'D', 'E'])
+graph
 ```
 
 
+
+
+![svg](hapclust_utils_files/hapclust_utils_10_0.svg)
+
+
+
+
 ```python
-graph_haplotype_network(h[:, :-1], network_method='msn', debug=False, show_node_labels=True, node_size_factor=.2, anon_width=.4)
+graph = graph_haplotype_network(h[:, :-1], network_method='mjn', debug=False, 
+                                show_node_labels=True, node_size_factor=.2, anon_width=.4,
+                                variant_labels=['A', 'B', 'C', 'D', 'E'])
+graph
 ```
 
 
@@ -800,7 +875,9 @@ graph_haplotype_network(h[:, :-1], network_method='msn', debug=False, show_node_
 
 
 ```python
-graph_haplotype_network(h[:, :-1], network_method='mjn', debug=False, show_node_labels=True, node_size_factor=.2, anon_width=.4)
+graph_haplotype_network(h, network_method='msn', debug=False, 
+                        show_node_labels=True, node_size_factor=.2, anon_width=.4,
+                        variant_labels=['A', 'B', 'C', 'D', 'E'])
 ```
 
 
@@ -812,25 +889,15 @@ graph_haplotype_network(h[:, :-1], network_method='mjn', debug=False, show_node_
 
 
 ```python
-graph_haplotype_network(h, network_method='msn', debug=False, show_node_labels=True, node_size_factor=.2, anon_width=.4)
+graph_haplotype_network(h, network_method='mjn', debug=False, 
+                        show_node_labels=True, node_size_factor=.2, anon_width=.4,
+                        variant_labels=['A', 'B', 'C', 'D', 'E'])
 ```
 
 
 
 
 ![svg](hapclust_utils_files/hapclust_utils_13_0.svg)
-
-
-
-
-```python
-graph_haplotype_network(h, network_method='mjn', debug=False, show_node_labels=True, node_size_factor=.2, anon_width=.4)
-```
-
-
-
-
-![svg](hapclust_utils_files/hapclust_utils_14_0.svg)
 
 
 
