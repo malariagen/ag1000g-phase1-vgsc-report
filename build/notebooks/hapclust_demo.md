@@ -14,7 +14,7 @@ This notebook demonstrates how to use the haplotype clustering utilities.
     width: 100%;
 }
 div#notebook {
-    padding-top: 0;
+    padding-top: 1em;
 }
 #header-container {
     display: none;
@@ -24,6 +24,10 @@ div#notebook {
 }
 #maintoolbar {
     display: none;
+}
+#menubar-container {
+    position: fixed;
+    margin-top: 0;
 }
 #site {
     height: auto !important;
@@ -75,6 +79,83 @@ hap_colors_995S = np.array([pop_colors[p] for p in hap_pops_995S])
 hap_colors_995F = np.array([pop_colors[p] for p in hap_pops_995F])
 ```
 
+
+```python
+tbl_variant_labels = (
+    etl
+    .frompickle('../data/tbl_variants_phase1.pkl')
+    .eq('num_alleles', 2)
+    .cut('POS', 'AGAP004707-RA')
+    .convert('AGAP004707-RA', lambda v: v[1] if v[0] == 'NON_SYNONYMOUS_CODING' else '')
+    .rename('AGAP004707-RA', 'label')
+)
+tbl_variant_labels
+```
+
+
+
+
+<table class='petl'>
+<thead>
+<tr>
+<th>0|POS</th>
+<th>1|label</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2358254</td>
+<td>D33N</td>
+</tr>
+<tr>
+<td>2358316</td>
+<td></td>
+</tr>
+<tr>
+<td>2358328</td>
+<td></td>
+</tr>
+<tr>
+<td>2358353</td>
+<td></td>
+</tr>
+<tr>
+<td>2358405</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>...</strong></p>
+
+
+
+
+```python
+pos2label = tbl_variant_labels.lookupone('POS', 'label')
+pos2label[pos_995F]
+```
+
+
+
+
+    'L995F'
+
+
+
+
+```python
+variant_labels = np.array([pos2label.get(p, '') for p in pos], dtype=object)
+variant_labels_vgsc = variant_labels[loc]
+variant_labels_vgsc[:5]
+```
+
+
+
+
+    array(['D33N', '', '', '', ''], dtype=object)
+
+
+
 ## Hierarchical clustering
 
 ### Plot plot plot...
@@ -89,7 +170,7 @@ fig_haplotypes_clustered(h_vgsc_995S, dpi=150);
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_7_0.png)
+![png](hapclust_demo_files/hapclust_demo_10_0.png)
 
 
 
@@ -99,7 +180,7 @@ fig_haplotypes_clustered(h_vgsc_995S, orientation='left', dpi=150);
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_8_0.png)
+![png](hapclust_demo_files/hapclust_demo_11_0.png)
 
 
 
@@ -109,7 +190,7 @@ fig_haplotypes_clustered(h_vgsc_995S, cut_height=5, dpi=150);
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_9_0.png)
+![png](hapclust_demo_files/hapclust_demo_12_0.png)
 
 
 
@@ -119,7 +200,7 @@ fig_haplotypes_clustered(h_vgsc_995S, dpi=150, highlight_clusters=5);
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_10_0.png)
+![png](hapclust_demo_files/hapclust_demo_13_0.png)
 
 
 
@@ -129,7 +210,7 @@ fig_haplotypes_clustered(h_vgsc_995S, dpi=150, highlight_clusters=[2, 9]);
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_11_0.png)
+![png](hapclust_demo_files/hapclust_demo_14_0.png)
 
 
 
@@ -139,7 +220,7 @@ fig_haplotypes_clustered(h_vgsc_995S, dpi=150, highlight_clusters=5, label_clust
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_12_0.png)
+![png](hapclust_demo_files/hapclust_demo_15_0.png)
 
 
 
@@ -151,7 +232,7 @@ fig_haplotypes_clustered(h_vgsc_995S, dpi=150, highlight_clusters=5, label_clust
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_13_0.png)
+![png](hapclust_demo_files/hapclust_demo_16_0.png)
 
 
 ### Return values
@@ -163,7 +244,7 @@ fig, ax_dend, ax_freq, cluster_spans, leaf_obs = fig_haplotypes_clustered(h_vgsc
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_15_0.png)
+![png](hapclust_demo_files/hapclust_demo_18_0.png)
 
 
 #### Customising axes
@@ -172,7 +253,7 @@ fig, ax_dend, ax_freq, cluster_spans, leaf_obs = fig_haplotypes_clustered(h_vgsc
 ```python
 # E.g., use returned axes objects to customise labels etc. ...
 cut_height = 2
-fig, ax_dend, ax_freq, cluster_spans, leaf_obs = fig_haplotypes_clustered(h_vgsc_995S, cut_height=cut_height, dpi=150, 
+fig, ax_dend, ax_freq, cluster_spans_995S, leaf_obs_995S = fig_haplotypes_clustered(h_vgsc_995S, cut_height=cut_height, dpi=150, 
                                                                           highlight_clusters=5, label_clusters=5)
 ax_dend.set_title('Haplotype structure (L995S)')
 ax_dend.set_ylabel('Distance (no. SNPs)')
@@ -180,7 +261,7 @@ ax_freq.set_ylabel('Haplotype frequency');
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_17_0.png)
+![png](hapclust_demo_files/hapclust_demo_20_0.png)
 
 
 #### Accessing information about clusters
@@ -188,7 +269,7 @@ ax_freq.set_ylabel('Haplotype frequency');
 
 ```python
 # cluster_spans is useful for accessing information about each cluster...
-cluster_spans
+cluster_spans_995S
 ```
 
 
@@ -258,7 +339,7 @@ cluster_spans
 ```python
 # E.g., cluster labelled "17" in the plot:
 cluster_idx = 17
-dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
+dend_start, dend_stop, cluster_hap_indices = cluster_spans_995S[cluster_idx]
 ```
 
 
@@ -362,7 +443,7 @@ allel.io.write_fasta('../data/demo.hapclust.995S.cut{}.cluster{}.fasta'.format(c
 # need this if ever you want to plot the haplotypes themselves
 
 # E.g., the first leaf of the dendrogram contains these haplotypes:
-leaf_obs[0]
+leaf_obs_995S[0]
 ```
 
 
@@ -375,7 +456,7 @@ leaf_obs[0]
 
 ```python
 # E.g., the 8th leaf of the dendrogram contains these haplotypes:
-leaf_obs[7]
+leaf_obs_995S[7]
 ```
 
 
@@ -390,7 +471,7 @@ leaf_obs[7]
 # To extract a haplotype array matching the leaves of the dendrogram...
 
 # only need one index per leaf, as all haplotypes per leaf are identical
-indices = [l[0] for l in leaf_obs]
+indices = [l[0] for l in leaf_obs_995S]
 
 # take unique haplotypes in order shown in dendrogram
 h_vgsc_995S_dend = h_vgsc_995S.take(indices, axis=1)
@@ -416,7 +497,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_35_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_38_0.svg)
 
 
 
@@ -430,7 +511,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_36_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_39_0.svg)
 
 
 
@@ -444,7 +525,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_37_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_40_0.svg)
 
 
 
@@ -458,7 +539,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_38_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_41_0.svg)
 
 
 
@@ -474,7 +555,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_39_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_42_0.svg)
 
 
 
@@ -487,7 +568,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_40_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_43_0.svg)
 
 
 
@@ -500,7 +581,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_41_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_44_0.svg)
 
 
 
@@ -508,56 +589,12 @@ graph
 ```python
 # plot a network for just a single cluster that we extracted earlier from the dendrogram
 cluster_idx = 17
-dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
+dend_start, dend_stop, cluster_hap_indices = cluster_spans_995S[cluster_idx]
 cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
 cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
 cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='msn')
-graph
-```
-
-
-
-
-![svg](hapclust_demo_files/hapclust_demo_42_0.svg)
-
-
-
-
-```python
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='mjn')
-graph
-```
-
-
-
-
-![svg](hapclust_demo_files/hapclust_demo_43_0.svg)
-
-
-
-
-```python
-# plot a network for just a single cluster that we extracted earlier from the dendrogram
-cluster_idx = 14
-dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
-cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
-cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
-cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=10, network_method='msn')
-graph
-```
-
-
-
-
-![svg](hapclust_demo_files/hapclust_demo_44_0.svg)
-
-
-
-
-```python
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=10, network_method='mjn')
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, 
+                                network_method='msn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -570,13 +607,8 @@ graph
 
 
 ```python
-# plot a network for just a single cluster that we extracted earlier from the dendrogram
-cluster_idx = 12
-dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
-cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
-cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
-cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='msn')
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, 
+                                network_method='mjn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -589,7 +621,14 @@ graph
 
 
 ```python
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=10, network_method='mjn')
+# plot a network for just a single cluster that we extracted earlier from the dendrogram
+cluster_idx = 14
+dend_start, dend_stop, cluster_hap_indices = cluster_spans_995S[cluster_idx]
+cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
+cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=10, 
+                                network_method='msn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -602,13 +641,8 @@ graph
 
 
 ```python
-# plot a network for just a single cluster that we extracted earlier from the dendrogram
-cluster_idx = 9
-dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
-cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
-cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
-cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='major', edge_weight=20, network_method='msn')
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=10, 
+                                network_method='mjn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -621,7 +655,14 @@ graph
 
 
 ```python
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='major', edge_weight=20, network_method='mjn')
+# plot a network for just a single cluster that we extracted earlier from the dendrogram
+cluster_idx = 12
+dend_start, dend_stop, cluster_hap_indices = cluster_spans_995S[cluster_idx]
+cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
+cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=10, 
+                                network_method='msn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -634,13 +675,8 @@ graph
 
 
 ```python
-# plot a network for just a single cluster that we extracted earlier from the dendrogram
-cluster_idx = 2
-dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
-cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
-cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
-cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=20, network_method='msn')
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=10, 
+                                network_method='mjn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -653,7 +689,14 @@ graph
 
 
 ```python
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=20, network_method='mjn')
+# plot a network for just a single cluster that we extracted earlier from the dendrogram
+cluster_idx = 9
+dend_start, dend_stop, cluster_hap_indices = cluster_spans_995S[cluster_idx]
+cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
+cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='major', edge_weight=20, 
+                                network_method='msn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -666,14 +709,62 @@ graph
 
 
 ```python
-# let's do L995F as well...
-cut_height = 4
-fig, ax_dend, ax_freq, cluster_spans, leaf_obs = fig_haplotypes_clustered(h_vgsc_995F, orientation='left', cut_height=cut_height, dpi=150, 
-                                                                          highlight_clusters=5, label_clusters=5)
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='major', edge_weight=20, 
+                                network_method='mjn', variant_labels=variant_labels_vgsc, fontsize=8)
+graph
 ```
 
 
-![png](hapclust_demo_files/hapclust_demo_52_0.png)
+
+
+![svg](hapclust_demo_files/hapclust_demo_52_0.svg)
+
+
+
+
+```python
+# plot a network for just a single cluster that we extracted earlier from the dendrogram
+cluster_idx = 2
+dend_start, dend_stop, cluster_hap_indices = cluster_spans_995S[cluster_idx]
+cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
+cluster_hap_pops = hap_pops_995S[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=20, 
+                                network_method='msn', variant_labels=variant_labels_vgsc, fontsize=8)
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_53_0.svg)
+
+
+
+
+```python
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=20, 
+                                network_method='mjn', variant_labels=variant_labels_vgsc, fontsize=8)
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_54_0.svg)
+
+
+
+
+```python
+# let's do L995F as well...
+cut_height = 4
+fig, ax_dend, ax_freq, cluster_spans_995F, leaf_obs_995F = fig_haplotypes_clustered(h_vgsc_995F, orientation='left', cut_height=cut_height, dpi=150, 
+                                                                                    highlight_clusters=5, label_clusters=5)
+```
+
+
+![png](hapclust_demo_files/hapclust_demo_55_0.png)
 
 
 
@@ -687,7 +778,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_53_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_56_0.svg)
 
 
 
@@ -703,7 +794,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_54_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_57_0.svg)
 
 
 
@@ -716,7 +807,7 @@ graph
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_55_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_58_0.svg)
 
 
 
@@ -724,56 +815,12 @@ graph
 ```python
 # plot a network for just a single cluster that we extracted earlier from the dendrogram
 cluster_idx = 4
-dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
+dend_start, dend_stop, cluster_hap_indices = cluster_spans_995F[cluster_idx]
 cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
 cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
 cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='msn')
-graph
-```
-
-
-
-
-![svg](hapclust_demo_files/hapclust_demo_56_0.svg)
-
-
-
-
-```python
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='mjn')
-graph
-```
-
-
-
-
-![svg](hapclust_demo_files/hapclust_demo_57_0.svg)
-
-
-
-
-```python
-# plot a network for just a single cluster that we extracted earlier from the dendrogram
-cluster_idx = 7
-dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
-cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
-cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
-cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='msn')
-graph
-```
-
-
-
-
-![svg](hapclust_demo_files/hapclust_demo_58_0.svg)
-
-
-
-
-```python
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='mjn')
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, 
+                                network_method='msn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -786,13 +833,8 @@ graph
 
 
 ```python
-# plot a network for just a single cluster that we extracted earlier from the dendrogram
-cluster_idx = 8
-dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
-cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
-cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
-cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='msn')
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, 
+                                network_method='mjn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -805,7 +847,14 @@ graph
 
 
 ```python
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='mjn')
+# plot a network for just a single cluster that we extracted earlier from the dendrogram
+cluster_idx = 7
+dend_start, dend_stop, cluster_hap_indices = cluster_spans_995F[cluster_idx]
+cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
+cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, 
+                                network_method='msn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -818,15 +867,8 @@ graph
 
 
 ```python
-# plot a network for two of the clusters together 
-cluster_hap_indices = []
-for cluster_idx in 7, 8:
-    _, _, cidx = cluster_spans[cluster_idx]
-    cluster_hap_indices.extend(cidx)
-cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
-cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
-cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='msn')
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, 
+                                network_method='mjn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -839,7 +881,14 @@ graph
 
 
 ```python
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, network_method='mjn')
+# plot a network for just a single cluster that we extracted earlier from the dendrogram
+cluster_idx = 8
+dend_start, dend_stop, cluster_hap_indices = cluster_spans_995F[cluster_idx]
+cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
+cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, 
+                                network_method='msn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -852,13 +901,8 @@ graph
 
 
 ```python
-# plot a network for just a single cluster that we extracted earlier from the dendrogram
-cluster_idx = 12
-dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
-cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
-cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
-cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=50, network_method='msn')
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, 
+                                network_method='mjn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -871,7 +915,16 @@ graph
 
 
 ```python
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=50, network_method='mjn')
+# plot a network for two of the clusters together 
+cluster_hap_indices = []
+for cluster_idx in 7, 8:
+    _, _, cidx = cluster_spans_995F[cluster_idx]
+    cluster_hap_indices.extend(cidx)
+cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
+cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, 
+                                network_method='msn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -884,15 +937,8 @@ graph
 
 
 ```python
-# plot a network for just a single cluster that we extracted earlier from the dendrogram
-cluster_idx = 16
-dend_start, dend_stop, cluster_hap_indices = cluster_spans[cluster_idx]
-cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
-cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
-cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', network_method='mst',
-                                edge_weight=10, overlap='true', splines=False, 
-                                show_node_labels=True, node_attrs=dict(fontsize='10'))
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=100, 
+                                network_method='mjn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -905,10 +951,14 @@ graph
 
 
 ```python
-# does the different network method really matter?
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', network_method='msn',
-                                edge_weight=9, overlap='true', splines=False, 
-                                show_node_labels=True, node_attrs=dict(fontsize='10'))
+# plot a network for just a single cluster that we extracted earlier from the dendrogram
+cluster_idx = 12
+dend_start, dend_stop, cluster_hap_indices = cluster_spans_995F[cluster_idx]
+cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
+cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=50, 
+                                network_method='msn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -921,10 +971,8 @@ graph
 
 
 ```python
-# does the different network method really matter?
-graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', network_method='mjn', 
-                                edge_weight=8, overlap='true', splines=False, node_size_factor=0.01,
-                                show_node_labels=True, node_attrs=dict(fontsize='10'), anon_node_attrs=dict(fontsize='10'))
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', edge_weight=50, 
+                                network_method='mjn', variant_labels=variant_labels_vgsc, fontsize=8)
 graph
 ```
 
@@ -932,6 +980,59 @@ graph
 
 
 ![svg](hapclust_demo_files/hapclust_demo_68_0.svg)
+
+
+
+
+```python
+# plot a network for just a single cluster that we extracted earlier from the dendrogram
+cluster_idx = 16
+dend_start, dend_stop, cluster_hap_indices = cluster_spans_995F[cluster_idx]
+cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
+cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', network_method='mst',
+                                edge_weight=10, overlap='true', splines=False, 
+                                show_node_labels=True, variant_labels=variant_labels_vgsc, fontsize=8)
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_69_0.svg)
+
+
+
+
+```python
+# does the different network method really matter?
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', network_method='msn',
+                                edge_weight=9, overlap='true', splines=False, 
+                                show_node_labels=True, variant_labels=variant_labels_vgsc, fontsize=8)
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_70_0.svg)
+
+
+
+
+```python
+# does the different network method really matter?
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', network_method='mjn', 
+                                edge_weight=8, overlap='true', splines=False, node_size_factor=0.01,
+                                show_node_labels=True, variant_labels=variant_labels_vgsc, fontsize=8)
+graph
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_71_0.svg)
 
 
 
@@ -947,28 +1048,87 @@ graph
 
 ```python
 # just for fun, graph the whole lot...
-graph = graph_haplotype_network(h_vgsc, hap_colors=hap_colors, network_method='msn')
+graph = graph_haplotype_network(h_vgsc, hap_colors=hap_colors, network_method='msn', 
+                                variant_labels=variant_labels_vgsc, fontsize=7)
 graph
 ```
 
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_70_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_73_0.svg)
 
 
 
 
 ```python
-graph = graph_haplotype_network(h_vgsc, hap_colors=hap_colors, network_method='mjn')
+graph = graph_haplotype_network(h_vgsc, hap_colors=hap_colors, network_method='mjn', 
+                                variant_labels=variant_labels_vgsc, fontsize=7)
 graph
 ```
 
 
 
 
-![svg](hapclust_demo_files/hapclust_demo_71_0.svg)
+![svg](hapclust_demo_files/hapclust_demo_74_0.svg)
 
+
+
+### Matplotlib integration
+
+
+```python
+cluster_idx = 16
+dend_start, dend_stop, cluster_hap_indices = cluster_spans_995F[cluster_idx]
+cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
+cluster_hap_pops = hap_pops_995F[cluster_hap_indices]
+cluster_hap_colors = np.array([pop_colors[p] for p in cluster_hap_pops])
+graph = graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, mode='KK', network_method='mjn',
+                                edge_weight=12, overlap='true', splines=False, 
+                                show_node_labels=2, fontsize='8', variant_labels=variant_labels_vgsc)
+graph  
+```
+
+
+
+
+![svg](hapclust_demo_files/hapclust_demo_76_0.svg)
+
+
+
+
+```python
+fig = plt.figure(figsize=(12, 10), dpi=120)
+
+ax = fig.add_subplot(2, 2, 1)
+ax.set_axis_off()
+ax.set_title('default options')
+plot_gv(graph, ax)
+
+ax = fig.add_subplot(2, 2, 2)
+ax.set_axis_off()
+ax.set_title('higher res, default interpolation (bilinear)')
+plot_gv(graph, ax, dpi=600)
+
+ax = fig.add_subplot(2, 2, 3)
+# leave frame around to allow comparison with ratio='fill' below
+ax.set_xticks([])
+ax.set_yticks([])
+ax.set_title('higher res, lanczos interpolation')
+plot_gv(graph, ax, dpi=600, interpolation='lanczos')
+
+# using ratio='fill' means graphviz will scale the graph to fill the available space
+ax = fig.add_subplot(2, 2, 4)
+ax.set_xticks([])
+ax.set_yticks([])
+ax.set_title('ratio=fill')
+plot_gv(graph, ax, dpi=600, ratio='fill', interpolation='lanczos')
+
+fig.tight_layout()
+```
+
+
+![png](hapclust_demo_files/hapclust_demo_77_0.png)
 
 
 

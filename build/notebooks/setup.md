@@ -7,7 +7,7 @@
     width: 100%;
 }
 div#notebook {
-    padding-top: 0;
+    padding-top: 1em;
 }
 #header-container {
     display: none;
@@ -17,6 +17,10 @@ div#notebook {
 }
 #maintoolbar {
     display: none;
+}
+#menubar-container {
+    position: fixed;
+    margin-top: 0;
 }
 #site {
     height: auto !important;
@@ -30,7 +34,7 @@ div#notebook {
     width: 100%;
 }
 div#notebook {
-    padding-top: 0;
+    padding-top: 1em;
 }
 #header-container {
     display: none;
@@ -40,6 +44,10 @@ div#notebook {
 }
 #maintoolbar {
     display: none;
+}
+#menubar-container {
+    position: fixed;
+    margin-top: 0;
 }
 #site {
     height: auto !important;
