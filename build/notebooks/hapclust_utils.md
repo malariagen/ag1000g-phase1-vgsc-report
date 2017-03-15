@@ -1,4 +1,6 @@
 
+# Haplotype structure analysis - utility functions
+
 
 ```python
 %run setup.ipynb
@@ -446,7 +448,7 @@ def _graph_edges(graph,
 def graph_haplotype_network(h,
                             hap_colors='grey',
                             distance_metric='hamming',
-                            network_method='mst',
+                            network_method='mjn',
                             comment=None,
                             engine='neato',
                             format='png',
@@ -611,12 +613,16 @@ def graph_haplotype_network(h,
             kwargs.setdefault('width', str(anon_width))
 
         # add graph node
-        if show_node_labels is True:
+        if show_node_labels is False:
+            label = ''
+        elif show_node_labels is True:
             label = str(i)
         elif isinstance(show_node_labels, int) and n >= show_node_labels:
             label = str(i)
+        elif show_node_labels == 'count' and n > 1:
+            label = str(n)
         else:
-            label = ""
+            label = ''
         kwargs.setdefault('label', label)
         graph.node(str(i), **kwargs)
     
@@ -831,6 +837,63 @@ def median_joining_network(h, debug=False, max_dist=None):
 
 ```
 
+## Recombination detection
+
+
+```python
+%%cython
+
+
+cimport numpy as cnp
+import numpy as np
+
+
+def count_gametes(cnp.int8_t[:, :] h):
+    """Count the number of each gametic type observed for each pair of variants. 
+    Observation of all four gametic types for any pair of variants is evidence for 
+    recombination."""
+    
+    cdef:
+        Py_ssize_t n, m, i, j, k
+        cnp.uint8_t[:, :] d
+        cnp.uint32_t[:, :, :, :] count
+    
+    n = h.shape[0]
+    m = h.shape[1]
+    count = np.zeros((n, n, 2, 2), dtype='u4')
+    for i in range(n):
+        for j in range(i+1, n):
+            for k in range(m):
+                count[i, j, h[i, k], h[j, k]] += 1
+                
+    return np.asarray(count)
+```
+
+
+```python
+def locate_recombinants(h, debug=False):
+    """Locate recombinant haplotypes via the four gamete test."""
+    count = count_gametes(np.asarray(h, dtype='i1'))
+    d = np.all(count > 0, axis=(2, 3))
+    # indices of recombinant haplotypes - N.B., keep track of different possible solutions
+    # because we want to find the smallest number of haplotypes to remove
+    solutions = [set()]
+    # find indices of pairs of variants with evidence for recombination
+    for i, j in zip(*np.nonzero(d)):
+        # find the least frequent gametic type
+        min_count = np.min(count[i, j])
+        new_solutions = []
+        for least_frequent_gamete in zip(*np.nonzero(count[i, j] == min_count)):
+            # find indices of haplotypes of the least frequent gametic type
+            recombinant_haps_idx = set(np.nonzero(np.all(h[[i, j], :] == np.array(least_frequent_gamete)[:, np.newaxis], axis=0))[0])
+            if debug:
+                print(i, j, count[i, j].flatten(), least_frequent_gamete, recombinant_haps_idx)
+            new_solutions.extend([s.union(recombinant_haps_idx) for s in solutions])
+        solutions = new_solutions
+    # sort solutions by size
+    return sorted(solutions, key=lambda s: len(s))
+```
+
 ## Sandbox
 
 
@@ -854,7 +917,7 @@ graph
 
 
 
-![svg](hapclust_utils_files/hapclust_utils_10_0.svg)
+![svg](hapclust_utils_files/hapclust_utils_14_0.svg)
 
 
 
@@ -869,7 +932,7 @@ graph
 
 
 
-![svg](hapclust_utils_files/hapclust_utils_11_0.svg)
+![svg](hapclust_utils_files/hapclust_utils_15_0.svg)
 
 
 
@@ -883,7 +946,7 @@ graph_haplotype_network(h, network_method='msn', debug=False,
 
 
 
-![svg](hapclust_utils_files/hapclust_utils_12_0.svg)
+![svg](hapclust_utils_files/hapclust_utils_16_0.svg)
 
 
 
@@ -897,7 +960,87 @@ graph_haplotype_network(h, network_method='mjn', debug=False,
 
 
 
-![svg](hapclust_utils_files/hapclust_utils_13_0.svg)
+![svg](hapclust_utils_files/hapclust_utils_17_0.svg)
+
+
+
+
+```python
+idx_rec = locate_recombinants(h, debug=False)
+idx_rec
+```
+
+
+
+
+    [{3},
+     {2},
+     {4},
+     {3, 4},
+     {3, 4},
+     {2, 3},
+     {2, 3},
+     {3, 4},
+     {2, 3},
+     {2, 4},
+     {2, 4},
+     {2, 4},
+     {2, 3},
+     {2, 3},
+     {2, 3},
+     {3, 4},
+     {2, 4},
+     {2, 4},
+     {2, 4},
+     {3, 4},
+     {3, 4},
+     {2, 3, 4},
+     {2, 3, 4},
+     {2, 3, 4},
+     {2, 3, 4},
+     {2, 3, 4},
+     {2, 3, 4}]
+
+
+
+
+```python
+# how many possible solutions?
+len(idx_rec)
+```
+
+
+
+
+    27
+
+
+
+
+```python
+# pick a solution, locate non-recombinants
+idx_norec = [i for i in range(h.shape[1]) if i not in idx_rec[0]]
+idx_norec
+```
+
+
+
+
+    [0, 1, 2, 4]
+
+
+
+
+```python
+graph_haplotype_network(h[:, idx_norec], network_method='mjn', debug=False, 
+                        show_node_labels=True, node_size_factor=.2, anon_width=.4,
+                        variant_labels=['A', 'B', 'C', 'D', 'E'])
+```
+
+
+
+
+![svg](hapclust_utils_files/hapclust_utils_21_0.svg)
 
 
 
