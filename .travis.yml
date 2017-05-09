@@ -16,8 +16,11 @@ before_install:
 
 install:
   # uncomment these to re-install dependencies
-  - rm dependencies/texlive.installed
-  - rm dependencies/miniconda.installed
+  - pwd
+  - ls -lh
+  - ls -lh ./*
+#  - rm dependencies/texlive.installed
+#  - rm dependencies/miniconda.installed
   # main install script for dependencies
   - ./agam-report-base/install/install.sh
 
