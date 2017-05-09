@@ -13,14 +13,14 @@ git:
 before_install:
   - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   - git submodule update --init --recursive
-
-install:
-  # uncomment these to re-install dependencies
   - pwd
   - ls -lh
   - ls -lh ./*
+  # uncomment these to re-install dependencies
 #  - rm dependencies/texlive.installed
 #  - rm dependencies/miniconda.installed
+
+install:
   # main install script for dependencies
   - ./agam-report-base/install/install.sh
 
