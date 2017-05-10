@@ -138,18 +138,10 @@ plt.savefig('../artwork/demo.png', bbox_inches='tight', dpi=300);
 ```
 
 
-![png](artwork_demo_files/artwork_demo_5_0.png)
-
-
-
 ```python
 plt.figure()
 plt.plot(x, z, 'k.');
 ```
-
-
-![png](artwork_demo_files/artwork_demo_6_0.png)
-
 
 
 ```python
