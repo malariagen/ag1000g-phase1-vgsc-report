@@ -48,32 +48,10 @@ rule artwork_demo:
     shell:
         "./nbexec.sh notebooks/artwork_demo.ipynb"
 
-rule hapclust_demo:
-    # Demo notebook using the haplotype clustering functions.
-    input:
-        rules.setup.output,
-        "notebooks/hapclust_demo.ipynb",
-    output:
-        "build/notebooks/hapclust_demo.md",
-    shell:
-        "./nbexec.sh notebooks/hapclust_demo.ipynb"
-
-rule locate_recombinants_demo:
-    # Demo notebook on locating recombinant haplotypes.
-    input:
-        rules.setup.output,
-        "notebooks/locate_recombinants_demo.ipynb",
-    output:
-        "build/notebooks/locate_recombinants_demo.md",
-    shell:
-        "./nbexec.sh notebooks/locate_recombinants_demo.ipynb"
-
 rule artwork:
     # Build all artwork.
     input:
         rules.artwork_demo.output,
-        rules.hapclust_demo.output,
-        rules.locate_recombinants_demo.output,
         # add more inputs here as required
     output:
         touch("build/manuscript.artwork.done")
