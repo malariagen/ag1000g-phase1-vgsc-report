@@ -15,30 +15,21 @@
 # trigger a rebuild.
 #
 
-rule src:
-    output:
-        "src/python/zcache.py",
-        "src/python/veff.py",
-        "src/python/util.py",
+
+import glob
+
+sources = glob.glob('agam-report-base/src/python/*')
+
 
 rule setup:
     input:
-        rules.src.output,
+        sources,
         "notebooks/setup.ipynb",
     output:
         "build/notebooks/setup.md",
     shell:
         "./nbexec.sh notebooks/setup.ipynb"
 
-rule hapclust_utils:
-    input:
-        rules.src.output,
-        rules.setup.output,
-        "notebooks/hapclust_utils.ipynb",
-    output:
-        "build/notebooks/hapclust_utils.md",
-    shell:
-        "./nbexec.sh notebooks/hapclust_utils.ipynb"
 
 # Artwork
 # -------
@@ -61,7 +52,6 @@ rule hapclust_demo:
     # Demo notebook using the haplotype clustering functions.
     input:
         rules.setup.output,
-        rules.hapclust_utils.output,
         "notebooks/hapclust_demo.ipynb",
     output:
         "build/notebooks/hapclust_demo.md",
@@ -72,7 +62,6 @@ rule locate_recombinants_demo:
     # Demo notebook on locating recombinant haplotypes.
     input:
         rules.setup.output,
-        rules.hapclust_utils.output,
         "notebooks/locate_recombinants_demo.ipynb",
     output:
         "build/notebooks/locate_recombinants_demo.md",

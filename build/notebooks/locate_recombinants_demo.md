@@ -5,7 +5,9 @@ This notebook has a demo of the function "locate_recombinants" from the hapclust
 
 
 ```python
-%run hapclust_utils.ipynb
+%run setup.ipynb
+import hapclust
+%matplotlib inline
 ```
 
 
@@ -202,8 +204,9 @@ variant_labels_coding_vgsc
 
 ```python
 cut_height = 2
-fig, ax_dend, ax_freq, cluster_spans_995S, leaf_obs_995S = fig_haplotypes_clustered(h_vgsc_995S, cut_height=cut_height, dpi=150, 
-                                                                          highlight_clusters=5, label_clusters=5)
+fig, ax_dend, ax_freq, cluster_spans_995S, leaf_obs_995S = hapclust.fig_haplotypes_clustered(
+    h_vgsc_995S, cut_height=cut_height, dpi=150, 
+    highlight_clusters=5, label_clusters=5)
 
 ```
 
@@ -217,8 +220,9 @@ cluster_idx = 2
 dend_start, dend_stop, cluster_hap_indices = cluster_spans_995S[cluster_idx]
 cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
 cluster_hap_colors = hap_colors_995S.take(cluster_hap_indices)
-graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
-                        variant_labels=variant_labels_coding_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
+    variant_labels=variant_labels_coding_vgsc, fontsize=6, show_node_labels='count')
 ```
 
 
@@ -230,13 +234,14 @@ graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_met
 
 
 ```python
-idx_rec = locate_recombinants(cluster_haps, debug=True)
+idx_rec = hapclust.locate_recombinants(cluster_haps, debug=True)
 print('found', len(idx_rec), 'solutions; min recombinant haplotypes:', len(idx_rec[0]))
 idx_norec = [i for i in range(cluster_haps.shape[1]) if i not in idx_rec[0]]
 cluster_haps_norec = cluster_haps.take(idx_norec, axis=1)
 cluster_hap_colors_norec = cluster_hap_colors.take(idx_norec)
-graph_haplotype_network(cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', 
-                        variant_labels=variant_labels_coding_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', 
+    variant_labels=variant_labels_coding_vgsc, fontsize=6, show_node_labels='count')
 ```
 
     221 1473 [ 2  2  6 96] (0, 0) {60, 13}
@@ -257,8 +262,9 @@ cluster_idx = 9
 dend_start, dend_stop, cluster_hap_indices = cluster_spans_995S[cluster_idx]
 cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
 cluster_hap_colors = hap_colors_995S.take(cluster_hap_indices)
-graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
-                        variant_labels=variant_labels_coding_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
+    variant_labels=variant_labels_coding_vgsc, fontsize=6, show_node_labels='count')
 ```
 
 
@@ -270,13 +276,14 @@ graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_met
 
 
 ```python
-idx_rec = locate_recombinants(cluster_haps, debug=True)
+idx_rec = hapclust.locate_recombinants(cluster_haps, debug=True)
 print('found', len(idx_rec), 'solutions; min recombinant haplotypes:', len(idx_rec[0]))
 idx_norec = [i for i in range(cluster_haps.shape[1]) if i not in idx_rec[0]]
 cluster_haps_norec = cluster_haps.take(idx_norec, axis=1)
 cluster_hap_colors_norec = cluster_hap_colors.take(idx_norec)
-graph_haplotype_network(cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', 
-                        variant_labels=variant_labels_coding_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', 
+    variant_labels=variant_labels_coding_vgsc, fontsize=6, show_node_labels='count')
 ```
 
     364 431 [18  1 13  1] (0, 1) {9}
@@ -299,8 +306,9 @@ cluster_idx = 12
 dend_start, dend_stop, cluster_hap_indices = cluster_spans_995S[cluster_idx]
 cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
 cluster_hap_colors = hap_colors_995S.take(cluster_hap_indices)
-graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
-                        variant_labels=variant_labels_coding_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
+    variant_labels=variant_labels_coding_vgsc, fontsize=6, show_node_labels='count')
 ```
 
 
@@ -312,13 +320,14 @@ graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_met
 
 
 ```python
-idx_rec = locate_recombinants(cluster_haps, debug=True)
+idx_rec = hapclust.locate_recombinants(cluster_haps, debug=True)
 print('found', len(idx_rec), 'solutions; min recombinant haplotypes:', len(idx_rec[0]))
 idx_norec = [i for i in range(cluster_haps.shape[1]) if i not in idx_rec[0]]
 cluster_haps_norec = cluster_haps.take(idx_norec, axis=1)
 cluster_hap_colors_norec = cluster_hap_colors.take(idx_norec)
-graph_haplotype_network(cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', 
-                        variant_labels=variant_labels_coding_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', 
+    variant_labels=variant_labels_coding_vgsc, fontsize=6, show_node_labels='count')
 ```
 
     found 1 solutions; min recombinant haplotypes: 0
@@ -340,8 +349,9 @@ for i in cluster_idx:
     cluster_hap_indices.extend(hix)
 cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
 cluster_hap_colors = hap_colors_995S.take(cluster_hap_indices)
-graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', max_dist=10,
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', max_dist=10,
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
 
@@ -353,13 +363,14 @@ graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_met
 
 
 ```python
-idx_rec = locate_recombinants(cluster_haps, debug=True)
+idx_rec = hapclust.locate_recombinants(cluster_haps, debug=True)
 print('found', len(idx_rec), 'solutions; min recombinant haplotypes:', len(idx_rec[0]))
 idx_norec = [i for i in range(cluster_haps.shape[1]) if i not in idx_rec[0]]
 cluster_haps_norec = cluster_haps.take(idx_norec, axis=1)
 cluster_hap_colors_norec = cluster_hap_colors.take(idx_norec)
-graph_haplotype_network(cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
     209 1227 [25 29  8  6] (1, 1) {34, 37, 39, 41, 56, 60}
@@ -398,8 +409,9 @@ cluster_idx = 14
 dend_start, dend_stop, cluster_hap_indices = cluster_spans_995S[cluster_idx]
 cluster_haps = h_vgsc_995S.take(cluster_hap_indices, axis=1)
 cluster_hap_colors = hap_colors_995S.take(cluster_hap_indices)
-graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
 
@@ -411,13 +423,14 @@ graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_met
 
 
 ```python
-idx_rec = locate_recombinants(cluster_haps, debug=True)
+idx_rec = hapclust.locate_recombinants(cluster_haps, debug=True)
 print('found', len(idx_rec), 'solutions; min recombinant haplotypes:', len(idx_rec[0]))
 idx_norec = [i for i in range(cluster_haps.shape[1]) if i not in idx_rec[0]]
 cluster_haps_norec = cluster_haps.take(idx_norec, axis=1)
 cluster_hap_colors_norec = cluster_hap_colors.take(idx_norec)
-graph_haplotype_network(cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
     224 895 [ 7 60  2  9] (1, 0) {24, 20}
@@ -438,8 +451,9 @@ graph_haplotype_network(cluster_haps_norec, hap_colors=cluster_hap_colors_norec,
 
 ```python
 cut_height = 4
-fig, ax_dend, ax_freq, cluster_spans_995F, leaf_obs_995F = fig_haplotypes_clustered(h_vgsc_995F, cut_height=cut_height, dpi=150, 
-                                                                          highlight_clusters=5, label_clusters=5)
+fig, ax_dend, ax_freq, cluster_spans_995F, leaf_obs_995F = hapclust.fig_haplotypes_clustered(
+    h_vgsc_995F, cut_height=cut_height, dpi=150, 
+    highlight_clusters=5, label_clusters=5)
 
 ```
 
@@ -453,8 +467,9 @@ cluster_idx = 4
 dend_start, dend_stop, cluster_hap_indices = cluster_spans_995F[cluster_idx]
 cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
 cluster_hap_colors = hap_colors_995F.take(cluster_hap_indices)
-graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
 
@@ -466,13 +481,14 @@ graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_met
 
 
 ```python
-idx_rec = locate_recombinants(cluster_haps, debug=True)
+idx_rec = hapclust.locate_recombinants(cluster_haps, debug=True)
 print('found', len(idx_rec), 'solutions; min recombinant haplotypes:', len(idx_rec[0]))
 idx_norec = [i for i in range(cluster_haps.shape[1]) if i not in idx_rec[0]]
 cluster_haps_norec = cluster_haps.take(idx_norec, axis=1)
 cluster_hap_colors_norec = cluster_hap_colors.take(idx_norec)
-graph_haplotype_network(cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
     found 1 solutions; min recombinant haplotypes: 0
@@ -491,8 +507,9 @@ cluster_idx = 7
 dend_start, dend_stop, cluster_hap_indices = cluster_spans_995F[cluster_idx]
 cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
 cluster_hap_colors = hap_colors_995F.take(cluster_hap_indices)
-graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
 
@@ -504,13 +521,14 @@ graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_met
 
 
 ```python
-idx_rec = locate_recombinants(cluster_haps, debug=True)
+idx_rec = hapclust.locate_recombinants(cluster_haps, debug=True)
 print('found', len(idx_rec), 'solutions; min recombinant haplotypes:', len(idx_rec[0]))
 idx_norec = [i for i in range(cluster_haps.shape[1]) if i not in idx_rec[0]]
 cluster_haps_norec = cluster_haps.take(idx_norec, axis=1)
 cluster_hap_colors_norec = cluster_hap_colors.take(idx_norec)
-graph_haplotype_network(cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
     found 1 solutions; min recombinant haplotypes: 0
@@ -529,8 +547,9 @@ cluster_idx = 8
 dend_start, dend_stop, cluster_hap_indices = cluster_spans_995F[cluster_idx]
 cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
 cluster_hap_colors = hap_colors_995F.take(cluster_hap_indices)
-graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
 
@@ -542,13 +561,14 @@ graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_met
 
 
 ```python
-idx_rec = locate_recombinants(cluster_haps, debug=True)
+idx_rec = hapclust.locate_recombinants(cluster_haps, debug=True)
 print('found', len(idx_rec), 'solutions; min recombinant haplotypes:', len(idx_rec[0]))
 idx_norec = [i for i in range(cluster_haps.shape[1]) if i not in idx_rec[0]]
 cluster_haps_norec = cluster_haps.take(idx_norec, axis=1)
 cluster_hap_colors_norec = cluster_hap_colors.take(idx_norec)
-graph_haplotype_network(cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
     found 1 solutions; min recombinant haplotypes: 0
@@ -571,8 +591,9 @@ for i in cluster_idx:
     cluster_hap_indices.extend(hix)
 cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
 cluster_hap_colors = hap_colors_995F.take(cluster_hap_indices)
-graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
 
@@ -584,13 +605,14 @@ graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_met
 
 
 ```python
-idx_rec = locate_recombinants(cluster_haps, debug=True)
+idx_rec = hapclust.locate_recombinants(cluster_haps, debug=True)
 print('found', len(idx_rec), 'solutions; min recombinant haplotypes:', len(idx_rec[0]))
 idx_norec = [i for i in range(cluster_haps.shape[1]) if i not in idx_rec[0]]
 cluster_haps_norec = cluster_haps.take(idx_norec, axis=1)
 cluster_hap_colors_norec = cluster_hap_colors.take(idx_norec)
-graph_haplotype_network(cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
     found 1 solutions; min recombinant haplotypes: 0
@@ -609,8 +631,9 @@ cluster_idx = 12
 dend_start, dend_stop, cluster_hap_indices = cluster_spans_995F[cluster_idx]
 cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
 cluster_hap_colors = hap_colors_995F.take(cluster_hap_indices)
-graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
 
@@ -622,13 +645,14 @@ graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_met
 
 
 ```python
-idx_rec = locate_recombinants(cluster_haps, debug=True)
+idx_rec = hapclust.locate_recombinants(cluster_haps, debug=True)
 print('found', len(idx_rec), 'solutions; min recombinant haplotypes:', len(idx_rec[0]))
 idx_norec = [i for i in range(cluster_haps.shape[1]) if i not in idx_rec[0]]
 cluster_haps_norec = cluster_haps.take(idx_norec, axis=1)
 cluster_hap_colors_norec = cluster_hap_colors.take(idx_norec)
-graph_haplotype_network(cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
     found 1 solutions; min recombinant haplotypes: 0
@@ -647,8 +671,9 @@ cluster_idx = 16
 dend_start, dend_stop, cluster_hap_indices = cluster_spans_995F[cluster_idx]
 cluster_haps = h_vgsc_995F.take(cluster_hap_indices, axis=1)
 cluster_hap_colors = hap_colors_995F.take(cluster_hap_indices)
-graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps, hap_colors=cluster_hap_colors, network_method='mjn', 
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
 
@@ -660,13 +685,14 @@ graph_haplotype_network(cluster_haps, hap_colors=cluster_hap_colors, network_met
 
 
 ```python
-idx_rec = locate_recombinants(cluster_haps, debug=True)
+idx_rec = hapclust.locate_recombinants(cluster_haps, debug=True)
 print('found', len(idx_rec), 'solutions; min recombinant haplotypes:', len(idx_rec[0]), [len(s) for s in idx_rec])
 idx_norec = [i for i in range(cluster_haps.shape[1]) if i not in idx_rec[0]]
 cluster_haps_norec = cluster_haps.take(idx_norec, axis=1)
 cluster_hap_colors_norec = cluster_hap_colors.take(idx_norec)
-graph_haplotype_network(cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
-                        variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
+hapclust.graph_haplotype_network(
+    cluster_haps_norec, hap_colors=cluster_hap_colors_norec, network_method='mjn', max_dist=10,
+    variant_labels=variant_labels_vgsc, fontsize=6, show_node_labels='count')
 ```
 
     6 1698 [  4   1 442  28] (0, 1) {172}

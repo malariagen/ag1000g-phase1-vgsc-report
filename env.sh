@@ -10,4 +10,4 @@ export PATH=./dependencies/texlive/2016/bin/x86_64-linux:$PATH
 mkdir -pv build
 
 # activate conda environment
-source activate agam-vgsc-report
+source activate agam-report-base

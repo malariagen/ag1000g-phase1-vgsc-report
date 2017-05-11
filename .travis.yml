@@ -5,7 +5,24 @@ branches:
   - master
   - /^draft-.*$/
 
-install: ./install.sh
+# handle git submodules ourselves
+git:
+  submodules: false
+
+# replace the SSH URL with the public URL, then initialize submodules
+before_install:
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
+  - pwd
+  - ls -lh
+  - ls -lh ./*
+  # uncomment these to re-install dependencies
+#  - rm dependencies/texlive.installed
+#  - rm dependencies/miniconda.installed
+
+install:
+  # main install script for dependencies
+  - ./agam-report-base/install/install.sh
 
 cache:
   timeout: 1000
