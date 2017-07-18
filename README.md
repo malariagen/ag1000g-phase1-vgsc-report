@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/malariagen/agam-vgsc-report.svg?branch=master)](https://travis-ci.org/malariagen/agam-vgsc-report)
 
 This is a work in progress. It has not been reviewed, approved or endorsed by anyone. If you have 
-any questions, please contact Alistair Miles (alimanfoo@googlemail.com).
+any questions, please contact Alistair Miles (alimanfoo@googlemail.com) or Chris Clarkson (cc28@sanger.ac.uk).
 
 ## Contributor guide
 
@@ -17,8 +17,9 @@ and the supporting notebooks.
 **Step 2**: Clone your fork to your local system. E.g.:
 
 ```bash
-$ clone git@github.com:alimanfoo/agam-vgsc-report.git
+$ git clone git@github.com:alimanfoo/agam-vgsc-report.git
 $ cd agam-vgsc-report
+$ git submodule update --init --recursive
 $ git remote add upstream git@github.com:malariagen/agam-vgsc-report.git
 ```
 
@@ -26,8 +27,10 @@ $ git remote add upstream git@github.com:malariagen/agam-vgsc-report.git
 
 **Step 3**: Install dependencies (TeX Live, Miniconda):
 
+From the repo working directory, run:
+
 ```bash
-$ ./install.sh
+$ ./agam-report-base/install/install.sh
 ```
 
 This will install Tex Live and Miniconda into the ``dependencies`` directory within the repository
@@ -125,15 +128,3 @@ a Jupyter notebook server:
 $ source env.sh
 $ jupyter notebook
 ```
-
-### Installing LaTeX packages
-
-If there are any LaTeX packages you need to install, edit the ``install.sh`` script by adding 
-another ``tlmgr install ...`` command. Then rerun ``./install.sh``.
-
-
-### Installing Python packages
-
-If there are any Python packages you need to install, add them to either 
-``config/conda.txt`` if the packages can be installed via conda, or ``config/pypi.txt`` if the 
-packages can only be installed via pip. Then rerun ``./install.sh``.
