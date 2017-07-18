@@ -17,7 +17,7 @@ before_install:
   - ls -lh
   - ls -lh ./*
   # uncomment these to re-install dependencies
-  - rm -rf dependencies
+#  - rm -rf dependencies
 #  - rm dependencies/texlive.installed
 #  - rm dependencies/miniconda.installed
 
