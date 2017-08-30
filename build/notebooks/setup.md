@@ -109,6 +109,7 @@ import humanize
 from humanize import naturalsize, intcomma, intword
 import zarr
 import graphviz
+import statsmodels.formula.api as sfa
 ```
 
 
@@ -125,11 +126,12 @@ sns.set_style('white')
 sns.set_style('ticks')
 rcParams = plt.rcParams
 # N.B., reduced font size
-rcParams['font.size'] = 6
-rcParams['axes.labelsize'] = 6
-rcParams['xtick.labelsize'] = 6
-rcParams['ytick.labelsize'] = 6
-rcParams['legend.fontsize'] = 6
+base_font_size = 8
+rcParams['font.size'] = base_font_size
+rcParams['axes.labelsize'] = base_font_size
+rcParams['xtick.labelsize'] = base_font_size
+rcParams['ytick.labelsize'] = base_font_size
+rcParams['legend.fontsize'] = base_font_size
 rcParams['axes.linewidth'] = .5
 rcParams['lines.linewidth'] = .5
 rcParams['patch.linewidth'] = .5
@@ -137,6 +139,7 @@ rcParams['ytick.direction'] = 'out'
 rcParams['xtick.direction'] = 'out'
 rcParams['savefig.jpeg_quality'] = 100
 rcParams['lines.markeredgewidth'] = .5
+rcParams['figure.max_open_warning'] = 1000
 ```
 
 
@@ -149,7 +152,6 @@ import pysamstats
 import petlx
 import petlx.bio
 import vcf
-import vcfnp
 import anhima
 import allel
 ```
@@ -160,13 +162,13 @@ sys.path.insert(0, '../agam-report-base/src/python')
 from util import *
 import zcache
 import veff
-import hapclust
+# import hapclust
 ag1k_dir = '../ngs.sanger.ac.uk/production/ag1000g'
 from ag1k import phase1_ar3
 phase1_ar3.init(os.path.join(ag1k_dir, 'phase1', 'AR3'))
 from ag1k import phase1_ar31
 phase1_ar31.init(os.path.join(ag1k_dir, 'phase1', 'AR3.1'))
 from ag1k import phase2_ar1
-phase2_ar1.init(os.path.join(ag1k_dir, 'phase2', 'AR3'))
+phase2_ar1.init(os.path.join(ag1k_dir, 'phase2', 'AR1'))
 
 ```
