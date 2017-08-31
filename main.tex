@@ -17,13 +17,14 @@
 \usepackage{tablefootnote}
 \usepackage{authblk}
 \usepackage{threeparttable}
+\usepackage{afterpage}
 
 
 \addbibresource{refs.bib}
 
 
 \title{
-The evolution of target-site resistance to pyrethroid insecticides in the African malaria vectors \emph{Anopheles gambiae} and \emph{Anopheles coluzzii}
+The genetic architecture of target-site resistance to pyrethroid insecticides in the African malaria vectors \emph{Anopheles gambiae} and \emph{Anopheles coluzzii}
 }
 
 
@@ -174,6 +175,48 @@ We reported 15 of these novel SNPs in our initial analysis of the Ag1000G phase 
 %%
 
 
+%% begin Table 1
+\afterpage{%
+\clearpage
+\newgeometry{margin=2cm}
+\begin{landscape}
+\begin{table}[h]
+  \small
+  \centering
+  \begin{threeparttable}
+  \input{tables/variants_missense.tex}
+  
+  \begin{tablenotes}
+    \footnotesize
+    
+    \item[1] Position relative to the AgamP3 reference sequence, chromosome arm 2L. Variants marked with an asterisk (*) failed conservative variant filters applied genome-wide in the Ag1000G phase 1 AR3 callset, but appeared sound on manual inspection of read alignments.
+    
+    \item[2] Codon numbering according to \emph{Anopheles gambiae}, transcript AGAP004707-RA in geneset AgamP4.4.
+    
+    \item[3] Codon numbering according to \emph{Musca domestica}, EMBL accession X96668 \cite{williamson1996}.
+    
+    \item[4] Position of the variant within the protein. \texttt{IN} = internal domain; \texttt{TM} = trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
+    
+    \item[5] Phenotypes marked with an asterix (*) are predictions based on population genetic data and have not been confirmed experimentally.
+    
+  \end{tablenotes}
+  
+  \end{threeparttable}
+  
+  \caption{
+\textbf{Non-synonymous nucleotide variation in the voltage-gated sodium channel gene}. 
+%
+All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase 1 populations, with the exception of \texttt{2,400,071 G>T} which is only found in the CM\emph{Ag} population at 0.4\% frequency but is included because another mutation (\texttt{2,400,071 G>A}) is found at the same position causing the same amino acid substitution (\texttt{M490I}). 
+}
+
+  \label{table:variants_missense}
+  
+\end{table}
+\end{landscape}
+\restoregeometry
+} % end afterpage
+%% end Table 1
+
 %%
 The two alleles in codon 995 are clearly the main drivers of resistance at this locus, with the \texttt{L995F} allele at high frequency in populations of both species from West, Central and Southern Africa, and the \texttt{L995S} allele at high frequency among \textit{An. gambiae} populations from Central and East Africa (Table \ref{table:variants_missense}; @@REF Ag1000G).
 %
@@ -222,33 +265,6 @@ All 3 variants occur in internal linker domains, and so do not fit the model of 
 %
 %%
 
-\newgeometry{margin=2cm}
-
-\begin{landscape}
-\begin{table}[h]
-  \small
-  \centering
-  \begin{threeparttable}
-  \input{tables/variants_missense.tex}
-  \begin{tablenotes}
-    \footnotesize
-    \item[1] Position relative to the AgamP3 reference sequence, chromosome arm 2L. Variants marked with an asterisk (*) failed conservative variant filters applied genome-wide in the Ag1000G phase 1 AR3 callset, but appeared sound on manual inspection of read alignments.
-    \item[2] Codon numbering according to \emph{Anopheles gambiae}, transcript AGAP004707-RA in geneset AgamP4.4.
-    \item[3] Codon numbering according to \emph{Musca domestica}, EMBL accession X96668 \cite{williamson1996}.
-    \item[4] Position of the variant within the protein. \texttt{IN} = internal domain; \texttt{TM} = trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
-    \item[5] Phenotypes marked with an asterix (*) are putative predictions based on population genetic data and have not been confirmed experimentally.
-  \end{tablenotes}
-  \end{threeparttable}
-  \caption{
-\textbf{Non-synonymous nucleotide variation in the voltage-gated sodium channel gene}. 
-%
-All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase 1 populations, with the exception of \texttt{2,400,071 G>T} which is only found in the CM\emph{Ag} population at 0.4\% frequency but is included because another mutation (\texttt{2,400,071 G>A}) is found at the same position causing the same amino acid substitution (\texttt{M490I}). 
-}
-  \label{table:variants_missense}
-\end{table}
-\end{landscape}
-
-\restoregeometry
 
 \begin{figure}[t!]
   \includegraphics[width=1.1\linewidth,center]{artwork/demo.png}
