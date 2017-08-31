@@ -16,14 +16,19 @@
 \usepackage{pdflscape}
 \usepackage{tablefootnote}
 \usepackage{authblk}
+\usepackage{threeparttable}
+
 
 \addbibresource{refs.bib}
+
 
 \title{
 The evolution of target-site resistance to pyrethroid insecticides in the African malaria vectors \emph{Anopheles gambiae} and \emph{Anopheles coluzzii}
 }
 
+
 \date{Work in progress}
+
 
 \author[1]{Chris S. Clarkson}
 \author[2,1]{Alistair Miles}
@@ -37,7 +42,9 @@ The evolution of target-site resistance to pyrethroid insecticides in the Africa
 \affil[3]{Liverpool @@TODO}
 \affil[4]{MalariaGEN @@TODO}
 
+
 \begin{document}
+
 
 \maketitle
 
@@ -100,7 +107,9 @@ If this tolerance exceeds the dosage present in ITNs or on indoor surfaces follo
 %
 In the African malaria vectors \emph{Anopheles gambiae} and \emph{Anopheles coluzzii}, three substitutions have been found in natural populations and shown to cause pyrethroid and DDT resistance.
 %
-Two of these substitutions occur in codon 995\footnote{Codon numbering is given here relative to transcript @@TODO as defined in the AgamP4.@@N gene annotations. A mapping of codon numbers from @@TRANSCRIPT to \emph{Musca domestica} @@TRANSCRIPT is given in Table \ref{table:variants_missense}.}, with the Leucine $\rightarrow$ Phenylalanine (\texttt{L995F}) substitution prevalent in West and Central Africa, and the Leucine $\rightarrow$ Serine (\texttt{L995S}) substitution found in Central and East Africa.
+Two of these substitutions occur in codon 995\footnotemark, with the Leucine $\rightarrow$ Phenylalanine (\texttt{L995F}) substitution prevalent in West and Central Africa, and the Leucine $\rightarrow$ Serine (\texttt{L995S}) substitution found in Central and East Africa.
+%
+\footnotetext{Codon numbering is given here relative to transcript @@TODO as defined in the AgamP4.@@N gene annotations. A mapping of codon numbers from @@TRANSCRIPT to \emph{Musca domestica} @@TRANSCRIPT is given in Table \ref{table:variants_missense}.}
 %
 A third variant \texttt{N1570Y} has been found in association with \texttt{L995F} in Central Africa and shown to increase resistance above \texttt{L995F} alone.
 %%
@@ -150,29 +159,96 @@ Our results reveal an unexpected diversity of molecular mechanisms of resistance
 
 \section*{Results}
 
-%%
-Let's add some results qweoi qewoiewqoip peqwpoi ewqpoi ewqpoieqwipo ewqipo eqwpio eqwipo ewqoip ewqoip ewqiop eqw.
+
+\subsection*{Functional variation}
+
 
 %%
-Isn't Figure \ref{fig:demo} interesting! 
+To identify single nucleotide polymorphisms (SNPs) with a potentially functional role in pyrethroid resistance, we extracted SNPs from the Ag1000G phase 1 data resource that alter the amino acid sequence of the VGSC protein, and computed their allele frequencies among 9 populations defined by species and country of origin.
 %
-Table \ref{table:demo} is pretty interesting too.
+SNPs that confer resistance are expected to increase in frequency under selective pressure, and we refined the list of potentially functional SNPs to retain only those at an appreciable frequency (>5\%) in one or more populations (Table \ref{table:variants_missense}).
+%
+The resulting list comprises 20 SNPs, including the known \texttt{L995F}, \texttt{L995S} and \texttt{N1570Y} variants, and a further 17 SNPs not previously described in these species.
+%
+We reported 15 of these novel SNPs in our initial analysis of the Ag1000G phase 1 data (@@REF Ag1000G), and we extend the analyses here to incorporate two tri-allelic SNPs affecting codons 402 and 410.
+%%
+
+
+%%
+The two alleles in codon 995 are clearly the main drivers of resistance at this locus, with the \texttt{L995F} allele at high frequency in populations of both species from West, Central and Southern Africa, and the \texttt{L995S} allele at high frequency among \textit{An. gambiae} populations from Central and East Africa (Table \ref{table:variants_missense}; @@REF Ag1000G).
+%
+Both alleles were present in populations sampled from Cameroon and Gabon, including some individuals with a hybrid \texttt{L995F/S} genotype. Within these populations, the \texttt{L995F} and \texttt{L995S} alleles were (@@TODO were not?) in Hardy-Weinberg equilibrium (P=@@), thus there does not (@@does?) appear to be selection against hybrids.
+%%
+
+
+%%
+The \texttt{I1527T} allele is present in \textit{An. coluzzii} from Burkina Faso at 14\% frequency, and there is evidence that haplotypes carrying this allele have been positively selected (@@REF Ag1000G).
+%
+Codon 1527 occurs within trans-membrane domain segment \texttt{III.S6}, immediately adjacent to a second predicted binding pocket for pyrethroid molecules, thus it is plausible that \texttt{I1527T} could alter insecticide binding (@@REF Dong).
+%
+We also found that the two variant alleles affecting codon 402, both of which induce a \texttt{V402L} substitution, were in strong linkage with \texttt{I1527T} (D'>@@N; Figure @@LD), and almost all haplotypes carrying \texttt{I1527T} also carried a \texttt{V402L} substitution.
+%
+The most parsimonious explanation for this pattern of linkage is that the \texttt{I1527T} mutation occurred first, and mutations in codon 402 subsequently arose on this genetic background.
+%
+Codon 402 also occurs within a trans-membrane segment (\texttt{I.S6}), and the \texttt{V402L} substitution has by itself been shown experimentally to increase pyrethroid resistance in @@species and \textit{Xenopus} oocytes (@@REFs).
+%
+However, because \texttt{V402L} appears secondary to \texttt{I1527T} in our cohort, we classify \texttt{I1527T} as a putative resistance driver and \texttt{V402L} as a putative enhancer.
+%
+Because of the limited geographical distribution of these alleles, we hypothesize that the \texttt{I1527T+V402L} combination represents a pyrethroid resistance allele that arose in West African \textit{An. coluzzii} populations; however, the \texttt{L995F} allele is at higher frequency (85\%) in our Burkina Faso \textit{An. coluzzii} population, and is known to be increasing in frequency (@@REFs), therefore \texttt{L995F} may provide a stronger resistance phenotype and is replacing \texttt{I1527T+V402L} in these populations.
+%%
+
+
+%%
+Of the other 16 SNPs, 13 occurred almost exclusively in combination with \texttt{L995F} (Figure @@; @@REF Ag1000G).
+%
+These include the \texttt{N1570Y} allele, known to enhance pyrethroid resistance in \textit{An. gambiae} in combination with \texttt{L995F}.
+%
+These also include two variants in codon 1874 (\texttt{P1874S}, \texttt{P1874L}). \texttt{P1874S} has previously been found in a colony of the crop pest \textit{Plutoblah blahdiblah} with a pyrethroid resistance phenotype, but has not been shown to confer resistance experimentally.
+%
+10 of these variants, including \texttt{N1570Y} and \texttt{P1874S/L}, occur within internal linker domains of the protein, and so fit the model of variants that may enhance or compensate for the driver phenotype by modifying channel gating behaviour (@@CHECK; @@REFs).
+%
+The remaining 3 variants are within trans-membrane domains, and so may enhance resistance by @@TODO how.
+%
+Because of the tight linkage between these 13 SNPs and the \texttt{L995F} allele, we classify all as putative \texttt{L995F} enhancers, although experimental work is required to confirm a resistance phenotype.
+%%
+
+
+%%
+The remaining 3 variants (\texttt{M490I}, \texttt{A1125V}, \texttt{V1254I}) do not occur in combination with any known resistance allele, and do not appear to be associated with haplotypes under selection (@@REF Ag1000G).
+%
+A possible exception is the \texttt{M490I} allele found at 18\% frequency in the Kenyan population, although the fact that this population has experienced a recent population crash makes it difficult to test for evidence of selection at this locus.
+%
+All 3 variants occur in internal linker domains, and so do not fit the model of a resistance driver, although experimental work is required to rule out a resistance phenotype.
+%
+%%
+
+\newgeometry{margin=2cm}
 
 \begin{landscape}
 \begin{table}[h]
   \small
   \centering
+  \begin{threeparttable}
   \input{tables/variants_missense.tex}
+  \begin{tablenotes}
+    \footnotesize
+    \item[1] Position relative to the AgamP3 reference sequence, chromosome arm 2L. Variants marked with an asterisk (*) failed conservative variant filters applied genome-wide in the Ag1000G phase 1 AR3 callset, but appeared sound on manual inspection of read alignments.
+    \item[2] Codon numbering according to \emph{Anopheles gambiae}, transcript AGAP004707-RA in geneset AgamP4.4.
+    \item[3] Codon numbering according to \emph{Musca domestica}, EMBL accession X96668 \cite{williamson1996}.
+    \item[4] Position of the variant within the protein. \texttt{IN} = internal domain; \texttt{TM} = trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
+    \item[5] Phenotypes marked with an asterix (*) are putative predictions based on population genetic data and have not been confirmed experimentally.
+  \end{tablenotes}
+  \end{threeparttable}
   \caption{
-\textbf{Non-synonymous mutations in the voltage-gated sodium channel gene}. 
+\textbf{Non-synonymous nucleotide variation in the voltage-gated sodium channel gene}. 
 %
-All mutations are at 5\% frequency or above in one or more of the 9 Ag1000G phase 1 populations, with the exception of \texttt{2,400,071 G>T} which is only found in the CM\emph{Ag} population at 0.4\% frequency but is included because another mutation (\texttt{2,400,071 G>A}) is found at the same position causing the same amino acid substitution (\texttt{M490I}). 
-%
-Substitutions marked with an asterisk (*) failed conservative variant filters applied genome-wide in the Ag1000G phase 1 AR3 callset, but appeared sound on manual inspection of read alignments.
+All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase 1 populations, with the exception of \texttt{2,400,071 G>T} which is only found in the CM\emph{Ag} population at 0.4\% frequency but is included because another mutation (\texttt{2,400,071 G>A}) is found at the same position causing the same amino acid substitution (\texttt{M490I}). 
 }
   \label{table:variants_missense}
 \end{table}
 \end{landscape}
+
+\restoregeometry
 
 \begin{figure}[t!]
   \includegraphics[width=1.1\linewidth,center]{artwork/demo.png}
@@ -180,18 +256,14 @@ Substitutions marked with an asterisk (*) failed conservative variant filters ap
   \label{fig:demo}
 \end{figure}
 
+
 TODO
 
-\begin{table}[h]
-  \centering
-  \input{tables/demo.tex}
-  \caption{This is a table.}
-  \label{table:demo}
-\end{table}
 
 \section*{Discussion}
 
 TODO
+
 
 \section*{Methods}
 

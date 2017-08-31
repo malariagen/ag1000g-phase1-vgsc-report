@@ -5528,20 +5528,50 @@ MD_fix
 
 
 ```python
+tbl_function = etl.wrap([
+    ['AGAP004707-RA', 'domain', 'phenotype'],
+    ['R254K', 'IN (I.S4--I.S5)', r'\texttt{L995F} enhancer*'],
+    ['V402L', 'TM (I.S6)', r'\texttt{I1527T} enhancer*'],
+    ['D466H', 'IN (I.S6--II.S1)', r'\texttt{L995F} enhancer*'],
+    ['M490I', 'IN (I.S6--II.S1)', 'unknown'],
+    ['T791M', 'TM (II.S1)', r'\texttt{L995F} enhancer*'],
+    ['L995S', 'TM (II.S6)', r'driver'],
+    ['L995F', 'TM (II.S6)', r'driver'],
+    ['A1125V', 'IN (II.S6--III.S1)', r'unknown'],
+    ['V1254I', 'IN (II.S6--III.S1)', r'unknown'],
+    ['I1527T', 'TM (III.S6)', r'driver*'],
+    ['N1570Y', 'IN (III.S6--IV.S1)', r'\texttt{L995F} enhancer'],
+    ['E1597G', 'IN (III.S6--IV.S1)', r'\texttt{L995F} enhancer*'],
+    ['K1603T', 'TM (IV.S1)', r'\texttt{L995F} enhancer*'],
+    ['A1746S', 'TM (IV.S5)', r'\texttt{L995F} enhancer*'],
+    ['V1853I', 'IN (IV.S6--)', r'\texttt{L995F} enhancer*'],
+    ['I1868T', 'IN (IV.S6--)', r'\texttt{L995F} enhancer*'],
+    ['P1874S', 'IN (IV.S6--)', r'\texttt{L995F} enhancer*'],
+    ['P1874L', 'IN (IV.S6--)', r'\texttt{L995F} enhancer*'],
+    ['A1934V', 'IN (IV.S6--)', r'\texttt{L995F} enhancer*'],
+    ['I1940T', 'IN (IV.S6--)', r'\texttt{L995F} enhancer*'],
+])
+```
+
+
+```python
 tbl_variants_display = (
     tbl_variants_selected
     # keep only the fields we need
-    .cut(['POS', 'REF', 'ALT', 'ALTIX', 'FILTER_PASS', 'AGAP004707-RA', 'dprime_L995S', 'dprime_L995F'] + 
+    .cut(['POS', 'REF', 'ALT', 'ALTIX', 'FILTER_PASS', 'AGAP004707-RA'] + 
          ['AF_' + p for p in pop_ids])
+    # join in function
+    .leftjoin(tbl_function, key='AGAP004707-RA', missing='')
+    # resort by position
+    .sort(key='POS')
+    # round allele frequencies to integer
     .convert(['AF_' + p for p in pop_ids], lambda v: int(np.rint(v * 100)))
     # add the column of M. domestica codons
     .addcolumn('Md', MD_fix)
     # add a formatted "substitution" field
     .addfield('substitution', lambda row: '{:,} {}>{}'.format(row['POS'], row['REF'], row['ALT']), index=5)
+    .convert(['substitution', 'Md', 'AGAP004707-RA', 'domain'], lambda v: r'\texttt{%s}' % v)
     .convert('substitution', lambda v, row: v + '*' if not row['FILTER_PASS'] else v, pass_row=True)
-    .convert(['substitution', 'Md', 'AGAP004707-RA'], lambda v: r'\texttt{%s}' % v)
-    # format D' values
-    .convert(['dprime_L995S', 'dprime_L995F'], lambda v: str(int(v)) if v in [-1, 1] else '{:.2f}'.format(v))
 #    .cutout('POS', 'REF', 'ALT', 'ALTIX', 'FILTER_PASS')
 )
 tbl_variants_display.displayall()
@@ -5558,17 +5588,17 @@ tbl_variants_display.displayall()
 <th>4|FILTER_PASS</th>
 <th>5|substitution</th>
 <th>6|AGAP004707-RA</th>
-<th>7|dprime_L995S</th>
-<th>8|dprime_L995F</th>
-<th>9|AF_AOM</th>
-<th>10|AF_BFM</th>
-<th>11|AF_GWA</th>
-<th>12|AF_GNS</th>
-<th>13|AF_BFS</th>
-<th>14|AF_CMS</th>
-<th>15|AF_GAS</th>
-<th>16|AF_UGS</th>
-<th>17|AF_KES</th>
+<th>7|AF_AOM</th>
+<th>8|AF_BFM</th>
+<th>9|AF_GWA</th>
+<th>10|AF_GNS</th>
+<th>11|AF_BFS</th>
+<th>12|AF_CMS</th>
+<th>13|AF_GAS</th>
+<th>14|AF_UGS</th>
+<th>15|AF_KES</th>
+<th>16|domain</th>
+<th>17|phenotype</th>
 <th>18|Md</th>
 </tr>
 </thead>
@@ -5581,8 +5611,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,390,177 G>A}</td>
 <td>\texttt{R254K}</td>
-<td>-0.96</td>
-<td>0.92</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5592,6 +5620,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>21</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{IN (I.S4--I.S5)}</td>
+<td>\texttt{L995F} enhancer*</td>
 <td>\texttt{R261}</td>
 </tr>
 <tr>
@@ -5602,8 +5632,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,391,228 G>C}</td>
 <td>\texttt{V402L}</td>
-<td>-1</td>
-<td>-0.80</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>7</td>
 <td style='text-align: right'>0</td>
@@ -5613,6 +5641,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{TM (I.S6)}</td>
+<td>\texttt{I1527T} enhancer*</td>
 <td>\texttt{V410}</td>
 </tr>
 <tr>
@@ -5623,8 +5653,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,391,228 G>T}</td>
 <td>\texttt{V402L}</td>
-<td>-1</td>
-<td>-1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>7</td>
 <td style='text-align: right'>0</td>
@@ -5634,6 +5662,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{TM (I.S6)}</td>
+<td>\texttt{I1527T} enhancer*</td>
 <td>\texttt{V410}</td>
 </tr>
 <tr>
@@ -5644,8 +5674,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,399,997 G>C}</td>
 <td>\texttt{D466H}</td>
-<td>-1</td>
-<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5655,6 +5683,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{IN (I.S6--II.S1)}</td>
+<td>\texttt{L995F} enhancer*</td>
 <td>\texttt{-}</td>
 </tr>
 <tr>
@@ -5665,8 +5695,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,400,071 G>A}</td>
 <td>\texttt{M490I}</td>
-<td>-1</td>
-<td>-1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5676,6 +5704,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>18</td>
+<td>\texttt{IN (I.S6--II.S1)}</td>
+<td>unknown</td>
 <td>\texttt{M508}</td>
 </tr>
 <tr>
@@ -5686,8 +5716,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,400,071 G>T}</td>
 <td>\texttt{M490I}</td>
-<td>-1</td>
-<td>-1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5697,6 +5725,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{IN (I.S6--II.S1)}</td>
+<td>unknown</td>
 <td>\texttt{M508}</td>
 </tr>
 <tr>
@@ -5707,8 +5737,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,416,980 C>T}</td>
 <td>\texttt{T791M}</td>
-<td>-1</td>
-<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>1</td>
 <td style='text-align: right'>0</td>
@@ -5718,6 +5746,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{TM (II.S1)}</td>
+<td>\texttt{L995F} enhancer*</td>
 <td>\texttt{T810}</td>
 </tr>
 <tr>
@@ -5728,8 +5758,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,422,651 T>C}</td>
 <td>\texttt{L995S}</td>
-<td>1</td>
-<td>-1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5739,6 +5767,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>64</td>
 <td style='text-align: right'>100</td>
 <td style='text-align: right'>76</td>
+<td>\texttt{TM (II.S6)}</td>
+<td>driver</td>
 <td>\texttt{L1014}</td>
 </tr>
 <tr>
@@ -5749,8 +5779,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,422,652 A>T}</td>
 <td>\texttt{L995F}</td>
-<td>-1</td>
-<td>1</td>
 <td style='text-align: right'>86</td>
 <td style='text-align: right'>85</td>
 <td style='text-align: right'>0</td>
@@ -5760,6 +5788,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>36</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{TM (II.S6)}</td>
+<td>driver</td>
 <td>\texttt{L1014}</td>
 </tr>
 <tr>
@@ -5770,8 +5800,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,424,384 C>T}</td>
 <td>\texttt{A1125V}</td>
-<td>-1</td>
-<td>-0.46</td>
 <td style='text-align: right'>9</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5781,6 +5809,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{IN (II.S6--III.S1)}</td>
+<td>unknown</td>
 <td>\texttt{K1133}</td>
 </tr>
 <tr>
@@ -5791,8 +5821,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,425,077 G>A}</td>
 <td>\texttt{V1254I}</td>
-<td>-1</td>
-<td>-1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>5</td>
@@ -5802,6 +5830,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{IN (II.S6--III.S1)}</td>
+<td>unknown</td>
 <td>\texttt{I1262}</td>
 </tr>
 <tr>
@@ -5812,8 +5842,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,429,617 T>C}</td>
 <td>\texttt{I1527T}</td>
-<td>-1</td>
-<td>-0.90</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>14</td>
 <td style='text-align: right'>0</td>
@@ -5823,6 +5851,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{TM (III.S6)}</td>
+<td>driver*</td>
 <td>\texttt{I1532}</td>
 </tr>
 <tr>
@@ -5831,10 +5861,8 @@ tbl_variants_display.displayall()
 <td>T</td>
 <td style='text-align: right'>0</td>
 <td>False</td>
-<td>\texttt{2,429,745 A>T*}</td>
+<td>\texttt{2,429,745 A>T}*</td>
 <td>\texttt{N1570Y}</td>
-<td>-1</td>
-<td>0.98</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>26</td>
 <td style='text-align: right'>0</td>
@@ -5844,6 +5872,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{IN (III.S6--IV.S1)}</td>
+<td>\texttt{L995F} enhancer</td>
 <td>\texttt{N1575}</td>
 </tr>
 <tr>
@@ -5854,8 +5884,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,429,897 A>G}</td>
 <td>\texttt{E1597G}</td>
-<td>-1</td>
-<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5865,6 +5893,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{IN (III.S6--IV.S1)}</td>
+<td>\texttt{L995F} enhancer*</td>
 <td>\texttt{E1602}</td>
 </tr>
 <tr>
@@ -5875,8 +5905,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,429,915 A>C}</td>
 <td>\texttt{K1603T}</td>
-<td>-1</td>
-<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>5</td>
 <td style='text-align: right'>0</td>
@@ -5886,6 +5914,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{TM (IV.S1)}</td>
+<td>\texttt{L995F} enhancer*</td>
 <td>\texttt{K1608}</td>
 </tr>
 <tr>
@@ -5896,8 +5926,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,430,424 G>T}</td>
 <td>\texttt{A1746S}</td>
-<td>-1</td>
-<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5907,6 +5935,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{TM (IV.S5)}</td>
+<td>\texttt{L995F} enhancer*</td>
 <td>\texttt{A1751}</td>
 </tr>
 <tr>
@@ -5917,8 +5947,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,430,817 G>A}</td>
 <td>\texttt{V1853I}</td>
-<td>-1</td>
-<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5928,6 +5956,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{IN (IV.S6--)}</td>
+<td>\texttt{L995F} enhancer*</td>
 <td>\texttt{V1858}</td>
 </tr>
 <tr>
@@ -5938,8 +5968,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,430,863 T>C}</td>
 <td>\texttt{I1868T}</td>
-<td>-1</td>
-<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
@@ -5949,6 +5977,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{IN (IV.S6--)}</td>
+<td>\texttt{L995F} enhancer*</td>
 <td>\texttt{I1873}</td>
 </tr>
 <tr>
@@ -5959,8 +5989,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,430,880 C>T}</td>
 <td>\texttt{P1874S}</td>
-<td>-1</td>
-<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>21</td>
 <td style='text-align: right'>0</td>
@@ -5970,6 +5998,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{IN (IV.S6--)}</td>
+<td>\texttt{L995F} enhancer*</td>
 <td>\texttt{P1879}</td>
 </tr>
 <tr>
@@ -5980,8 +6010,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,430,881 C>T}</td>
 <td>\texttt{P1874L}</td>
-<td>-1</td>
-<td>0.97</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>7</td>
 <td style='text-align: right'>0</td>
@@ -5991,6 +6019,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{IN (IV.S6--)}</td>
+<td>\texttt{L995F} enhancer*</td>
 <td>\texttt{P1879}</td>
 </tr>
 <tr>
@@ -6001,8 +6031,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,431,061 C>T}</td>
 <td>\texttt{A1934V}</td>
-<td>-1</td>
-<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>12</td>
 <td style='text-align: right'>0</td>
@@ -6012,6 +6040,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{IN (IV.S6--)}</td>
+<td>\texttt{L995F} enhancer*</td>
 <td>\texttt{A1939}</td>
 </tr>
 <tr>
@@ -6022,8 +6052,6 @@ tbl_variants_display.displayall()
 <td>True</td>
 <td>\texttt{2,431,079 T>C}</td>
 <td>\texttt{I1940T}</td>
-<td>-1</td>
-<td>1</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>4</td>
 <td style='text-align: right'>0</td>
@@ -6033,6 +6061,8 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
+<td>\texttt{IN (IV.S6--)}</td>
+<td>\texttt{L995F} enhancer*</td>
 <td>\texttt{I1945}</td>
 </tr>
 </tbody>
@@ -6043,17 +6073,17 @@ tbl_variants_display.displayall()
 
 ```python
 prologue = r"""
-\begin{tabular}{lllrrrrrrrrrrr}
+\begin{tabular}{lllrrrrrrrrrll}
 \toprule
-\multicolumn{3}{c}{Mutation} &
+\multicolumn{3}{c}{Variant} &
 \multicolumn{9}{c}{Population allele frequency (\%)} &
-\multicolumn{2}{c}{LD ($D'$)} \\
+\multicolumn{2}{c}{Function} \\
 \cmidrule(r){1-3}
 \cmidrule(r){4-12}
 \cmidrule(r){13-14}
-Position\tablefootnote{Position relative to AgamP3 reference sequence, chromosome arm 2L.} & 
-\emph{Ag}\tablefootnote{Codon numbering according to transcript \texttt{AGAP004707-RA} in geneset AgamP4.4.} & 
-\emph{Md}\tablefootnote{Codon numbering according to \emph{Musca domestica Vgsc} EMBL accession X96668 \cite{williamson1996}.} & 
+Position\tnote{1} & 
+\emph{Ag}\tnote{2} & 
+\emph{Md}\tnote{3} & 
 AO\emph{Ac} & 
 BF\emph{Ac} & 
 GN\emph{Ag} & 
@@ -6063,12 +6093,12 @@ GA\emph{Ag} &
 UG\emph{Ag} & 
 KE & 
 GW & 
-\texttt{L995S} & 
-\texttt{L995F} \\
+Domain\tnote{4} & 
+Resistance phenotype\tnote{5} \\
 \midrule
 """
 template = r"""
-{substitution} & {AGAP004707-RA} & {Md} & {AF_AOM} & {AF_BFM} & {AF_GNS} & {AF_BFS} & {AF_CMS} & {AF_GAS} & {AF_UGS} & {AF_KES} & {AF_GWA} & {dprime_L995S} & {dprime_L995F} \\
+{substitution} & {AGAP004707-RA} & {Md} & {AF_AOM} & {AF_BFM} & {AF_GNS} & {AF_BFS} & {AF_CMS} & {AF_GAS} & {AF_UGS} & {AF_KES} & {AF_GWA} & {domain} & {phenotype} \\
 """
 epilogue = r"""
 \bottomrule
@@ -6087,17 +6117,17 @@ tbl_variants_display.totext('../tables/variants_missense.tex',
 ```
 
     
-    \begin{tabular}{lllrrrrrrrrrrr}
+    \begin{tabular}{lllrrrrrrrrrll}
     \toprule
-    \multicolumn{3}{c}{Mutation} &
+    \multicolumn{3}{c}{Variant} &
     \multicolumn{9}{c}{Population allele frequency (\%)} &
-    \multicolumn{2}{c}{LD ($D'$)} \\
+    \multicolumn{2}{c}{Function} \\
     \cmidrule(r){1-3}
     \cmidrule(r){4-12}
     \cmidrule(r){13-14}
-    Position\tablefootnote{Position relative to AgamP3 reference sequence, chromosome arm 2L.} & 
-    \emph{Ag}\tablefootnote{Codon numbering according to transcript \texttt{AGAP004707-RA} in geneset AgamP4.4.} & 
-    \emph{Md}\tablefootnote{Codon numbering according to \emph{Musca domestica Vgsc} EMBL accession X96668 \cite{williamson1996}.} & 
+    Position\tnote{1} & 
+    \emph{Ag}\tnote{2} & 
+    \emph{Md}\tnote{3} & 
     AO\emph{Ac} & 
     BF\emph{Ac} & 
     GN\emph{Ag} & 
@@ -6107,57 +6137,62 @@ tbl_variants_display.totext('../tables/variants_missense.tex',
     UG\emph{Ag} & 
     KE & 
     GW & 
-    \texttt{L995S} & 
-    \texttt{L995F} \\
+    Domain\tnote{4} & 
+    Resistance phenotype\tnote{5} \\
     \midrule
     
-    \texttt{2,390,177 G>A} & \texttt{R254K} & \texttt{R261} & 0 & 0 & 0 & 0 & 32 & 21 & 0 & 0 & 0 & -0.96 & 0.92 \\
+    \texttt{2,390,177 G>A} & \texttt{R254K} & \texttt{R261} & 0 & 0 & 0 & 0 & 32 & 21 & 0 & 0 & 0 & \texttt{IN (I.S4--I.S5)} & \texttt{L995F} enhancer* \\
     
-    \texttt{2,391,228 G>C} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -0.80 \\
+    \texttt{2,391,228 G>C} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (I.S6)} & \texttt{I1527T} enhancer* \\
     
-    \texttt{2,391,228 G>T} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -1 \\
+    \texttt{2,391,228 G>T} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (I.S6)} & \texttt{I1527T} enhancer* \\
     
-    \texttt{2,399,997 G>C} & \texttt{D466H} & \texttt{-} & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & -1 & 1 \\
+    \texttt{2,399,997 G>C} & \texttt{D466H} & \texttt{-} & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & \texttt{IN (I.S6--II.S1)} & \texttt{L995F} enhancer* \\
     
-    \texttt{2,400,071 G>A} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 18 & 0 & -1 & -1 \\
+    \texttt{2,400,071 G>A} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 18 & 0 & \texttt{IN (I.S6--II.S1)} & unknown \\
     
-    \texttt{2,400,071 G>T} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -1 \\
+    \texttt{2,400,071 G>T} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (I.S6--II.S1)} & unknown \\
     
-    \texttt{2,416,980 C>T} & \texttt{T791M} & \texttt{T810} & 0 & 1 & 13 & 14 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
+    \texttt{2,416,980 C>T} & \texttt{T791M} & \texttt{T810} & 0 & 1 & 13 & 14 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (II.S1)} & \texttt{L995F} enhancer* \\
     
-    \texttt{2,422,651 T>C} & \texttt{L995S} & \texttt{L1014} & 0 & 0 & 0 & 0 & 15 & 64 & 100 & 76 & 0 & 1 & -1 \\
+    \texttt{2,422,651 T>C} & \texttt{L995S} & \texttt{L1014} & 0 & 0 & 0 & 0 & 15 & 64 & 100 & 76 & 0 & \texttt{TM (II.S6)} & driver \\
     
-    \texttt{2,422,652 A>T} & \texttt{L995F} & \texttt{L1014} & 86 & 85 & 100 & 100 & 53 & 36 & 0 & 0 & 0 & -1 & 1 \\
+    \texttt{2,422,652 A>T} & \texttt{L995F} & \texttt{L1014} & 86 & 85 & 100 & 100 & 53 & 36 & 0 & 0 & 0 & \texttt{TM (II.S6)} & driver \\
     
-    \texttt{2,424,384 C>T} & \texttt{A1125V} & \texttt{K1133} & 9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -0.46 \\
+    \texttt{2,424,384 C>T} & \texttt{A1125V} & \texttt{K1133} & 9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (II.S6--III.S1)} & unknown \\
     
-    \texttt{2,425,077 G>A} & \texttt{V1254I} & \texttt{I1262} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 5 & -1 & -1 \\
+    \texttt{2,425,077 G>A} & \texttt{V1254I} & \texttt{I1262} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 5 & \texttt{IN (II.S6--III.S1)} & unknown \\
     
-    \texttt{2,429,617 T>C} & \texttt{I1527T} & \texttt{I1532} & 0 & 14 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & -0.90 \\
+    \texttt{2,429,617 T>C} & \texttt{I1527T} & \texttt{I1532} & 0 & 14 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (III.S6)} & driver* \\
     
-    \texttt{2,429,745 A>T*} & \texttt{N1570Y} & \texttt{N1575} & 0 & 26 & 10 & 22 & 6 & 0 & 0 & 0 & 0 & -1 & 0.98 \\
+    \texttt{2,429,745 A>T}* & \texttt{N1570Y} & \texttt{N1575} & 0 & 26 & 10 & 22 & 6 & 0 & 0 & 0 & 0 & \texttt{IN (III.S6--IV.S1)} & \texttt{L995F} enhancer \\
     
-    \texttt{2,429,897 A>G} & \texttt{E1597G} & \texttt{E1602} & 0 & 0 & 6 & 4 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
+    \texttt{2,429,897 A>G} & \texttt{E1597G} & \texttt{E1602} & 0 & 0 & 6 & 4 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (III.S6--IV.S1)} & \texttt{L995F} enhancer* \\
     
-    \texttt{2,429,915 A>C} & \texttt{K1603T} & \texttt{K1608} & 0 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
+    \texttt{2,429,915 A>C} & \texttt{K1603T} & \texttt{K1608} & 0 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (IV.S1)} & \texttt{L995F} enhancer* \\
     
-    \texttt{2,430,424 G>T} & \texttt{A1746S} & \texttt{A1751} & 0 & 0 & 11 & 13 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
+    \texttt{2,430,424 G>T} & \texttt{A1746S} & \texttt{A1751} & 0 & 0 & 11 & 13 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (IV.S5)} & \texttt{L995F} enhancer* \\
     
-    \texttt{2,430,817 G>A} & \texttt{V1853I} & \texttt{V1858} & 0 & 0 & 8 & 5 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
+    \texttt{2,430,817 G>A} & \texttt{V1853I} & \texttt{V1858} & 0 & 0 & 8 & 5 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer* \\
     
-    \texttt{2,430,863 T>C} & \texttt{I1868T} & \texttt{I1873} & 0 & 0 & 18 & 25 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
+    \texttt{2,430,863 T>C} & \texttt{I1868T} & \texttt{I1873} & 0 & 0 & 18 & 25 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer* \\
     
-    \texttt{2,430,880 C>T} & \texttt{P1874S} & \texttt{P1879} & 0 & 21 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
+    \texttt{2,430,880 C>T} & \texttt{P1874S} & \texttt{P1879} & 0 & 21 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer* \\
     
-    \texttt{2,430,881 C>T} & \texttt{P1874L} & \texttt{P1879} & 0 & 7 & 45 & 26 & 0 & 0 & 0 & 0 & 0 & -1 & 0.97 \\
+    \texttt{2,430,881 C>T} & \texttt{P1874L} & \texttt{P1879} & 0 & 7 & 45 & 26 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer* \\
     
-    \texttt{2,431,061 C>T} & \texttt{A1934V} & \texttt{A1939} & 0 & 12 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -1 & 1 \\
+    \texttt{2,431,061 C>T} & \texttt{A1934V} & \texttt{A1939} & 0 & 12 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer* \\
     
-    \texttt{2,431,079 T>C} & \texttt{I1940T} & \texttt{I1945} & 0 & 4 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & -1 & 1 \\
+    \texttt{2,431,079 T>C} & \texttt{I1940T} & \texttt{I1945} & 0 & 4 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer* \\
     
     \bottomrule
     \end{tabular}
 
+
+
+```python
+
+```
 
 
 ```python
