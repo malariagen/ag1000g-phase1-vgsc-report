@@ -5530,26 +5530,26 @@ MD_fix
 ```python
 tbl_function = etl.wrap([
     ['AGAP004707-RA', 'domain', 'phenotype'],
-    ['R254K', 'IN (I.S4--I.S5)', r'\texttt{L995F} enhancer*'],
-    ['V402L', 'TM (I.S6)', r'\texttt{I1527T} enhancer*'],
-    ['D466H', 'IN (I.S6--II.S1)', r'\texttt{L995F} enhancer*'],
-    ['M490I', 'IN (I.S6--II.S1)', 'unknown'],
-    ['T791M', 'TM (II.S1)', r'\texttt{L995F} enhancer*'],
+    ['R254K', 'IN (I.S4--I.S5)', r'\texttt{L995F} enhancer (predicted)'],
+    ['V402L', 'TM (I.S6)', r'\texttt{I1527T} enhancer (predicted)'],
+    ['D466H', 'IN (I.S6--II.S1)', r'\texttt{L995F} enhancer (predicted)'],
+    ['M490I', 'IN (I.S6--II.S1)', 'none (predicted)'],
+    ['T791M', 'TM (II.S1)', r'\texttt{L995F} enhancer (predicted)'],
     ['L995S', 'TM (II.S6)', r'driver'],
     ['L995F', 'TM (II.S6)', r'driver'],
-    ['A1125V', 'IN (II.S6--III.S1)', r'unknown'],
-    ['V1254I', 'IN (II.S6--III.S1)', r'unknown'],
-    ['I1527T', 'TM (III.S6)', r'driver*'],
+    ['A1125V', 'IN (II.S6--III.S1)', r'none (predicted)'],
+    ['V1254I', 'IN (II.S6--III.S1)', r'none (predicted)'],
+    ['I1527T', 'TM (III.S6)', r'driver (predicted)'],
     ['N1570Y', 'IN (III.S6--IV.S1)', r'\texttt{L995F} enhancer'],
-    ['E1597G', 'IN (III.S6--IV.S1)', r'\texttt{L995F} enhancer*'],
-    ['K1603T', 'TM (IV.S1)', r'\texttt{L995F} enhancer*'],
-    ['A1746S', 'TM (IV.S5)', r'\texttt{L995F} enhancer*'],
-    ['V1853I', 'IN (IV.S6--)', r'\texttt{L995F} enhancer*'],
-    ['I1868T', 'IN (IV.S6--)', r'\texttt{L995F} enhancer*'],
-    ['P1874S', 'IN (IV.S6--)', r'\texttt{L995F} enhancer*'],
-    ['P1874L', 'IN (IV.S6--)', r'\texttt{L995F} enhancer*'],
-    ['A1934V', 'IN (IV.S6--)', r'\texttt{L995F} enhancer*'],
-    ['I1940T', 'IN (IV.S6--)', r'\texttt{L995F} enhancer*'],
+    ['E1597G', 'IN (III.S6--IV.S1)', r'\texttt{L995F} enhancer (predicted)'],
+    ['K1603T', 'TM (IV.S1)', r'\texttt{L995F} enhancer (predicted)'],
+    ['A1746S', 'TM (IV.S5)', r'\texttt{L995F} enhancer (predicted)'],
+    ['V1853I', 'IN (IV.S6--)', r'\texttt{L995F} enhancer (predicted)'],
+    ['I1868T', 'IN (IV.S6--)', r'\texttt{L995F} enhancer (predicted)'],
+    ['P1874S', 'IN (IV.S6--)', r'\texttt{L995F} enhancer (predicted)'],
+    ['P1874L', 'IN (IV.S6--)', r'\texttt{L995F} enhancer (predicted)'],
+    ['A1934V', 'IN (IV.S6--)', r'\texttt{L995F} enhancer (predicted)'],
+    ['I1940T', 'IN (IV.S6--)', r'\texttt{L995F} enhancer (predicted)'],
 ])
 ```
 
@@ -5621,7 +5621,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{IN (I.S4--I.S5)}</td>
-<td>\texttt{L995F} enhancer*</td>
+<td>\texttt{L995F} enhancer (predicted)</td>
 <td>\texttt{R261}</td>
 </tr>
 <tr>
@@ -5642,7 +5642,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{TM (I.S6)}</td>
-<td>\texttt{I1527T} enhancer*</td>
+<td>\texttt{I1527T} enhancer (predicted)</td>
 <td>\texttt{V410}</td>
 </tr>
 <tr>
@@ -5663,7 +5663,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{TM (I.S6)}</td>
-<td>\texttt{I1527T} enhancer*</td>
+<td>\texttt{I1527T} enhancer (predicted)</td>
 <td>\texttt{V410}</td>
 </tr>
 <tr>
@@ -5684,7 +5684,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{IN (I.S6--II.S1)}</td>
-<td>\texttt{L995F} enhancer*</td>
+<td>\texttt{L995F} enhancer (predicted)</td>
 <td>\texttt{-}</td>
 </tr>
 <tr>
@@ -5705,7 +5705,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>18</td>
 <td>\texttt{IN (I.S6--II.S1)}</td>
-<td>unknown</td>
+<td>none (predicted)</td>
 <td>\texttt{M508}</td>
 </tr>
 <tr>
@@ -5726,7 +5726,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{IN (I.S6--II.S1)}</td>
-<td>unknown</td>
+<td>none (predicted)</td>
 <td>\texttt{M508}</td>
 </tr>
 <tr>
@@ -5747,7 +5747,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{TM (II.S1)}</td>
-<td>\texttt{L995F} enhancer*</td>
+<td>\texttt{L995F} enhancer (predicted)</td>
 <td>\texttt{T810}</td>
 </tr>
 <tr>
@@ -5810,7 +5810,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{IN (II.S6--III.S1)}</td>
-<td>unknown</td>
+<td>none (predicted)</td>
 <td>\texttt{K1133}</td>
 </tr>
 <tr>
@@ -5831,7 +5831,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{IN (II.S6--III.S1)}</td>
-<td>unknown</td>
+<td>none (predicted)</td>
 <td>\texttt{I1262}</td>
 </tr>
 <tr>
@@ -5852,7 +5852,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{TM (III.S6)}</td>
-<td>driver*</td>
+<td>driver (predicted)</td>
 <td>\texttt{I1532}</td>
 </tr>
 <tr>
@@ -5894,7 +5894,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{IN (III.S6--IV.S1)}</td>
-<td>\texttt{L995F} enhancer*</td>
+<td>\texttt{L995F} enhancer (predicted)</td>
 <td>\texttt{E1602}</td>
 </tr>
 <tr>
@@ -5915,7 +5915,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{TM (IV.S1)}</td>
-<td>\texttt{L995F} enhancer*</td>
+<td>\texttt{L995F} enhancer (predicted)</td>
 <td>\texttt{K1608}</td>
 </tr>
 <tr>
@@ -5936,7 +5936,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{TM (IV.S5)}</td>
-<td>\texttt{L995F} enhancer*</td>
+<td>\texttt{L995F} enhancer (predicted)</td>
 <td>\texttt{A1751}</td>
 </tr>
 <tr>
@@ -5957,7 +5957,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{IN (IV.S6--)}</td>
-<td>\texttt{L995F} enhancer*</td>
+<td>\texttt{L995F} enhancer (predicted)</td>
 <td>\texttt{V1858}</td>
 </tr>
 <tr>
@@ -5978,7 +5978,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{IN (IV.S6--)}</td>
-<td>\texttt{L995F} enhancer*</td>
+<td>\texttt{L995F} enhancer (predicted)</td>
 <td>\texttt{I1873}</td>
 </tr>
 <tr>
@@ -5999,7 +5999,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{IN (IV.S6--)}</td>
-<td>\texttt{L995F} enhancer*</td>
+<td>\texttt{L995F} enhancer (predicted)</td>
 <td>\texttt{P1879}</td>
 </tr>
 <tr>
@@ -6020,7 +6020,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{IN (IV.S6--)}</td>
-<td>\texttt{L995F} enhancer*</td>
+<td>\texttt{L995F} enhancer (predicted)</td>
 <td>\texttt{P1879}</td>
 </tr>
 <tr>
@@ -6041,7 +6041,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{IN (IV.S6--)}</td>
-<td>\texttt{L995F} enhancer*</td>
+<td>\texttt{L995F} enhancer (predicted)</td>
 <td>\texttt{A1939}</td>
 </tr>
 <tr>
@@ -6062,7 +6062,7 @@ tbl_variants_display.displayall()
 <td style='text-align: right'>0</td>
 <td style='text-align: right'>0</td>
 <td>\texttt{IN (IV.S6--)}</td>
-<td>\texttt{L995F} enhancer*</td>
+<td>\texttt{L995F} enhancer (predicted)</td>
 <td>\texttt{I1945}</td>
 </tr>
 </tbody>
@@ -6141,49 +6141,49 @@ tbl_variants_display.totext('../tables/variants_missense.tex',
     Resistance phenotype\tnote{5} \\
     \midrule
     
-    \texttt{2,390,177 G>A} & \texttt{R254K} & \texttt{R261} & 0 & 0 & 0 & 0 & 32 & 21 & 0 & 0 & 0 & \texttt{IN (I.S4--I.S5)} & \texttt{L995F} enhancer* \\
+    \texttt{2,390,177 G>A} & \texttt{R254K} & \texttt{R261} & 0 & 0 & 0 & 0 & 32 & 21 & 0 & 0 & 0 & \texttt{IN (I.S4--I.S5)} & \texttt{L995F} enhancer (predicted) \\
     
-    \texttt{2,391,228 G>C} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (I.S6)} & \texttt{I1527T} enhancer* \\
+    \texttt{2,391,228 G>C} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (I.S6)} & \texttt{I1527T} enhancer (predicted) \\
     
-    \texttt{2,391,228 G>T} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (I.S6)} & \texttt{I1527T} enhancer* \\
+    \texttt{2,391,228 G>T} & \texttt{V402L} & \texttt{V410} & 0 & 7 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (I.S6)} & \texttt{I1527T} enhancer (predicted) \\
     
-    \texttt{2,399,997 G>C} & \texttt{D466H} & \texttt{-} & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & \texttt{IN (I.S6--II.S1)} & \texttt{L995F} enhancer* \\
+    \texttt{2,399,997 G>C} & \texttt{D466H} & \texttt{-} & 0 & 0 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & \texttt{IN (I.S6--II.S1)} & \texttt{L995F} enhancer (predicted) \\
     
-    \texttt{2,400,071 G>A} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 18 & 0 & \texttt{IN (I.S6--II.S1)} & unknown \\
+    \texttt{2,400,071 G>A} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 18 & 0 & \texttt{IN (I.S6--II.S1)} & none (predicted) \\
     
-    \texttt{2,400,071 G>T} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (I.S6--II.S1)} & unknown \\
+    \texttt{2,400,071 G>T} & \texttt{M490I} & \texttt{M508} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (I.S6--II.S1)} & none (predicted) \\
     
-    \texttt{2,416,980 C>T} & \texttt{T791M} & \texttt{T810} & 0 & 1 & 13 & 14 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (II.S1)} & \texttt{L995F} enhancer* \\
+    \texttt{2,416,980 C>T} & \texttt{T791M} & \texttt{T810} & 0 & 1 & 13 & 14 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (II.S1)} & \texttt{L995F} enhancer (predicted) \\
     
     \texttt{2,422,651 T>C} & \texttt{L995S} & \texttt{L1014} & 0 & 0 & 0 & 0 & 15 & 64 & 100 & 76 & 0 & \texttt{TM (II.S6)} & driver \\
     
     \texttt{2,422,652 A>T} & \texttt{L995F} & \texttt{L1014} & 86 & 85 & 100 & 100 & 53 & 36 & 0 & 0 & 0 & \texttt{TM (II.S6)} & driver \\
     
-    \texttt{2,424,384 C>T} & \texttt{A1125V} & \texttt{K1133} & 9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (II.S6--III.S1)} & unknown \\
+    \texttt{2,424,384 C>T} & \texttt{A1125V} & \texttt{K1133} & 9 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (II.S6--III.S1)} & none (predicted) \\
     
-    \texttt{2,425,077 G>A} & \texttt{V1254I} & \texttt{I1262} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 5 & \texttt{IN (II.S6--III.S1)} & unknown \\
+    \texttt{2,425,077 G>A} & \texttt{V1254I} & \texttt{I1262} & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 5 & \texttt{IN (II.S6--III.S1)} & none (predicted) \\
     
-    \texttt{2,429,617 T>C} & \texttt{I1527T} & \texttt{I1532} & 0 & 14 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (III.S6)} & driver* \\
+    \texttt{2,429,617 T>C} & \texttt{I1527T} & \texttt{I1532} & 0 & 14 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (III.S6)} & driver (predicted) \\
     
     \texttt{2,429,745 A>T}* & \texttt{N1570Y} & \texttt{N1575} & 0 & 26 & 10 & 22 & 6 & 0 & 0 & 0 & 0 & \texttt{IN (III.S6--IV.S1)} & \texttt{L995F} enhancer \\
     
-    \texttt{2,429,897 A>G} & \texttt{E1597G} & \texttt{E1602} & 0 & 0 & 6 & 4 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (III.S6--IV.S1)} & \texttt{L995F} enhancer* \\
+    \texttt{2,429,897 A>G} & \texttt{E1597G} & \texttt{E1602} & 0 & 0 & 6 & 4 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (III.S6--IV.S1)} & \texttt{L995F} enhancer (predicted) \\
     
-    \texttt{2,429,915 A>C} & \texttt{K1603T} & \texttt{K1608} & 0 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (IV.S1)} & \texttt{L995F} enhancer* \\
+    \texttt{2,429,915 A>C} & \texttt{K1603T} & \texttt{K1608} & 0 & 5 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (IV.S1)} & \texttt{L995F} enhancer (predicted) \\
     
-    \texttt{2,430,424 G>T} & \texttt{A1746S} & \texttt{A1751} & 0 & 0 & 11 & 13 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (IV.S5)} & \texttt{L995F} enhancer* \\
+    \texttt{2,430,424 G>T} & \texttt{A1746S} & \texttt{A1751} & 0 & 0 & 11 & 13 & 0 & 0 & 0 & 0 & 0 & \texttt{TM (IV.S5)} & \texttt{L995F} enhancer (predicted) \\
     
-    \texttt{2,430,817 G>A} & \texttt{V1853I} & \texttt{V1858} & 0 & 0 & 8 & 5 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer* \\
+    \texttt{2,430,817 G>A} & \texttt{V1853I} & \texttt{V1858} & 0 & 0 & 8 & 5 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer (predicted) \\
     
-    \texttt{2,430,863 T>C} & \texttt{I1868T} & \texttt{I1873} & 0 & 0 & 18 & 25 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer* \\
+    \texttt{2,430,863 T>C} & \texttt{I1868T} & \texttt{I1873} & 0 & 0 & 18 & 25 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer (predicted) \\
     
-    \texttt{2,430,880 C>T} & \texttt{P1874S} & \texttt{P1879} & 0 & 21 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer* \\
+    \texttt{2,430,880 C>T} & \texttt{P1874S} & \texttt{P1879} & 0 & 21 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer (predicted) \\
     
-    \texttt{2,430,881 C>T} & \texttt{P1874L} & \texttt{P1879} & 0 & 7 & 45 & 26 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer* \\
+    \texttt{2,430,881 C>T} & \texttt{P1874L} & \texttt{P1879} & 0 & 7 & 45 & 26 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer (predicted) \\
     
-    \texttt{2,431,061 C>T} & \texttt{A1934V} & \texttt{A1939} & 0 & 12 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer* \\
+    \texttt{2,431,061 C>T} & \texttt{A1934V} & \texttt{A1939} & 0 & 12 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer (predicted) \\
     
-    \texttt{2,431,079 T>C} & \texttt{I1940T} & \texttt{I1945} & 0 & 4 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer* \\
+    \texttt{2,431,079 T>C} & \texttt{I1940T} & \texttt{I1945} & 0 & 4 & 0 & 0 & 7 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer (predicted) \\
     
     \bottomrule
     \end{tabular}
