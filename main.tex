@@ -161,7 +161,7 @@ Our results reveal an unexpected diversity of molecular mechanisms of resistance
 \section*{Results}
 
 
-\subsection*{Functional variation}
+\subsection*{Identification of resistance alleles}
 
 
 %%
@@ -177,11 +177,14 @@ We reported 15 of these novel SNPs in our initial analysis of the Ag1000G phase 
 
 %% begin Table 1
 \afterpage{%
-\clearpage
-\newgeometry{margin=2cm}
+%\clearpage
+% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
+%\newgeometry{margin=2cm}
 \begin{landscape}
+\thispagestyle{empty}
 \begin{table}[h]
-  \small
+%  \small
+  \footnotesize
   \centering
   \begin{threeparttable}
   \input{tables/variants_missense.tex}
@@ -191,20 +194,23 @@ We reported 15 of these novel SNPs in our initial analysis of the Ag1000G phase 
     
     \item[1] Position relative to the AgamP3 reference sequence, chromosome arm 2L. Variants marked with an asterisk (*) failed conservative variant filters applied genome-wide in the Ag1000G phase 1 AR3 callset, but appeared sound on manual inspection of read alignments.
     
-    \item[2] Codon numbering according to \emph{Anopheles gambiae}, transcript AGAP004707-RA in geneset AgamP4.4.
+    \item[2] Codon numbering according to \emph{Anopheles gambiae} transcript AGAP004707-RA in geneset AgamP4.4.
     
-    \item[3] Codon numbering according to \emph{Musca domestica}, EMBL accession X96668 \cite{williamson1996}.
+    \item[3] Codon numbering according to \emph{Musca domestica} EMBL accession X96668 \cite{williamson1996}.
     
-    \item[4] Position of the variant within the protein. \texttt{IN} = internal domain; \texttt{TM} = trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
+    \item[4] Position of the variant within the protein. \texttt{IN}=internal domain; \texttt{TM}=trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
     
-    \item[5] Phenotypes marked with an asterix (*) are predictions based on population genetic data and have not been confirmed experimentally.
+    \item[5] Phenotype predictions are based on population genetic evidence and have not been confirmed experimentally.
     
   \end{tablenotes}
   
   \end{threeparttable}
   
   \caption{
+%
 \textbf{Non-synonymous nucleotide variation in the voltage-gated sodium channel gene}. 
+%
+AO=Angola; BF=Burkina Faso; GN=Guinea; CM=Cameroon; GA=Gabon; UG=Uganda; KE=Kenya; GW=Guinea-Bissau; \textit{Ac}=\textit{An. coluzzii}; \textit{Ag}=\textit{An. gambiae}.
 %
 All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase 1 populations, with the exception of \texttt{2,400,071 G>T} which is only found in the CM\emph{Ag} population at 0.4\% frequency but is included because another mutation (\texttt{2,400,071 G>A}) is found at the same position causing the same amino acid substitution (\texttt{M490I}). 
 }
@@ -213,7 +219,7 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
   
 \end{table}
 \end{landscape}
-\restoregeometry
+%\restoregeometry
 } % end afterpage
 %% end Table 1
 
@@ -222,6 +228,13 @@ The two alleles in codon 995 are clearly the main drivers of resistance at this 
 %
 Both alleles were present in populations sampled from Cameroon and Gabon, including some individuals with a hybrid \texttt{L995F/S} genotype. Within these populations, the \texttt{L995F} and \texttt{L995S} alleles were (@@TODO were not?) in Hardy-Weinberg equilibrium (P=@@), thus there does not (@@does?) appear to be selection against hybrids.
 %%
+
+
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/demo.png}
+  \caption{Placeholder for LD figure.}
+  \label{fig:ld}
+\end{figure}
 
 
 %%
@@ -266,14 +279,64 @@ All 3 variants occur in internal linker domains, and so do not fit the model of 
 %%
 
 
-\begin{figure}[t!]
-  \includegraphics[width=1.1\linewidth,center]{artwork/demo.png}
-  \caption{Demo figure.}
-  \label{fig:demo}
+\subsection*{Origins and spread of resistance alleles}
+
+
+%%
+Although it is well-known that pyrethroid resistance is becoming increasingly prevalent in malaria vector populations across Africa, it has not previously been clear whether this increase in prevalence is being driven primarily by the spread of resistance alleles from one location to another via mosquito migration, or by resistance alleles emerging independently and simultaneously in multiple locations, or by a combination of both processes.
+%
+In our initial analyses of haplotype data from Ag1000G phase 1 (@@REF Ag1000G), we used a clustering approach based on genetic distance to identify 10 haplotype clusters at the \textit{Vgsc} locus carrying a known resistance driver allele, of which five clusters carried \texttt{L995F} (labelled F1-F5) and a further five clusters carried \texttt{L995S} (labelled S1-S5).
+%
+Within each cluster, haplotypes were nearly identical across the entire @@70 kbp span of the \textit{Vgsc} gene, and therefore represent a collection of haplotypes with a very recent common ancestor.
+%
+Within some of these clusters, we found haplotypes from mosquitoes collected from different geographical locations, demonstrating that adaptive gene flow has occurred between these locations.
+%
+Specifically, cluster F1 contained haplotypes from Guinea, Burkina Faso, Cameroon and Angola; clusters @@ each contained haplotypes from both Cameroon and Gabon; and cluster @@ contained haplotypes from both Uganda and Kenya.
+%
+The F1 cluster also contained haplotypes from both \textit{An. gambiae} and \textit{An. coluzzii}, demonstrating that adaptive introgression had occurred.
+%
+We also used analyses of haplotype clustering on the flanks of the \textit{Vgsc} gene to provide evidence that each of these haplotype clusters represents and independent outbreak of resistance, with the exception of clusters S4 and S5 which appear to be recently derived from the same ancestor.
+%
+In this section we present several new analyses to confirm and extend our initial findings regarding the origins and spread of \textit{Vgsc} resistance alleles.
+%%
+
+
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_networks.png}
+  \caption{Placeholder for networks figure. @@TODO redo the figure. @@TODO annotate non-syn edges in cluster F3. @@TODO mention if any clusters fixed for non-syn variants so not shown. @@TODO annotate other non-syn edges, e.g., in S4?}
+  \label{fig:networks}
 \end{figure}
 
 
-TODO
+%%
+To provide an alternative view of the genetic similarity between haplotypes carrying known or predicted resistance driver alleles, we used haplotype data across all 1710 (@@CHECK) SNPs within the \textit{Vgsc} open reading frame to construct median-joining networks (Figure @@REF).
+%
+We constructed these networks up to a maximum distance of @@4 SNP differences, to ensure that each connected component in the resulting networks represents a collection of haplotypes with a recent common ancestor, and thus which is also likely to be minimally affected by recombination within the gene.
+%
+For \texttt{L995F}, the resulting network confirms the presence of five distinct clusters of closely-related haplotypes, with close correspondance to the clusters F1-F5 identified previously (@@REF Ag1000G).
+%
+The haplotype network for cluster F1 brings into sharp relief the explosive evolution of secondary amino acid substitutions within the F1 lineage, providing further evidence that they play a functional role in enhancing the \texttt{L995F} resistance phenotype.
+%
+The distribution of secondary variants within the F1 network also allows us to infer multiple introgression events between the two species.
+%
+@@TODO details of which variants are found in both species.
+%%
+
+
+%%
+For \texttt{L995S} the networks also confirm five distinct clusters concordant with our previous analysis.
+%
+The contrast between the haplotype networks for the \texttt{L995F} and \texttt{L995S} alleles is striking, because of the near-total absence of any non-synonymous variants within the \texttt{L995S} networks.
+%
+As we reported previously, there is a highly significant enrichment for non-synonymous variation among haplotypes carrying \texttt{L995F} relative to haplotypes with \texttt{L995S}.
+%
+This difference is the basis for our prediction that all of the secondary non-synonymous variants found at appreciable frequency among \texttt{L995F} haplotypes are likely to enhance the resistance phenotype, rather than being deleterious or neutral variants that are hitch-hiking on selective sweeps for the driver allele.
+%%
+
+
+%%
+A limitation of both the hierarchical clustering and haplotype network anal
+%%
 
 
 \section*{Discussion}
