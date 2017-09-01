@@ -295,7 +295,7 @@ Specifically, cluster F1 contained haplotypes from Guinea, Burkina Faso, Cameroo
 %
 The F1 cluster also contained haplotypes from both \textit{An. gambiae} and \textit{An. coluzzii}, demonstrating that adaptive introgression had occurred.
 %
-We also used analyses of haplotype clustering on the flanks of the \textit{Vgsc} gene to provide evidence that each of these haplotype clusters represents and independent outbreak of resistance, with the exception of clusters S4 and S5 which appear to be recently derived from the same ancestor.
+We also used analyses of haplotype clustering on the flanks of the \textit{Vgsc} gene to provide evidence that each of these haplotype clusters represents an independent outbreak of resistance, with the exception of clusters S4 and S5 which appear to be recently derived from the same ancestor.
 %
 In this section we present several new analyses to confirm and extend our initial findings regarding the origins and spread of \textit{Vgsc} resistance alleles.
 %%
@@ -303,13 +303,13 @@ In this section we present several new analyses to confirm and extend our initia
 
 \begin{figure}[!b]
   \includegraphics[width=1.1\linewidth,center]{artwork/fig_networks.png}
-  \caption{Placeholder for networks figure. @@TODO redo the figure. @@TODO annotate non-syn edges in cluster F3. @@TODO mention if any clusters fixed for non-syn variants so not shown. @@TODO annotate other non-syn edges, e.g., in S4?}
+  \caption{\textbf{Haplotype networks}. @@TODO redo the figure. @@TODO annotate non-syn edges in cluster F3. @@TODO mention if any clusters fixed for non-syn variants so not shown. @@TODO annotate other non-syn edges, e.g., in S4?}
   \label{fig:networks}
 \end{figure}
 
 
 %%
-To provide an alternative view of the genetic similarity between haplotypes carrying known or predicted resistance driver alleles, we used haplotype data across all 1710 (@@CHECK) SNPs within the \textit{Vgsc} open reading frame to construct median-joining networks (Figure @@REF).
+To provide an alternative view of the genetic similarity between haplotypes carrying known or predicted resistance driver alleles, we used haplotype data across all 1710 (@@CHECK) SNPs within the \textit{Vgsc} open reading frame to construct median-joining networks (Figure \ref{fig:networks}).
 %
 We constructed these networks up to a maximum distance of @@4 SNP differences, to ensure that each connected component in the resulting networks represents a collection of haplotypes with a recent common ancestor, and thus which is also likely to be minimally affected by recombination within the gene.
 %
@@ -324,29 +324,116 @@ The distribution of secondary variants within the F1 network also allows us to i
 
 
 %%
-For \texttt{L995S} the networks also confirm five distinct clusters concordant with our previous analysis.
+The \texttt{L995S} network also confirms five distinct clusters, in concordance with our previous analysis.
 %
 The contrast between the haplotype networks for the \texttt{L995F} and \texttt{L995S} alleles is striking, because of the near-total absence of any non-synonymous variants within the \texttt{L995S} networks.
 %
 As we reported previously, there is a highly significant enrichment for non-synonymous variation among haplotypes carrying \texttt{L995F} relative to haplotypes with \texttt{L995S}.
 %
-This difference is the basis for our prediction that all of the secondary non-synonymous variants found at appreciable frequency among \texttt{L995F} haplotypes are likely to enhance the resistance phenotype, rather than being deleterious or neutral variants that are hitch-hiking on selective sweeps for the driver allele.
+This difference is the basis for our prediction that all of the secondary non-synonymous variants found at appreciable frequency among \texttt{L995F} haplotypes are likely to enhance the resistance phenotype, rather than being deleterious or neutral variants that are hitch-hiking on selective sweeps for the driver allele, because hitch-hiking should be similar for both \texttt{L995F} and \texttt{L995S}.
 %%
 
 
 %%
-A limitation of both the hierarchical clustering and haplotype network anal
+%
+A limitation of both the hierarchical clustering and network analyses is that they only leverage information from within the \textit{Vgsc} gene. 
+%
+Because they are relying on estimates of genetic distance from within a relatively small genome region, they have limited resolution to infer very recent events, because insufficient time has elapsed for mutations to occur.
+%
+This means that, within each of the lineages we have identified where adaptive gene flow has occurred, the analyses provide little information about the direction or relative timing of gene flow events.
+%
+To improve our resolution to infer recent events, we used information about the extent of haplotype sharing on both flanks of the gene.
+%
+For each pair of haplotypes, we used a heuristic approach to estimate the length of the region shared identical by descent (IBD) between two haplotypes, extending both upstream and downstream of the gene, and to estimate the number of mutations that have accumulated within IBD regions since the most recent common ancestor (MRCA).
+%
+We then combined the information about IBD length and number of mutations to estimate the time to MRCA or "age" for each pair of haplotypes.
+%
+We used hierarchical clustering to visualise the overall age structure (Figure \ref{fig:tree}), and also analysed the distribution of ages within and between different collections of haplotypes (Figure @@REF).
+%
+We caution that these analyses are relatively crude, and could be improved in a number of ways. 
+%
+However, estimating haplotype age and local genealogy is a very active research area, and we use a heuristic approach here to provide an initial view into the data.
+%
+We also caution that although the estimated ages are in units of generations, these estimates have not been calibrated, and so cannot be taken as accurate absolute values.
+%
+They can, however, be compared with each other, to explore the relative age of different events.
+%
 %%
+
+
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/Figure_1a_Clado.jpeg}
+  \caption{\textbf{Clustering of haplotypes by age}. @@TODO bigger font. @@TODO change "kdr haplogroups" to something else. }
+  \label{fig:tree}
+\end{figure}
+
+
+%%
+%
+A key feature of the overall distribution of haplotype ages is that it is bimodal, with a minor mode of haplotypes coalescing recently, and a major mode coalescing further in the past (Figure @@REF).
+%
+This is expected at a locus experiencing recent positive selection and multiple selective sweeps.
+%
+Within each sweep, all haplotypes share a very recent common ancestor, but between sweeps and among haplotypes without any resistance allele, genealogies reflect a more even distribution of ancestry.
+%
+This overall bimodal distribution is also not simply a reflection of geographical population structure, because the same bimodality is observed within several populations (Figure @@REF). 
+%
+We take the midpoint between these two modes as an estimate for the maximum age of selective sweeps at this locus.
+%
+When we then cut the haplotype tree at this age, and take the 11 largest clades, we find that the resulting clades are highly concordant with the clustering and network analyses based on genetic distance within the gene (Figure \ref{fig:tree}).
+%
+Clusters F1-F5 are recapitulated, as are clusters S1-S4, with S4 and S5 merged into a single cluster reflecting their shared ancestry as discovered from previous analyses.
+%
+We also label a new cluster "L@@" representing the lineage of haplotypes carrying the \texttt{I1527T} allele in combination with one or the other \texttt{V402L} allele.
+%
+@@TODO what to say about the other "L@@" cluster?
+%%
+
+
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/Figure_3_RelativeAges_tweak_final.png}
+  \caption{\textbf{Haplotype age distributions}. @@TODO rethink what goes in here, also if this needs to be here or can go to supplementary.}
+  \label{fig:ages}
+\end{figure}
+
+
+%%
+%
+Using these estimates for haplotype age, we draw some tentative conclusions regarding the history of these resistance outbreaks.
+%
+@@TODO describe evidence for direction of spread within spreading haplogroups.
+%
+%%
+
+
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_map.png}
+  \caption{\textbf{Geographical distribution of resistance haplogroups}. }
+  \label{fig:map}
+\end{figure}
+
+
+@@TODO talk about reconstructing ancestral haplotypes and studying recombination. Does this need a new sub-section? If so, what's the title?
+
+
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom.png}
+  \caption{\textbf{Recombination}. @@TODO legend}
+  \label{fig:map}
+\end{figure}
+
+
+@@TODO other part of recombination figure -- both go to supplementary?
 
 
 \section*{Discussion}
 
-TODO
+@@TODO
 
 
 \section*{Methods}
 
-TODO
+@@TODO
 
 \printbibliography
 
