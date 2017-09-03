@@ -59,9 +59,9 @@ Pyrethroids target the voltage-gated sodium channel (VGSC), an essential compone
 %
 Here we use Illumina whole-genome sequence data from phase 1 of the \emph{Anopheles gambiae} 1000 Genomes Project (Ag1000G) to provide a comprehensive account of genetic variation at the \emph{Vgsc} locus in mosquito populations from 8 African countries.
 %
-In addition to three known variants that alter the protein-coding sequence of the \emph{Vgsc} gene, we describe 19 previously unknown non-synonymous variants at appreciable frequency in one or more populations.
+In addition to three known resistance variants that alter the protein-coding sequence of the \emph{Vgsc} gene, we describe 19 previously unknown non-synonymous variants at appreciable frequency in one or more populations.
 %
-For each variant we assign a putative resistance phenotype, based on genetic evidence for recent selection, patterns of linkage between variants, and the position of the variant within the protein structure.
+For each variant we predict a resistance phenotype based on genetic evidence for recent selection, patterns of linkage between variants, the position of the variant within the protein structure, and experimental evidence from other species.
 %
 We use analyses of haplotype structure to refine our understanding of the origins and spread of these resistance variants between species and geographical locations.
 %
@@ -71,7 +71,7 @@ The most successful and widespread resistance lineage (F1) originates in West Af
 %
 We also reconstruct a putative ancestral haplotype for each lineage, and analyse patterns of recombination to show that lineages are unrelated and thus represent independent outbreaks of resistance.
 %
-Our data demonstrate that the molecular basis of pyrethroid resistance in African malaria vectors is more complex than previously appreciated, and provide a foundation for the development of new genetic tools to predict resistance phenotype and track the further spread of resistance.
+Our data demonstrate that the molecular basis of pyrethroid resistance in African malaria vectors is more complex than previously appreciated, and provide a foundation for the development of new genetic tools to inform insecticide resistance management and track the further spread of resistance.
 %%
 
 \end{abstract}
@@ -231,8 +231,8 @@ Both alleles were present in populations sampled from Cameroon and Gabon, includ
 
 
 \begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/demo.png}
-  \caption{Placeholder for LD figure.}
+  \includegraphics[width=1\linewidth,center]{artwork/fig_ld.png}
+  \caption{\textbf{Linkage disequilibrium between non-synonymous variants}. A value of 1 indicates that the two variants always occur in combination, and conversely a value of -1 indicates that the two variants never occur in combination. @TODO nuance this?}
   \label{fig:ld}
 \end{figure}
 
@@ -334,6 +334,13 @@ This difference is the basis for our prediction that all of the secondary non-sy
 %%
 
 
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/Figure_1a_Clado.jpeg}
+  \caption{\textbf{Clustering of haplotypes by age}. @@TODO bigger font. @@TODO change "kdr haplogroups" to something else. @@TODO yticks to show number of haplotypes.}
+  \label{fig:tree}
+\end{figure}
+
+
 %%
 %
 A limitation of both the hierarchical clustering and network analyses is that they only leverage information from within the \textit{Vgsc} gene. 
@@ -359,13 +366,6 @@ We also caution that although the estimated ages are in units of generations, th
 They can, however, be compared with each other, to explore the relative age of different events.
 %
 %%
-
-
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/Figure_1a_Clado.jpeg}
-  \caption{\textbf{Clustering of haplotypes by age}. @@TODO bigger font. @@TODO change "kdr haplogroups" to something else. }
-  \label{fig:tree}
-\end{figure}
 
 
 %%
