@@ -48,10 +48,21 @@ rule artwork_demo:
     shell:
         "./nbexec.sh notebooks/artwork_demo.ipynb"
 
+rule fig_ld:
+    input:
+        rules.setup.output,
+        "notebooks/fig_ld.ipynb",
+    output:
+        "build/notebooks/fig_ld.md",
+        "artwork/fig_ld.png",
+    shell:
+        "./nbexec.sh notebooks/fig_ld.ipynb"
+
 rule artwork:
     # Build all artwork.
     input:
         rules.artwork_demo.output,
+        rules.fig_ld.output,
         # add more inputs here as required
     output:
         touch("build/manuscript.artwork.done")
