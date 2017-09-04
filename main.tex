@@ -1,6 +1,6 @@
 \documentclass[a4paper,11pt,abstracton]{scrartcl}
 
-\usepackage[margin=3.5cm]{geometry}
+\usepackage[margin=3cm]{geometry}
 \usepackage{graphicx}
 \usepackage[UKenglish]{babel}
 \usepackage{csquotes}
@@ -11,6 +11,11 @@
 \usepackage{lmodern}
 \usepackage[textsize=tiny]{todonotes}
 \usepackage[labelsep=period,font=small,labelfont=bf,format=plain]{caption}
+\captionsetup[table]{
+  position=above,
+  belowskip=10pt,
+  aboveskip=0pt,
+}
 \usepackage[group-separator={,}]{siunitx}
 \usepackage{booktabs}
 \usepackage{pdflscape}
@@ -103,7 +108,7 @@ Improvements are needed in our ability to monitor resistance, and gaps must be f
 %%
 
 
-%% Paragraph 2: Introduce VGSC and target-site resistance. Known resistance mutations in An. gambiae.
+%% Paragraph 2: Introduce VGSC and concept of target-site resistance. What is known about target-site resistance in An. gambiae.
 %
 The voltage-gated sodium channel (VGSC) is the physiological target of pyrethroids and of the organochlorine DDT.
 %
@@ -125,7 +130,7 @@ A third variant \texttt{N1570Y} has been found in association with \texttt{L995F
 %%
 
 
-%% Paragraph 3: What is known about VGSC and target-site resistance in other insects. Highlight work on other species that shows there could be many other mutations that potentially cause resistance. Studies in An. gambiae have been limited to date. So there could be more to discover (i.e., anticipating our new discoveries).
+%% Paragraph 3: What is known about VGSC and target-site resistance in other insects. Highlight work on other species that shows there could be many other variants that potentially cause resistance. Studies in An. gambiae have been limited to date. So there could be more to discover (i.e., anticipating our new discoveries).
 %
 Target-site resistance to pyrethroids and DDT has also been studied in a range of other insect species, including disease vectors as well as domestic and crop pests.
 %
@@ -141,7 +146,7 @@ Most previous studies of \emph{An. gambiae} and/or \emph{An. coluzzii} have perf
 %%
 
 
-%% Paragraph 4: Origins and spread of resistance. Review what is and isn't known about multiple origins and spread of VGSC resistance in An. gambiae. Explain the idea of origins and spread. Explain why it's important/useful to know more about origins and spread.
+%% Paragraph 4: Origins and spread of resistance. Review what is and isn't known about multiple origins and spread of VGSC resistance in An. gambiae. Explain the idea of origins and spread. Introduce why it's important/useful to know more about origins and spread.
 %
 Insecticide resistance monitoring in malaria vector populations now often incorporates some form of genetic assay to detect the allele present at \emph{Vgsc} codon 995.
 %
@@ -163,7 +168,7 @@ Better information about the origins and spread of resistance could improve inse
 %%
 
 
-%% Paragraph 5: Segue into results. What we cover in this paper. Relationship to previously reported analyses.
+%% Paragraph 5: Segue into results. What we cover in this paper. Explain relationship to previously reported analyses in Ag1000G phase 1 paper.
 %
 Here we provide a detailed and comprehensive account of genetic variation within the \emph{Vgsc} gene using data from phase 1 of the \emph{Anopheles gambiae} 1000 Genomes Project (Ag1000G).
 %
@@ -176,10 +181,11 @@ Our results reveal an unexpected diversity of molecular mechanisms of resistance
 \section*{Results}
 
 
-\subsection*{Identification of resistance alleles}
+\subsection*{Functional variation (identification of resistance alleles)}
 
 
-%%
+%% Paragraph 1 - Discovery of potentially functional SNPs. I.e., how we came to table 1. What we found there. Reference Ag1000G phase 1 paper, how this paper and results related.
+%
 To identify single nucleotide polymorphisms (SNPs) with a potentially functional role in pyrethroid resistance, we extracted SNPs from the Ag1000G phase 1 data resource that alter the amino acid sequence of the VGSC protein, and computed their allele frequencies among 9 populations defined by species and country of origin.
 %
 SNPs that confer resistance are expected to increase in frequency under selective pressure, and we refined the list of potentially functional SNPs to retain only those at an appreciable frequency (>5\%) in one or more populations (Table \ref{table:variants_missense}).
@@ -190,7 +196,8 @@ We reported 15 of these novel SNPs in our initial analysis of the Ag1000G phase 
 %%
 
 
-%% begin Table 1
+%% Table 1 - Functional SNPs.
+%
 \afterpage{%
 %\clearpage
 % N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
@@ -198,10 +205,19 @@ We reported 15 of these novel SNPs in our initial analysis of the Ag1000G phase 
 \begin{landscape}
 \thispagestyle{empty}
 \begin{table}[h]
-%  \small
   \footnotesize
   \centering
   \begin{threeparttable}
+
+  \caption{
+%
+\textbf{Non-synonymous nucleotide variation in the voltage-gated sodium channel gene}. 
+%
+AO=Angola; BF=Burkina Faso; GN=Guinea; CM=Cameroon; GA=Gabon; UG=Uganda; KE=Kenya; GW=Guinea-Bissau; \textit{Ac}=\textit{An. coluzzii}; \textit{Ag}=\textit{An. gambiae}.
+%
+All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase 1 populations, with the exception of \texttt{2,400,071 G>T} which is only found in the CM\emph{Ag} population at 0.4\% frequency but is included because another mutation (\texttt{2,400,071 G>A}) is found at the same position causing the same amino acid substitution (\texttt{M490I}). 
+}
+
   \input{tables/variants_missense.tex}
   
   \begin{tablenotes}
@@ -221,15 +237,6 @@ We reported 15 of these novel SNPs in our initial analysis of the Ag1000G phase 
   
   \end{threeparttable}
   
-  \caption{
-%
-\textbf{Non-synonymous nucleotide variation in the voltage-gated sodium channel gene}. 
-%
-AO=Angola; BF=Burkina Faso; GN=Guinea; CM=Cameroon; GA=Gabon; UG=Uganda; KE=Kenya; GW=Guinea-Bissau; \textit{Ac}=\textit{An. coluzzii}; \textit{Ag}=\textit{An. gambiae}.
-%
-All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase 1 populations, with the exception of \texttt{2,400,071 G>T} which is only found in the CM\emph{Ag} population at 0.4\% frequency but is included because another mutation (\texttt{2,400,071 G>A}) is found at the same position causing the same amino acid substitution (\texttt{M490I}). 
-}
-
   \label{table:variants_missense}
   
 \end{table}
@@ -238,21 +245,21 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
 } % end afterpage
 %% end Table 1
 
-%%
-The two alleles in codon 995 are clearly the main drivers of resistance at this locus, with the \texttt{L995F} allele at high frequency in populations of both species from West, Central and Southern Africa, and the \texttt{L995S} allele at high frequency among \textit{An. gambiae} populations from Central and East Africa (Table \ref{table:variants_missense}; @@REF Ag1000G).
+
+%% Paragraph 2 - Findings for 995 variants. Frequencies. Cite evidence for selection. Clearly main drivers of resistance. Hardy-Weinberg results.
+%
+The two alleles in codon 995 are clearly the main drivers of resistance at this locus.
+%
+The \texttt{L995F} allele at high frequency in populations of both species from West, Central and Southern Africa, and the \texttt{L995S} allele at high frequency among \textit{An. gambiae} populations from Central and East Africa (Table \ref{table:variants_missense}; @@REF Ag1000G).
+%
+All haplotypes carrying L995F or L995S have evidence for strong recent positive selection (@@REF Ag1000G).
 %
 Both alleles were present in populations sampled from Cameroon and Gabon, including some individuals with a hybrid \texttt{L995F/S} genotype. Within these populations, the \texttt{L995F} and \texttt{L995S} alleles were (@@TODO were not?) in Hardy-Weinberg equilibrium (P=@@), thus there does not (@@does?) appear to be selection against hybrids.
 %%
 
 
-\begin{figure}[!b]
-  \includegraphics[width=1\linewidth,center]{artwork/fig_ld.png}
-  \caption{\textbf{Linkage disequilibrium between non-synonymous variants}. A value of 1 indicates that the two variants always occur in combination, and conversely a value of -1 indicates that the two variants never occur in combination. @TODO nuance this?}
-  \label{fig:ld}
-\end{figure}
-
-
-%%
+%% Paragraph 3 - Results for I1527T and V402L.
+%
 The \texttt{I1527T} allele is present in \textit{An. coluzzii} from Burkina Faso at 14\% frequency, and there is evidence that haplotypes carrying this allele have been positively selected (@@REF Ag1000G).
 %
 Codon 1527 occurs within trans-membrane domain segment \texttt{III.S6}, immediately adjacent to a second predicted binding pocket for pyrethroid molecules, thus it is plausible that \texttt{I1527T} could alter insecticide binding (@@REF Dong).
@@ -269,7 +276,21 @@ Because of the limited geographical distribution of these alleles, we hypothesiz
 %%
 
 
+%% Figure - Pairwise LD.
+%
+\begin{figure}[!t]
+
+  \includegraphics[width=1\linewidth,center]{artwork/fig_ld.png}
+  
+  \caption{\textbf{Linkage disequilibrium between non-synonymous variants}. A value of 1 indicates that the two variants always occur in combination, and conversely a value of -1 indicates that the two variants never occur in combination. @TODO nuance this?}
+  
+  \label{fig:ld}
+\end{figure}
 %%
+
+
+%% Paragraph 4 - L995F enhancers.
+%
 Of the other 16 SNPs, 13 occurred almost exclusively in combination with \texttt{L995F} (Figure @@; @@REF Ag1000G).
 %
 These include the \texttt{N1570Y} allele, known to enhance pyrethroid resistance in \textit{An. gambiae} in combination with \texttt{L995F}.
@@ -284,7 +305,8 @@ Because of the tight linkage between these 13 SNPs and the \texttt{L995F} allele
 %%
 
 
-%%
+%% Paragraph 5 - Other high frequency variants we think are probably not resistance variants and why.
+%
 The remaining 3 variants (\texttt{M490I}, \texttt{A1125V}, \texttt{V1254I}) do not occur in combination with any known resistance allele, and do not appear to be associated with haplotypes under selection (@@REF Ag1000G).
 %
 A possible exception is the \texttt{M490I} allele found at 18\% frequency in the Kenyan population, although the fact that this population has experienced a recent population crash makes it difficult to test for evidence of selection at this locus.
@@ -297,7 +319,8 @@ All 3 variants occur in internal linker domains, and so do not fit the model of 
 \subsection*{Origins and spread of resistance alleles}
 
 
-%%
+%% Paragraph 1 - Overview and recapitulation of haplotype clustering results from Ag1000G phase 1. Introduce F1-F5, S1-S5. Which clusters implied spread. Sentence about here we extend analyses blah blah.
+%
 Although it is well-known that pyrethroid resistance is becoming increasingly prevalent in malaria vector populations across Africa, it has not previously been clear whether this increase in prevalence is being driven primarily by the spread of resistance alleles from one location to another via mosquito migration, or by resistance alleles emerging independently and simultaneously in multiple locations, or by a combination of both processes.
 %
 In our initial analyses of haplotype data from Ag1000G phase 1 (@@REF Ag1000G), we used a clustering approach based on genetic distance to identify 10 haplotype clusters at the \textit{Vgsc} locus carrying a known resistance driver allele, of which five clusters carried \texttt{L995F} (labelled F1-F5) and a further five clusters carried \texttt{L995S} (labelled S1-S5).
@@ -316,30 +339,35 @@ In this section we present several new analyses to confirm and extend our initia
 %%
 
 
+%% Figure - Haplotype networks.
+%
 \begin{figure}[!b]
   \includegraphics[width=1.1\linewidth,center]{artwork/fig_networks.png}
   \caption{\textbf{Haplotype networks}. @@TODO redo the figure. @@TODO annotate non-syn edges in cluster F3. @@TODO mention if any clusters fixed for non-syn variants so not shown. @@TODO annotate other non-syn edges, e.g., in S4?}
   \label{fig:networks}
 \end{figure}
-
-
 %%
+
+
+%% Paragraph 2 - Introduce haplotype networks, confirm major haplotype clustering for 995 alleles.
+%
 To provide an alternative view of the genetic similarity between haplotypes carrying known or predicted resistance driver alleles, we used haplotype data across all 1710 (@@CHECK) SNPs within the \textit{Vgsc} open reading frame to construct median-joining networks (Figure \ref{fig:networks}).
 %
 We constructed these networks up to a maximum distance of @@4 SNP differences, to ensure that each connected component in the resulting networks represents a collection of haplotypes with a recent common ancestor, and thus which is also likely to be minimally affected by recombination within the gene.
 %
 For \texttt{L995F}, the resulting network confirms the presence of five distinct clusters of closely-related haplotypes, with close correspondance to the clusters F1-F5 identified previously (@@REF Ag1000G).
 %
+The \texttt{L995S} network also confirms five distinct clusters, in concordance with our previous analysis.
+%%
+
+
+%% Paragraph 3 - Interesting observations from networks. Including comparison between S and F networks for amount of other non-syn changes. Also inference of multiple introgression events between species within F1.
+%
 The haplotype network for cluster F1 brings into sharp relief the explosive evolution of secondary amino acid substitutions within the F1 lineage, providing further evidence that they play a functional role in enhancing the \texttt{L995F} resistance phenotype.
 %
 The distribution of secondary variants within the F1 network also allows us to infer multiple introgression events between the two species.
 %
 @@TODO details of which variants are found in both species.
-%%
-
-
-%%
-The \texttt{L995S} network also confirms five distinct clusters, in concordance with our previous analysis.
 %
 The contrast between the haplotype networks for the \texttt{L995F} and \texttt{L995S} alleles is striking, because of the near-total absence of any non-synonymous variants within the \texttt{L995S} networks.
 %
@@ -349,14 +377,17 @@ This difference is the basis for our prediction that all of the secondary non-sy
 %%
 
 
+%% Figure 3 - Overall haplotype age distribution.
+%
 \begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/Figure_1a_Clado.jpeg}
-  \caption{\textbf{Clustering of haplotypes by age}. @@TODO bigger font. @@TODO change "kdr haplogroups" to something else. @@TODO yticks to show number of haplotypes.}
-  \label{fig:tree}
+  \includegraphics[width=1.1\linewidth,center]{artwork/demo.png}
+  \caption{\textbf{Haplotype age distribution}. @@TODO real figure.}
+  \label{fig:age_hist}
 \end{figure}
-
-
 %%
+
+
+%% Paragraph 4 - Limitations of clustering and networks based on genetic distance. Introduce analyses of haplotype age, how they work, what we’ve done in overview.
 %
 A limitation of both the hierarchical clustering and network analyses is that they only leverage information from within the \textit{Vgsc} gene. 
 %
@@ -370,7 +401,7 @@ For each pair of haplotypes, we used a heuristic approach to estimate the length
 %
 We then combined the information about IBD length and number of mutations to estimate the time to MRCA or "age" for each pair of haplotypes.
 %
-We used hierarchical clustering to visualise the overall age structure (Figure \ref{fig:tree}), and also analysed the distribution of ages within and between different collections of haplotypes (Figure @@REF).
+We then studied the distribution of haplotype ages (Figure \ref{fig:age_hist}), and used hierarchical clustering to visualise the overall age structure (Figure \ref{fig:tree}).
 %
 We caution that these analyses are relatively crude, and could be improved in a number of ways. 
 %
@@ -383,9 +414,19 @@ They can, however, be compared with each other, to explore the relative age of d
 %%
 
 
-%%
+%% Figure - Haplotype age tree.
 %
-A key feature of the overall distribution of haplotype ages is that it is bimodal, with a minor mode of haplotypes coalescing recently, and a major mode coalescing further in the past (Figure @@REF).
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/Figure_1a_Clado.jpeg}
+  \caption{\textbf{Clustering of haplotypes by age}. @@TODO bigger font. @@TODO change "kdr haplogroups" to something else. @@TODO yticks to show number of haplotypes.}
+  \label{fig:tree}
+\end{figure}
+%%
+
+
+%% Paragraph 5 - Describe overall age distribution, bimodality, justify age at which we cut (maximum age of a selective sweep). Then describe what that does to the clustering by age, compare with previous clustering by genetic distance.
+%
+A key feature of the overall distribution of haplotype ages is that it is bimodal, with a minor mode of haplotypes coalescing recently, and a major mode coalescing further in the past (Figure \ref{fig:age_hist}).
 %
 This is expected at a locus experiencing recent positive selection and multiple selective sweeps.
 %
@@ -405,14 +446,7 @@ We also label a new cluster "L@@" representing the lineage of haplotypes carryin
 %%
 
 
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/Figure_3_RelativeAges_tweak_final.png}
-  \caption{\textbf{Haplotype age distributions}. @@TODO rethink what goes in here, also if this needs to be here or can go to supplementary.}
-  \label{fig:ages}
-\end{figure}
-
-
-%%
+%% Paragraph 6 - What can we infer about spread (within haplogroups)? What can we say? Generally, F older than S, although not clear cut. Talk about F1, clear result that flow into central africa. S3 hard to call, difficult to see direction. Alternative hypothesis is flow from an unsampled third population to both UG and KE, however also rule out because not separate sub-clades. Suggest complex multiple gene flow events. Talk about the CM/GA haplogroups, but caveat about sampling dates and ages are uncalibrated. Not the same pattern for all three haplogroups, suggesting multiple gene flow events, but cannot go further without more sampling.
 %
 Using these estimates for haplotype age, we draw some tentative conclusions regarding the history of these resistance outbreaks.
 %
@@ -421,24 +455,71 @@ Using these estimates for haplotype age, we draw some tentative conclusions rega
 %%
 
 
+%% Figure - Age distributions within haplogroups. Include results for Cameroon/Gabon haplogroups.
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/Figure_3_RelativeAges_tweak_final.png}
+  \caption{\textbf{Haplotype age distributions}. @@TODO rethink what goes in here, also if this needs to be here or can go to supplementary.}
+  \label{fig:ages}
+\end{figure}
+%%
+
+
+%% Paragraph 7? - Bringing results together, display on map...
+%
+@@TODO describe how we put together the map (Figure \ref{fig:map}).
+%%
+
+
+%% Figure - Map of haplotypes and spread.
+%
 \begin{figure}[!b]
   \includegraphics[width=1.1\linewidth,center]{artwork/fig_map.png}
   \caption{\textbf{Geographical distribution of resistance haplogroups}. }
   \label{fig:map}
 \end{figure}
+%%
 
 
-@@TODO talk about reconstructing ancestral haplotypes and studying recombination. Does this need a new sub-section? If so, what's the title?
+\subsection*{Recombination and independent outbreaks of resistance}
 
 
+%% Paragraph 1 - Introduce the problem/question, what do we want to infer? We want to infer independent outbreaks of resistance, a.k.a., multiple local origins/outbreaks, by which we mean ... @@TODO. haplotype clusters appear distinct but recombination events could occur during geographical spread, bringing resistance onto a different genetic backgrounds.
+%
+@@TODO
+%%
+
+
+%% Paragraph 2 - Say what analysis we did to address this - which is, reconstruct putative ancestral haplotype for each haplogroup. Then scan all haplotypes against, computing distinct (divergence) in windows (Figure 7; Figure 8).
+%
+@@TODO
+%%
+
+
+%% Figure - L995F recombination
+%
 \begin{figure}[!b]
   \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom.png}
-  \caption{\textbf{Recombination}. @@TODO legend}
-  \label{fig:map}
+  \caption{\textbf{Recombination and ancestral haplotypes for L995F}. @@TODO legend}
+  \label{fig:recom_f}
 \end{figure}
+%%
 
 
-@@TODO other part of recombination figure -- both go to supplementary?
+%% Paragraph 3 - Describe results of scans, evidence for independent outbreaks.
+%
+@@TODO
+%%
+
+
+%% Figure - L995S recombination
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom.png}
+  \caption{\textbf{Recombination and ancestral haplotypes for L995S}. @@TODO legend}
+  \label{fig:recom_s}
+\end{figure}
+%%
 
 
 \section*{Discussion}
