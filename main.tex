@@ -503,6 +503,7 @@ At a given gene locus, a hard selective sweep gives rise to a single resistance 
 %%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Outbreak analysis from haplotype age}
 
 
@@ -526,7 +527,7 @@ For each pair of haplotypes, we estimated the length of the region shared identi
 %
 We then combined these two pieces of information to produce a point estimate for the haplotype age (Methods).
 %
-We then studied the distribution of haplotype ages (Figure \ref{fig:age_hist}), and used hierarchical clustering to construct a dendrogram and visualise the overall age structure (Figure \ref{fig:tree}).
+We studied the overall distribution of pairwise haplotype ages (Figure \ref{fig:age_hist}), and used hierarchical clustering to construct a dendrogram and visualise the overall age structure (Figure \ref{fig:tree}).
 %
 We caution that although the estimated ages are in units of generations, these estimates have not been calibrated, and there is substantial uncertainty regarding both the mutation and recombination rate parameters.
 %
@@ -552,6 +553,8 @@ This is expected at an insecticide resistance locus experiencing one or more res
 %
 Within each outbreak, all haplotypes share a very recent common ancestor, but between outbreaks and among haplotypes without any resistance allele, haplotypes are more distantly related, and the distribution of ages is influenced by mosquito population size and other demographic factors.
 %
+In particular, mosquito populations generally have a large effective population size (@@REF Ag1000G), and so in the absence of selection, haplotypes are expected to coalesce slowly.
+%
 The bimodal age distribution is not due to geographical population structure, because the same bimodality is observed within several populations.
 %
 We take the midpoint between these two modes as an estimate for the earliest time of onset of selective pressure due to insecticides, and thus for the maximum age of a resistance outbreak.
@@ -562,7 +565,7 @@ Comparing this to previous analyses of haplotype structure based on genetic dist
 %
 We label a new cluster ``L@@'' representing an outbreak driven by the \texttt{I1527T} allele in combination with one or the other \texttt{V402L} allele.
 %
-We also label a cluster ``L@@'' capturing a set of haplotypes from Kenya carrying the \texttt{M490I} variant, although the fact that these haplotypes all share a recent common ancestor may be a reflection of the extreme demography of the Kenyan population (@@REF) and not reflect recent selection for insecticide resistance.
+We also label a cluster ``L@@'' capturing a set of haplotypes from Kenya carrying the \texttt{M490I} variant, although the fact that these haplotypes all share a recent common ancestor may be a reflection of the unusual demography of the Kenyan population which has experienced a severe population crash (@@REF) and not be due to recent selection for insecticide resistance.
 %
 As in earlier analyses, clusters F1, F4, F5 and S3 all include haplotypes sampled from multiple geographical locations, and thus represent spreading outbreaks.
 %
@@ -584,21 +587,25 @@ Clusters F2, F3, S1, S2, S4/5 and L1 include only haplotypes from a single sampl
 %
 We then studied the distribution of haplotype ages within each spreading outbreak, to attempt to reconstruct information about the historical path of transmission of resistance alleles between locations.
 %
-To do this, we decompose each spreading outbreak into separate sampling locations, and compared the distribution of haplotype ages both within and between locations.
+To do this, we grouped the haplotypes within each spreading outbreak by sampling location, and compared the distribution of haplotype ages both within and between locations.
 %
-We define three possible spreading scenarios, being: (1) a directional spread from one population to another; (2) spread from an unsampled population into the sampled populations; and (3) a complex scenario involving multiple gene flow events.
+To aid in interpreting these data, we define three possible spreading scenarios, being: (1) a directional spread from one population to another; (2) spread from an unsampled population into the sampled populations; and (3) a complex scenario involving multiple gene flow events.
 %
 In Figure \ref{fig:spreading_cartoon} we illustrate the expected genealogy and haplotype age distribution under each of these scenarios.
 %
-The clearest result is obtained for outbreak F1 (Figure \ref{fig:outbreak_spread}).
+
+
+%%
 %
-Within this outbreak, haplotypes from Cameroon and Angola are younger than haplotypes from Burkina Faso and Guinea.
+The clearest result was obtained for outbreak F1 (Figure \ref{fig:outbreak_spread}).
+%
+Within this outbreak, haplotypes from Cameroon and Angola are significantly younger than haplotypes from Burkina Faso and Guinea.
 %
 The age distributions are consistent with an outbreak originating in West Africa and subsequently spreading towards Cameroon and separately towards Angola.
 %
-Interestingly the age distributions for \textit{An. gambiae} and \textit{An. coluzzii} from Burkina Faso are very similar, despite the fact that previous studies have shown the direction of introgression has occurred from \textit{An. gambiae} into \textit{An. coluzzii}.
+We were surprised that the age distributions for \textit{An. gambiae} and \textit{An. coluzzii} from Burkina Faso are very similar, despite the fact that previous studies have shown that introgression has occurred from \textit{An. gambiae} into \textit{An. coluzzii}.
 %
-This may indicate that introgression happened during the early phases of the outbreak, but is also consistent with a complex history of multiple gene flow events between the species.
+This may indicate that the initial introgression event happened during the early phases of the outbreak, but is also consistent with a complex history of multiple gene flow events between the species.
 %%
 
 
@@ -612,7 +619,75 @@ This may indicate that introgression happened during the early phases of the out
 %%
 
 
+%%
+%
+Outbreaks F4, F5 and S2 each involve haplotypes from both Cameroon and Gabon.
+%
+Interpreting the age distributions for these outbreaks is difficult, because mosquitoes from Gabon were collected at a much earlier time point (2000) than mosquitoes from Cameroon (20@@).
+%
+If our haplotype age estimates were well-calibrated, and we also had reliable estimates for the number of mosquito generations per year, then we might be able to adjust for this time difference, however we are not able to do so presently.
+%
+An interesting feature of these outbreaks, however, is that we would expect haplotypes from Gabon to appear older due to the time of sampling, which is observed for outbreak S2 but not for F4 or F5.
+%
+Indeed, S2 is at a high frequency among all Gabon haplotypes and a low frequency among Cameroon haplotypes, whereas the reverse is true for F4 and F5.
+%
+These data suggest that F4 and F5 have spread from Cameroon towards Gabon, while S2 has spread in the opposite direction.
+%
+A lot can happen in mosquito populations in @@N years, however, and these conclusions remain highly speculative pending further sampling from both locations. 
+%
+%%
 
+
+%%
+%
+For outbreak S3 involving haplotypes from Uganda and Kenya, the age distributions do not suggest any clear direction of gene flow.
+%
+This could reflect multiple gene flow events in either or both directions.
+%
+However, another outbreak (S1) is localised in Uganda and represented within the Ugandan population at roughly equal frequency with S3.
+%
+If transmission was occurring from Uganda towards Kenya, we might expect both outbreaks to have spread to Kenya.
+%
+Thus the localisation of S1 suggests S3 has spread into Uganda from Kenya or another location.
+%
+Again, this conclusion remains tentative and requires confirmation via further sampling.
+%%
+
+
+%% Figure - Map of haplotypes and spread.
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_map.png}
+  \caption{\textbf{Geographical distribution of resistance outbreaks}. @@TODO arrows for Gabon <-> Cameroon. @@TODO change arrow for Kenya -> Uganda. @@TODO add source area for F1.}
+  \label{fig:map}
+\end{figure}
+%%
+
+
+%%
+%
+To summarise these conclusions in a concise way, we have depicted the distribution and spread of resistance outbreaks via the map shown in Figure \ref{fig:map}.
+%
+We have plotted haplotypes from each sampling location as a pie chart.
+%
+The overall size of each pie chart represents the number of haplotypes sampled, and coloured wedges within each pie represent the frequency of each resistance outbreak within the population.
+%
+Coloured arrows are used to depict our inferences regarding the transmission paths for spreading outbreaks.
+%
+Our conclusions regarding direction of spread for outbreaks F4, F5, S2 and S3 are tentative, and we indicate this with a question mark. 
+%
+Because of the relatively sparse geographical representation within the Ag1000G phase 1 dataset, and the fact that collections were not synchronized but span several years, we cannot be precise about the geographical origins of these resistance outbreaks.
+%
+Even for outbreak F1 where we have clear evidence of spread from West Africa towards Central and Southern Africa, we have only sampled mosquitoes from Guinea and Burkina Faso, and the true source of the outbreak may not be either of these countries.
+%
+We indicate this uncertainty regarding the outbreak source as a coloured area with a dashed border.
+%
+This representation is imperfect, as is our knowledge regarding the sources and transmission paths of these outbreaks, but we hope this depiction may at least serve to stimulate further sampling, analysis and discussion with the aim of improving our knowledge of resistance outbreaks for \textit{Vgsc} and other insecticide resistance genes.
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Reconstruction of ancestral haplotypes and analysis of recombination}
 
 
 @@TODO
@@ -652,15 +727,6 @@ This may indicate that introgression happened during the early phases of the out
 @@TODO describe how we put together the map (Figure \ref{fig:map}).
 %%
 
-
-%% Figure - Map of haplotypes and spread.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_map.png}
-  \caption{\textbf{Geographical distribution of resistance haplogroups}. }
-  \label{fig:map}
-\end{figure}
-%%
 
 
 \subsection*{Recombination and independent outbreaks of resistance}
