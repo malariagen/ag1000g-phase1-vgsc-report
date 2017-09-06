@@ -506,6 +506,115 @@ At a given gene locus, a hard selective sweep gives rise to a single resistance 
 \subsection*{Outbreak analysis from haplotype age}
 
 
+%% Figure - Overall haplotype age distribution.
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/demo.png}
+  \caption{\textbf{Haplotype age distribution}. @@TODO real figure.}
+  \label{fig:age_hist}
+\end{figure}
+%%
+
+
+%%
+%
+As described above, haplotype data from genome regions both within and flanking the \textit{Vgsc} gene provide a higher resolution for reconstructing recent historical events.
+%
+To leverage this information, we used a heuristic approach to estimate the time to most recent common ancestor (TMRCA) or ``age'' for each pair of haplotypes in our dataset, centering the analysis on \textit{Vgsc} codon 995.
+%
+For each pair of haplotypes, we estimated the length of the region shared identical by descent (IBD), and the number of mutations that have accumulated since the most recent common ancestor.
+%
+We then combined these two pieces of information to produce a point estimate for the haplotype age (Methods).
+%
+We then studied the distribution of haplotype ages (Figure \ref{fig:age_hist}), and used hierarchical clustering to construct a dendrogram and visualise the overall age structure (Figure \ref{fig:tree}).
+%
+We caution that although the estimated ages are in units of generations, these estimates have not been calibrated, and there is substantial uncertainty regarding both the mutation and recombination rate parameters.
+%
+The ages therefore should not be interpreted as reliable absolute values, but they can be compared to each other to investigate the relative age of different events.
+%%
+
+ 
+%% Figure - Haplotype age tree.
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/Figure_1a_Clado.jpeg}
+  \caption{\textbf{Clustering of haplotypes by age}. @@TODO bigger font. @@TODO change "kdr haplogroups" to something else. @@TODO yticks to show number of haplotypes.}
+  \label{fig:tree}
+\end{figure}
+%%
+
+
+%%
+%
+A key feature of the overall age distribution is that it is bimodal, with a minor mode of haplotypes coalescing recently, and a major mode coalescing further in the past (Figure \ref{fig:age_hist}).
+%
+This is expected at an insecticide resistance locus experiencing one or more resistance outbreaks.
+%
+Within each outbreak, all haplotypes share a very recent common ancestor, but between outbreaks and among haplotypes without any resistance allele, haplotypes are more distantly related, and the distribution of ages is influenced by mosquito population size and other demographic factors.
+%
+The bimodal age distribution is not due to geographical population structure, because the same bimodality is observed within several populations.
+%
+We take the midpoint between these two modes as an estimate for the earliest time of onset of selective pressure due to insecticides, and thus for the maximum age of a resistance outbreak.
+%
+To identify haplotype clusters representing putative resistance outbreaks, we then cut the haplotype dendrogram at this maximum outbreak age (Figure \ref{fig:tree}).
+%
+Comparing this to previous analyses of haplotype structure based on genetic distance, we find clusters F1-F5 and S1-S3 recapitulated with close correspondence, and S4 and S5 merged into a single cluster.
+%
+We label a new cluster ``L@@'' representing an outbreak driven by the \texttt{I1527T} allele in combination with one or the other \texttt{V402L} allele.
+%
+We also label a cluster ``L@@'' capturing a set of haplotypes from Kenya carrying the \texttt{M490I} variant, although the fact that these haplotypes all share a recent common ancestor may be a reflection of the extreme demography of the Kenyan population (@@REF) and not reflect recent selection for insecticide resistance.
+%
+As in earlier analyses, clusters F1, F4, F5 and S3 all include haplotypes sampled from multiple geographical locations, and thus represent spreading outbreaks.
+%
+Clusters F2, F3, S1, S2, S4/5 and L1 include only haplotypes from a single sampling location, and thus appear to represent localised outbreaks.
+%%
+
+
+%% Figure - Infering spread
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/spreading.pdf}
+  \caption{\textbf{Inferring history of spread from haplotype ages}. @@TODO explain.}
+  \label{fig:spreading_cartoon}
+\end{figure}
+%%
+
+
+%%
+%
+We then studied the distribution of haplotype ages within each spreading outbreak, to attempt to reconstruct information about the historical path of transmission of resistance alleles between locations.
+%
+To do this, we decompose each spreading outbreak into separate sampling locations, and compared the distribution of haplotype ages both within and between locations.
+%
+We define three possible spreading scenarios, being: (1) a directional spread from one population to another; (2) spread from an unsampled population into the sampled populations; and (3) a complex scenario involving multiple gene flow events.
+%
+In Figure \ref{fig:spreading_cartoon} we illustrate the expected genealogy and haplotype age distribution under each of these scenarios.
+%
+The clearest result is obtained for outbreak F1 (Figure \ref{fig:outbreak_spread}).
+%
+Within this outbreak, haplotypes from Cameroon and Angola are younger than haplotypes from Burkina Faso and Guinea.
+%
+The age distributions are consistent with an outbreak originating in West Africa and subsequently spreading towards Cameroon and separately towards Angola.
+%
+Interestingly the age distributions for \textit{An. gambiae} and \textit{An. coluzzii} from Burkina Faso are very similar, despite the fact that previous studies have shown the direction of introgression has occurred from \textit{An. gambiae} into \textit{An. coluzzii}.
+%
+This may indicate that introgression happened during the early phases of the outbreak, but is also consistent with a complex history of multiple gene flow events between the species.
+%%
+
+
+%% Figure - Age distributions within haplogroups. Include results for Cameroon/Gabon haplogroups.
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/Figure_3_RelativeAges_tweak_final.png}
+  \caption{\textbf{Haplotype age distributions}. @@TODO rethink what goes in here, also if this needs to be here or can go to supplementary.}
+  \label{fig:outbreak_spread}
+\end{figure}
+%%
+
+
+
+
+
 @@TODO
 
 
@@ -536,92 +645,6 @@ At a given gene locus, a hard selective sweep gives rise to a single resistance 
 
 
 
-%% Figure 3 - Overall haplotype age distribution.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/demo.png}
-  \caption{\textbf{Haplotype age distribution}. @@TODO real figure.}
-  \label{fig:age_hist}
-\end{figure}
-%%
-
-
-%% Paragraph 4 - Limitations of clustering and networks based on genetic distance. Introduce analyses of haplotype age, how they work, what we’ve done in overview.
-%
-A limitation of both the hierarchical clustering and network analyses is that they only leverage information from within the \textit{Vgsc} gene. 
-%
-Because they are relying on estimates of genetic distance from within a relatively small genome region, they have limited resolution to infer very recent events, because insufficient time has elapsed for mutations to occur.
-%
-This means that, within each of the lineages we have identified where adaptive gene flow has occurred, the analyses provide little information about the direction or relative timing of gene flow events.
-%
-To improve our resolution to infer recent events, we used information about the extent of haplotype sharing on both flanks of the gene.
-%
-For each pair of haplotypes, we used a heuristic approach to estimate the length of the region shared identical by descent (IBD) between two haplotypes, extending both upstream and downstream of the gene, and to estimate the number of mutations that have accumulated within IBD regions since the most recent common ancestor (MRCA).
-%
-We then combined the information about IBD length and number of mutations to estimate the time to MRCA or "age" for each pair of haplotypes.
-%
-We then studied the distribution of haplotype ages (Figure \ref{fig:age_hist}), and used hierarchical clustering to visualise the overall age structure (Figure \ref{fig:tree}).
-%
-We caution that these analyses are relatively crude, and could be improved in a number of ways. 
-%
-However, estimating haplotype age and local genealogy is a very active research area, and we use a heuristic approach here to provide an initial view into the data.
-%
-We also caution that although the estimated ages are in units of generations, these estimates have not been calibrated, and so cannot be taken as accurate absolute values.
-%
-They can, however, be compared with each other, to explore the relative age of different events.
-%
-%%
-
-
-%% Figure - Haplotype age tree.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/Figure_1a_Clado.jpeg}
-  \caption{\textbf{Clustering of haplotypes by age}. @@TODO bigger font. @@TODO change "kdr haplogroups" to something else. @@TODO yticks to show number of haplotypes.}
-  \label{fig:tree}
-\end{figure}
-%%
-
-
-%% Paragraph 5 - Describe overall age distribution, bimodality, justify age at which we cut (maximum age of a selective sweep). Then describe what that does to the clustering by age, compare with previous clustering by genetic distance.
-%
-A key feature of the overall distribution of haplotype ages is that it is bimodal, with a minor mode of haplotypes coalescing recently, and a major mode coalescing further in the past (Figure \ref{fig:age_hist}).
-%
-This is expected at a locus experiencing recent positive selection and multiple selective sweeps.
-%
-Within each sweep, all haplotypes share a very recent common ancestor, but between sweeps and among haplotypes without any resistance allele, genealogies reflect a more even distribution of ancestry.
-%
-This overall bimodal distribution is also not simply a reflection of geographical population structure, because the same bimodality is observed within several populations (Figure @@REF). 
-%
-We take the midpoint between these two modes as an estimate for the maximum age of selective sweeps at this locus.
-%
-When we then cut the haplotype tree at this age, and take the 11 largest clades, we find that the resulting clades are highly concordant with the clustering and network analyses based on genetic distance within the gene (Figure \ref{fig:tree}).
-%
-Clusters F1-F5 are recapitulated, as are clusters S1-S4, with S4 and S5 merged into a single cluster reflecting their shared ancestry as discovered from previous analyses.
-%
-We also label a new cluster "L@@" representing the lineage of haplotypes carrying the \texttt{I1527T} allele in combination with one or the other \texttt{V402L} allele.
-%
-@@TODO what to say about the other "L@@" cluster?
-%%
-
-
-%% Paragraph 6 - What can we infer about spread (within haplogroups)? What can we say? Generally, F older than S, although not clear cut. Talk about F1, clear result that flow into central africa. S3 hard to call, difficult to see direction. Alternative hypothesis is flow from an unsampled third population to both UG and KE, however also rule out because not separate sub-clades. Suggest complex multiple gene flow events. Talk about the CM/GA haplogroups, but caveat about sampling dates and ages are uncalibrated. Not the same pattern for all three haplogroups, suggesting multiple gene flow events, but cannot go further without more sampling.
-%
-Using these estimates for haplotype age, we draw some tentative conclusions regarding the history of these resistance outbreaks.
-%
-@@TODO describe evidence for direction of spread within spreading haplogroups.
-%
-%%
-
-
-%% Figure - Age distributions within haplogroups. Include results for Cameroon/Gabon haplogroups.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/Figure_3_RelativeAges_tweak_final.png}
-  \caption{\textbf{Haplotype age distributions}. @@TODO rethink what goes in here, also if this needs to be here or can go to supplementary.}
-  \label{fig:ages}
-\end{figure}
-%%
 
 
 %% Paragraph 7? - Bringing results together, display on map...
