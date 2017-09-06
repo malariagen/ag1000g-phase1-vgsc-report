@@ -178,9 +178,12 @@ Our results reveal an unexpected diversity of molecular mechanisms of resistance
 %%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Results}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Functional variation}
 
 
@@ -316,6 +319,7 @@ All 3 variants occur in internal linker domains, and so do not fit the model of 
 %%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Haplotype structure}
 
 
@@ -405,7 +409,7 @@ Some secondary variants are present within the \texttt{L995S} networks, but all 
 %%
 
 
-%%
+%% Limitations of clustering and networks based on genetic distance in a fixed region.
 %
 While the haplotype clustering and network analyses provide evidence for the spread of resistance alleles via adaptive gene flow, and for the secondary evolution of \texttt{L995F} enhancer alleles, they have several limitations.
 %
@@ -427,11 +431,89 @@ In the next sub-sections we provide some conceptual foundations to help clarify 
 %%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Insecticide resistance outbreaks}
 
 
+%%
+%
+To provide an aid to further interpretation of the genetic data, and relating them to the challenges of insecticide resistance management, we introduce the concept of an \textbf{insecticide resistance outbreak}.
+%
+Informally, we define a resistance outbreak by analogy with the epidemiological concept of an outbreak, as a rapid increase in the prevalence of insecticide resistance among mosquitoes at a particular place and time.
+%
+Note that this does not imply that the overall abundance of mosquitoes is increase, just that the relative frequency of resistance within mosquito populations is increasing.
+%
+We also require that all occurrences of insecticide resistance within the same outbreak are connected by a chain of transmission of resistance alleles from parent to progeny mosquitoes, and thus can be traced back to a single resistant common ancestor.
+%
+A resistance outbreak can be \textbf{localised}, meaning that it affects a small group of mosquitoes of a single species from a limited geographical area.
+%
+Alternatively, a resistance outbreak may be \textbf{spreading}, meaning that resistance alleles have been transmitted since the introduction of insecticides by interbreeding of mosquitoes of different species and/or originating from different geographical locations.
+%
+%%
 
 
+%% Figure - Cartoon of outbreaks.
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/outbreaks.pdf}
+  \caption{\textbf{Illustration of insecticide resistance outbreaks}. @@TODO explanation.}
+  \label{fig:outbreaks}
+\end{figure}
+%%
+
+
+%%
+%
+Our goal for analyses of the \textit{Vgsc} gene can now be restated, which is to perform an insecticide resistance outbreak analysis.
+%
+We would like to diagnose how many separate outbreaks have occurred, which outbreaks are localised, and which are spreading.
+%
+For spreading outbreaks, we would like to reconstruct the path of transmission of resistance alleles between mosquito populations, and to provide information on the probable source. 
+%
+We would, of course, also like to identify the primary and secondary genetic factors that are driving each outbreak.
+%
+Stated in this way, it is easier to discuss how this information is potentially relevant to insecticide resistance management, and to frame key epidemiological questions.
+%
+For example, we would like to begin to build a picture of where and when local conditions have favoured the evolution of insecticide resistance, and whether those conditions are relatively patchy (and hence outbreaks are mainly localised) or whether conditions are consistent over broad areas (and hence can support a spreading outbreak).
+%
+We would also like to know which mosquito populations are sufficiently connected to enable outbreak spread, and if there is any consistent pattern to the direction of spread.
+%
+This information could be relevant to discussions about how resources for insecticide resistance management might be targeted, what strategies are appropriate in which settings, and where and when insecticide resistance management needs to be coordinated between different countries and/or at different levels of administration.
+%
+%%
+
+
+%%
+%
+For clarity, we also define the concept of an insecticide resistance outbreak formally in terms of coalescent theory, as a collection of lineages (1) sharing a resistance driver allele by descent, (2) coalescing more recently than the onset of insecticide pressure, and (3) having increased in frequency because of positive selection due to insecticides. 
+%
+This definition is illustrated for four hypothetical outbreaks in Figure \ref{fig:outbreaks}.
+%
+Because mosquitoes are sexually recombining, genealogical trees vary along the genome, and so we define resistance outbreaks with respect to a specific gene locus, which for the present study is codon 995 within the \textit{Vgsc} gene.
+%
+Note that separate outbreaks may be driven by the same resistance allele, and this can occur if multiple mutational events occur after the introduction of insecticides.
+%
+This can also occur if a resistance allele is present in mosquito populations as standing variation prior to the introduction of insecticides.
+% 
+If a resistance allele has been segregating for some time, it may even have spread between several different geographical locations prior to insecticide use.
+%
+When insecticides are introduced, such standing variation may then give rise to several successful lineages, all of which increase in frequency.
+%
+We consider these as separate outbreaks because, even though the share a resistant common ancestor, they coalesce at a point in time that pre-dates the introduction of insecticides.
+%
+This allows us to differentiate between the case where a resistance allele spreads via neutral gene flow prior to the introduction of insecticides (multiple outbreaks from standing variation), and the case where a resistance allele spreads via adaptive gene flow after the introduction of insecticies (spreading outbreak).
+%
+Here we are primarily concerned with whether outbreaks are localised or spreading, because this has immediate epidemiological relevance.
+%
+We do not attempt to infer whether separate outbreaks with the same driver allele arose via standing variation or new mutations, however this is an interesting biological question to address in future studies.
+%
+As a technical note, there is a simple correspondance with terminology conventionally used in the population genetics literature to describe selective sweeps.
+%
+At a given gene locus, a hard selective sweep gives rise to a single resistance outbreak, and a soft selective sweep gives rise to multiple resistance outbreaks.
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Discussion}
 
