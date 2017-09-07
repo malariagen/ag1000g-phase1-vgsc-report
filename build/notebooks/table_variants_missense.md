@@ -4057,7 +4057,10 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 # select only variants above 5% frequency in one or more populations, except
 # for some manual overrides
 
-manual_overrides = [2400071]
+manual_overrides = [
+    2400071,
+    2431019
+]
 
 tbl_variants_selected = (
     tbl_variants_missense
@@ -5247,6 +5250,62 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td style='text-align: right'>-1.0</td>
 <td style='text-align: right'>0.9746688741721854</td>
 </tr>
+<tr>
+<td>2L</td>
+<td>2431019</td>
+<td>2</td>
+<td>T</td>
+<td>C</td>
+<td>12</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>0.85107</td>
+<td>1</td>
+<td>13.523</td>
+<td>-1.6211</td>
+<td>C</td>
+<td>missense_variant</td>
+<td>n.5759T>C</td>
+<td>p.Phe1920Ser</td>
+<td>AGAP004707-RA</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0145454545455</td>
+<td>0.0357142857143</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>True</td>
+<td style='text-align: right'>2430601</td>
+<td style='text-align: right'>2431617</td>
+<td>33</td>
+<td>F1920S</td>
+<td>F1894S</td>
+<td>F1894S</td>
+<td>F1904S</td>
+<td>F1833S</td>
+<td>F1811S</td>
+<td>F1866S</td>
+<td>F1887S</td>
+<td>F1876S</td>
+<td>F1876S</td>
+<td>F1930S</td>
+<td>F1913S</td>
+<td>F1930S</td>
+<td style='text-align: right'>1698</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
+</tr>
 <tr style='background-color: green'>
 <td>2L</td>
 <td>2431061</td>
@@ -5364,6 +5423,18 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 
 
 
+
+```python
+tbl_variants_selected.nrows()
+```
+
+
+
+
+    23
+
+
+
 # Add housefly numbering
 
 
@@ -5411,7 +5482,7 @@ len(gam_cod_cl)
 
 
 
-    22
+    23
 
 
 
@@ -5444,6 +5515,7 @@ MD
      '1873',
      '1879',
      '1879',
+     '1925',
      '1939',
      '1945']
 
@@ -5519,6 +5591,7 @@ MD_fix
      'I1873',
      'P1879',
      'P1879',
+     'Y1925',
      'A1939',
      'I1945']
 
@@ -5548,6 +5621,7 @@ tbl_function = etl.wrap([
     ['I1868T', 'IN (IV.S6--)', r'\texttt{L995F} enhancer (predicted)'],
     ['P1874S', 'IN (IV.S6--)', r'\texttt{L995F} enhancer (predicted)'],
     ['P1874L', 'IN (IV.S6--)', r'\texttt{L995F} enhancer (predicted)'],
+    ['F1920S', 'IN (IV.S6--)', r'\texttt{L995F} enhancer (predicted)'],
     ['A1934V', 'IN (IV.S6--)', r'\texttt{L995F} enhancer (predicted)'],
     ['I1940T', 'IN (IV.S6--)', r'\texttt{L995F} enhancer (predicted)'],
 ])
@@ -6024,6 +6098,27 @@ tbl_variants_display.displayall()
 <td>\texttt{P1879}</td>
 </tr>
 <tr>
+<td>2431019</td>
+<td>T</td>
+<td>C</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
+<td>\texttt{2,431,019 T>C}</td>
+<td>\texttt{F1920S}</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>1</td>
+<td style='text-align: right'>4</td>
+<td style='text-align: right'>0</td>
+<td style='text-align: right'>0</td>
+<td>\texttt{IN (IV.S6--)}</td>
+<td>\texttt{L995F} enhancer (predicted)</td>
+<td>\texttt{Y1925}</td>
+</tr>
+<tr>
 <td>2431061</td>
 <td>C</td>
 <td>T</td>
@@ -6180,6 +6275,8 @@ tbl_variants_display.totext('../tables/variants_missense.tex',
     \texttt{2,430,880 C>T} & \texttt{P1874S} & \texttt{P1879} & 0 & 21 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer (predicted) \\
     
     \texttt{2,430,881 C>T} & \texttt{P1874L} & \texttt{P1879} & 0 & 7 & 45 & 26 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer (predicted) \\
+    
+    \texttt{2,431,019 T>C} & \texttt{F1920S} & \texttt{Y1925} & 0 & 0 & 0 & 0 & 1 & 4 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer (predicted) \\
     
     \texttt{2,431,061 C>T} & \texttt{A1934V} & \texttt{A1939} & 0 & 12 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \texttt{IN (IV.S6--)} & \texttt{L995F} enhancer (predicted) \\
     

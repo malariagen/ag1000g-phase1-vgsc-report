@@ -4059,7 +4059,10 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 # select only variants above 5% frequency in one or more populations, except
 # for some manual overrides
 
-manual_overrides = [2400071]
+manual_overrides = [
+    2400071,
+    2431019
+]
 
 tbl_variants_selected = (
     tbl_variants_missense
@@ -5249,6 +5252,62 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td style='text-align: right'>-1.0</td>
 <td style='text-align: right'>0.9746688741721854</td>
 </tr>
+<tr>
+<td>2L</td>
+<td>2431019</td>
+<td>2</td>
+<td>T</td>
+<td>C</td>
+<td>12</td>
+<td style='text-align: right'>0</td>
+<td>True</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>False</td>
+<td>False</td>
+<td>False</td>
+<td>0.85107</td>
+<td>1</td>
+<td>13.523</td>
+<td>-1.6211</td>
+<td>C</td>
+<td>missense_variant</td>
+<td>n.5759T>C</td>
+<td>p.Phe1920Ser</td>
+<td>AGAP004707-RA</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>0.0145454545455</td>
+<td>0.0357142857143</td>
+<td>0.0</td>
+<td>0.0</td>
+<td>True</td>
+<td style='text-align: right'>2430601</td>
+<td style='text-align: right'>2431617</td>
+<td>33</td>
+<td>F1920S</td>
+<td>F1894S</td>
+<td>F1894S</td>
+<td>F1904S</td>
+<td>F1833S</td>
+<td>F1811S</td>
+<td>F1866S</td>
+<td>F1887S</td>
+<td>F1876S</td>
+<td>F1876S</td>
+<td>F1930S</td>
+<td>F1913S</td>
+<td>F1930S</td>
+<td style='text-align: right'>1698</td>
+<td style='text-align: right'>-1.0</td>
+<td style='text-align: right'>1.0</td>
+</tr>
 <tr style='background-color: green'>
 <td>2L</td>
 <td>2431061</td>
@@ -5374,7 +5433,7 @@ tbl_variants_selected.nrows()
 
 
 
-    22
+    23
 
 
 
@@ -5549,7 +5608,7 @@ def lewontin_d_prime(h, i, j, a=1, b=1):
             n_ab += 1
         n += 1
         
-    log('D_prime counts:', 'i', i, 'j', j, 'a', a, 'b', b, 'n', n, 'n_a', n_a, 'n_b', n_b)
+#     log('D_prime counts:', 'i', i, 'j', j, 'a', a, 'b', b, 'n', n, 'n_a', n_a, 'n_b', n_b)
         
     # bail out if no data or either allele is absent or fixed
     if n == 0 or n_a == 0 or n_b == 0 or n == n_a or n == n_b:
@@ -5570,9 +5629,9 @@ def lewontin_d_prime(h, i, j, a=1, b=1):
     # compute D prime
     D_prime = D_ab / D_max
     
-    log('D_prime', D_prime, i, j, a, b, n, n_a, n_b, D_ab, D_max)
-    if np.isnan(D_prime):
-        log('nan')
+#     log('D_prime', D_prime, i, j, a, b, n, n_a, n_b, D_ab, D_max)
+#     if np.isnan(D_prime):
+#         log('nan')
 #        log(D_prime, i, j, a, b, n, n_a, n_b, D_ab, D_max)
         
     return D_prime
@@ -5588,7 +5647,7 @@ pos_selected
 
 
 
-<div class="allel allel-DisplayAs1D"><span>&lt;SortedIndex shape=(20,) dtype=int32&gt;</span><table><thead><tr><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">15</th><th style="text-align: center">16</th><th style="text-align: center">17</th><th style="text-align: center">18</th><th style="text-align: center">19</th></tr></thead><tbody><tr><td style="text-align: center">2390177</td><td style="text-align: center">2391228</td><td style="text-align: center">2399997</td><td style="text-align: center">2400071</td><td style="text-align: center">2416980</td><td style="text-align: center">...</td><td style="text-align: center">2430863</td><td style="text-align: center">2430880</td><td style="text-align: center">2430881</td><td style="text-align: center">2431061</td><td style="text-align: center">2431079</td></tr></tbody></table></div>
+<div class="allel allel-DisplayAs1D"><span>&lt;SortedIndex shape=(21,) dtype=int32&gt;</span><table><thead><tr><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">16</th><th style="text-align: center">17</th><th style="text-align: center">18</th><th style="text-align: center">19</th><th style="text-align: center">20</th></tr></thead><tbody><tr><td style="text-align: center">2390177</td><td style="text-align: center">2391228</td><td style="text-align: center">2399997</td><td style="text-align: center">2400071</td><td style="text-align: center">2416980</td><td style="text-align: center">...</td><td style="text-align: center">2430880</td><td style="text-align: center">2430881</td><td style="text-align: center">2431019</td><td style="text-align: center">2431061</td><td style="text-align: center">2431079</td></tr></tbody></table></div>
 
 
 
@@ -5954,7 +6013,7 @@ pos_selected.shape
 
 
 
-    (20,)
+    (21,)
 
 
 
@@ -5968,7 +6027,7 @@ np.count_nonzero(loc_combined_selected)
 
 
 
-    20
+    21
 
 
 
@@ -5981,7 +6040,7 @@ haps_selected
 
 
 
-<div class="allel allel-DisplayAs2D"><span>&lt;HaplotypeArray shape=(20, 1530) dtype=int8&gt;</span><table><thead><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">1525</th><th style="text-align: center">1526</th><th style="text-align: center">1527</th><th style="text-align: center">1528</th><th style="text-align: center">1529</th></tr></thead><tbody><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">0</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">1</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">2</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">2</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">...</th><td style="text-align: center" colspan="12">...</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">17</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">1</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">18</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">19</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr></tbody></table></div>
+<div class="allel allel-DisplayAs2D"><span>&lt;HaplotypeArray shape=(21, 1530) dtype=int8&gt;</span><table><thead><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th><th style="text-align: center">3</th><th style="text-align: center">4</th><th style="text-align: center">...</th><th style="text-align: center">1525</th><th style="text-align: center">1526</th><th style="text-align: center">1527</th><th style="text-align: center">1528</th><th style="text-align: center">1529</th></tr></thead><tbody><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">0</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">1</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">2</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">2</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">...</th><td style="text-align: center" colspan="12">...</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">18</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">19</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">1</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">20</th><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">...</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td><td style="text-align: center">0</td></tr></tbody></table></div>
 
 
 
@@ -5992,7 +6051,7 @@ ac.displayall()
 ```
 
 
-<div class="allel allel-DisplayAs2D"><span>&lt;AlleleCountsArray shape=(20, 3) dtype=int32&gt;</span><table><thead><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th></tr></thead><tbody><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">0</th><td style="text-align: center">1332</td><td style="text-align: center"> 198</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">1</th><td style="text-align: center">1511</td><td style="text-align: center">  10</td><td style="text-align: center">   9</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">2</th><td style="text-align: center">1492</td><td style="text-align: center">  38</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">3</th><td style="text-align: center">1512</td><td style="text-align: center">  16</td><td style="text-align: center">   2</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">4</th><td style="text-align: center">1498</td><td style="text-align: center">  32</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">5</th><td style="text-align: center">1100</td><td style="text-align: center"> 430</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">6</th><td style="text-align: center"> 755</td><td style="text-align: center"> 775</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">7</th><td style="text-align: center">1519</td><td style="text-align: center">  11</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">8</th><td style="text-align: center">1525</td><td style="text-align: center">   5</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">9</th><td style="text-align: center">1511</td><td style="text-align: center">  19</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">10</th><td style="text-align: center">1420</td><td style="text-align: center"> 110</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">11</th><td style="text-align: center">1519</td><td style="text-align: center">  11</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">12</th><td style="text-align: center">1523</td><td style="text-align: center">   7</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">13</th><td style="text-align: center">1502</td><td style="text-align: center">  28</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">14</th><td style="text-align: center">1517</td><td style="text-align: center">  13</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">15</th><td style="text-align: center">1478</td><td style="text-align: center">  52</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">16</th><td style="text-align: center">1501</td><td style="text-align: center">  29</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">17</th><td style="text-align: center">1450</td><td style="text-align: center">  80</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">18</th><td style="text-align: center">1514</td><td style="text-align: center">  16</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">19</th><td style="text-align: center">1486</td><td style="text-align: center">  44</td><td style="text-align: center">   0</td></tr></tbody></table></div>
+<div class="allel allel-DisplayAs2D"><span>&lt;AlleleCountsArray shape=(21, 3) dtype=int32&gt;</span><table><thead><tr><th></th><th style="text-align: center">0</th><th style="text-align: center">1</th><th style="text-align: center">2</th></tr></thead><tbody><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">0</th><td style="text-align: center">1332</td><td style="text-align: center"> 198</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">1</th><td style="text-align: center">1511</td><td style="text-align: center">  10</td><td style="text-align: center">   9</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">2</th><td style="text-align: center">1492</td><td style="text-align: center">  38</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">3</th><td style="text-align: center">1512</td><td style="text-align: center">  16</td><td style="text-align: center">   2</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">4</th><td style="text-align: center">1498</td><td style="text-align: center">  32</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">5</th><td style="text-align: center">1100</td><td style="text-align: center"> 430</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">6</th><td style="text-align: center"> 755</td><td style="text-align: center"> 775</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">7</th><td style="text-align: center">1519</td><td style="text-align: center">  11</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">8</th><td style="text-align: center">1525</td><td style="text-align: center">   5</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">9</th><td style="text-align: center">1511</td><td style="text-align: center">  19</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">10</th><td style="text-align: center">1420</td><td style="text-align: center"> 110</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">11</th><td style="text-align: center">1519</td><td style="text-align: center">  11</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">12</th><td style="text-align: center">1523</td><td style="text-align: center">   7</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">13</th><td style="text-align: center">1502</td><td style="text-align: center">  28</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">14</th><td style="text-align: center">1517</td><td style="text-align: center">  13</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">15</th><td style="text-align: center">1478</td><td style="text-align: center">  52</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">16</th><td style="text-align: center">1501</td><td style="text-align: center">  29</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">17</th><td style="text-align: center">1450</td><td style="text-align: center">  80</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">18</th><td style="text-align: center">1518</td><td style="text-align: center">  12</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">19</th><td style="text-align: center">1514</td><td style="text-align: center">  16</td><td style="text-align: center">   0</td></tr><tr><th style="text-align: center; background-color: white; border-right: 1px solid black; ">20</th><td style="text-align: center">1486</td><td style="text-align: center">  44</td><td style="text-align: center">   0</td></tr></tbody></table></div>
 
 
 
@@ -6033,960 +6092,37 @@ for i in range(n):
         j_pos = recs[j].POS
         j_allele = recs[j].ALTIX + 1
         j_vidx = pos_selected.locate_key(j_pos)
-        log('col', j, j_vidx, j_pos, j_allele)
+#         log('col', j, j_vidx, j_pos, j_allele)
         v = lewontin_d_prime(haps_selected, i_vidx, j_vidx, i_allele, j_allele)
-        log('D_prime', v)
+#         log('D_prime', v)
         ld[i, j] = v
         ld[j, i] = v
         
 ```
 
     row 0 0 2390177 1
-    col 1 1 2391228 1
-    D_prime counts: i 0 j 1 a 1 b 1 n 1530 n_a 198 n_b 10
-    D_prime -1.0 0 1 1 1 1530 198 10 -1980 1980
-    D_prime -1.0
-    col 2 1 2391228 2
-    D_prime counts: i 0 j 1 a 1 b 2 n 1530 n_a 198 n_b 9
-    D_prime -1.0 0 1 1 2 1530 198 9 -1782 1782
-    D_prime -1.0
-    col 3 2 2399997 1
-    D_prime counts: i 0 j 2 a 1 b 1 n 1530 n_a 198 n_b 38
-    D_prime -1.0 0 2 1 1 1530 198 38 -7524 7524
-    D_prime -1.0
-    col 4 3 2400071 1
-    D_prime counts: i 0 j 3 a 1 b 1 n 1530 n_a 198 n_b 16
-    D_prime -1.0 0 3 1 1 1530 198 16 -3168 3168
-    D_prime -1.0
-    col 5 3 2400071 2
-    D_prime counts: i 0 j 3 a 1 b 2 n 1530 n_a 198 n_b 2
-    D_prime -1.0 0 3 1 2 1530 198 2 -396 396
-    D_prime -1.0
-    col 6 4 2416980 1
-    D_prime counts: i 0 j 4 a 1 b 1 n 1530 n_a 198 n_b 32
-    D_prime -1.0 0 4 1 1 1530 198 32 -6336 6336
-    D_prime -1.0
-    col 7 5 2422651 1
-    D_prime counts: i 0 j 5 a 1 b 1 n 1530 n_a 198 n_b 430
-    D_prime -0.9640591966173362 0 5 1 1 1530 198 430 -82080 85140
-    D_prime -0.9640591966173362
-    col 8 6 2422652 1
-    D_prime counts: i 0 j 6 a 1 b 1 n 1530 n_a 198 n_b 775
-    D_prime 0.9181216134858519 0 6 1 1 1530 198 775 137250 149490
-    D_prime 0.9181216134858519
-    col 9 7 2424384 1
-    D_prime counts: i 0 j 7 a 1 b 1 n 1530 n_a 198 n_b 11
-    D_prime -1.0 0 7 1 1 1530 198 11 -2178 2178
-    D_prime -1.0
-    col 10 8 2425077 1
-    D_prime counts: i 0 j 8 a 1 b 1 n 1530 n_a 198 n_b 5
-    D_prime -1.0 0 8 1 1 1530 198 5 -990 990
-    D_prime -1.0
-    col 11 9 2429617 1
-    D_prime counts: i 0 j 9 a 1 b 1 n 1530 n_a 198 n_b 19
-    D_prime -1.0 0 9 1 1 1530 198 19 -3762 3762
-    D_prime -1.0
-    col 12 10 2429745 1
-    D_prime counts: i 0 j 10 a 1 b 1 n 1530 n_a 198 n_b 110
-    D_prime -1.0 0 10 1 1 1530 198 110 -21780 21780
-    D_prime -1.0
-    col 13 11 2429897 1
-    D_prime counts: i 0 j 11 a 1 b 1 n 1530 n_a 198 n_b 11
-    D_prime -1.0 0 11 1 1 1530 198 11 -2178 2178
-    D_prime -1.0
-    col 14 12 2429915 1
-    D_prime counts: i 0 j 12 a 1 b 1 n 1530 n_a 198 n_b 7
-    D_prime -1.0 0 12 1 1 1530 198 7 -1386 1386
-    D_prime -1.0
-    col 15 13 2430424 1
-    D_prime counts: i 0 j 13 a 1 b 1 n 1530 n_a 198 n_b 28
-    D_prime -1.0 0 13 1 1 1530 198 28 -5544 5544
-    D_prime -1.0
-    col 16 14 2430817 1
-    D_prime counts: i 0 j 14 a 1 b 1 n 1530 n_a 198 n_b 13
-    D_prime -1.0 0 14 1 1 1530 198 13 -2574 2574
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 0 j 15 a 1 b 1 n 1530 n_a 198 n_b 52
-    D_prime -1.0 0 15 1 1 1530 198 52 -10296 10296
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 0 j 16 a 1 b 1 n 1530 n_a 198 n_b 29
-    D_prime -1.0 0 16 1 1 1530 198 29 -5742 5742
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 0 j 17 a 1 b 1 n 1530 n_a 198 n_b 80
-    D_prime -1.0 0 17 1 1 1530 198 80 -15840 15840
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 0 j 18 a 1 b 1 n 1530 n_a 198 n_b 16
-    D_prime -1.0 0 18 1 1 1530 198 16 -3168 3168
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 0 j 19 a 1 b 1 n 1530 n_a 198 n_b 44
-    D_prime -1.0 0 19 1 1 1530 198 44 -8712 8712
-    D_prime -1.0
     row 1 1 2391228 1
-    col 2 1 2391228 2
-    D_prime counts: i 1 j 1 a 1 b 2 n 1530 n_a 10 n_b 9
-    D_prime -1.0 1 1 1 2 1530 10 9 -90 90
-    D_prime -1.0
-    col 3 2 2399997 1
-    D_prime counts: i 1 j 2 a 1 b 1 n 1530 n_a 10 n_b 38
-    D_prime -1.0 1 2 1 1 1530 10 38 -380 380
-    D_prime -1.0
-    col 4 3 2400071 1
-    D_prime counts: i 1 j 3 a 1 b 1 n 1530 n_a 10 n_b 16
-    D_prime -1.0 1 3 1 1 1530 10 16 -160 160
-    D_prime -1.0
-    col 5 3 2400071 2
-    D_prime counts: i 1 j 3 a 1 b 2 n 1530 n_a 10 n_b 2
-    D_prime -1.0 1 3 1 2 1530 10 2 -20 20
-    D_prime -1.0
-    col 6 4 2416980 1
-    D_prime counts: i 1 j 4 a 1 b 1 n 1530 n_a 10 n_b 32
-    D_prime -1.0 1 4 1 1 1530 10 32 -320 320
-    D_prime -1.0
-    col 7 5 2422651 1
-    D_prime counts: i 1 j 5 a 1 b 1 n 1530 n_a 10 n_b 430
-    D_prime -1.0 1 5 1 1 1530 10 430 -4300 4300
-    D_prime -1.0
-    col 8 6 2422652 1
-    D_prime counts: i 1 j 6 a 1 b 1 n 1530 n_a 10 n_b 775
-    D_prime -0.8025806451612904 1 6 1 1 1530 10 775 -6220 7750
-    D_prime -0.8025806451612904
-    col 9 7 2424384 1
-    D_prime counts: i 1 j 7 a 1 b 1 n 1530 n_a 10 n_b 11
-    D_prime -1.0 1 7 1 1 1530 10 11 -110 110
-    D_prime -1.0
-    col 10 8 2425077 1
-    D_prime counts: i 1 j 8 a 1 b 1 n 1530 n_a 10 n_b 5
-    D_prime -1.0 1 8 1 1 1530 10 5 -50 50
-    D_prime -1.0
-    col 11 9 2429617 1
-    D_prime counts: i 1 j 9 a 1 b 1 n 1530 n_a 10 n_b 19
-    D_prime 0.7974851091992058 1 9 1 1 1530 10 19 12050 15110
-    D_prime 0.7974851091992058
-    col 12 10 2429745 1
-    D_prime counts: i 1 j 10 a 1 b 1 n 1530 n_a 10 n_b 110
-    D_prime -1.0 1 10 1 1 1530 10 110 -1100 1100
-    D_prime -1.0
-    col 13 11 2429897 1
-    D_prime counts: i 1 j 11 a 1 b 1 n 1530 n_a 10 n_b 11
-    D_prime -1.0 1 11 1 1 1530 10 11 -110 110
-    D_prime -1.0
-    col 14 12 2429915 1
-    D_prime counts: i 1 j 12 a 1 b 1 n 1530 n_a 10 n_b 7
-    D_prime -1.0 1 12 1 1 1530 10 7 -70 70
-    D_prime -1.0
-    col 15 13 2430424 1
-    D_prime counts: i 1 j 13 a 1 b 1 n 1530 n_a 10 n_b 28
-    D_prime -1.0 1 13 1 1 1530 10 28 -280 280
-    D_prime -1.0
-    col 16 14 2430817 1
-    D_prime counts: i 1 j 14 a 1 b 1 n 1530 n_a 10 n_b 13
-    D_prime -1.0 1 14 1 1 1530 10 13 -130 130
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 1 j 15 a 1 b 1 n 1530 n_a 10 n_b 52
-    D_prime -1.0 1 15 1 1 1530 10 52 -520 520
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 1 j 16 a 1 b 1 n 1530 n_a 10 n_b 29
-    D_prime 0.08261159227181879 1 16 1 1 1530 10 29 1240 15010
-    D_prime 0.08261159227181879
-    col 19 17 2430881 1
-    D_prime counts: i 1 j 17 a 1 b 1 n 1530 n_a 10 n_b 80
-    D_prime 0.0503448275862069 1 17 1 1 1530 10 80 730 14500
-    D_prime 0.0503448275862069
-    col 20 18 2431061 1
-    D_prime counts: i 1 j 18 a 1 b 1 n 1530 n_a 10 n_b 16
-    D_prime -1.0 1 18 1 1 1530 10 16 -160 160
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 1 j 19 a 1 b 1 n 1530 n_a 10 n_b 44
-    D_prime -1.0 1 19 1 1 1530 10 44 -440 440
-    D_prime -1.0
     row 2 1 2391228 2
-    col 3 2 2399997 1
-    D_prime counts: i 1 j 2 a 2 b 1 n 1530 n_a 9 n_b 38
-    D_prime -1.0 1 2 2 1 1530 9 38 -342 342
-    D_prime -1.0
-    col 4 3 2400071 1
-    D_prime counts: i 1 j 3 a 2 b 1 n 1530 n_a 9 n_b 16
-    D_prime -1.0 1 3 2 1 1530 9 16 -144 144
-    D_prime -1.0
-    col 5 3 2400071 2
-    D_prime counts: i 1 j 3 a 2 b 2 n 1530 n_a 9 n_b 2
-    D_prime -1.0 1 3 2 2 1530 9 2 -18 18
-    D_prime -1.0
-    col 6 4 2416980 1
-    D_prime counts: i 1 j 4 a 2 b 1 n 1530 n_a 9 n_b 32
-    D_prime -1.0 1 4 2 1 1530 9 32 -288 288
-    D_prime -1.0
-    col 7 5 2422651 1
-    D_prime counts: i 1 j 5 a 2 b 1 n 1530 n_a 9 n_b 430
-    D_prime -1.0 1 5 2 1 1530 9 430 -3870 3870
-    D_prime -1.0
-    col 8 6 2422652 1
-    D_prime counts: i 1 j 6 a 2 b 1 n 1530 n_a 9 n_b 775
-    D_prime -1.0 1 6 2 1 1530 9 775 -6975 6975
-    D_prime -1.0
-    col 9 7 2424384 1
-    D_prime counts: i 1 j 7 a 2 b 1 n 1530 n_a 9 n_b 11
-    D_prime -1.0 1 7 2 1 1530 9 11 -99 99
-    D_prime -1.0
-    col 10 8 2425077 1
-    D_prime counts: i 1 j 8 a 2 b 1 n 1530 n_a 9 n_b 5
-    D_prime -1.0 1 8 2 1 1530 9 5 -45 45
-    D_prime -1.0
-    col 11 9 2429617 1
-    D_prime counts: i 1 j 9 a 2 b 1 n 1530 n_a 9 n_b 19
-    D_prime 1.0 1 9 2 1 1530 9 19 13599 13599
-    D_prime 1.0
-    col 12 10 2429745 1
-    D_prime counts: i 1 j 10 a 2 b 1 n 1530 n_a 9 n_b 110
-    D_prime -1.0 1 10 2 1 1530 9 110 -990 990
-    D_prime -1.0
-    col 13 11 2429897 1
-    D_prime counts: i 1 j 11 a 2 b 1 n 1530 n_a 9 n_b 11
-    D_prime -1.0 1 11 2 1 1530 9 11 -99 99
-    D_prime -1.0
-    col 14 12 2429915 1
-    D_prime counts: i 1 j 12 a 2 b 1 n 1530 n_a 9 n_b 7
-    D_prime -1.0 1 12 2 1 1530 9 7 -63 63
-    D_prime -1.0
-    col 15 13 2430424 1
-    D_prime counts: i 1 j 13 a 2 b 1 n 1530 n_a 9 n_b 28
-    D_prime -1.0 1 13 2 1 1530 9 28 -252 252
-    D_prime -1.0
-    col 16 14 2430817 1
-    D_prime counts: i 1 j 14 a 2 b 1 n 1530 n_a 9 n_b 13
-    D_prime -1.0 1 14 2 1 1530 9 13 -117 117
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 1 j 15 a 2 b 1 n 1530 n_a 9 n_b 52
-    D_prime -1.0 1 15 2 1 1530 9 52 -468 468
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 1 j 16 a 2 b 1 n 1530 n_a 9 n_b 29
-    D_prime -1.0 1 16 2 1 1530 9 29 -261 261
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 1 j 17 a 2 b 1 n 1530 n_a 9 n_b 80
-    D_prime -1.0 1 17 2 1 1530 9 80 -720 720
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 1 j 18 a 2 b 1 n 1530 n_a 9 n_b 16
-    D_prime -1.0 1 18 2 1 1530 9 16 -144 144
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 1 j 19 a 2 b 1 n 1530 n_a 9 n_b 44
-    D_prime -1.0 1 19 2 1 1530 9 44 -396 396
-    D_prime -1.0
     row 3 2 2399997 1
-    col 4 3 2400071 1
-    D_prime counts: i 2 j 3 a 1 b 1 n 1530 n_a 38 n_b 16
-    D_prime -1.0 2 3 1 1 1530 38 16 -608 608
-    D_prime -1.0
-    col 5 3 2400071 2
-    D_prime counts: i 2 j 3 a 1 b 2 n 1530 n_a 38 n_b 2
-    D_prime -1.0 2 3 1 2 1530 38 2 -76 76
-    D_prime -1.0
-    col 6 4 2416980 1
-    D_prime counts: i 2 j 4 a 1 b 1 n 1530 n_a 38 n_b 32
-    D_prime -1.0 2 4 1 1 1530 38 32 -1216 1216
-    D_prime -1.0
-    col 7 5 2422651 1
-    D_prime counts: i 2 j 5 a 1 b 1 n 1530 n_a 38 n_b 430
-    D_prime -1.0 2 5 1 1 1530 38 430 -16340 16340
-    D_prime -1.0
-    col 8 6 2422652 1
-    D_prime counts: i 2 j 6 a 1 b 1 n 1530 n_a 38 n_b 775
-    D_prime 1.0 2 6 1 1 1530 38 775 28690 28690
-    D_prime 1.0
-    col 9 7 2424384 1
-    D_prime counts: i 2 j 7 a 1 b 1 n 1530 n_a 38 n_b 11
-    D_prime -1.0 2 7 1 1 1530 38 11 -418 418
-    D_prime -1.0
-    col 10 8 2425077 1
-    D_prime counts: i 2 j 8 a 1 b 1 n 1530 n_a 38 n_b 5
-    D_prime -1.0 2 8 1 1 1530 38 5 -190 190
-    D_prime -1.0
-    col 11 9 2429617 1
-    D_prime counts: i 2 j 9 a 1 b 1 n 1530 n_a 38 n_b 19
-    D_prime -1.0 2 9 1 1 1530 38 19 -722 722
-    D_prime -1.0
-    col 12 10 2429745 1
-    D_prime counts: i 2 j 10 a 1 b 1 n 1530 n_a 38 n_b 110
-    D_prime -1.0 2 10 1 1 1530 38 110 -4180 4180
-    D_prime -1.0
-    col 13 11 2429897 1
-    D_prime counts: i 2 j 11 a 1 b 1 n 1530 n_a 38 n_b 11
-    D_prime -1.0 2 11 1 1 1530 38 11 -418 418
-    D_prime -1.0
-    col 14 12 2429915 1
-    D_prime counts: i 2 j 12 a 1 b 1 n 1530 n_a 38 n_b 7
-    D_prime -1.0 2 12 1 1 1530 38 7 -266 266
-    D_prime -1.0
-    col 15 13 2430424 1
-    D_prime counts: i 2 j 13 a 1 b 1 n 1530 n_a 38 n_b 28
-    D_prime -1.0 2 13 1 1 1530 38 28 -1064 1064
-    D_prime -1.0
-    col 16 14 2430817 1
-    D_prime counts: i 2 j 14 a 1 b 1 n 1530 n_a 38 n_b 13
-    D_prime -1.0 2 14 1 1 1530 38 13 -494 494
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 2 j 15 a 1 b 1 n 1530 n_a 38 n_b 52
-    D_prime -1.0 2 15 1 1 1530 38 52 -1976 1976
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 2 j 16 a 1 b 1 n 1530 n_a 38 n_b 29
-    D_prime -1.0 2 16 1 1 1530 38 29 -1102 1102
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 2 j 17 a 1 b 1 n 1530 n_a 38 n_b 80
-    D_prime -1.0 2 17 1 1 1530 38 80 -3040 3040
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 2 j 18 a 1 b 1 n 1530 n_a 38 n_b 16
-    D_prime -1.0 2 18 1 1 1530 38 16 -608 608
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 2 j 19 a 1 b 1 n 1530 n_a 38 n_b 44
-    D_prime 1.0 2 19 1 1 1530 38 44 56468 56468
-    D_prime 1.0
     row 4 3 2400071 1
-    col 5 3 2400071 2
-    D_prime counts: i 3 j 3 a 1 b 2 n 1530 n_a 16 n_b 2
-    D_prime -1.0 3 3 1 2 1530 16 2 -32 32
-    D_prime -1.0
-    col 6 4 2416980 1
-    D_prime counts: i 3 j 4 a 1 b 1 n 1530 n_a 16 n_b 32
-    D_prime -1.0 3 4 1 1 1530 16 32 -512 512
-    D_prime -1.0
-    col 7 5 2422651 1
-    D_prime counts: i 3 j 5 a 1 b 1 n 1530 n_a 16 n_b 430
-    D_prime -1.0 3 5 1 1 1530 16 430 -6880 6880
-    D_prime -1.0
-    col 8 6 2422652 1
-    D_prime counts: i 3 j 6 a 1 b 1 n 1530 n_a 16 n_b 775
-    D_prime -1.0 3 6 1 1 1530 16 775 -12400 12400
-    D_prime -1.0
-    col 9 7 2424384 1
-    D_prime counts: i 3 j 7 a 1 b 1 n 1530 n_a 16 n_b 11
-    D_prime -1.0 3 7 1 1 1530 16 11 -176 176
-    D_prime -1.0
-    col 10 8 2425077 1
-    D_prime counts: i 3 j 8 a 1 b 1 n 1530 n_a 16 n_b 5
-    D_prime -1.0 3 8 1 1 1530 16 5 -80 80
-    D_prime -1.0
-    col 11 9 2429617 1
-    D_prime counts: i 3 j 9 a 1 b 1 n 1530 n_a 16 n_b 19
-    D_prime -1.0 3 9 1 1 1530 16 19 -304 304
-    D_prime -1.0
-    col 12 10 2429745 1
-    D_prime counts: i 3 j 10 a 1 b 1 n 1530 n_a 16 n_b 110
-    D_prime -1.0 3 10 1 1 1530 16 110 -1760 1760
-    D_prime -1.0
-    col 13 11 2429897 1
-    D_prime counts: i 3 j 11 a 1 b 1 n 1530 n_a 16 n_b 11
-    D_prime -1.0 3 11 1 1 1530 16 11 -176 176
-    D_prime -1.0
-    col 14 12 2429915 1
-    D_prime counts: i 3 j 12 a 1 b 1 n 1530 n_a 16 n_b 7
-    D_prime -1.0 3 12 1 1 1530 16 7 -112 112
-    D_prime -1.0
-    col 15 13 2430424 1
-    D_prime counts: i 3 j 13 a 1 b 1 n 1530 n_a 16 n_b 28
-    D_prime -1.0 3 13 1 1 1530 16 28 -448 448
-    D_prime -1.0
-    col 16 14 2430817 1
-    D_prime counts: i 3 j 14 a 1 b 1 n 1530 n_a 16 n_b 13
-    D_prime -1.0 3 14 1 1 1530 16 13 -208 208
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 3 j 15 a 1 b 1 n 1530 n_a 16 n_b 52
-    D_prime -1.0 3 15 1 1 1530 16 52 -832 832
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 3 j 16 a 1 b 1 n 1530 n_a 16 n_b 29
-    D_prime -1.0 3 16 1 1 1530 16 29 -464 464
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 3 j 17 a 1 b 1 n 1530 n_a 16 n_b 80
-    D_prime -1.0 3 17 1 1 1530 16 80 -1280 1280
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 3 j 18 a 1 b 1 n 1530 n_a 16 n_b 16
-    D_prime -1.0 3 18 1 1 1530 16 16 -256 256
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 3 j 19 a 1 b 1 n 1530 n_a 16 n_b 44
-    D_prime -1.0 3 19 1 1 1530 16 44 -704 704
-    D_prime -1.0
     row 5 3 2400071 2
-    col 6 4 2416980 1
-    D_prime counts: i 3 j 4 a 2 b 1 n 1530 n_a 2 n_b 32
-    D_prime -1.0 3 4 2 1 1530 2 32 -64 64
-    D_prime -1.0
-    col 7 5 2422651 1
-    D_prime counts: i 3 j 5 a 2 b 1 n 1530 n_a 2 n_b 430
-    D_prime -1.0 3 5 2 1 1530 2 430 -860 860
-    D_prime -1.0
-    col 8 6 2422652 1
-    D_prime counts: i 3 j 6 a 2 b 1 n 1530 n_a 2 n_b 775
-    D_prime -1.0 3 6 2 1 1530 2 775 -1550 1550
-    D_prime -1.0
-    col 9 7 2424384 1
-    D_prime counts: i 3 j 7 a 2 b 1 n 1530 n_a 2 n_b 11
-    D_prime -1.0 3 7 2 1 1530 2 11 -22 22
-    D_prime -1.0
-    col 10 8 2425077 1
-    D_prime counts: i 3 j 8 a 2 b 1 n 1530 n_a 2 n_b 5
-    D_prime -1.0 3 8 2 1 1530 2 5 -10 10
-    D_prime -1.0
-    col 11 9 2429617 1
-    D_prime counts: i 3 j 9 a 2 b 1 n 1530 n_a 2 n_b 19
-    D_prime -1.0 3 9 2 1 1530 2 19 -38 38
-    D_prime -1.0
-    col 12 10 2429745 1
-    D_prime counts: i 3 j 10 a 2 b 1 n 1530 n_a 2 n_b 110
-    D_prime -1.0 3 10 2 1 1530 2 110 -220 220
-    D_prime -1.0
-    col 13 11 2429897 1
-    D_prime counts: i 3 j 11 a 2 b 1 n 1530 n_a 2 n_b 11
-    D_prime -1.0 3 11 2 1 1530 2 11 -22 22
-    D_prime -1.0
-    col 14 12 2429915 1
-    D_prime counts: i 3 j 12 a 2 b 1 n 1530 n_a 2 n_b 7
-    D_prime -1.0 3 12 2 1 1530 2 7 -14 14
-    D_prime -1.0
-    col 15 13 2430424 1
-    D_prime counts: i 3 j 13 a 2 b 1 n 1530 n_a 2 n_b 28
-    D_prime -1.0 3 13 2 1 1530 2 28 -56 56
-    D_prime -1.0
-    col 16 14 2430817 1
-    D_prime counts: i 3 j 14 a 2 b 1 n 1530 n_a 2 n_b 13
-    D_prime -1.0 3 14 2 1 1530 2 13 -26 26
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 3 j 15 a 2 b 1 n 1530 n_a 2 n_b 52
-    D_prime -1.0 3 15 2 1 1530 2 52 -104 104
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 3 j 16 a 2 b 1 n 1530 n_a 2 n_b 29
-    D_prime -1.0 3 16 2 1 1530 2 29 -58 58
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 3 j 17 a 2 b 1 n 1530 n_a 2 n_b 80
-    D_prime -1.0 3 17 2 1 1530 2 80 -160 160
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 3 j 18 a 2 b 1 n 1530 n_a 2 n_b 16
-    D_prime -1.0 3 18 2 1 1530 2 16 -32 32
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 3 j 19 a 2 b 1 n 1530 n_a 2 n_b 44
-    D_prime -1.0 3 19 2 1 1530 2 44 -88 88
-    D_prime -1.0
     row 6 4 2416980 1
-    col 7 5 2422651 1
-    D_prime counts: i 4 j 5 a 1 b 1 n 1530 n_a 32 n_b 430
-    D_prime -1.0 4 5 1 1 1530 32 430 -13760 13760
-    D_prime -1.0
-    col 8 6 2422652 1
-    D_prime counts: i 4 j 6 a 1 b 1 n 1530 n_a 32 n_b 775
-    D_prime 1.0 4 6 1 1 1530 32 775 24160 24160
-    D_prime 1.0
-    col 9 7 2424384 1
-    D_prime counts: i 4 j 7 a 1 b 1 n 1530 n_a 32 n_b 11
-    D_prime -1.0 4 7 1 1 1530 32 11 -352 352
-    D_prime -1.0
-    col 10 8 2425077 1
-    D_prime counts: i 4 j 8 a 1 b 1 n 1530 n_a 32 n_b 5
-    D_prime -1.0 4 8 1 1 1530 32 5 -160 160
-    D_prime -1.0
-    col 11 9 2429617 1
-    D_prime counts: i 4 j 9 a 1 b 1 n 1530 n_a 32 n_b 19
-    D_prime -1.0 4 9 1 1 1530 32 19 -608 608
-    D_prime -1.0
-    col 12 10 2429745 1
-    D_prime counts: i 4 j 10 a 1 b 1 n 1530 n_a 32 n_b 110
-    D_prime -1.0 4 10 1 1 1530 32 110 -3520 3520
-    D_prime -1.0
-    col 13 11 2429897 1
-    D_prime counts: i 4 j 11 a 1 b 1 n 1530 n_a 32 n_b 11
-    D_prime -1.0 4 11 1 1 1530 32 11 -352 352
-    D_prime -1.0
-    col 14 12 2429915 1
-    D_prime counts: i 4 j 12 a 1 b 1 n 1530 n_a 32 n_b 7
-    D_prime -1.0 4 12 1 1 1530 32 7 -224 224
-    D_prime -1.0
-    col 15 13 2430424 1
-    D_prime counts: i 4 j 13 a 1 b 1 n 1530 n_a 32 n_b 28
-    D_prime 1.0 4 13 1 1 1530 32 28 41944 41944
-    D_prime 1.0
-    col 16 14 2430817 1
-    D_prime counts: i 4 j 14 a 1 b 1 n 1530 n_a 32 n_b 13
-    D_prime -1.0 4 14 1 1 1530 32 13 -416 416
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 4 j 15 a 1 b 1 n 1530 n_a 32 n_b 52
-    D_prime -1.0 4 15 1 1 1530 32 52 -1664 1664
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 4 j 16 a 1 b 1 n 1530 n_a 32 n_b 29
-    D_prime -1.0 4 16 1 1 1530 32 29 -928 928
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 4 j 17 a 1 b 1 n 1530 n_a 32 n_b 80
-    D_prime -1.0 4 17 1 1 1530 32 80 -2560 2560
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 4 j 18 a 1 b 1 n 1530 n_a 32 n_b 16
-    D_prime -1.0 4 18 1 1 1530 32 16 -512 512
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 4 j 19 a 1 b 1 n 1530 n_a 32 n_b 44
-    D_prime -1.0 4 19 1 1 1530 32 44 -1408 1408
-    D_prime -1.0
     row 7 5 2422651 1
-    col 8 6 2422652 1
-    D_prime counts: i 5 j 6 a 1 b 1 n 1530 n_a 430 n_b 775
-    D_prime -1.0 5 6 1 1 1530 430 775 -333250 333250
-    D_prime -1.0
-    col 9 7 2424384 1
-    D_prime counts: i 5 j 7 a 1 b 1 n 1530 n_a 430 n_b 11
-    D_prime -1.0 5 7 1 1 1530 430 11 -4730 4730
-    D_prime -1.0
-    col 10 8 2425077 1
-    D_prime counts: i 5 j 8 a 1 b 1 n 1530 n_a 430 n_b 5
-    D_prime -1.0 5 8 1 1 1530 430 5 -2150 2150
-    D_prime -1.0
-    col 11 9 2429617 1
-    D_prime counts: i 5 j 9 a 1 b 1 n 1530 n_a 430 n_b 19
-    D_prime -1.0 5 9 1 1 1530 430 19 -8170 8170
-    D_prime -1.0
-    col 12 10 2429745 1
-    D_prime counts: i 5 j 10 a 1 b 1 n 1530 n_a 430 n_b 110
-    D_prime -1.0 5 10 1 1 1530 430 110 -47300 47300
-    D_prime -1.0
-    col 13 11 2429897 1
-    D_prime counts: i 5 j 11 a 1 b 1 n 1530 n_a 430 n_b 11
-    D_prime -1.0 5 11 1 1 1530 430 11 -4730 4730
-    D_prime -1.0
-    col 14 12 2429915 1
-    D_prime counts: i 5 j 12 a 1 b 1 n 1530 n_a 430 n_b 7
-    D_prime -1.0 5 12 1 1 1530 430 7 -3010 3010
-    D_prime -1.0
-    col 15 13 2430424 1
-    D_prime counts: i 5 j 13 a 1 b 1 n 1530 n_a 430 n_b 28
-    D_prime -1.0 5 13 1 1 1530 430 28 -12040 12040
-    D_prime -1.0
-    col 16 14 2430817 1
-    D_prime counts: i 5 j 14 a 1 b 1 n 1530 n_a 430 n_b 13
-    D_prime -1.0 5 14 1 1 1530 430 13 -5590 5590
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 5 j 15 a 1 b 1 n 1530 n_a 430 n_b 52
-    D_prime -1.0 5 15 1 1 1530 430 52 -22360 22360
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 5 j 16 a 1 b 1 n 1530 n_a 430 n_b 29
-    D_prime -1.0 5 16 1 1 1530 430 29 -12470 12470
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 5 j 17 a 1 b 1 n 1530 n_a 430 n_b 80
-    D_prime -1.0 5 17 1 1 1530 430 80 -34400 34400
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 5 j 18 a 1 b 1 n 1530 n_a 430 n_b 16
-    D_prime -1.0 5 18 1 1 1530 430 16 -6880 6880
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 5 j 19 a 1 b 1 n 1530 n_a 430 n_b 44
-    D_prime -1.0 5 19 1 1 1530 430 44 -18920 18920
-    D_prime -1.0
     row 8 6 2422652 1
-    col 9 7 2424384 1
-    D_prime counts: i 6 j 7 a 1 b 1 n 1530 n_a 775 n_b 11
-    D_prime -0.46158357771261 6 7 1 1 1530 775 11 -3935 8525
-    D_prime -0.46158357771261
-    col 10 8 2425077 1
-    D_prime counts: i 6 j 8 a 1 b 1 n 1530 n_a 775 n_b 5
-    D_prime -1.0 6 8 1 1 1530 775 5 -3875 3875
-    D_prime -1.0
-    col 11 9 2429617 1
-    D_prime counts: i 6 j 9 a 1 b 1 n 1530 n_a 775 n_b 19
-    D_prime -0.8960950764006791 6 9 1 1 1530 775 19 -13195 14725
-    D_prime -0.8960950764006791
-    col 12 10 2429745 1
-    D_prime counts: i 6 j 10 a 1 b 1 n 1530 n_a 775 n_b 110
-    D_prime 0.9815773630343166 6 10 1 1 1530 775 110 81520 83050
-    D_prime 0.9815773630343166
-    col 13 11 2429897 1
-    D_prime counts: i 6 j 11 a 1 b 1 n 1530 n_a 775 n_b 11
-    D_prime 1.0 6 11 1 1 1530 775 11 8305 8305
-    D_prime 1.0
-    col 14 12 2429915 1
-    D_prime counts: i 6 j 12 a 1 b 1 n 1530 n_a 775 n_b 7
-    D_prime 1.0 6 12 1 1 1530 775 7 5285 5285
-    D_prime 1.0
-    col 15 13 2430424 1
-    D_prime counts: i 6 j 13 a 1 b 1 n 1530 n_a 775 n_b 28
-    D_prime 1.0 6 13 1 1 1530 775 28 21140 21140
-    D_prime 1.0
-    col 16 14 2430817 1
-    D_prime counts: i 6 j 14 a 1 b 1 n 1530 n_a 775 n_b 13
-    D_prime 1.0 6 14 1 1 1530 775 13 9815 9815
-    D_prime 1.0
-    col 17 15 2430863 1
-    D_prime counts: i 6 j 15 a 1 b 1 n 1530 n_a 775 n_b 52
-    D_prime 1.0 6 15 1 1 1530 775 52 39260 39260
-    D_prime 1.0
-    col 18 16 2430880 1
-    D_prime counts: i 6 j 16 a 1 b 1 n 1530 n_a 775 n_b 29
-    D_prime 1.0 6 16 1 1 1530 775 29 21895 21895
-    D_prime 1.0
-    col 19 17 2430881 1
-    D_prime counts: i 6 j 17 a 1 b 1 n 1530 n_a 775 n_b 80
-    D_prime 0.9746688741721854 6 17 1 1 1530 775 80 58870 60400
-    D_prime 0.9746688741721854
-    col 20 18 2431061 1
-    D_prime counts: i 6 j 18 a 1 b 1 n 1530 n_a 775 n_b 16
-    D_prime 1.0 6 18 1 1 1530 775 16 12080 12080
-    D_prime 1.0
-    col 21 19 2431079 1
-    D_prime counts: i 6 j 19 a 1 b 1 n 1530 n_a 775 n_b 44
-    D_prime 1.0 6 19 1 1 1530 775 44 33220 33220
-    D_prime 1.0
     row 9 7 2424384 1
-    col 10 8 2425077 1
-    D_prime counts: i 7 j 8 a 1 b 1 n 1530 n_a 11 n_b 5
-    D_prime -1.0 7 8 1 1 1530 11 5 -55 55
-    D_prime -1.0
-    col 11 9 2429617 1
-    D_prime counts: i 7 j 9 a 1 b 1 n 1530 n_a 11 n_b 19
-    D_prime -1.0 7 9 1 1 1530 11 19 -209 209
-    D_prime -1.0
-    col 12 10 2429745 1
-    D_prime counts: i 7 j 10 a 1 b 1 n 1530 n_a 11 n_b 110
-    D_prime -1.0 7 10 1 1 1530 11 110 -1210 1210
-    D_prime -1.0
-    col 13 11 2429897 1
-    D_prime counts: i 7 j 11 a 1 b 1 n 1530 n_a 11 n_b 11
-    D_prime -1.0 7 11 1 1 1530 11 11 -121 121
-    D_prime -1.0
-    col 14 12 2429915 1
-    D_prime counts: i 7 j 12 a 1 b 1 n 1530 n_a 11 n_b 7
-    D_prime -1.0 7 12 1 1 1530 11 7 -77 77
-    D_prime -1.0
-    col 15 13 2430424 1
-    D_prime counts: i 7 j 13 a 1 b 1 n 1530 n_a 11 n_b 28
-    D_prime -1.0 7 13 1 1 1530 11 28 -308 308
-    D_prime -1.0
-    col 16 14 2430817 1
-    D_prime counts: i 7 j 14 a 1 b 1 n 1530 n_a 11 n_b 13
-    D_prime -1.0 7 14 1 1 1530 11 13 -143 143
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 7 j 15 a 1 b 1 n 1530 n_a 11 n_b 52
-    D_prime -1.0 7 15 1 1 1530 11 52 -572 572
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 7 j 16 a 1 b 1 n 1530 n_a 11 n_b 29
-    D_prime -1.0 7 16 1 1 1530 11 29 -319 319
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 7 j 17 a 1 b 1 n 1530 n_a 11 n_b 80
-    D_prime -1.0 7 17 1 1 1530 11 80 -880 880
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 7 j 18 a 1 b 1 n 1530 n_a 11 n_b 16
-    D_prime -1.0 7 18 1 1 1530 11 16 -176 176
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 7 j 19 a 1 b 1 n 1530 n_a 11 n_b 44
-    D_prime -1.0 7 19 1 1 1530 11 44 -484 484
-    D_prime -1.0
     row 10 8 2425077 1
-    col 11 9 2429617 1
-    D_prime counts: i 8 j 9 a 1 b 1 n 1530 n_a 5 n_b 19
-    D_prime -1.0 8 9 1 1 1530 5 19 -95 95
-    D_prime -1.0
-    col 12 10 2429745 1
-    D_prime counts: i 8 j 10 a 1 b 1 n 1530 n_a 5 n_b 110
-    D_prime -1.0 8 10 1 1 1530 5 110 -550 550
-    D_prime -1.0
-    col 13 11 2429897 1
-    D_prime counts: i 8 j 11 a 1 b 1 n 1530 n_a 5 n_b 11
-    D_prime -1.0 8 11 1 1 1530 5 11 -55 55
-    D_prime -1.0
-    col 14 12 2429915 1
-    D_prime counts: i 8 j 12 a 1 b 1 n 1530 n_a 5 n_b 7
-    D_prime -1.0 8 12 1 1 1530 5 7 -35 35
-    D_prime -1.0
-    col 15 13 2430424 1
-    D_prime counts: i 8 j 13 a 1 b 1 n 1530 n_a 5 n_b 28
-    D_prime -1.0 8 13 1 1 1530 5 28 -140 140
-    D_prime -1.0
-    col 16 14 2430817 1
-    D_prime counts: i 8 j 14 a 1 b 1 n 1530 n_a 5 n_b 13
-    D_prime -1.0 8 14 1 1 1530 5 13 -65 65
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 8 j 15 a 1 b 1 n 1530 n_a 5 n_b 52
-    D_prime -1.0 8 15 1 1 1530 5 52 -260 260
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 8 j 16 a 1 b 1 n 1530 n_a 5 n_b 29
-    D_prime -1.0 8 16 1 1 1530 5 29 -145 145
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 8 j 17 a 1 b 1 n 1530 n_a 5 n_b 80
-    D_prime -1.0 8 17 1 1 1530 5 80 -400 400
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 8 j 18 a 1 b 1 n 1530 n_a 5 n_b 16
-    D_prime -1.0 8 18 1 1 1530 5 16 -80 80
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 8 j 19 a 1 b 1 n 1530 n_a 5 n_b 44
-    D_prime -1.0 8 19 1 1 1530 5 44 -220 220
-    D_prime -1.0
     row 11 9 2429617 1
-    col 12 10 2429745 1
-    D_prime counts: i 9 j 10 a 1 b 1 n 1530 n_a 19 n_b 110
-    D_prime -1.0 9 10 1 1 1530 19 110 -2090 2090
-    D_prime -1.0
-    col 13 11 2429897 1
-    D_prime counts: i 9 j 11 a 1 b 1 n 1530 n_a 19 n_b 11
-    D_prime -1.0 9 11 1 1 1530 19 11 -209 209
-    D_prime -1.0
-    col 14 12 2429915 1
-    D_prime counts: i 9 j 12 a 1 b 1 n 1530 n_a 19 n_b 7
-    D_prime -1.0 9 12 1 1 1530 19 7 -133 133
-    D_prime -1.0
-    col 15 13 2430424 1
-    D_prime counts: i 9 j 13 a 1 b 1 n 1530 n_a 19 n_b 28
-    D_prime -1.0 9 13 1 1 1530 19 28 -532 532
-    D_prime -1.0
-    col 16 14 2430817 1
-    D_prime counts: i 9 j 14 a 1 b 1 n 1530 n_a 19 n_b 13
-    D_prime -1.0 9 14 1 1 1530 19 13 -247 247
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 9 j 15 a 1 b 1 n 1530 n_a 19 n_b 52
-    D_prime -1.0 9 15 1 1 1530 19 52 -988 988
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 9 j 16 a 1 b 1 n 1530 n_a 19 n_b 29
-    D_prime -1.0 9 16 1 1 1530 19 29 -551 551
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 9 j 17 a 1 b 1 n 1530 n_a 19 n_b 80
-    D_prime -1.0 9 17 1 1 1530 19 80 -1520 1520
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 9 j 18 a 1 b 1 n 1530 n_a 19 n_b 16
-    D_prime -1.0 9 18 1 1 1530 19 16 -304 304
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 9 j 19 a 1 b 1 n 1530 n_a 19 n_b 44
-    D_prime -1.0 9 19 1 1 1530 19 44 -836 836
-    D_prime -1.0
     row 12 10 2429745 1
-    col 13 11 2429897 1
-    D_prime counts: i 10 j 11 a 1 b 1 n 1530 n_a 110 n_b 11
-    D_prime -1.0 10 11 1 1 1530 110 11 -1210 1210
-    D_prime -1.0
-    col 14 12 2429915 1
-    D_prime counts: i 10 j 12 a 1 b 1 n 1530 n_a 110 n_b 7
-    D_prime -1.0 10 12 1 1 1530 110 7 -770 770
-    D_prime -1.0
-    col 15 13 2430424 1
-    D_prime counts: i 10 j 13 a 1 b 1 n 1530 n_a 110 n_b 28
-    D_prime -1.0 10 13 1 1 1530 110 28 -3080 3080
-    D_prime -1.0
-    col 16 14 2430817 1
-    D_prime counts: i 10 j 14 a 1 b 1 n 1530 n_a 110 n_b 13
-    D_prime -1.0 10 14 1 1 1530 110 13 -1430 1430
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 10 j 15 a 1 b 1 n 1530 n_a 110 n_b 52
-    D_prime -1.0 10 15 1 1 1530 110 52 -5720 5720
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 10 j 16 a 1 b 1 n 1530 n_a 110 n_b 29
-    D_prime -1.0 10 16 1 1 1530 110 29 -3190 3190
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 10 j 17 a 1 b 1 n 1530 n_a 110 n_b 80
-    D_prime -1.0 10 17 1 1 1530 110 80 -8800 8800
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 10 j 18 a 1 b 1 n 1530 n_a 110 n_b 16
-    D_prime -1.0 10 18 1 1 1530 110 16 -1760 1760
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 10 j 19 a 1 b 1 n 1530 n_a 110 n_b 44
-    D_prime -1.0 10 19 1 1 1530 110 44 -4840 4840
-    D_prime -1.0
     row 13 11 2429897 1
-    col 14 12 2429915 1
-    D_prime counts: i 11 j 12 a 1 b 1 n 1530 n_a 11 n_b 7
-    D_prime -1.0 11 12 1 1 1530 11 7 -77 77
-    D_prime -1.0
-    col 15 13 2430424 1
-    D_prime counts: i 11 j 13 a 1 b 1 n 1530 n_a 11 n_b 28
-    D_prime -1.0 11 13 1 1 1530 11 28 -308 308
-    D_prime -1.0
-    col 16 14 2430817 1
-    D_prime counts: i 11 j 14 a 1 b 1 n 1530 n_a 11 n_b 13
-    D_prime -1.0 11 14 1 1 1530 11 13 -143 143
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 11 j 15 a 1 b 1 n 1530 n_a 11 n_b 52
-    D_prime -1.0 11 15 1 1 1530 11 52 -572 572
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 11 j 16 a 1 b 1 n 1530 n_a 11 n_b 29
-    D_prime -1.0 11 16 1 1 1530 11 29 -319 319
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 11 j 17 a 1 b 1 n 1530 n_a 11 n_b 80
-    D_prime -1.0 11 17 1 1 1530 11 80 -880 880
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 11 j 18 a 1 b 1 n 1530 n_a 11 n_b 16
-    D_prime -1.0 11 18 1 1 1530 11 16 -176 176
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 11 j 19 a 1 b 1 n 1530 n_a 11 n_b 44
-    D_prime -1.0 11 19 1 1 1530 11 44 -484 484
-    D_prime -1.0
     row 14 12 2429915 1
-    col 15 13 2430424 1
-    D_prime counts: i 12 j 13 a 1 b 1 n 1530 n_a 7 n_b 28
-    D_prime -1.0 12 13 1 1 1530 7 28 -196 196
-    D_prime -1.0
-    col 16 14 2430817 1
-    D_prime counts: i 12 j 14 a 1 b 1 n 1530 n_a 7 n_b 13
-    D_prime -1.0 12 14 1 1 1530 7 13 -91 91
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 12 j 15 a 1 b 1 n 1530 n_a 7 n_b 52
-    D_prime -1.0 12 15 1 1 1530 7 52 -364 364
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 12 j 16 a 1 b 1 n 1530 n_a 7 n_b 29
-    D_prime -1.0 12 16 1 1 1530 7 29 -203 203
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 12 j 17 a 1 b 1 n 1530 n_a 7 n_b 80
-    D_prime -1.0 12 17 1 1 1530 7 80 -560 560
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 12 j 18 a 1 b 1 n 1530 n_a 7 n_b 16
-    D_prime -1.0 12 18 1 1 1530 7 16 -112 112
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 12 j 19 a 1 b 1 n 1530 n_a 7 n_b 44
-    D_prime -1.0 12 19 1 1 1530 7 44 -308 308
-    D_prime -1.0
     row 15 13 2430424 1
-    col 16 14 2430817 1
-    D_prime counts: i 13 j 14 a 1 b 1 n 1530 n_a 28 n_b 13
-    D_prime -1.0 13 14 1 1 1530 28 13 -364 364
-    D_prime -1.0
-    col 17 15 2430863 1
-    D_prime counts: i 13 j 15 a 1 b 1 n 1530 n_a 28 n_b 52
-    D_prime -1.0 13 15 1 1 1530 28 52 -1456 1456
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 13 j 16 a 1 b 1 n 1530 n_a 28 n_b 29
-    D_prime -1.0 13 16 1 1 1530 28 29 -812 812
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 13 j 17 a 1 b 1 n 1530 n_a 28 n_b 80
-    D_prime -1.0 13 17 1 1 1530 28 80 -2240 2240
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 13 j 18 a 1 b 1 n 1530 n_a 28 n_b 16
-    D_prime -1.0 13 18 1 1 1530 28 16 -448 448
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 13 j 19 a 1 b 1 n 1530 n_a 28 n_b 44
-    D_prime -1.0 13 19 1 1 1530 28 44 -1232 1232
-    D_prime -1.0
     row 16 14 2430817 1
-    col 17 15 2430863 1
-    D_prime counts: i 14 j 15 a 1 b 1 n 1530 n_a 13 n_b 52
-    D_prime -1.0 14 15 1 1 1530 13 52 -676 676
-    D_prime -1.0
-    col 18 16 2430880 1
-    D_prime counts: i 14 j 16 a 1 b 1 n 1530 n_a 13 n_b 29
-    D_prime -1.0 14 16 1 1 1530 13 29 -377 377
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 14 j 17 a 1 b 1 n 1530 n_a 13 n_b 80
-    D_prime -1.0 14 17 1 1 1530 13 80 -1040 1040
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 14 j 18 a 1 b 1 n 1530 n_a 13 n_b 16
-    D_prime -1.0 14 18 1 1 1530 13 16 -208 208
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 14 j 19 a 1 b 1 n 1530 n_a 13 n_b 44
-    D_prime -1.0 14 19 1 1 1530 13 44 -572 572
-    D_prime -1.0
     row 17 15 2430863 1
-    col 18 16 2430880 1
-    D_prime counts: i 15 j 16 a 1 b 1 n 1530 n_a 52 n_b 29
-    D_prime -1.0 15 16 1 1 1530 52 29 -1508 1508
-    D_prime -1.0
-    col 19 17 2430881 1
-    D_prime counts: i 15 j 17 a 1 b 1 n 1530 n_a 52 n_b 80
-    D_prime -1.0 15 17 1 1 1530 52 80 -4160 4160
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 15 j 18 a 1 b 1 n 1530 n_a 52 n_b 16
-    D_prime -1.0 15 18 1 1 1530 52 16 -832 832
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 15 j 19 a 1 b 1 n 1530 n_a 52 n_b 44
-    D_prime -1.0 15 19 1 1 1530 52 44 -2288 2288
-    D_prime -1.0
     row 18 16 2430880 1
-    col 19 17 2430881 1
-    D_prime counts: i 16 j 17 a 1 b 1 n 1530 n_a 29 n_b 80
-    D_prime -1.0 16 17 1 1 1530 29 80 -2320 2320
-    D_prime -1.0
-    col 20 18 2431061 1
-    D_prime counts: i 16 j 18 a 1 b 1 n 1530 n_a 29 n_b 16
-    D_prime -1.0 16 18 1 1 1530 29 16 -464 464
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 16 j 19 a 1 b 1 n 1530 n_a 29 n_b 44
-    D_prime -1.0 16 19 1 1 1530 29 44 -1276 1276
-    D_prime -1.0
     row 19 17 2430881 1
-    col 20 18 2431061 1
-    D_prime counts: i 17 j 18 a 1 b 1 n 1530 n_a 80 n_b 16
-    D_prime -1.0 17 18 1 1 1530 80 16 -1280 1280
-    D_prime -1.0
-    col 21 19 2431079 1
-    D_prime counts: i 17 j 19 a 1 b 1 n 1530 n_a 80 n_b 44
-    D_prime -1.0 17 19 1 1 1530 80 44 -3520 3520
-    D_prime -1.0
-    row 20 18 2431061 1
-    col 21 19 2431079 1
-    D_prime counts: i 18 j 19 a 1 b 1 n 1530 n_a 16 n_b 44
-    D_prime -1.0 18 19 1 1 1530 16 44 -704 704
-    D_prime -1.0
-    row 21 19 2431079 1
+    row 20 18 2431019 1
+    row 21 19 2431061 1
+    row 22 20 2431079 1
 
 
 
@@ -7001,7 +6137,7 @@ ld[0]
            -1.        , -1.        , -0.9640592 ,  0.91812161, -1.        ,
            -1.        , -1.        , -1.        , -1.        , -1.        ,
            -1.        , -1.        , -1.        , -1.        , -1.        ,
-           -1.        , -1.        ])
+           -1.        , -1.        , -1.        ])
 
 
 
@@ -7033,11 +6169,6 @@ s.ljust(3)
     '44 '
 
 
-
-
-```python
-plt.colorbar?
-```
 
 
 ```python
@@ -7075,7 +6206,7 @@ fig.savefig('../artwork/fig_ld.png', dpi=300, bbox_inches='tight');
 ```
 
 
-![png](fig_ld_files/fig_ld_32_0.png)
+![png](fig_ld_files/fig_ld_31_0.png)
 
 
 
