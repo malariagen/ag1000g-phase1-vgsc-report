@@ -33,7 +33,7 @@
 
 
 \title{
-The genetic architecture of target-site resistance to pyrethroid insecticides in the African malaria vectors \emph{Anopheles gambiae} and \emph{Anopheles coluzzii}
+The evolution and spread of target-site resistance to pyrethroid insecticides in the African malaria vectors \emph{Anopheles gambiae} and \emph{Anopheles coluzzii}
 }
 
 
@@ -682,15 +682,84 @@ Even for outbreak F1 where we have clear evidence of spread from West Africa tow
 %
 We indicate this uncertainty regarding the outbreak source as a coloured area with a dashed border.
 %
-This representation is imperfect, as is our knowledge regarding the sources and transmission paths of these outbreaks, but we hope this depiction may at least serve to stimulate further sampling, analysis and discussion with the aim of improving our knowledge of resistance outbreaks for \textit{Vgsc} and other insecticide resistance genes.
+This representation is imperfect, as is our knowledge regarding the sources and transmission paths of these outbreaks, but we hope this depiction may at least serve to stimulate further sampling, analysis and discussion, with the aim of improving our knowledge of resistance outbreaks for \textit{Vgsc} as well as other insecticide resistance genes.
 %%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Reconstruction of ancestral haplotypes and analysis of recombination}
+\subsection*{Design of genetic assays for outbreak surveillance}
 
 
-@@TODO
+%%
+%
+The insecticide resistance outbreaks we have identified here are undoubtedly ongoing, affecting many more mosquito populations than we have sampled in Ag1000G phase 1, and continuing to spread.
+%
+In addition, other outbreaks may be occurring in populations that we have not sampled, or in populations we have sampled but since the sampling date.
+%
+Whole genome sequencing of individual mosquitoes clearly provides data of sufficient resolution to detect resistance outbreaks and provide ongoing outbreak surveillance.
+%
+The cost of whole genome sequencing continues to fall, with the present cost being approximately 100 GBP to obtain ~30X coverage of an individual genome.
+%
+Mobile sequencing technology is also developing rapidly, and may be a realistic prospect for mosquito population surveillance within a few years.
+%
+There is an interim period, however, during which it may be more practical to develop targeted genetic assays for outbreak surveillance that could scale to tens of thousands of mosquitoes at a fraction of the cost of whole genome sequencing.
+%
+For example, SNP genotyping using mass spectrometry and amplicon sequencing are two available technologies that could be applied now at scale and at modest cost. 
+%%
+
+%%
+%
+To facilitate the development of targeted genetic assays for \textit{Vgsc} insecticide resistance outbreak surveillance, we have produced two supplementary data tables.
+%
+In Supplementary Table 1 we provide a list of all SNPs discovered in this study within the \textit{Vgsc} gene and in the @@20 kbp upstream and downstream flanking intergenic regions.
+%
+Both amplicon sequencing and genotyping by mass spectrometry require the design of PCR primers to amplify the targeted genome region.
+%
+To aid in primer design, for each SNP we provide the flanking sequence for @@200 bp upstream and downstream of the SNP position, including information about any polymorphisms within these flanking regions.
+%
+Not all SNPs are informative for detecting whether an individual mosquito carries a haplotype from a resistance outbreak, and we provide some summary statistics for each SNP to aid in the selection of the most informative SNPs.
+%
+For each SNP we report the allele frequencies within each of the outbreaks identified here, as well as for populations of susceptible haplotypes.
+%
+We also provide the overall variance in allele frequencies, the information gain, and the Gini impurity for each SNP.
+%
+Note that recombination events are more likely at increasing distances upstream and downstream of the resistance variants under selection, and thus the most informative SNPs are found closest to the resistance variants within the gene (@@REF Figure @@).
+%
+However, SNPs with some information gain are available throughout the gene and in flanking regions.
+%
+
+
+%% Figure - Information gain.
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.0\linewidth,center]{artwork/demo.png}
+  \caption{\textbf{Information gain}. @@TODO make the figure. @@TODO also include cross-validation scores for trees versus number of features, or separate figure?}
+  \label{fig:gain}
+\end{figure}
+%%
+
+
+%%
+%
+We suggest that the design of a genetic assay proceed by (1) performing an initial round of filtering to remove SNPs which are not informative (e.g., low information gain); (2) performing a round of primer design to remove SNPs for which primers are unlikely to be successful; (3) performing a full analysis of the remaining SNPs to select a subset that is sufficient to classify all outbreaks identified here; (4) finalise primer designs for the chosen panel of SNPs.
+%
+A possible methodology for step 3 would be to use an algorithm such as ID3 to build a decision tree.
+%
+To aid in the development of a classification algorithm, in Supplementary Table 2 we provide our classification for each of the 1530 haplotypes sampled here, along with the alleles carried by each haplotype for each of the SNPs included in Supplementary Table 1.
+%
+To test the methodology, we constructed decision trees using the ID3 algorithm and using all available SNPs as input features (i.e., assuming primers could be designed in all cases).
+%
+In Figure @@REF we show the cross-validation scores obtained for trees constructed at increasing numbers of SNPs.
+%
+This analysis suggests that it should be possible to construct a reasonable classifier using ~@@N SNPs.
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Recombination}
+
+
+@@TODO?
 
 
 
