@@ -221,6 +221,8 @@ AO=Angola; BF=Burkina Faso; GN=Guinea; CM=Cameroon; GA=Gabon; UG=Uganda; KE=Keny
 All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase 1 populations, with the exception of \texttt{2,400,071 G>T} which is only found in the CM\emph{Ag} population at 0.4\% frequency but is included because another mutation (\texttt{2,400,071 G>A}) is found at the same position causing the same amino acid substitution (\texttt{M490I}); and \texttt{2,431,019 T>C} (\texttt{F1920S}) which is at 4\% frequency in GA\emph{Ag} but also found in CM\emph{Ag} and linked to \texttt{L995F}. 
 }
 
+  \label{table:variants_missense}
+  
   \input{tables/variants_missense.tex}
   
   \begin{tablenotes}
@@ -239,8 +241,6 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
   \end{tablenotes}
   
   \end{threeparttable}
-  
-  \label{table:variants_missense}
   
 \end{table}
 \end{landscape}
@@ -267,7 +267,7 @@ The \texttt{I1527T} allele is present in \textit{An. coluzzii} from Burkina Faso
 %
 Codon 1527 occurs within trans-membrane domain segment \texttt{III.S6}, immediately adjacent to a second predicted binding pocket for pyrethroid molecules, thus it is plausible that \texttt{I1527T} could alter insecticide binding (@@REF Dong).
 %
-We also found that the two variant alleles affecting codon 402, both of which induce a \texttt{V402L} substitution, were in strong linkage with \texttt{I1527T} (D'>@@N; Figure @@LD), and almost all haplotypes carrying \texttt{I1527T} also carried a \texttt{V402L} substitution.
+We also found that the two variant alleles affecting codon 402, both of which induce a \texttt{V402L} substitution, were in strong linkage with \texttt{I1527T} (D'>@@N; Figure \ref{fig:ld}), and almost all haplotypes carrying \texttt{I1527T} also carried a \texttt{V402L} substitution.
 %
 The most parsimonious explanation for this pattern of linkage is that the \texttt{I1527T} mutation occurred first, and mutations in codon 402 subsequently arose on this genetic background.
 %
@@ -283,11 +283,14 @@ Because of the limited geographical distribution of these alleles, we hypothesiz
 %
 \begin{figure}[!t]
 
-  \includegraphics[width=1\linewidth,center]{artwork/fig_ld.png}
+  \centering
+  
+  \includegraphics[width=\linewidth]{artwork/fig_ld.png}
   
   \caption{\textbf{Linkage disequilibrium between non-synonymous variants}. A value of 1 indicates that the two variants always occur in combination, and conversely a value of -1 indicates that the two variants never occur in combination. @TODO nuance this?}
   
   \label{fig:ld}
+ 
 \end{figure}
 %%
 
@@ -759,8 +762,51 @@ This analysis suggests that it should be possible to construct a reasonable clas
 \subsection*{Recombination}
 
 
-@@TODO?
+%%
+%
+As mentioned earlier, analyses of haplotype structure based on genetic distance within the fixed window of the \textit{Vgsc} gene could be affected if recombination events occurred within the gene.
+%
+Our analyses of haplotype age should be less affected by recombination, because they explicitly take recombination into account, estimating the positions at which recombination events have occurred to interrupt regions shared IBD between pairs of haplotypes.
+%
+However, these analyses were based on a heuristic method for estimating recombination breakpoints, and there are several potential sources of error.
+%
+To study the evidence for recombination within the genome region spanning the \textit{Vgsc} gene, and provide some additional confirmation that our inferences regarding insecticide resistance outbreaks have not been affected by recombination or other sources of error, we performed an additional analysis of genetic distance between haplotypes.
+%
+We first constructed a putative ancestral haplotype for each of the outbreaks we identified, by starting from the codon 995 position and separately moving upstream and downstream, assuming the major allele at each SNP bifurcation point represents the ancestral haplotype.
+%
+We then computed the genetic distance ($D_{XY}$) between each of our sampled haplotypes and each of the inferred ancestral outbreak haplotypes, computing the distance in @@ overlapping windows of @@ bp across a 2 Mbp region spanning the \textit{Vgsc} gene.
+%
+The results for outbreaks F1-F5 are plotted in Figure \ref{fig:recom_f}, and outbreaks S1-S4/5 are shown in Figure \ref{fig:recom_s}.
+%
+In these plots we expect that all haplotypes from a given outbreak should share very close genetic similarity ($D_{XY} \approx 0$) with each other and with the ancestral haplotype for that outbreak within the \textit{Vgsc} gene itself, with an increasing number of haplotypes recombining away from the ancestral outbreak haplotype as we move away from the gene in either the upstream or downstream direction.
+%
+Conversely, haplotypes from one outbreak should not share any close genetic similarity ($D_{XY} > 0$) with the inferred ancestral haplotype from a different outbreak, either within the \textit{Vgsc} gene or in flanking regions.
+%%
 
+%% Figure - L995F recombination
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom.png}
+  \caption{\textbf{Recombination and ancestral haplotypes for L995F}. @@TODO legend}
+  \label{fig:recom_f}
+\end{figure}
+%%
+
+
+%%
+%
+The results for all outbreaks are largely consistent with this expectation.
+%
+For this analysis we treated S4/5 as a single outbreak, as indicated by the haplotype age analysis, and we can gain some insight into why these two were split into separate clusters in earlier analyses.
+%
+All haplotypes in the S4/5 outbreak share close similarity with the ancestral haplotype on both flanks of the \textit{Vgsc} gene, but there is a short region of within the gene where a subset of haplotypes are diverged.
+%
+This region of divergence accounts for the S4/S5 split in earlier analyses.
+%
+@@TODO explain
+%
+@@TODO also note relatively low divergence among F2, F3, F4 on upstream flank and explain
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -799,28 +845,6 @@ This analysis suggests that it should be possible to construct a reasonable clas
 
 
 \subsection*{Recombination and independent outbreaks of resistance}
-
-
-%% Paragraph 1 - Introduce the problem/question, what do we want to infer? We want to infer independent outbreaks of resistance, a.k.a., multiple local origins/outbreaks, by which we mean ... @@TODO. haplotype clusters appear distinct but recombination events could occur during geographical spread, bringing resistance onto a different genetic backgrounds.
-%
-@@TODO
-%%
-
-
-%% Paragraph 2 - Say what analysis we did to address this - which is, reconstruct putative ancestral haplotype for each haplogroup. Then scan all haplotypes against, computing distinct (divergence) in windows (Figure 7; Figure 8).
-%
-@@TODO
-%%
-
-
-%% Figure - L995F recombination
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995F}. @@TODO legend}
-  \label{fig:recom_f}
-\end{figure}
-%%
 
 
 %% Paragraph 3 - Describe results of scans, evidence for independent outbreaks.
