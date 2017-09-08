@@ -710,15 +710,44 @@ There is an interim period, however, during which it may be more practical to de
 For example, SNP genotyping using mass spectrometry and amplicon sequencing are two available technologies that could be applied now at scale and at modest cost. 
 %%
 
+
+%% Figure - Information gain.
+%
+\begin{figure}[!b]
+  \centering
+  
+  \includegraphics[width=1.0\linewidth]{artwork/info_gain.png}
+  \includegraphics[width=1.0\linewidth]{artwork/tree_cv.png}
+  
+  \caption{%
+%
+\textbf{Informative SNPs for outbreak surveillance}. 
+%
+\textbf{a}, Each data point represents a single SNP. 
+%
+The information gain value for each SNP provides an indication of how informative the SNP is likely to be if used as part of a genetic assay for testing whether a mosquito carries a resistance haplotype, and if so, which resistance outbreak it derives from. 
+%
+\textbf{b}, Number of SNPs required to accurately classify which outbreak a haplotype derives from. 
+%
+Decision trees using either information gain or the Gini impurity index as the decision criterion.
+%
+Accuracy was evaluated using 10-fold stratified cross-validation.
+}
+
+  \label{fig:gain}
+\end{figure}
+%%
+
+
 %%
 %
 To facilitate the development of targeted genetic assays for \textit{Vgsc} insecticide resistance outbreak surveillance, we have produced two supplementary data tables.
 %
-In Supplementary Table 1 we provide a list of all SNPs discovered in this study within the \textit{Vgsc} gene and in the @@20 kbp upstream and downstream flanking intergenic regions.
+In Supplementary Table 1 we provide a list of all biallelic SNPs discovered with high confidence in this study within the \textit{Vgsc} gene and in the 100 kbp upstream and downstream flanking regions.
 %
 Both amplicon sequencing and genotyping by mass spectrometry require the design of PCR primers to amplify the targeted genome region.
 %
-To aid in primer design, for each SNP we provide the flanking sequence for @@200 bp upstream and downstream of the SNP position, including information about any polymorphisms within these flanking regions.
+To aid in primer design, for each SNP we provide the flanking sequence for 250 bp upstream and downstream of the SNP position, including information about polymorphisms within these flanking regions.
 %
 Not all SNPs are informative for detecting whether an individual mosquito carries a haplotype from a resistance outbreak, and we provide some summary statistics for each SNP to aid in the selection of the most informative SNPs.
 %
@@ -726,20 +755,10 @@ For each SNP we report the allele frequencies within each of the outbreaks ident
 %
 We also provide the overall variance in allele frequencies, the information gain, and the Gini impurity for each SNP.
 %
-Note that recombination events are more likely at increasing distances upstream and downstream of the resistance variants under selection, and thus the most informative SNPs are found closest to the resistance variants within the gene (@@REF Figure @@).
+Note that recombination events are more likely at increasing distances upstream and downstream of the resistance variants under selection, and thus the most informative SNPs are found closest to the resistance variants within the gene (Figure \ref{fig:gain}).
 %
 However, SNPs with some information gain are available throughout the gene and in flanking regions.
 %
-
-
-%% Figure - Information gain.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.0\linewidth,center]{artwork/demo.png}
-  \caption{\textbf{Information gain}. @@TODO make the figure. @@TODO also include cross-validation scores for trees versus number of features, or separate figure?}
-  \label{fig:gain}
-\end{figure}
-%%
 
 
 %%
@@ -750,11 +769,11 @@ A possible methodology for step 3 would be to use an algorithm such as ID3 to bu
 %
 To aid in the development of a classification algorithm, in Supplementary Table 2 we provide our classification for each of the 1530 haplotypes sampled here, along with the alleles carried by each haplotype for each of the SNPs included in Supplementary Table 1.
 %
-To test the methodology, we constructed decision trees using the ID3 algorithm and using all available SNPs as input features (i.e., assuming primers could be designed in all cases).
+To test the methodology, we constructed decision trees using either information gain (LD3) or the Gini impurity index as a decision criterion, and using all available SNPs from within the \textit{Vgsc} plus 20 kbp flanking regions as input features (i.e., assuming primers could be designed in all cases).
 %
-In Figure @@REF we show the cross-validation scores obtained for trees constructed at increasing numbers of SNPs.
+Figure \ref{fig:gain}b shows the cross-validation scores obtained for trees constructed allowing increasing numbers of SNPs.
 %
-This analysis suggests that it should be possible to construct a reasonable classifier using ~@@N SNPs or less.
+This analysis suggests that it should be possible to construct a tree able to classify haplotypes from all 10 resistance outbreaks with >95\% accuracy using 15 SNPs or less.
 %%
 
 
