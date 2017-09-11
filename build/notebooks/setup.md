@@ -170,5 +170,6 @@ from ag1k import phase1_ar31
 phase1_ar31.init(os.path.join(ag1k_dir, 'phase1', 'AR3.1'))
 from ag1k import phase2_ar1
 phase2_ar1.init(os.path.join(ag1k_dir, 'phase2', 'AR1'))
+region_vgsc = SeqFeature('2L', 2358158, 2431617, label='Vgsc')
 
 ```

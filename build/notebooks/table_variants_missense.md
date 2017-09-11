@@ -71,35 +71,33 @@ tbl_variants.head()
 <th>22|SNPEFF_HGVS_c</th>
 <th>23|SNPEFF_HGVS_p</th>
 <th>24|SNPEFF_Feature_ID</th>
-<th>25|AF_AOM</th>
-<th>26|AF_BFM</th>
-<th>27|AF_GWA</th>
-<th>28|AF_GNS</th>
-<th>29|AF_BFS</th>
-<th>30|AF_CMS</th>
-<th>31|AF_GAS</th>
-<th>32|AF_UGS</th>
-<th>33|AF_KES</th>
-<th>34|check_allele</th>
-<th>35|exon_start</th>
-<th>36|exon_end</th>
-<th>37|exon</th>
-<th>38|AGAP004707-RA</th>
-<th>39|AGAP004707-RB</th>
-<th>40|AGAP004707-RC</th>
-<th>41|Davies-C1N2</th>
-<th>42|Davies-C3N2</th>
-<th>43|Davies-C5N2</th>
-<th>44|Davies-C7N2</th>
-<th>45|Davies-C8N2</th>
-<th>46|Davies-C10N2</th>
-<th>47|Davies-C11N2</th>
-<th>48|Davies-C1N9</th>
-<th>49|Davies-C8N9</th>
-<th>50|Davies-C1N9ck</th>
-<th>51|haps_vidx</th>
-<th>52|dprime_L995S</th>
-<th>53|dprime_L995F</th>
+<th>25|SNPEFF_CDS_pos</th>
+<th>26|AF_AOM</th>
+<th>27|AF_BFM</th>
+<th>28|AF_GWA</th>
+<th>29|AF_GNS</th>
+<th>30|AF_BFS</th>
+<th>31|AF_CMS</th>
+<th>32|AF_GAS</th>
+<th>33|AF_UGS</th>
+<th>34|AF_KES</th>
+<th>35|check_allele</th>
+<th>36|exon_start</th>
+<th>37|exon_end</th>
+<th>38|exon</th>
+<th>39|AGAP004707-RA</th>
+<th>40|AGAP004707-RB</th>
+<th>41|AGAP004707-RC</th>
+<th>42|Davies-C1N2</th>
+<th>43|Davies-C3N2</th>
+<th>44|Davies-C5N2</th>
+<th>45|Davies-C7N2</th>
+<th>46|Davies-C8N2</th>
+<th>47|Davies-C10N2</th>
+<th>48|Davies-C11N2</th>
+<th>49|Davies-C1N9</th>
+<th>50|Davies-C8N9</th>
+<th>51|Davies-C1N9ck</th>
 </tr>
 </thead>
 <tbody>
@@ -129,6 +127,7 @@ tbl_variants.head()
 <td>n.97G>A</td>
 <td>p.Asp33Asn</td>
 <td>AGAP004707-RA</td>
+<td>97</td>
 <td style='text-align: right'>0.0</td>
 <td style='text-align: right'>0.0</td>
 <td style='text-align: right'>0.0</td>
@@ -155,9 +154,6 @@ tbl_variants.head()
 <td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
 <td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
 <td>('NON_SYNONYMOUS_CODING', 'D33N')</td>
-<td style='text-align: right'>0</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -185,6 +181,7 @@ tbl_variants.head()
 <td>n.147+12T>G</td>
 <td>None</td>
 <td>AGAP004707-RA</td>
+<td>-1</td>
 <td style='text-align: right'>0.0</td>
 <td style='text-align: right'>0.0</td>
 <td style='text-align: right'>0.0</td>
@@ -211,9 +208,6 @@ tbl_variants.head()
 <td>('INTRONIC', '1', 12, '3', -3673)</td>
 <td>('INTRONIC', '1', 12, '2j', -1324)</td>
 <td>('INTRONIC', '1', 12, '3', -3673)</td>
-<td style='text-align: right'>1</td>
-<td style='text-align: right'>0.9809464508094645</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -241,6 +235,7 @@ tbl_variants.head()
 <td>n.147+24T>C</td>
 <td>None</td>
 <td>AGAP004707-RA</td>
+<td>-1</td>
 <td style='text-align: right'>0.0</td>
 <td style='text-align: right'>0.00724637681159</td>
 <td style='text-align: right'>0.0108695652174</td>
@@ -267,9 +262,6 @@ tbl_variants.head()
 <td>('INTRONIC', '1', 24, '3', -3661)</td>
 <td>('INTRONIC', '1', 24, '2j', -1312)</td>
 <td>('INTRONIC', '1', 24, '3', -3661)</td>
-<td style='text-align: right'>2</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-0.012903225806451613</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -297,6 +289,7 @@ tbl_variants.head()
 <td>n.147+49C>T</td>
 <td>None</td>
 <td>AGAP004707-RA</td>
+<td>-1</td>
 <td style='text-align: right'>0.0</td>
 <td style='text-align: right'>0.0</td>
 <td style='text-align: right'>0.0108695652174</td>
@@ -323,9 +316,6 @@ tbl_variants.head()
 <td>('INTRONIC', '1', 49, '3', -3636)</td>
 <td>('INTRONIC', '1', 49, '2j', -1287)</td>
 <td>('INTRONIC', '1', 49, '3', -3636)</td>
-<td style='text-align: right'>3</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -353,6 +343,7 @@ tbl_variants.head()
 <td>n.147+101T>A</td>
 <td>None</td>
 <td>AGAP004707-RA</td>
+<td>-1</td>
 <td style='text-align: right'>0.0</td>
 <td style='text-align: right'>0.0</td>
 <td style='text-align: right'>0.0108695652174</td>
@@ -379,9 +370,6 @@ tbl_variants.head()
 <td>('INTRONIC', '1', 101, '3', -3584)</td>
 <td>('INTRONIC', '1', 101, '2j', -1235)</td>
 <td>('INTRONIC', '1', 101, '3', -3584)</td>
-<td style='text-align: right'>4</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 </tbody>
 </table>
@@ -487,35 +475,33 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <th>22|SNPEFF_HGVS_c</th>
 <th>23|SNPEFF_HGVS_p</th>
 <th>24|SNPEFF_Feature_ID</th>
-<th>25|AF_AOM</th>
-<th>26|AF_BFM</th>
-<th>27|AF_GWA</th>
-<th>28|AF_GNS</th>
-<th>29|AF_BFS</th>
-<th>30|AF_CMS</th>
-<th>31|AF_GAS</th>
-<th>32|AF_UGS</th>
-<th>33|AF_KES</th>
-<th>34|check_allele</th>
-<th>35|exon_start</th>
-<th>36|exon_end</th>
-<th>37|exon</th>
-<th>38|AGAP004707-RA</th>
-<th>39|AGAP004707-RB</th>
-<th>40|AGAP004707-RC</th>
-<th>41|Davies-C1N2</th>
-<th>42|Davies-C3N2</th>
-<th>43|Davies-C5N2</th>
-<th>44|Davies-C7N2</th>
-<th>45|Davies-C8N2</th>
-<th>46|Davies-C10N2</th>
-<th>47|Davies-C11N2</th>
-<th>48|Davies-C1N9</th>
-<th>49|Davies-C8N9</th>
-<th>50|Davies-C1N9ck</th>
-<th>51|haps_vidx</th>
-<th>52|dprime_L995S</th>
-<th>53|dprime_L995F</th>
+<th>25|SNPEFF_CDS_pos</th>
+<th>26|AF_AOM</th>
+<th>27|AF_BFM</th>
+<th>28|AF_GWA</th>
+<th>29|AF_GNS</th>
+<th>30|AF_BFS</th>
+<th>31|AF_CMS</th>
+<th>32|AF_GAS</th>
+<th>33|AF_UGS</th>
+<th>34|AF_KES</th>
+<th>35|check_allele</th>
+<th>36|exon_start</th>
+<th>37|exon_end</th>
+<th>38|exon</th>
+<th>39|AGAP004707-RA</th>
+<th>40|AGAP004707-RB</th>
+<th>41|AGAP004707-RC</th>
+<th>42|Davies-C1N2</th>
+<th>43|Davies-C3N2</th>
+<th>44|Davies-C5N2</th>
+<th>45|Davies-C7N2</th>
+<th>46|Davies-C8N2</th>
+<th>47|Davies-C10N2</th>
+<th>48|Davies-C11N2</th>
+<th>49|Davies-C1N9</th>
+<th>50|Davies-C8N9</th>
+<th>51|Davies-C1N9ck</th>
 </tr>
 </thead>
 <tbody>
@@ -545,6 +531,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.97G>A</td>
 <td>p.Asp33Asn</td>
 <td>AGAP004707-RA</td>
+<td>97</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -571,9 +558,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>D33N</td>
 <td>D33N</td>
 <td>D33N</td>
-<td style='text-align: right'>0</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -601,6 +585,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.147+1366G></td>
 <td>None</td>
 <td>AGAP004707-RA</td>
+<td>-1</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -627,9 +612,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td></td>
 <td>E60K</td>
 <td></td>
-<td>None</td>
-<td>None</td>
-<td>None</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -657,6 +639,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.148-5A>T</td>
 <td>None</td>
 <td>AGAP004707-RA</td>
+<td>-1</td>
 <td>0.0</td>
 <td>0.0144927536232</td>
 <td>0.0</td>
@@ -683,9 +666,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>D54V</td>
 <td>D65V</td>
 <td>D54V</td>
-<td style='text-align: right'>140</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -713,6 +693,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.160G>T</td>
 <td>p.Gly54Cys</td>
 <td>AGAP004707-RA</td>
+<td>160</td>
 <td>0.0</td>
 <td>0.0144927536232</td>
 <td>0.0</td>
@@ -739,9 +720,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>G60C</td>
 <td>G71C</td>
 <td>G60C</td>
-<td style='text-align: right'>142</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -769,6 +747,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.164C>T</td>
 <td>p.Pro55Leu</td>
 <td>AGAP004707-RA</td>
+<td>164</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -795,9 +774,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>P61L</td>
 <td>P72L</td>
 <td>P61L</td>
-<td style='text-align: right'>143</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -825,6 +801,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.752A>G</td>
 <td>p.Lys251Arg</td>
 <td>AGAP004707-RA</td>
+<td>752</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -851,9 +828,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>K257R</td>
 <td>K268R</td>
 <td>K257R</td>
-<td style='text-align: right'>816</td>
-<td style='text-align: right'>0.30454545454545456</td>
-<td style='text-align: right'>-0.012903225806451613</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -881,6 +855,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.761G>A</td>
 <td>p.Arg254Lys</td>
 <td>AGAP004707-RA</td>
+<td>761</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -907,9 +882,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>R260K</td>
 <td>R271K</td>
 <td>R260K</td>
-<td style='text-align: right'>817</td>
-<td style='text-align: right'>-0.9640591966173362</td>
-<td style='text-align: right'>0.9181216134858519</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -937,6 +909,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.895G>A</td>
 <td>p.Glu299Lys</td>
 <td>AGAP004707-RA</td>
+<td>895</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -963,9 +936,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>E305K</td>
 <td>E316K</td>
 <td>E305K</td>
-<td style='text-align: right'>821</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -993,6 +963,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.949G>A</td>
 <td>p.Gly317Ser</td>
 <td>AGAP004707-RA</td>
+<td>949</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -1019,9 +990,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>G323S</td>
 <td>G334S</td>
 <td>G323S</td>
-<td style='text-align: right'>828</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1049,6 +1017,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.1204G>C</td>
 <td>p.Val402Leu</td>
 <td>AGAP004707-RA</td>
+<td>1204</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.0724637681159</td>
 <td>0.0</td>
@@ -1075,9 +1044,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V408L</td>
 <td>V419L</td>
 <td>V408L</td>
-<td style='text-align: right'>838</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-0.8025806451612904</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1100,6 +1066,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>0</td>
 <td>14.867</td>
 <td>-1.1777</td>
+<td>None</td>
 <td>None</td>
 <td>None</td>
 <td>None</td>
@@ -1131,9 +1098,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V408L</td>
 <td>V419L</td>
 <td>V408L</td>
-<td style='text-align: right'>838</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -1161,6 +1125,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.1396G>C</td>
 <td>p.Asp466His</td>
 <td>AGAP004707-RA</td>
+<td>1396</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -1187,9 +1152,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>D472H</td>
 <td>D483H</td>
 <td>D472H</td>
-<td style='text-align: right'>1080</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -1217,6 +1179,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.1470G>A</td>
 <td>p.Met490Ile</td>
 <td>AGAP004707-RA</td>
+<td>1470</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -1243,9 +1206,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>M496I</td>
 <td>M507I</td>
 <td>M496I</td>
-<td style='text-align: right'>1083</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1273,6 +1233,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>None</td>
 <td>None</td>
 <td>None</td>
+<td>None</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -1299,9 +1260,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>M496I</td>
 <td>M507I</td>
 <td>M496I</td>
-<td style='text-align: right'>1083</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1329,6 +1287,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.1475T>A</td>
 <td>p.Ile492Asn</td>
 <td>AGAP004707-RA</td>
+<td>1475</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -1355,9 +1314,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I498N</td>
 <td>I509N</td>
 <td>I498N</td>
-<td style='text-align: right'>1084</td>
-<td style='text-align: right'>1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1385,6 +1341,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.1610G>T</td>
 <td>p.Arg537Leu</td>
 <td>AGAP004707-RA</td>
+<td>1610</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -1411,9 +1368,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>R550L</td>
 <td></td>
 <td>R550L</td>
-<td style='text-align: right'>1136</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1441,6 +1395,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.1634A>T</td>
 <td>p.Gln545Leu</td>
 <td>AGAP004707-RA</td>
+<td>1634</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -1467,9 +1422,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>Q558L</td>
 <td></td>
 <td>Q558L</td>
-<td style='text-align: right'>1137</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1497,6 +1449,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.1756G>A</td>
 <td>p.Ala586Thr</td>
 <td>AGAP004707-RA</td>
+<td>1756</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -1523,9 +1476,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A599T</td>
 <td>A582T</td>
 <td>A599T</td>
-<td>None</td>
-<td>None</td>
-<td>None</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1553,6 +1503,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2009G>A</td>
 <td>p.Arg670Gln</td>
 <td>AGAP004707-RA</td>
+<td>2009</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0108695652174</td>
@@ -1579,9 +1530,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>R683Q</td>
 <td>R666Q</td>
 <td>R683Q</td>
-<td style='text-align: right'>1213</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1609,6 +1557,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2035A>T</td>
 <td>p.Thr679Ser</td>
 <td>AGAP004707-RA</td>
+<td>2035</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -1635,9 +1584,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>T692S</td>
 <td>T675S</td>
 <td>T692S</td>
-<td style='text-align: right'>1217</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1665,6 +1611,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2110A>G</td>
 <td>p.Met704Val</td>
 <td>AGAP004707-RA</td>
+<td>2110</td>
 <td>0.0</td>
 <td>0.00724637681159</td>
 <td>0.0</td>
@@ -1691,9 +1638,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>M717V</td>
 <td>M700V</td>
 <td>M717V</td>
-<td style='text-align: right'>1218</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1721,6 +1665,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2171C>A</td>
 <td>p.Ala724Glu</td>
 <td>AGAP004707-RA</td>
+<td>2171</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -1747,9 +1692,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A737E</td>
 <td>A720E</td>
 <td>A737E</td>
-<td>None</td>
-<td>None</td>
-<td>None</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1777,6 +1719,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2182G>A</td>
 <td>p.Gly728Arg</td>
 <td>AGAP004707-RA</td>
+<td>2182</td>
 <td>0.00833333333333</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -1803,9 +1746,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>G741R</td>
 <td>G724R</td>
 <td>G741R</td>
-<td>None</td>
-<td>None</td>
-<td>None</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -1833,6 +1773,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2372C>T</td>
 <td>p.Thr791Met</td>
 <td>AGAP004707-RA</td>
+<td>2372</td>
 <td>0.0</td>
 <td>0.0144927536232</td>
 <td>0.0</td>
@@ -1859,9 +1800,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>T804M</td>
 <td>T787M</td>
 <td>T804M</td>
-<td style='text-align: right'>1434</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1889,6 +1827,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2485A>C</td>
 <td>p.Ile829Leu</td>
 <td>AGAP004707-RA</td>
+<td>2485</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -1915,9 +1854,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I842L</td>
 <td>I825L</td>
 <td>I842L</td>
-<td style='text-align: right'>1448</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -1945,6 +1881,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2510C>T</td>
 <td>p.Ala837Val</td>
 <td>AGAP004707-RA</td>
+<td>2510</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -1971,9 +1908,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A850V</td>
 <td>A833V</td>
 <td>A850V</td>
-<td style='text-align: right'>1449</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2001,6 +1935,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2773A>T</td>
 <td>p.Met925Leu</td>
 <td>AGAP004707-RA</td>
+<td>2773</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2027,9 +1962,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td></td>
 <td></td>
 <td>M938L</td>
-<td style='text-align: right'>1455</td>
-<td style='text-align: right'>1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2057,6 +1989,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2801-1014A</td>
 <td>None</td>
 <td>AGAP004707-RA</td>
+<td>-1</td>
 <td>0.0</td>
 <td>0.00724637681159</td>
 <td>0.0</td>
@@ -2083,9 +2016,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>M916V</td>
 <td>M899V</td>
 <td></td>
-<td style='text-align: right'>1516</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2113,6 +2043,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2819C>A</td>
 <td>p.Pro940His</td>
 <td>AGAP004707-RA</td>
+<td>2819</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2139,9 +2070,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>P953H</td>
 <td>P936H</td>
 <td>P953H</td>
-<td style='text-align: right'>1529</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -2169,6 +2097,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2984T>C</td>
 <td>p.Leu995Ser</td>
 <td>AGAP004707-RA</td>
+<td>2984</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2195,9 +2124,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1008S</td>
 <td>L991S</td>
 <td>L1008S</td>
-<td style='text-align: right'>1531</td>
-<td style='text-align: right'>1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -2225,6 +2151,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2985A>T</td>
 <td>p.Leu995Phe</td>
 <td>AGAP004707-RA</td>
+<td>2985</td>
 <td style='background-color: blue'>0.858333333333</td>
 <td style='background-color: blue'>0.847826086957</td>
 <td>0.0</td>
@@ -2251,9 +2178,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1008F</td>
 <td>L991F</td>
 <td>L1008F</td>
-<td style='text-align: right'>1532</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2281,6 +2205,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.3151G>A</td>
 <td>p.Val1051Ile</td>
 <td>AGAP004707-RA</td>
+<td>3151</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2307,9 +2232,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1064I</td>
 <td>V1047I</td>
 <td>V1064I</td>
-<td>None</td>
-<td>None</td>
-<td>None</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2337,6 +2259,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.3373G>T</td>
 <td>p.Ala1125Ser</td>
 <td>AGAP004707-RA</td>
+<td>3373</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0108695652174</td>
@@ -2363,9 +2286,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1138S</td>
 <td>A1121S</td>
 <td>A1138S</td>
-<td style='text-align: right'>1564</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2393,6 +2313,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.3374C>T</td>
 <td>p.Ala1125Val</td>
 <td>AGAP004707-RA</td>
+<td>3374</td>
 <td style='background-color: blue'>0.0916666666667</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2419,9 +2340,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1138V</td>
 <td>A1121V</td>
 <td>A1138V</td>
-<td style='text-align: right'>1565</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-0.46158357771261</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2449,6 +2367,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.3391A>G</td>
 <td>p.Ile1131Val</td>
 <td>AGAP004707-RA</td>
+<td>3391</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2475,9 +2394,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1144V</td>
 <td>I1127V</td>
 <td>I1144V</td>
-<td>None</td>
-<td>None</td>
-<td>None</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2505,6 +2421,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.3478T>G</td>
 <td>p.Ser1160Ala</td>
 <td>AGAP004707-RA</td>
+<td>3478</td>
 <td>0.00833333333333</td>
 <td>0.0144927536232</td>
 <td>0.0108695652174</td>
@@ -2531,9 +2448,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>S1173A</td>
 <td>S1156A</td>
 <td>S1173A</td>
-<td>None</td>
-<td>None</td>
-<td>None</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2561,6 +2475,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.3760G>A</td>
 <td>p.Val1254Ile</td>
 <td>AGAP004707-RA</td>
+<td>3760</td>
 <td>0.0</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.054347826087</td>
@@ -2587,9 +2502,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1267I</td>
 <td>V1250I</td>
 <td>V1267I</td>
-<td style='text-align: right'>1580</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2617,6 +2529,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.3908T>C</td>
 <td>p.Val1303Ala</td>
 <td>AGAP004707-RA</td>
+<td>3908</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2643,9 +2556,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1316A</td>
 <td>V1299A</td>
 <td>V1316A</td>
-<td style='text-align: right'>1584</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2673,6 +2583,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4034A>T</td>
 <td>p.Asn1345Ile</td>
 <td>AGAP004707-RA</td>
+<td>4034</td>
 <td>0.0</td>
 <td>0.0217391304348</td>
 <td>0.0</td>
@@ -2699,9 +2610,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>N1358I</td>
 <td>N1341I</td>
 <td>N1358I</td>
-<td style='text-align: right'>1585</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2729,6 +2637,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4096C>T</td>
 <td>p.Leu1366Phe</td>
 <td>AGAP004707-RA</td>
+<td>4096</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2755,9 +2664,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1379F</td>
 <td>L1362F</td>
 <td></td>
-<td style='text-align: right'>1645</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -2785,6 +2691,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4580T>C</td>
 <td>p.Ile1527Thr</td>
 <td>AGAP004707-RA</td>
+<td>4580</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.13768115942</td>
 <td>0.0</td>
@@ -2811,9 +2718,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1537T</td>
 <td>I1520T</td>
 <td>I1537T</td>
-<td style='text-align: right'>1671</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-0.8960950764006791</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2841,6 +2745,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4585T>C</td>
 <td>p.Phe1529Leu</td>
 <td>AGAP004707-RA</td>
+<td>4585</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2867,9 +2772,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>F1539L</td>
 <td>F1522L</td>
 <td>F1539L</td>
-<td style='text-align: right'>1672</td>
-<td style='text-align: right'>1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -2897,6 +2799,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4708A>T</td>
 <td>p.Asn1570Tyr</td>
 <td>AGAP004707-RA</td>
+<td>4708</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.260869565217</td>
 <td>0.0</td>
@@ -2923,9 +2826,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>N1580Y</td>
 <td>N1563Y</td>
 <td>N1580Y</td>
-<td style='text-align: right'>1673</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>0.9815773630343166</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -2953,6 +2853,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4751T>C</td>
 <td>p.Ile1584Thr</td>
 <td>AGAP004707-RA</td>
+<td>4751</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -2979,9 +2880,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1594T</td>
 <td>I1577T</td>
 <td>I1594T</td>
-<td>None</td>
-<td>None</td>
-<td>None</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3009,6 +2907,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4790A>G</td>
 <td>p.Glu1597Gly</td>
 <td>AGAP004707-RA</td>
+<td>4790</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -3035,9 +2934,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>E1607G</td>
 <td>E1590G</td>
 <td>E1607G</td>
-<td style='text-align: right'>1676</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3065,6 +2961,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4808A>C</td>
 <td>p.Lys1603Thr</td>
 <td>AGAP004707-RA</td>
+<td>4808</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.0507246376812</td>
 <td>0.0</td>
@@ -3091,9 +2988,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>K1613T</td>
 <td>K1596T</td>
 <td>K1613T</td>
-<td style='text-align: right'>1677</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3121,6 +3015,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4851A>C</td>
 <td>p.Leu1617Phe</td>
 <td>AGAP004707-RA</td>
+<td>4851</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -3147,9 +3042,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1627F</td>
 <td>L1610F</td>
 <td>L1627F</td>
-<td style='text-align: right'>1678</td>
-<td style='text-align: right'>1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3177,6 +3069,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4999T>A</td>
 <td>p.Leu1667Met</td>
 <td>AGAP004707-RA</td>
+<td>4999</td>
 <td>0.0</td>
 <td>0.0217391304348</td>
 <td>0.0</td>
@@ -3203,9 +3096,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1677M</td>
 <td>L1660M</td>
 <td>L1677M</td>
-<td>None</td>
-<td>None</td>
-<td>None</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3233,6 +3123,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5041G>A</td>
 <td>p.Val1681Ile</td>
 <td>AGAP004707-RA</td>
+<td>5041</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -3259,9 +3150,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1691I</td>
 <td>V1674I</td>
 <td>V1691I</td>
-<td>None</td>
-<td>None</td>
-<td>None</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3289,6 +3177,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5048G>T</td>
 <td>p.Ser1683Ile</td>
 <td>AGAP004707-RA</td>
+<td>5048</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -3315,9 +3204,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>S1693I</td>
 <td>S1676I</td>
 <td>S1693I</td>
-<td>None</td>
-<td>None</td>
-<td>None</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -3345,6 +3231,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5236G>T</td>
 <td>p.Ala1746Ser</td>
 <td>AGAP004707-RA</td>
+<td>5236</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -3371,9 +3258,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1756S</td>
 <td>A1739S</td>
 <td>A1756S</td>
-<td style='text-align: right'>1684</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3401,6 +3285,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5263C>T</td>
 <td>p.His1755Tyr</td>
 <td>AGAP004707-RA</td>
+<td>5263</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -3427,9 +3312,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>H1765Y</td>
 <td>H1748Y</td>
 <td>H1765Y</td>
-<td style='text-align: right'>1685</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3457,6 +3339,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5557G>A</td>
 <td>p.Val1853Ile</td>
 <td>AGAP004707-RA</td>
+<td>5557</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -3483,9 +3366,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1863I</td>
 <td>V1846I</td>
 <td>V1863I</td>
-<td style='text-align: right'>1690</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -3513,6 +3393,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5603T>C</td>
 <td>p.Ile1868Thr</td>
 <td>AGAP004707-RA</td>
+<td>5603</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -3539,9 +3420,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1878T</td>
 <td>I1861T</td>
 <td>I1878T</td>
-<td style='text-align: right'>1692</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -3569,6 +3447,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5620C>T</td>
 <td>p.Pro1874Ser</td>
 <td>AGAP004707-RA</td>
+<td>5620</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.210144927536</td>
 <td>0.0</td>
@@ -3595,9 +3474,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>P1884S</td>
 <td>P1867S</td>
 <td>P1884S</td>
-<td style='text-align: right'>1693</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -3625,6 +3501,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5621C>T</td>
 <td>p.Pro1874Leu</td>
 <td>AGAP004707-RA</td>
+<td>5621</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.0724637681159</td>
 <td>0.0</td>
@@ -3651,9 +3528,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>P1884L</td>
 <td>P1867L</td>
 <td>P1884L</td>
-<td style='text-align: right'>1694</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>0.9746688741721854</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3681,6 +3555,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5759T>C</td>
 <td>p.Phe1920Ser</td>
 <td>AGAP004707-RA</td>
+<td>5759</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -3707,9 +3582,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>F1930S</td>
 <td>F1913S</td>
 <td>F1930S</td>
-<td style='text-align: right'>1698</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -3737,6 +3609,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5801C>T</td>
 <td>p.Ala1934Val</td>
 <td>AGAP004707-RA</td>
+<td>5801</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.115942028986</td>
 <td>0.0</td>
@@ -3763,9 +3636,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1944V</td>
 <td>A1927V</td>
 <td>A1944V</td>
-<td style='text-align: right'>1699</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -3793,6 +3663,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5819T>C</td>
 <td>p.Ile1940Thr</td>
 <td>AGAP004707-RA</td>
+<td>5819</td>
 <td>0.0</td>
 <td>0.0434782608696</td>
 <td>0.0</td>
@@ -3819,9 +3690,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1950T</td>
 <td>I1933T</td>
 <td>I1950T</td>
-<td style='text-align: right'>1700</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3849,6 +3717,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5972G>A</td>
 <td>p.Gly1991Glu</td>
 <td>AGAP004707-RA</td>
+<td>5972</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0108695652174</td>
@@ -3875,9 +3744,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>G2001E</td>
 <td>G1984E</td>
 <td>G2001E</td>
-<td style='text-align: right'>1703</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3905,6 +3771,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.6071C>A</td>
 <td>p.Thr2024Lys</td>
 <td>AGAP004707-RA</td>
+<td>6071</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -3931,9 +3798,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>T2034K</td>
 <td>T2017K</td>
 <td>T2034K</td>
-<td style='text-align: right'>1705</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -3961,6 +3825,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.6157A>G</td>
 <td>p.Ile2053Val</td>
 <td>AGAP004707-RA</td>
+<td>6157</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -3987,9 +3852,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I2063V</td>
 <td>I2046V</td>
 <td>I2063V</td>
-<td style='text-align: right'>1708</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4017,6 +3879,7 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.6227G>C</td>
 <td>p.Ser2076Thr</td>
 <td>AGAP004707-RA</td>
+<td>6227</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -4043,9 +3906,6 @@ tbl_variants_missense.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>S2086T</td>
 <td>S2069T</td>
 <td>S2086T</td>
-<td style='text-align: right'>1709</td>
-<td style='text-align: right'>1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 </tbody>
 </table>
@@ -4098,35 +3958,33 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <th>22|SNPEFF_HGVS_c</th>
 <th>23|SNPEFF_HGVS_p</th>
 <th>24|SNPEFF_Feature_ID</th>
-<th>25|AF_AOM</th>
-<th>26|AF_BFM</th>
-<th>27|AF_GWA</th>
-<th>28|AF_GNS</th>
-<th>29|AF_BFS</th>
-<th>30|AF_CMS</th>
-<th>31|AF_GAS</th>
-<th>32|AF_UGS</th>
-<th>33|AF_KES</th>
-<th>34|check_allele</th>
-<th>35|exon_start</th>
-<th>36|exon_end</th>
-<th>37|exon</th>
-<th>38|AGAP004707-RA</th>
-<th>39|AGAP004707-RB</th>
-<th>40|AGAP004707-RC</th>
-<th>41|Davies-C1N2</th>
-<th>42|Davies-C3N2</th>
-<th>43|Davies-C5N2</th>
-<th>44|Davies-C7N2</th>
-<th>45|Davies-C8N2</th>
-<th>46|Davies-C10N2</th>
-<th>47|Davies-C11N2</th>
-<th>48|Davies-C1N9</th>
-<th>49|Davies-C8N9</th>
-<th>50|Davies-C1N9ck</th>
-<th>51|haps_vidx</th>
-<th>52|dprime_L995S</th>
-<th>53|dprime_L995F</th>
+<th>25|SNPEFF_CDS_pos</th>
+<th>26|AF_AOM</th>
+<th>27|AF_BFM</th>
+<th>28|AF_GWA</th>
+<th>29|AF_GNS</th>
+<th>30|AF_BFS</th>
+<th>31|AF_CMS</th>
+<th>32|AF_GAS</th>
+<th>33|AF_UGS</th>
+<th>34|AF_KES</th>
+<th>35|check_allele</th>
+<th>36|exon_start</th>
+<th>37|exon_end</th>
+<th>38|exon</th>
+<th>39|AGAP004707-RA</th>
+<th>40|AGAP004707-RB</th>
+<th>41|AGAP004707-RC</th>
+<th>42|Davies-C1N2</th>
+<th>43|Davies-C3N2</th>
+<th>44|Davies-C5N2</th>
+<th>45|Davies-C7N2</th>
+<th>46|Davies-C8N2</th>
+<th>47|Davies-C10N2</th>
+<th>48|Davies-C11N2</th>
+<th>49|Davies-C1N9</th>
+<th>50|Davies-C8N9</th>
+<th>51|Davies-C1N9ck</th>
 </tr>
 </thead>
 <tbody>
@@ -4156,6 +4014,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.761G>A</td>
 <td>p.Arg254Lys</td>
 <td>AGAP004707-RA</td>
+<td>761</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -4182,9 +4041,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>R260K</td>
 <td>R271K</td>
 <td>R260K</td>
-<td style='text-align: right'>817</td>
-<td style='text-align: right'>-0.9640591966173362</td>
-<td style='text-align: right'>0.9181216134858519</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4212,6 +4068,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.1204G>C</td>
 <td>p.Val402Leu</td>
 <td>AGAP004707-RA</td>
+<td>1204</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.0724637681159</td>
 <td>0.0</td>
@@ -4238,9 +4095,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V408L</td>
 <td>V419L</td>
 <td>V408L</td>
-<td style='text-align: right'>838</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-0.8025806451612904</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4263,6 +4117,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>0</td>
 <td>14.867</td>
 <td>-1.1777</td>
+<td>None</td>
 <td>None</td>
 <td>None</td>
 <td>None</td>
@@ -4294,9 +4149,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V408L</td>
 <td>V419L</td>
 <td>V408L</td>
-<td style='text-align: right'>838</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4324,6 +4176,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.1396G>C</td>
 <td>p.Asp466His</td>
 <td>AGAP004707-RA</td>
+<td>1396</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -4350,9 +4203,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>D472H</td>
 <td>D483H</td>
 <td>D472H</td>
-<td style='text-align: right'>1080</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4380,6 +4230,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.1470G>A</td>
 <td>p.Met490Ile</td>
 <td>AGAP004707-RA</td>
+<td>1470</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -4406,9 +4257,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>M496I</td>
 <td>M507I</td>
 <td>M496I</td>
-<td style='text-align: right'>1083</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4431,6 +4279,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>0</td>
 <td>16.969</td>
 <td>1.3232</td>
+<td>None</td>
 <td>None</td>
 <td>None</td>
 <td>None</td>
@@ -4462,9 +4311,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>M496I</td>
 <td>M507I</td>
 <td>M496I</td>
-<td style='text-align: right'>1083</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4492,6 +4338,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2372C>T</td>
 <td>p.Thr791Met</td>
 <td>AGAP004707-RA</td>
+<td>2372</td>
 <td>0.0</td>
 <td>0.0144927536232</td>
 <td>0.0</td>
@@ -4518,9 +4365,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>T804M</td>
 <td>T787M</td>
 <td>T804M</td>
-<td style='text-align: right'>1434</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4548,6 +4392,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2984T>C</td>
 <td>p.Leu995Ser</td>
 <td>AGAP004707-RA</td>
+<td>2984</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -4574,9 +4419,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1008S</td>
 <td>L991S</td>
 <td>L1008S</td>
-<td style='text-align: right'>1531</td>
-<td style='text-align: right'>1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4604,6 +4446,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.2985A>T</td>
 <td>p.Leu995Phe</td>
 <td>AGAP004707-RA</td>
+<td>2985</td>
 <td style='background-color: blue'>0.858333333333</td>
 <td style='background-color: blue'>0.847826086957</td>
 <td>0.0</td>
@@ -4630,9 +4473,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>L1008F</td>
 <td>L991F</td>
 <td>L1008F</td>
-<td style='text-align: right'>1532</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4660,6 +4500,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.3374C>T</td>
 <td>p.Ala1125Val</td>
 <td>AGAP004707-RA</td>
+<td>3374</td>
 <td style='background-color: blue'>0.0916666666667</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -4686,9 +4527,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1138V</td>
 <td>A1121V</td>
 <td>A1138V</td>
-<td style='text-align: right'>1565</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-0.46158357771261</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4716,6 +4554,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.3760G>A</td>
 <td>p.Val1254Ile</td>
 <td>AGAP004707-RA</td>
+<td>3760</td>
 <td>0.0</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.054347826087</td>
@@ -4742,9 +4581,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1267I</td>
 <td>V1250I</td>
 <td>V1267I</td>
-<td style='text-align: right'>1580</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4772,6 +4608,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4580T>C</td>
 <td>p.Ile1527Thr</td>
 <td>AGAP004707-RA</td>
+<td>4580</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.13768115942</td>
 <td>0.0</td>
@@ -4798,9 +4635,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1537T</td>
 <td>I1520T</td>
 <td>I1537T</td>
-<td style='text-align: right'>1671</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>-0.8960950764006791</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4828,6 +4662,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4708A>T</td>
 <td>p.Asn1570Tyr</td>
 <td>AGAP004707-RA</td>
+<td>4708</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.260869565217</td>
 <td>0.0</td>
@@ -4854,9 +4689,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>N1580Y</td>
 <td>N1563Y</td>
 <td>N1580Y</td>
-<td style='text-align: right'>1673</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>0.9815773630343166</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4884,6 +4716,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4790A>G</td>
 <td>p.Glu1597Gly</td>
 <td>AGAP004707-RA</td>
+<td>4790</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -4910,9 +4743,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>E1607G</td>
 <td>E1590G</td>
 <td>E1607G</td>
-<td style='text-align: right'>1676</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -4940,6 +4770,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.4808A>C</td>
 <td>p.Lys1603Thr</td>
 <td>AGAP004707-RA</td>
+<td>4808</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.0507246376812</td>
 <td>0.0</td>
@@ -4966,9 +4797,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>K1613T</td>
 <td>K1596T</td>
 <td>K1613T</td>
-<td style='text-align: right'>1677</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -4996,6 +4824,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5236G>T</td>
 <td>p.Ala1746Ser</td>
 <td>AGAP004707-RA</td>
+<td>5236</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -5022,9 +4851,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1756S</td>
 <td>A1739S</td>
 <td>A1756S</td>
-<td style='text-align: right'>1684</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -5052,6 +4878,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5557G>A</td>
 <td>p.Val1853Ile</td>
 <td>AGAP004707-RA</td>
+<td>5557</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -5078,9 +4905,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>V1863I</td>
 <td>V1846I</td>
 <td>V1863I</td>
-<td style='text-align: right'>1690</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -5108,6 +4932,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5603T>C</td>
 <td>p.Ile1868Thr</td>
 <td>AGAP004707-RA</td>
+<td>5603</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -5134,9 +4959,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1878T</td>
 <td>I1861T</td>
 <td>I1878T</td>
-<td style='text-align: right'>1692</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -5164,6 +4986,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5620C>T</td>
 <td>p.Pro1874Ser</td>
 <td>AGAP004707-RA</td>
+<td>5620</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.210144927536</td>
 <td>0.0</td>
@@ -5190,9 +5013,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>P1884S</td>
 <td>P1867S</td>
 <td>P1884S</td>
-<td style='text-align: right'>1693</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -5220,6 +5040,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5621C>T</td>
 <td>p.Pro1874Leu</td>
 <td>AGAP004707-RA</td>
+<td>5621</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.0724637681159</td>
 <td>0.0</td>
@@ -5246,9 +5067,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>P1884L</td>
 <td>P1867L</td>
 <td>P1884L</td>
-<td style='text-align: right'>1694</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>0.9746688741721854</td>
 </tr>
 <tr>
 <td>2L</td>
@@ -5276,6 +5094,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5759T>C</td>
 <td>p.Phe1920Ser</td>
 <td>AGAP004707-RA</td>
+<td>5759</td>
 <td>0.0</td>
 <td>0.0</td>
 <td>0.0</td>
@@ -5302,9 +5121,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>F1930S</td>
 <td>F1913S</td>
 <td>F1930S</td>
-<td style='text-align: right'>1698</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -5332,6 +5148,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5801C>T</td>
 <td>p.Ala1934Val</td>
 <td>AGAP004707-RA</td>
+<td>5801</td>
 <td>0.0</td>
 <td style='background-color: blue'>0.115942028986</td>
 <td>0.0</td>
@@ -5358,9 +5175,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>A1944V</td>
 <td>A1927V</td>
 <td>A1944V</td>
-<td style='text-align: right'>1699</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 <tr style='background-color: green'>
 <td>2L</td>
@@ -5388,6 +5202,7 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>n.5819T>C</td>
 <td>p.Ile1940Thr</td>
 <td>AGAP004707-RA</td>
+<td>5819</td>
 <td>0.0</td>
 <td>0.0434782608696</td>
 <td>0.0</td>
@@ -5414,9 +5229,6 @@ tbl_variants_selected.displayall(tr_style=tr_style, td_styles=td_styles)
 <td>I1950T</td>
 <td>I1933T</td>
 <td>I1950T</td>
-<td style='text-align: right'>1700</td>
-<td style='text-align: right'>-1.0</td>
-<td style='text-align: right'>1.0</td>
 </tr>
 </tbody>
 </table>
@@ -5434,6 +5246,11 @@ tbl_variants_selected.nrows()
     23
 
 
+
+
+```python
+tbl_variants_selected.topickle('../data/tbl_variants_missense_selected.pkl')
+```
 
 # Add housefly numbering
 
@@ -6285,11 +6102,6 @@ tbl_variants_display.totext('../tables/variants_missense.tex',
     \bottomrule
     \end{tabular}
 
-
-
-```python
-
-```
 
 
 ```python
