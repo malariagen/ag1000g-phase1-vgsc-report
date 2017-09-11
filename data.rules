@@ -9,6 +9,7 @@
 # integration checks.
 #
 
+
 # Setup
 # -----
 #
@@ -16,12 +17,14 @@
 # trigger a rebuild.
 #
 
+
 rule src:
     # Python sources.
     output:
         "src/python/zcache.py",
         "src/python/veff.py",
         "src/python/util.py",
+
 
 rule setup:
     # Setup notebook.
@@ -33,11 +36,13 @@ rule setup:
     shell:
         "./nbexec.sh notebooks/setup.ipynb"
 
+
 # Data
 # ----
 #
 # All data rules.
 #
+
 
 rule demo:
     # Example of how to include a Jupyter notebook in the data build. The notebook depends on some
@@ -51,6 +56,7 @@ rule demo:
     shell:
         "./nbexec.sh notebooks/data_demo.ipynb"
 
+
 rule misc:
     # Misc simple data copies.
     input:
@@ -60,6 +66,7 @@ rule misc:
         "build/notebooks/data_misc.md",
     shell:
         "./nbexec.sh notebooks/data_misc.ipynb"
+
 
 rule variants_phase1:
     # Extract a table of data on VGSC variants.
@@ -72,6 +79,7 @@ rule variants_phase1:
         "data/tbl_variants_phase1.txt",
     shell:
         "./nbexec.sh notebooks/data_variants_phase1.ipynb"
+
 
 rule phase_multiallelics_phase1:
     # Phase multiallelics onto biallelic scaffold.
@@ -86,10 +94,10 @@ rule phase_multiallelics_phase1:
     shell:
         "./nbexec.sh notebooks/data_phase_multiallelics_phase1.ipynb"
 
-#
+
 # Utilities
 # ---------
-#
+
 
 rule all:
     # Build all data, indicating success by touching a flag file.
