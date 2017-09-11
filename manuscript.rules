@@ -37,6 +37,7 @@ rule setup:
 # Rules in this section build artwork (figures, figure components, etc.).
 #
 
+
 rule artwork_demo:
     # Example of how to include a Jupyter notebook in the artwork build.
     input:
@@ -48,31 +49,34 @@ rule artwork_demo:
     shell:
         "./nbexec.sh notebooks/artwork_demo.ipynb"
 
-# TODO re-instate 
-#rule fig_ld:
-#    input:
-#        rules.setup.output,
-#        "notebooks/fig_ld.ipynb",
-#    output:
-#        "build/notebooks/fig_ld.md",
-#        "artwork/fig_ld.png",
-#    shell:
-#        "./nbexec.sh notebooks/fig_ld.ipynb"
+
+rule artwork_ld:
+    input:
+        rules.setup.output,
+        "notebooks/artwork_ld.ipynb",
+    output:
+        "build/notebooks/artwork_ld.md",
+        "artwork/fig_ld.png",
+    shell:
+        "./nbexec.sh notebooks/artwork_ld.ipynb"
+
 
 rule artwork:
     # Build all artwork.
     input:
         rules.artwork_demo.output,
-#        rules.fig_ld.output,
+        rules.artwork_ld.output,
         # add more inputs here as required
     output:
         touch("build/manuscript.artwork.done")
+
 
 # Tables
 # ------
 #
 # Rules in this section build tables for the manuscript.
 #
+
 
 rule table_demo:
     # Demo of a notebook that builds a latex table.
@@ -84,6 +88,7 @@ rule table_demo:
         "tables/demo.tex"
     shell:
         "./nbexec.sh notebooks/table_demo.ipynb"
+
 
 rule table_variants_missense:
     # Build the LaTex table of missense variants in VGSC.
@@ -97,6 +102,7 @@ rule table_variants_missense:
     shell:
         "./nbexec.sh notebooks/table_variants_missense.ipynb"
 
+
 rule tables:
     # Build all tables.
     input:
@@ -106,10 +112,10 @@ rule tables:
     output:
         touch("build/manuscript.tables.done")
 
-#
+
 # Main manuscript
 # ---------------
-#
+
 
 rule main:
     # Build the manuscript PDF file. This rule should depend on all artwork and tables.
@@ -125,10 +131,10 @@ rule main:
     shell:
         "./latex.sh"
 
-#
+
 # Utilities
 # ---------
-#
+
 
 rule all:
     # Build everything.
@@ -136,6 +142,7 @@ rule all:
         rules.main.output,
     output:
         touch("build/manuscript.done")
+
 
 rule clean:
     # Clean out the build folder.
