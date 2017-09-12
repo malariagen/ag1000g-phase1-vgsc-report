@@ -187,11 +187,11 @@ Guinea Bissau was an \emph{An. gambiae}/\emph{coluzzii} admixed population, from
 %
 Mosquitoes were individually whole genome sequenced on the Illumina HiSeq 2000 platform, generating 100bp paired-end reads. 
 %
-Sequenced reads were aligned to the A. gambiae AgamP3 reference genome assembly \cite{Holt2002). 
+Sequenced reads were aligned to the A. gambiae AgamP3 reference genome assembly \cite{Holt2002}). 
 %
 Aligned bam files underwent improvement, before variants were called using GATK UnifiedGenotyper. 
 %
-Quality control included removal of samples with mean coverage <= 14x and an accessibility map was employed following a similar approach to that used for human data by The 1000 Genomes Project Consortium \cite{1000GenomesConsortium2010}). 
+Quality control included removal of samples with mean coverage <= 14x and an accessibility map was employed following a similar approach to that used for human data by The 1000 Genomes Project Consortium \cite{The1000GenomesProjectConsortium2010}). 
 %
 Variant filtering rules removed accessible variants if: FS < 60.0, HRun > 4, DP <18000 or >32000, MQ < 40, alleles > 2, QD < 5, ReadPosRankSum < -8, overlapped positions repeat masked by DUST (http://blast.wustl.edu/pub/dust). 
 %
@@ -201,7 +201,7 @@ This process produced a call set containing WGS sequences for 765 wild caught in
 %
 The Ag1000g variant data was functionally annotated using the SnpEff v4.1b software which allowed investigation of potential phenotype altering variants within Vgsc \cite{Cingolani2012}.
 %
-Non-synonymous \emph{Vgsc} variants were identified as all variants in AGAP004707, 2L:2358158-2431617, with a SnpEff  annotation of “missense”  and an ALT allele frequency of >5\% in at least one of the nine mosquito populations, with the exceptions of the multi-allelic SNP 2L:2400071 G>A which is shown despite only being found in \emph{An. gambiae} from Cameroon at 0.4\% frequency, as the G>T variant at the same position which causes the same codon change (\texttt{M490I}), is found above 5\% frequency in Kenya.
+Non-synonymous \emph{Vgsc} variants were identified as all variants in AGAP004707, 2L:2358158-2431617, with a SnpEff annotation of “missense”  and an ALT allele frequency of >5\% in at least one of the nine mosquito populations, with the exceptions of the multi-allelic SNP 2L:2400071 G>A which is shown despite only being found in \emph{An. gambiae} from Cameroon at 0.4\% frequency, as the G>T variant at the same position which causes the same codon change (\texttt{M490I}), is found above 5\% frequency in Kenya.
 %
 \texttt{F1920S} is included for continuity with recent \emph{An. gambiae Vgsc} research \cite{Ag1000gConsortium2017}.
 %
