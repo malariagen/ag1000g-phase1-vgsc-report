@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284272"
-     inkscape:cx="63.515256"
-     inkscape:cy="100.72018"
+     inkscape:zoom="4.0000001"
+     inkscape:cx="223.55786"
+     inkscape:cy="71.634136"
      inkscape:document-units="mm"
      inkscape:current-layer="layer2"
      showgrid="true"
@@ -35,7 +35,7 @@
      inkscape:measure-end="0,0"
      inkscape:window-width="3840"
      inkscape:window-height="2112"
-     inkscape:window-x="3840"
+     inkscape:window-x="0"
      inkscape:window-y="48"
      inkscape:window-maximized="1"
      inkscape:snap-global="true"
@@ -59,7 +59,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -706,14 +706,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="97.313545"
+       x="97.842712"
        y="47.577488"
        id="text4803-7-1-5-0-2-6-3"><tspan
          sodipodi:role="line"
          id="tspan4801-5-1-1-0-0-4-3"
-         x="97.313545"
+         x="97.842712"
          y="47.577488"
-         style="font-size:2.82222223px;text-align:end;text-anchor:end;stroke-width:0.26458332">X -&gt; A, X -&gt; B</tspan></text>
+         style="font-size:2.82222223px;text-align:end;text-anchor:end;stroke-width:0.26458332">C -&gt; A, C -&gt; B</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
@@ -764,14 +764,14 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="76.94062"
+       x="76.411453"
        y="43.608761"
        id="text4803-7-1-5-0-2-2-7"><tspan
          sodipodi:role="line"
          id="tspan4801-5-1-1-0-0-9-3"
-         x="76.94062"
+         x="76.411453"
          y="43.608761"
-         style="font-size:2.82222223px;text-align:start;text-anchor:start;stroke-width:0.26458332">Unsampled pop.</tspan></text>
+         style="font-size:2.82222223px;text-align:start;text-anchor:start;stroke-width:0.26458332">Third population</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:1.25;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
