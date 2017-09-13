@@ -26,6 +26,7 @@
 \usepackage{lineno}
 \linenumbers
 \usepackage{setspace}
+\usepackage{hyperref}
 \doublespacing
 
 
@@ -171,6 +172,9 @@ Our aim is to provide a comprehensive account of genetic variation at the \emph{
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \section*{Results}
 
 
@@ -843,7 +847,110 @@ This region of divergence accounts for the S4/S5 split in earlier analyses.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Methods}
 
-@@TODO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Code}
+
+%
+All scripts and Jupyter Notebooks used to generate analyses, figures and tables are available from the GitHub repository \url{https://github.com/malariagen/agam-vgsc-report}. 
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Data}
+
+%
+We used variant call data from the phase 1 AR3 release and phased haplotype data from AR3.1. These data are publically downloadable via ftp from \url{https://www.malariagen.net}. 
+%
+@@add ENA from paper
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Data collection and processing}
+
+
+%
+For detailed information on Ag1000g WGS sample collection, sequencing, variant calling, quality control and phasing see \cite{Ag1000gConsortium2017}.
+%
+In brief, \emph{An. gambiae} and \emph{An. coluzzii} mosquitoes were collected from eight countries across Sub-Saharan Africa: Angola, Burkina Faso, Cameroon, Gabon, Guinea, Guinea Bissau, Kenya and Uganda. 
+%
+From Angola just \emph{An. coluzzii} were sampled, Burkina Faso had samples of both \emph{An. gambiae} and \emph{An. coluzzii} and all other populations consisted of purely \emph{An. gambiae} except for Kenya and Guinea Bissau, where species status is uncertain \cite{Ag1000gConsortium2017}.
+%
+Mosquitoes were individually whole genome sequenced on the Illumina HiSeq 2000 platform, generating 100bp paired-end reads. 
+%
+Sequenced reads were aligned to the \cite{An. gambiae} AgamP3 reference genome assembly \cite{Holt2002}). 
+%
+Aligned bam files underwent improvement, before variants were called using GATK UnifiedGenotyper. 
+%
+Quality control included removal of samples with mean coverage <= 14x and an accessibility map was employed following a similar approach to that used for human data by The 1000 Genomes Project Consortium \cite{The1000GenomesProjectConsortium2010}). 
+%
+Various quality control filters were applied to remove samples and SNPs with poor quality data. 
+%
+This process produced a call set containing @@n SNPs genotyped in 765 wild-caught individual mosquitoes \cite{Ag1000gConsortium2017}.
+%%
+
+%
+The Ag1000g variant data was functionally annotated using the SnpEff v4.1b software which allowed investigation of potential phenotype altering variants within \emph{Vgsc} \cite{Cingolani2012}.
+%
+Non-synonymous \emph{Vgsc} variants were identified as all variants in AGAP004707, 2L:2358158-2431617, with a SnpEff annotation of “missense”  and an ALT allele frequency of >5\% in at least one of the nine mosquito populations, with the exceptions of the multi-allelic SNP 2L:2400071 G>A which is shown despite only being found in \emph{An. gambiae} from Cameroon at 0.4\% frequency, as the G>T variant at the same position which causes the same codon change (\texttt{M490I}), is found above 5\% frequency in Kenya.
+%
+\texttt{F1920S} is included for continuity with recent \emph{An. gambiae Vgsc} research \cite{Ag1000gConsortium2017}.
+%
+A minimum ALT allele frequency was employed to discriminate towards variants that may be undergoing selective sweeps and against less informative low frequency alleles.
+%%
+
+%
+For ease of comparison with previous work on \emph{Vgsc}, pan Insecta, in Table \ref{table:variants_missense} we report codon numbering for both \emph{An. gambiae} and \emph{Musca domestica} (the species in which the gene was first discovered).
+%
+The \emph{M. domestica Vgsc} sequence (EMBL accession X96668 - \cite{Williamson1996}) was aligned with the \emph{An. gambiae} AGAP004707-RA sequence (AgamP4.4 gene-set), using the Mega v7 software package \cite{Kumar2016}.
+%
+A map of equivalent codon numbers between the two species can be download from the MalariaGEN website (@@include as supplementary data file?)- 
+\url{https://www.malariagen.net/sites/default/files/content/blogs/domestica_gambiae_map.txt}.
+%%
+
+%
+Haplotypes for each chromosome of each sample were estimated (phased) using using phase informative reads (PIRs) and SHAPEIT2 v2.r837 \cite{Delaneau2013}, see \cite{Ag1000gConsortium2017} supplementary text for more details.
+%
+The SHAPEIT2 algorithm is unable to phase multi-allelic positions, therefore the two multi-allelic non-synonymous SNPs within the \emph{Vgsc} gene (>5\% ALT frequency in at least one population), altering codons \texttt{V402} and \texttt{M490}, were phased onto the haplotypes using MVNcall v1.0 \cite{Menelaou2013}.
+%
+Conservative filtering had removed one of the three known insecticide resistance conferring kdr variants, \texttt{N1570Y} \cite{Jones2012}.
+%
+After manual inspection of the read alignment revealed that the SNP call could be confidently made, it was added back into the data set and then also phased onto the haplotypes using MVNcall.
+%
+To evaluate the linkage disequilibrium (LD) of non-synonymous \emph{Vgsc} mutations with the two most widespread \emph{kdr} resistance mutations (\texttt{L995S/F}), the D1 statistic was calculated using haplotypes.
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Haplotype networks}
+
+%
+Discerning the relationships between similar haplotypes can be difficult when using bifurcating trees as, inherently, the distance between the leaves at the tips (haplotypes) will be small.
+%
+As these relationships may be informative of the history of selection, we utilised a network approach to elucidate them.
+%
+We constructed haplotype networks using the median-joining algorithm \cite{Bandelt1999} as implemented in a custom Python script available from \url{https://github.com/malariagen/agam-vgsc-report}
+%
+Networks were rendered with the graphviz library and a composite figure constructed using Inkscape.
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Haplotype age}
+
+%
+Haplotype age. @@TODO - AM
+-Length of shared haplotype and number of mutations between them are informative of age…
+-Pairwise t values were hierarchically clustered and visualised as a dendrogram using the Python library Scipy and its cluster hierarchy functions linkage method.
+-Cutting the dendrogram at @@generations clustered haplotypes together into haplogroups…
+- Naming of haplogroups with reference to Ag1000g...
+-dendro figure/distro figures/map - Python libraries...
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Recombination}
+
+%
+Recombination. @@TODO - AM - Absolute divergence dxy...
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
