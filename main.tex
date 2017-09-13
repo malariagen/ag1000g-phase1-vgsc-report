@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt,abstracton]{scrartcl}
+\documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
 
 \usepackage[margin=3cm]{geometry}
 \usepackage{graphicx}
@@ -94,7 +94,7 @@ An estimated 663 million cases of malaria were averted in Africa between 2000 an
 %
 However, over this same period, insecticide resistance has become increasingly prevalent in malaria vector populations \cite{Hemingway2016,Silva2014}.
 %
-Four chemical classes of insecticides -- organophosphates, carbamates, pyrethroids and organochlorines -- are licensed for use in public health, but only pyrethroids are approved by the World Health Organisation (WHO) for use in ITNs.
+Four chemical classes of insecticides---organophosphates, carbamates, pyrethroids and organochlorines---are licensed for use in public health, but only pyrethroids are approved by the World Health Organisation (WHO) for use in ITNs.
 %
 Pyrethroids are also commonly used for IRS and in agriculture, and mosquito populations are under pressure to evolve molecular mechanisms of pyrethroid resistance.
 %
@@ -111,17 +111,18 @@ The voltage-gated sodium channel (VGSC) is the physiological target of pyrethroi
 %
 Both pyrethroids and DDT have a similar mode of action, binding to sites within the protein channel and preventing normal nerve function, causing paralysis (``knock-down'') and then death.
 %
-However, amino acid substitutions at key positions within the channel can alter the interaction with the insecticide molecule, thereby substantially increasing the dosage of insecticide required for knock-down (hence described as knock-down resistance or \emph{kdr}  \cite{Davies2007a}.
+However, amino acid substitutions at key positions within the channel can alter the interaction with the insecticide molecule, thereby substantially increasing the dosage of insecticide required for knock-down (described as ``knock-down resistance'' or \emph{kdr} \cite{Davies2007a}).
 %
 If this tolerance exceeds the dosage present in ITNs or on indoor surfaces following IRS, these interventions may be rendered ineffective \cite{NGuessan2007, Toe2014}.
 %
 In the African malaria vectors \emph{Anopheles gambiae} and \emph{An. coluzzii}, three substitutions have been found in natural populations and shown experimentally to cause pyrethroid and DDT resistance.
 %
-Two of these substitutions occur in codon 995, with the Leucine $\rightarrow$ Phenylalanine (\texttt{L995F}) substitution prevalent in West and Central Africa \cite{Martinez-Torres1998, Silva2014}, and the Leucine $\rightarrow$ Serine (\texttt{L995S}) substitution found in Central and East Africa \cite{Ranson2000, Silva2014}.
+Two of these substitutions occur in codon 995\footnotemark, with the Leucine $\rightarrow$ Phenylalanine (\texttt{L995F}) substitution prevalent in West and Central Africa \cite{Martinez-Torres1998, Silva2014}, and the Leucine $\rightarrow$ Serine (\texttt{L995S}) substitution found in Central and East Africa \cite{Ranson2000, Silva2014}.
+%
+\footnotetext{Codon numbering is given here relative to transcript AGAP004707-RA as defined in the AgamP4.4 gene annotations. A mapping of codon numbers from AGAP004707-RA to \emph{Musca domestica}, the system in which the \emph{kdr} mutations were first discovered \cite{Williamson1996}, is given in Table 1 and in @@Supplementary data.}
 %
 A third variant \texttt{N1570Y} has been found in association with \texttt{L995F} in Central Africa and shown to increase resistance above \texttt{L995F} alone \cite{Jones2012}.
 %
-Codon numbering is given here relative to transcript AGAP004707-RA as defined in the AgamP4.4 gene annotations. A mapping of codon numbers from AGAP004707-RA to \emph{Musca domestica}, the system in which the \emph{kdr} mutations were first discovered \cite{Williamson1996}, is given in Table 1 and in @@Supplementary data.
 %%
 
 %% Paragraph 3: What is known about VGSC and target-site resistance in other insects. Highlight work on other species that shows there could be many other variants that potentially cause resistance. Studies in An. gambiae have been limited to date. So there could be more to discover (i.e., anticipating our new discoveries).
@@ -130,11 +131,11 @@ Target-site resistance to pyrethroids and DDT has also been studied in a range o
 %
 Because of its essential function, the VGSC protein is highly conserved across insect species \cite{Davies2007b}, and therefore knowledge gained from one species is relevant to another.
 %
-Many resistance-associated variants have been described in these other species, and thus there are many possible amino acid substitutions that could induce a resistance phenotype in malaria vectors other than the known variants in codons 995 and 1570 \cite{Rinkevich2013},\cite{Dong2014}.
+Many resistance-associated variants have been described in these other species, and thus there are many possible amino acid substitutions that could induce a resistance phenotype in malaria vectors other than the known variants in codons 995 and 1570 \cite{Rinkevich2013, Dong2014}.
 %
 Some of these variants fall within transmembrane domains, and thus may directly interact with insecticide molecules \cite{OReilly2006, Davies2007b}.
 %
-However, functional studies have also demonstrated that variants within internal linker domains can substantially enhance the the level of resistance, when present in combination with channel modifications \cite{Jones2012}.
+However, functional studies have also demonstrated that variants within internal linker domains can substantially enhance the level of resistance, when present in combination with channel modifications \cite{Jones2012}.
 %
 Most previous studies of \emph{An. gambiae} and/or \emph{An. coluzzii} have performed targeted sequencing of small regions within the gene \cite{Pinto2007, Etang2009, Santolamazza2015}, and there has been no comprehensive survey of variation across the entire gene in multiple mosquito populations.
 %%
@@ -147,7 +148,7 @@ Both alleles are present at high frequency in multiple geographical locations, a
 %
 The extent of mosquito migration remains an open question, however mosquitoes do travel between different locations and have the potential to spread resistance alleles from one population to another (adaptive gene flow) \cite{Dao2014}.
 %
-Hybridization between mosquito species also occurs and has the potential to transfer resistance alleles between species (adaptive introgression); studies in West Africa have shown that the \texttt{L995F} allele has been transferred from \emph{An. gambiae} into \emph{An. coluzzii} populations \cite{Clarkson2014}.
+Hybridization between mosquito species also occurs and has the potential to transfer resistance alleles between species (adaptive introgression); studies in West Africa have shown that the \texttt{L995F} allele has been transferred from \emph{An. gambiae} into \emph{An. coluzzii} populations \cite{Clarkson2014, Norris2015}.
 %
 A resistance allele may also arise independently in multiple populations in the absence of gene flow \cite{Reimer2005}, either because of multiple mutational events occurring after insecticides are introduced (selection on new mutations), or because resistance alleles were already present at low frequency in mosquito populations prior to insecticide use (selection on standing variation).
 %
@@ -164,7 +165,7 @@ Here we report an in-depth analysis of the \emph{Vgsc} locus using genotype and 
 %
 These data are derived from whole-genome Illumina sequencing of 765 individual mosquitoes collected from natural populations in 8 African countries.
 %
-We presented some initial results regarding \emph{Vgsc} from analyses of these data in Ag1000g Consortium \emph{et al}. \cite{Ag1000gConsortium2017}, and here we describe a number of new analyses to confirm, extend and elaborate on our initial findings.
+Here we describe a number of new analyses to confirm, extend and elaborate on preliminary results regarding the \textit{Vgsc} locus previously reported as part of a broader analysis of the Ag1000G phase 1 dataset \cite{Ag1000gConsortium2017}.
 %
 Our aim is to provide a comprehensive account of genetic variation at the \emph{Vgsc} locus and its implications for the management of pyrethroid resistance in natural vector populations.
 %%
@@ -190,7 +191,7 @@ SNPs that confer resistance are expected to increase in frequency under selectiv
 %
 The resulting list comprises 20 SNPs, including the known \texttt{L995F}, \texttt{L995S} and \texttt{N1570Y} variants, and a further 17 SNPs not previously described in these species.
 %
-We reported 15 of these novel SNPs in our initial analysis of the Ag1000G phase 1 data (@@REF Ag1000G), and we extend the analyses here to incorporate two tri-allelic SNPs affecting codons 402 and 410.
+We reported 15 of these novel SNPs in our initial analysis of the Ag1000G phase 1 data \cite{Ag1000gConsortium2017}, and we extend the analyses here to incorporate two tri-allelic SNPs affecting codons 402 and 410.
 %%
 
 
@@ -248,9 +249,9 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
 %
 The two alleles in codon 995 are clearly the main drivers of resistance at this locus.
 %
-The \texttt{L995F} allele at high frequency in populations of both species from West, Central and Southern Africa, and the \texttt{L995S} allele at high frequency among \textit{An. gambiae} populations from Central and East Africa (Table \ref{table:variants_missense}; @@REF Ag1000G).
+The \texttt{L995F} allele at high frequency in populations of both species from West, Central and Southern Africa, and the \texttt{L995S} allele at high frequency among \textit{An. gambiae} populations from Central and East Africa (Table \ref{table:variants_missense}; \citep{Ag1000gConsortium2017}).
 %
-All haplotypes carrying L995F or L995S have evidence for strong recent positive selection (@@REF Ag1000G).
+All haplotypes carrying L995F or L995S have evidence for strong recent positive selection \cite{Ag1000gConsortium2017}.
 %
 Both alleles were present in populations sampled from Cameroon and Gabon, including some individuals with a hybrid \texttt{L995F/S} genotype. Within these populations, the \texttt{L995F} and \texttt{L995S} alleles were (@@TODO were not?) in Hardy-Weinberg equilibrium (P=@@), thus there does not (@@does?) appear to be selection against hybrids.
 %%
@@ -258,7 +259,8 @@ Both alleles were present in populations sampled from Cameroon and Gabon, includ
 
 %% Paragraph 3 - Results for I1527T and V402L.
 %
-The \texttt{I1527T} allele is present in \textit{An. coluzzii} from Burkina Faso at 14\% frequency, and there is evidence that haplotypes carrying this allele have been positively selected (@@REF Ag1000G).
+The \texttt{I1527T} allele is present in \textit{An. coluzzii} from Burkina Faso at 14\% frequency, and there is evidence that haplotypes carrying this allele have been positively selected \cite{Ag1000gConsortium2017}.
+%% TODO may need to move EHH analyses here to provide evidence for selection if not included in consortial paper.
 %
 Codon 1527 occurs within trans-membrane domain segment \texttt{III.S6}, immediately adjacent to a second predicted binding pocket for pyrethroid molecules, thus it is plausible that \texttt{I1527T} could alter insecticide binding (@@REF Dong).
 %
