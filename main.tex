@@ -696,15 +696,15 @@ The insecticide resistance outbreaks we have identified here are undoubtedly ong
 %
 In addition, other outbreaks may be occurring in populations that we have not sampled, or in populations we have sampled but since the sampling date.
 %
-Whole-genome sequencing of individual mosquitoes clearly provides data of sufficient resolution to identify resistance outbreaks and also to provide ongoing outbreak surveillance.
+Whole-genome sequencing of individual mosquitoes clearly provides data of sufficient resolution to identify resistance outbreaks, and could also be used to provide ongoing outbreak surveillance.
 %
-The cost of whole-genome sequencing continues to fall, with the present cost being approximately 100 GBP to obtain \textasciitilde$30\times$ coverage of an individual \emph{Anopheles} mosquito genome.
+The cost of whole-genome sequencing continues to fall, with the present cost being approximately 100 GBP to obtain \textasciitilde$30\times$ coverage of an individual \emph{Anopheles} mosquito genome with 150 bp paired-end reads.
 %
-Mobile sequencing technology is also developing rapidly \cite{Jain2016}, and may be a realistic prospect for mosquito whole-genome sequencing within a few years.
+Mobile sequencing using nanopore technology is also developing rapidly \cite{Jain2016} and may be a realistic prospect for mosquito whole-genome sequencing within a few years.
 %
 There is an interim period, however, during which it may be more practical to develop targeted genetic assays for outbreak surveillance that could scale to tens of thousands of mosquitoes at low cost.
 %
-For example, both next-generation and mobile sequencing platforms can be used for amplicon sequencing, where specific genome regions are amplified and sequenced in highly multiplexed libraries.
+For example, both next-generation and mobile sequencing platforms can be used for amplicon sequencing, where specific genome regions are amplified and sequenced in highly multiplexed libraries \cite{Bybee2011, Murray2015}.
 %%
 
 
@@ -726,7 +726,7 @@ The information gain value for each SNP provides an indication of how informativ
 %
 \textbf{b}, Number of SNPs required to accurately classify which outbreak a haplotype derives from. 
 %
-Decision trees using either information gain or the Gini impurity index as the decision criterion.
+Decision trees were constructed using either the LD3 (left) or CART (right) algorithm for comparison.
 %
 Accuracy was evaluated using 10-fold stratified cross-validation.
 }
@@ -742,15 +742,13 @@ To facilitate the development of targeted genetic assays for \textit{Vgsc} insec
 %
 In Supplementary Table 1 we provide a list of all biallelic SNPs discovered with high confidence in this study within the \textit{Vgsc} gene and in the 100 kbp upstream and downstream flanking regions.
 %
-Both amplicon sequencing and genotyping by mass spectrometry require the design of PCR primers to amplify the targeted genome region.
-%
-To aid in primer design, for each SNP we provide the flanking sequence for 250 bp upstream and downstream of the SNP position, including information about polymorphisms within these flanking regions.
+To aid in PCR primer design, for each SNP we provide the flanking sequence for 250 bp upstream and downstream of the SNP position, including information about polymorphisms within these flanking regions.
 %
 Not all SNPs are informative for detecting whether an individual mosquito carries a haplotype from a resistance outbreak, and we provide some summary statistics for each SNP to aid in the selection of the most informative SNPs.
 %
-For each SNP we report the allele frequencies within each of the outbreaks identified here, as well as for populations of susceptible haplotypes.
+This includes allele frequencies within each of the outbreaks identified here, as well as for populations of susceptible haplotypes.
 %
-We also provide the overall variance in allele frequencies, the information gain, and the Gini impurity for each SNP.
+We also provide the overall variance in allele frequencies, the information gain \cite{Quinlan1986}, and the Gini impurity \cite{Breiman1984} for each SNP.
 %
 Note that recombination events are more likely at increasing distances upstream and downstream of the resistance variants under selection, and thus the most informative SNPs are found closest to the resistance variants within the gene (Figure \ref{fig:gain}).
 %
@@ -760,17 +758,17 @@ However, SNPs with some information gain are available throughout the gene and i
 
 %%
 %
-We suggest that the design of a genetic assay proceed by (1) performing an initial round of filtering to remove SNPs which are not informative (e.g., low information gain); (2) performing a round of primer design to remove SNPs for which primers are unlikely to be successful; (3) performing a full analysis of the remaining SNPs to select a subset that is sufficient to classify all outbreaks identified here; (4) finalise primer designs for the chosen panel of SNPs.
+We suggest that the design of a genetic assay proceed by (1) performing an initial round of filtering to remove SNPs which are not informative (e.g., low information gain); (2) performing a round of primer design to remove SNPs for which primers are unlikely to be successful; (3) performing a full analysis of the remaining SNPs to select a subset that is sufficient to classify all outbreaks identified here, including some redundancy; (4) finalise primer designs for the chosen panel of SNPs.
 %
-A possible methodology for step 3 would be to use an algorithm such as ID3 to build a decision tree.
+A possible methodology for step 3 would be to use an algorithm such as ID3 \cite{Quinlan1986} or CART \cite{Breiman1984} to build a decision tree, although many other algorithms for building classifiers are also applicable.
 %
-To aid in the development of a classification algorithm, in Supplementary Table 2 we provide our classification for each of the 1530 haplotypes sampled here, along with the alleles carried by each haplotype for each of the SNPs included in Supplementary Table 1.
+To aid in the development of a classifier, in Supplementary Table 2 we provide our classification for each of the 1530 haplotypes sampled here, along with the alleles carried by each haplotype for each of the SNPs included in Supplementary Table 1.
 %
-To test the methodology, we constructed decision trees using either information gain (LD3) or the Gini impurity index as a decision criterion, and using all available SNPs from within the \textit{Vgsc} plus 20 kbp flanking regions as input features (i.e., assuming primers could be designed in all cases).
+To test the methodology, we constructed decision trees using either LD3 or CART algorithms, and using all available SNPs from within the \textit{Vgsc} plus 20 kbp flanking regions as input features (i.e., assuming primers could be designed in all cases).
 %
 Figure \ref{fig:gain}b shows the cross-validation scores obtained for trees constructed allowing increasing numbers of SNPs.
 %
-This analysis suggests that it should be possible to construct a tree able to classify haplotypes from all 10 resistance outbreaks with >95\% accuracy using 15 SNPs or less.
+This analysis suggests that it should be possible to construct a tree able to classify haplotypes from all 10 resistance outbreaks with >95\% accuracy using 20 SNPs or less.
 %%
 
 
