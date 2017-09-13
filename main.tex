@@ -43,14 +43,13 @@ The evolution and spread of target-site resistance to pyrethroid insecticides in
 \author[1]{Chris S. Clarkson}
 \author[2,1]{Alistair Miles}
 \author[2]{Nicholas J. Harding}
-\author{@@TODO}
 \author[1,2]{Dominic Kwiatkowski}
 \author[3,1]{Martin Donnelly}
 \author[4]{The \emph{Anopheles gambiae} 1000 Genomes Consortium}
-\affil[1]{Sanger @@TODO}
-\affil[2]{Oxford @@TODO}
-\affil[3]{Liverpool @@TODO}
-\affil[4]{MalariaGEN @@TODO}
+\affil[1]{Wellcome Trust Sanger Institute, Hinxton, Cambridge CB10 1SA}
+\affil[2]{Big Data Institute, Old Road, Oxford OX3 7FZ}
+\affil[3]{Liverpool School of Tropical Medicine, Pembroke Place, Liverpool L3 5QA}
+\affil[4]{Ag1000g Consortium, MalariaGEN, Big Data Institute, Old Road, Oxford OX3 7FZ}
 
 
 \begin{document}
@@ -63,25 +62,23 @@ The evolution and spread of target-site resistance to pyrethroid insecticides in
 
 
 %%
-Resistance to pyrethroid insecticides is a major concern for malaria vector control, because these are the only compounds approved for use in insecticide-treated bed-nets (ITNs) and are also widely used for indoor residual spraying (IRS). 
-%
-Pyrethroids target the voltage-gated sodium channel (VGSC), an essential component of the mosquito nervous system, but mutations in the \emph{Vgsc} gene can disrupt the activity of these insecticides, inducing a ``knock-down resistance'' phenotype. 
+Resistance to pyrethroid insecticides is a major concern for malaria vector control, because these are the only compounds approved for use in insecticide-treated bed-nets (ITNs). 
+%RCorbelVAkogbetoM
+Pyrethroids target the voltage-gated sodium channel (VGSC), an essential component of the mosquito nervous system, but substitutions in the amino acid sequence can disrupt the activity of these insecticides, inducing a resistance phenotype. 
 %
 Here we use Illumina whole-genome sequence data from phase 1 of the \emph{Anopheles gambiae} 1000 Genomes Project (Ag1000G) to provide a comprehensive account of genetic variation at the \emph{Vgsc} locus in mosquito populations from 8 African countries.
 %
-In addition to three known resistance variants that alter the protein-coding sequence of the \emph{Vgsc} gene, we describe 19 previously unknown non-synonymous variants at appreciable frequency in one or more populations.
+In addition to three known resistance variants, we describe 18 non-synonymous variants at appreciable frequency in one or more populations that are previously unknown in mosquitoes.
 %
-For each variant we predict a resistance phenotype based on genetic evidence for recent selection, patterns of linkage between variants, the position of the variant within the protein structure, and experimental evidence from other species.
+For each variant we predict a resistance phenotype based on genetic evidence for positive selection, patterns of linkage between variants, and functional evidence from other species.
 %
-We use analyses of haplotype structure to refine our understanding of the origins and spread of these resistance variants between species and geographical locations.
+We then analyse the genetic backgrounds on which resistance variants are found, to refine our understanding of the origins and spread of resistance between species and geographical locations.
 %
-These analyses identify 10 distinct lineages, each of which carries one or more resistance alleles and appears to be undergoing rapid and recent expansion in one or more populations.
+We identify ten distinct outbreaks of resistance, of which five appear to be localised to a single geographical location, and five have spread between two or more countries.
 %
-The most successful and widespread resistance lineage (F1) originates in West Africa and has subsequently spread to countries in Central and Southern Africa.
+The most successful and widespread outbreak (F1) originates in West Africa and has subsequently spread to countries in Central and Southern Africa.
 %
-We also reconstruct a putative ancestral haplotype for each lineage, and analyse patterns of recombination to show that lineages are unrelated and thus represent independent outbreaks of resistance.
-%
-Our data demonstrate that the molecular basis of pyrethroid resistance in African malaria vectors is more complex than previously appreciated, and provide a foundation for the development of new genetic tools to inform insecticide resistance management and track the further spread of resistance.
+Our results demonstrate that the molecular basis of pyrethroid resistance in African malaria vectors is more complex than previously appreciated, and provide a foundation for the design of new genetic tools for outbreak surveillance to inform insecticide resistance management and track the further spread of resistance
 %%
 
 \end{abstract}
@@ -92,89 +89,83 @@ Our data demonstrate that the molecular basis of pyrethroid resistance in Africa
 
 %% Paragraph 1: The relevance of insecticide resistance to malaria. Start broad, explain why insecticide resistance is relevant to malaria control. Briefly review some of the evidence of the actual and potential impact of insecticide resistance on intervention efficacy and disease prevalence.
 %
-An estimated 663 million cases of malaria were averted in Africa between 2000 and 2015 due to public health interventions, of which 68\% were prevented by insecticide-treated bed-nets (ITNs) and @@N\% through indoor residual spraying of insecticides (IRS).
+An estimated 663 million cases of malaria were averted in Africa between 2000 and 2015 due to public health interventions, of which 68\% were prevented by insecticide-treated bed-nets (ITNs) and 10\% through indoor residual spraying of insecticides (IRS) \cite{Bhatt2015}.
 %
-However, over this same period, insecticide resistance has become increasingly prevalent in malaria vector populations.
+However, over this same period, insecticide resistance has become increasingly prevalent in malaria vector populations \cite{Hemingway2016,Silva2014}.
 %
 Four chemical classes of insecticides -- organophosphates, carbamates, pyrethroids and organochlorines -- are licensed for use in public health, but only pyrethroids are approved by the World Health Organisation (WHO) for use in ITNs.
 %
 Pyrethroids are also commonly used for IRS and in agriculture, and mosquito populations are under pressure to evolve molecular mechanisms of pyrethroid resistance.
 %
-There is evidence that pyrethroid resistance has a direct impact on the effectiveness of ITNs and IRS, although assessing the impact on disease prevalence is difficult and has been hampered by the fact that pyrethroid resistance is now so pervasive that it is nearly impossible to find fully susceptible mosquito populations to serve as controls.
+There is evidence that pyrethroid resistance has a direct impact on the effectiveness of ITNs and IRS \cite{NGuessan2007, Toe2014}, although assessing the impact on disease prevalence is difficult and has been hampered by the fact that pyrethroid resistance is now so pervasive that it is difficult to find mosquito populations with pyrethroid susceptibility at baseline to serve as controls \cite{WorldHealthOrganization2016}.
 %
-Nevertheless, the position of the WHO remains that insecticide resistance poses a grave threat to the future of malaria control in Africa (@@REF GPIRM).
+Nevertheless, the position of WHO remains that insecticide resistance poses a grave threat to the substantial gains made in reducing malaria across Africa \cite{WorldHealthOrganization2012, WorldHealthOrganization2016}.
 %
-Improvements are needed in our ability to monitor resistance, and gaps must be filled in our knowledge of the molecular mechanisms of resistance.
+Improvements are needed in our ability to monitor resistance, and gaps must be filled in our knowledge of the molecular basis of resistance.
 %%
-
 
 %% Paragraph 2: Introduce VGSC and concept of target-site resistance. What is known about target-site resistance in An. gambiae.
 %
-The voltage-gated sodium channel (VGSC) is the physiological target of pyrethroids and of the organochlorine DDT.
-%
-The VGSC protein is integral to the insect nervous system, involved in the transmission of nerve impulses.
+The voltage-gated sodium channel (VGSC) is the physiological target of pyrethroids and of the organochlorine DDT and is integral to the insect nervous system, involved in the transmission of nerve impulses.
 %
 Both pyrethroids and DDT have a similar mode of action, binding to sites within the protein channel and preventing normal nerve function, causing paralysis (``knock-down'') and then death.
 %
-However, amino acid substitutions at key positions within the channel can alter the interaction between the channel and the insecticide molecule, and thereby substantially increase the dosage of insecticide required for knock-down.
+However, amino acid substitutions at key positions within the channel can alter the interaction with the insecticide molecule, thereby substantially increasing the dosage of insecticide required for knock-down (hence described as knock-down resistance or \emph{kdr}  \cite{Davies2007a}.
 %
-If this tolerance exceeds the dosage present in ITNs or on indoor surfaces following IRS, these interventions may be rendered ineffective.
+If this tolerance exceeds the dosage present in ITNs or on indoor surfaces following IRS, these interventions may be rendered ineffective \cite{NGuessan2007, Toe2014}.
 %
-In the African malaria vectors \emph{Anopheles gambiae} and \emph{Anopheles coluzzii}, three substitutions have been found in natural populations and shown to cause pyrethroid and DDT resistance.
+In the African malaria vectors \emph{Anopheles gambiae} and \emph{An. coluzzii}, three substitutions have been found in natural populations and shown experimentally to cause pyrethroid and DDT resistance.
 %
-Two of these substitutions occur in codon 995\footnotemark, with the Leucine $\rightarrow$ Phenylalanine (\texttt{L995F}) substitution prevalent in West and Central Africa, and the Leucine $\rightarrow$ Serine (\texttt{L995S}) substitution found in Central and East Africa.
+Two of these substitutions occur in codon 995, with the Leucine $\rightarrow$ Phenylalanine (\texttt{L995F}) substitution prevalent in West and Central Africa \cite{Martinez-Torres1998, Silva2014}, and the Leucine $\rightarrow$ Serine (\texttt{L995S}) substitution found in Central and East Africa \cite{Ranson2000, Silva2014}.
 %
-\footnotetext{Codon numbering is given here relative to transcript @@TODO as defined in the AgamP4.@@N gene annotations. A mapping of codon numbers from @@TRANSCRIPT to \emph{Musca domestica} @@TRANSCRIPT is given in Table \ref{table:variants_missense}.}
+A third variant \texttt{N1570Y} has been found in association with \texttt{L995F} in Central Africa and shown to increase resistance above \texttt{L995F} alone \cite{Jones2012}.
 %
-A third variant \texttt{N1570Y} has been found in association with \texttt{L995F} in Central Africa and shown to increase resistance above \texttt{L995F} alone.
+Codon numbering is given here relative to transcript AGAP004707-RA as defined in the AgamP4.4 gene annotations. A mapping of codon numbers from AGAP004707-RA to \emph{Musca domestica}, the system in which the \emph{kdr} mutations were first discovered \cite{Williamson1996}, is given in Table 1 and in @@Supplementary data.
 %%
-
 
 %% Paragraph 3: What is known about VGSC and target-site resistance in other insects. Highlight work on other species that shows there could be many other variants that potentially cause resistance. Studies in An. gambiae have been limited to date. So there could be more to discover (i.e., anticipating our new discoveries).
 %
 Target-site resistance to pyrethroids and DDT has also been studied in a range of other insect species, including disease vectors as well as domestic and crop pests.
 %
-Because of its essential function, the VGSC protein is highly conserved across insect species, and knowledge gained from one species is relevant to another.
+Because of its essential function, the VGSC protein is highly conserved across insect species \cite{Davies2007b}, and therefore knowledge gained from one species is relevant to another.
 %
-Many resistance-associated variants have been described in these other species, and thus there are many possible amino acid substitutions that could induce a resistance phenotype in malaria vectors, other than the known variants in codons 995 and 1570.
+Many resistance-associated variants have been described in these other species, and thus there are many possible amino acid substitutions that could induce a resistance phenotype in malaria vectors other than the known variants in codons 995 and 1570 \cite{Rinkevich2013},\cite{Dong2014}.
 %
-Some of these variants are within the trans-membrane channel, and thus may directly interact with insecticide molecules.
+Some of these variants fall within transmembrane domains, and thus may directly interact with insecticide molecules \cite{OReilly2006, Davies2007b}.
 %
-However, functional studies have also demonstrated that variants within internal linker domains can substantially enhance the the level of resistance, when present in combination with channel modifications.
+However, functional studies have also demonstrated that variants within internal linker domains can substantially enhance the the level of resistance, when present in combination with channel modifications \cite{Jones2012}.
 %
-Most previous studies of \emph{An. gambiae} and/or \emph{An. coluzzii} have performed targeted sequencing of small regions within the gene, and there has been no comprehensive survey of variation across the entire gene in multiple populations.
+Most previous studies of \emph{An. gambiae} and/or \emph{An. coluzzii} have performed targeted sequencing of small regions within the gene \cite{Pinto2007, Etang2009, Santolamazza2015}, and there has been no comprehensive survey of variation across the entire gene in multiple mosquito populations.
 %%
-
 
 %% Paragraph 4: Origins and spread of resistance. Review what is and isn't known about multiple origins and spread of VGSC resistance in An. gambiae. Explain the idea of origins and spread. Introduce why it's important/useful to know more about origins and spread.
 %
-Insecticide resistance monitoring in malaria vector populations now often incorporates some form of genetic assay to detect the allele present at \emph{Vgsc} codon 995.
+Insecticide resistance monitoring in malaria vector populations now often incorporates some form of genetic assay to detect the allele present at \emph{Vgsc} codon 995 (e.g. \cite{Bass2007}).
 %
-Both alleles are present at high frequency in multiple geographical locations, and the \texttt{L995F} allele is present in both \emph{An. gambiae} and \emph{An. coluzzii}.
+Both alleles are present at high frequency in multiple geographical locations, and the \texttt{L995F} allele is present in both \emph{An. gambiae} and \emph{An. coluzzii} \cite{Silva2014}.
 %
-The extent of mosquito migration remains an open question, however mosquitoes do travel between different locations and have the potential to spread resistance alleles from one population to another (adaptive gene flow).
+The extent of mosquito migration remains an open question, however mosquitoes do travel between different locations and have the potential to spread resistance alleles from one population to another (adaptive gene flow) \cite{Dao2014}.
 %
-Hybridization between mosquito species also occurs and has the potential to transfer resistance alleles between species (adaptive introgression).
+Hybridization between mosquito species also occurs and has the potential to transfer resistance alleles between species (adaptive introgression); studies in West Africa have shown that the \texttt{L995F} allele has been transferred from \emph{An. gambiae} into \emph{An. coluzzii} populations \cite{Clarkson2014}.
 %
-Studies in West African have shown that the \texttt{L995F} allele has been transferred from \emph{An. gambiae} into \emph{An. coluzzii} populations.
+A resistance allele may also arise independently in multiple populations in the absence of gene flow \cite{Reimer2005}, either because of multiple mutational events occurring after insecticides are introduced (selection on new mutations), or because resistance alleles were already present at low frequency in mosquito populations prior to insecticide use (selection on standing variation).
 %
-A resistance allele may also arise independently in multiple populations, either because of multiple mutational events occurring after insecticides are introduced (selection on new mutations), or because resistance alleles were already present at low frequency in mosquito populations prior to insecticide use (selection on standing variation).
-%
-Previous studies have found evidence that the \texttt{L995F} allele occurs on several different genetic backgrounds, suggesting multiple origins of resistance.
+Previous studies have found evidence that the \texttt{L995F} allele occurs on several different genetic backgrounds, suggesting multiple origins of resistance \cite{Pinto2007, Etang2009}.
 %
 However, these studies have used information from only a small region of the gene, and have limited resolution to make inferences about geographical origins or history of spread.
 %
 Better information about the origins and spread of resistance could improve insecticide resistance monitoring and inform strategies for insecticide resistance management.
 %%
 
-
 %% Paragraph 5: Segue into results. What we cover in this paper. Explain relationship to previously reported analyses in Ag1000G phase 1 paper.
 %
-Here we provide a detailed and comprehensive account of genetic variation within the \emph{Vgsc} gene using data from phase 1 of the \emph{Anopheles gambiae} 1000 Genomes Project (Ag1000G).
+Here we report an in-depth analysis of the \emph{Vgsc} locus using genotype and haplotype data from phase 1 of the \emph{Anopheles gambiae} 1000 Genomes Project (Ag1000G) \cite{Ag1000gConsortium2017}.
 %
-We use genotype and haplotype data derived from whole-genome Illumina sequencing of 765 individual mosquitoes collected from natural populations in 8 African countries to survey genetic diversity and study the evolutionary and demographic history of insecticide resistance at the \emph{Vgsc} locus.
+These data are derived from whole-genome Illumina sequencing of 765 individual mosquitoes collected from natural populations in 8 African countries.
 %
-Our results reveal an unexpected diversity of molecular mechanisms of resistance, and shed new light on the evolutionary processes underlying the rapid increase in the prevalence of resistance across multiple mosquito populations.
+We presented some initial results regarding \emph{Vgsc} from analyses of these data in Ag1000g Consortium \emph{et al}. \cite{Ag1000gConsortium2017}, and here we describe a number of new analyses to confirm, extend and elaborate on our initial findings.
+%
+Our aim is to provide a comprehensive account of genetic variation at the \emph{Vgsc} locus and its implications for the management of pyrethroid resistance in natural vector populations.
 %%
 
 
@@ -232,7 +223,7 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
     
     \item[2] Codon numbering according to \emph{Anopheles gambiae} transcript AGAP004707-RA in geneset AgamP4.4.
     
-    \item[3] Codon numbering according to \emph{Musca domestica} EMBL accession X96668 \cite{williamson1996}.
+    \item[3] Codon numbering according to \emph{Musca domestica} EMBL accession X96668 \cite{Williamson1996}.
     
     \item[4] Position of the variant within the protein. \texttt{IN}=internal domain; \texttt{TM}=trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
     
