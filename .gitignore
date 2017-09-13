@@ -33,6 +33,7 @@ ngs.sanger.ac.uk
 *.bak
 *.synctex*
 /main.pdf
+temp.bib
 
 # ignore flag files
 *.done
