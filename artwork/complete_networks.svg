@@ -25,17 +25,19 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3249068"
-     inkscape:cx="558.3669"
-     inkscape:cy="384.18019"
-     inkscape:current-layer="edge33-9"
+     inkscape:zoom="0.71253427"
+     inkscape:cx="542.28012"
+     inkscape:cy="645.75889"
+     inkscape:current-layer="g4370"
      showgrid="false"
      units="mm"
      inkscape:window-width="1855"
-     inkscape:window-height="1176"
-     inkscape:window-x="1985"
+     inkscape:window-height="1056"
+     inkscape:window-x="65"
      inkscape:window-y="24"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     showguides="true"
+     inkscape:guide-bbox="true" />
   <metadata
      id="metadata4">
     <rdf:RDF>
@@ -768,7 +770,7 @@
            style="fill:none;stroke:#000000" />
       </g>
       <g
-         transform="translate(204.079,340.744)"
+         transform="translate(212.71476,338.14309)"
          id="node75"
          class="node">
         <title
@@ -787,7 +789,7 @@
            style="fill:#1874cd;stroke:#000000" />
       </g>
       <g
-         transform="translate(204.079,340.744)"
+         transform="matrix(0.99477633,-0.10207862,0.10207862,0.99477633,224.18427,359.28301)"
          id="edge58"
          class="edge">
         <title
@@ -3324,12 +3326,14 @@
       <text
          sodipodi:linespacing="125%"
          id="text14101-0-6"
-         y="352.93436"
-         x="445.026"
+         y="353.87619"
+         x="453.32187"
          style="font-size:20px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Sans"
-         xml:space="preserve"><tspan
-           y="352.93436"
-           x="445.026"
+         xml:space="preserve"
+         inkscape:transform-center-x="-47.550514"
+         inkscape:transform-center-y="-34.719423"><tspan
+           y="353.87619"
+           x="453.32187"
            id="tspan14103-4-2"
            sodipodi:role="line">F5</tspan></text>
       <text
@@ -4936,6 +4940,13 @@
            y="60.154083"
            x="53.817886"
            inkscape:transform-center-x="-3.8793103">V1853I</text>
+        <text
+           style="font-size:14.00000095px;text-anchor:middle;font-family:monospace"
+           x="29.979828"
+           y="-267.09576"
+           font-size="14.00"
+           id="text1129"
+           transform="matrix(0.99968264,0.02519166,-0.02519166,0.99968264,0,0)">R254K</text>
       </g>
       <g
          class="node"
