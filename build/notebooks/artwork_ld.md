@@ -606,6 +606,22 @@ compute_ld()
 
 
 ```python
+ld[11]
+```
+
+
+
+
+    array([-1.        ,  0.79748511,  1.        , -1.        , -1.        ,
+           -1.        , -1.        , -1.        , -0.89609508, -1.        ,
+           -1.        ,  0.        , -1.        , -1.        , -1.        ,
+           -1.        , -1.        , -1.        , -1.        , -1.        ,
+           -1.        , -1.        , -1.        ])
+
+
+
+
+```python
 def fig_pw_ld():
 
     fig = plt.figure(figsize=(7, 6), dpi=120)
@@ -645,7 +661,7 @@ fig_pw_ld()
 ```
 
 
-![png](artwork_ld_files/artwork_ld_14_0.png)
+![png](artwork_ld_files/artwork_ld_15_0.png)
 
 
 
