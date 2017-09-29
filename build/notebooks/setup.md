@@ -126,9 +126,9 @@ sns.set_context('paper')
 sns.set_style('white')
 sns.set_style('ticks')
 rcParams = plt.rcParams
-# N.B., reduced font size
 base_font_size = 8
 rcParams['font.size'] = base_font_size
+rcParams['axes.titlesize'] = base_font_size
 rcParams['axes.labelsize'] = base_font_size
 rcParams['xtick.labelsize'] = base_font_size
 rcParams['ytick.labelsize'] = base_font_size
