@@ -183,11 +183,11 @@ We reported 15 of these novel alleles in our initial analysis of the Ag1000G pha
 %\clearpage
 % N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
 %\newgeometry{margin=2cm}
-\begin{landscape}
+%\begin{landscape}
 \thispagestyle{empty}
 \begin{table}[h]
-  \footnotesize
-  \centering
+  \scriptsize
+  %\centering
   \begin{threeparttable}
 
   \caption{
@@ -212,16 +212,13 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
     
     \item[3] Codon numbering according to \emph{Musca domestica} EMBL accession X96668 \cite{Williamson1996}.
     
-    \item[4] Position of the variant within the protein. \texttt{IN}=internal domain; \texttt{TM}=trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
-    
-    \item[5] Phenotype predictions are based on population genetic evidence and have not been confirmed experimentally.
     
   \end{tablenotes}
   
   \end{threeparttable}
   
 \end{table}
-\end{landscape}
+%\end{landscape}
 %\restoregeometry
 } % end afterpage
 %% end Table 1
@@ -239,6 +236,49 @@ Both alleles were present in populations sampled from Cameroon and Gabon, includ
 %
 In Cameroon these alleles were in Hardy Weinberg equilibrium ($x^{2}$ = 0.02, p > 0.05), thus there does not appear to be selection for or against carriers of both alleles; however in Gabon, they were not in equilibrium ($x^{2}$ = 8.96, p < 0.005), with an excess of heterozygotes suggesting a fitness advantage to mosquitoes carrying both alleles in this region.
 %%
+
+
+%% Table 2 - Phenotype.
+%
+\afterpage{%
+%\clearpage
+% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
+%\newgeometry{margin=2cm}
+%\begin{landscape}
+\thispagestyle{empty}
+\begin{table}[h]
+  \scriptsize
+  \centering
+  \begin{threeparttable}
+
+  \caption{
+%
+\textbf{Phenotype prediction in the voltage-gated sodium channel gene}. 
+}
+
+  \label{table:variants_pheno}
+  
+  \input{tables/variants_pheno.tex}
+  
+  \begin{tablenotes}
+    \footnotesize
+    
+    \item[1] Position of the variant within the protein. \texttt{IN}=internal domain; \texttt{TM}=trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
+    
+    \item[2] Phenotype predictions are based on population genetic evidence and have not been confirmed experimentally.
+    
+    \item[3] @@TODO something about what these mean.
+    
+  \end{tablenotes}
+  
+  \end{threeparttable}
+  
+\end{table}
+%\end{landscape}
+%\restoregeometry
+} % end afterpage
+%% end Table 1
+
 
 
 %% Paragraph 3 - Results for I1527T and V402L.
