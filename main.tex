@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
+	\documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
 
 \usepackage[margin=3cm]{geometry}
 \usepackage{graphicx}
@@ -319,15 +319,13 @@ These additional variants can be used to analyse the genetic backgrounds (haplot
 
 %% Paragraph 7 - breifly acknowledge previous work
 %
-In our initial analysis of the \textit{Vgsc} (\cite{Ag1000gConsortium2017}), we used 1710 biallelic SNPs from within the 73.5 kbp \textit{Vgsc} gene (@@N exonic, @@N intronic) to compute the number of SNP differences between all pairs of 1530 haplotypes derived from 765 wild-caught mosquitoes.
+In our initial analysis of the \textit{Vgsc} \cite{Ag1000gConsortium2017}, we used 1710 biallelic SNPs from within the 73.5 kbp \textit{Vgsc} gene (@@N exonic, @@N intronic) to compute the number of SNP differences between all pairs of 1530 haplotypes derived from 765 wild-caught mosquitoes.
 %
 To visualise these patterns, we used the pairwise genetic distances to perform hierarchical clustering and found that haplotypes carrying resistance alleles were grouped into 10 distinct clusters.
 %
 Five of these clusters carried the \texttt{L995F} allele (labelled F1-F5), and a further five clusters carried \texttt{L995S} (labelled S1-S5).
 %
-Within each cluster, , and therefore each cluster represents a collection of haplotypes with a very recent common ancestor.
-%
-If we assume that haplotypes within each cluster share a common ancestor since the introduction of insecticides, which is reasonable given the high degree of similarity (haplotypes were nearly identical across all 1710 SNPs spanning 73.5 kbp), then each of these clusters provides evidence that resistance alleles have been spreading between geographical locations and species via adaptive gene flow.
+If we assume that haplotypes within each cluster share a common ancestor since the introduction of insecticides, which is reasonable given the high degree of similarity (clustered haplotypes were nearly identical across all 1710 SNPs spanning 73.5 kbp), then each of these clusters provides evidence that resistance alleles have been spreading between geographical locations and species via adaptive gene flow.
 %
 Here we present several new analyses of these haplotype data, to confirm our initial inferences regarding gene flow, and provide further details regarding the origins and movement of resistance alleles.
 %
@@ -345,13 +343,13 @@ Here we present several new analyses of these haplotype data, to confirm our ini
 
 %% Paragraph 8 - Introduction to the networks.
 %
-To provide an alternative view of the genetic similarity between haplotypes carrying resistance alleles, we used haplotype data from within the Vgsc gene region to construct median-joining networks (Figure \ref{fig:networks}).
+To provide an alternative view of the genetic similarity between haplotypes carrying resistance alleles, we used haplotype data from within the \emph{Vgsc} gene region to construct median-joining networks (Figure \ref{fig:networks}).
 %
-This analysis is very similar to hierarchical clustering, except that it allows for the reconstruction and placement of intermediate haplotypes that may not be observed in the data and allows much easier visualisation of the closely related at the 'leaves' of the dendrogram branches.
+This analysis is  similar to hierarchical clustering, however, it allows for the reconstruction and placement of intermediate haplotypes that may not be observed in the data and allows much easier visualisation of the closely related haplotypes at the leaves of the dendrogram branches.
 %
-We constructed these networks using a maximum distance of 2 SNP differences, to ensure that each connected component in the resulting networks represents a collection of haplotypes with a recent common ancestor.
+We constructed these networks using a maximum edge distance of 2 SNP differences, to ensure that each connected component in the resulting networks represents a collection of haplotypes with a recent common ancestor (analogous to the cutting of the dendrogram in \cite{Ag1000gConsortium2017}).
 %
-For haplotypes carrying both \texttt{L995F} and \texttt{L995S} alleles, the resulting networks confirm the presence of ten distinct clusters, with close correspondence to the clusters we identified previously (\cite{Ag1000gConsortium2017}.
+For haplotypes carrying both \texttt{L995F} and \texttt{L995S} alleles, the resulting networks confirm the presence of ten distinct clusters, with close correspondence to the clusters we identified previously \cite{Ag1000gConsortium2017}.
 %
 
 
@@ -359,7 +357,7 @@ For haplotypes carrying both \texttt{L995F} and \texttt{L995S} alleles, the resu
 %
 The haplotype networks bring into sharp relief the explosive evolution of amino acid substitutions secondary to the \texttt{L995F} allele.
 %
-Within the F1 network, nodes carrying non-synonymous variants radiate out from a central node carrying only \texttt{L995F} (Figure \ref{fig:networks}), indicating that the central node represents the ancestral haplotype carrying \texttt{L995F} alone which initially came under selection, and these secondary variants have arisen subsequently as new mutations.
+Within the F1 network, nodes carrying non-synonymous variants radiate out from a central node carrying only \texttt{L995F} (Figure \ref{fig:networks}), suggesting that the central node represents the ancestral haplotype carrying \texttt{L995F} alone which initially came under selection, and these secondary variants have arisen subsequently as new mutations.
 %
 Many of the nodes carrying secondary variants are large, consistent with positive selection and a functional role for these secondary variants as enhancers of the \texttt{L995F} resistance phenotype (Table \ref{table:variants_pheno}).
 %
@@ -367,13 +365,13 @@ The F1 network also allows us to infer multiple introgression events between the
 %
 The central (ancestral) node comprises haplotypes from both species, as do nodes carrying the \texttt{N1570Y}, \texttt{P1874L}, and \texttt{T791M}.
 %
-This structure is consistent with an initial introgression of the ancestral F1 haplotype, followed by introgression of haplotypes carrying secondary mutations.
+This structure is consistent with an initial introgression of the ancestral F1 haplotype, followed later by introgressions of haplotypes carrying secondary mutations.
 %
 The contrast between the haplotype networks for the \texttt{L995F} and \texttt{L995S} alleles is striking because of the near-total absence of non-synonymous variation within the \texttt{L995S} networks.
 %
 As we reported previously @@Where?, this difference is highly significant -- the ratio of non-synonymous to synonymous nucleotide diversity (@@piN/piS) is @@N times higher among haplotypes carrying \texttt{L995F} relative to haplotypes carrying \texttt{L995S} (@@Test; P=@@) (\cite{Ag1000gConsortium2017}).
 %
-Some secondary variants are present within the \texttt{L995S} networks, but all are at low frequency, and thus may be neutral or mildly deleterious variants that are hitch-hiking on selective sweeps for the \texttt{L995S} allele.
+Some secondary non-synonymous variants are present within the \texttt{L995S} networks, but all are at low frequency, and thus may be neutral or mildly deleterious variants that are hitch-hiking on selective sweeps for the \texttt{L995S} allele.
 %%
 
 
@@ -381,21 +379,17 @@ Some secondary variants are present within the \texttt{L995S} networks, but all 
 %
 While the haplotype clustering and network analyses provide evidence for the spread of resistance alleles via adaptive gene flow, and for the secondary evolution of \texttt{L995F} enhancer alleles, they have several limitations.
 %
-Within haplotype clusters where gene flow has occurred, they have poor resolution to infer the origin and direction of gene flow.
+These analyses only leverage information about genetic distance within the \textit{Vgsc} gene, and for very recent events, insufficient time has elapsed for informative mutations to accumulate within this relatively small genome region.
 %
-This is because the analyses only leverage information about genetic distance within the \textit{Vgsc} gene, and for very recent events, insufficient time has elapsed for informative mutations to accumulate within this relatively small genome region.
-%
-Also, the fact that we observe five distinct clusters for each of the codon 995 alleles suggests that each cluster is in some sense independent from the others, and thus gene flow is not required for resistance to emerge in multiple geographical locations.
+The fact that we observe five distinct clusters for each of the codon 995 alleles suggests that each cluster is in some sense independent from the others, and thus gene flow is not required for resistance to emerge in multiple geographical locations.
 %
 However, the threshold for the genetic distance at which we have chosen to divide haplotypes into different networks or clusters is to a certain extent arbitrary, and based on an intuitive sense of how much variation could have accumulated among the descendants of a single resistant ancestor since the onset of selective pressure.
-%
-We also need to clarify what we mean by ``independent'', as there are several possible scenarios under which resistance could evolve in multiple populations in the absence of gene flow.
 %
 Finally, analyses of genetic distance within a fixed genome region can be confounded by recombination events occurring within that region.
 %
 For example, a recombination event within the \textit{Vgsc} gene upstream of codon 995 could cause us to split a collection of haplotypes into two clusters, even though they are ancestrally related within the region downstream of the recombination event.
 %
-In the next sub-sections we provide some conceptual foundations to help clarify these ambiguities, and use analyses of haplotype sharing from the genome regions flanking the \textit{Vgsc} gene to provide finer resolution to diagnose recent gene flow events.
+In the next sub-sections we provide some further analyses to help clarify these ambiguities, using haplotype sharing from the genome regions flanking the \textit{Vgsc} gene to provide finer resolution to diagnose recent gene flow and recombination events.
 %%
 
 
