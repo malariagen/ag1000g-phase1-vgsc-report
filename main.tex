@@ -159,13 +159,13 @@ Finally we explore ways in which variation data from Ag1000G could be used to de
 
 %% Paragraph 1 - Discovery of potentially functional SNPs. I.e., how we came to table 1. What we found there. Reference Ag1000G phase 1 paper, how this paper and results related.
 %
-To identify variants with a potentially functional role in pyrethroid resistance, we extracted single nucleotide polymorphisms (SNPs) from the Ag1000G phase 1 data resource that alter the amino acid sequence of the VGSC protein, and computed their allele frequencies among 9 populations defined by species and country of origin.
+To identify variants with potentially functional roles in pyrethroid resistance, we extracted single nucleotide polymorphisms (SNPs) from the Ag1000G phase 1 data resource that alter the amino acid sequence of the VGSC protein, and computed their allele frequencies among 9 populations defined by species and country of origin.
 %
 Alleles that confer resistance are expected to increase in frequency under selective pressure, and we refined the list of potentially functional variant alleles to retain only those at an appreciable frequency (>5\%) in one or more populations (Table \ref{table:variants_missense}).
 %
 The resulting list comprises 23 variant alleles, including the known \texttt{L995F}, \texttt{L995S} and \texttt{N1570Y} variants, and a further 20 not previously described in these species.
 %
-We reported 15 of these novel alleles in our initial analysis of the Ag1000G phase 1 data \cite{Ag1000gConsortium2017}, and we extend the analyses here to incorporate two tri-allelic SNPs affecting codons 402 and 490 and a SNP altering codon 1603.
+We reported 15 of these novel alleles in our initial analysis of the Ag1000G phase 1 data \cite{Ag1000gConsortium2017}, and we extend the analyses here to incorporate a SNP which alters codon 1603 and the tri-allelic SNPs at codons 402 and 490.
 %%
 
 
@@ -175,11 +175,11 @@ We reported 15 of these novel alleles in our initial analysis of the Ag1000G pha
 %\clearpage
 % N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
 %\newgeometry{margin=2cm}
-\begin{landscape}
+%\begin{landscape}
 \thispagestyle{empty}
 \begin{table}[h]
-  \footnotesize
-  \centering
+  \scriptsize
+  %\centering
   \begin{threeparttable}
 
   \caption{
@@ -204,16 +204,13 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
     
     \item[3] Codon numbering according to \emph{Musca domestica} EMBL accession X96668 \cite{Williamson1996}.
     
-    \item[4] Position of the variant within the protein. \texttt{IN}=internal domain; \texttt{TM}=trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
-    
-    \item[5] Phenotype predictions are based on population genetic evidence and have not been confirmed experimentally.
     
   \end{tablenotes}
   
   \end{threeparttable}
   
 \end{table}
-\end{landscape}
+%\end{landscape}
 %\restoregeometry
 } % end afterpage
 %% end Table 1
@@ -227,10 +224,59 @@ The \texttt{L995F} allele at high frequency in populations of both species from 
 %
 All haplotypes carrying \texttt{L995F} or \texttt{L995S} have evidence for strong recent positive selection \cite{Ag1000gConsortium2017}.
 %
-Both alleles were present in populations sampled from Cameroon and Gabon, including some individuals with a hybrid \texttt{L995F/S} genotype.
+289 samples in the dataset carried $\geq$1 \texttt{L995F} alleles of which 92 were homozygotes and in the case of \texttt{L995S}, 156 samples carried $\geq$1 alternative alleles and of these 38 were homozygotes;
 %
-In Cameroon these alleles were in Hardy Weinberg equilibrium ($x^{2}$ = 0.02, p > 0.05), thus there does not appear to be selection for or against carriers of both alleles; however in Gabon, they were not in equilibrium ($x^{2}$ = 8.96, p < 0.005), with an excess of heterozygotes suggesting a fitness advantage to mosquitoes carrying both alleles in this region.
+the resistance phenotype at this locus is thought to be incompletely recessive \cite{Chandre2000}.
+%
+Both alleles were present in populations sampled from Cameroon and Gabon, including some individuals with a hybrid \texttt{L995F/S} genotype (46/275 samples in Cameroon, 36/56 in Gabon).
+%
+In Cameroon these alleles were in Hardy Weinberg equilibrium ($x^{2}$ = 0.02, p > 0.05), thus there does not appear to be selection for, or against, heterozygote carriers of both alleles; however in Gabon, they were not in equilibrium ($x^{2}$ = 8.96, p < 0.005), with an excess of heterozygotes suggesting there may be a fitness advantage to mosquitoes carrying both alleles in this region.
 %%
+
+
+%% Table 2 - Phenotype.
+%
+\afterpage{%
+%\clearpage
+% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
+%\newgeometry{margin=2cm}
+\begin{landscape}
+\thispagestyle{empty}
+\begin{table}[h]
+  \scriptsize
+  \centering
+  \begin{threeparttable}
+
+  \caption{
+%
+\textbf{Phenotype prediction in the voltage-gated sodium channel gene}. 
+}
+
+  \label{table:variants_pheno}
+  
+  \input{tables/variants_pheno.tex}
+  
+  \begin{tablenotes}
+    \footnotesize
+    
+    \item[1] Position of the variant within the protein. \texttt{IN}=internal domain; \texttt{TM}=trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
+    
+    \item[2] Phenotype predictions are based on population genetic evidence and have not been confirmed experimentally.
+    
+    \item[3] Literature search results for experimental evidence, assoc. - association study, \emph{in vitro} - \emph{Xenopus} oocytes.
+    
+    \item[4] Publication from which evidence is taken.
+    
+  \end{tablenotes}
+  
+  \end{threeparttable}
+  
+\end{table}
+\end{landscape}
+%\restoregeometry
+} % end afterpage
+%% end Table 1
+
 
 
 %% Paragraph 3 - Results for I1527T and V402L.
