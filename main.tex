@@ -161,7 +161,7 @@ Finally we explore ways in which variation data from Ag1000G could be used to de
 %
 To identify variants with potentially functional roles in pyrethroid resistance, we extracted single nucleotide polymorphisms (SNPs) from the Ag1000G phase 1 data resource that alter the amino acid sequence of the VGSC protein, and computed their allele frequencies among 9 populations defined by species and country of origin.
 %
-Alleles that confer resistance are expected to increase in frequency under selective pressure, and we refined the list of potentially functional variant alleles to retain only those at an appreciable frequency (>5\%) in one or more populations (Table \ref{table:variants_missense}).
+Alleles that confer resistance are expected to increase in frequency under selective pressure, and we refined the list of potentially functional variant alleles to retain only those at an appreciable frequency ($\geq$5\%) in one or more populations (Table \ref{table:variants_missense}).
 %
 The resulting list comprises 23 variant alleles, including the known \texttt{L995F}, \texttt{L995S} and \texttt{N1570Y} variants, and a further 20 not previously described in these species.
 %
@@ -296,7 +296,7 @@ Other substitutions at this locus have also been associated with resistance, \te
 %
 However, because \texttt{V402L} appears secondary to \texttt{I1527T} in our cohort, we classify \texttt{I1527T} as a putative resistance driver and \texttt{V402L} as a putative enhancer.
 %
-Because of the limited geographical distribution of these alleles, we hypothesize that the \texttt{I1527T+V402L} combination represents a pyrethroid resistance allele that arose in West African \textit{An. coluzzii} populations; however, the \texttt{L995F} allele is at higher frequency (85\%) in our Burkina Faso \textit{An. coluzzii} population, and is known to be increasing in frequency \cite{Toe2014}, therefore \texttt{L995F} may provide a stronger resistance phenotype and is replacing \texttt{I1527T+V402L} in these populations.
+Because of the limited geographical distribution of these alleles, we hypothesize that the \texttt{I1527T+V402L} combination represents a pyrethroid resistance allele that arose in West African \textit{An. coluzzii} populations; however, the \texttt{L995F} allele is at higher frequency (85\%) in our Burkina Faso \textit{An. coluzzii} population, and is known to be increasing in frequency \cite{Toe2014}, therefore \texttt{L995F} may provide a stronger resistance phenotype and is replacing \texttt{I1527T+V402L}.
 %%
 
 
@@ -320,9 +320,9 @@ Because of the limited geographical distribution of these alleles, we hypothesiz
 %
 Of the other 16 SNPs, 13 occurred almost exclusively in combination with \texttt{L995F} (Figure \ref{fig:ld}; \cite{Ag1000gConsortium2017}).
 %
-These include the \texttt{N1570Y} allele, known to enhance pyrethroid resistance in \textit{An. gambiae} in combination with \texttt{L995F} \cite{Jones2012}.
+These include the \texttt{N1570Y} allele, known to enhance pyrethroid resistance in \textit{An. gambiae} in combination with \texttt{L995F} \cite{Jones2012} and also two variants in codon 1874 (\texttt{P1874S}, \texttt{P1874L}). 
 %
-These also include two variants in codon 1874 (\texttt{P1874S}, \texttt{P1874L}). \texttt{P1874S} has previously been found in a colony of the crop pest \textit{Plutella xylostella} with a pyrethroid resistance phenotype, but has not been shown to confer resistance experimentally \cite{Sonoda2008}.
+\texttt{P1874S} has previously been found in a colony of the crop pest \textit{Plutella xylostella} with a pyrethroid resistance phenotype, but has not been shown to confer resistance experimentally \cite{Sonoda2008}.
 %
 10 of these variants, including \texttt{N1570Y} and \texttt{P1874S/L}, occur within internal linker domains of the protein, and so fit the model of variants that may enhance or compensate for the driver phenotype by modifying channel gating behaviour \cite{Smith1997, Jones2012}.
 %
@@ -338,7 +338,7 @@ The remaining 3 variants (\texttt{M490I}, \texttt{A1125V}, \texttt{V1254I}) do n
 %
 A possible exception is the \texttt{M490I} allele found at 18\% frequency in the Kenyan population, although the fact that this population has experienced a recent population crash makes it difficult to test for evidence of selection at this locus.
 %
-All 3 variants occur in internal linker domains, and so do not fit the model of a resistance driver, although experimental work is required to rule out a resistance phenotype.
+All 3 variants occur in internal linker domains, and so do not fit the model of a resistance driver, again experimental work is required to rule out a resistance phenotype.
 %
 %%
 
@@ -348,7 +348,7 @@ All 3 variants occur in internal linker domains, and so do not fit the model of 
 
 
 % Paragraph 6 - introduce haplotypes
-Although it is known that pyrethroid resistance is increasing in prevalence in malaria vector populations across Africa, it has not been clear whether this is being driven by the spread of resistance alleles via gene flow, or by resistance alleles emerging independently in multiple locations, or by some combination of both processes.
+Although it is known that pyrethroid resistance is increasing in prevalence in malaria vector populations across Africa, it has not been clear whether this is being driven by the spread of resistance alleles via gene flow, by resistance alleles emerging independently in multiple locations, or by some combination of both processes.
 %
 The Ag1000G data resource provides a rich source of information about the evolutionary and demographic history of insecticide resistance in any given gene, because data are available not only for SNPs in gene coding regions, but also SNPs in introns and flanking intergenic regions, and in neighbouring genes.
 %
@@ -373,7 +373,7 @@ Here we present several new analyses of these haplotype data, to confirm our ini
 %
 \begin{figure}[!b]
   \includegraphics[width=1.1\linewidth,center]{artwork/complete_networks.pdf}
-  \caption{\textbf{Haplotype networks}. @@TODO caption}
+  \caption{\textbf{Haplotype networks}. Median joining networks for haplotypes carrying \texttt{L995F} (labelled F1-F5) or \texttt{L995S} variants (S1-S5) with a maximum edge distance of two SNPs. Network labelling is via concordance with hierarchical clusters discovered in \cite{Ag1000gConsortium2017}. Node size is relative to the number of haplotypes contained and node colour represents the proportion of node haplotypes from mosquito populations/species. Non-synonymous edges are highlighted in red and those leading to non-singleton nodes are labelled with the codon change, arrow head indicates direction of change. Networks consisting of three or more haplotypes are shown.}
   \label{fig:networks}
 \end{figure}
 %%
@@ -383,7 +383,7 @@ Here we present several new analyses of these haplotype data, to confirm our ini
 %
 To provide an alternative view of the genetic similarity between haplotypes carrying resistance alleles, we used haplotype data from within the \emph{Vgsc} gene region to construct median-joining networks (Figure \ref{fig:networks}).
 %
-This analysis is  similar to hierarchical clustering, however, it allows for the reconstruction and placement of intermediate haplotypes that may not be observed in the data and allows much easier visualisation of the closely related haplotypes at the leaves of the dendrogram branches.
+This analysis is  similar to hierarchical clustering, however, it allows for the reconstruction and placement of intermediate haplotypes that may not be observed in the data and allows the relationships of the closely related clustered haplotypes to be discerned.
 %
 We constructed these networks using a maximum edge distance of 2 SNP differences, to ensure that each connected component in the resulting networks represents a collection of haplotypes with a recent common ancestor (analogous to the cutting of the dendrogram in \cite{Ag1000gConsortium2017}).
 %
@@ -415,7 +415,7 @@ Some secondary non-synonymous variants are present within the \texttt{L995S} net
 
 %% Limitations of clustering and networks based on genetic distance in a fixed region.
 %
-While the haplotype clustering and network analyses provide evidence for the spread of resistance alleles via adaptive gene flow, and for the secondary evolution of \texttt{L995F} enhancer alleles, they have several limitations.
+While the genetic-distance based hierarchical clustering and network analyses provide evidence for the spread of resistance alleles via adaptive gene flow, and for the secondary evolution of \texttt{L995F} enhancer alleles, they have several limitations.
 %
 These analyses only leverage information about genetic distance within the \textit{Vgsc} gene, and for very recent events, insufficient time has elapsed for informative mutations to accumulate within this relatively small genome region.
 %
@@ -426,19 +426,49 @@ However, the threshold for the genetic distance at which we have chosen to divid
 Finally, analyses of genetic distance within a fixed genome region can be confounded by recombination events.
 %
 For example, a recombination event within the \textit{Vgsc} gene upstream of codon 995 could cause us to split a collection of haplotypes into two clusters, even though they are ancestrally related within the region downstream of the recombination event.
-%
-Haplotype data from genome regions both within and flanking the \textit{Vgsc} gene were therefore used to provide a higher resolution for reconstructing recent historical events.
 %%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Shared haplotype length}
 
+
 %%
-For each pair of haplotypes, we estimated the length of the region shared identical by descent (IBD), then used these lengths and hierarchical clustering to build a dendrogram (Figure \ref{fig:tree}).
+To overcome the problems of fix windowed analysis, we estimated the length of the region shared identical by descent (IBD).
 %
-We studied the overall distribution of pairwise IBD  - cut - cluster
+By measuring shared haplotype length from genome regions both within and flanking the \textit{Vgsc}, the relationship between haplotypes could be examined in a higher resolution.
+%
+Visualisation of the pairwise IBD length distribution revealed bi-modality; a minor mode of haplotypes with longer shared haplotypes and a major mode of haplotypes with shorter tracts of IBD( Figure \ref{fig:age_hist}.
+%
+It is well established that the \textit{Vgsc} locus is under insecticide mediated recent selection and that there have been multiple selective events e.g. \cite{Ag1000gConsortium2017} (@@cite more).
+%
+Within each selective event, pairs of haplotypes will share a more recent common ancestor on average and therefore will have longer tracts of IBD - generating the minor mode.
+%
+In the absence of recent selection and in the presence of large effective population sizes \cite{Ag1000gConsortium2017} (@@cite more), pairs of haplotypes will have less recent common ancestors on average, with tracts of IBD broken up by recombination over time - the major mode.
+%
+The bimodal distribution is not likely due to geographical population structure, because the same pattern is observed within several populations.
 %%
+
+
+%% Figure - Overall haplotype age distribution.
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/haplotype_age_dist.pdf}
+  \caption{\textbf{Haplotype IBD  distribution}. @@TODO caption.}
+  \label{fig:age_hist}
+\end{figure}
+%%
+
+
+%
+Pairwise IBD lengths were then hierarchically clustered to build a dendrogram.
+%
+The midpoint between the two modes of IBD distribution was taken as an estimation of the minimum length of IBD tract associated with a recent selective event and this was used to cut the IBD dendrogram, generating haplotype clusters (Figure \ref{fig:tree}).
+%
+ 
+%%
+
+
 
  
 %% Figure - Haplotype age tree.
@@ -449,6 +479,42 @@ We studied the overall distribution of pairwise IBD  - cut - cluster
   \label{fig:tree}
 \end{figure}
 %%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -936,7 +1002,10 @@ This region of divergence accounts for the S4/S5 split in earlier analyses.
 \section*{Discussion}
 
 
+@@TODO HW disequilibrium in Gabon - what might be happening here?
+
 @@TODO Discuss accessibility, have we missed any functional variation?
+
 
 
 @@TODO Discuss weaknesses, caveats and potential improvements to method for estimating haplotype age.
@@ -1035,9 +1104,13 @@ Discerning the relationships between similar haplotypes can be difficult when us
 %
 As these relationships may be informative of the history of selection, we utilised a network approach to elucidate them.
 %
-We constructed haplotype networks using the median-joining algorithm \cite{Bandelt1999} as implemented in a custom Python script available from \url{https://github.com/malariagen/agam-vgsc-report}
+We constructed haplotype networks using the median-joining algorithm \cite{Bandelt1999} as implemented in a custom Python script available from \url{https://github.com/malariagen/agam-vgsc-report}.
+%
+Haplotypes carrying either \texttt{L995F} or \texttt{L995S} mutations were analysed with a maximum edge distance of two SNPs, to ensure networks contained haplotypes with recent common ancestors.
 %
 Networks were rendered with the graphviz library and a composite figure constructed using Inkscape.
+%
+Non-synonymous edges were highlighted using the SnpEff annotations \cite{Cingolani2012}.
 %%
 
 
