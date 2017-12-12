@@ -132,7 +132,6 @@ It has also been shown that the \texttt{L995F} allele spread from \textit{An. ga
 However, both \texttt{L995F} and \texttt{L995S} now have wide geographical distributions \cite{Silva2014}, and no attempts have been made to reconstruct the geographical spread of either allele.
 %%
 
-
 %%
 Here we report an in-depth analysis of the VGSC gene, using whole-genome Illumina sequence data from phase 1 of the \emph{Anopheles gambiae} 1000 Genomes Project (Ag1000G) \cite{Ag1000gConsortium2017}.
 %
@@ -278,7 +277,6 @@ In Cameroon these alleles were in Hardy Weinberg equilibrium ($x^{2}$ = 0.02, p 
 %% end Table 1
 
 
-
 %% Paragraph 3 - Results for I1527T and V402L.
 %
 The \texttt{I1527T} allele is present in \textit{An. coluzzii} from Burkina Faso at 14\% frequency, and there is evidence that haplotypes carrying this allele have been positively selected \cite{Ag1000gConsortium2017}.
@@ -331,7 +329,6 @@ The remaining 3 variants are within trans-membrane domains, and so may enhance r
 Because of the tight linkage between these 13 SNPs and the \texttt{L995F} allele, we classify all as putative \texttt{L995F} enhancers, although experimental work is required to confirm a resistance phenotype.
 %%
 
-
 %% Paragraph 5 - Other high frequency variants we think are probably not resistance variants and why.
 %
 The remaining 3 variants (\texttt{M490I}, \texttt{A1125V}, \texttt{V1254I}) do not occur in combination with any known resistance allele, and do not appear to be associated with haplotypes under selection \cite{Ag1000gConsortium2017}
@@ -345,7 +342,6 @@ All 3 variants occur in internal linker domains, and so do not fit the model of 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Haplotype structure}
-
 
 % Paragraph 6 - introduce haplotypes
 Although it is known that pyrethroid resistance is increasing in prevalence in malaria vector populations across Africa, it has not been clear whether this is being driven by the spread of resistance alleles via gene flow, by resistance alleles emerging independently in multiple locations, or by some combination of both processes.
@@ -390,7 +386,6 @@ We constructed these networks using a maximum edge distance of 2 SNP differences
 For haplotypes carrying both \texttt{L995F} and \texttt{L995S} alleles, the resulting networks confirm the presence of ten distinct clusters, with close correspondence to the clusters we identified previously \cite{Ag1000gConsortium2017}.
 %
 
-
 %% Paragraph 9 - Observations from the networks.
 %
 The haplotype networks bring into sharp relief the explosive evolution of amino acid substitutions secondary to the \texttt{L995F} allele.
@@ -412,7 +407,6 @@ As we reported previously @@Where?, this difference is highly significant -- the
 Some secondary non-synonymous variants are present within the \texttt{L995S} networks, but all are at low frequency, and thus may be neutral or mildly deleterious variants that are hitch-hiking on selective sweeps for the \texttt{L995S} allele.
 %%
 
-
 %% Limitations of clustering and networks based on genetic distance in a fixed region.
 %
 While the genetic-distance based hierarchical clustering and network analyses provide evidence for the spread of resistance alleles via adaptive gene flow, and for the secondary evolution of \texttt{L995F} enhancer alleles, they have several limitations.
@@ -432,15 +426,14 @@ For example, a recombination event within the \textit{Vgsc} gene upstream of cod
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Shared haplotype length}
 
-
 %%
-To overcome the problems of fix windowed analysis, we estimated the length of the region shared identical by descent (IBD).
+To overcome the problems of fix windowed analysis, we estimated the length of the region shared identical by descent (IBD) (@@?? and the number of mutations that have accumulated since the most recent common ancestor - methods).
 %
 By measuring shared haplotype length from genome regions both within and flanking the \textit{Vgsc}, the relationship between haplotypes could be examined in a higher resolution.
 %
-Visualisation of the pairwise IBD length distribution revealed bi-modality; a minor mode of haplotypes with longer shared haplotypes and a major mode of haplotypes with shorter tracts of IBD( Figure \ref{fig:age_hist}.
+Visualisation of the pairwise IBD length distribution revealed bi-modality; a minor mode of haplotypes with longer shared haplotypes and a major mode of haplotypes with shorter tracts of IBD (Figure \ref{fig:age_hist}).
 %
-It is well established that the \textit{Vgsc} locus is under insecticide mediated recent selection and that there have been multiple selective events e.g. \cite{Ag1000gConsortium2017} (@@cite more).
+It is well established that the \textit{Vgsc} locus is under insecticide mediated recent selection and that there have been multiple selective events e.g. \cite{Ag1000gConsortium2017} (@@cite more) and therefore this bi-modal pattern is expected.
 %
 Within each selective event, pairs of haplotypes will share a more recent common ancestor on average and therefore will have longer tracts of IBD - generating the minor mode.
 %
@@ -448,17 +441,6 @@ In the absence of recent selection and in the presence of large effective popula
 %
 The bimodal distribution is not likely due to geographical population structure, because the same pattern is observed within several populations.
 %%
-
-
-%% Figure - Overall haplotype age distribution.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/haplotype_age_dist.pdf}
-  \caption{\textbf{Haplotype IBD  distribution}. @@TODO caption.}
-  \label{fig:age_hist}
-\end{figure}
-%%
-
 
 %
 Pairwise IBD lengths were then hierarchically clustered to build a dendrogram.
@@ -475,6 +457,17 @@ As in earlier analyses (Figure \ref{fig:networks}; \cite{Ag1000gConsortium2017})
 %
 Clusters F2, F3, S1, S4/5, L1 and L2 include only haplotypes from a single sampling location.
 %%
+
+
+%% Figure - Overall haplotype age distribution.
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/haplotype_age_dist.pdf}
+  \caption{\textbf{Haplotype IBD distribution}. @@TODO caption.}
+  \label{fig:age_hist}
+\end{figure}
+%%
+ 
  
 %% Figure - Haplotype age tree.
 %
@@ -487,80 +480,24 @@ Clusters F2, F3, S1, S4/5, L1 and L2 include only haplotypes from a single sampl
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Selection}
-
-
-%%
-Good concordance was found across clustering analyses (@@make supp table) with higher resolution of haplotype structure in the IBD analyses through extending up and downstream of the \textit{Vgsc} locus.
-%
-To confirm these IBD generated clusters are indeed experiencing recent selection a formal analysis testing this was performed - extended haplotype homozygosity (EHH) decay.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Recombination}
+\subsection*{Haplotype selection}
 
 %%
+Good concordance was found across clustering analyses (@@make supp table) with higher resolution of haplotype structure in the IBD analyses through extending up- and down-stream of the \textit{Vgsc} locus.
 %
-Here we present analyses of recombination both within the \textit{Vgsc} gene itself and on either flank.
+To confirm these IBD generated clusters are indeed experiencing recent selection and to provide an alternative view of how haplotypes are related, analysis of extended haplotype homozygosity (EHH) decay was performed \cite{Sabeti2002}.
 %
-These provide information about where in the genome recombination events have occurred, and whether these recombination events may have biased or otherwise influenced the outcome of analyses presented in other sections.
+We defined a core region spanning \textit{Vgsc} codon 995 and an additional 4 kbp of flanking sequence (Methods).
 %
-The analyses also provide information about which haplotypes have experience recent selection, and an alternative view of how different haplotypes are related.
+Within this core region, we found 18 distinct haplotypes at a frequency > 1\% within the cohort, including core haplotypes representing each of the resistance outbreaks we identified above, and a further 7 core haplotypes not carrying any known or putative resistance allele for comparison (wild-type - wt).
+%
+Comparision of the core haplotypes from clusters defined by IBD with the wild-type core haplotypes reveal clear reductions in the EHH decay up- and down-stream of all but one core haplotypes, with only L2 from Kenya not showing reduced EHH decay on the left flank (Figure \ref{fig:ehh_decay})
+%
+EHH decay generally decays more slowly in the centromere proximal direction.
+% 
+These results suggest that haplotypes carry non-synonymous mutations in the \textit{Vgsc} gene are under recent positive selection unlike the wild-type haplotypes which do not carry protein altering mutations.
 %%
 
-
-%
-EHH analysis first identifies collections of haplotypes with the same alleles at a core locus (@@ref).
-%
-The haplotypes within each collection are then compared, and the fraction of haplotype pairs that remain identical (EHH) is computed moving both up- and down-stream of the core locus.
-%
-Recombination events break haplotype homozygosity, and so a slow decay of EHH indicates fewer recombination events, and therefore collections of haplotypes where EHH decays more slowly also provide evidence for positive selection on the core allele.
-%
-We defined a core region spanning \textit{Vgsc} codon 995 and an additional 4 kbp of flanking sequence (see Methods).
-%
-Within this core region, we found @@N distinct haplotypes at a frequency > 1\% within the cohort, including core haplotypes representing each of the resistance outbreaks we identified above, and a further @@N core haplotypes not carrying any known or putative resistance allele for comparison.
-%
-@@TODO finish this
-%%
 
 %% Figure - EHH decay
 %
@@ -571,283 +508,70 @@ Within this core region, we found @@N distinct haplotypes at a frequency > 1\% w
 \end{figure}
 %%
 
-%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Insecticide resistance outbreaks}
-
+\subsection*{Haplotype recombination}
 
 %%
+To study the evidence for recombination within region spanning the \textit{Vgsc} gene, and provide some additional confirmation that our inferences regarding insecticide resistance haplotype clusters have not been affected by recombination or other sources of error, we performed an additional analysis of genetic distance between haplotypes.
 %
-To provide an aid to further interpretation of the genetic data, and relating them to the challenges of insecticide resistance management, we introduce the concept of an \textbf{insecticide resistance outbreak}.
+We first constructed a putative ancestral haplotype for each of the outbreaks we identified, by starting from the codon 995 position and separately moving upstream and downstream, assuming the major allele at each SNP bifurcation point represents the ancestral haplotype.
 %
-Informally, we define a resistance outbreak by analogy with the epidemiological concept of an outbreak, as a rapid increase in the prevalence of insecticide resistance among mosquitoes at a particular place and time.
+We then computed the genetic distance ($D_{XY}$) between each of our sampled haplotypes and each of the inferred ancestral outbreak haplotypes, computing the distance in 2000bp windows (step size 1000bp) across a 5 Mbp region spanning the \textit{Vgsc} gene.
 %
-Note that this does not imply that the overall abundance of mosquitoes is increase, just that the relative frequency of resistance within mosquito populations is increasing.
-%
-We also require that all occurrences of insecticide resistance within the same outbreak are connected by a chain of transmission of resistance alleles from parent to progeny mosquitoes, and thus can be traced back to a single resistant common ancestor.
-%
-A resistance outbreak can be \textbf{localised}, meaning that it affects a small group of mosquitoes of a single species from a limited geographical area.
-%
-Alternatively, a resistance outbreak may be \textbf{spreading}, meaning that resistance alleles have been transmitted since the introduction of insecticides by interbreeding of mosquitoes of different species and/or originating from different geographical locations.
-%
+The results for clusters F1-F5 are plotted in Figure \ref{fig:recom_f}, S1-S4/5 are shown in Figure \ref{fig:recom_s} and L1-L2 in Figure \ref{fig:recom_l}.
 %%
 
 
-%% Figure - Cartoon of outbreaks.
+%% Figure - L995F recombination
 %
 \begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/outbreaks.pdf}
-  \caption{\textbf{Illustration of insecticide resistance outbreaks}. @@TODO explanation.}
-  \label{fig:outbreaks}
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_F.png}
+  \caption{\textbf{Recombination and ancestral haplotypes for L995F}. @@TODO legend}
+  \label{fig:recom_f}
+\end{figure}
+%%
+
+
+%% Figure - L995S recombination
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_S.png}
+  \caption{\textbf{Recombination and ancestral haplotypes for L995S}. @@TODO legend}
+  \label{fig:recom_s}
+\end{figure}
+%%
+
+
+%% Figure - L995L recombination
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_L.png}
+  \caption{\textbf{Recombination and ancestral haplotypes for L995L}. @@TODO legend}
+  \label{fig:recom_l}
 \end{figure}
 %%
 
 
 %%
+In these plots we expect that all haplotypes from a given cluster should share very close genetic similarity ($D_{XY} \approx 0$) with each other and with the ancestral haplotype for that cluster within the \textit{Vgsc} gene itself, with an increasing number of haplotypes recombining away from the ancestral haplotype as we move away from the gene in either the upstream or downstream direction.
 %
-Our goal for the \textit{Vgsc} gene can now be restated, which is to perform an insecticide resistance outbreak analysis.
+Conversely, haplotypes from one cluster should not share any close genetic similarity ($D_{XY} > 0$) with the inferred ancestral haplotype from a different cluster, either within the \textit{Vgsc} gene or in flanking regions.
 %
-We would like to diagnose how many separate outbreaks have occurred, which outbreaks are localised, and which are spreading.
+The results for all outbreaks are largely consistent with this expectation.
 %
-For spreading outbreaks, we would like to reconstruct the path of transmission of resistance alleles between mosquito populations, and to provide information on the probable source. 
+For this analysis we treated S4/5 as a single cluster, as indicated by the IBD analysis, and we can gain some insight into why these two were split into separate clusters in earlier analyses.
 %
-We would, of course, also like to identify the primary and secondary genetic factors that are driving each outbreak.
+All haplotypes in S4/5 share close similarity with the ancestral haplotype on both flanks of the \textit{Vgsc} gene, but there is a short region of within the gene where a subset of haplotypes are diverged.
 %
-Stated in this way, it is easier to discuss how this information is potentially relevant to insecticide resistance management, and to frame key epidemiological questions.
+This region of divergence accounts for the S4/S5 split in earlier analyses (Figure \ref{fig:networks}).
 %
-For example, we would like to begin to build a picture of where and when local conditions have favoured the evolution of insecticide resistance, and whether those conditions are relatively patchy (and hence outbreaks are mainly localised) or whether conditions are consistent over broad areas (and hence can support a spreading outbreak).
-%
-We would also like to know which mosquito populations are sufficiently connected to enable outbreak spread, and if there is any consistent pattern to the direction of spread.
-%
-This information could be relevant to discussions about how resources for insecticide resistance management might be targeted, what strategies are appropriate in which settings, and where and when insecticide resistance management needs to be coordinated between different countries and/or at different levels of administration.
-%
-%%
-
-
-%%
-%
-For clarity, we also define the concept of an insecticide resistance outbreak formally in terms of coalescent theory, as a collection of lineages (1) sharing a resistance driver allele by descent, (2) coalescing more recently than the onset of insecticide pressure, and (3) having increased in frequency because of positive selection due to insecticides. 
-%
-This definition is illustrated for four hypothetical outbreaks in Figure \ref{fig:outbreaks}.
-%
-Because mosquitoes are sexually recombining, genealogical trees vary along the genome, and so we define resistance outbreaks with respect to a specific gene locus, which for the present study is codon 995 within the \textit{Vgsc} gene.
-%
-Note that separate outbreaks may be driven by the same resistance allele, and this can occur if multiple mutational events occur after the introduction of insecticides (Figure \ref{fig:outbreaks}, outbreaks 1 and 2), or if a resistance allele is present in mosquito populations as standing variation prior to insecticide use (Figure \ref{fig:outbreaks}, outbreaks 3 and 4).
-%
-Here we are primarily concerned with whether outbreaks are localised or spreading, because this has immediate epidemiological relevance.
-%
-We do not attempt to infer whether separate outbreaks with the same driver allele arose via standing variation or new mutations, however this is an interesting biological question to address in future studies.
-%
-As a technical note, there is a simple correspondance with terminology conventionally used in the population genetics literature to describe selective sweeps.
-%
-At a given gene locus, a hard selective sweep gives rise to a single resistance outbreak, and a soft selective sweep gives rise to multiple resistance outbreaks.
+@@TODO also note relatively low divergence among F2, F3, F4 on upstream flank and explain
 %%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Outbreak analysis from haplotype age}
-
-
-%% Figure - Overall haplotype age distribution.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/haplotype_age_dist.pdf}
-  \caption{\textbf{Haplotype age distribution}. @@TODO caption.}
-  \label{fig:age_hist}
-\end{figure}
-%%
-
-
-%%
-%
-As described above, haplotype data from genome regions both within and flanking the \textit{Vgsc} gene provide a higher resolution for reconstructing recent historical events.
-%
-To leverage this information, we used a heuristic approach to estimate the time to most recent common ancestor (TMRCA) or ``age'' for each pair of haplotypes in our dataset, centering the analysis on \textit{Vgsc} codon 995.
-%
-For each pair of haplotypes, we estimated the length of the region shared identical by descent (IBD), and the number of mutations that have accumulated since the most recent common ancestor.
-%
-We then combined these two pieces of information to produce a point estimate for the haplotype age (Methods).
-%
-We studied the overall distribution of pairwise haplotype ages (Figure \ref{fig:age_hist}), and used hierarchical clustering to construct a dendrogram and visualise the overall age structure (Figure \ref{fig:tree}).
-%
-We caution that although the estimated ages are in units of generations, these estimates have not been calibrated, and there is substantial uncertainty regarding both the mutation and recombination rate parameters.
-%
-The ages therefore should not be interpreted as reliable absolute values, but they can be compared to each other to investigate the relative age of different events.
-%%
-
- 
-%% Figure - Haplotype age tree.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_hap_tree.png}
-  \caption{\textbf{Clustering of haplotypes by age}. @@TODO caption.}
-  \label{fig:tree}
-\end{figure}
-%%
-
-
-%%
-%
-A key feature of the overall age distribution is that it is bimodal, with a minor mode of haplotypes coalescing recently, and a major mode coalescing further in the past (Figure \ref{fig:age_hist}).
-%
-This is expected at an insecticide resistance locus experiencing one or more resistance outbreaks.
-%
-Within each outbreak, all haplotypes share a very recent common ancestor, but between outbreaks and among haplotypes without any resistance allele, haplotypes are more distantly related, and the distribution of ages is influenced by mosquito population size and other demographic factors.
-%
-In particular, mosquito populations generally have a large effective population size (@@REF Ag1000G), and so in the absence of selection, haplotypes are expected to coalesce slowly.
-%
-The bimodal age distribution is not due to geographical population structure, because the same bimodality is observed within several populations.
-%
-We take the midpoint between these two modes as an estimate for the earliest time of onset of selective pressure due to insecticides, and thus for the maximum age of a resistance outbreak.
-%
-To identify haplotype clusters representing putative resistance outbreaks, we then cut the haplotype dendrogram at this maximum outbreak age (Figure \ref{fig:tree}).
-%
-Comparing this to previous analyses of haplotype structure based on genetic distance, we find clusters F1-F5 and S1-S3 recapitulated with close correspondence, and S4 and S5 merged into a single cluster.
-%
-We label a new cluster ``L@@'' representing an outbreak driven by the \texttt{I1527T} allele in combination with one or the other \texttt{V402L} allele.
-%
-We also label a cluster ``L@@'' capturing a set of haplotypes from Kenya carrying the \texttt{M490I} variant, although the fact that these haplotypes all share a recent common ancestor may be a reflection of the unusual demography of the Kenyan population which has experienced a severe population crash (@@REF) and not be due to recent selection for insecticide resistance.
-%
-As in earlier analyses, clusters F1, F4, F5 and S3 all include haplotypes sampled from multiple geographical locations, and thus represent spreading outbreaks.
-%
-Clusters F2, F3, S1, S2, S4/5 and L1 include only haplotypes from a single sampling location, and thus appear to represent localised outbreaks.
-%%
-
-
-%% Figure - Infering spread
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/spreading.pdf}
-  \caption{\textbf{Inferring history of spread from haplotype ages}. @@TODO explain.}
-  \label{fig:spreading_cartoon}
-\end{figure}
-%%
-
-
-%%
-%
-We then studied the distribution of haplotype ages within each spreading outbreak, to attempt to reconstruct information about the historical path of transmission of resistance alleles between locations.
-%
-To do this, we grouped the haplotypes within each spreading outbreak by sampling location, and compared the distribution of haplotype ages both within and between locations.
-%
-To aid in interpreting these data, we define three possible spreading scenarios, being: (1) a directional spread from one population to another; (2) spread from an unsampled population into the sampled populations; and (3) a complex scenario involving multiple gene flow events.
-%
-In Figure \ref{fig:spreading_cartoon} we illustrate the expected genealogy and haplotype age distribution under each of these scenarios.
-%
-
-
-%%
-%
-The clearest result was obtained for outbreak F1 (Figure \ref{fig:outbreak_spread}).
-%
-Within this outbreak, haplotypes from Cameroon and Angola are significantly younger than haplotypes from Burkina Faso and Guinea.
-%
-The age distributions are consistent with an outbreak originating in West Africa and subsequently spreading towards Cameroon and separately towards Angola.
-%
-We were surprised that the age distributions for \textit{An. gambiae} and \textit{An. coluzzii} from Burkina Faso are very similar, despite the fact that previous studies have shown that introgression has occurred from \textit{An. gambiae} into \textit{An. coluzzii}.
-%
-This may indicate that the initial introgression event happened during the early phases of the outbreak, but is also consistent with a complex history of multiple gene flow events between the species.
-%%
-
-
-%% Figure - Age distributions within haplogroups. 
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/outbreak_hap_age_dist_3.pdf}
-  \caption{\textbf{Haplotype age distributions within spreading outbreaks}. @@TODO caption.}
-  \label{fig:outbreak_spread}
-\end{figure}
-%%
-
-
-%%
-%
-Outbreaks F4, F5 and S2 each involve haplotypes from both Cameroon and Gabon.
-%
-Interpreting the age distributions for these outbreaks is difficult, because mosquitoes from Gabon were collected at a much earlier time point (2000) than mosquitoes from Cameroon (20@@).
-%
-If our haplotype age estimates were well-calibrated, and we also had reliable estimates for the number of mosquito generations per year, then we might be able to adjust for this time difference, however we are not able to do so presently.
-%
-An interesting feature of these outbreaks, however, is that we would expect haplotypes from Gabon to appear older due to the time of sampling, which is observed for outbreak S2 but not for F4 or F5.
-%
-Indeed, S2 is at a high frequency among all Gabon haplotypes and a low frequency among Cameroon haplotypes, whereas the reverse is true for F4 and F5.
-%
-These data suggest that F4 and F5 have spread from Cameroon towards Gabon, while S2 has spread in the opposite direction.
-%
-A lot can happen in mosquito populations in @@N years, however, and these conclusions remain highly speculative pending further sampling from both locations. 
-%
-%%
-
-
-%%
-%
-For outbreak S3 involving haplotypes from Uganda and Kenya, the age distributions do not suggest any clear direction of gene flow.
-%
-This could reflect multiple gene flow events in either or both directions.
-%
-However, another outbreak (S1) is localised in Uganda and represented within the Ugandan population at roughly equal frequency with S3.
-%
-If transmission was occurring from Uganda towards Kenya, we might expect both outbreaks to have spread to Kenya.
-%
-Thus the localisation of S1 suggests S3 has spread into Uganda from Kenya or another location.
-%
-Again, this conclusion remains tentative and requires confirmation via further sampling.
-%%
-
-
-%% Figure - Map of haplotypes and spread.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/outbreak_map_edited.pdf}
-  \caption{\textbf{Geographical distribution of resistance outbreaks}. @@TODO caption. @@TODO explain Clarkon and Norris points.}
-  \label{fig:map}
-\end{figure}
-%%
-
-
-%%
-%
-To summarise these conclusions in a concise way, we have depicted the distribution and spread of resistance outbreaks via the map shown in Figure \ref{fig:map}.
-%
-We have plotted haplotypes from each sampling location as a pie chart.
-%
-The overall size of each pie chart represents the number of haplotypes sampled, and coloured wedges within each pie represent the frequency of each resistance outbreak within the population.
-%
-Coloured arrows are used to depict our inferences regarding the transmission paths for spreading outbreaks.
-%
-Our conclusions regarding direction of spread for outbreaks F4, F5, S2 and S3 are tentative, and we indicate this with a question mark. 
-%
-Because of the relatively sparse geographical representation within the Ag1000G phase 1 dataset, and the fact that collections were not synchronized but span several years, we cannot be precise about the geographical origins of these resistance outbreaks.
-%
-Even for outbreak F1 where we have clear evidence of spread from West Africa towards Central and Southern Africa, we have only sampled mosquitoes from Guinea and Burkina Faso, and the true source of the outbreak may not be either of these countries.
-%
-We indicate this uncertainty regarding the outbreak source as a coloured area with a dashed border.
-%
-This representation is imperfect, as is our knowledge regarding the sources and transmission paths of these outbreaks, but we hope this depiction may at least serve to stimulate further sampling, analysis and discussion, with the aim of improving our knowledge of resistance outbreaks for \textit{Vgsc} as well as other insecticide resistance genes.
-%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Design of genetic assays for outbreak surveillance}
-
-
-%%
-%
-The insecticide resistance outbreaks we have identified here are undoubtedly ongoing, affecting many more mosquito populations than we have sampled in Ag1000G phase 1, and continuing to spread.
-%
-In addition, other outbreaks may be occurring in populations that we have not sampled, or in populations we have sampled but since the sampling date.
-%
-Whole-genome sequencing of individual mosquitoes clearly provides data of sufficient resolution to identify resistance outbreaks, and could also be used to provide ongoing outbreak surveillance.
-%
-The cost of whole-genome sequencing continues to fall, with the present cost being approximately 100 GBP to obtain \textasciitilde$30\times$ coverage of an individual \emph{Anopheles} mosquito genome with 150 bp paired-end reads.
-%
-Mobile sequencing using nanopore technology is also developing rapidly \cite{Jain2016} and may be a realistic prospect for mosquito whole-genome sequencing within a few years.
-%
-There is an interim period, however, during which it may be more practical to develop targeted genetic assays for outbreak surveillance that could scale to tens of thousands of mosquitoes at low cost.
-%
-For example, both next-generation and mobile sequencing platforms can be used for amplicon sequencing, where specific genome regions are amplified and sequenced in highly multiplexed libraries \cite{Bybee2011, Murray2015}.
-%%
+\subsection*{Design of genetic assays for haplotype surveillance}
 
 
 %% Figure - Information gain.
@@ -860,13 +584,13 @@ For example, both next-generation and mobile sequencing platforms can be used fo
   
   \caption{%
 %
-\textbf{Informative SNPs for outbreak surveillance}. 
+\textbf{Informative SNPs for haplotype surveillance}. 
 %
 \textbf{a}, Each data point represents a single SNP. 
 %
-The information gain value for each SNP provides an indication of how informative the SNP is likely to be if used as part of a genetic assay for testing whether a mosquito carries a resistance haplotype, and if so, which resistance outbreak it derives from. 
+The information gain value for each SNP provides an indication of how informative the SNP is likely to be if used as part of a genetic assay for testing whether a mosquito carries a resistance haplotype, and if so, which seletive sweep cluster it derives from. 
 %
-\textbf{b}, Number of SNPs required to accurately classify which outbreak a haplotype derives from. 
+\textbf{b}, Number of SNPs required to accurately classify which cluster a haplotype derives from. 
 %
 Decision trees were constructed using either the LD3 (left) or CART (right) algorithm for comparison.
 %
@@ -880,15 +604,15 @@ Accuracy was evaluated using 10-fold stratified cross-validation.
 
 %%
 %
-To facilitate the development of targeted genetic assays for \textit{Vgsc} insecticide resistance outbreak surveillance, we have produced two supplementary data tables.
+To facilitate the development of targeted genetic assays for \textit{Vgsc} insecticide resistance haplotype surveillance, we have produced two supplementary data tables.
 %
 In Supplementary Table 1 we provide a list of all biallelic SNPs discovered with high confidence in this study within the \textit{Vgsc} gene and in the 100 kbp upstream and downstream flanking regions.
 %
 To aid in PCR primer design, for each SNP we provide the flanking sequence for 250 bp upstream and downstream of the SNP position, including information about polymorphisms within these flanking regions.
 %
-Not all SNPs are informative for detecting whether an individual mosquito carries a haplotype from a resistance outbreak, and we provide some summary statistics for each SNP to aid in the selection of the most informative SNPs.
+Not all SNPs are informative for detecting whether an individual mosquito carries a haplotype from a haplotype cluster under selction, and we provide some summary statistics for each SNP to aid in the identification of the most informative SNPs.
 %
-This includes allele frequencies within each of the outbreaks identified here, as well as for populations of susceptible haplotypes.
+This includes allele frequencies within each of the clusters identified here, as well as for populations of susceptible haplotypes.
 %
 We also provide the overall variance in allele frequencies, the information gain \cite{Quinlan1986}, and the Gini impurity \cite{Breiman1984} for each SNP.
 %
@@ -900,7 +624,7 @@ However, SNPs with some information gain are available throughout the gene and i
 
 %%
 %
-We suggest that the design of a genetic assay proceed by (1) performing an initial round of filtering to remove SNPs which are not informative (e.g., low information gain); (2) performing a round of primer design to remove SNPs for which primers are unlikely to be successful; (3) performing a full analysis of the remaining SNPs to select a subset that is sufficient to classify all outbreaks identified here, including some redundancy; (4) finalise primer designs for the chosen panel of SNPs.
+We suggest that the design of a genetic assay proceed by (1) performing an initial round of filtering to remove SNPs which are not informative (e.g., low information gain); (2) performing a round of primer design to remove SNPs for which primers are unlikely to be successful; (3) performing a full analysis of the remaining SNPs to select a subset that is sufficient to classify all selected haplotype clusters identified here, including some redundancy; (4) finalise primer designs for the chosen panel of SNPs.
 %
 A possible methodology for step 3 would be to use an algorithm such as ID3 \cite{Quinlan1986} or CART \cite{Breiman1984} to build a decision tree, although many other algorithms for building classifiers are also applicable.
 %
@@ -910,102 +634,10 @@ To test the methodology, we constructed decision trees using either LD3 or CART 
 %
 Figure \ref{fig:gain}b shows the cross-validation scores obtained for trees constructed allowing increasing numbers of SNPs.
 %
-This analysis suggests that it should be possible to construct a tree able to classify haplotypes from all 10 resistance outbreaks with >95\% accuracy using 20 SNPs or less.
+This analysis suggests that it should be possible to construct a tree able to classify haplotypes from all 10 resistance selective sweeps with >95\% accuracy using 20 SNPs or less.
 %%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Recombination}
-
-
-%%
-To look for evidence that haplotypes have experienced recent positive selection, we performed an analysis of extended haplotype homozygosity (EHH) decay @@REF.
-%
-We defined a core region spanning \textit{Vgsc} codon 995 and an additional 4 kbp of flanking sequence (Methods).
-%
-Within this core region, we found @@N distinct haplotypes at a frequency > 1\% within the cohort, including core haplotypes representing each of the resistance outbreaks we identified above, and a further @@N core haplotypes not carrying any known or putative resistance allele for comparison.
-%
-@@TODO finish this
-%%
-
-%% Figure - EHH decay
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/ehh_decay.pdf}
-  \caption{\textbf{EHH decay}. @@TODO caption}
-  \label{fig:ehh_decay}
-\end{figure}
-%%
-
-
-%%
-\textbf{Sandbox paragraph: @@TODO integrate or remove}
-%
-In this section we present analyses of recombination both within the \textit{Vgsc} gene itself and on either flank.
-%
-These analyses provide information about which haplotypes have experience recent selection, and an alternative view of how different haplotypes are related.
-%
-They also provide information about where in the genome recombination events have occurred, and whether these recombination events may have biased or otherwise influenced the outcome of analyses presented in other sections.
-%
-EHH analysis first identifies collections of haplotypes with the same alleles at a core locus.
-%
-The haplotypes within each collection are then compared, and the fraction of haplotype pairs that remain identical (EHH) is computed moving both up- and down-stream of the core locus.
-%
-Recombination events break haplotype homozygosity, and so a slow decay of EHH indicates fewer recombination events, 
-%
-A collection of haplotypes where EHH decays more slowly provides evidence for positive selection on the core allele, 
-%
-Haplotypes that have risen rapidly in frequency due to selection will be younger on average, and thus the length of regions of homozygosity between pairs of haplotypes 
-%
-These analyses provide confirmation of which haplotypes have experience recent positive selection, as haplotypes that have recently increased in frequency will 
-%%
-
-
-%%
-%
-As mentioned earlier, analyses of haplotype structure based on genetic distance within the fixed window of the \textit{Vgsc} gene could be affected if recombination events occurred within the gene.
-%
-Our analyses of haplotype age should be less affected by recombination, because they explicitly take recombination into account, estimating the positions at which recombination events have occurred to interrupt regions shared IBD between pairs of haplotypes.
-%
-However, these analyses were based on a heuristic method for estimating recombination breakpoints, and there are several potential sources of error.
-%
-To study the evidence for recombination within the genome region spanning the \textit{Vgsc} gene, and provide some additional confirmation that our inferences regarding insecticide resistance outbreaks have not been affected by recombination or other sources of error, we performed an additional analysis of genetic distance between haplotypes.
-%
-We first constructed a putative ancestral haplotype for each of the outbreaks we identified, by starting from the codon 995 position and separately moving upstream and downstream, assuming the major allele at each SNP bifurcation point represents the ancestral haplotype.
-%
-We then computed the genetic distance ($D_{XY}$) between each of our sampled haplotypes and each of the inferred ancestral outbreak haplotypes, computing the distance in @@ overlapping windows of @@ bp across a 2 Mbp region spanning the \textit{Vgsc} gene.
-%
-The results for outbreaks F1-F5 are plotted in Figure \ref{fig:recom_f}, and outbreaks S1-S4/5 are shown in Figure \ref{fig:recom_s}.
-%
-In these plots we expect that all haplotypes from a given outbreak should share very close genetic similarity ($D_{XY} \approx 0$) with each other and with the ancestral haplotype for that outbreak within the \textit{Vgsc} gene itself, with an increasing number of haplotypes recombining away from the ancestral outbreak haplotype as we move away from the gene in either the upstream or downstream direction.
-%
-Conversely, haplotypes from one outbreak should not share any close genetic similarity ($D_{XY} > 0$) with the inferred ancestral haplotype from a different outbreak, either within the \textit{Vgsc} gene or in flanking regions.
-%%
-
-%% Figure - L995F recombination
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995F}. @@TODO legend}
-  \label{fig:recom_f}
-\end{figure}
-%%
-
-
-%%
-%
-The results for all outbreaks are largely consistent with this expectation.
-%
-For this analysis we treated S4/5 as a single outbreak, as indicated by the haplotype age analysis, and we can gain some insight into why these two were split into separate clusters in earlier analyses.
-%
-All haplotypes in the S4/5 outbreak share close similarity with the ancestral haplotype on both flanks of the \textit{Vgsc} gene, but there is a short region of within the gene where a subset of haplotypes are diverged.
-%
-This region of divergence accounts for the S4/S5 split in earlier analyses.
-%
-@@TODO explain
-%
-@@TODO also note relatively low divergence among F2, F3, F4 on upstream flank and explain
-%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1017,23 +649,42 @@ This region of divergence accounts for the S4/S5 split in earlier analyses.
 
 @@TODO Discuss accessibility, have we missed any functional variation?
 
+@@TODO Speculate on why \texttt{L995F} but not \texttt{L995S} has evolved secondary variation.
 
+@@TODO What about DDT? If prior selection for DDT resistance, how might this complicate the picture? Do we see any evidence for multiple phases of selection?
 
 @@TODO Discuss weaknesses, caveats and potential improvements to method for estimating haplotype age.
-
 
 @@TODO What are the implications for insecticide resistance management? Realistically how could this information be used?
 
 
-@@TODO What about DDT? If prior selection for DDT resistance, how might this complicate the picture? Do we see any evidence for multiple phases of selection?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assay design discussion}
+%%
+The insecticide resistance driven selective sweeps we have identified here are likely ongoing, affecting many more mosquito populations than we have sampled in Ag1000G phase 1, and continuing to spread.
+%
+In addition, other selective events may be occurring in populations that we have not sampled, or in populations we have sampled but since the sampling date.
+%
+Whole-genome sequencing of individual mosquitoes clearly provides data of sufficient resolution to identify resistance sweeps, and could also be used to provide ongoing resistance surveillance.
+%
+The cost of whole-genome sequencing continues to fall, with the present cost being approximately 100 GBP to obtain \textasciitilde$30\times$ coverage of an individual \emph{Anopheles} mosquito genome with 150 bp paired-end reads.
+%
+Mobile sequencing using nanopore technology is also developing rapidly \cite{Jain2016} and may be a realistic prospect for mosquito whole-genome sequencing within a few years.
+%
+There is an interim period, however, during which it may be more practical to develop targeted genetic assays for outbreak surveillance that could scale to tens of thousands of mosquitoes at low cost.
+%
+For example, both next-generation and mobile sequencing platforms can be used for amplicon sequencing, where specific genome regions are amplified and sequenced in highly multiplexed libraries \cite{Bybee2011, Murray2015}.
+%
+Our results show that during this interim it is possible to quickly produce assays to cheaply allow tracking of putative resistant bearing haplotypes, in real time, in the field.
+%%
 
 
-@@TODO Speculate on why \texttt{L995F} but not \texttt{L995S} has evolved secondary variation.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Methods}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Code}
@@ -1041,6 +692,7 @@ This region of divergence accounts for the S4/S5 split in earlier analyses.
 %
 All scripts and Jupyter Notebooks used to generate analyses, figures and tables are available from the GitHub repository \url{https://github.com/malariagen/agam-vgsc-report}. 
 %%
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Data}
@@ -1054,7 +706,6 @@ We used variant call data from the phase 1 AR3 release and phased haplotype data
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Data collection and processing}
-
 
 %
 For detailed information on Ag1000g WGS sample collection, sequencing, variant calling, quality control and phasing see \cite{Ag1000gConsortium2017}.
@@ -1081,7 +732,7 @@ The Ag1000g variant data was functionally annotated using the SnpEff v4.1b softw
 %
 Non-synonymous \emph{Vgsc} variants were identified as all variants in AGAP004707, 2L:2358158-2431617, with a SnpEff annotation of “missense”  and an ALT allele frequency of >5\% in at least one of the nine mosquito populations, with the exceptions of the multi-allelic SNP 2L:2400071 G>A which is shown despite only being found in \emph{An. gambiae} from Cameroon at 0.4\% frequency, as the G>T variant at the same position which causes the same codon change (\texttt{M490I}), is found above 5\% frequency in Kenya.
 %
-\texttt{F1920S} is included for continuity with recent \emph{An. gambiae Vgsc} research \cite{Ag1000gConsortium2017}.
+\texttt{F1920S} is included for continuity with recent \emph{An. gambiae Vgsc} research \cite{RecombinationAg1000gConsortium2017}.
 %
 A minimum ALT allele frequency was employed to discriminate towards variants that may be undergoing selective sweeps and against less informative low frequency alleles.
 %%
@@ -1107,6 +758,7 @@ After manual inspection of the read alignment revealed that the SNP call could b
 To evaluate the linkage disequilibrium (LD) of non-synonymous \emph{Vgsc} mutations with the two most widespread \emph{kdr} resistance mutations (\texttt{L995S/F}), the D1 statistic was calculated using haplotypes.
 %%
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Haplotype networks}
 
@@ -1126,10 +778,10 @@ Non-synonymous edges were highlighted using the SnpEff annotations \cite{Cingola
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Haplotype age}
+\subsection*{IBD}
 
 %
-Haplotype age. @@TODO - AM
+IBD. @@TODO - AM
 -Length of shared haplotype and number of mutations between them are informative of age…
 -Pairwise t values were hierarchically clustered and visualised as a dendrogram using the Python library Scipy and its cluster hierarchy functions linkage method.
 -Cutting the dendrogram at @@generations clustered haplotypes together into haplogroups…
@@ -1137,11 +789,28 @@ Haplotype age. @@TODO - AM
 -dendro figure/distro figures/map - Python libraries...
 %%
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Recombination}
+
+%
+EHH @@TODO AM
+%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Recombination}
 
 %
 Recombination. @@TODO - AM - Absolute divergence dxy...
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Haplotype tagging SNPs}
+
+%
+Tagging SNPs. @@TODO - AM
 %%
 
 
