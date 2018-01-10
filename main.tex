@@ -29,6 +29,13 @@
 \usepackage{hyperref}
 \doublespacing
 
+\newcommand{\beginsupplement}{%
+  \setcounter{table}{0}
+  \renewcommand{\thetable}{S\arabic{table}}%
+  \setcounter{figure}{0}
+  \renewcommand{\thefigure}{S\arabic{figure}}%
+}
+
 
 \addbibresource{refs.bib}
 
@@ -424,9 +431,9 @@ An analysis based on a fixed genomic window might then fail to infer gene flow b
 %
 To investigate the possibility that recombination events may have affected our findings regarding the genetic backgrounds carrying resistance alleles, we developed two further analyses.
 %
-In the first analysis, we performed a moving window analysis of genetic distance between haplotypes, spanning \textit{Vgsc} and up to a megabase upstream and downstream of the gene (Supplementary Figure @@).
+In the first analysis, we performed a moving window analysis of genetic distance between haplotypes, spanning \textit{Vgsc} and up to a megabase upstream and downstream of the gene (Figures \ref{fig:recom_f}, \ref{fig:recom_s}, \ref{fig:recom_l}).
 %
-In the second analysis, we inferred putative recombination breakpoints on either side of \textit{Vgsc} codon 995 between all pairs of haplotypes, then clustered haplotypes by the length of the genomic segment between these breakpoints (i.e., the length of the region shared identical-by-descent (IBD)) (Supplementary Figure @@).
+In the second analysis, we inferred putative recombination breakpoints on either side of \textit{Vgsc} codon 995 between all pairs of haplotypes, then clustered haplotypes by the length of the genomic segment between these breakpoints (i.e., the length of the region shared identical-by-descent (IBD)) (Figure \ref{fig:age_hist}, \ref{fig:tree}).
 %
 %%
 
@@ -436,7 +443,7 @@ These further analyses both supported some refinements of our initial classifica
 %
 We found that haplotypes in clusters S4 and S5 were mixed together when clustered by IBD length.
 %
-The moving window analysis of genetic distance showed that all haplotypes within these two clusters were effectively identical on both the upstream and downstream flanks of the gene, but there was a short region of divergence within the gene itself that separated them in the fixed window analyses (Supplementary Figure @@).
+The moving window analysis of genetic distance showed that all haplotypes within these two clusters were effectively identical on both the upstream and downstream flanks of the gene, but there was a short region of divergence within the gene itself that separated them in the fixed window analyses (Figure \ref{fig:recom_s}).
 %
 A possible explanation for this pattern of divergence is that a gene conversion event has occurred within the gene, bringing a short segment from a different genetic background onto the original genetic background on which the \texttt{L995S} resistance mutation occurred.
 %
@@ -444,7 +451,7 @@ For the remainder of this paper we combine S4 and S5 into a single cluster label
 %
 All haplotypes in S4/5 were sampled from Cameroon, and thus considering this as a single genetic background does not imply any new gene flow events.
 %
-We also found that all haplotypes carrying the \texttt{I1527T} allele were grouped together when clustered by IBD length (cluster L1 in Supplementary Figure @@), which was not the case in fixed window analyses of the \textit{Vgsc} gene (data not shown).
+We also found that all haplotypes carrying the \texttt{I1527T} allele were grouped together when clustered by IBD length (cluster L1 in Figure \ref{fig:tree}), which was not the case in fixed window analyses of the \textit{Vgsc} gene (data not shown).
 %
 The moving window analysis showed that haplotypes within the L1 cluster were all nearly identical on the downstream flank of the gene, but separated into multiple clusters on the upstream flank.
 %
@@ -837,42 +844,34 @@ Tagging SNPs. @@TODO - AM
 %%
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printbibliography
+
+
+\beginsupplement
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Supplementary figures}
 
 
-%% Figure - Overall haplotype age distribution.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/haplotype_age_dist.pdf}
-  \caption{\textbf{Haplotype IBD distribution}. @@TODO caption.}
-  \label{fig:age_hist}
-\end{figure}
-%%
- 
- 
-%% Figure - Haplotype age tree.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_hap_tree.png}
-  \caption{\textbf{Clustering of haplotypes by age}. @@TODO caption.}
-  \label{fig:tree}
-\end{figure}
-%%
+\clearpage
 
 %% Figure - L995F recombination
 %
-\begin{figure}[!b]
+\begin{figure}[!t]
   \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_F.png}
   \caption{\textbf{Recombination and ancestral haplotypes for L995F}. @@TODO legend}
   \label{fig:recom_f}
 \end{figure}
 %%
 
+\clearpage
 
 %% Figure - L995S recombination
 %
-\begin{figure}[!b]
+\begin{figure}[!t]
   \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_S.png}
   \caption{\textbf{Recombination and ancestral haplotypes for L995S}. @@TODO legend}
   \label{fig:recom_s}
@@ -880,9 +879,11 @@ Tagging SNPs. @@TODO - AM
 %%
 
 
+\clearpage
+
 %% Figure - L995L recombination
 %
-\begin{figure}[!b]
+\begin{figure}[!t]
   \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_L.png}
   \caption{\textbf{Recombination and ancestral haplotypes for L995L}. @@TODO legend}
   \label{fig:recom_l}
@@ -890,11 +891,28 @@ Tagging SNPs. @@TODO - AM
 %%
 
 
-@@TODO
+\clearpage
 
+%% Figure - Overall haplotype age distribution.
+%
+\begin{figure}[!t]
+  \includegraphics[width=1.1\linewidth,center]{artwork/haplotype_age_dist.pdf}
+  \caption{\textbf{Haplotype IBD distribution}. @@TODO caption.}
+  \label{fig:age_hist}
+\end{figure}
+%%
+ 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\printbibliography
+\clearpage
+ 
+%% Figure - Haplotype age tree.
+%
+\begin{figure}[!t]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_hap_tree.png}
+  \caption{\textbf{Clustering of haplotypes by age}. @@TODO caption.}
+  \label{fig:tree}
+\end{figure}
+%%
+
 
 \end{document}
