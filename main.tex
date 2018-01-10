@@ -1,4 +1,4 @@
-	\documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
+\documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
 
 \usepackage[margin=3cm]{geometry}
 \usepackage{graphicx}
@@ -34,7 +34,7 @@
 
 
 \title{
-The genomics of target-site resistance to pyrethroid insecticides in the African malaria vectors \emph{Anopheles gambiae} and \emph{Anopheles coluzzii}
+The genetic architecture of target-site resistance to pyrethroid insecticides in the African malaria vectors \emph{Anopheles gambiae} and \emph{Anopheles coluzzii}
 }
 
 
@@ -59,23 +59,29 @@ The genomics of target-site resistance to pyrethroid insecticides in the African
 
 
 %%
-Resistance to pyrethroid insecticides is a major concern for malaria vector control, because these are the only compounds approved for use in insecticide-treated bed-nets (ITNs). 
+Resistance to pyrethroid insecticides is a major concern for malaria vector control, because these are the only compounds approved for use in insecticide-treated bed-nets (ITNs), and are also widely used for indoor residual spraying (IRS). 
 %
-Pyrethroids target the voltage-gated sodium channel (VGSC), an essential component of the mosquito nervous system, but substitutions in the amino acid sequence can disrupt the activity of these insecticides, inducing a resistance phenotype. 
+Pyrethroids target the voltage-gated sodium channel (VGSC) protein, an essential component of the mosquito nervous system, but substitutions in the amino acid sequence can disrupt the activity of these insecticides, inducing a resistance phenotype. 
 %
 Here we use Illumina whole-genome sequence data from phase 1 of the \emph{Anopheles gambiae} 1000 Genomes Project (Ag1000G) to provide a comprehensive account of genetic variation at the \emph{Vgsc} locus in mosquito populations from 8 African countries.
 %
-In addition to three known resistance variants, we describe 20 non-synonymous variants at appreciable frequency in one or more populations that are previously unknown in mosquitoes.
+In addition to the three known resistance alleles, we describe 20 non-synonymous nucleotide substitutions at appreciable frequency in one or more populations that are previously unknown in mosquitoes.
 %
-For each variant we predict a resistance phenotype based on genetic evidence for positive selection, patterns of linkage between variants, and functional evidence from other species.
+For each novel variant allele we predict a putative resistance phenotype based on genetic evidence for positive selection, patterns of genetic linkage between variants, location of the variant within the protein domain architecture, and functional evidence from other species.
 %
-We then analyse the genetic backgrounds on which resistance variants are found, to refine our understanding of the origins and spread of resistance between species and geographical locations.
+Thirteen of these novel alleles occur almost exclusively on haplotypes carrying the known L995F resistance allele, and appear to be secondary mutations that may enhance or compensate for the L995F resistance phenotype.
 %
-Using networks and hierarchical clustering methods we identify ten distinct haplotype clusters caused by selective sweeps at this resistance locus, of which five appear to be localised to a single geographical location, and five have spread between two or more countries.
+We also report an I1527T substitution which is adjacent to a predicted pyrethroid binding site in the channel molecule, and occurs in tight linkage with either of two alleles causing a V402L substitution, orthologous to a combination of substitutions found to cause pyrethroid resistance in several other insect species.
 %
-The most successful and widespread haplotype cluster (F1) originates in West Africa and has subsequently spread to countries in Central and Southern Africa.
+We then analyse the genetic backgrounds on which known and putative resistance alleles are found, to determine which alleles have experienced recent positive selection, and to refine our understanding of the origins and spread of resistance between species and geographical locations.
 %
-Our results demonstrate that the molecular basis of pyrethroid resistance in African malaria vectors is much more complex than previously appreciated, and provide a foundation for the design of new genetic tools to track the spread insecticide resistance and to inform vector control.
+We identify ten distinct haplotype clusters under selection, five of which carry the L995F resistance allele, four of which carry L995S, and one of which carries I1527T.
+%
+Five of these clusters are localised to a single geographical location, and five comprise haplotypes from two or more countries, indicating the geographical spread of resistance.
+%
+We also find evidence for multiple introgression events transmitting resistance alleles between the two mosquito species.
+%
+Our results demonstrate that the molecular basis of pyrethroid resistance in African malaria vectors is more complex than previously appreciated, and provide a foundation for the design of new genetic tools to track the spread insecticide resistance and to inform vector control.
 %%
 
 \end{abstract}
@@ -85,13 +91,13 @@ Our results demonstrate that the molecular basis of pyrethroid resistance in Afr
 
 
 %%
-Pyrethroid insecticides are currently the cornerstone of malaria prevention in Africa \cite{Bhatt2015}. 
+Pyrethroid insecticides have been the cornerstone of malaria prevention in Africa for almost two decades \cite{Bhatt2015}.
 %
-Pyrethroids continue to be the only approved class of insecticide for use in insecticide-treated bed-nets (ITNs), and are widely used in indoor residual spraying (IRS) campaigns as well as in agriculture.
+Pyrethroids are still the only class of insecticide approved for use in insecticide-treated bed-nets (ITNs), and are widely used in indoor residual spraying (IRS) campaigns as well as in agriculture.
 %
 Pyrethroid resistance is, however, now widespread in malaria vector populations across Africa \cite{Hemingway2016}.
 %
-The World Health Organisation (WHO) has published plans for insecticide resistance management (IRM), which highlight the need for improvements in our ability to monitor resistance, and for improvements in our understanding of the molecular mechanisms of resistance \cite{WorldHealthOrganization2012}.
+The World Health Organisation (WHO) has published plans for insecticide resistance management (IRM), which emphasise the need for improvements in our ability to monitor resistance, and for improvements in our understanding of the molecular mechanisms of resistance \cite{WorldHealthOrganization2012}.
 %%
 
 
@@ -108,40 +114,40 @@ Two of these substitutions occur in codon 995\footnotemark, with \texttt{L995F} 
 %
 \footnotetext{Codon numbering is given here relative to transcript AGAP004707-RA as defined in the AgamP4.4 gene annotations. A mapping of codon numbers from AGAP004707-RA to \emph{Musca domestica}, the system in which the \emph{kdr} mutations were first discovered \cite{Williamson1996}, is given in Table 1 and in @@Supplementary data.}
 %
-A third variant, \texttt{N1570Y}, was found in Central Africa and shown to increase resistance in association with \texttt{L995F} \cite{Jones2012}.
+A third substitution, \texttt{N1570Y}, has been found in Central Africa and shown to increase resistance in association with \texttt{L995F} \cite{Jones2012}.
 %
 However, studies in other insect species have found a variety of other \emph{Vgsc} substitutions inducing a resistance phenotype \cite{Davies2007b,Rinkevich2013,Dong2014}. 
 %
-To our knowledge, no studies in malaria vectors (prior to \cite{Ag1000gConsortium2017}) have analysed the full \emph{Vgsc} coding sequence, thus the genetic basis of target-site resistance to pyrethroids has not been fully explored.
+To our knowledge, no studies in malaria vectors have analysed the full \emph{Vgsc} coding sequence, thus the molecular basis of target-site resistance to pyrethroids has not been fully explored.
 %%
 
 
 %%
-Basic information is also lacking about the history and epidemiology of pyrethroid resistance in malaria vectors. 	
+Basic information is also lacking about the origins and spread of pyrethroid resistance in malaria vectors. 	
 %
-For example, it is not known when, where or how many times VGSC mediated pyrethroid resistance has emerged. 
+For example, it is not known when, where or how many times pyrethroid target-site resistance has emerged. 
 %
-The paths of transmission, carrying resistance between mosquito populations, are also not known. 
+The paths of transmission, carrying resistance alleles between mosquito populations, are also not known. 
 %
-Previous studies have found evidence that \texttt{L995F} occurs on several different genetic backgrounds, suggesting multiple independent ``origins'' of resistance driven by this allele \cite{Pinto2007,Etang2009,Santolamazza2015}. 
+Previous studies have found evidence that \texttt{L995F} occurs on several different genetic backgrounds, suggesting multiple independent outbreaks of resistance driven by this allele \cite{Pinto2007,Etang2009,Santolamazza2015}. 
 %
-However, these studies analysed only a small region of the VGSC gene, and therefore had limited power to make inferences about the selective events or spread of resistance alleles. 
+However, these studies analysed only a small gene region in a limited number of mosquito populations, and therefore had limited resolution to make inferences about genetic relationships between gene sequences (haplotypes) carrying this allele. 
 %
 It has also been shown that the \texttt{L995F} allele spread from \textit{An. gambiae} to \textit{An. coluzzii} in West Africa \cite{Clarkson2014,Norris2015}. 
 %
-However, both \texttt{L995F} and \texttt{L995S} now have wide geographical distributions \cite{Silva2014}, and no attempts have been made to reconstruct the geographical spread of either allele.
+However, both \texttt{L995F} and \texttt{L995S} now have wide geographical distributions \cite{Silva2014}, and no attempts have been made to infer or track the geographical spread of either allele.
 %%
 
 %%
 Here we report an in-depth analysis of the VGSC gene, using whole-genome Illumina sequence data from phase 1 of the \emph{Anopheles gambiae} 1000 Genomes Project (Ag1000G) \cite{Ag1000gConsortium2017}.
 %
-We investigate variation across the complete gene coding sequence, to fully characterise the variants potentially driving primary and secondary selective sweeps of target-site resistance to pyrethroids in natural mosquito populations.
+The Ag1000G phase 1 resource includes data on nucleotide variation in 765 wild-caught mosquitoes sampled from 8 countries, with representation of West, Central and East Africa, and of both \textit{An. gambiae} and \textit{An. coluzzii}.
 %
-We then use haplotype data from the chromosomal region spanning the VGSC gene to study the genetic backgrounds carrying resistance alleles.
+We investigate variation across the complete gene coding sequence, and report population genetic data for both known and novel non-synonymous nucleotide substitutions.
 %
-The goal of these analyses is to diagnose how many separate selective events have occurred, which are localised, and which are spreading.
+We then use haplotype data from the chromosomal region spanning the VGSC gene to study the genetic backgrounds carrying resistance alleles, and infer the geographical spread of resistance between mosquito populations.
 %
-Finally we explore ways in which variation data from Ag1000G could be used to design high-throughput, low-cost genetic assays for monitoring pyrethroid resistance, with the capability to differentiate and track separate resistance driven selective sweeps.  
+Finally, we explore ways in which variation data from Ag1000G could be used to design high-throughput, low-cost genetic assays for monitoring pyrethroid resistance, with the capability to differentiate and track separate resistance outbreaks.  
 %%
 
 
@@ -153,18 +159,20 @@ Finally we explore ways in which variation data from Ag1000G could be used to de
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Functional variation}
+\subsection*{\textit{Vgsc} non-synonymous nucleotide variation}
 
 
-%% Paragraph 1 - Discovery of potentially functional SNPs. I.e., how we came to table 1. What we found there. Reference Ag1000G phase 1 paper, how this paper and results related.
+%% Paragraph 1
 %
-To identify variants with potentially functional roles in pyrethroid resistance, we extracted single nucleotide polymorphisms (SNPs) from the Ag1000G phase 1 data resource that alter the amino acid sequence of the VGSC protein, and computed their allele frequencies among 9 populations defined by species and country of origin.
+To identify variants with a potentially functional role in pyrethroid resistance, we extracted single nucleotide polymorphisms (SNPs) that alter the amino acid sequence of the VGSC protein from the Ag1000G phase 1 data resource.
 %
-Alleles that confer resistance are expected to increase in frequency under selective pressure, and we refined the list of potentially functional variant alleles to retain only those at an appreciable frequency ($\geq$5\%) in one or more populations (Table \ref{table:variants_missense}).
+We then computed their allele frequencies among 9 mosquito populations defined by species and country of origin.
 %
-The resulting list comprises 23 variant alleles, including the known \texttt{L995F}, \texttt{L995S} and \texttt{N1570Y} variants, and a further 20 not previously described in these species.
+Alleles that confer resistance are expected to increase in frequency under selective pressure, and we filtered the list of potentially functional variant alleles to retain only those at or above 5\% frequency in one or more populations (Table \ref{table:variants_missense}).
 %
-We reported 15 of these novel alleles in our initial analysis of the Ag1000G phase 1 data \cite{Ag1000gConsortium2017}, and we extend the analyses here to incorporate a SNP which alters codon 1603 and the tri-allelic SNPs at codons 402 and 490.
+The resulting list comprises 23 variant alleles, including the known \texttt{L995F}, \texttt{L995S} and \texttt{N1570Y} resistance alleles, and a further 20 alleles not previously described in these species.
+%
+We reported 15 of these novel alleles in our global analysis of the Ag1000G phase 1 data resource \cite{Ag1000gConsortium2017}, and we extend the analyses here to incorporate a SNP which alters codon 1603 and two tri-allelic SNPs affecting codons 402 and 490.
 %%
 
 
@@ -193,7 +201,7 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
   \label{table:variants_missense}
   
   \input{tables/variants_missense.tex}
-  (Table \ref{table:variants_missense})
+
   \begin{tablenotes}
     \footnotesize
     
@@ -202,7 +210,6 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
     \item[2] Codon numbering according to \emph{Anopheles gambiae} transcript AGAP004707-RA in geneset AgamP4.4.
     
     \item[3] Codon numbering according to \emph{Musca domestica} EMBL accession X96668 \cite{Williamson1996}.
-    
     
   \end{tablenotes}
   
@@ -215,22 +222,384 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
 %% end Table 1
 
 
-%% Paragraph 2 - Findings for 995 variants. Frequencies. Cite evidence for selection. Clearly main drivers of resistance. Hardy-Weinberg results.
+%% L995F, L995S
+The two known resistance alleles affecting codon 995 had the highest overall allele frequencies within the Ag1000G phase 1 cohort.
 %
-The two alleles in codon 995 are clearly the main drivers of resistance at this locus.
-%(Table \ref{table:variants_missense})
-The \texttt{L995F} allele at high frequency in populations of both species from West, Central and Southern Africa, and the \texttt{L995S} allele at high frequency among \textit{An. gambiae} populations from Central and East Africa (Table \ref{table:variants_missense}; \cite{Ag1000gConsortium2017}).
+The \texttt{L995F} allele was at high frequency in populations of both species from West, Central and Southern Africa.
 %
-All haplotypes carrying \texttt{L995F} or \texttt{L995S} have evidence for strong recent positive selection \cite{Ag1000gConsortium2017}.
+The \texttt{L995S} allele was at high frequency among \textit{An. gambiae} populations from Central and East Africa.
 %
-289 samples in the dataset carried $\geq$1 \texttt{L995F} alleles of which 92 were homozygotes and in the case of \texttt{L995S}, 156 samples carried $\geq$1 alternative alleles and of these 38 were homozygotes;
+Both alleles were present in \textit{An. gambiae} populations sampled from Cameroon and Gabon, including some individuals with a hybrid \texttt{L995F/S} genotype (46/275 individuals in Cameroon, 36/56 in Gabon).
 %
-the resistance phenotype at this locus is thought to be incompletely recessive \cite{Chandre2000}.
+In Cameroon these alleles were in Hardy Weinberg equilibrium ($\chi^{2}$ = 0.02, P = @@exact), thus there does not appear to be selection for or against heterozygote carriers of both alleles.
 %
-Both alleles were present in populations sampled from Cameroon and Gabon, including some individuals with a hybrid \texttt{L995F/S} genotype (46/275 samples in Cameroon, 36/56 in Gabon).
-%
-In Cameroon these alleles were in Hardy Weinberg equilibrium ($x^{2}$ = 0.02, p > 0.05), thus there does not appear to be selection for, or against, heterozygote carriers of both alleles; however in Gabon, they were not in equilibrium ($x^{2}$ = 8.96, p < 0.005), with an excess of heterozygotes suggesting there may be a fitness advantage to mosquitoes carrying both alleles in this region.
+However, there was an excess of heterozygotes in Gabon ($\chi^{2}$ = 8.96, P < 0.005), suggesting a fitness advantage for mosquitoes carrying both alleles.
 %%
+
+
+% I'm not clear on what this is saying, so have commented out for now. I.e., why do we report these data, what do they show? Do they support the hypothesis that the resistance phenotype is incompletely recessive? If so, can we make this clearer?
+%289 samples in the dataset carried $\geq$1 \texttt{L995F} alleles of which 92 were homozygotes and in the case of \texttt{L995S}, 156 samples carried $\geq$1 alternative alleles and of these 38 were homozygotes; the resistance phenotype at this locus is thought to be incompletely recessive \cite{Chandre2000}.
+%%
+
+
+%% Figure - Pairwise LD.
+%
+\begin{figure}[!t]
+
+  \centering
+  
+  \includegraphics[width=\linewidth]{artwork/fig_ld.png}
+  
+  \caption{\textbf{Linkage disequilibrium between non-synonymous variants}. A value of 1 indicates that the two variants always occur in combination, and conversely a value of -1 indicates that the two variants never occur in combination. @TODO nuance this?}
+  
+  \label{fig:ld}
+ 
+\end{figure}
+%%
+
+
+%% N1570Y
+%
+The N1570Y resistance variant was present in Guinea, Burkina Faso (both species) and Cameroon.
+%
+This variant has been shown to increase pyrethroid resistance in \textit{An. gambiae}, however it has only ever been found in association with \texttt{L995F}.
+%
+Codon 1570 occurs within an internal linker domain of the protein, and so cannot directly affect the binding between pyrethroid molecules and the membrane channel.
+%
+Thus it has been suggested that \texttt{N1570Y} either enhances or compensates for the \texttt{L995F} phenotype, possibly by altering the channel gating properties @@REF.
+%
+To study the patterns of association among non-synonymous variants, we used haplotypes from the Ag1000G phase 1 resource to compute the normalised coefficient of linkage disequilibrium ($D'$) between all pairs of variant alleles (Figure \ref{fig:ld}).
+%
+As expected, we found \texttt{N1570Y} in almost perfect linkage with \texttt{L995F}, meaning that \texttt{N1570Y} was only ever found on haplotypes also carrying \texttt{L995F}.
+%%
+
+
+%% Novel alleles linked to L995F.
+%
+Of the 20 novel alleles, 13 also occurred almost exclusively in combination with L995F, exhibiting the same LD pattern as \texttt{N1570Y} (Figure \ref{fig:ld}).
+%
+These included two variants in codon \texttt{1874} (\texttt{P1874S}, \texttt{P1874L}).
+%
+\texttt{P1874S} has previously been found in a colony of the crop pest \textit{Plutella xylostella} with a pyrethroid resistance phenotype, but has not been experimentally shown to confer resistance @@REF.
+%
+The abundance of high-frequency non-synonymous variants occurring in combination with \texttt{L995F} is striking for two reasons.
+%
+First, \textit{Vgsc} is a highly conserved gene, expected to be under strong functional constraint and therefore purifying selection, and so any non-synonymous variants should be rare @@REF.
+%
+Second, in contrast with \texttt{L995F}, we did not observe any high-frequency non-synonymous variants occuring in combination with \texttt{L995S}.
+%
+This contrast was highly significant when data on all variants within the gene were considered: relative to haplotypes carrying the wild-type \texttt{L995} allele, the ratio of non-synonymous to synonymous nucleotide diversity ($\pi_{N}/\pi_{S}$) was 1.5 (95\% CI [0.8, 2.2]) times higher among haplotypes carrying \texttt{L995S}, but 28.1 (95\% CI [25.2, 31.2]) times higher among haplotypes carrying \texttt{L995F}.
+%
+These results indicate that \texttt{L995F} has substantially altered the selective regime for other amino acid positions within the protein.
+%
+A number of secondary substitutions have occurred and risen in frequency, and are likely to be providing some selective advantage in the presence of insecticide pressure.
+%%
+
+
+%% I1527T and V402L.
+%
+The \texttt{I1527T} allele was present in \textit{An. coluzzii} from Burkina Faso at 14\% frequency.
+%
+Codon \texttt{1527} occurs within trans-membrane domain segment \texttt{III.S6}, immediately adjacent to a second predicted binding pocket for pyrethroid molecules, thus it is plausible that \texttt{I1527T} could alter pyrethroid binding \cite{Dong2014}.
+%
+We also found that the two variant alleles affecting codon \texttt{402}, both of which induce a \texttt{V402L} substitution, were in strong linkage with \texttt{I1527T} (D' $\geq$ 0.8; Figure \ref{fig:ld}), and almost all haplotypes carrying \texttt{I1527T} also carried a \texttt{V402L} substitution.
+%
+The most parsimonious explanation for this pattern of linkage is that the \texttt{I1527T} mutation occurred first, and mutations in codon \texttt{402} subsequently arose on this genetic background or recombined with it.
+%
+Codon \texttt{402} also occurs within a trans-membrane segment (\texttt{I.S6}), and the \texttt{V402L} substitution has been independently associated with pyrethroid resistance in bedbugs \cite{Yoon2008}.
+%
+Other substitutions at this codon have also been associated with resistance, \texttt{V402A/G} in the moth crop pests \emph{Helicoverpa zea} \cite{Hopkins2010} and \texttt{V402M} in \emph{Heliothis virescens}, the latter of which has been shown experimentally to confer resistance in \textit{Xenopus} oocytes \cite{Park1997, Lee2013}.
+%
+@@TODO Aedes combination.
+%
+Because of the limited geographical distribution of these alleles, we hypothesize that the \texttt{I1527T+V402L} combination represents a pyrethroid resistance allele that arose in West African \textit{An. coluzzii} populations.
+%
+However, the \texttt{L995F} allele is at higher frequency (85\%) in our Burkina Faso \textit{An. coluzzii} population, and is known to be increasing in frequency \cite{Toe2014}, therefore \texttt{L995F} may provide a stronger resistance phenotype and is replacing \texttt{I1527T+V402L}.
+%%
+
+
+%% Other novel variants.
+%
+The remaining 4 novel alleles (two separate nucleotide substitutions causing \texttt{M490I}; \texttt{A1125V}; \texttt{V1254I}) do not occur in combination with any known resistance allele.
+%
+All are private to a single population, and (to our knowledge) none have previously been found in other species.
+%
+All occur within internal linker domains of the protein and are therefore unlikely to directly cause resistance, discussed further below.
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Genetic backgrounds carrying resistance alleles}
+
+%%
+% 
+Although it is known that pyrethroid resistance is increasing in prevalence in malaria vector populations across Africa, it has not been clear whether this is being driven by the spread of resistance alleles via gene flow, by resistance alleles emerging independently in multiple locations, or by some combination of both processes.
+%
+The Ag1000G data resource provides a potentially rich source of information about the spread of insecticide resistance alleles in any given gene, because data are available not only for SNPs in gene coding regions, but also SNPs in introns and flanking intergenic regions, and in neighbouring genes.
+%
+These additional variants can be used to analyse the genetic backgrounds (haplotypes) on which resistance alleles are found.
+%
+If mosquitoes from different geographical locations or species carry the same resistance allele on identical or near-identical genetic backgrounds, this implies that the allele has been spread between mosquito populations by the movement and interbreeding of mosquitoes.
+%
+Conversely, if the same resistance allele is found on different genetic backgrounds in different mosquito populations, this provides evidence that the allele has emerged independently in each population, either because of multiple mutational events since the introduction of pyrethroids, or because the allele was segregating at low frequency prior to the introduction of pyrethroids. 
+%%
+
+%%
+%
+In our global analysis of the Ag1000G phase 1 resource \cite{Ag1000gConsortium2017}, we used 1710 biallelic SNPs from within the 73.5 kbp \textit{Vgsc} gene (@@N exonic, @@N intronic) to compute the number of SNP differences between all pairs of 1530 haplotypes derived from the 765 wild-caught mosquitoes in the phase 1 cohort.
+%
+We then used the pairwise genetic distances to perform hierarchical clustering, and found that haplotypes carrying resistance alleles in codon \texttt{995} were grouped into 10 distinct clusters of near-identical haplotypes.
+%
+Five of these clusters carried the \texttt{L995F} allele (labelled F1-F5), and a further five clusters carried \texttt{L995S} (labelled S1-S5).
+%
+To confirm these initial findings, we used the same haplotype data to construct median-joining networks (Figure \ref{fig:networks}).
+%
+The network analysis is similar to hierarchical clustering, but allows for the reconstruction and placement of intermediate haplotypes that may not be observed in the data. 
+%
+It also allows for non-hierarchical relationships between haplotypes, which may arise if recombination events have occured between haplotypes.
+%
+Furthermore, the visualisation of these networks allows relationships among closely-related haplotypes to be discerned.
+%
+We constructed these networks up to a maximum edge distance of 2 SNP differences, to ensure that each connected component in the resulting networks captures a collection of closely-related haplotypes.
+%
+The resulting networks confirmed the presence of 5 distinct groupings of haplotypes carrying \texttt{L995F}, and a further 5 haplotype groups carrying \texttt{L995S}, in close correspondence with the previous results from hierarchical clustering (@@quantify).
+%
+
+
+%% Figure - Haplotype networks.
+%
+\begin{figure}[!t]
+  \includegraphics[width=1.1\linewidth,center]{artwork/complete_networks.pdf}
+  \caption{\textbf{Haplotype networks}. Median joining networks for haplotypes carrying \texttt{L995F} (labelled F1-F5) or \texttt{L995S} variants (S1-S5) with a maximum edge distance of two SNPs. Network labelling is via concordance with hierarchical clusters discovered in \cite{Ag1000gConsortium2017}. Node size is relative to the number of haplotypes contained and node colour represents the proportion of node haplotypes from mosquito populations/species. Non-synonymous edges are highlighted in red and those leading to non-singleton nodes are labelled with the codon change, arrow head indicates direction of change. Networks consisting of three or more haplotypes are shown.}
+  \label{fig:networks}
+\end{figure}
+%%
+
+
+%% Observations from the networks.
+%
+The haplotype networks bring into sharp relief the explosive radiation of amino acid substitutions secondary to the \texttt{L995F} allele.
+%
+Within the F1 network, nodes carrying non-synonymous variants radiate out from a central node carrying only \texttt{L995F}, suggesting that the central node represents the ancestral haplotype carrying \texttt{L995F} alone which initially came under selection, and these secondary variants have arisen subsequently as new mutations.
+%
+Many of the nodes carrying secondary variants are large, consistent with positive selection and a functional role for these secondary variants as modifiers of the \texttt{L995F} resistance phenotype (Table \ref{table:variants_pheno}).
+%
+The F1 network also allows us to infer multiple introgression events between the two species.
+%
+The central (putatively ancestral) node comprises haplotypes from both species, as do nodes carrying the \texttt{N1570Y}, \texttt{P1874L}, and \texttt{T791M}.
+%
+This structure is consistent with an initial introgression of the ancestral F1 haplotype, followed later by introgressions of haplotypes carrying secondary mutations.
+%
+The haplotype networks also illustrate the constrasting levels of non-synonymous variation between \texttt{L995F} and \texttt{L995S}. 
+%
+Two non-synonymous variants are present within the \texttt{L995S} networks, but both are at low frequency, and thus may be neutral or mildly deleterious variants that are hitch-hiking on selective sweeps for the \texttt{L995S} allele.
+%%
+
+%%
+%
+As well as containing haplotypes from mosquitoes of both species, the F1 network also contains haplotypes from 4 different countries (Guinea, Burkina Faso, Cameroon, Angola).
+%
+The F4, F5 and S2 networks each contain haplotypes from Cameroon and Gabon.
+%
+The S3 network contains haplotypes from both Uganda and Kenya.
+%
+The haplotypes within each of these networks are nearly identical across the entire span of the \textit{Vgsc} gene, and thus it is reasonable to assume that each network captures the descendants of an ancestral haplotype that has risen in frequency due to selection for insecticide resistance and subsequently accumulated other mutations.
+%
+Given this assumption, these five networks each provide evidence for adaptive gene flow between mosquito populations separated by considerable geographical distances.
+%
+However, the presence of haplotypes from two different countries within the same network does not imply direct gene flow, as haplotypes could be transmitted from or via a third location, which may be unsampled.
+%
+%%
+
+
+%%
+%
+A limitation of both the hierarchical clustering and network analyses is that they rely on genetic distances within the fixed genomic window from the start to the end of the \textit{Vgsc} gene.
+%
+\textit{Anopheles} mosquitoes undergo homologous recombination during meiosis in both males and females, and any recombination events that occurred within this genomic window could affect the way that haplotypes are grouped together in clusters or networks.
+%
+In particular, recombination events could occur during the geographical spread of a resistance allele, altering the genetic background upstream and/or downstream of the allele itself.
+%
+An analysis based on a fixed genomic window might then fail to infer gene flow between two mosquito populations, because the calculation of genetic distances does not account for recombination events, and thus haplotypes with and without the recombination event could be grouped separately.
+%
+To investigate the possibility that recombination events may have affected our findings regarding the genetic backgrounds carrying resistance alleles, we developed two further analyses.
+%
+In the first analysis, we performed a moving window analysis of genetic distance between haplotypes, spanning \textit{Vgsc} and up to a megabase upstream and downstream of the gene (Supplementary Figure @@).
+%
+In the second analysis, we inferred putative recombination breakpoints on either side of \textit{Vgsc} codon 995 between all pairs of haplotypes, then clustered haplotypes by the length of the genomic segment between these breakpoints (i.e., the length of the region shared identical-by-descent (IBD)) (Supplementary Figure @@).
+%
+%%
+
+%%
+%
+These further analyses both supported some refinements of our initial classification of genetic backgrounds carrying resistance alleles.
+%
+We found that haplotypes in clusters S4 and S5 were mixed together when clustered by IBD length.
+%
+The moving window analysis of genetic distance showed that all haplotypes within these two clusters were effectively identical on both the upstream and downstream flanks of the gene, but there was a short region of divergence within the gene itself that separated them in the fixed window analyses (Supplementary Figure @@).
+%
+A possible explanation for this pattern of divergence is that a gene conversion event has occurred within the gene, bringing a short segment from a different genetic background onto the original genetic background on which the \texttt{L995S} resistance mutation occurred.
+%
+For the remainder of this paper we combine S4 and S5 into a single cluster labelled S4/5.
+%
+All haplotypes in S4/5 were sampled from Cameroon, and thus considering this as a single genetic background does not imply any new gene flow events.
+%
+We also found that all haplotypes carrying the \texttt{I1527T} allele were grouped together when clustered by IBD length (cluster L1 in Supplementary Figure @@), which was not the case in fixed window analyses of the \textit{Vgsc} gene (data not shown).
+%
+The moving window analysis showed that haplotypes within the L1 cluster were all nearly identical on the downstream flank of the gene, but separated into multiple clusters on the upstream flank.
+%
+The change in genetic distance occurred between the \texttt{I1527T} and \texttt{V402L} codons, and we know that \texttt{I1527T} occurs in combination with two separate nucleotide substitutions causing \texttt{V402L}, thus the data are consistent with one or both of the \texttt{V402L} alleles having been brought together with an ancestral haplotype carrying \texttt{I1527T} via crossover recombination events.
+%
+%%
+
+
+\subsection*{Positive selection for resistance alleles}
+
+%%
+%
+To confirm that known resistance alleles are under positive selection, and investigate evidence for positive selection on non-synonymous alleles discovered in this study, we performed an analysis of extended haplotype homozygosity (EHH) \cite{Sabeti2002}.
+%
+Haplotypes under recent positive selection are expected to have increased rapidly in frequency, thus have had less time to be broken down by recombination and should on average have longer regions of haplotype homozygosity spanning the selected allele, relative to wild-type haplotypes.
+%
+We defined a core region spanning \textit{Vgsc} codon 995 and an additional 4 kbp of flanking sequence (Methods).
+%
+Within this core region, we found 18 distinct haplotypes at a frequency above 1\% within the cohort.
+%
+These included core haplotypes corresponding to each of the 9 genetic backgrounds carrying \texttt{L995F} and \texttt{L995S} alleles identified above, as well as a core haplotype corresponding to the L1 background carrying \texttt{I1527T+V402L}.
+%
+We also found a core haplotype corresponding to a cluster of haplotypes from Kenya carrying an \texttt{M490I} allele, which we labelled as L2.
+%
+All other core haplotypes we labelled as wild-type (wt).
+%
+We then computed EHH decay for each core haplotype up to a megabase upstream and downstream of the core locus (Figure \ref{fig:ehh_decay}).
+%
+%%
+
+
+%% Figure - EHH decay
+%
+\begin{figure}[!t]
+  \includegraphics[width=1.1\linewidth,center]{artwork/ehh_decay.pdf}
+  \caption{\textbf{EHH decay}. @@TODO caption}
+  \label{fig:ehh_decay}
+\end{figure}
+%%
+
+
+%%
+%
+As expected, haplotypes carrying the \texttt{L995F} and \texttt{L995S} resistance alleles all experience a dramatically slower decay of EHH relative to wild-type haplotypes, confirming positive selection.
+%
+Previous studies have found evidence for different rates of EHH decay between \texttt{L995F} and \texttt{L995S} haplotypes, which could be due to differences in haplotype ages and/or selection coefficients.
+%
+However, we found no significant difference in EHH decay between these two alleles (@@TODO data).
+%
+The L1 haplotype carrying \texttt{I1527T+V402L} exhibited a slow decay of EHH on the downstream flank of the gene, similar to haplotypes carrying \texttt{L995F} and \texttt{L995S}, indicating that this combination of alleles has experienced positive selection.
+%
+EHH decay on the upstream gene flank was faster, being similar to wild-type haplotypes, however we know from the analyses described above that there is evidence for recombination between \texttt{I1527T} and \texttt{V402L} within this group of haplotypes, and thus a faster decay of EHH is expected upstream of the core locus. 
+%
+The L2 haplotype carrying \texttt{M490I} exhibited EHH decay intermediate between wild-type haplotypes and haplotypes carrying known resistance alleles.
+%
+This could indicate evidence for selection on the \texttt{M490I} allele, however these haplotypes are derived from a Kenyan mosquito population which is known to have experienced a severe recent bottleneck @@REF, and there are no wild-type haplotypes from Kenya with which to compare, thus this signal may also be due to the extreme demographic history of this population.
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Design of genetic assays for surveillance of pyrethroid resistance}
+
+%%
+%
+Entomological surveillance teams in Africa do regularly genotype mosquitoes for resistance alleles in \textit{Vgsc} codon 995, and use those results as an indicator for the presence of pyrethroid resistance alongside results from insecticide resistance bioassays.
+%
+They typically do not, however, sequence the gene or genotype any other polymorphisms within the gene.
+%
+Thus if there are other polymorphisms within the gene that cause or significantly enhance pyrethroid resistance, this will not be detected.
+%
+Also, if a codon 995 resistance allele is observed, there is no way to know whether the allele is on a genetic background that has also been observed in other mosquito populations, and thus no way to investigate whether resistance alleles are emerging locally or being imported from elsewhere, and if so, what is the probable source population.
+%
+Whole-genome sequencing clearly provides data of sufficient resolution to answer these questions, and portable genome sequencing will no doubt be feasible within the next few years.
+%
+However, in the interim it may be worthwhile to develop low-cost, high-throughput targeted genetic assays for surveillance of \textit{Vgsc}-mediated pyrethroid resistance.
+%
+For example, it would be feasible to design primers for amplicon sequencing, which could provide genotypes for of the order of 100 SNPs in a single amplicon panel, and could be implemented at low cost using existing sequencing platforms in regional sequencing facilities.
+%%
+
+
+%% Figure - Information gain.
+%
+\begin{figure}[!t]
+  \centering
+  
+  \includegraphics[width=1.0\linewidth]{artwork/info_gain.png}
+  \includegraphics[width=1.0\linewidth]{artwork/tree_cv.png}
+  
+  \caption{%
+%
+\textbf{Informative SNPs for haplotype surveillance}. 
+%
+\textbf{a}, Each data point represents a single SNP. 
+%
+The information gain value for each SNP provides an indication of how informative the SNP is likely to be if used as part of a genetic assay for testing whether a mosquito carries a resistance haplotype, and if so, which seletive sweep cluster it derives from. 
+%
+\textbf{b}, Number of SNPs required to accurately classify which cluster a haplotype derives from. 
+%
+Decision trees were constructed using either the LD3 (left) or CART (right) algorithm for comparison.
+%
+Accuracy was evaluated using 10-fold stratified cross-validation.
+}
+
+  \label{fig:gain}
+\end{figure}
+%%
+
+%%
+%
+To facilitate the development of targeted genetic assays for surveillance of \textit{Vgsc}-mediated pyrethroid resistance, we have produced two supplementary data tables.
+%
+In Supplementary Table 1 we provide a list of all @@N biallelic SNPs discovered with high confidence in the Ag1000G phase 1 cohort within the \textit{Vgsc} gene and in the 100 kbp upstream and downstream flanking regions.
+%
+To aid in PCR primer design, for each SNP we provide the flanking sequence for 250 bp upstream and downstream of the SNP position, including information about any polymorphisms within these flanking regions.
+%
+Not all SNPs are informative for detecting whether an individual mosquito carries a resistance allele, or diagnosing which genetic background is present, and we provide some summary statistics for each SNP to aid in the identification of the most informative SNPs.
+%
+This includes allele frequencies for each of the 10 haplotype clusters identified here as carrying known or probable resistance alleles, as well as for wild-type haplotypes from different locations.
+%
+To help with designing classifiers than can accurately call resistance haplotypes with a minimal number of SNPs, we also provide the information gain \cite{Quinlan1986} and the Gini impurity \cite{Breiman1984} for each SNP.
+%
+Note that recombination events are more likely at increasing distances upstream and downstream of the resistance variants under selection, and thus the most informative SNPs are found closest to the resistance variants within the gene (Figure \ref{fig:gain}).
+%
+However, SNPs with some information gain are available throughout the gene and in flanking regions.
+%
+%%
+
+
+%%
+%
+A possible strategy for the design of a genetic assay could proceed by (1) performing an initial round of filtering to remove SNPs which are not informative (e.g., low information gain); (2) performing a round of primer design to remove SNPs for which primers are unlikely to be successful; (3) performing a full analysis of the remaining SNPs to select a subset that is sufficient to classify all resistance haplotypes identified here, including some redundancy; (4) finalise primer designs for the chosen panel of SNPs.
+%
+A possible methodology for step 3 would be to use an algorithm such as ID3 \cite{Quinlan1986} or CART \cite{Breiman1984} to build a decision tree, although many other algorithms for building classifiers are also applicable.
+%
+To aid in the development of a classifier, in Supplementary Table 2 we provide our classification for each of the 1530 haplotypes sampled here, along with the alleles carried by each haplotype for each of the SNPs included in Supplementary Table 1.
+%
+To test the methodology, we constructed decision trees using either LD3 or CART algorithms, and using all available SNPs from within the \textit{Vgsc} plus 20 kbp flanking regions as input features (i.e., assuming primers could be designed in all cases).
+%
+Figure \ref{fig:gain}b shows the cross-validation scores obtained for trees constructed allowing increasing numbers of SNPs.
+%
+This analysis suggests that it should be possible to construct a decision tree able to classify resistance haplotypes with >95\% accuracy using 20 SNPs or less.
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Discussion}
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Prediction of resistance phenotypes for novel non-synonymous variants}
+
+
+@@TODO collect all material related to resistance phenotype prediction here, after we have results from analyses of selection.
 
 
 %% Table 2 - Phenotype.
@@ -274,368 +643,22 @@ In Cameroon these alleles were in Hardy Weinberg equilibrium ($x^{2}$ = 0.02, p 
 \end{landscape}
 %\restoregeometry
 } % end afterpage
-%% end Table 1
+%% end Table 2
 
 
-%% Paragraph 3 - Results for I1527T and V402L.
-%
-The \texttt{I1527T} allele is present in \textit{An. coluzzii} from Burkina Faso at 14\% frequency, and there is evidence that haplotypes carrying this allele have been positively selected \cite{Ag1000gConsortium2017}.
-%% TODO may need to move EHH analyses here to provide evidence for selection if not included in consortial paper.
-%
-Codon 1527 occurs within trans-membrane domain segment \texttt{III.S6}, immediately adjacent to a second predicted binding pocket for pyrethroid molecules, thus it is plausible that \texttt{I1527T} could alter insecticide binding \cite{Dong2014}.
-%
-We also found that the two variant alleles affecting codon 402, both of which induce a \texttt{V402L} substitution, were in strong linkage with \texttt{I1527T} (D' $\geq$ 0.8; Figure \ref{fig:ld}), and almost all haplotypes carrying \texttt{I1527T} also carried a \texttt{V402L} substitution.
-%
-The most parsimonious explanation for this pattern of linkage is that the \texttt{I1527T} mutation occurred first, and mutations in codon 402 subsequently arose on this genetic background.
-%
-Codon 402 also occurs within a trans-membrane segment (\texttt{I.S6}), and the \texttt{V402L} substitution has associated with pyrethroid resistance in bedbugs \cite{Yoon2008}.
-%
-Other substitutions at this locus have also been associated with resistance, \texttt{V402A/G} in the moth crop pests \emph{Helicoverpa zea} \cite{Hopkins2010} and \texttt{V402M} in \emph{Heliothis virescens}, the latter of which has been shown experimentally to confer resistance in \textit{Xenopus} oocytes \cite{Park1997, Lee2013}.
-%
-However, because \texttt{V402L} appears secondary to \texttt{I1527T} in our cohort, we classify \texttt{I1527T} as a putative resistance driver and \texttt{V402L} as a putative enhancer.
-%
-Because of the limited geographical distribution of these alleles, we hypothesize that the \texttt{I1527T+V402L} combination represents a pyrethroid resistance allele that arose in West African \textit{An. coluzzii} populations; however, the \texttt{L995F} allele is at higher frequency (85\%) in our Burkina Faso \textit{An. coluzzii} population, and is known to be increasing in frequency \cite{Toe2014}, therefore \texttt{L995F} may provide a stronger resistance phenotype and is replacing \texttt{I1527T+V402L}.
+
+@@TODO
+
+
+\section*{Legacy}
 %%
 
 
-%% Figure - Pairwise LD.
-%
-\begin{figure}[!t]
-
-  \centering
-  
-  \includegraphics[width=\linewidth]{artwork/fig_ld.png}
-  
-  \caption{\textbf{Linkage disequilibrium between non-synonymous variants}. A value of 1 indicates that the two variants always occur in combination, and conversely a value of -1 indicates that the two variants never occur in combination. @TODO nuance this?}
-  
-  \label{fig:ld}
- 
-\end{figure}
-%%
 
 
-%% Paragraph 4 - L995F enhancers.
-%
-Of the other 16 SNPs, 13 occurred almost exclusively in combination with \texttt{L995F} (Figure \ref{fig:ld}; \cite{Ag1000gConsortium2017}).
-%
-These include the \texttt{N1570Y} allele, known to enhance pyrethroid resistance in \textit{An. gambiae} in combination with \texttt{L995F} \cite{Jones2012} and also two variants in codon 1874 (\texttt{P1874S}, \texttt{P1874L}). 
-%
-\texttt{P1874S} has previously been found in a colony of the crop pest \textit{Plutella xylostella} with a pyrethroid resistance phenotype, but has not been shown to confer resistance experimentally \cite{Sonoda2008}.
-%
-10 of these variants, including \texttt{N1570Y} and \texttt{P1874S/L}, occur within internal linker domains of the protein, and so fit the model of variants that may enhance or compensate for the driver phenotype by modifying channel gating behaviour \cite{Smith1997, Jones2012}.
-%
-The remaining 3 variants are within trans-membrane domains, and so may enhance resistance by altering or interacting with the insecticide binding sites on the VGSC \cite{Dong2014}.
-%
-Because of the tight linkage between these 13 SNPs and the \texttt{L995F} allele, we classify all as putative \texttt{L995F} enhancers, although experimental work is required to confirm a resistance phenotype.
-%%
-
-%% Paragraph 5 - Other high frequency variants we think are probably not resistance variants and why.
-%
-The remaining 3 variants (\texttt{M490I}, \texttt{A1125V}, \texttt{V1254I}) do not occur in combination with any known resistance allele, and do not appear to be associated with haplotypes under selection \cite{Ag1000gConsortium2017}
-%
-A possible exception is the \texttt{M490I} allele found at 18\% frequency in the Kenyan population, although the fact that this population has experienced a recent population crash makes it difficult to test for evidence of selection at this locus.
-%
-All 3 variants occur in internal linker domains, and so do not fit the model of a resistance driver, again experimental work is required to rule out a resistance phenotype.
-%
-%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Haplotype structure}
 
-% Paragraph 6 - introduce haplotypes
-Although it is known that pyrethroid resistance is increasing in prevalence in malaria vector populations across Africa, it has not been clear whether this is being driven by the spread of resistance alleles via gene flow, by resistance alleles emerging independently in multiple locations, or by some combination of both processes.
-%
-The Ag1000G data resource provides a rich source of information about the evolutionary and demographic history of insecticide resistance in any given gene, because data are available not only for SNPs in gene coding regions, but also SNPs in introns and flanking intergenic regions, and in neighbouring genes.
-%
-These additional variants can be used to analyse the genetic backgrounds (haplotypes) on which resistance alleles are found.
-%%
-
-%% Paragraph 7 - breifly acknowledge previous work
-%
-In our initial analysis of the \textit{Vgsc} \cite{Ag1000gConsortium2017}, we used 1710 biallelic SNPs from within the 73.5 kbp \textit{Vgsc} gene (@@N exonic, @@N intronic) to compute the number of SNP differences between all pairs of 1530 haplotypes derived from 765 wild-caught mosquitoes.
-%
-To visualise these patterns, we used the pairwise genetic distances to perform hierarchical clustering and found that haplotypes carrying resistance alleles were grouped into 10 distinct clusters.
-%
-Five of these clusters carried the \texttt{L995F} allele (labelled F1-F5), and a further five clusters carried \texttt{L995S} (labelled S1-S5).
-%
-If we assume that haplotypes within each cluster share a common ancestor since the introduction of insecticides, which is reasonable given the high degree of similarity (clustered haplotypes were nearly identical across all 1710 SNPs spanning 73.5 kbp), then each of these clusters provides evidence that resistance alleles have been spreading between geographical locations and species via adaptive gene flow.
-%
-Here we present several new analyses of these haplotype data, to confirm our initial inferences regarding gene flow, and provide further details regarding the origins and movement of resistance alleles.
-%
-
-
-%% Figure - Haplotype networks.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/complete_networks.pdf}
-  \caption{\textbf{Haplotype networks}. Median joining networks for haplotypes carrying \texttt{L995F} (labelled F1-F5) or \texttt{L995S} variants (S1-S5) with a maximum edge distance of two SNPs. Network labelling is via concordance with hierarchical clusters discovered in \cite{Ag1000gConsortium2017}. Node size is relative to the number of haplotypes contained and node colour represents the proportion of node haplotypes from mosquito populations/species. Non-synonymous edges are highlighted in red and those leading to non-singleton nodes are labelled with the codon change, arrow head indicates direction of change. Networks consisting of three or more haplotypes are shown.}
-  \label{fig:networks}
-\end{figure}
-%%
-
-
-%% Paragraph 8 - Introduction to the networks.
-%
-To provide an alternative view of the genetic similarity between haplotypes carrying resistance alleles, we used haplotype data from within the \emph{Vgsc} gene region to construct median-joining networks (Figure \ref{fig:networks}).
-%
-This analysis is  similar to hierarchical clustering, however, it allows for the reconstruction and placement of intermediate haplotypes that may not be observed in the data and allows the relationships of the closely related clustered haplotypes to be discerned.
-%
-We constructed these networks using a maximum edge distance of 2 SNP differences, to ensure that each connected component in the resulting networks represents a collection of haplotypes with a recent common ancestor (analogous to the cutting of the dendrogram in \cite{Ag1000gConsortium2017}).
-%
-For haplotypes carrying both \texttt{L995F} and \texttt{L995S} alleles, the resulting networks confirm the presence of ten distinct clusters, with close correspondence to the clusters we identified previously \cite{Ag1000gConsortium2017}.
-%
-
-%% Paragraph 9 - Observations from the networks.
-%
-The haplotype networks bring into sharp relief the explosive evolution of amino acid substitutions secondary to the \texttt{L995F} allele.
-%
-Within the F1 network, nodes carrying non-synonymous variants radiate out from a central node carrying only \texttt{L995F} (Figure \ref{fig:networks}), suggesting that the central node represents the ancestral haplotype carrying \texttt{L995F} alone which initially came under selection, and these secondary variants have arisen subsequently as new mutations.
-%
-Many of the nodes carrying secondary variants are large, consistent with positive selection and a functional role for these secondary variants as enhancers of the \texttt{L995F} resistance phenotype (Table \ref{table:variants_pheno}).
-%
-The F1 network also allows us to infer multiple introgression events between the two species.
-%
-The central (ancestral) node comprises haplotypes from both species, as do nodes carrying the \texttt{N1570Y}, \texttt{P1874L}, and \texttt{T791M}.
-%
-This structure is consistent with an initial introgression of the ancestral F1 haplotype, followed later by introgressions of haplotypes carrying secondary mutations.
-%
-The contrast between the haplotype networks for the \texttt{L995F} and \texttt{L995S} alleles is striking because of the near-total absence of non-synonymous variation within the \texttt{L995S} networks.
-%
-As we reported previously @@Where?, this difference is highly significant -- the ratio of non-synonymous to synonymous nucleotide diversity (@@piN/piS) is @@N times higher among haplotypes carrying \texttt{L995F} relative to haplotypes carrying \texttt{L995S} (@@Test; P=@@) (\cite{Ag1000gConsortium2017}).
-%
-Some secondary non-synonymous variants are present within the \texttt{L995S} networks, but all are at low frequency, and thus may be neutral or mildly deleterious variants that are hitch-hiking on selective sweeps for the \texttt{L995S} allele.
-%%
-
-%% Limitations of clustering and networks based on genetic distance in a fixed region.
-%
-While the genetic-distance based hierarchical clustering and network analyses provide evidence for the spread of resistance alleles via adaptive gene flow, and for the secondary evolution of \texttt{L995F} enhancer alleles, they have several limitations.
-%
-These analyses only leverage information about genetic distance within the \textit{Vgsc} gene, and for very recent events, insufficient time has elapsed for informative mutations to accumulate within this relatively small genome region.
-%
-The fact that we observe five distinct clusters for each of the codon 995 alleles suggests that each cluster is in some sense independent from the others, and thus gene flow is not required for resistance to emerge in multiple geographical locations.
-%
-However, the threshold for the genetic distance at which we have chosen to divide haplotypes into different networks or clusters is to a certain extent arbitrary, and based on an intuitive sense of how much variation could have accumulated among the descendants of a single resistant ancestor since the onset of selective pressure.
-%
-Finally, analyses of genetic distance within a fixed genome region can be confounded by recombination events.
-%
-For example, a recombination event within the \textit{Vgsc} gene upstream of codon 995 could cause us to split a collection of haplotypes into two clusters, even though they are ancestrally related within the region downstream of the recombination event.
-%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Shared haplotype length}
-
-%%
-To overcome the problems of fix windowed analysis, we estimated the length of the region shared identical by descent (IBD) (@@?? and the number of mutations that have accumulated since the most recent common ancestor - methods).
-%
-By measuring shared haplotype length from genome regions both within and flanking the \textit{Vgsc}, the relationship between haplotypes could be examined in a higher resolution.
-%
-Visualisation of the pairwise IBD length distribution revealed bi-modality; a minor mode of haplotypes with longer shared haplotypes and a major mode of haplotypes with shorter tracts of IBD (Figure \ref{fig:age_hist}).
-%
-It is well established that the \textit{Vgsc} locus is under insecticide mediated recent selection and that there have been multiple selective events e.g. \cite{Ag1000gConsortium2017} (@@cite more) and therefore this bi-modal pattern is expected.
-%
-Within each selective event, pairs of haplotypes will share a more recent common ancestor on average and therefore will have longer tracts of IBD - generating the minor mode.
-%
-In the absence of recent selection and in the presence of large effective population sizes \cite{Ag1000gConsortium2017} (@@cite more), pairs of haplotypes will have less recent common ancestors on average, with tracts of IBD broken up by recombination over time - the major mode.
-%
-The bimodal distribution is not likely due to geographical population structure, because the same pattern is observed within several populations.
-%%
-
-%
-Pairwise IBD lengths were then hierarchically clustered to build a dendrogram.
-%
-The midpoint between the two modes of IBD distribution was taken as an estimation of the minimum length of IBD tract associated with a recent selective event and this was used to cut the IBD dendrogram, defining  haplotype clusters representing putative selective events (Figure \ref{fig:tree}).
-%
-Comparing this to previous analyses of haplotype structure based on genetic distance, we find clusters F1-F5 and S1-S3 recapitulated with close correspondence (@@ how close), and S4 and S5 merged into a single cluster.
-%
-We label a new cluster ``L1'' representing an outbreak driven by the \texttt{I1527T} allele in combination with one or the other \texttt{V402L} allele.
-%
-We also label a cluster ``L2'' capturing a set of haplotypes from Kenya carrying the \texttt{M490I} variant, although the fact that these haplotypes all share a recent common ancestor may be a reflection of the unusual demography of the Kenyan population which has experienced a severe population crash and not be due to recent selection for insecticide resistance \cite{Ag1000gConsortium2017}.
-%
-As in earlier analyses (Figure \ref{fig:networks}; \cite{Ag1000gConsortium2017}), clusters F1, F4, F5, S2 and S3 all include haplotypes sampled from multiple geographical locations, and F1 includes haplotypes from both species, \textit{An. gambiae} and \textit{An coluzzii}.
-%
-Clusters F2, F3, S1, S4/5, L1 and L2 include only haplotypes from a single sampling location.
-%%
-
-
-%% Figure - Overall haplotype age distribution.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/haplotype_age_dist.pdf}
-  \caption{\textbf{Haplotype IBD distribution}. @@TODO caption.}
-  \label{fig:age_hist}
-\end{figure}
-%%
- 
- 
-%% Figure - Haplotype age tree.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_hap_tree.png}
-  \caption{\textbf{Clustering of haplotypes by age}. @@TODO caption.}
-  \label{fig:tree}
-\end{figure}
-%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Haplotype selection}
-
-%%
-Good concordance was found across clustering analyses (@@make supp table) with higher resolution of haplotype structure in the IBD analyses through extending up- and down-stream of the \textit{Vgsc} locus.
-%
-To confirm these IBD generated clusters are indeed experiencing recent selection and to provide an alternative view of how haplotypes are related, analysis of extended haplotype homozygosity (EHH) decay was performed \cite{Sabeti2002}.
-%
-We defined a core region spanning \textit{Vgsc} codon 995 and an additional 4 kbp of flanking sequence (Methods).
-%
-Within this core region, we found 18 distinct haplotypes at a frequency > 1\% within the cohort, including core haplotypes representing each of the resistance outbreaks we identified above, and a further 7 core haplotypes not carrying any known or putative resistance allele for comparison (wild-type - wt).
-%
-Comparision of the core haplotypes from clusters defined by IBD with the wild-type core haplotypes reveal clear reductions in the EHH decay up- and down-stream of all but one core haplotypes, with only L2 from Kenya not showing reduced EHH decay on the left flank (Figure \ref{fig:ehh_decay})
-%
-EHH decay generally decays more slowly in the centromere proximal direction.
-% 
-These results suggest that haplotypes carry non-synonymous mutations in the \textit{Vgsc} gene are under recent positive selection unlike the wild-type haplotypes which do not carry protein altering mutations.
-%%
-
-
-%% Figure - EHH decay
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/ehh_decay.pdf}
-  \caption{\textbf{EHH decay}. @@TODO caption}
-  \label{fig:ehh_decay}
-\end{figure}
-%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Haplotype recombination}
-
-%%
-To study the evidence for recombination within region spanning the \textit{Vgsc} gene, and provide some additional confirmation that our inferences regarding insecticide resistance haplotype clusters have not been affected by recombination or other sources of error, we performed an additional analysis of genetic distance between haplotypes.
-%
-We first constructed a putative ancestral haplotype for each of the outbreaks we identified, by starting from the codon 995 position and separately moving upstream and downstream, assuming the major allele at each SNP bifurcation point represents the ancestral haplotype.
-%
-We then computed the genetic distance ($D_{XY}$) between each of our sampled haplotypes and each of the inferred ancestral outbreak haplotypes, computing the distance in 2000bp windows (step size 1000bp) across a 5 Mbp region spanning the \textit{Vgsc} gene.
-%
-The results for clusters F1-F5 are plotted in Figure \ref{fig:recom_f}, S1-S4/5 are shown in Figure \ref{fig:recom_s} and L1-L2 in Figure \ref{fig:recom_l}.
-%%
-
-
-%% Figure - L995F recombination
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_F.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995F}. @@TODO legend}
-  \label{fig:recom_f}
-\end{figure}
-%%
-
-
-%% Figure - L995S recombination
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_S.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995S}. @@TODO legend}
-  \label{fig:recom_s}
-\end{figure}
-%%
-
-
-%% Figure - L995L recombination
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_L.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995L}. @@TODO legend}
-  \label{fig:recom_l}
-\end{figure}
-%%
-
-
-%%
-In these plots we expect that all haplotypes from a given cluster should share very close genetic similarity ($D_{XY} \approx 0$) with each other and with the ancestral haplotype for that cluster within the \textit{Vgsc} gene itself, with an increasing number of haplotypes recombining away from the ancestral haplotype as we move away from the gene in either the upstream or downstream direction.
-%
-Conversely, haplotypes from one cluster should not share any close genetic similarity ($D_{XY} > 0$) with the inferred ancestral haplotype from a different cluster, either within the \textit{Vgsc} gene or in flanking regions.
-%
-The results for all outbreaks are largely consistent with this expectation.
-%
-For this analysis we treated S4/5 as a single cluster, as indicated by the IBD analysis, and we can gain some insight into why these two were split into separate clusters in earlier analyses.
-%
-All haplotypes in S4/5 share close similarity with the ancestral haplotype on both flanks of the \textit{Vgsc} gene, but there is a short region of within the gene where a subset of haplotypes are diverged.
-%
-This region of divergence accounts for the S4/S5 split in earlier analyses (Figure \ref{fig:networks}).
-%
-@@TODO also note relatively low divergence among F2, F3, F4 on upstream flank and explain
-%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Design of genetic assays for haplotype surveillance}
-
-
-%% Figure - Information gain.
-%
-\begin{figure}[!b]
-  \centering
-  
-  \includegraphics[width=1.0\linewidth]{artwork/info_gain.png}
-  \includegraphics[width=1.0\linewidth]{artwork/tree_cv.png}
-  
-  \caption{%
-%
-\textbf{Informative SNPs for haplotype surveillance}. 
-%
-\textbf{a}, Each data point represents a single SNP. 
-%
-The information gain value for each SNP provides an indication of how informative the SNP is likely to be if used as part of a genetic assay for testing whether a mosquito carries a resistance haplotype, and if so, which seletive sweep cluster it derives from. 
-%
-\textbf{b}, Number of SNPs required to accurately classify which cluster a haplotype derives from. 
-%
-Decision trees were constructed using either the LD3 (left) or CART (right) algorithm for comparison.
-%
-Accuracy was evaluated using 10-fold stratified cross-validation.
-}
-
-  \label{fig:gain}
-\end{figure}
-%%
-
-
-%%
-%
-To facilitate the development of targeted genetic assays for \textit{Vgsc} insecticide resistance haplotype surveillance, we have produced two supplementary data tables.
-%
-In Supplementary Table 1 we provide a list of all biallelic SNPs discovered with high confidence in this study within the \textit{Vgsc} gene and in the 100 kbp upstream and downstream flanking regions.
-%
-To aid in PCR primer design, for each SNP we provide the flanking sequence for 250 bp upstream and downstream of the SNP position, including information about polymorphisms within these flanking regions.
-%
-Not all SNPs are informative for detecting whether an individual mosquito carries a haplotype from a haplotype cluster under selction, and we provide some summary statistics for each SNP to aid in the identification of the most informative SNPs.
-%
-This includes allele frequencies within each of the clusters identified here, as well as for populations of susceptible haplotypes.
-%
-We also provide the overall variance in allele frequencies, the information gain \cite{Quinlan1986}, and the Gini impurity \cite{Breiman1984} for each SNP.
-%
-Note that recombination events are more likely at increasing distances upstream and downstream of the resistance variants under selection, and thus the most informative SNPs are found closest to the resistance variants within the gene (Figure \ref{fig:gain}).
-%
-However, SNPs with some information gain are available throughout the gene and in flanking regions.
-%
-
-
-%%
-%
-We suggest that the design of a genetic assay proceed by (1) performing an initial round of filtering to remove SNPs which are not informative (e.g., low information gain); (2) performing a round of primer design to remove SNPs for which primers are unlikely to be successful; (3) performing a full analysis of the remaining SNPs to select a subset that is sufficient to classify all selected haplotype clusters identified here, including some redundancy; (4) finalise primer designs for the chosen panel of SNPs.
-%
-A possible methodology for step 3 would be to use an algorithm such as ID3 \cite{Quinlan1986} or CART \cite{Breiman1984} to build a decision tree, although many other algorithms for building classifiers are also applicable.
-%
-To aid in the development of a classifier, in Supplementary Table 2 we provide our classification for each of the 1530 haplotypes sampled here, along with the alleles carried by each haplotype for each of the SNPs included in Supplementary Table 1.
-%
-To test the methodology, we constructed decision trees using either LD3 or CART algorithms, and using all available SNPs from within the \textit{Vgsc} plus 20 kbp flanking regions as input features (i.e., assuming primers could be designed in all cases).
-%
-Figure \ref{fig:gain}b shows the cross-validation scores obtained for trees constructed allowing increasing numbers of SNPs.
-%
-This analysis suggests that it should be possible to construct a tree able to classify haplotypes from all 10 resistance selective sweeps with >95\% accuracy using 20 SNPs or less.
-%%
 
 
 
@@ -812,6 +835,62 @@ Recombination. @@TODO - AM - Absolute divergence dxy...
 %
 Tagging SNPs. @@TODO - AM
 %%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Supplementary figures}
+
+
+%% Figure - Overall haplotype age distribution.
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/haplotype_age_dist.pdf}
+  \caption{\textbf{Haplotype IBD distribution}. @@TODO caption.}
+  \label{fig:age_hist}
+\end{figure}
+%%
+ 
+ 
+%% Figure - Haplotype age tree.
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_hap_tree.png}
+  \caption{\textbf{Clustering of haplotypes by age}. @@TODO caption.}
+  \label{fig:tree}
+\end{figure}
+%%
+
+%% Figure - L995F recombination
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_F.png}
+  \caption{\textbf{Recombination and ancestral haplotypes for L995F}. @@TODO legend}
+  \label{fig:recom_f}
+\end{figure}
+%%
+
+
+%% Figure - L995S recombination
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_S.png}
+  \caption{\textbf{Recombination and ancestral haplotypes for L995S}. @@TODO legend}
+  \label{fig:recom_s}
+\end{figure}
+%%
+
+
+%% Figure - L995L recombination
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_L.png}
+  \caption{\textbf{Recombination and ancestral haplotypes for L995L}. @@TODO legend}
+  \label{fig:recom_l}
+\end{figure}
+%%
+
+
+@@TODO
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
