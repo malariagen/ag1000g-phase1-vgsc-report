@@ -1,4 +1,4 @@
-	\documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
+\documentclass[a4paper,11pt,abstracton,hidelinks]{scrartcl}
 
 \usepackage[margin=3cm]{geometry}
 \usepackage{graphicx}
@@ -331,7 +331,8 @@ All occur within internal linker domains of the protein and are therefore unlike
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Genetic backgrounds carrying resistance alleles}
 
-% Paragraph 6 - introduce haplotypes
+%%
+% 
 Although it is known that pyrethroid resistance is increasing in prevalence in malaria vector populations across Africa, it has not been clear whether this is being driven by the spread of resistance alleles via gene flow, by resistance alleles emerging independently in multiple locations, or by some combination of both processes.
 %
 The Ag1000G data resource provides a potentially rich source of information about the spread of insecticide resistance alleles in any given gene, because data are available not only for SNPs in gene coding regions, but also SNPs in introns and flanking intergenic regions, and in neighbouring genes.
@@ -379,9 +380,9 @@ The resulting networks confirmed the presence of 5 distinct groupings of haploty
 %
 The haplotype networks bring into sharp relief the explosive radiation of amino acid substitutions secondary to the \texttt{L995F} allele.
 %
-Within the F1 network, nodes carrying non-synonymous variants radiate out from a central node carrying only \texttt{L995F} (Figure \ref{fig:networks}), suggesting that the central node represents the ancestral haplotype carrying \texttt{L995F} alone which initially came under selection, and these secondary variants have arisen subsequently as new mutations.
+Within the F1 network, nodes carrying non-synonymous variants radiate out from a central node carrying only \texttt{L995F}, suggesting that the central node represents the ancestral haplotype carrying \texttt{L995F} alone which initially came under selection, and these secondary variants have arisen subsequently as new mutations.
 %
-Many of the nodes carrying secondary variants are large, consistent with positive selection and a functional role for these secondary variants as enhancers of the \texttt{L995F} resistance phenotype (Table \ref{table:variants_pheno}).
+Many of the nodes carrying secondary variants are large, consistent with positive selection and a functional role for these secondary variants as modifiers of the \texttt{L995F} resistance phenotype (Table \ref{table:variants_pheno}).
 %
 The F1 network also allows us to infer multiple introgression events between the two species.
 %
@@ -402,13 +403,59 @@ The F4, F5 and S2 networks each contain haplotypes from Cameroon and Gabon.
 %
 The S3 network contains haplotypes from both Uganda and Kenya.
 %
-The haplotypes within each of these networks are nearly identical across the entire @@70 kbp span of the \textit{Vgsc} gene, and thus it is reasonable to assume that each network represents an ancestral haplotype that has risen in frequency due to selection for insecticide resistance and subsequently accumulated other mutations.
+The haplotypes within each of these networks are nearly identical across the entire span of the \textit{Vgsc} gene, and thus it is reasonable to assume that each network represents the descendants of an ancestral haplotype that has risen in frequency due to selection for insecticide resistance and subsequently accumulated other mutations.
 %
 Given this assumption, these five networks each provide evidence for adaptive gene flow between mosquito populations separated by considerable geographical distances.
 %
-However, the presence of haplotypes from two different countries within the same network does not imply direct gene flow, as haplotypes could be transmitted to both locations from a third location, which may be unsampled.
+However, the presence of haplotypes from two different countries within the same network does not imply direct gene flow, as haplotypes could be transmitted from or via a third location, which may be unsampled.
 %
 %%
+
+
+%%
+%
+A limitation of both the hierarchical clustering and network analyses is that they rely on genetic distances within the fixed genomic window from the start to the end of the \textit{Vgsc} gene.
+%
+\textit{Anopheles} mosquitoes undergo homologous recombination during meiosis in both males and females, and any recombination events that occurred within this genomic window could affect the way that haplotypes are grouped together in clusters or networks.
+%
+In particular, recombination events could occur during the geographical spread of a resistance allele, altering the genetic background upstream and/or downstream of the allele itself.
+%
+An analysis based on a fixed genomic window might then fail to infer gene flow between two mosquito populations, because the calculation of genetic distances does not account for recombination events, and thus haplotypes with and without the recombination event could be grouped separately.
+%
+To investigate the possibility that recombination events may have affected our findings regarding the genetic backgrounds carrying resistance alleles, we developed two further analyses.
+%
+In the first analysis, we performed a moving window analysis of genetic distance between haplotypes, spanning \textit{Vgsc} and up to a megabase upstream and downstream of the gene (Supplementary Figure @@).
+%
+In the second analysis, we inferred putative recombination breakpoints on either side of \textit{Vgsc} codon 995 between all pairs of haplotypes, then clustered haplotypes by the length of the genomic segment between these breakpoints (i.e., the length of the region shared identical-by-descent (IBD)) (Supplementary Figure @@).
+%
+%%
+
+%%
+%
+These further analyses both supported some refinements of our initial classification of genetic backgrounds carrying resistance alleles.
+%
+We found that haplotypes in clusters S4 and S5 were mixed together when clustered by IBD length.
+%
+The moving window analysis of genetic distance showed that all haplotypes within these two clusters were effectively identical on both the upstream and downstream flanks of the gene, but there was a short region of divergence within the gene itself that separated them in the fixed window analyses (Supplementary Figure @@).
+%
+A possible explanation for this pattern of divergence is that a gene conversion event has occurred within the gene, bringing a short segment from a different genetic background onto the original genetic background on which the \texttt{L995S} resistance mutation occurred.
+%
+For the remainder of this paper we combine S4 and S5 into a single cluster labelled S4/5.
+%
+All haplotypes in S4/5 were sampled from Cameroon, and thus considering this as a single genetic background does not imply any new gene flow events.
+%
+We also found that all haplotypes carrying the \texttt{I1527T} allele were grouped together when clustered by IBD length (cluster L1 in Supplementary Figure @@), which was not the case in fixed window analyses of the \textit{Vgsc} gene (data not shown).
+%
+The moving window analysis showed that haplotypes within the L1 cluster were all nearly identical on the downstream flank of the gene, but separated into multiple clusters on the upstream flank.
+%
+The change in genetic distance occurred between the \texttt{I1527T} and \texttt{V402L} codons, and we know that \texttt{I1527T} occurs in combination with two separate nucleotide substitutions causing \texttt{V402L}, thus the data are consistent with one or both of the \texttt{V402L} alleles having been brought together with an ancestral haplotype carrying \texttt{I1527T} via crossover recombination events.
+%
+%%
+
+
+\subsection*{Positive selection for resistance alleles}
+
+@@TODO
 
 
 \section*{Legacy}
@@ -634,16 +681,17 @@ This region of divergence accounts for the S4/S5 split in earlier analyses (Figu
 \end{landscape}
 %\restoregeometry
 } % end afterpage
-%% end Table 1
+%% end Table 2
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Design of genetic assays for haplotype surveillance}
 
+TODO TODO
 
 %% Figure - Information gain.
 %
-\begin{figure}[!b]
+\begin{figure}[!t]
   \centering
   
   \includegraphics[width=1.0\linewidth]{artwork/info_gain.png}
@@ -667,7 +715,6 @@ Accuracy was evaluated using 10-fold stratified cross-validation.
   \label{fig:gain}
 \end{figure}
 %%
-
 
 %%
 %
