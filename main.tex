@@ -29,6 +29,13 @@
 \usepackage{hyperref}
 \doublespacing
 
+\newcommand{\beginsupplement}{%
+  \setcounter{table}{0}
+  \renewcommand{\thetable}{S\arabic{table}}%
+  \setcounter{figure}{0}
+  \renewcommand{\thefigure}{S\arabic{figure}}%
+}
+
 
 \addbibresource{refs.bib}
 
@@ -250,7 +257,7 @@ However, there was an excess of heterozygotes in Gabon ($\chi^{2}$ = 8.96, P < 0
   
   \includegraphics[width=\linewidth]{artwork/fig_ld.png}
   
-  \caption{\textbf{Linkage disequilibrium between non-synonymous variants}. A value of 1 indicates that the two variants always occur in combination, and conversely a value of -1 indicates that the two variants never occur in combination. @TODO nuance this?}
+  \caption{\textbf{Linkage disequilibrium between non-synonymous variants}. A value of 1 indicates that the two alleles are in perfect linkage, meaning that one of the two alleles is only ever found in combination with the other. Conversely, a value of -1 indicates that the two alleles are never found in combination with each other.}
   
   \label{fig:ld}
  
@@ -424,9 +431,10 @@ An analysis based on a fixed genomic window might then fail to infer gene flow b
 %
 To investigate the possibility that recombination events may have affected our findings regarding the genetic backgrounds carrying resistance alleles, we developed two further analyses.
 %
-In the first analysis, we performed a moving window analysis of genetic distance between haplotypes, spanning \textit{Vgsc} and up to a megabase upstream and downstream of the gene (Supplementary Figure 1).
+
+In the first analysis, we performed a moving window analysis of genetic distance between haplotypes, spanning \textit{Vgsc} and up to a megabase upstream and downstream of the gene (Figures \ref{fig:recom_f}, \ref{fig:recom_s}, \ref{fig:recom_l}).
 %
-In the second analysis, we inferred putative recombination breakpoints on either side of \textit{Vgsc} codon 995 between all pairs of haplotypes, then clustered haplotypes by the length of the genomic segment between these breakpoints (i.e., the length of the region shared identical-by-descent (IBD)) (Supplementary Figure 2).
+In the second analysis, we inferred putative recombination breakpoints on either side of \textit{Vgsc} codon 995 between all pairs of haplotypes, then clustered haplotypes by the length of the genomic segment between these breakpoints (i.e., the length of the region shared identical-by-descent (IBD)) (Figure \ref{fig:age_hist}, \ref{fig:tree}).
 %
 %%
 
@@ -436,7 +444,7 @@ These further analyses both supported some refinements of our initial classifica
 %
 We found that haplotypes in clusters S4 and S5 were mixed together when clustered by IBD length.
 %
-The moving window analysis of genetic distance showed that all haplotypes within these two clusters were effectively identical on both the upstream and downstream flanks of the gene, but there was a short region of divergence within the gene itself that separated them in the fixed window analyses (Supplementary Figure 1).
+The moving window analysis of genetic distance showed that all haplotypes within these two clusters were effectively identical on both the upstream and downstream flanks of the gene, but there was a short region of divergence within the gene itself that separated them in the fixed window analyses (Figure \ref{fig:recom_s}).
 %
 A possible explanation for this pattern of divergence is that a gene conversion event has occurred within the gene, bringing a short segment from a different genetic background onto the original genetic background on which the \texttt{L995S} resistance mutation occurred.
 %
@@ -444,7 +452,7 @@ For the remainder of this paper we combine S4 and S5 into a single cluster label
 %
 All haplotypes in S4/5 were sampled from Cameroon, and thus considering this as a single genetic background does not imply any new gene flow events.
 %
-We also found that all haplotypes carrying the \texttt{I1527T} allele were grouped together when clustered by IBD length (cluster L1 in Supplementary Figure 1), which was not the case in fixed window analyses of the \textit{Vgsc} gene (data not shown).
+We also found that all haplotypes carrying the \texttt{I1527T} allele were grouped together when clustered by IBD length (cluster L1 in Figure \ref{fig:tree}), which was not the case in fixed window analyses of the \textit{Vgsc} gene (data not shown).
 %
 The moving window analysis showed that haplotypes within the L1 cluster were all nearly identical on the downstream flank of the gene, but separated into multiple clusters on the upstream flank.
 %
@@ -480,7 +488,7 @@ We then computed EHH decay for each core haplotype up to a megabase upstream and
 %
 \begin{figure}[!t]
   \includegraphics[width=1.1\linewidth,center]{artwork/ehh_decay.pdf}
-  \caption{\textbf{EHH decay}. @@TODO caption}
+  \caption{\textbf{Evidence for positive selection on haplotypes carrying known or putative resistance alleles}. Each panel plots the decay of extended haplotype homozygosity (EHH) for a set of core haplotypes centred on \textit{Vgsc} codon 995. Core haplotypes F1-F5 carry the \texttt{L995F} allele; S1-S4/5 carry the \texttt{L995S} allele; L1 carries the \texttt{I1527T} allele; L2 carries the \texttt{M490I} allele. Wild-type (wt) haplotypes do not carry any of these alleles. A slower decay of EHH relative to wild-type haplotypes implies positive selection (each panel plots the same collection of wild-type haplotypes).}
   \label{fig:ehh_decay}
 \end{figure}
 %%
@@ -539,7 +547,7 @@ For example, it would be feasible to design primers for amplicon sequencing, whi
 %
 \textbf{a}, Each data point represents a single SNP. 
 %
-The information gain value for each SNP provides an indication of how informative the SNP is likely to be if used as part of a genetic assay for testing whether a mosquito carries a resistance haplotype, and if so, which seletive sweep cluster it derives from. 
+The information gain value for each SNP provides an indication of how informative the SNP is likely to be if used as part of a genetic assay for testing whether a mosquito carries a resistance haplotype, and if so, which of the known resistance haplotype clusters it derives from. 
 %
 \textbf{b}, Number of SNPs required to accurately classify which cluster a haplotype derives from. 
 %
@@ -838,64 +846,75 @@ Tagging SNPs. @@TODO - AM
 %%
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printbibliography
+
+
+\beginsupplement
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Supplementary figures}
 
 
-%% Figure - Overall haplotype age distribution.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/haplotype_age_dist.pdf}
-  \caption{\textbf{Haplotype IBD distribution}. @@TODO caption.}
-  \label{fig:age_hist}
-\end{figure}
-%%
- 
- 
-%% Figure - Haplotype age tree.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_hap_tree.png}
-  \caption{\textbf{Clustering of haplotypes by age}. @@TODO caption.}
-  \label{fig:tree}
-\end{figure}
-%%
+\clearpage
 
 %% Figure - L995F recombination
 %
-\begin{figure}[!b]
+\begin{figure}[!t]
   \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_F.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995F}. @@TODO legend}
+  \caption{\textbf{Moving window analysis of genetic distance between haplotypes carrying the \texttt{L995F} allele}. Panels on the left plot the divergence of haplotypes within a haplotype cluster, relative to an inferred ancestral haplotype. Panels on the right plot divergence of haplotypes between different haplotype clusters. If haplotype clusters are unrelated (i.e., do not share a recent common ancestor) then divergence should be greater than zero within \textit{Vgsc} and flanking regions.}
   \label{fig:recom_f}
 \end{figure}
 %%
 
+\clearpage
 
 %% Figure - L995S recombination
 %
-\begin{figure}[!b]
+\begin{figure}[!t]
   \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_S.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995S}. @@TODO legend}
+  \caption{\textbf{Moving window analysis of genetic distance between haplotypes carrying the \texttt{L995S} allele}. See Figure \ref{fig:recom_f} for explanation.}
   \label{fig:recom_s}
 \end{figure}
 %%
 
 
+\clearpage
+
 %% Figure - L995L recombination
 %
-\begin{figure}[!b]
+\begin{figure}[!t]
   \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_L.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995L}. @@TODO legend}
+  \caption{\textbf{Moving window analysis of genetic distance between haplotypes carrying the \texttt{L995} allele}. See Figure \ref{fig:recom_f} for explanation.}
   \label{fig:recom_l}
 \end{figure}
 %%
 
 
-@@TODO
+\clearpage
 
+%% Figure - Overall haplotype age distribution.
+%
+\begin{figure}[!t]
+  \includegraphics[width=1.1\linewidth,center]{artwork/haplotype_age_dist.pdf}
+  \caption{\textbf{Distribution of pairwise haplotype ages estimated from IBD tract lengths spanning \textit{Vgsc}}. The left panel plots the distribution of ages between all haplotype pairs. The right panel plots ages for pairs within populations. Note that distributions are bimodal, implying that some haplotype pairs share a recent common ancestor while others share a common ancestor in the more distant past, expected if a selective sweep has occurred within the population. The vertical dashed line shows an approximate midpoint between the two modes.}
+  \label{fig:age_hist}
+\end{figure}
+%%
+ 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\printbibliography
+\clearpage
+ 
+%% Figure - Haplotype age tree.
+%
+\begin{figure}[!t]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_hap_tree.png}
+  \caption{\textbf{Clustering of haplotypes by IBD tract lengths spanning \textit{Vgsc}}. @@TODO explain}
+  \label{fig:tree}
+\end{figure}
+%%
+
 
 \end{document}
