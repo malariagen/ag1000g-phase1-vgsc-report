@@ -223,7 +223,7 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
 
 
 %% L995F, L995S
-The two known resistance variants affecting codon 995 had the highest overall allele frequencies within the Ag1000G phase 1 cohort.
+The two known resistance alleles affecting codon 995 had the highest overall allele frequencies within the Ag1000G phase 1 cohort.
 %
 The \texttt{L995F} allele was at high frequency in populations of both species from West, Central and Southern Africa.
 %
@@ -308,7 +308,7 @@ The most parsimonious explanation for this pattern of linkage is that the \textt
 %
 Codon \texttt{402} also occurs within a trans-membrane segment (\texttt{I.S6}), and the \texttt{V402L} substitution has been independently associated with pyrethroid resistance in bedbugs \cite{Yoon2008}.
 %
-Other substitutions at this locus have also been associated with resistance, \texttt{V402A/G} in the moth crop pests \emph{Helicoverpa zea} \cite{Hopkins2010} and \texttt{V402M} in \emph{Heliothis virescens}, the latter of which has been shown experimentally to confer resistance in \textit{Xenopus} oocytes \cite{Park1997, Lee2013}.
+Other substitutions at this codon have also been associated with resistance, \texttt{V402A/G} in the moth crop pests \emph{Helicoverpa zea} \cite{Hopkins2010} and \texttt{V402M} in \emph{Heliothis virescens}, the latter of which has been shown experimentally to confer resistance in \textit{Xenopus} oocytes \cite{Park1997, Lee2013}.
 %
 @@TODO Aedes combination.
 %
@@ -403,7 +403,7 @@ The F4, F5 and S2 networks each contain haplotypes from Cameroon and Gabon.
 %
 The S3 network contains haplotypes from both Uganda and Kenya.
 %
-The haplotypes within each of these networks are nearly identical across the entire span of the \textit{Vgsc} gene, and thus it is reasonable to assume that each network represents the descendants of an ancestral haplotype that has risen in frequency due to selection for insecticide resistance and subsequently accumulated other mutations.
+The haplotypes within each of these networks are nearly identical across the entire span of the \textit{Vgsc} gene, and thus it is reasonable to assume that each network captures the descendants of an ancestral haplotype that has risen in frequency due to selection for insecticide resistance and subsequently accumulated other mutations.
 %
 Given this assumption, these five networks each provide evidence for adaptive gene flow between mosquito populations separated by considerable geographical distances.
 %
@@ -507,7 +507,23 @@ This could indicate evidence for selection on the \texttt{M490I} allele, however
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Design of genetic assays for surveillance of pyrethroid resistance}
 
-TODO TODO
+%%
+%
+Entomological surveillance teams in Africa do regularly genotype mosquitoes for resistance alleles in \textit{Vgsc} codon 995, and use those results as an indicator for the presence of pyrethroid resistance alongside results from insecticide resistance bioassays.
+%
+They typically do not, however, sequence the gene or genotype any other polymorphisms within the gene.
+%
+Thus if there are other polymorphisms within the gene that cause or significantly enhance pyrethroid resistance, this will not be detected.
+%
+Also, if a codon 995 resistance allele is observed, there is no way to know whether the allele is on a genetic background that has also been observed in other mosquito populations, and thus no way to investigate whether resistance alleles are emerging locally or being imported from elsewhere, and if so, what is the probable source population.
+%
+Whole-genome sequencing clearly provides data of sufficient resolution to answer these questions, and portable genome sequencing will no doubt be feasible within the next few years.
+%
+However, in the interim it may be worthwhile to develop low-cost, high-throughput targeted genetic assays for surveillance of \textit{Vgsc}-mediated pyrethroid resistance.
+%
+For example, it would be feasible to design primers for amplicon sequencing, which could provide genotypes for of the order of 100 SNPs in a single amplicon panel, and could be implemented at low cost using existing sequencing platforms in regional sequencing facilities.
+%%
+
 
 %% Figure - Information gain.
 %
@@ -538,27 +554,28 @@ Accuracy was evaluated using 10-fold stratified cross-validation.
 
 %%
 %
-To facilitate the development of targeted genetic assays for \textit{Vgsc} insecticide resistance haplotype surveillance, we have produced two supplementary data tables.
+To facilitate the development of targeted genetic assays for surveillance of \textit{Vgsc}-mediated pyrethroid resistance, we have produced two supplementary data tables.
 %
-In Supplementary Table 1 we provide a list of all biallelic SNPs discovered with high confidence in this study within the \textit{Vgsc} gene and in the 100 kbp upstream and downstream flanking regions.
+In Supplementary Table 1 we provide a list of all @@N biallelic SNPs discovered with high confidence in the Ag1000G phase 1 cohort within the \textit{Vgsc} gene and in the 100 kbp upstream and downstream flanking regions.
 %
-To aid in PCR primer design, for each SNP we provide the flanking sequence for 250 bp upstream and downstream of the SNP position, including information about polymorphisms within these flanking regions.
+To aid in PCR primer design, for each SNP we provide the flanking sequence for 250 bp upstream and downstream of the SNP position, including information about any polymorphisms within these flanking regions.
 %
-Not all SNPs are informative for detecting whether an individual mosquito carries a haplotype from a haplotype cluster under selction, and we provide some summary statistics for each SNP to aid in the identification of the most informative SNPs.
+Not all SNPs are informative for detecting whether an individual mosquito carries a resistance allele, or diagnosing which genetic background is present, and we provide some summary statistics for each SNP to aid in the identification of the most informative SNPs.
 %
-This includes allele frequencies within each of the clusters identified here, as well as for populations of susceptible haplotypes.
+This includes allele frequencies for each of the 10 haplotype clusters identified here as carrying known or probable resistance alleles, as well as for wild-type haplotypes from different locations.
 %
-We also provide the overall variance in allele frequencies, the information gain \cite{Quinlan1986}, and the Gini impurity \cite{Breiman1984} for each SNP.
+To help with designing classifiers than can accurately call resistance haplotypes with a minimal number of SNPs, we also provide the information gain \cite{Quinlan1986} and the Gini impurity \cite{Breiman1984} for each SNP.
 %
 Note that recombination events are more likely at increasing distances upstream and downstream of the resistance variants under selection, and thus the most informative SNPs are found closest to the resistance variants within the gene (Figure \ref{fig:gain}).
 %
 However, SNPs with some information gain are available throughout the gene and in flanking regions.
 %
+%%
 
 
 %%
 %
-We suggest that the design of a genetic assay proceed by (1) performing an initial round of filtering to remove SNPs which are not informative (e.g., low information gain); (2) performing a round of primer design to remove SNPs for which primers are unlikely to be successful; (3) performing a full analysis of the remaining SNPs to select a subset that is sufficient to classify all selected haplotype clusters identified here, including some redundancy; (4) finalise primer designs for the chosen panel of SNPs.
+A possible strategy for the design of a genetic assay could proceed by (1) performing an initial round of filtering to remove SNPs which are not informative (e.g., low information gain); (2) performing a round of primer design to remove SNPs for which primers are unlikely to be successful; (3) performing a full analysis of the remaining SNPs to select a subset that is sufficient to classify all resistance haplotypes identified here, including some redundancy; (4) finalise primer designs for the chosen panel of SNPs.
 %
 A possible methodology for step 3 would be to use an algorithm such as ID3 \cite{Quinlan1986} or CART \cite{Breiman1984} to build a decision tree, although many other algorithms for building classifiers are also applicable.
 %
@@ -568,7 +585,7 @@ To test the methodology, we constructed decision trees using either LD3 or CART 
 %
 Figure \ref{fig:gain}b shows the cross-validation scores obtained for trees constructed allowing increasing numbers of SNPs.
 %
-This analysis suggests that it should be possible to construct a tree able to classify haplotypes from all 10 resistance selective sweeps with >95\% accuracy using 20 SNPs or less.
+This analysis suggests that it should be possible to construct a decision tree able to classify resistance haplotypes with >95\% accuracy using 20 SNPs or less.
 %%
 
 
