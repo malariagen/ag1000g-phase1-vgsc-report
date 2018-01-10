@@ -67,19 +67,19 @@ Here we use Illumina whole-genome sequence data from phase 1 of the \emph{Anophe
 %
 In addition to the three known resistance alleles, we describe 20 non-synonymous nucleotide substitutions at appreciable frequency in one or more populations that are previously unknown in mosquitoes.
 %
-For each novel variant allele we predict a putative resistance phenotype based on genetic evidence for positive selection, patterns of genetic linkage between variants, location of the variant within the protein domain architecture, and functional evidence from other species.
-%
-Thirteen of these novel alleles occur almost exclusively on haplotypes carrying the known L995F resistance allele, and appear to be secondary mutations that may enhance or compensate for the L995F resistance phenotype.
-%
-We also report an I1527T substitution which is adjacent to a predicted pyrethroid binding site in the channel molecule, and occurs in tight linkage with either of two alleles causing a V402L substitution, orthologous to a combination of substitutions found to cause pyrethroid resistance in several other insect species.
-%
-We then analyse the genetic backgrounds on which known and putative resistance alleles are found, to determine which alleles have experienced recent positive selection, and to refine our understanding of the origins and spread of resistance between species and geographical locations.
+We analyse the genetic backgrounds on which known and putative resistance alleles are found, to determine which alleles have experienced recent positive selection, and to refine our understanding of the origins and spread of resistance between species and geographical locations.
 %
 We identify ten distinct haplotype clusters under selection, five of which carry the L995F resistance allele, four of which carry L995S, and one of which carries I1527T.
 %
 Five of these clusters are localised to a single geographical location, and five comprise haplotypes from two or more countries, indicating the geographical spread of resistance.
 %
 We also find evidence for multiple introgression events transmitting resistance alleles between the two mosquito species.
+%
+For each novel variant allele we predict a putative resistance phenotype based on genetic evidence for positive selection, patterns of genetic linkage between variants, location of the variant within the protein domain architecture, and functional evidence from other species.
+%
+Thirteen of these novel alleles occur almost exclusively on haplotypes carrying the known L995F resistance allele, and appear to be secondary mutations that may enhance or compensate for the L995F resistance phenotype.
+%
+The I1527T substitution, which is adjacent to a predicted pyrethroid binding site in the channel molecule, occurs in tight linkage with either of two alleles causing a V402L substitution, orthologous to a combination of substitutions found to cause pyrethroid resistance in several other insect species.
 %
 Our results demonstrate that the molecular basis of pyrethroid resistance in African malaria vectors is more complex than previously appreciated, and provide a foundation for the design of new genetic tools to track the spread insecticide resistance and to inform vector control.
 %%
@@ -231,7 +231,7 @@ The \texttt{L995S} allele was at high frequency among \textit{An. gambiae} popul
 %
 Both alleles were present in \textit{An. gambiae} populations sampled from Cameroon and Gabon, including some individuals with a hybrid \texttt{L995F/S} genotype (46/275 individuals in Cameroon, 36/56 in Gabon).
 %
-In Cameroon these alleles were in Hardy Weinberg equilibrium ($\chi^{2}$ = 0.02, P = @@exact), thus there does not appear to be selection for or against heterozygote carriers of both alleles.
+In Cameroon these alleles were in Hardy Weinberg equilibrium ($\chi^{2}$ = 0.02, P > 0.05), thus there does not appear to be selection for or against heterozygote carriers of both alleles.
 %
 However, there was an excess of heterozygotes in Gabon ($\chi^{2}$ = 8.96, P < 0.005), suggesting a fitness advantage for mosquitoes carrying both alleles.
 %%
@@ -266,9 +266,9 @@ This variant has been shown to increase pyrethroid resistance in \textit{An. gam
 %
 Codon 1570 occurs within an internal linker domain of the protein, and so cannot directly affect the binding between pyrethroid molecules and the membrane channel.
 %
-Thus it has been suggested that \texttt{N1570Y} either enhances or compensates for the \texttt{L995F} phenotype, possibly by altering the channel gating properties @@REF.
+Thus it has been suggested that \texttt{N1570Y} either enhances or compensates for the \texttt{L995F} phenotype, possibly by altering the channel gating properties \cite{Jones2012}.
 %
-To study the patterns of association among non-synonymous variants, we used haplotypes from the Ag1000G phase 1 resource to compute the normalised coefficient of linkage disequilibrium ($D'$) between all pairs of variant alleles (Figure \ref{fig:ld}).
+To study the patterns of association among non-synonymous variants, we used haplotypes from the Ag1000G phase 1 resource to compute the normalised coefficient  of linkage disequilibrium ($D'$) between all pairs of variant alleles (Figure \ref{fig:ld}).
 %
 As expected, we found \texttt{N1570Y} in almost perfect linkage with \texttt{L995F}, meaning that \texttt{N1570Y} was only ever found on haplotypes also carrying \texttt{L995F}.
 %%
@@ -280,7 +280,7 @@ Of the 20 novel alleles, 13 also occurred almost exclusively in combination with
 %
 These included two variants in codon \texttt{1874} (\texttt{P1874S}, \texttt{P1874L}).
 %
-\texttt{P1874S} has previously been found in a colony of the crop pest \textit{Plutella xylostella} with a pyrethroid resistance phenotype, but has not been experimentally shown to confer resistance @@REF.
+\texttt{P1874S} has previously been associated with pyrethroid resistance in the crop pest \textit{Plutella xylostella} \cite{Sonoda2008}.
 %
 The abundance of high-frequency non-synonymous variants occurring in combination with \texttt{L995F} is striking for two reasons.
 %
@@ -314,7 +314,7 @@ Other substitutions at this codon have also been associated with resistance, \te
 %
 Because of the limited geographical distribution of these alleles, we hypothesize that the \texttt{I1527T+V402L} combination represents a pyrethroid resistance allele that arose in West African \textit{An. coluzzii} populations.
 %
-However, the \texttt{L995F} allele is at higher frequency (85\%) in our Burkina Faso \textit{An. coluzzii} population, and is known to be increasing in frequency \cite{Toe2014}, therefore \texttt{L995F} may provide a stronger resistance phenotype and is replacing \texttt{I1527T+V402L}.
+However, the \texttt{L995F} allele is at higher frequency (85\%) in our Burkina Faso \textit{An. coluzzii} population, and is known to be increasing in frequency \cite{Toe2014}, therefore \texttt{L995F} may provide a stronger resistance phenotype and is thus replacing \texttt{I1527T+V402L}.
 %%
 
 
@@ -424,9 +424,9 @@ An analysis based on a fixed genomic window might then fail to infer gene flow b
 %
 To investigate the possibility that recombination events may have affected our findings regarding the genetic backgrounds carrying resistance alleles, we developed two further analyses.
 %
-In the first analysis, we performed a moving window analysis of genetic distance between haplotypes, spanning \textit{Vgsc} and up to a megabase upstream and downstream of the gene (Supplementary Figure @@).
+In the first analysis, we performed a moving window analysis of genetic distance between haplotypes, spanning \textit{Vgsc} and up to a megabase upstream and downstream of the gene (Supplementary Figure 1).
 %
-In the second analysis, we inferred putative recombination breakpoints on either side of \textit{Vgsc} codon 995 between all pairs of haplotypes, then clustered haplotypes by the length of the genomic segment between these breakpoints (i.e., the length of the region shared identical-by-descent (IBD)) (Supplementary Figure @@).
+In the second analysis, we inferred putative recombination breakpoints on either side of \textit{Vgsc} codon 995 between all pairs of haplotypes, then clustered haplotypes by the length of the genomic segment between these breakpoints (i.e., the length of the region shared identical-by-descent (IBD)) (Supplementary Figure 2).
 %
 %%
 
@@ -436,7 +436,7 @@ These further analyses both supported some refinements of our initial classifica
 %
 We found that haplotypes in clusters S4 and S5 were mixed together when clustered by IBD length.
 %
-The moving window analysis of genetic distance showed that all haplotypes within these two clusters were effectively identical on both the upstream and downstream flanks of the gene, but there was a short region of divergence within the gene itself that separated them in the fixed window analyses (Supplementary Figure @@).
+The moving window analysis of genetic distance showed that all haplotypes within these two clusters were effectively identical on both the upstream and downstream flanks of the gene, but there was a short region of divergence within the gene itself that separated them in the fixed window analyses (Supplementary Figure 1).
 %
 A possible explanation for this pattern of divergence is that a gene conversion event has occurred within the gene, bringing a short segment from a different genetic background onto the original genetic background on which the \texttt{L995S} resistance mutation occurred.
 %
@@ -444,7 +444,7 @@ For the remainder of this paper we combine S4 and S5 into a single cluster label
 %
 All haplotypes in S4/5 were sampled from Cameroon, and thus considering this as a single genetic background does not imply any new gene flow events.
 %
-We also found that all haplotypes carrying the \texttt{I1527T} allele were grouped together when clustered by IBD length (cluster L1 in Supplementary Figure @@), which was not the case in fixed window analyses of the \textit{Vgsc} gene (data not shown).
+We also found that all haplotypes carrying the \texttt{I1527T} allele were grouped together when clustered by IBD length (cluster L1 in Supplementary Figure 1), which was not the case in fixed window analyses of the \textit{Vgsc} gene (data not shown).
 %
 The moving window analysis showed that haplotypes within the L1 cluster were all nearly identical on the downstream flank of the gene, but separated into multiple clusters on the upstream flank.
 %
@@ -500,7 +500,7 @@ EHH decay on the upstream gene flank was faster, being similar to wild-type hapl
 %
 The L2 haplotype carrying \texttt{M490I} exhibited EHH decay intermediate between wild-type haplotypes and haplotypes carrying known resistance alleles.
 %
-This could indicate evidence for selection on the \texttt{M490I} allele, however these haplotypes are derived from a Kenyan mosquito population which is known to have experienced a severe recent bottleneck @@REF, and there are no wild-type haplotypes from Kenya with which to compare, thus this signal may also be due to the extreme demographic history of this population.
+This could indicate evidence for selection on the \texttt{M490I} allele, however these haplotypes are derived from a Kenyan mosquito population which is known to have experienced a severe recent bottleneck \cite{Ag1000gConsortium2017}, and there are no wild-type haplotypes from Kenya with which to compare, thus this signal may also be due to the extreme demographic history of this population.
 %%
 
 
@@ -572,7 +572,6 @@ However, SNPs with some information gain are available throughout the gene and i
 %
 %%
 
-
 %%
 %
 A possible strategy for the design of a genetic assay could proceed by (1) performing an initial round of filtering to remove SNPs which are not informative (e.g., low information gain); (2) performing a round of primer design to remove SNPs for which primers are unlikely to be successful; (3) performing a full analysis of the remaining SNPs to select a subset that is sufficient to classify all resistance haplotypes identified here, including some redundancy; (4) finalise primer designs for the chosen panel of SNPs.
@@ -587,6 +586,8 @@ Figure \ref{fig:gain}b shows the cross-validation scores obtained for trees cons
 %
 This analysis suggests that it should be possible to construct a decision tree able to classify resistance haplotypes with >95\% accuracy using 20 SNPs or less.
 %%
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
