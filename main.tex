@@ -455,116 +455,30 @@ The change in genetic distance occurred between the \texttt{I1527T} and \texttt{
 
 \subsection*{Positive selection for resistance alleles}
 
-@@TODO
-
-
-\section*{Legacy}
 %%
-
-
-
-
-In contrast, networks F2, F3, S4 and S5 each contain haplotypes from Cameroon only, and S1 is private to Uganda.
 %
-The lack of any evidence for gene flow within these networks may indicate 
-%%
-
-
-%% Limitations of clustering and networks based on genetic distance in a fixed region.
+To confirm that known resistance alleles are under positive selection, and investigate evidence for positive selection on non-synonymous alleles discovered in this study, we performed an analysis of extended haplotype homozygosity (EHH) \cite{Sabeti2002}.
 %
-While the genetic-distance based hierarchical clustering and network analyses provide evidence for the spread of resistance alleles via adaptive gene flow, and for the secondary evolution of \texttt{L995F} enhancer alleles, they have several limitations.
-%
-These analyses only leverage information about genetic distance within the \textit{Vgsc} gene, and for very recent events, insufficient time has elapsed for informative mutations to accumulate within this relatively small genome region.
-%
-The fact that we observe five distinct clusters for each of the codon 995 alleles suggests that each cluster is in some sense independent from the others, and thus gene flow is not required for resistance to emerge in multiple geographical locations.
-%
-However, the threshold for the genetic distance at which we have chosen to divide haplotypes into different networks or clusters is to a certain extent arbitrary, and based on an intuitive sense of how much variation could have accumulated among the descendants of a single resistant ancestor since the onset of selective pressure.
-%
-Finally, analyses of genetic distance within a fixed genome region can be confounded by recombination events.
-%
-For example, a recombination event within the \textit{Vgsc} gene upstream of codon 995 could cause us to split a collection of haplotypes into two clusters, even though they are ancestrally related within the region downstream of the recombination event.
-%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Shared haplotype length}
-
-%%
-To overcome the problems of fix windowed analysis, we estimated the length of the region shared identical by descent (IBD) (@@?? and the number of mutations that have accumulated since the most recent common ancestor - methods).
-%
-By measuring shared haplotype length from genome regions both within and flanking the \textit{Vgsc}, the relationship between haplotypes could be examined in a higher resolution.
-%
-Visualisation of the pairwise IBD length distribution revealed bi-modality; a minor mode of haplotypes with longer shared haplotypes and a major mode of haplotypes with shorter tracts of IBD (Figure \ref{fig:age_hist}).
-%
-It is well established that the \textit{Vgsc} locus is under insecticide mediated recent selection and that there have been multiple selective events e.g. \cite{Ag1000gConsortium2017} (@@cite more) and therefore this bi-modal pattern is expected.
-%
-Within each selective event, pairs of haplotypes will share a more recent common ancestor on average and therefore will have longer tracts of IBD - generating the minor mode.
-%
-In the absence of recent selection and in the presence of large effective population sizes \cite{Ag1000gConsortium2017} (@@cite more), pairs of haplotypes will have less recent common ancestors on average, with tracts of IBD broken up by recombination over time - the major mode.
-%
-The bimodal distribution is not likely due to geographical population structure, because the same pattern is observed within several populations.
-%%
-
-%
-Pairwise IBD lengths were then hierarchically clustered to build a dendrogram.
-%
-The midpoint between the two modes of IBD distribution was taken as an estimation of the minimum length of IBD tract associated with a recent selective event and this was used to cut the IBD dendrogram, defining  haplotype clusters representing putative selective events (Figure \ref{fig:tree}).
-%
-Comparing this to previous analyses of haplotype structure based on genetic distance, we find clusters F1-F5 and S1-S3 recapitulated with close correspondence (@@ how close), and S4 and S5 merged into a single cluster.
-%
-We label a new cluster ``L1'' representing an outbreak driven by the \texttt{I1527T} allele in combination with one or the other \texttt{V402L} allele.
-%
-We also label a cluster ``L2'' capturing a set of haplotypes from Kenya carrying the \texttt{M490I} variant, although the fact that these haplotypes all share a recent common ancestor may be a reflection of the unusual demography of the Kenyan population which has experienced a severe population crash and not be due to recent selection for insecticide resistance \cite{Ag1000gConsortium2017}.
-%
-As in earlier analyses (Figure \ref{fig:networks}; \cite{Ag1000gConsortium2017}), clusters F1, F4, F5, S2 and S3 all include haplotypes sampled from multiple geographical locations, and F1 includes haplotypes from both species, \textit{An. gambiae} and \textit{An coluzzii}.
-%
-Clusters F2, F3, S1, S4/5, L1 and L2 include only haplotypes from a single sampling location.
-%%
-
-
-%% Figure - Overall haplotype age distribution.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/haplotype_age_dist.pdf}
-  \caption{\textbf{Haplotype IBD distribution}. @@TODO caption.}
-  \label{fig:age_hist}
-\end{figure}
-%%
- 
- 
-%% Figure - Haplotype age tree.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_hap_tree.png}
-  \caption{\textbf{Clustering of haplotypes by age}. @@TODO caption.}
-  \label{fig:tree}
-\end{figure}
-%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Haplotype selection}
-
-%%
-Good concordance was found across clustering analyses (@@make supp table) with higher resolution of haplotype structure in the IBD analyses through extending up- and down-stream of the \textit{Vgsc} locus.
-%
-To confirm these IBD generated clusters are indeed experiencing recent selection and to provide an alternative view of how haplotypes are related, analysis of extended haplotype homozygosity (EHH) decay was performed \cite{Sabeti2002}.
+Haplotypes under recent positive selection are expected to have increased rapidly in frequency, thus have had less time to be broken down by recombination and should on average have longer regions of haplotype homozygosity spanning the selected allele, relative to wild-type haplotypes.
 %
 We defined a core region spanning \textit{Vgsc} codon 995 and an additional 4 kbp of flanking sequence (Methods).
 %
-Within this core region, we found 18 distinct haplotypes at a frequency > 1\% within the cohort, including core haplotypes representing each of the resistance outbreaks we identified above, and a further 7 core haplotypes not carrying any known or putative resistance allele for comparison (wild-type - wt).
+Within this core region, we found 18 distinct haplotypes at a frequency above 1\% within the cohort.
 %
-Comparision of the core haplotypes from clusters defined by IBD with the wild-type core haplotypes reveal clear reductions in the EHH decay up- and down-stream of all but one core haplotypes, with only L2 from Kenya not showing reduced EHH decay on the left flank (Figure \ref{fig:ehh_decay})
+These included core haplotypes corresponding to each of the 9 genetic backgrounds carrying \texttt{L995F} and \texttt{L995S} alleles identified above, as well as a core haplotype corresponding to the L1 background carrying \texttt{I1527T+V402L}.
 %
-EHH decay generally decays more slowly in the centromere proximal direction.
-% 
-These results suggest that haplotypes carry non-synonymous mutations in the \textit{Vgsc} gene are under recent positive selection unlike the wild-type haplotypes which do not carry protein altering mutations.
+We also found a core haplotype corresponding to a cluster of haplotypes from Kenya carrying an \texttt{M490I} allele, which we labelled as L2.
+%
+All other core haplotypes we labelled as wild-type (wt).
+%
+We then computed EHH decay for each core haplotype up to a megabase upstream and downstream of the core locus (Figure \ref{fig:ehh_decay}).
+%
 %%
 
 
 %% Figure - EHH decay
 %
-\begin{figure}[!b]
+\begin{figure}[!t]
   \includegraphics[width=1.1\linewidth,center]{artwork/ehh_decay.pdf}
   \caption{\textbf{EHH decay}. @@TODO caption}
   \label{fig:ehh_decay}
@@ -572,120 +486,26 @@ These results suggest that haplotypes carry non-synonymous mutations in the \tex
 %%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Haplotype recombination}
-
 %%
-To study the evidence for recombination within region spanning the \textit{Vgsc} gene, and provide some additional confirmation that our inferences regarding insecticide resistance haplotype clusters have not been affected by recombination or other sources of error, we performed an additional analysis of genetic distance between haplotypes.
 %
-We first constructed a putative ancestral haplotype for each of the outbreaks we identified, by starting from the codon 995 position and separately moving upstream and downstream, assuming the major allele at each SNP bifurcation point represents the ancestral haplotype.
+As expected, haplotypes carrying the \texttt{L995F} and \texttt{L995S} resistance alleles all experience a dramatically slower decay of EHH relative to wild-type haplotypes, confirming positive selection.
 %
-We then computed the genetic distance ($D_{XY}$) between each of our sampled haplotypes and each of the inferred ancestral outbreak haplotypes, computing the distance in 2000bp windows (step size 1000bp) across a 5 Mbp region spanning the \textit{Vgsc} gene.
+Previous studies have found evidence for different rates of EHH decay between \texttt{L995F} and \texttt{L995S} haplotypes, which could be due to differences in haplotype ages and/or selection coefficients.
 %
-The results for clusters F1-F5 are plotted in Figure \ref{fig:recom_f}, S1-S4/5 are shown in Figure \ref{fig:recom_s} and L1-L2 in Figure \ref{fig:recom_l}.
-%%
-
-
-%% Figure - L995F recombination
+However, we found no significant difference in EHH decay between these two alleles (@@TODO data).
 %
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_F.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995F}. @@TODO legend}
-  \label{fig:recom_f}
-\end{figure}
-%%
-
-
-%% Figure - L995S recombination
+The L1 haplotype carrying \texttt{I1527T+V402L} exhibited a slow decay of EHH on the downstream flank of the gene, similar to haplotypes carrying \texttt{L995F} and \texttt{L995S}, indicating that this combination of alleles has experienced positive selection.
 %
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_S.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995S}. @@TODO legend}
-  \label{fig:recom_s}
-\end{figure}
-%%
-
-
-%% Figure - L995L recombination
+EHH decay on the upstream gene flank was faster, being similar to wild-type haplotypes, however we know from the analyses described above that there is evidence for recombination between \texttt{I1527T} and \texttt{V402L} within this group of haplotypes, and thus a faster decay of EHH is expected upstream of the core locus. 
 %
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_L.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995L}. @@TODO legend}
-  \label{fig:recom_l}
-\end{figure}
-%%
-
-
-%%
-In these plots we expect that all haplotypes from a given cluster should share very close genetic similarity ($D_{XY} \approx 0$) with each other and with the ancestral haplotype for that cluster within the \textit{Vgsc} gene itself, with an increasing number of haplotypes recombining away from the ancestral haplotype as we move away from the gene in either the upstream or downstream direction.
+The L2 haplotype carrying \texttt{M490I} exhibited EHH decay intermediate between wild-type haplotypes and haplotypes carrying known resistance alleles.
 %
-Conversely, haplotypes from one cluster should not share any close genetic similarity ($D_{XY} > 0$) with the inferred ancestral haplotype from a different cluster, either within the \textit{Vgsc} gene or in flanking regions.
-%
-The results for all outbreaks are largely consistent with this expectation.
-%
-For this analysis we treated S4/5 as a single cluster, as indicated by the IBD analysis, and we can gain some insight into why these two were split into separate clusters in earlier analyses.
-%
-All haplotypes in S4/5 share close similarity with the ancestral haplotype on both flanks of the \textit{Vgsc} gene, but there is a short region of within the gene where a subset of haplotypes are diverged.
-%
-This region of divergence accounts for the S4/S5 split in earlier analyses (Figure \ref{fig:networks}).
-%
-@@TODO also note relatively low divergence among F2, F3, F4 on upstream flank and explain
+This could indicate evidence for selection on the \texttt{M490I} allele, however these haplotypes are derived from a Kenyan mosquito population which is known to have experienced a severe recent bottleneck @@REF, and there are no wild-type haplotypes from Kenya with which to compare, thus this signal may also be due to the extreme demographic history of this population.
 %%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Prediction of putative resistance phenotype}
-
-
-@@TODO collect all material related to resistance phenotype prediction here, after we have results from analyses of selection.
-
-
-%% Table 2 - Phenotype.
-%
-\afterpage{%
-%\clearpage
-% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
-%\newgeometry{margin=2cm}
-\begin{landscape}
-\thispagestyle{empty}
-\begin{table}[h]
-  \scriptsize
-  \centering
-  \begin{threeparttable}
-
-  \caption{
-%
-\textbf{Phenotype prediction in the voltage-gated sodium channel gene}. 
-}
-
-  \label{table:variants_pheno}
-  
-  \input{tables/variants_pheno.tex}
-  
-  \begin{tablenotes}
-    \footnotesize
-    
-    \item[1] Position of the variant within the protein. \texttt{IN}=internal domain; \texttt{TM}=trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
-    
-    \item[2] Phenotype predictions are based on population genetic evidence and have not been confirmed experimentally.
-    
-    \item[3] Literature search results for experimental evidence, assoc. - association study, \emph{in vitro} - \emph{Xenopus} oocytes.
-    
-    \item[4] Publication from which evidence is taken.
-    
-  \end{tablenotes}
-  
-  \end{threeparttable}
-  
-\end{table}
-\end{landscape}
-%\restoregeometry
-} % end afterpage
-%% end Table 2
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Design of genetic assays for haplotype surveillance}
+\subsection*{Design of genetic assays for surveillance of pyrethroid resistance}
 
 TODO TODO
 
@@ -750,6 +570,78 @@ Figure \ref{fig:gain}b shows the cross-validation scores obtained for trees cons
 %
 This analysis suggests that it should be possible to construct a tree able to classify haplotypes from all 10 resistance selective sweeps with >95\% accuracy using 20 SNPs or less.
 %%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Discussion}
+%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Prediction of resistance phenotypes for novel non-synonymous variants}
+
+
+@@TODO collect all material related to resistance phenotype prediction here, after we have results from analyses of selection.
+
+
+%% Table 2 - Phenotype.
+%
+\afterpage{%
+%\clearpage
+% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
+%\newgeometry{margin=2cm}
+\begin{landscape}
+\thispagestyle{empty}
+\begin{table}[h]
+  \scriptsize
+  \centering
+  \begin{threeparttable}
+
+  \caption{
+%
+\textbf{Phenotype prediction in the voltage-gated sodium channel gene}. 
+}
+
+  \label{table:variants_pheno}
+  
+  \input{tables/variants_pheno.tex}
+  
+  \begin{tablenotes}
+    \footnotesize
+    
+    \item[1] Position of the variant within the protein. \texttt{IN}=internal domain; \texttt{TM}=trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
+    
+    \item[2] Phenotype predictions are based on population genetic evidence and have not been confirmed experimentally.
+    
+    \item[3] Literature search results for experimental evidence, assoc. - association study, \emph{in vitro} - \emph{Xenopus} oocytes.
+    
+    \item[4] Publication from which evidence is taken.
+    
+  \end{tablenotes}
+  
+  \end{threeparttable}
+  
+\end{table}
+\end{landscape}
+%\restoregeometry
+} % end afterpage
+%% end Table 2
+
+
+
+@@TODO
+
+
+\section*{Legacy}
+%%
+
+
+
+
+
+
+
 
 
 
@@ -926,6 +818,62 @@ Recombination. @@TODO - AM - Absolute divergence dxy...
 %
 Tagging SNPs. @@TODO - AM
 %%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Supplementary figures}
+
+
+%% Figure - Overall haplotype age distribution.
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/haplotype_age_dist.pdf}
+  \caption{\textbf{Haplotype IBD distribution}. @@TODO caption.}
+  \label{fig:age_hist}
+\end{figure}
+%%
+ 
+ 
+%% Figure - Haplotype age tree.
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_hap_tree.png}
+  \caption{\textbf{Clustering of haplotypes by age}. @@TODO caption.}
+  \label{fig:tree}
+\end{figure}
+%%
+
+%% Figure - L995F recombination
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_F.png}
+  \caption{\textbf{Recombination and ancestral haplotypes for L995F}. @@TODO legend}
+  \label{fig:recom_f}
+\end{figure}
+%%
+
+
+%% Figure - L995S recombination
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_S.png}
+  \caption{\textbf{Recombination and ancestral haplotypes for L995S}. @@TODO legend}
+  \label{fig:recom_s}
+\end{figure}
+%%
+
+
+%% Figure - L995L recombination
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_L.png}
+  \caption{\textbf{Recombination and ancestral haplotypes for L995L}. @@TODO legend}
+  \label{fig:recom_l}
+\end{figure}
+%%
+
+
+@@TODO
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
