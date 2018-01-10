@@ -69,9 +69,9 @@ In addition to the three known resistance alleles, we describe 20 non-synonymous
 %
 For each novel variant allele we predict a putative resistance phenotype based on genetic evidence for positive selection, patterns of genetic linkage between variants, location of the variant within the protein domain architecture, and functional evidence from other species.
 %
-Thirteen of these novel alleles occur almost exclusively on haplotypes carrying the known L995F resistance allele, and appear to be secondary mutations that may enhance or compensate for the primary resistance phenotype.
+Thirteen of these novel alleles occur almost exclusively on haplotypes carrying the known L995F resistance allele, and appear to be secondary mutations that may enhance or compensate for the L995F resistance phenotype.
 %
-We also report an I1527T substitution which is adjacent to a predicted pyrethroid binding site in the channel molecule, and occurs in tight linkage with either of two alleles causing a V402L substitution, orthologous to a combination of substitutions recently found to cause pyrethroid resistance in Aedes @@TODO.
+We also report an I1527T substitution which is adjacent to a predicted pyrethroid binding site in the channel molecule, and occurs in tight linkage with either of two alleles causing a V402L substitution, orthologous to a combination of substitutions found to cause pyrethroid resistance in several other insect species.
 %
 We then analyse the genetic backgrounds on which known and putative resistance alleles are found, to determine which alleles have experienced recent positive selection, and to refine our understanding of the origins and spread of resistance between species and geographical locations.
 %
@@ -97,7 +97,7 @@ Pyrethroids are still the only class of insecticide approved for use in insectic
 %
 Pyrethroid resistance is, however, now widespread in malaria vector populations across Africa \cite{Hemingway2016}.
 %
-The World Health Organisation (WHO) has published plans for insecticide resistance management (IRM), which highlight the need for improvements in our ability to monitor resistance, and for improvements in our understanding of the molecular mechanisms of resistance \cite{WorldHealthOrganization2012}.
+The World Health Organisation (WHO) has published plans for insecticide resistance management (IRM), which emphasise the need for improvements in our ability to monitor resistance, and for improvements in our understanding of the molecular mechanisms of resistance \cite{WorldHealthOrganization2012}.
 %%
 
 
@@ -162,15 +162,17 @@ Finally, we explore ways in which variation data from Ag1000G could be used to d
 \subsection*{Functional variation}
 
 
-%% Paragraph 1 - Discovery of potentially functional SNPs. I.e., how we came to table 1. What we found there. Reference Ag1000G phase 1 paper, how this paper and results related.
+%% Paragraph 1
 %
-To identify variants with potentially functional roles in pyrethroid resistance, we extracted single nucleotide polymorphisms (SNPs) from the Ag1000G phase 1 data resource that alter the amino acid sequence of the VGSC protein, and computed their allele frequencies among 9 populations defined by species and country of origin.
+To identify variants with a potentially functional role in pyrethroid resistance, we extracted single nucleotide polymorphisms (SNPs) that alter the amino acid sequence of the VGSC protein from the Ag1000G phase 1 data resource.
 %
-Alleles that confer resistance are expected to increase in frequency under selective pressure, and we refined the list of potentially functional variant alleles to retain only those at an appreciable frequency ($\geq$5\%) in one or more populations (Table \ref{table:variants_missense}).
+We then computed their allele frequencies among 9 mosquito populations defined by species and country of origin.
 %
-The resulting list comprises 23 variant alleles, including the known \texttt{L995F}, \texttt{L995S} and \texttt{N1570Y} variants, and a further 20 not previously described in these species.
+Alleles that confer resistance are expected to increase in frequency under selective pressure, and we filtered the list of potentially functional variant alleles to retain only those at or above 5\% frequency in one or more populations (Table \ref{table:variants_missense}).
 %
-We reported 15 of these novel alleles in our initial analysis of the Ag1000G phase 1 data \cite{Ag1000gConsortium2017}, and we extend the analyses here to incorporate a SNP which alters codon 1603 and the tri-allelic SNPs at codons 402 and 490.
+The resulting list comprises 23 variant alleles, including the known \texttt{L995F}, \texttt{L995S} and \texttt{N1570Y} resistance alleles, and a further 20 alleles not previously described in these species.
+%
+We reported 15 of these novel alleles in our global analysis of the Ag1000G phase 1 data resource \cite{Ag1000gConsortium2017}, and we extend the analyses here to incorporate a SNP which alters codon 1603 and two tri-allelic SNPs affecting codons 402 and 490.
 %%
 
 
@@ -199,7 +201,7 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
   \label{table:variants_missense}
   
   \input{tables/variants_missense.tex}
-  (Table \ref{table:variants_missense})
+
   \begin{tablenotes}
     \footnotesize
     
@@ -208,7 +210,6 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
     \item[2] Codon numbering according to \emph{Anopheles gambiae} transcript AGAP004707-RA in geneset AgamP4.4.
     
     \item[3] Codon numbering according to \emph{Musca domestica} EMBL accession X96668 \cite{Williamson1996}.
-    
     
   \end{tablenotes}
   
@@ -221,86 +222,23 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
 %% end Table 1
 
 
-%% Paragraph 2 - Findings for 995 variants. Frequencies. Cite evidence for selection. Clearly main drivers of resistance. Hardy-Weinberg results.
+%% L995F, L995S
+The two known resistance variants affecting codon 995 had the highest overall allele frequencies within the Ag1000G phase 1 cohort.
 %
-The two alleles in codon 995 are clearly the main drivers of resistance at this locus.
-%(Table \ref{table:variants_missense})
-The \texttt{L995F} allele at high frequency in populations of both species from West, Central and Southern Africa, and the \texttt{L995S} allele at high frequency among \textit{An. gambiae} populations from Central and East Africa (Table \ref{table:variants_missense}; \cite{Ag1000gConsortium2017}).
+The \texttt{L995F} allele was at high frequency in populations of both species from West, Central and Southern Africa.
 %
-All haplotypes carrying \texttt{L995F} or \texttt{L995S} have evidence for strong recent positive selection \cite{Ag1000gConsortium2017}.
+The \texttt{L995S} allele was at high frequency among \textit{An. gambiae} populations from Central and East Africa.
 %
-289 samples in the dataset carried $\geq$1 \texttt{L995F} alleles of which 92 were homozygotes and in the case of \texttt{L995S}, 156 samples carried $\geq$1 alternative alleles and of these 38 were homozygotes;
+Both alleles were present in \textit{An. gambiae} populations sampled from Cameroon and Gabon, including some individuals with a hybrid \texttt{L995F/S} genotype (46/275 individuals in Cameroon, 36/56 in Gabon).
 %
-the resistance phenotype at this locus is thought to be incompletely recessive \cite{Chandre2000}.
+In Cameroon these alleles were in Hardy Weinberg equilibrium ($\chi^{2}$ = 0.02, P = @@exact), thus there does not appear to be selection for or against heterozygote carriers of both alleles.
 %
-Both alleles were present in populations sampled from Cameroon and Gabon, including some individuals with a hybrid \texttt{L995F/S} genotype (46/275 samples in Cameroon, 36/56 in Gabon).
-%
-In Cameroon these alleles were in Hardy Weinberg equilibrium ($x^{2}$ = 0.02, p > 0.05), thus there does not appear to be selection for, or against, heterozygote carriers of both alleles; however in Gabon, they were not in equilibrium ($x^{2}$ = 8.96, p < 0.005), with an excess of heterozygotes suggesting there may be a fitness advantage to mosquitoes carrying both alleles in this region.
+However, there was an excess of heterozygotes in Gabon ($\chi^{2}$ = 8.96, P < 0.005), suggesting a fitness advantage for mosquitoes carrying both alleles.
 %%
 
 
-%% Table 2 - Phenotype.
-%
-\afterpage{%
-%\clearpage
-% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
-%\newgeometry{margin=2cm}
-\begin{landscape}
-\thispagestyle{empty}
-\begin{table}[h]
-  \scriptsize
-  \centering
-  \begin{threeparttable}
-
-  \caption{
-%
-\textbf{Phenotype prediction in the voltage-gated sodium channel gene}. 
-}
-
-  \label{table:variants_pheno}
-  
-  \input{tables/variants_pheno.tex}
-  
-  \begin{tablenotes}
-    \footnotesize
-    
-    \item[1] Position of the variant within the protein. \texttt{IN}=internal domain; \texttt{TM}=trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
-    
-    \item[2] Phenotype predictions are based on population genetic evidence and have not been confirmed experimentally.
-    
-    \item[3] Literature search results for experimental evidence, assoc. - association study, \emph{in vitro} - \emph{Xenopus} oocytes.
-    
-    \item[4] Publication from which evidence is taken.
-    
-  \end{tablenotes}
-  
-  \end{threeparttable}
-  
-\end{table}
-\end{landscape}
-%\restoregeometry
-} % end afterpage
-%% end Table 1
-
-
-%% Paragraph 3 - Results for I1527T and V402L.
-%
-The \texttt{I1527T} allele is present in \textit{An. coluzzii} from Burkina Faso at 14\% frequency, and there is evidence that haplotypes carrying this allele have been positively selected \cite{Ag1000gConsortium2017}.
-%% TODO may need to move EHH analyses here to provide evidence for selection if not included in consortial paper.
-%
-Codon 1527 occurs within trans-membrane domain segment \texttt{III.S6}, immediately adjacent to a second predicted binding pocket for pyrethroid molecules, thus it is plausible that \texttt{I1527T} could alter insecticide binding \cite{Dong2014}.
-%
-We also found that the two variant alleles affecting codon 402, both of which induce a \texttt{V402L} substitution, were in strong linkage with \texttt{I1527T} (D' $\geq$ 0.8; Figure \ref{fig:ld}), and almost all haplotypes carrying \texttt{I1527T} also carried a \texttt{V402L} substitution.
-%
-The most parsimonious explanation for this pattern of linkage is that the \texttt{I1527T} mutation occurred first, and mutations in codon 402 subsequently arose on this genetic background.
-%
-Codon 402 also occurs within a trans-membrane segment (\texttt{I.S6}), and the \texttt{V402L} substitution has associated with pyrethroid resistance in bedbugs \cite{Yoon2008}.
-%
-Other substitutions at this locus have also been associated with resistance, \texttt{V402A/G} in the moth crop pests \emph{Helicoverpa zea} \cite{Hopkins2010} and \texttt{V402M} in \emph{Heliothis virescens}, the latter of which has been shown experimentally to confer resistance in \textit{Xenopus} oocytes \cite{Park1997, Lee2013}.
-%
-However, because \texttt{V402L} appears secondary to \texttt{I1527T} in our cohort, we classify \texttt{I1527T} as a putative resistance driver and \texttt{V402L} as a putative enhancer.
-%
-Because of the limited geographical distribution of these alleles, we hypothesize that the \texttt{I1527T+V402L} combination represents a pyrethroid resistance allele that arose in West African \textit{An. coluzzii} populations; however, the \texttt{L995F} allele is at higher frequency (85\%) in our Burkina Faso \textit{An. coluzzii} population, and is known to be increasing in frequency \cite{Toe2014}, therefore \texttt{L995F} may provide a stronger resistance phenotype and is replacing \texttt{I1527T+V402L}.
+% I'm not clear on what this is saying, so have commented out for now. I.e., why do we report these data, what do they show? Do they support the hypothesis that the resistance phenotype is incompletely recessive? If so, can we make this clearer?
+%289 samples in the dataset carried $\geq$1 \texttt{L995F} alleles of which 92 were homozygotes and in the case of \texttt{L995S}, 156 samples carried $\geq$1 alternative alleles and of these 38 were homozygotes; the resistance phenotype at this locus is thought to be incompletely recessive \cite{Chandre2000}.
 %%
 
 
@@ -320,29 +258,73 @@ Because of the limited geographical distribution of these alleles, we hypothesiz
 %%
 
 
-%% Paragraph 4 - L995F enhancers.
+%% N1570Y
 %
-Of the other 16 SNPs, 13 occurred almost exclusively in combination with \texttt{L995F} (Figure \ref{fig:ld}; \cite{Ag1000gConsortium2017}).
+The N1570Y resistance variant was present in Guinea, Burkina Faso (both species) and Cameroon.
 %
-These include the \texttt{N1570Y} allele, known to enhance pyrethroid resistance in \textit{An. gambiae} in combination with \texttt{L995F} \cite{Jones2012} and also two variants in codon 1874 (\texttt{P1874S}, \texttt{P1874L}). 
+This variant has been shown to increase pyrethroid resistance in \textit{An. gambiae}, however it has only ever been found in association with \texttt{L995F}.
 %
-\texttt{P1874S} has previously been found in a colony of the crop pest \textit{Plutella xylostella} with a pyrethroid resistance phenotype, but has not been shown to confer resistance experimentally \cite{Sonoda2008}.
+Codon 1570 occurs within an internal linker domain of the protein, and so cannot directly affect the binding between pyrethroid molecules and the membrane channel.
 %
-10 of these variants, including \texttt{N1570Y} and \texttt{P1874S/L}, occur within internal linker domains of the protein, and so fit the model of variants that may enhance or compensate for the driver phenotype by modifying channel gating behaviour \cite{Smith1997, Jones2012}.
+Thus it has been suggested that \texttt{N1570Y} either enhances or compensates for the \texttt{L995F} phenotype, possibly by altering the channel gating properties @@REF.
 %
-The remaining 3 variants are within trans-membrane domains, and so may enhance resistance by altering or interacting with the insecticide binding sites on the VGSC \cite{Dong2014}.
+To study the patterns of association among non-synonymous variants, we used haplotypes from the Ag1000G phase 1 resource to compute the normalised coefficient of linkage disequilibrium ($D'$) between all pairs of variant alleles (Figure \ref{fig:ld}).
 %
-Because of the tight linkage between these 13 SNPs and the \texttt{L995F} allele, we classify all as putative \texttt{L995F} enhancers, although experimental work is required to confirm a resistance phenotype.
+As expected, we found \texttt{N1570Y} in almost perfect LD with \texttt{L995F}, meaning that \texttt{N1570Y} was only ever found on haplotypes also carrying \texttt{L995F}.
 %%
 
-%% Paragraph 5 - Other high frequency variants we think are probably not resistance variants and why.
+
+%% Novel alleles linked to L995F.
 %
-The remaining 3 variants (\texttt{M490I}, \texttt{A1125V}, \texttt{V1254I}) do not occur in combination with any known resistance allele, and do not appear to be associated with haplotypes under selection \cite{Ag1000gConsortium2017}
+Of the 20 novel alleles, 13 also occurred almost exclusively in combination with L995F, exhibiting the same LD pattern as \texttt{N1570Y} (Figure \ref{fig:ld}).
 %
-A possible exception is the \texttt{M490I} allele found at 18\% frequency in the Kenyan population, although the fact that this population has experienced a recent population crash makes it difficult to test for evidence of selection at this locus.
+These included two variants in codon 1874 (\texttt{P1874S}, \texttt{P1874L}).
 %
-All 3 variants occur in internal linker domains, and so do not fit the model of a resistance driver, again experimental work is required to rule out a resistance phenotype.
+P1874S has previously been found in a colony of the crop pest \textit{Plutella xylostella} with a pyrethroid resistance phenotype, but has not been experimentally shown to confer resistance @@REF.
 %
+The abundance of high-frequency non-synonymous variants occurring in combination with \texttt{L995F} is striking for two reasons.
+%
+First, \textit{Vgsc} is a highly conserved gene, expected to be under strong functional constraint and therefore purifying selection @@REF.
+%
+Second, in contrast with \texttt{L995F}, we did not observe any high-frequency non-synonymous variants occuring in combination with \texttt{L995S}.
+%
+This contrast was highly significant -- incorporating data for all variants found within the gene, the ratio of non-synonymous to synonymous nucleotide diversity (@@piN/piS) was @@N times higher among haplotypes carrying L995F relative to haplotypes carrying L995S (@@Test; P = @@).
+%
+These results indicate that \texttt{L995F} has substantially altered the selective regime for other amino acid positions within the protein.
+%
+A number of secondary substitutions have occurred and risen in frequency, and are likely to be providing some selective advantage in the presence of insecticide pressure.
+%%
+
+
+%% I1527T and V402L.
+%
+The \texttt{I1527T} allele was present in \textit{An. coluzzii} from Burkina Faso at 14\% frequency.
+%
+Codon 1527 occurs within trans-membrane domain segment \texttt{III.S6}, immediately adjacent to a second predicted binding pocket for pyrethroid molecules, thus it is plausible that \texttt{I1527T} could alter insecticide binding \cite{Dong2014}.
+%
+We also found that the two variant alleles affecting codon 402, both of which induce a \texttt{V402L} substitution, were in strong linkage with \texttt{I1527T} (D' $\geq$ 0.8; Figure \ref{fig:ld}), and almost all haplotypes carrying \texttt{I1527T} also carried a \texttt{V402L} substitution.
+%
+The most parsimonious explanation for this pattern of linkage is that the \texttt{I1527T} mutation occurred first, and mutations in codon 402 subsequently arose on this genetic background or recombined with it.
+%
+Codon 402 also occurs within a trans-membrane segment (\texttt{I.S6}), and the \texttt{V402L} substitution has been independently associated with pyrethroid resistance in bedbugs \cite{Yoon2008}.
+%
+Other substitutions at this locus have also been associated with resistance, \texttt{V402A/G} in the moth crop pests \emph{Helicoverpa zea} \cite{Hopkins2010} and \texttt{V402M} in \emph{Heliothis virescens}, the latter of which has been shown experimentally to confer resistance in \textit{Xenopus} oocytes \cite{Park1997, Lee2013}.
+%
+@@TODO Aedes combination.
+%
+Because of the limited geographical distribution of these alleles, we hypothesize that the \texttt{I1527T+V402L} combination represents a pyrethroid resistance allele that arose in West African \textit{An. coluzzii} populations.
+%
+However, the \texttt{L995F} allele is at higher frequency (85\%) in our Burkina Faso \textit{An. coluzzii} population, and is known to be increasing in frequency \cite{Toe2014}, therefore \texttt{L995F} may provide a stronger resistance phenotype and is replacing \texttt{I1527T+V402L}.
+%%
+
+
+%% Other novel variants.
+%
+The remaining 4 novel alleles (two causing \texttt{M490I}; \texttt{A1125V}; \texttt{V1254I}) do not occur in combination with any known resistance allele.
+%
+All are private to a single population, and (to our knowledge) none have previously been found in other species.
+%
+All occur within internal linker domains of the protein and are therefore unlikely to directly cause resistance, discussed further below.
 %%
 
 
@@ -574,6 +556,57 @@ This region of divergence accounts for the S4/S5 split in earlier analyses (Figu
 %
 @@TODO also note relatively low divergence among F2, F3, F4 on upstream flank and explain
 %%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Prediction of putative resistance phenotype}
+
+
+@@TODO collect all material related to resistance phenotype prediction here, after we have results from analyses of selection.
+
+
+%% Table 2 - Phenotype.
+%
+\afterpage{%
+%\clearpage
+% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
+%\newgeometry{margin=2cm}
+\begin{landscape}
+\thispagestyle{empty}
+\begin{table}[h]
+  \scriptsize
+  \centering
+  \begin{threeparttable}
+
+  \caption{
+%
+\textbf{Phenotype prediction in the voltage-gated sodium channel gene}. 
+}
+
+  \label{table:variants_pheno}
+  
+  \input{tables/variants_pheno.tex}
+  
+  \begin{tablenotes}
+    \footnotesize
+    
+    \item[1] Position of the variant within the protein. \texttt{IN}=internal domain; \texttt{TM}=trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
+    
+    \item[2] Phenotype predictions are based on population genetic evidence and have not been confirmed experimentally.
+    
+    \item[3] Literature search results for experimental evidence, assoc. - association study, \emph{in vitro} - \emph{Xenopus} oocytes.
+    
+    \item[4] Publication from which evidence is taken.
+    
+  \end{tablenotes}
+  
+  \end{threeparttable}
+  
+\end{table}
+\end{landscape}
+%\restoregeometry
+} % end afterpage
+%% end Table 1
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
