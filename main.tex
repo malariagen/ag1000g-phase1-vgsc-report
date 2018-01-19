@@ -349,7 +349,7 @@ Conversely, if the same resistance allele is found on different genetic backgrou
 %
 In our global analysis of the Ag1000G phase 1 resource \cite{Ag1000gConsortium2017}, we used 1710 biallelic SNPs from within the 73.5 kbp \textit{Vgsc} gene (@@N exonic, @@N intronic) to compute the number of SNP differences between all pairs of 1530 haplotypes derived from the 765 wild-caught mosquitoes in the phase 1 cohort.
 %
-We then used the pairwise genetic distances to perform hierarchical clustering, and found that haplotypes carrying resistance alleles in codon \texttt{995} were grouped into 10 distinct clusters of near-identical haplotypes.
+We then used pairwise genetic distances to perform hierarchical clustering, and found that haplotypes carrying resistance alleles in codon \texttt{995} were grouped into 10 distinct clusters of near-identical haplotypes.
 %
 Five of these clusters carried the \texttt{L995F} allele (labelled F1-F5), and a further five clusters carried \texttt{L995S} (labelled S1-S5).
 %
@@ -387,7 +387,7 @@ Many of the nodes carrying secondary variants are large, consistent with positiv
 %
 The F1 network also allows us to infer multiple introgression events between the two species.
 %
-The central (putatively ancestral) node comprises haplotypes from both species, as do nodes carrying the \texttt{N1570Y}, \texttt{P1874L}, and \texttt{T791M}.
+The central (putatively ancestral) node comprises haplotypes from both species, as do nodes carrying the \texttt{N1570Y}, \texttt{P1874L} and \texttt{T791M} variants.
 %
 This structure is consistent with an initial introgression of the ancestral F1 haplotype, followed later by introgressions of haplotypes carrying secondary mutations.
 %
@@ -423,33 +423,17 @@ In particular, recombination events could occur during the geographical spread o
 %
 An analysis based on a fixed genomic window might then fail to infer gene flow between two mosquito populations, because the calculation of genetic distances does not account for recombination events, and thus haplotypes with and without the recombination event could be grouped separately.
 %
-To investigate the possibility that recombination events may have affected our findings regarding the genetic backgrounds carrying resistance alleles, we developed two further analyses.
+To investigate the possibility that recombination events may have affected our findings regarding the genetic backgrounds carrying resistance alleles, we performed a windowed analysis of haplotype homozygosity, spanning \textit{Vgsc} and up to a megabase upstream and downstream of the gene (Supplementary Figs. \ref{fig:mhh_f}, \ref{fig:mhh_s}).
 %
-In the first analysis, we performed a moving window analysis of genetic distance between haplotypes, spanning \textit{Vgsc} and up to a megabase upstream and downstream of the gene (Supplementary Figure @@).
+This analysis supported a refinement of our initial classification of genetic backgrounds carrying resistance alleles.
 %
-In the second analysis, we inferred putative recombination breakpoints on either side of \textit{Vgsc} codon 995 between all pairs of haplotypes, then clustered haplotypes by the length of the genomic segment between these breakpoints (i.e., the length of the region shared identical-by-descent (IBD)) (Supplementary Figure @@).
+All haplotypes within clusters S4 and S5 were effectively identical on both the upstream and downstream flanks of the gene, but there was a short region of divergence within the \textit{Vgsc} gene itself that separated them in the fixed window analyses (Supplementary Fig. \ref{fig:mhh_s}).
 %
-%%
-
-%%
-%
-These further analyses both supported some refinements of our initial classification of genetic backgrounds carrying resistance alleles.
-%
-We found that haplotypes in clusters S4 and S5 were mixed together when clustered by IBD length.
-%
-The moving window analysis of genetic distance showed that all haplotypes within these two clusters were effectively identical on both the upstream and downstream flanks of the gene, but there was a short region of divergence within the gene itself that separated them in the fixed window analyses (Supplementary Figure @@).
-%
-A possible explanation for this pattern of divergence is that a gene conversion event has occurred within the gene, bringing a short segment from a different genetic background onto the original genetic background on which the \texttt{L995S} resistance mutation occurred.
+A possible explanation for this small region of divergence is that a gene conversion event has occurred within the gene, bringing a short segment from a different genetic background onto the original genetic background on which the \texttt{L995S} resistance mutation occurred.
 %
 For the remainder of this paper we combine S4 and S5 into a single cluster labelled S4/5.
 %
 All haplotypes in S4/5 were sampled from Cameroon, and thus considering this as a single genetic background does not imply any new gene flow events.
-%
-We also found that all haplotypes carrying the \texttt{I1527T} allele were grouped together when clustered by IBD length (cluster L1 in Supplementary Figure @@), which was not the case in fixed window analyses of the \textit{Vgsc} gene (data not shown).
-%
-The moving window analysis showed that haplotypes within the L1 cluster were all nearly identical on the downstream flank of the gene, but separated into multiple clusters on the upstream flank.
-%
-The change in genetic distance occurred between the \texttt{I1527T} and \texttt{V402L} codons, and we know that \texttt{I1527T} occurs in combination with two separate nucleotide substitutions causing \texttt{V402L}, thus the data are consistent with one or both of the \texttt{V402L} alleles having been brought together with an ancestral haplotype carrying \texttt{I1527T} via crossover recombination events.
 %
 %%
 
@@ -802,19 +786,6 @@ Non-synonymous edges were highlighted using the SnpEff annotations \cite{Cingola
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{IBD}
-
-%
-IBD. @@TODO - AM
--Length of shared haplotype and number of mutations between them are informative of age…
--Pairwise t values were hierarchically clustered and visualised as a dendrogram using the Python library Scipy and its cluster hierarchy functions linkage method.
--Cutting the dendrogram at @@generations clustered haplotypes together into haplogroups…
-- Naming of haplogroups with reference to Ag1000g...
--dendro figure/distro figures/map - Python libraries...
-%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{Recombination}
 
 %
@@ -837,62 +808,36 @@ Recombination. @@TODO - AM - Absolute divergence dxy...
 Tagging SNPs. @@TODO - AM
 %%
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{table}{0}
+\renewcommand{\thetable}{S\arabic{table}}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{S\arabic{figure}}
 \section*{Supplementary figures}
 
-
-%% Figure - Overall haplotype age distribution.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/haplotype_age_dist.pdf}
-  \caption{\textbf{Haplotype IBD distribution}. @@TODO caption.}
-  \label{fig:age_hist}
-\end{figure}
-%%
- 
- 
-%% Figure - Haplotype age tree.
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_hap_tree.png}
-  \caption{\textbf{Clustering of haplotypes by age}. @@TODO caption.}
-  \label{fig:tree}
-\end{figure}
-%%
+\clearpage
 
 %% Figure - L995F recombination
 %
 \begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_F.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995F}. @@TODO legend}
-  \label{fig:recom_f}
+  \includegraphics[width=1.1\linewidth,center]{artwork/mhh_F.pdf}
+  \caption{\textbf{Windowed analysis of haplotype homozygosity for genetic backgrounds carrying the \texttt{L995F} allele}. Each sub-plot shows the fraction of haplotype pairs that are identical within half-overlapping moving windows of 1000 SNPs. Each sub-plot in the left-hand column shows homozygosity for haplotype pairs within one of the haplotype clusters identified by the hierarchical clustering and network analyses. Sub-plots in the central and right-hand columns show homozygosity for haplotype pairs between two haplotype clusters. If two haplotype clusters are truly unrelated, haplotype homozygosity between them should be close to zero across the whole genome region. Dashed vertical lines show the location of the \textit{Vgsc} gene.}
+  \label{fig:mhh_f}
 \end{figure}
 %%
 
+\clearpage
 
 %% Figure - L995S recombination
 %
 \begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_S.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995S}. @@TODO legend}
-  \label{fig:recom_s}
+  \includegraphics[width=1.1\linewidth,center]{artwork/mhh_S.pdf}
+  \caption{\textbf{Windowed analysis of haplotype homozygosity for genetic backgrounds carrying the \texttt{L995S} allele}. See Supplementary Fig. \ref{fig:mhh_f} for explanation. Haplotype homozygosity is high between clusters S4 and S5 on both flanks of the gene, indicating that haplotypes from both clusters are in fact closely related.}
+  \label{fig:mhh_s}
 \end{figure}
 %%
 
-
-%% Figure - L995L recombination
-%
-\begin{figure}[!b]
-  \includegraphics[width=1.1\linewidth,center]{artwork/fig_recom_L.png}
-  \caption{\textbf{Recombination and ancestral haplotypes for L995L}. @@TODO legend}
-  \label{fig:recom_l}
-\end{figure}
-%%
-
-
-@@TODO
-
+\clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
