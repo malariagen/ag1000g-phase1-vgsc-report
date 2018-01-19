@@ -2,7 +2,7 @@ digraph {
 	graph [mode=major overlap=true sep=0 splines=true]
 	0 [label="" fillcolor=palegreen fixedsize=true fontname=monospace fontsize=None shape=circle style=filled width=0.0707106781187]
 	1 [label="" fillcolor=palegreen fixedsize=true fontname=monospace fontsize=None shape=circle style=filled width=0.65192024052]
-	2 [label="" fillcolor="palegreen;0.6106870229007634:grey47;0.3893129770992366" fixedsize=true fontname=monospace fontsize=None shape=circle style=wedged width=0.809320702812]
+	2 [label="" fillcolor="grey47;0.3893129770992366:palegreen;0.6106870229007634" fixedsize=true fontname=monospace fontsize=None shape=circle style=wedged width=0.809320702812]
 	3 [label="" fillcolor=palegreen fixedsize=true fontname=monospace fontsize=None shape=circle style=filled width=0.0707106781187]
 	4 [label="" fillcolor=palegreen fixedsize=true fontname=monospace fontsize=None shape=circle style=filled width=0.25495097568]
 	5 [label="" fillcolor=palegreen fixedsize=true fontname=monospace fontsize=None shape=circle style=filled width=0.0707106781187]
