@@ -272,9 +272,9 @@ The N1570Y resistance variant was present in Guinea, Burkina Faso (both species)
 %
 This variant has been shown to increase pyrethroid resistance in \textit{An. gambiae}, however it has only ever been found in association with \texttt{L995F}.
 %
-Codon 1570 occurs within an internal linker domain of the protein, and so cannot directly affect the binding between pyrethroid molecules and the membrane channel.
+Codon 1570 occurs within an internal linker domain of the protein, and so cannot directly affect the binding between pyrethroid molecules and the membrane channel \cite{Jones2012}.
 %
-Thus it has been suggested that \texttt{N1570Y} either enhances or compensates for the \texttt{L995F} phenotype, possibly by altering the channel gating properties \cite{Jones2012}.
+However, it has been experimentally demonstrated that \texttt{N1570Y} enhances the \texttt{L995F} resistance phenotype, by allosteric interaction \cite{Wang2015}.
 %
 To study the patterns of association among non-synonymous variants, we used haplotypes from the Ag1000G phase 1 resource to compute the normalised coefficient  of linkage disequilibrium ($D'$) between all pairs of variant alleles (Figure \ref{fig:ld}).
 %
@@ -390,7 +390,7 @@ The haplotype networks bring into sharp relief the explosive radiation of amino 
 %
 Within the F1 network, nodes carrying non-synonymous variants radiate out from a central node carrying only \texttt{L995F}, suggesting that the central node represents the ancestral haplotype carrying \texttt{L995F} alone which initially came under selection, and these secondary variants have arisen subsequently as new mutations.
 %
-Many of the nodes carrying secondary variants are large, consistent with positive selection and a functional role for these secondary variants as modifiers of the \texttt{L995F} resistance phenotype (Table \ref{table:variants_pheno}).
+Many of the nodes carrying secondary variants are large, consistent with positive selection and a functional role for these secondary variants as modifiers of the \texttt{L995F} resistance phenotype, such as \texttt{N1570Y} has been experimentally shown to be \cite{Wang2015}. 
 %
 The F1 network also allows us to infer multiple introgression events between the two species.
 %
@@ -626,12 +626,24 @@ Nevertheless, it is possible that some if not all of the alleles we have reporte
 
 %%
 %
-...with the evidence for selection on Anopheles haplotypes, knowledge of the gene structure and evidence from other systems we can begin to predict resistance phenotypes for novel non-synonymous variants...
+Both indirect (clustering, networks) and direct evidence (EHH) for selection on \textit{Vgsc} haplotypes we detected, can be used in concert with knowledge of the gene's structure, linkage of variants, and evidence of phenotypes from both \textit{Anopheles} and other insect systems, to predict putative resistance phenotypes for the novel non-synonymous variants detected.
+%
+These predictions could help define relationships between newly detected variants and prioritise assay design for molecular tracking of variants/haplotypes in the field.
+%
+To explore this potential for predication, we divide the resistance phenotypes into known (experimentally shown) and putative, and divide the causative variants into phenotype drivers or enhancers.
+%
+Driver variants occur on haplotypes first, initiating the resistance phenotype and starting the selective sweep. 
+%
+Experimentally established resistance variants \texttt{L995F}, \texttt{L995S} in \textit{An. gambiae} and \texttt{V402L} in \textit{A. aegypti} (\textit{An. gambiae} codon numbering) are examples of known driver variants (Table \ref{table:variants_pheno}). 
+%
+Enhancer variants occur on haplotypes already undergoing selective sweeps due to driver variants, these enhancer variants either increase the resistant phenotype above that of the driver variants alone, or ameliorate fitness costs of carrying a driver. 
+%
+The \texttt{N1570Y} variant, which has only been found on haplotypes carrying \texttt{L995F} and, using \textit{Xenopus} oocytes, has been shown to produce an increased resistance phenotype only when paired with \texttt{L995F} \cite{Wang2015}, is thus classed as an enhancer variant (Table \ref{table:variants_pheno}). 
+%
 %%
-See Table 2
 
-@@TODO collect all material related to resistance phenotype prediction here, after we have results from analyses of selection.
 
+%we have described all the mutations in detail in the first part of the results section. I'm not sure what to add now to justify table 2 inclusion here? 
 
 %% Table 2 - Phenotype.
 %
@@ -678,7 +690,13 @@ See Table 2
 
 
 
-@@TODO
+
+
+
+
+
+
+
 
 
 \section*{Legacy Discussion Points/ Discussion Sandbox}
@@ -687,13 +705,9 @@ See Table 2
 
 @@TODO HW disequilibrium in Gabon - what might be happening here?
 
-@@TODO Discuss accessibility, have we missed any functional variation?
 
 @@TODO Speculate on why \texttt{L995F} but not \texttt{L995S} has evolved secondary variation.
 
-@@TODO What about DDT? If prior selection for DDT resistance, how might this complicate the picture? Do we see any evidence for multiple phases of selection?
-
-@@TODO Discuss weaknesses, caveats and potential improvements to method for estimating haplotype age.
 
 @@TODO What are the implications for insecticide resistance management? Realistically how could this information be used?
 
