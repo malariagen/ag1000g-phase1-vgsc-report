@@ -422,7 +422,7 @@ However, the presence of haplotypes from two different countries within the same
 
 %%
 %
-A limitation of both the hierarchical clustering and network analyses is that they rely on genetic distances within the fixed genomic window from the start to the end of the \textit{Vgsc} gene.
+A limitation of both the hierarchical clustering and network analyses is that they rely on genetic distances within a fixed genomic window from the start to the end of the \textit{Vgsc} gene.
 %
 \textit{Anopheles} mosquitoes undergo homologous recombination during meiosis in both males and females, and any recombination events that occurred within this genomic window could affect the way that haplotypes are grouped together in clusters or networks.
 %
@@ -434,13 +434,13 @@ To investigate the possibility that recombination events may have affected our f
 %
 This analysis supported a refinement of our initial classification of genetic backgrounds carrying resistance alleles.
 %
-All haplotypes within clusters S4 and S5 were effectively identical on both the upstream and downstream flanks of the gene, but there was a short region of divergence within the \textit{Vgsc} gene itself that separated them in the fixed window analyses (Supplementary Fig. \ref{fig:mhh_s}).
+All haplotypes within clusters S4 and S5 were effectively identical on both the upstream and downstream flanks of the gene, but there was a region of divergence within the \textit{Vgsc} gene itself that separated them in the fixed window analyses (Supplementary Fig. \ref{fig:mhh_s}).
 %
-A possible explanation for this small region of divergence is that a gene conversion event has occurred within the gene, bringing a short segment from a different genetic background onto the original genetic background on which the \texttt{L995S} resistance mutation occurred.
+The 13.8 kbp region occurred upstream of codon 995 and contained 8 SNPs that were fixed differences between S4 and S5. 
 %
-For the remainder of this paper we combine S4 and S5 into a single cluster labelled S4/5.
+A possible explanation for this short region of divergence is that a gene conversion event has occurred within the gene, bringing a short segment from a different genetic background onto the original genetic background on which the \texttt{L995S} resistance mutation occurred.
 %
-All haplotypes in S4/5 were sampled from Cameroon, and thus considering this as a single genetic background does not imply any new gene flow events.
+All haplotypes in clusters S4 and S5 were sampled from Cameroon, and thus considering this as a single genetic background does not imply any new gene flow events.
 %
 %%
 
@@ -457,7 +457,7 @@ We defined a core region spanning \textit{Vgsc} codon 995 and an additional 4 kb
 %
 Within this core region, we found 18 distinct haplotypes at a frequency above 1\% within the cohort.
 %
-These included core haplotypes corresponding to each of the 9 genetic backgrounds carrying \texttt{L995F} and \texttt{L995S} alleles identified above, as well as a core haplotype corresponding to the L1 background carrying \texttt{I1527T+V402L}.
+These included core haplotypes corresponding to each of the 9 genetic backgrounds carrying \texttt{L995F} and \texttt{L995S} alleles identified above, as well as a core haplotype corresponding to the L1 background carrying \texttt{I1527T} combined with either of the two \texttt{V402L} alleles.
 %
 We also found a core haplotype corresponding to a cluster of haplotypes from Kenya carrying an \texttt{M490I} allele, which we labelled as L2.
 %
@@ -471,7 +471,7 @@ We then computed EHH decay for each core haplotype up to a megabase upstream and
 %% Figure - EHH decay
 %
 \begin{figure}[!t]
-  \includegraphics[width=1.1\linewidth,center]{artwork/ehh_decay.pdf}
+  \includegraphics[width=1.1\linewidth,center]{artwork/ehh_decay_old_clusters.pdf}
   \caption{\textbf{Evidence for positive selection on haplotypes carrying known or putative resistance alleles}. Each panel plots the decay of extended haplotype homozygosity (EHH) for a set of core haplotypes centred on \textit{Vgsc} codon 995. Core haplotypes F1-F5 carry the \texttt{L995F} allele; S1-S4/5 carry the \texttt{L995S} allele; L1 carries the \texttt{I1527T} allele; L2 carries the \texttt{M490I} allele. Wild-type (wt) haplotypes do not carry any of these alleles. A slower decay of EHH relative to wild-type haplotypes implies positive selection (each panel plots the same collection of wild-type haplotypes).}
   \label{fig:ehh_decay}
 \end{figure}
@@ -482,13 +482,20 @@ We then computed EHH decay for each core haplotype up to a megabase upstream and
 %
 As expected, haplotypes carrying the \texttt{L995F} and \texttt{L995S} resistance alleles all experience a dramatically slower decay of EHH relative to wild-type haplotypes, confirming positive selection.
 %
-Previous studies have found evidence for different rates of EHH decay between \texttt{L995F} and \texttt{L995S} haplotypes, which could be due to differences in haplotype ages and/or selection coefficients.
+Previous studies have found evidence for different rates of EHH decay between \texttt{L995F} and \texttt{L995S} haplotypes,
+suggesting differences in the timing and/or strength of selection @@REF.
 %
-However, we found no significant difference in EHH decay between these two alleles (@@TODO data).
+However, we found no systematic difference in the length of shared haplotypes when comparing F1-5 (carrying \texttt{L995F}) against S1-5 (carrying \texttt{L995S}) (Supplementary Fig. \ref{fig:pspd}).
+%
+There were, however, some differences between core haplotypes carrying the same allele.
+%
+For example, shared haplotypes were significantly longer for S1 (median 1.091 cM, 95\% CI [1.076 - 1.091]) versus other core haplotypes carrying \texttt{L995S} (e.g., S2 median 0.699 cM, 95\% CI [0.696 - 0.705]; Supplementary Fig. \ref{fig:pspd}).
+%
+Longer shared haplotypes indicate a more recent common ancestor, and thus some of these core haplotypes may have experienced more recent and/or more intense selection than others.
 %
 The L1 haplotype carrying \texttt{I1527T+V402L} exhibited a slow decay of EHH on the downstream flank of the gene, similar to haplotypes carrying \texttt{L995F} and \texttt{L995S}, indicating that this combination of alleles has experienced positive selection.
 %
-EHH decay on the upstream gene flank was faster, being similar to wild-type haplotypes, however we know from the analyses described above that there is evidence for recombination between \texttt{I1527T} and \texttt{V402L} within this group of haplotypes, and thus a faster decay of EHH is expected upstream of the core locus. 
+EHH decay on the upstream gene flank was faster, being similar to wild-type haplotypes, however there are two separate nucleotide substitutions encoding \texttt{V402L} within this group of haplotypes, and a faster EHH decay on this flank is consistent with recombination events bringing \texttt{V402L} alleles from different genetic backgrounds together with an ancestral haplotype carrying \texttt{I1537T}. 
 %
 The L2 haplotype carrying \texttt{M490I} exhibited EHH decay intermediate between wild-type haplotypes and haplotypes carrying known resistance alleles.
 %
@@ -868,6 +875,18 @@ Tagging SNPs. @@TODO - AM
   \includegraphics[width=1.1\linewidth,center]{artwork/mhh_S.pdf}
   \caption{\textbf{Windowed analysis of haplotype homozygosity for genetic backgrounds carrying the \texttt{L995S} allele}. See Supplementary Fig. \ref{fig:mhh_f} for explanation. Haplotype homozygosity is high between clusters S4 and S5 on both flanks of the gene, indicating that haplotypes from both clusters are in fact closely related.}
   \label{fig:mhh_s}
+\end{figure}
+%%
+
+
+\clearpage
+
+%% Figure - haplotype sharing
+%
+\begin{figure}[!b]
+  \includegraphics[width=1.1\linewidth,center]{artwork/clusters_compare_pspd.pdf}
+  \caption{\textbf{TODO}. TODO.}
+  \label{fig:pspd}
 \end{figure}
 %%
 
