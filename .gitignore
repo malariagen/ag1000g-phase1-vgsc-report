@@ -1,6 +1,6 @@
 
 # installed software
-dependencies
+deps
 
 # snakemake
 .snakemake
