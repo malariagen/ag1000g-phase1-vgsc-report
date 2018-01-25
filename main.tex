@@ -758,13 +758,13 @@ A map of equivalent codon numbers between the two species for the entire gene ca
 %
 Haplotypes for each chromosome of each sample were estimated (phased) using using phase informative reads (PIRs) and SHAPEIT2 v2.r837 \cite{Delaneau2013}, see \cite{Ag1000gConsortium2017} supplementary text for more details.
 %
-The SHAPEIT2 algorithm is unable to phase multi-allelic positions, therefore the two multi-allelic non-synonymous SNPs within the \emph{Vgsc} gene (>5\% ALT frequency in at least one population), altering codons \texttt{V402} and \texttt{M490}, were phased onto the haplotypes using MVNcall v1.0 \cite{Menelaou2013}.
+The SHAPEIT2 algorithm is unable to phase multi-allelic positions, therefore the two multi-allelic non-synonymous SNPs within the \emph{Vgsc} gene, altering codons \texttt{V402} and \texttt{M490}, were phased onto the haplotypes using MVNcall v1.0 \cite{Menelaou2013}.
 %
 Conservative filtering had removed one of the three known insecticide resistance conferring kdr variants, \texttt{N1570Y} \cite{Jones2012}.
 %
 After manual inspection of the read alignment revealed that the SNP call could be confidently made, it was added back into the data set and then also phased onto the haplotypes using MVNcall.
 %
-Lewontin's $D'$ was used to compute the linkage disequilibrium (LD) between all pairs of non-synonymous \emph{Vgsc} mutations.
+Lewontin's $D'$ \cite{Lewontin1964} was used to compute the linkage disequilibrium (LD) between all pairs of non-synonymous \emph{Vgsc} mutations.
 %%
 
 
@@ -772,42 +772,35 @@ Lewontin's $D'$ was used to compute the linkage disequilibrium (LD) between all 
 \subsection*{Haplotype networks}
 
 %
-Discerning the relationships between similar haplotypes can be difficult when using bifurcating trees as, inherently, the distance between the leaves at the tips (haplotypes) will be small.
-%
-As these relationships may be informative of the history of selection, we utilised a network approach to elucidate them.
-%
-We constructed haplotype networks using the median-joining algorithm \cite{Bandelt1999} as implemented in a custom Python script available from \url{https://github.com/malariagen/agam-vgsc-report}.
+Haplotype networks were constructed using the median-joining algorithm \cite{Bandelt1999} as implemented in a Python module available from \url{https://github.com/malariagen/agam-vgsc-report}.
 %
 Haplotypes carrying either \texttt{L995F} or \texttt{L995S} mutations were analysed with a maximum edge distance of two SNPs, to ensure networks contained haplotypes with recent common ancestors.
 %
-Networks were rendered with the graphviz library and a composite figure constructed using Inkscape.
+Networks were rendered with the Graphviz library and a composite figure constructed using Inkscape.
 %
 Non-synonymous edges were highlighted using the SnpEff annotations \cite{Cingolani2012}.
 %%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{MHH}
+\subsection*{Positive selection}
 
-%
-Dxy @@TODO AM
 %%
-
+Core haplotypes were defined on a 6,078 bp region spanning \textit{Vgsc} codon 995, from chromosome arm 2L position 2,420,443 and ending at position 2,426,521. 
+%
+This region was chosen as it was the smallest region sufficient to differentiate between the ten genetic backgrounds carrying either of the known resistance alleles \texttt{L995F} or \texttt{L995S}.
+%
+Extended haplotype homozygosity (EHH) was computed for all core haplotypes as described in \cite{Sabeti2002} using scikit-allel \cite{Miles2016}, excluding non-synonymous and singleton SNPs.
+%
+Analyses of haplotype homozygosity in moving windows (Supplementary Figs. \ref{fig:mhh_f}, \ref{fig:mhh_s}) and pairwise haplotype sharing (Supplementary Fig. \ref{fig:pspd}) were performed using custom Python code available from \url{https://github.com/malariagen/agam-vgsc-report}.
+%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{EHH}
+\subsection*{Genetic assays for surveillance of pyrethroid resistance}
 
-%
-EHH @@TODO AM
 %%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Haplotype tagging SNPs}
-
+@@TODO
 %
-Tagging SNPs. @@TODO - AM
-%%
 
 
 
