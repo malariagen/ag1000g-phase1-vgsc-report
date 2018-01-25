@@ -515,92 +515,6 @@ This could indicate evidence for selection on the \texttt{M490I} allele, however
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Design of genetic assays for surveillance of pyrethroid resistance}
-
-%%
-%
-Entomological surveillance teams in Africa do regularly genotype mosquitoes for resistance alleles in \textit{Vgsc} codon 995, and use those results as an indicator for the presence of pyrethroid resistance alongside results from insecticide resistance bioassays.
-%
-They typically do not, however, sequence the gene or genotype any other polymorphisms within the gene.
-%
-Thus if there are other polymorphisms within the gene that cause or significantly enhance pyrethroid resistance, these will not be detected.
-%
-Also, if a codon 995 resistance allele is observed, there is no way to know whether the allele is on a genetic background that has also been observed in other mosquito populations, and thus no way to investigate whether resistance alleles are emerging locally or being imported from elsewhere, and if so, what is the probable source population.
-%
-Whole-genome sequencing clearly provides data of sufficient resolution to answer these questions, and portable genome sequencing will no doubt be feasible within the next few years.
-%
-However, in the interim it may be worthwhile to develop low-cost, high-throughput targeted genetic assays for surveillance of \textit{Vgsc}-mediated pyrethroid resistance.
-%
-For example, it would be feasible to design primers for amplicon sequencing, which could provide genotypes for of the order of 100 SNPs in a single amplicon panel, and could be implemented at low cost using existing sequencing platforms in regional sequencing facilities.
-%%
-
-
-%% Figure - Information gain.
-%
-\begin{figure}[!t]
-  \centering
-  
-  \includegraphics[width=1.0\linewidth]{artwork/info_gain.png}
-  \includegraphics[width=1.0\linewidth]{artwork/tree_cv.png}
-  
-  \caption{%
-%
-\textbf{Informative SNPs for haplotype surveillance}. 
-%
-\textbf{a}, Each data point represents a single SNP. 
-%
-The information gain value for each SNP provides an indication of how informative the SNP is likely to be if used as part of a genetic assay for testing whether a mosquito carries a resistance haplotype, and if so, which of the known resistance haplotype clusters it derives from. 
-%
-\textbf{b}, Number of SNPs required to accurately classify which cluster a haplotype derives from. 
-%
-Decision trees were constructed using either the LD3 (left) or CART (right) algorithm for comparison.
-%
-Accuracy was evaluated using 10-fold stratified cross-validation.
-}
-
-  \label{fig:gain}
-\end{figure}
-%%
-
-%%
-%
-To facilitate the development of targeted genetic assays for surveillance of \textit{Vgsc}-mediated pyrethroid resistance, we have produced two supplementary data tables.
-%
-In Supplementary Table 1 we provide a list of all @@N biallelic SNPs discovered with high confidence in the Ag1000G phase 1 cohort within the \textit{Vgsc} gene and in the 100 kbp upstream and downstream flanking regions.
-%
-To aid in PCR primer design, for each SNP we provide the flanking sequence for 250 bp upstream and downstream of the SNP position, including information about any polymorphisms within these flanking regions.
-%
-Not all SNPs are informative for detecting whether an individual mosquito carries a resistance allele, or diagnosing which genetic background is present, and we provide some summary statistics for each SNP to aid in the identification of the most informative SNPs.
-%
-This includes allele frequencies for each of the 10 haplotype clusters identified here as carrying known or probable resistance alleles, as well as for wild-type haplotypes from different locations.
-%
-To help with designing classifiers than can accurately call resistance haplotypes with a minimal number of SNPs, we also provide the information gain \cite{Quinlan1986} and the Gini impurity \cite{Breiman1984} for each SNP.
-%
-Note that recombination events are more likely at increasing distances upstream and downstream of the resistance variants under selection, and thus the most informative SNPs are found closest to the resistance variants within the gene (Figure \ref{fig:gain}).
-%
-However, SNPs with some information gain are available throughout the gene and in flanking regions.
-%
-%%
-
-%%
-%
-A possible strategy for the design of a genetic assay could proceed by (1) performing an initial round of filtering to remove SNPs which are not informative (e.g., low information gain); (2) performing a round of primer design to remove SNPs for which primers are unlikely to be successful; (3) performing a full analysis of the remaining SNPs to select a subset that is sufficient to classify all resistance haplotypes identified here, including some redundancy; (4) finalise primer designs for the chosen panel of SNPs.
-%
-A possible methodology for step 3 would be to use an algorithm such as ID3 \cite{Quinlan1986} or CART \cite{Breiman1984} to build a decision tree, although many other algorithms for building classifiers are also applicable.
-%
-To aid in the development of a classifier, in Supplementary Table 2 we provide our classification for each of the 1530 haplotypes sampled here, along with the alleles carried by each haplotype for each of the SNPs included in Supplementary Table 1.
-%
-To test the methodology, we constructed decision trees using either LD3 or CART algorithms, and using all available SNPs from within the \textit{Vgsc} plus 20 kbp flanking regions as input features (i.e., assuming primers could be designed in all cases).
-%
-Figure \ref{fig:gain}b shows the cross-validation scores obtained for trees constructed allowing increasing numbers of SNPs.
-%
-This analysis suggests that by using genomic data it should be possible to construct a decision tree able to classify these resistance haplotypes with >95\% accuracy by using 20 SNPs or less - a tractable number for molecular assay design, which would allow detection of haplotypes in the field.
-%%
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Discussion}
 %%
@@ -712,25 +626,96 @@ Thus there are a number of potential mechanisms by which a pyrethroid resistance
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Assay design discussion}
+\subsection*{Design of genetic assays for surveillance of pyrethroid resistance}
+
 %%
-The insecticide resistance driven selective sweeps we have identified here are likely ongoing, affecting many more mosquito populations than we have sampled in Ag1000G phase 1, and continuing to spread.
 %
-In addition, other selective events may be occurring in populations that we have not sampled, or in populations we have sampled but since the sampling date.
+Entomological surveillance teams in Africa do regularly genotype mosquitoes for resistance alleles in \textit{Vgsc} codon 995, and use those results as an indicator for the presence of pyrethroid resistance alongside results from insecticide resistance bioassays.
+%
+They typically do not, however, sequence the gene or genotype any other polymorphisms within the gene.
+%
+Thus if there are other polymorphisms within the gene that cause or significantly enhance pyrethroid resistance, these will not be detected.
+%
+Also, if a codon 995 resistance allele is observed, there is no way to know whether the allele is on a genetic background that has also been observed in other mosquito populations, and thus no way to investigate whether resistance alleles are emerging locally or being imported from elsewhere, and if so, what is the probable source population.
 %
 Whole-genome sequencing of individual mosquitoes clearly provides data of sufficient resolution to identify resistance sweeps, and could also be used to provide ongoing resistance surveillance.
 %
 The cost of whole-genome sequencing continues to fall, with the present cost being approximately 100 GBP to obtain \textasciitilde$30\times$ coverage of an individual \emph{Anopheles} mosquito genome with 150 bp paired-end reads.
 %
-Mobile sequencing using nanopore technology is also developing rapidly \cite{Jain2016} and may be a realistic prospect for mosquito whole-genome sequencing within a few years.
+There is an interim period, however, during which it may be more practical to develop targeted genetic assays for resistance outbreak surveillance that could scale to tens of thousands of mosquitoes at low cost and that could be implemented using existing platforms in regional molecular biology facilities.
+%%
 %
-There is an interim period, however, during which it may be more practical to develop targeted genetic assays for outbreak surveillance that could scale to tens of thousands of mosquitoes at low cost.
+
+
+%% Figure - Information gain.
 %
-For example, both next-generation and mobile sequencing platforms can be used for amplicon sequencing, where specific genome regions are amplified and sequenced in highly multiplexed libraries \cite{Bybee2011, Murray2015}.
+\begin{figure}[!t]
+  \centering
+  
+  \includegraphics[width=1.0\linewidth]{artwork/info_gain.png}
+  \includegraphics[width=1.0\linewidth]{artwork/tree_cv.png}
+  
+  \caption{%
 %
-Our results show that during this interim it is possible to quickly produce assays to cheaply allow tracking of putative resistant bearing haplotypes, in real time, in the field.
+\textbf{Informative SNPs for haplotype surveillance}. 
+%
+\textbf{a}, Each data point represents a single SNP. 
+%
+The information gain value for each SNP provides an indication of how informative the SNP is likely to be if used as part of a genetic assay for testing whether a mosquito carries a resistance haplotype, and if so, which of the known resistance haplotype clusters it derives from. 
+%
+\textbf{b}, Number of SNPs required to accurately classify which cluster a haplotype derives from. 
+%
+Decision trees were constructed using either the LD3 (left) or CART (right) algorithm for comparison.
+%
+Accuracy was evaluated using 10-fold stratified cross-validation.
+}
+
+  \label{fig:gain}
+\end{figure}
 %%
 
+%%
+%
+To facilitate the development of targeted genetic assays for surveillance of \textit{Vgsc}-mediated pyrethroid resistance, we have produced two supplementary data tables and explore a potential process for assay design.
+%
+In Supplementary Table 1 we provide a list of all @@N biallelic SNPs discovered with high confidence in the Ag1000G phase 1 cohort within the \textit{Vgsc} gene and in the 100 kbp upstream and downstream flanking regions.
+%
+To aid in PCR primer design, for each SNP we provide the flanking sequence for 250 bp upstream and downstream of the SNP position, including information about any polymorphisms within these flanking regions.
+%
+Not all SNPs are informative for detecting whether an individual mosquito carries a resistance allele, or diagnosing which genetic background is present, and we provide some summary statistics for each SNP to aid in the identification of the most informative SNPs.
+%
+This includes allele frequencies for each of the 10 haplotype clusters identified here as carrying known or probable resistance alleles, as well as for wild-type haplotypes from different locations.
+%
+To help with designing classifiers than can accurately call resistance haplotypes with a minimal number of SNPs, we also provide the information gain \cite{Quinlan1986} and the Gini impurity \cite{Breiman1984} for each SNP.
+%
+Note that recombination events are more likely at increasing distances upstream and downstream of the resistance variants under selection, and thus the most informative SNPs are found closest to the resistance variants within the gene (Figure \ref{fig:gain}).
+%
+However, SNPs with some information gain are available throughout the gene and in flanking regions.
+%
+%%
+
+%%
+%
+A possible strategy for the design of a genetic assay could proceed by (1) performing an initial round of filtering to remove SNPs which are not informative (e.g., low information gain); (2) performing a round of primer design to remove SNPs for which primers are unlikely to be successful; (3) performing a full analysis of the remaining SNPs to select a subset that is sufficient to classify all resistance haplotypes identified here, including some redundancy; (4) finalise primer designs for the chosen panel of SNPs.
+%
+A possible methodology for step 3 would be to use an algorithm such as ID3 \cite{Quinlan1986} or CART \cite{Breiman1984} to build a decision tree, although many other algorithms for building classifiers are also applicable.
+%
+To aid in the development of a classifier, in Supplementary Table 2 we provide our classification for each of the 1530 haplotypes sampled here, along with the alleles carried by each haplotype for each of the SNPs included in Supplementary Table 1.
+%
+To test the methodology, we constructed decision trees using either LD3 or CART algorithms, and using all available SNPs from within the \textit{Vgsc} plus 20 kbp flanking regions as input features (i.e., assuming primers could be designed in all cases).
+%
+Figure \ref{fig:gain}b shows the cross-validation scores obtained for trees constructed allowing increasing numbers of SNPs.
+%
+This analysis suggests that by using genomic data it should be possible to construct a decision tree able to classify these resistance haplotypes with >95\% accuracy by using 20 SNPs or less.
+%
+In practice, more SNPs would be needed, to provide some redundancy, and also to type specific non-synonymous polymorphisms in addition to identifying known genetic backgrounds carrying resistance alleles.
+%
+However, it is still likely to be well within the number of SNPs that could be assayed via a technology such as amplicon sequencing \cite{Kilianski2015}.
+%
+Thus it should be feasible to produce low-cost, high-throughput genetic assays for tracking the spread of pyrethroid resistance.
+%
+If combined with a limited amount of whole-genome sequencing at sentinel sites, this should also allow the identification of newly emerging resistance outbreaks.
+%
 
 
 
