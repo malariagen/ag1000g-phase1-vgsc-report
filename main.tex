@@ -714,7 +714,9 @@ All scripts and Jupyter Notebooks used to generate analyses, figures and tables 
 \subsection*{Data}
 
 %
-We used variant call data from the phase 1 AR3 release and phased haplotype data from AR3.1. These data are publically downloadable via ftp from \url{https://www.malariagen.net} and are archived in the European Nucleotide Archive (ENA; http://www.ebi.ac.uk/ena) under study PRJEB18691.
+We used variant calls from the Ag1000G Phase 1 AR3 data release (\url{https://www.malariagen.net/data/ag1000g-phase1-ar3}) and phased haplotype data from the Ag1000G Phase 1 AR3.1 data release (\url{https://www.malariagen.net/data/ag1000g-phase1-ar3.1}).
+%
+Variant calls from Ag1000G Phase 1 are also available from the European Nucleotide Archive (ENA; http://www.ebi.ac.uk/ena) under study PRJEB18691.
 %%
 
 
@@ -730,34 +732,27 @@ From Angola just \emph{An. coluzzii} were sampled, Burkina Faso had samples of b
 %
 Mosquitoes were individually whole genome sequenced on the Illumina HiSeq 2000 platform, generating 100bp paired-end reads. 
 %
-Sequenced reads were aligned to the \emph{An. gambiae} AgamP3 reference genome assembly \cite{Holt2002}). 
+Sequence reads were aligned to the \emph{An. gambiae} AgamP3 reference genome assembly \cite{Holt2002}). 
 %
 Aligned bam files underwent improvement, before variants were called using GATK UnifiedGenotyper. 
 %
 Quality control included removal of samples with mean coverage <= 14x and an accessibility map was employed following a similar approach to that used for human data by The 1000 Genomes Project Consortium \cite{The1000GenomesProjectConsortium2010}). 
 %
 Various quality control filters were applied to remove samples and SNPs with poor quality data. 
-%
-This process produced a call set containing @@n SNPs genotyped in 765 wild-caught individual mosquitoes \cite{Ag1000gConsortium2017}.
 %%
 
 %
 The Ag1000g variant data was functionally annotated using the SnpEff v4.1b software which allowed investigation of potential phenotype altering variants within \emph{Vgsc} \cite{Cingolani2012}.
 %
-Non-synonymous \emph{Vgsc} variants were identified as all variants in AGAP004707, 2L:2358158-2431617, with a SnpEff annotation of “missense”  and an ALT allele frequency of >5\% in at least one of the nine mosquito populations, with the exceptions of the multi-allelic SNP 2L:2400071 G>A which is shown despite only being found in \emph{An. gambiae} from Cameroon at 0.4\% frequency, as the G>T variant at the same position which causes the same codon change (\texttt{M490I}), is found above 5\% frequency in Kenya.
-%
-\texttt{F1920S} is included for continuity with recent \emph{An. gambiae Vgsc} research \cite{Ag1000gConsortium2017}.
-%
-A minimum ALT allele frequency was employed to discriminate towards variants that may be undergoing selective sweeps and against less informative low frequency alleles.
+Non-synonymous \emph{Vgsc} variants were identified as all variants in transcript AGAP004707-RA with a SnpEff annotation of “missense”.
 %%
 
 %
 For ease of comparison with previous work on \emph{Vgsc}, pan Insecta, in Table \ref{table:variants_missense} we report codon numbering for both \emph{An. gambiae} and \emph{Musca domestica} (the species in which the gene was first discovered).
 %
-The \emph{M. domestica Vgsc} sequence (EMBL accession X96668 - \cite{Williamson1996}) was aligned with the \emph{An. gambiae} AGAP004707-RA sequence (AgamP4.4 gene-set), using the Mega v7 software package \cite{Kumar2016}.
+The \emph{M. domestica Vgsc} sequence (EMBL accession X96668 \cite{Williamson1996}) was aligned with the \emph{An. gambiae} AGAP004707-RA sequence (AgamP4.4 gene-set), using the Mega v7 software package \cite{Kumar2016}.
 %
-A map of equivalent codon numbers between the two species can be download from the MalariaGEN website (@@include as supplementary data file?)- 
-\url{https://www.malariagen.net/sites/default/files/content/blogs/domestica_gambiae_map.txt}.
+A map of equivalent codon numbers between the two species for the entire gene can be download from the MalariaGEN website (\url{https://www.malariagen.net/sites/default/files/content/blogs/domestica_gambiae_map.txt}).
 %%
 
 %
@@ -769,7 +764,7 @@ Conservative filtering had removed one of the three known insecticide resistance
 %
 After manual inspection of the read alignment revealed that the SNP call could be confidently made, it was added back into the data set and then also phased onto the haplotypes using MVNcall.
 %
-To evaluate the linkage disequilibrium (LD) of non-synonymous \emph{Vgsc} mutations with the two most widespread \emph{kdr} resistance mutations (\texttt{L995S/F}), the D1 statistic was calculated using haplotypes @@how?.
+Lewontin's $D'$ was used to compute the linkage disequilibrium (LD) between all pairs of non-synonymous \emph{Vgsc} mutations.
 %%
 
 
