@@ -112,7 +112,7 @@ The World Health Organisation (WHO) has published plans for insecticide resistan
 %%
 The voltage-gated sodium channel (VGSC) is the physiological target of pyrethroid insecticides, and is integral to the insect nervous system. 
 %
-Pyrethroid molecules bind to sites within the protein channel and prevent normal nerve function, causing paralysis (``knock-down'') and then death. 
+Pyrethroid molecules bind to sites within the protein channel and prevent normal nerv	for-sale@sanger.ac.uke function, causing paralysis (``knock-down'') and then death. 
 %
 However, amino acid substitutions at key positions within the protein alter the interaction with insecticide molecules, increasing the dose of insecticide required for knock-down (target-site resistance) \cite{Davies2007a}. 
 %
@@ -139,7 +139,7 @@ The paths of transmission, carrying resistance alleles between mosquito populati
 %
 Previous studies have found evidence that \texttt{L995F} occurs on several different genetic backgrounds, suggesting multiple independent outbreaks of resistance driven by this allele \cite{Pinto2007,Etang2009,Santolamazza2015}. 
 %
-However, these studies analysed only a small gene region in a limited number of mosquito populations, and therefore had limited resolution to make inferences about genetic relationships between gene sequences (haplotypes) carrying this allele. 
+However, these studies analysed only a small gene region in a limited number of mosquito pop	for-sale@sanger.ac.ukulations, and therefore had limited resolution to make inferences about genetic relationships between gene sequences (haplotypes) carrying this allele. 
 %
 It has also been shown that the \texttt{L995F} allele spread from \textit{An. gambiae} to \textit{An. coluzzii} in West Africa \cite{Clarkson2014,Norris2015}. 
 %
@@ -168,7 +168,7 @@ Finally, we explore ways in which variation data from Ag1000G could be used to d
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{\textit{Vgsc} non-synonymous nucleotide variation}
-
+	for-sale@sanger.ac.uk
 
 %% Paragraph 1
 %
@@ -189,12 +189,12 @@ We reported 15 of these novel alleles in our global analysis of the Ag1000G phas
 \afterpage{%
 %\clearpage
 % N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
-%\newgeometry{margin=2cm}
-%\begin{landscape}
+\newgeometry{margin=2cm}
+\begin{landscape}
 \thispagestyle{empty}
 \begin{table}[h]
   \scriptsize
-  %\centering
+  \centering
   \begin{threeparttable}
 
   \caption{
@@ -219,13 +219,14 @@ All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase
     
     \item[3] Codon numbering according to \emph{Musca domestica} EMBL accession X96668 \cite{Williamson1996}.
     
+    
   \end{tablenotes}
   
   \end{threeparttable}
   
 \end{table}
-%\end{landscape}
-%\restoregeometry
+\end{landscape}
+\restoregeometry
 } % end afterpage
 %% end Table 1
 
@@ -272,9 +273,9 @@ The N1570Y resistance variant was present in Guinea, Burkina Faso (both species)
 %
 This variant has been shown to increase pyrethroid resistance in \textit{An. gambiae}, however it has only ever been found in association with \texttt{L995F}.
 %
-Codon 1570 occurs within an internal linker domain of the protein, and so cannot directly affect the binding between pyrethroid molecules and the membrane channel.
+Codon 1570 occurs within an internal linker domain of the protein, and so cannot directly affect the binding between pyrethroid molecules and the membrane channel \cite{Jones2012}.
 %
-Thus it has been suggested that \texttt{N1570Y} either enhances or compensates for the \texttt{L995F} phenotype, possibly by altering the channel gating properties \cite{Jones2012}.
+However, it has been experimentally demonstrated that \texttt{N1570Y} enhances the \texttt{L995F} resistance phenotype, by allosteric interaction \cite{Wang2015}.
 %
 To study the patterns of association among non-synonymous variants, we used haplotypes from the Ag1000G phase 1 resource to compute the normalised coefficient  of linkage disequilibrium ($D'$) between all pairs of variant alleles (Figure \ref{fig:ld}).
 %
@@ -390,7 +391,7 @@ The haplotype networks bring into sharp relief the explosive radiation of amino 
 %
 Within the F1 network, nodes carrying non-synonymous variants radiate out from a central node carrying only \texttt{L995F}, suggesting that the central node represents the ancestral haplotype carrying \texttt{L995F} alone which initially came under selection, and these secondary variants have arisen subsequently as new mutations.
 %
-Many of the nodes carrying secondary variants are large, consistent with positive selection and a functional role for these secondary variants as modifiers of the \texttt{L995F} resistance phenotype (Table \ref{table:variants_pheno}).
+Many of the nodes carrying secondary variants are large, consistent with positive selection and a functional role for these secondary variants as modifiers of the \texttt{L995F} resistance phenotype, such as \texttt{N1570Y} has been experimentally shown to be \cite{Wang2015}. 
 %
 The F1 network also allows us to infer multiple introgression events between the two species.
 %
@@ -640,63 +641,61 @@ A further complication, the differing of resistance profiles to the two types of
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Prediction of resistance phenotypes for novel non-synonymous variants}
+\subsection*{Resistance phenotypes for novel non-synonymous variants}
+
+%
+The sodium channel protein consists of four homologous domains (I-IV) each of which comprises six transmembrane segments (S1-S6) connected by intracellular and extracellular loops \cite{Dong2014}.
+%
+Two analogous pyrethroid binding sites have been predicted within the pore-forming modules of the protein, the first (PyR1) involving residues from transmembrane segments IIS5 and IIIS6 and the internal linker between IIS4 and IIS5 (IIL45) \cite{OReilly2006}, the second (PyR2) involving segments IS5, IS6, IIS6 and IL45 \cite{Du2013,Dong2014}.
+%
+Many of the amino acid substitutions known to cause pyrethroid resistance in insects affect residues within one of these two pyrethroid binding sites, and thus can directly alter pyrethroid binding \cite{Dong2014}.
+%
+For example, the \texttt{L995F} and \texttt{L995S} substitutions occur in segment IIS6 and belong to binding site PyR2 \cite{Du2013}.
+%
+The \texttt{I1527T} substitution that we discovered in \textit{An. coluzzii} mosquitoes from Burkina Faso occurs in segment IIIS6 and is immediately adjacent to two pyrethroid-sensing residues in site PyR1 \cite{Dong2014}.
+%
+It is thus plausible that pyrethroid binding could be altered by this substitution.
+%
+The \texttt{I1527T} substitution (\textit{M. domestica} codon 1532) has been found in \textit{Aedes albopictus} \cite{Xu2016}, and multiple substitutions in codon 1529 \textit{M. domestica} codon 1534) have been reported in \textit{Aedes aegypti} and associated with pyrethroid resistance \cite{Dong2014,Li2018}.
+%
+We found the I1527T allele in tight linkage with two alleles causing a \texttt{V402L} substitution (\textit{M. domestica} codon 410), with haplotype structure indicating that an initial \texttt{I1527T} mutation was subsequently brought together with \texttt{V402L} alleles from different genetic backgrounds via recombination.
+%
+Substitutions in codon 402 have been found in multiple insect species and are by themselves sufficient to confer pyrethroid resistance \cite{Dong2014}.
+%
+Codon 402 is within segment IS6, immediately adjacent to a pyrethroid sensing residue in site PyR2.
+%
+The fact that we find \texttt{I1527T} and \texttt{V402L} in such tight association, with \texttt{V402L} apparently secondary to \texttt{I1527T}, is intriguing because (a) these two residues appear to affect different pyrethroid binding sites, and (b) haplotypes carrying \texttt{V402L} alone should also have been positively selected and thus be present in one or more populations.
+%
+%%
 
 %%
 %
-...with the evidence for selection on Anopheles haplotypes, knowledge of the gene structure and evidence from other systems we can begin to predict resistance phenotypes for novel non-synonymous variants...
+A number of substitutions in segments of the protein that are not involved either of the two pyrethroid binding sites have also been shown to confer pyrethroid resistance.
+%
+For example, the \texttt{N1570Y} substitution causes substantially enhanced pyrethroid resistance when combined with \texttt{L995F}, although codon 1570 occurs in the internal linker between domains III and IV (LIII/IV) \cite{Du2013}.
+%
+Computer modelling of the protein structure has suggested that substitutions in codon 1570 could allosterically alter site PyR2 and thus affect pyrethroid binding \cite{Du2013}.
+%
+In addition to \texttt{N1570Y}, we found thirteen other substitutions occurring exclusively in association with \texttt{L995F} at appreciable frequency (Table \ref{table:variants_missense}).
+%
+Of these, two (\texttt{D466H}, \texttt{E1597G}) occurred in the larger internal linkers between protein domains, one (\texttt{R254K}) occurred within a smaller internal linker between domain subunits, two (\texttt{T791M}, \texttt{K1603T}) occurred within an outer (``voltage-sensing'') transmembrane segment, one (\texttt{A1746S}) occurred within an inner (``pore-forming'') transmembrane segment, and the remaining seven occurred in the internal carboxyl-terminal tail (COOH).
+%
+The novel non-synonymous mutation found on the Kenyan haplotypic background potentially under selection, \texttt{M490I}, also occurs in a linker between protein domains (L1/II).
+%
+Substitutions within various locations in the protein have been shown to confer pyrethroid resistance either independently or in combination with other substitutions not by altering pyrethroid binding but by altering the channel gating kinetics or the voltage-dependence of activation \cite{Dong2014}.
+%
+Thus there are a number of potential mechanisms by which a pyrethroid resistance phenotype can be obtained, and clearly much remains to be unravelled regarding the molecular biology of pyrethroid resistance in this gene.
 %%
-See Table 2
-
-@@TODO collect all material related to resistance phenotype prediction here, after we have results from analyses of selection.
-
-
-%% Table 2 - Phenotype.
-%
-\afterpage{%
-%\clearpage
-% N.B., for some reason using \newgeometry causes page number to get dropped from the subsequent page, so disable for now - not needed if using \footnotesize.
-%\newgeometry{margin=2cm}
-\begin{landscape}
-\thispagestyle{empty}
-\begin{table}[h]
-  \scriptsize
-  \centering
-  \begin{threeparttable}
-
-  \caption{
-%
-\textbf{Phenotype prediction in the voltage-gated sodium channel gene}. 
-}
-
-  \label{table:variants_pheno}
-  
-  \input{tables/variants_pheno.tex}
-  
-  \begin{tablenotes}
-    \footnotesize
-    
-    \item[1] Position of the variant within the protein. \texttt{IN}=internal domain; \texttt{TM}=trans-membrane domain. The protein contains four homologous repeats (I-IV), each having six transmembrane segments (1-6). Codes in parentheses identify the specific domain, e.g., ``\texttt{I.S4}'' refers to trans-membrane segment 4 in repeat I, and ``\texttt{IS4--IS5}'' refers to the linker segment between \texttt{I.S4} and \texttt{I.S5}.
-    
-    \item[2] Phenotype predictions are based on population genetic evidence and have not been confirmed experimentally.
-    
-    \item[3] Literature search results for experimental evidence, assoc. - association study, \emph{in vitro} - \emph{Xenopus} oocytes.
-    
-    \item[4] One residue away from known driver mutation \texttt{F1534C} (\emph{Musca domestica} codon numbering).
-    
-  \end{tablenotes}
-  
-  \end{threeparttable}
-  
-\end{table}
-\end{landscape}
-%\restoregeometry
-} % end afterpage
-%% end Table 2
 
 
 
-@@TODO
+
+
+
+
+
+
+
 
 
 \section*{Legacy Discussion Points/ Discussion Sandbox}
@@ -705,13 +704,9 @@ See Table 2
 
 @@TODO HW disequilibrium in Gabon - what might be happening here?
 
-@@TODO Discuss accessibility, have we missed any functional variation?
 
 @@TODO Speculate on why \texttt{L995F} but not \texttt{L995S} has evolved secondary variation.
 
-@@TODO What about DDT? If prior selection for DDT resistance, how might this complicate the picture? Do we see any evidence for multiple phases of selection?
-
-@@TODO Discuss weaknesses, caveats and potential improvements to method for estimating haplotype age.
 
 @@TODO What are the implications for insecticide resistance management? Realistically how could this information be used?
 
