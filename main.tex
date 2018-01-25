@@ -716,7 +716,7 @@ All scripts and Jupyter Notebooks used to generate analyses, figures and tables 
 %
 We used variant calls from the Ag1000G Phase 1 AR3 data release (\url{https://www.malariagen.net/data/ag1000g-phase1-ar3}) and phased haplotype data from the Ag1000G Phase 1 AR3.1 data release (\url{https://www.malariagen.net/data/ag1000g-phase1-ar3.1}).
 %
-Variant calls from Ag1000G Phase 1 are also available from the European Nucleotide Archive (ENA; http://www.ebi.ac.uk/ena) under study PRJEB18691.
+Variant calls from Ag1000G Phase 1 are also available from the European Nucleotide Archive (ENA; \url{http://www.ebi.ac.uk/ena}) under study PRJEB18691.
 %%
 
 
@@ -790,16 +790,22 @@ Core haplotypes were defined on a 6,078 bp region spanning \textit{Vgsc} codon 9
 %
 This region was chosen as it was the smallest region sufficient to differentiate between the ten genetic backgrounds carrying either of the known resistance alleles \texttt{L995F} or \texttt{L995S}.
 %
-Extended haplotype homozygosity (EHH) was computed for all core haplotypes as described in \cite{Sabeti2002} using scikit-allel \cite{Miles2016}, excluding non-synonymous and singleton SNPs.
+Extended haplotype homozygosity (EHH) was computed for all core haplotypes as described in \cite{Sabeti2002} using scikit-allel version 1.1.9 \cite{Miles2016}, excluding non-synonymous and singleton SNPs.
 %
 Analyses of haplotype homozygosity in moving windows (Supplementary Figs. \ref{fig:mhh_f}, \ref{fig:mhh_s}) and pairwise haplotype sharing (Supplementary Fig. \ref{fig:pspd}) were performed using custom Python code available from \url{https://github.com/malariagen/agam-vgsc-report}.
 %
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Genetic assays for surveillance of pyrethroid resistance}
+\subsection*{Design of genetic assays for surveillance of pyrethroid resistance}
 
 %%
-@@TODO
+To explore the feasibility of indentifying a small subset of SNPs that would be sufficient to identify each of the genetic backgrounds carrying known or putative resistance alleles, we started with an input data set of all SNPs within the \textit{Vgsc} gene or in the flanking regions 20 kbp upstream and downstream of the gene.
+%
+Each of the 1530 haplotypes in the Ag1000G Phase 1 cohort was labelled according to which core haplotype it carried, combining all core haplotypes not carrying known or putative resistance alleles together as a single "wild-type" group.
+%
+Decision tree classifiers were then constructed using scikit-learn version 0.19.0 \cite{Pedregosa2011} for a range of maximum depths, repeating the tree construction process 10 times for each maximum depth with a different initial random state.
+%
+The classification accuracy of each tree was evaluated using stratified 5-fold cross-validation.
 %
 
 
