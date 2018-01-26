@@ -237,30 +237,7 @@ The \texttt{L995S} allele was at high frequency among \textit{An. gambiae} popul
 %
 Both alleles were present in \textit{An. gambiae} populations sampled from Cameroon and Gabon, including some individuals with a hybrid \texttt{L995F/S} genotype (46/275 individuals in Cameroon, 36/56 in Gabon).
 %
-In Cameroon these alleles were in Hardy Weinberg equilibrium ($\chi^{2}$ = 0.02, P > 0.05), thus there does not appear to be selection for or against heterozygote carriers of both alleles.
-%
-However, there was an excess of heterozygotes in Gabon ($\chi^{2}$ = 8.96, P < 0.005), suggesting a fitness advantage for mosquitoes carrying both alleles.
-%%
-
-
-% I'm not clear on what this is saying, so have commented out for now. I.e., why do we report these data, what do they show? Do they support the hypothesis that the resistance phenotype is incompletely recessive? If so, can we make this clearer?
-%289 samples in the dataset carried $\geq$1 \texttt{L995F} alleles of which 92 were homozygotes and in the case of \texttt{L995S}, 156 samples carried $\geq$1 alternative alleles and of these 38 were homozygotes; the resistance phenotype at this locus is thought to be incompletely recessive \cite{Chandre2000}.
-%%
-
-
-%% Figure - Pairwise LD.
-%
-\begin{figure}[!t]
-
-  \centering
-  
-  \includegraphics[width=\linewidth]{artwork/fig_ld.png}
-  
-  \caption{\textbf{Linkage disequilibrium between non-synonymous variants}. A value of 1 indicates that the two alleles are in perfect linkage, meaning that one of the two alleles is only ever found in combination with the other. Conversely, a value of -1 indicates that the two alleles are never found in combination with each other.}
-  
-  \label{fig:ld}
- 
-\end{figure}
+In Cameroon these alleles were in Hardy Weinberg equilibrium ($\chi^{2}$ = 0.02, P > 0.05), but there was an excess of heterozygotes in Gabon ($\chi^{2}$ = 8.96, P < 0.005), suggesting a fitness advantage for mosquitoes carrying both alleles at least in some circumstances.
 %%
 
 
@@ -292,27 +269,43 @@ A number of secondary substitutions have occurred and risen in frequency, and ar
 %%
 
 
+%% Figure - Pairwise LD.
+%
+\begin{figure}[!t]
+
+  \centering
+  
+  \includegraphics[width=\linewidth]{artwork/fig_ld.png}
+  
+  \caption{\textbf{Linkage disequilibrium between non-synonymous variants}. A value of 1 indicates that the two alleles are in perfect linkage, meaning that one of the two alleles is only ever found in combination with the other. Conversely, a value of -1 indicates that the two alleles are never found in combination with each other.}
+  
+  \label{fig:ld}
+ 
+\end{figure}
+%%
+
+
 %% I1527T and V402L.
 %
 The \texttt{I1527T} allele was present in \textit{An. coluzzii} from Burkina Faso at 14\% frequency.
 %
-Codon \texttt{1527} occurs within trans-membrane segment \texttt{IIIS6}, immediately adjacent to residues within a predicted binding site for pyrethroid molecules, thus it is plausible that \texttt{I1527T} could alter pyrethroid binding \cite{Du2013,Dong2014}.
+Codon 1527 occurs within trans-membrane segment \texttt{IIIS6}, immediately adjacent to residues within a predicted binding site for pyrethroid molecules, thus it is plausible that \texttt{I1527T} could alter pyrethroid binding \cite{Du2013,Dong2014}.
 %
-We also found that the two variant alleles affecting codon \texttt{402}, both of which induce a \texttt{V402L} substitution, were in strong linkage with \texttt{I1527T} ($D' \geq 0.8$; Figure \ref{fig:ld}), and almost all haplotypes carrying \texttt{I1527T} also carried a \texttt{V402L} substitution.
+We also found that the two variant alleles affecting codon 402, both of which induce a \texttt{V402L} substitution, were in strong linkage with \texttt{I1527T} ($D' \geq 0.8$; Figure \ref{fig:ld}), and almost all haplotypes carrying \texttt{I1527T} also carried a \texttt{V402L} substitution.
 %
-The most parsimonious explanation for this pattern of linkage is that the \texttt{I1527T} mutation occurred first, and mutations in codon \texttt{402} subsequently arose on this genetic background or recombined with it.
+The most parsimonious explanation for this pattern of linkage is that the \texttt{I1527T} mutation occurred first, and mutations in codon 402 subsequently arose on this genetic background or recombined with it.
 %
-Substitutions in codon 402 have been found in a number of other insect species and shown experimentally to confer pyrethroid resistance \cite{Dong2014} @@TODO more recent citations in Aedes. 
+Substitutions in codon 402 have been found in a number of other insect species and shown experimentally to confer pyrethroid resistance \cite{Dong2014}. 
 %
 Because of the limited geographical distribution of these alleles, we hypothesize that the \texttt{I1527T+V402L} combination represents a pyrethroid resistance allele that arose in West African \textit{An. coluzzii} populations.
 %
-However, the \texttt{L995F} allele is at higher frequency (85\%) in our Burkina Faso \textit{An. coluzzii} population, and is known to be increasing in frequency \cite{Toe2014}, therefore \texttt{L995F} may provide a stronger resistance phenotype and is thus replacing \texttt{I1527T+V402L}.
+However, the \texttt{L995F} allele is at higher frequency (85\%) in our Burkina Faso \textit{An. coluzzii} population, and is known to be increasing in frequency \cite{Toe2014}, therefore \texttt{L995F} may provide a stronger resistance phenotype and is replacing \texttt{I1527T+V402L}.
 %%
 
 
 %% Other novel variants.
 %
-The remaining 4 novel alleles (two separate nucleotide substitutions causing \texttt{M490I}; \texttt{A1125V}; \texttt{V1254I}) do not occur in combination with any known resistance allele.
+The remaining 4 novel alleles (two separate nucleotide substitutions causing \texttt{M490I}; \texttt{A1125V}; \texttt{V1254I}) did not occur in combination with any known resistance allele.
 %
 All are private to a single population, and (to our knowledge) none have previously been found in other species.
 %%
@@ -372,7 +365,7 @@ The haplotype networks bring into sharp relief the explosive radiation of amino 
 %
 Within the F1 network, nodes carrying non-synonymous variants radiate out from a central node carrying only \texttt{L995F}, suggesting that the central node represents the ancestral haplotype carrying \texttt{L995F} alone which initially came under selection, and these secondary variants have arisen subsequently as new mutations.
 %
-Many of the nodes carrying secondary variants are large, consistent with positive selection and a functional role for these secondary variants as modifiers of the \texttt{L995F} resistance phenotype, such as \texttt{N1570Y} has been experimentally shown to be \cite{Wang2015}. 
+Many of the nodes carrying secondary variants are large, consistent with positive selection and a functional role for these secondary variants as modifiers of the \texttt{L995F} resistance phenotype. 
 %
 The F1 network also allows us to infer multiple introgression events between the two species.
 %
@@ -428,7 +421,7 @@ This analysis supported a refinement of our initial classification of genetic ba
 %
 All haplotypes within clusters S4 and S5 were effectively identical on both the upstream and downstream flanks of the gene, but there was a region of divergence within the \textit{Vgsc} gene itself that separated them in the fixed window analyses (Supplementary Fig. \ref{fig:mhh_s}).
 %
-The 13.8 kbp region occurred upstream of codon 995 and contained 8 SNPs that were fixed differences between S4 and S5. 
+The 13.8 kbp region of divergence occurred upstream of codon 995 and contained 8 SNPs that were fixed differences between S4 and S5. 
 %
 A possible explanation for this short region of divergence is that a gene conversion event has occurred within the gene, bringing a short segment from a different genetic background onto the original genetic background on which the \texttt{L995S} resistance mutation occurred.
 %
@@ -445,7 +438,7 @@ To confirm that known resistance alleles are under positive selection, and inves
 %
 Haplotypes under recent positive selection are expected to have increased rapidly in frequency, thus have had less time to be broken down by recombination and should on average have longer regions of haplotype homozygosity spanning the selected allele, relative to wild-type haplotypes.
 %
-We defined a core region spanning \textit{Vgsc} codon 995 and an additional 4 kbp of flanking sequence (Methods).
+We defined a core region spanning \textit{Vgsc} codon 995 and an additional 6 kbp of flanking sequence.
 %
 Within this core region, we found 18 distinct haplotypes at a frequency above 1\% within the cohort.
 %
@@ -475,7 +468,7 @@ We then computed EHH decay for each core haplotype up to a megabase upstream and
 As expected, haplotypes carrying the \texttt{L995F} and \texttt{L995S} resistance alleles all experience a dramatically slower decay of EHH relative to wild-type haplotypes, confirming positive selection.
 %
 Previous studies have found evidence for different rates of EHH decay between \texttt{L995F} and \texttt{L995S} haplotypes,
-suggesting differences in the timing and/or strength of selection @@REF.
+suggesting differences in the timing and/or strength of selection \cite{Lynd2010}.
 %
 However, we found no systematic difference in the length of shared haplotypes when comparing F1-5 (carrying \texttt{L995F}) against S1-5 (carrying \texttt{L995S}) (Supplementary Fig. \ref{fig:pspd}).
 %
@@ -491,7 +484,7 @@ EHH decay on the upstream gene flank was faster, being similar to wild-type hapl
 %
 The L2 haplotype carrying \texttt{M490I} exhibited EHH decay on both flanks comparable to haplotypes carrying known resistance alleles.
 %
-This could indicate evidence for selection on the \texttt{M490I} allele, however these haplotypes are derived from a Kenyan mosquito population which is known to have experienced a severe recent bottleneck \cite{Ag1000gConsortium2017}, and there are not enough wild-type haplotypes from Kenya with which to compare, thus this signal may also be due to the extreme demographic history of this population.
+This could indicate evidence for selection on the \texttt{M490I} allele, however these haplotypes are derived from a Kenyan mosquito population which is known to have experienced a severe recent bottleneck \cite{Ag1000gConsortium2017}, and there were not enough wild-type haplotypes from Kenya with which to compare, thus this signal may also be due to the extreme demographic history of this population.
 %%
 
 
@@ -511,27 +504,31 @@ The VGSC protein is the physiological target of both pyrethroid insecticides and
 %
 The \texttt{L995F} and \texttt{L995S} alleles are known to increase resistance to both of these insecticide classes \cite{Martinez-Torres1998,Ranson2000}.
 %
-Except in a few locations, DDT has not been used for IRS within the last two decades, and is not suitable for use in bed-nets due to potential carcinogenicity in humans \cite{Turusov2002}.
+Except in a few locations, DDT has not been used for IRS within the last two decades, and is not suitable for use in bed-nets due to potential carcinogenic effects \cite{Turusov2002}.
 %
 DDT was, however, used in Africa for several pilot IRS projects carried out during the first global campaign to eradicate malaria, during the 1950s and 1960s \cite{Davies2007b}.
 %
 DDT was also used in agriculture from the 1940s, and although agricultural usage has greatly diminished since the 1970s, some usage may remain \cite{Dunlap1981, Turusov2002}.
 %
-In this study we reported evidence of positive selection on haplotypes carrying \texttt{L995F} and haplotypes carrying \texttt{L995S}, as well as haplotypes carrying the \texttt{I1527T+V402L} combination.
+In this study we reported evidence of positive selection on the \texttt{L995F} and \texttt{L995S} alleles, as well as the \texttt{I1527T+V402L} combination and possibly also \texttt{M490I}.
 %
 We also found 14 other non-synonymous substitutions within \textit{Vgsc} that have arisen in association with \texttt{L995F} and appear to be positively selected.
 %
 Given that pyrethroids have dominated public health insecticide use for two decades, it is reasonable to assume that the selection pressure on these alleles is primarily due to pyrethroids.
 %
-If a resistance allele had been selected primarily by the earlier phase of DDT usage, then we might expect to see a faster rate of EHH decay for haplotypes carrying that allele relative to other alleles selected by recent pyrethroid usage.
+The \texttt{L995S} allele has a stronger DDT resistance phenotype than \texttt{L995F}, and it has been suggested that \texttt{L995S} may have been primarily selected by DDT usage @@REF.
 %
-However, we found no significant difference between EHH decay for haplotypes carrying \texttt{L995F} or \texttt{L995S} @@TODO confirm.
+However, we did not find any systematic difference in the extent of haplotype homozygosity between these two alleles, suggesting that both alleles have been under selection over a similar time frame.
 %
-EHH decay was faster on the upstream flank for haplotypes carrying \texttt{I1527T}, however this may be affected by selection for the combination of \texttt{I1527T+V402L} and thus for recombination events that bring these two variants together on the same haplotype.
+We did find some significant differences in haplotype homozygosity between different genetic backgrounds carrying resistance alleles, suggesting differences in the timing and/or strength of selection these may have experienced.
+%
+However, there have been differences in the scale-up of pyrethroid-based interventions in different regions, and this could in turn generate heterogeneities in selection pressures.
 %
 Nevertheless, it is possible that some if not all of the alleles we have reported provide some level of cross-resistance to DDT as well as pyrethroids, and that earlier DDT usage may have contributed at least in part to their selection.
 %
-A further complication, the differing of resistance profiles to the two types of pyrethroids (type I e.g. permethrin and type II e.g. deltamethrin) \cite{Hu2011}, may also be affecting the selection landscape we find here, and warrants future research. 
+The differing of resistance profiles to the two types of pyrethroids (type I, e.g., permethrin; and type II, e.g., deltamethrin) \cite{Hu2011}, may also be affecting the selection landscape.
+%
+Further sampling and analysis is required to investigate the timing of different selection events and relate these to historical patterns of insecticide use in different regions. 
 %%
 
 
@@ -575,7 +572,7 @@ In addition to \texttt{N1570Y}, we found thirteen other substitutions at appreci
 %
 Of these, two (\texttt{D466H}, \texttt{E1597G}) occurred in the larger internal linkers between protein domains, one (\texttt{R254K}) occurred within a smaller internal linker between domain subunits, two (\texttt{T791M}, \texttt{K1603T}) occurred within an outer (``voltage-sensing'') transmembrane segment, one (\texttt{A1746S}) occurred within an inner (``pore-forming'') transmembrane segment, and the remaining seven occurred in the internal carboxyl-terminal tail.
 %
-The novel non-synonymous mutation found on the Kenyan haplotypic background potentially under selection, \texttt{M490I}, also occurs in a linker between protein domains (L1/II).
+The novel non-synonymous mutation found on the Kenyan haplotypic background potentially under selection, \texttt{M490I}, also occurs in an internal linker between protein domains (L1/II).
 %
 Substitutions within various locations in the protein have been shown to confer pyrethroid resistance either independently or in combination with other substitutions not by altering pyrethroid binding but by altering the channel gating kinetics or the voltage-dependence of activation \cite{Dong2014}.
 %
@@ -642,7 +639,7 @@ To aid in PCR primer design, for each SNP we provide the flanking sequence for 2
 %
 Not all SNPs are informative for detecting whether an individual mosquito carries a resistance allele, or diagnosing which genetic background is present, and we provide some summary statistics for each SNP to aid in the identification of the most informative SNPs.
 %
-This includes allele frequencies for each of the 10 haplotype clusters identified here as carrying known or probable resistance alleles, as well as for wild-type haplotypes from different locations.
+This includes allele frequencies for each of the 12 haplotype clusters identified here as carrying known or probable resistance alleles, as well as for wild-type haplotypes from different locations.
 %
 To help with designing classifiers than can accurately call resistance haplotypes with a minimal number of SNPs, we also provide the information gain \cite{Quinlan1986} and the Gini impurity \cite{Breiman1984} for each SNP.
 %
@@ -664,7 +661,7 @@ To test the methodology, we constructed decision trees using either LD3 or CART 
 %
 Figure \ref{fig:gain}b shows the cross-validation scores obtained for trees constructed allowing increasing numbers of SNPs.
 %
-This analysis suggests that by using genomic data it should be possible to construct a decision tree able to classify these resistance haplotypes with >95\% accuracy by using 20 SNPs or less.
+This analysis suggests that it should be possible to construct a decision tree able to classify these resistance haplotypes with >95\% accuracy by using 20 SNPs or less.
 %
 In practice, more SNPs would be needed, to provide some redundancy, and also to type specific non-synonymous polymorphisms in addition to identifying known genetic backgrounds carrying resistance alleles.
 %
