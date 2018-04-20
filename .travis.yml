@@ -28,13 +28,14 @@ install:
 cache:
   timeout: 1000
   directories:
-  - dependencies
+  - deps
 
 script:
   - source env.sh
-  - snakemake -s manuscript.rules clean
-  - snakemake -s manuscript.rules all
-  - git status
+  - ./latex.sh
+#  - snakemake -s manuscript.rules clean
+#  - snakemake -s manuscript.rules all
+#  - git status
 
 deploy:
   provider: releases
