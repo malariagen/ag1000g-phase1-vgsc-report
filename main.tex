@@ -201,6 +201,8 @@ We reported 15 of these novel alleles in our global analysis of the Ag1000G phas
 %
 AO=Angola; BF=Burkina Faso; GN=Guinea; CM=Cameroon; GA=Gabon; UG=Uganda; KE=Kenya; GW=Guinea-Bissau; \textit{Ac}=\textit{An. coluzzii}; \textit{Ag}=\textit{An. gambiae}.
 %
+Species status of specimens from Kenya and Guinea-Bissau is uncertain \cite{Ag1000gConsortium2017}.
+%
 All variants are at 5\% frequency or above in one or more of the 9 Ag1000G phase 1 populations, with the exception of \texttt{2,400,071 G>T} which is only found in the CM\emph{Ag} population at 0.4\% frequency but is included because another mutation (\texttt{2,400,071 G>A}) is found at the same position causing the same amino acid substitution (\texttt{M490I}); and \texttt{2,431,019 T>C} (\texttt{F1920S}) which is at 4\% frequency in GA\emph{Ag} but also found in CM\emph{Ag} and linked to \texttt{L995F}.
 }
 
@@ -316,36 +318,28 @@ All are private to a single population, and to our knowledge none have previousl
 
 %%
 %
-Although it is known that pyrethroid resistance is increasing in prevalence in malaria vector populations across Africa \cite{Ranson2016}, it has not been clear whether this is being driven by the spread of resistance alleles via gene flow, by resistance alleles emerging independently in multiple locations, or by some combination of both processes.
-%
 The Ag1000G data resource provides a rich source of information about the spread of insecticide resistance alleles in any given gene, because data are available not only for SNPs in protein coding regions, but also SNPs in introns and flanking intergenic regions, and in neighbouring genes.
 %
 These additional variants can be used to analyse the genetic backgrounds (haplotypes) on which resistance alleles are found.
 %
-If mosquitoes from different geographical locations or species carry the same resistance allele on identical or near-identical genetic backgrounds, this implies that the allele has been spread between mosquito populations by the movement and interbreeding of mosquitoes.
+In our initial report of the Ag1000G phase 1 resource \cite{Ag1000gConsortium2017}, we used 1710 biallelic SNPs from within the 73.5 kbp \textit{Vgsc} gene (1607 intronic, 103 exonic) to compute the number of SNP differences between all pairs of 1530 haplotypes derived from 765 wild-caught mosquitoes.
 %
-Conversely, if the same resistance allele is found on different genetic backgrounds in different mosquito populations, this provides evidence that the allele has emerged independently in each population, either because of multiple mutational events since the introduction of pyrethroids, or because the allele was segregating at low frequency prior to the introduction of pyrethroids.
+We then used pairwise genetic distances to perform hierarchical clustering, and found that haplotypes carrying resistance alleles in codon 995 were grouped into 10 distinct clusters, each with near-identical haplotypes.
+%
+Five of these clusters contained haplotypes carrying the \texttt{L995F} allele (labelled F1-F5), and a further five clusters contained haplotypes carrying \texttt{L995S} (labelled S1-S5).
 %%
 
 %%
 %
-In our initial report of the Ag1000G phase 1 resource \cite{Ag1000gConsortium2017}, we used 1710 biallelic SNPs from within the 73.5 kbp \textit{Vgsc} gene (1607 intronic, 103 exonic) to compute the number of SNP differences between all pairs of 1530 haplotypes derived from 765 wild-caught mosquitoes.
+To further investigate genetic backgrounds carrying resistance alleles in codon 995, we used the Ag1000G haplotype data to construct median-joining networks \cite{Bandelt1999} (Figure \ref{fig:networks}).
 %
-We then used pairwise genetic distances to perform hierarchical clustering, and found that haplotypes carrying resistance alleles in codon \texttt{995} were grouped into 10 distinct clusters with near-identical haplotypes.
-%
-Five of these clusters carried the \texttt{L995F} allele (labelled F1-F5), and a further five clusters carried \texttt{L995S} (labelled S1-S5).
-%
-As an alternative approach, we used the same haplotype data to construct median-joining networks (Figure \ref{fig:networks}).
-%
-The network analysis allows for the reconstruction and placement of intermediate haplotypes that may not be observed in the data.
+The network analysis improves on hierarchical clustering by allowing for the reconstruction and placement of intermediate haplotypes that may not be observed in the data.
 %
 It also allows for non-hierarchical relationships between haplotypes, which may arise if recombination events have occured between haplotypes.
 %
-Furthermore, the networks allow relationships among closely-related haplotypes to be discerned.
+We constructed the network up to a maximum edge distance of 2 SNP differences, to ensure that each connected component captures a group of closely-related haplotypes.
 %
-We constructed these networks up to a maximum edge distance of 2 SNP differences, to ensure that each connected component in the resulting networks captures a collection of closely-related haplotypes.
-%
-The resulting networks confirmed the presence of 5 distinct groupings of haplotypes carrying \texttt{L995F}, and a further 5 haplotype groups carrying \texttt{L995S}, in close correspondence with the previous results from hierarchical clustering (97.1\% overall concordance in assignment of haplotypes to clusters).
+The resulting network contained 10 haplotype groups, with 5 groups containing haplotypes carrying \texttt{L995F}, and a further 5 groups carrying \texttt{L995S}, in close correspondence with previous results from hierarchical clustering (97.1\% overall concordance in assignment of haplotypes to groups).
 %
 
 
@@ -353,7 +347,7 @@ The resulting networks confirmed the presence of 5 distinct groupings of haploty
 %
 \begin{figure}[!t]
   \includegraphics[width=1.1\linewidth,center]{artwork/complete_networks.pdf}
-  \caption{\textbf{Haplotype networks}. Median joining networks for haplotypes carrying \texttt{L995F} (labelled F1-F5) or \texttt{L995S} variants (S1-S5) with a maximum edge distance of two SNPs. Network labelling is via concordance with hierarchical clusters discovered in \cite{Ag1000gConsortium2017}. Node size is relative to the number of haplotypes contained and node colour represents the proportion of node haplotypes from mosquito populations/species - AO=Angola; BF=Burkina Faso; GN=Guinea; CM=Cameroon; GA=Gabon; UG=Uganda; KE=Kenya. Non-synonymous edges are highlighted in red and those leading to non-singleton nodes are labelled with the codon change, arrow head indicates direction of change away from the reference allele. Networks consisting of three or more haplotypes are shown.}
+  \caption{\textbf{Haplotype networks}. Median joining network for haplotypes carrying \texttt{L995F} (labelled F1-F5) or \texttt{L995S} variants (S1-S5) with a maximum edge distance of two SNPs. Labelling of network components is via concordance with hierarchical clusters discovered in \cite{Ag1000gConsortium2017}. Node size is relative to the number of haplotypes contained and node colour represents the proportion of haplotypes from mosquito populations/species - AO=Angola; BF=Burkina Faso; GN=Guinea; CM=Cameroon; GA=Gabon; UG=Uganda; KE=Kenya. Non-synonymous edges are highlighted in red and those leading to non-singleton nodes are labelled with the codon change, arrow head indicates direction of change away from the reference allele. Network components with fewer than three haplotypes are not shown.}
   \label{fig:networks}
 \end{figure}
 %%
@@ -361,9 +355,9 @@ The resulting networks confirmed the presence of 5 distinct groupings of haploty
 
 %% Observations from the networks.
 %
-The haplotype networks bring into sharp relief the explosive radiation of amino acid substitutions secondary to the \texttt{L995F} allele (Figure \ref{fig:networks}).
+The haplotype network brings into sharp relief the explosive radiation of amino acid substitutions secondary to the \texttt{L995F} allele (Figure \ref{fig:networks}).
 %
-Within the F1 network, nodes carrying non-synonymous variants radiate out from a central node carrying only \texttt{L995F}, suggesting that the central node represents the ancestral haplotype carrying \texttt{L995F} alone which initially came under selection, and these secondary variants have arisen subsequently as new mutations.
+Within the F1 group, nodes carrying non-synonymous variants radiate out from a central node carrying only \texttt{L995F}, suggesting that the central node represents the ancestral haplotype carrying \texttt{L995F} alone which initially came under selection, and these secondary variants have arisen subsequently as new mutations.
 %
 Many of the nodes carrying secondary variants are large, consistent with positive selection and a functional role for these secondary variants as modifiers of the \texttt{L995F} resistance phenotype.
 %
@@ -373,22 +367,26 @@ The central (putatively ancestral) node contains haplotypes from individuals of 
 %
 This structure is consistent with an initial introgression of the ancestral F1 haplotype, followed later by introgressions of haplotypes carrying secondary mutations.
 %
-The haplotype networks also illustrate the constrasting levels of non-synonymous variation between \texttt{L995F} and \texttt{L995S} (Figure \ref{fig:networks}).
+The haplotype network also illustrates the constrasting levels of non-synonymous variation between \texttt{L995F} and \texttt{L995S}.
 %
-Two non-synonymous variants are present within the \texttt{L995S} networks, but both are at low frequency, and thus may be neutral or mildly deleterious variants that are hitch-hiking on selective sweeps for the \texttt{L995S} allele.
+Only two non-synonymous variants are present within the \texttt{L995S} groups, and both are at low frequency, thus may be neutral or mildly deleterious variants that are hitch-hiking on selective sweeps for the \texttt{L995S} allele.
 %%
 
 %%
 %
-As well as being found in both species, F1 haplotypes were present in mosquitoes sampled from 4 different countries (Guinea, Burkina Faso, Cameroon, Angola) (Figure \ref{fig:map}).
+The F1 group contained haplotypes from mosquitoes of both species, and from mosquitoes sampled in 4 different countries (Guinea, Burkina Faso, Cameroon, Angola) (Figure \ref{fig:map}).
 %
-The F4, F5 and S2 haplotypes were each found in both Cameroon and Gabon.
+The F4, F5 and S2 groups each contained haplotypes from both Cameroon and Gabon.
 %
-S3 haplotypes were present in both Uganda and Kenya.
+The S3 group contained haplotypes from both Uganda and Kenya.
 %
-The haplotypes within each of these networks were nearly identical across the entire span of the \textit{Vgsc} gene, and thus it is reasonable to assume that each network captures the descendants of an ancestral haplotype that carried a resistance allele and that has risen in frequency due to selection for insecticide resistance.
+The haplotypes within each of these groups were nearly identical across the entire span of the \textit{Vgsc} gene ($\pi < 5.1 \times 10^{-5}\ bp^{-1}$).
 %
-Given this assumption, these five networks each provide evidence for adaptive gene flow between mosquito populations separated by considerable geographical distances.
+In contrast, diversity among wild-type haplotypes was two orders of magnitude greater (Cameroon \textit{An. gambiae} $\pi = 1.4 \times 10^{-3}\ bp^{-1}$; Guinea-Bissau $\pi = 5.7 \times 10^{-3}\ bp^{-1}$).
+%
+Thus it is reasonable to assume that each of these five groups contains descendants of an ancestral haplotype that carried a resistance allele and has risen in frequency due to selection for insecticide resistance.
+%
+Given this assumption, these groups each provide evidence for adaptive gene flow between mosquito populations separated by considerable geographical distances.
 %
 %%
 
@@ -397,7 +395,7 @@ Given this assumption, these five networks each provide evidence for adaptive ge
 %
 \begin{figure}[!t]
   \includegraphics[width=1.1\linewidth,center]{artwork/outbreak_map_base.pdf}
-  \caption{\textbf{Map of haplotype frequencies}. Each pie shows the frequency of different haplotypes within one of the populations sampled. The size of the pie is proportional to the number of haplotypes sampled. The size of each wedge within the pie is proportional to the frequency of a haplotype within the population. Haplotypes F1-5 each carry the \texttt{L995F} resistance allele. Haplotypes S1-5 each carry the \texttt{L995S} resistance allele. Haplotype L1 carries the \texttt{I1527T} allele. Haplotype L2 carries the \texttt{M490I} allele. Wild-type (wt) haplotypes do not carry any known or putative resistance alleles.}
+  \caption{\textbf{Map of haplotype frequencies}. Each pie shows the frequency of different haplotypes within one of the populations sampled. The size of the pie is proportional to the number of haplotypes sampled. The size of each wedge within the pie is proportional to the frequency of a haplotype within the population. Haplotypes in groups F1-5 carry the \texttt{L995F} resistance allele. Haplotypes in groups S1-5 carry the \texttt{L995S} resistance allele. Haplotypes in group L1 carry the \texttt{I1527T} allele. Haplotypes in group L2 carry the \texttt{M490I} allele. Wild-type (wt) haplotypes do not carry any known or putative resistance alleles.}
   \label{fig:map}
 \end{figure}
 %%
@@ -407,21 +405,21 @@ Given this assumption, these five networks each provide evidence for adaptive ge
 %
 A limitation of both the hierarchical clustering and network analyses is that they rely on genetic distances within a fixed genomic window from the start to the end of the \textit{Vgsc} gene.
 %
-\textit{Anopheles} mosquitoes undergo homologous recombination during meiosis in both males and females, and any recombination events that occurred within this genomic window could affect the way that haplotypes are grouped together in clusters or networks.
+\textit{Anopheles} mosquitoes undergo homologous recombination during meiosis in both males and females, and any recombination events that occurred within this genomic window could affect the way that haplotypes are grouped together in clusters or network components.
 %
 In particular, recombination events could occur during the geographical spread of a resistance allele, altering the genetic background upstream and/or downstream of the allele itself.
 %
-An analysis based on a fixed genomic window might then fail to infer gene flow between two mosquito populations, because the calculation of genetic distances does not account for recombination events, and thus haplotypes with and without the recombination event could be grouped separately.
+An analysis based on a fixed genomic window might then fail to infer gene flow between two mosquito populations, because haplotypes with and without a recombination event could be grouped separately, despite the fact that they share a recent common ancestor.
 %
-To investigate the possibility that recombination events may have affected our findings regarding the genetic backgrounds carrying resistance alleles, we performed a windowed analysis of haplotype homozygosity, spanning \textit{Vgsc} and up to a megabase upstream and downstream of the gene (Supplementary Figs. \ref{fig:mhh_f}, \ref{fig:mhh_s}).
+To investigate the possibility that recombination events may have affected our grouping of haplotypes carrying resistance alleles, we performed a windowed analysis of haplotype homozygosity, spanning \textit{Vgsc} and up to a megabase upstream and downstream of the gene (Supplementary Figures \ref{fig:mhh_f}, \ref{fig:mhh_s}).
 %
-This analysis supported a refinement of our initial classification of genetic backgrounds carrying resistance alleles.
+This analysis supported a refinement of our initial grouping of haplotypes carrying resistance alleles.
 %
-All haplotypes within clusters S4 and S5 were effectively identical on both the upstream and downstream flanks of the gene, but there was a region of divergence within the \textit{Vgsc} gene itself that separated them in the fixed window analyses (Supplementary Figure \ref{fig:mhh_s}).
+All haplotypes within groups S4 and S5 were effectively identical on both the upstream and downstream flanks of the gene, but there was a region of divergence within the \textit{Vgsc} gene itself that separated them in the fixed window analyses (Supplementary Figure \ref{fig:mhh_s}).
 %
 The 13.8 kbp region of divergence occurred upstream of codon 995 and contained 8 SNPs that were fixed differences between S4 and S5.
 %
-A possible explanation for this short region of divergence is that a gene conversion event has occurred within the gene, bringing a short segment from a different genetic background onto the original genetic background on which the \texttt{L995S} resistance mutation occurred.
+A possible explanation for this short region of divergence is that a gene conversion event has occurred within the gene, bringing a segment from a different genetic background onto the original genetic background on which the \texttt{L995S} resistance mutation occurred.
 %
 %%
 
@@ -434,7 +432,7 @@ To investigate evidence for positive selection on non-synonymous alleles discove
 %
 Haplotypes under recent positive selection are expected to have increased rapidly in frequency, thus have had less time to be broken down by recombination and should on average have longer regions of haplotype homozygosity spanning the selected allele, relative to wild-type haplotypes.
 %
-We defined a core region spanning \textit{Vgsc} codon 995 and an additional 6 kbp of flanking sequence.
+We defined a core region spanning \textit{Vgsc} codon 995 and an additional 6 kbp of flanking sequence, which was the minimum required to differentiate the haplotype groups identified via clustering and network analyses.
 %
 Within this core region, we found 18 distinct haplotypes at a frequency above 1\% within the cohort.
 %
