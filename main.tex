@@ -318,32 +318,24 @@ All are private to a single population, and to our knowledge none have previousl
 
 %%
 %
-Although it is known that pyrethroid resistance is increasing in prevalence in malaria vector populations across Africa \cite{Ranson2016}, it has not been clear whether this is being driven by the spread of resistance alleles via gene flow, by resistance alleles emerging independently in multiple locations, or by some combination of both processes.
-%
 The Ag1000G data resource provides a rich source of information about the spread of insecticide resistance alleles in any given gene, because data are available not only for SNPs in protein coding regions, but also SNPs in introns and flanking intergenic regions, and in neighbouring genes.
 %
 These additional variants can be used to analyse the genetic backgrounds (haplotypes) on which resistance alleles are found.
 %
-If mosquitoes from different geographical locations or species carry the same resistance allele on identical or near-identical genetic backgrounds, this implies that the allele has been spread between mosquito populations by the movement and interbreeding of mosquitoes.
+In our initial report of the Ag1000G phase 1 resource \cite{Ag1000gConsortium2017}, we used 1710 biallelic SNPs from within the 73.5 kbp \textit{Vgsc} gene (1607 intronic, 103 exonic) to compute the number of SNP differences between all pairs of 1530 haplotypes derived from 765 wild-caught mosquitoes.
 %
-Conversely, if the same resistance allele is found on different genetic backgrounds in different mosquito populations, this provides evidence that the allele has emerged independently in each population, either because of multiple mutational events since the introduction of pyrethroids, or because the allele was segregating at low frequency prior to the introduction of pyrethroids.
+We then used pairwise genetic distances to perform hierarchical clustering, and found that haplotypes carrying resistance alleles in codon 995 were grouped into 10 distinct clusters, each with near-identical haplotypes.
+%
+Five of these clusters carried the \texttt{L995F} allele (labelled F1-F5), and a further five clusters carried \texttt{L995S} (labelled S1-S5).
 %%
 
 %%
 %
-In our initial report of the Ag1000G phase 1 resource \cite{Ag1000gConsortium2017}, we used 1710 biallelic SNPs from within the 73.5 kbp \textit{Vgsc} gene (1607 intronic, 103 exonic) to compute the number of SNP differences between all pairs of 1530 haplotypes derived from 765 wild-caught mosquitoes.
-%
-We then used pairwise genetic distances to perform hierarchical clustering, and found that haplotypes carrying resistance alleles in codon \texttt{995} were grouped into 10 distinct clusters with near-identical haplotypes.
-%
-Five of these clusters carried the \texttt{L995F} allele (labelled F1-F5), and a further five clusters carried \texttt{L995S} (labelled S1-S5).
-%
-As an alternative approach, we used the same haplotype data to construct median-joining networks (Figure \ref{fig:networks}).
+To further investigate the genetic backgrounds carrying resistance alleles in codon 995, we used the Ag1000G haplotype data to construct median-joining networks (Figure \ref{fig:networks}).
 %
 The network analysis allows for the reconstruction and placement of intermediate haplotypes that may not be observed in the data.
 %
 It also allows for non-hierarchical relationships between haplotypes, which may arise if recombination events have occured between haplotypes.
-%
-Furthermore, the networks allow relationships among closely-related haplotypes to be discerned.
 %
 We constructed these networks up to a maximum edge distance of 2 SNP differences, to ensure that each connected component in the resulting networks captures a collection of closely-related haplotypes.
 %
