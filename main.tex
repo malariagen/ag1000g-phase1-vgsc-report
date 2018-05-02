@@ -548,7 +548,7 @@ The \texttt{I1527T} substitution that we discovered in \textit{An. coluzzii} mos
 %
 It is thus plausible that pyrethroid binding could be altered by this substitution.
 %
-The \texttt{I1527T} substitution (\textit{M. domestica} codon 1532) has been found in \textit{Aedes albopictus} \cite{Xu2016}, and substitutions in the nearby codon 1529 (\textit{M. domestica} codon 1534) have also been reported in \textit{Aedes albopictus} and in \textit{Aedes aegypti} where it was found to be associated with pyrethroid resistance \cite{Dong2014, Ishak2015,Li2018}.
+The \texttt{I1527T} substitution (\textit{M. domestica} codon 1532) has been found in \textit{Aedes albopictus} \cite{Xu2016}, and substitutions in the nearby codon 1529 (\textit{M. domestica} codon 1534) have been reported in \textit{Aedes albopictus} and in \textit{Aedes aegypti} where it was found to be associated with pyrethroid resistance \cite{Dong2014, Ishak2015,Li2018}.
 %
 We found the \texttt{I1527T} allele in tight linkage with two alleles causing a \texttt{V402L} substitution (\textit{M. domestica} codon 410).
 %
@@ -597,7 +597,7 @@ They typically do not, however, sequence the gene or genotype any other polymorp
 %
 Thus if there are other polymorphisms within the gene that cause or significantly enhance pyrethroid resistance, these will not be detected.
 %
-Also, if a codon 995 resistance allele is observed, there is no way to know whether the allele is on a genetic background that has also been observed in other mosquito populations, and thus no way to investigate whether resistance alleles are emerging locally or being imported from elsewhere, and if so, what is the probable source population.
+Also, if a codon 995 resistance allele is observed, there is no way to know whether the allele is on a genetic background that has also been observed in other mosquito populations, and thus no way to investigate whether resistance alleles are emerging locally or being imported from elsewhere, and if so, which is the probable source population.
 %
 Whole-genome sequencing of individual mosquitoes clearly provides data of sufficient resolution to answer these questions, and could be used to provide ongoing resistance surveillance.
 %
@@ -605,7 +605,7 @@ The cost of whole-genome sequencing continues to fall, with the present cost bei
 %
 However, to achieve substantial spatial and temporal coverage of mosquito populations, it is currently cheaper and more practical to develop targeted genetic assays for resistance outbreak surveillance.
 %
-Technologies such as amplicon sequencing could scale to tens of thousands of mosquitoes at low cost and could be implemented using existing platforms in national molecular biology facilities.
+Technologies such as amplicon sequencing \cite{Kilianski2015} could scale to tens of thousands of mosquitoes at low cost and could be implemented using existing platforms in national molecular biology facilities.
 %%
 %
 
@@ -641,52 +641,29 @@ Accuracy was evaluated using 10-fold stratified cross-validation.
 
 %%
 %
-To facilitate the development of targeted genetic assays for surveillance of \textit{Vgsc}-mediated pyrethroid resistance, we have produced several supplementary data tables and explored a process for assay design.
+To facilitate the development of targeted genetic assays for surveillance of \textit{Vgsc}-mediated pyrethroid resistance, we have produced several supplementary data tables.
 %
 In Supplementary Table 1 we list all 64 non-synonymous variants found within the \textit{Vgsc} gene in this study, with population allele frequencies.
 %
-In Supplementary Table 2 we list 771 biallelic SNPs within the \textit{Vgsc} gene and up to 10 kbp upstream or downstream, that are potentially informative regarding which haplotype group a resistance haplotype belongs to.
+In Supplementary Table 2 we list 771 biallelic SNPs, within the \textit{Vgsc} gene and up to 10 kbp upstream or downstream, that are potentially informative regarding which haplotype group a resistance haplotype belongs to, and thus could be used for tracking the spread of resistance.
 %
-This table includes the allele frequency within each of the 12 resistance haplotype groups defined here, to aid in identifying SNPs that are highly differentiated between two or more haplotype groups.
+This table includes the allele frequency within each of the 12 haplotype groups defined here, to aid in identifying SNPs that are highly differentiated between two or more haplotype groups.
 %
-Supplementary Table 3 provides haplotypes
+We also provide Supplementary Table 3 which lists all 8,297 SNPs found within the \textit{Vgsc} gene and up to 10 kbp upstream or downstream, which might need to be taken into account as flanking variation when searching for PCR primers to amplify a SNP of interest.
 %
-Finally, Supplementary Table 4 lists all 8,297 SNPs found within the \textit{Vgsc} gene and up to 10 kbp upstream or downstream, which might need to be taken into account as flanking variation when searching for PCR primers to amplify a SNP of interest.
+To provide some indication for how many SNPs would need to be assayed in order to track the spread of resistance, we used haplotype data from this study to construct decision trees that could classify which of the 12 groups a given haplotype belongs to (Figure \ref{fig:gain}).
 %
-
-
-
-To help with designing classifiers than can accurately call resistance haplotypes with a minimal number of SNPs, we also provide the information gain \cite{Quinlan1986} and the Gini impurity \cite{Breiman1984} for each SNP.
+This analysis suggested that it should be possible to construct a decision tree able to classify haplotypes with >95\% accuracy by using 20 SNPs or less.
 %
-Note that recombination events are more likely at increasing distances upstream and downstream of the resistance variants under selection, and thus the most informative SNPs are found closest to the resistance variants within the gene (Figure \ref{fig:gain}).
+In practice, more SNPs would be needed, to provide some redundancy, and also to type non-synonymous polymorphisms in addition to identifying the genetic background.
 %
-However, SNPs with some information gain are available throughout the gene and in flanking regions.
-%
-%%
-
-%%
-%
-A possible strategy for the design of a genetic assay could proceed by (1) performing an initial round of filtering to remove SNPs which are not informative (e.g., low information gain); (2) performing a round of primer design to remove SNPs for which primers are unlikely to be successful; (3) performing a full analysis of the remaining SNPs to select a subset that is sufficient to classify all resistance haplotypes identified here, including some redundancy; (4) finalise primer designs for the chosen panel of SNPs.
-%
-A possible methodology for step 3 would be to use an algorithm such as ID3 \cite{Quinlan1986} or CART \cite{Breiman1984} to build a decision tree, although many other algorithms for building classifiers are also applicable.
-%
-To aid in the development of a classifier, in Supplementary Table 2 we provide our classification for each of the 1530 haplotypes sampled here, along with the alleles carried by each haplotype for each of the SNPs included in Supplementary Table 1.
-%
-To test the methodology, we constructed decision trees using either LD3 or CART algorithms, and using all available SNPs from within the \textit{Vgsc} plus 20 kbp flanking regions as input features (i.e., assuming primers could be designed in all cases).
-%
-Figure \ref{fig:gain}b shows the cross-validation scores obtained for trees constructed allowing increasing numbers of SNPs.
-%
-This analysis suggests that it should be possible to construct a decision tree able to classify these resistance haplotypes with >95\% accuracy by using 20 SNPs or less.
-%
-In practice, more SNPs would be needed, to provide some redundancy, and also to type specific non-synonymous polymorphisms in addition to identifying known genetic backgrounds carrying resistance alleles.
-%
-However, it is still likely to be well within the number of SNPs that could be assayed via a technology such as amplicon sequencing \cite{Kilianski2015}.
+However, it is still likely to be well within the number of SNPs that could be assayed in a single multiplex via amplicon sequencing.
 %
 Thus it should be feasible to produce low-cost, high-throughput genetic assays for tracking the spread of pyrethroid resistance.
 %
 If combined with a limited amount of whole-genome sequencing at sentinel sites, this should also allow the identification of newly emerging resistance outbreaks.
 %
-
+%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
