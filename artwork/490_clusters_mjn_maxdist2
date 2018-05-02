@@ -1,0 +1,12 @@
+digraph {
+	graph [mode=major overlap=true sep=0 splines=true]
+	0 [label="" fillcolor=grey47 fixedsize=true fontname=monospace fontsize=None shape=circle style=filled width=0.25495097568]
+	1 [label="" fillcolor=grey47 fixedsize=true fontname=monospace fontsize=None shape=circle style=filled width=0.0707106781187]
+	2 [label="" fillcolor=grey47 fixedsize=true fontname=monospace fontsize=None shape=circle style=filled width=0.0707106781187]
+	3 [label="" fillcolor=grey47 fixedsize=true fontname=monospace fontsize=None shape=circle style=filled width=0.0707106781187]
+	0 -> 1 [label="" dir=none fontname=monospace fontsize=None len=0.662830826899 style=normal weight=10]
+	0 -> 2 [label="" dir=none fontname=monospace fontsize=None len=0.662830826899 style=normal weight=10]
+	anon_0_3_0 [label="" fillcolor=white fixedsize=true fontname=monospace fontsize=None shape=circle style=filled width=0.03]
+	0 -> anon_0_3_0 [label="" dir=none fontname=monospace fontsize=None len=0.64247548784 style=normal weight=10]
+	anon_0_3_0 -> 3 [label="" dir=none fontname=monospace fontsize=None len=0.550355339059 style=normal weight=10]
+}
