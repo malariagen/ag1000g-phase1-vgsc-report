@@ -32,6 +32,7 @@ ngs.sanger.ac.uk
 *.run.xml
 *.bak
 *.synctex*
+*.out
 main.pdf
 temp.bib
 build/main.pdf
