@@ -693,33 +693,40 @@ Variant calls from Ag1000G Phase 1 are also available from the European Nucleoti
 \subsection*{Data collection and processing}
 
 %
-For detailed information on Ag1000g WGS sample collection, sequencing, variant calling, quality control and phasing see \cite{Ag1000gConsortium2017}.
+For detailed information on Ag1000G WGS sample collection, sequencing, variant calling, quality control and phasing, see \cite{Ag1000gConsortium2017}.
 %
 In brief, \emph{An. gambiae} and \emph{An. coluzzii} mosquitoes were collected from eight countries across Sub-Saharan Africa: Angola, Burkina Faso, Cameroon, Gabon, Guinea, Guinea Bissau, Kenya and Uganda.
 %
-From Angola just \emph{An. coluzzii} were sampled, Burkina Faso had samples of both \emph{An. gambiae} and \emph{An. coluzzii} and all other populations consisted of purely \emph{An. gambiae} except for Kenya and Guinea Bissau, where species status is uncertain \cite{Ag1000gConsortium2017}.
+From Angola just \emph{An. coluzzii} were sampled, Burkina Faso had samples of both \emph{An. gambiae} and \emph{An. coluzzii} and all other populations consisted of purely \emph{An. gambiae}, except for Kenya and Guinea Bissau where species status is uncertain \cite{Ag1000gConsortium2017}.
 %
 Mosquitoes were individually whole genome sequenced on the Illumina HiSeq 2000 platform, generating 100bp paired-end reads.
 %
-Sequence reads were aligned to the \emph{An. gambiae} AgamP3 reference genome assembly \cite{Holt2002}).
+Sequence reads were aligned to the \emph{An. gambiae} AgamP3 reference genome assembly \cite{Holt2002}.
 %
 Aligned bam files underwent improvement, before variants were called using GATK UnifiedGenotyper.
 %
-Quality control included removal of samples with mean coverage <= 14x and an accessibility map was employed following a similar approach to that used for human data by The 1000 Genomes Project Consortium \cite{The1000GenomesProjectConsortium2010}).
-%
-Various quality control filters were applied to remove samples and SNPs with poor quality data.
+Quality control included removal of samples with mean coverage <= 14x and filtering of variants with attributes that were correlated with Mendelian error in genetic crosses.
 %%
 
 %
-The Ag1000g variant data was functionally annotated using the SnpEff v4.1b software which allowed investigation of potential phenotype altering variants within \emph{Vgsc} \cite{Cingolani2012}.
+The Ag1000G variant data was functionally annotated using the SnpEff v4.1b software \cite{Cingolani2012}.
 %
 Non-synonymous \emph{Vgsc} variants were identified as all variants in transcript AGAP004707-RA with a SnpEff annotation of ``missense''.
+%
+The \emph{Vgsc} gene is known to exhibit alternative splicing \cite{Davies2007a}, however at the time of writing the \textit{An. gambiae} gene annotations did not include the alternative transcripts reported by Davies et al.
+%
+We wrote a Python script to check for the presence of variants that are synonymous according to transcript AGAP004707-RA but non-synonymous according to one of the other transcripts present in the gene annotations or in the set reported by Davies et al.
+%
+Supplementary Table 1 includes the predicted effect for all SNPs that are non-synonymous in one or more of these transcripts.
+%
+None of the variants that are non-synonymous in a transcript other than AGAP004707-RA were found to be above 5\% frequency in any population.
+%
 %%
 
 %
-For ease of comparison with previous work on \emph{Vgsc}, pan Insecta, in Table \ref{table:variants_missense} we report codon numbering for both \emph{An. gambiae} and \emph{Musca domestica} (the species in which the gene was first discovered).
+For ease of comparison with previous work on \emph{Vgsc}, pan Insecta, in Table \ref{table:variants_missense} and Supplementary Table 1 we report codon numbering for both \emph{An. gambiae} and \emph{Musca domestica} (the species in which the gene was first discovered).
 %
-The \emph{M. domestica Vgsc} sequence (EMBL accession X96668 \cite{Williamson1996}) was aligned with the \emph{An. gambiae} AGAP004707-RA sequence (AgamP4.4 gene-set), using the Mega v7 software package \cite{Kumar2016}.
+The \emph{M. domestica Vgsc} sequence (EMBL accession X96668 \cite{Williamson1996}) was aligned with the \emph{An. gambiae} AGAP004707-RA sequence (AgamP4.4 gene-set) using the Mega v7 software package \cite{Kumar2016}.
 %
 A map of equivalent codon numbers between the two species for the entire gene can be download from the MalariaGEN website (\url{https://www.malariagen.net/sites/default/files/content/blogs/domestica_gambiae_map.txt}).
 %%
@@ -727,11 +734,11 @@ A map of equivalent codon numbers between the two species for the entire gene ca
 %
 Haplotypes for each chromosome of each sample were estimated (phased) using using phase informative reads (PIRs) and SHAPEIT2 v2.r837 \cite{Delaneau2013}, see \cite{Ag1000gConsortium2017} supplementary text for more details.
 %
-The SHAPEIT2 algorithm is unable to phase multi-allelic positions, therefore the two multi-allelic non-synonymous SNPs within the \emph{Vgsc} gene, altering codons \texttt{V402} and \texttt{M490}, were phased onto the haplotypes using MVNcall v1.0 \cite{Menelaou2013}.
+The SHAPEIT2 algorithm is unable to phase multi-allelic positions, therefore the two multi-allelic non-synonymous SNPs within the \emph{Vgsc} gene, altering codons \texttt{V402} and \texttt{M490}, were phased onto the biallelic haplotype scaffold using MVNcall v1.0 \cite{Menelaou2013}.
 %
-Conservative filtering had removed one of the three known insecticide resistance conferring kdr variants, \texttt{N1570Y} \cite{Jones2012}.
+Conservative filtering applied to the genome-wide callset had removed one of the three known insecticide resistance conferring kdr variants, \texttt{N1570Y} \cite{Jones2012}.
 %
-After manual inspection of the read alignment revealed that the SNP call could be confidently made, it was added back into the data set and then also phased onto the haplotypes using MVNcall.
+Manual inspection of the read alignment revealed that the SNP call could be confidently made, and it was added back into the data set and then also phased onto the haplotypes using MVNcall.
 %
 Lewontin's $D'$ \cite{Lewontin1964} was used to compute the linkage disequilibrium (LD) between all pairs of non-synonymous \emph{Vgsc} mutations.
 %%
@@ -743,7 +750,7 @@ Lewontin's $D'$ \cite{Lewontin1964} was used to compute the linkage disequilibri
 %
 Haplotype networks were constructed using the median-joining algorithm \cite{Bandelt1999} as implemented in a Python module available from \url{https://github.com/malariagen/agam-vgsc-report}.
 %
-Haplotypes carrying either \texttt{L995F} or \texttt{L995S} mutations were analysed with a maximum edge distance of two SNPs, to ensure networks contained haplotypes with recent common ancestors.
+Haplotypes carrying either \texttt{L995F} or \texttt{L995S} mutations were analysed with a maximum edge distance of two SNPs.
 %
 Networks were rendered with the Graphviz library and a composite figure constructed using Inkscape.
 %
