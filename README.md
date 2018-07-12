@@ -25,15 +25,24 @@ $ git remote add upstream git@github.com:malariagen/agam-vgsc-report.git
 
 ...replacing 'alimanfoo' with your GitHub username.
 
-**Step 3**: Install dependencies (TeX Live, Miniconda):
+**Step 3**: Install dependencies (Miniconda, TeXLive):
 
 From the repo working directory, run:
 
 ```bash
-$ ./agam-report-base/install/install.sh
+$ ./agam-report-base/install/install-conda.sh
 ```
 
-This will install Tex Live and Miniconda into the ``dependencies`` directory within the repository
+This will install Miniconda into the ``deps`` directory within the repository
+root directory.
+
+Then run:
+
+```bash
+$ ./agam-report-base/install/install-texlive.sh
+```
+
+This will install TexLive into the ``deps`` directory within the repository
 root directory.
 
 ### Building the manuscript
@@ -42,26 +51,16 @@ To build the manuscript, from the repository root directory, run:
 
 ```bash
 $ source env.sh
-$ snakemake -s manuscript.rules all
+$ ./latex.sh
 ```
 
-This should rebuild the file ``main.pdf``, also running any supporting notebooks as 
-required.
+This should rebuild the file ``main.pdf``.
 
-### Building the data
+### Data dependencies
 
 To build supporting data for the manuscript, you will need some files from the Ag1000G FTP site
 copied to your local filesystem. The data build assumes you have a mirror of the necessary files
 under a directory called ``ngs.sanger.ac.uk`` within the repository root directory.
-
-If you have the necessary files mirrored locally, you can run:
-
-```bash
-$ source env.sh
-$ snakemake -s data.rules demo
-```
-
-...replacing "demo" with the name of the rule you want to run.
 
 ### Working on the manuscript
 
@@ -102,7 +101,7 @@ locally:
 
 ```bash
 $ source env.sh
-$ snakemake -s manuscript.rules all
+$ ./latex.sh
 ```
 
 Then make sure all local changes are committed and pushed up to 
