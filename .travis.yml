@@ -17,13 +17,12 @@ before_install:
   - ls -lh
   - ls -lh ./*
   # uncomment these to re-install dependencies
-#  - rm -rf dependencies
-#  - rm dependencies/texlive.installed
-#  - rm dependencies/miniconda.installed
+  - rm -rf deps
 
 install:
   # main install script for dependencies
-  - ./agam-report-base/install/install.sh
+  - ./agam-report-base/install/install-conda.sh
+  - ./agam-report-base/install/install-texlive.sh
 
 cache:
   timeout: 1000
@@ -33,9 +32,6 @@ cache:
 script:
   - source env.sh
   - ./latex.sh
-#  - snakemake -s manuscript.rules clean
-#  - snakemake -s manuscript.rules all
-#  - git status
 
 deploy:
   provider: releases
