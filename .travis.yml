@@ -17,7 +17,7 @@ before_install:
   - ls -lh
   - ls -lh ./*
   # uncomment these to re-install dependencies
-  - rm -rf deps
+  # - rm -rf deps
 
 install:
   # main install script for dependencies
