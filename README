@@ -1,0 +1,34 @@
+
+---- run data notebooks first in the following order
+
+data_phasing_extra_phase1 - uses mvncall to phase two multiallelics and N1570Y SNP filtered out of PASS dataset
+
+data_combined_haplotypes.ipynb - combines the haplotype data with extras phased by mvncall
+
+data_variants_phase1 - extracts data on all VGSC mutations
+
+data_misc.ipynb - brings some small data files directly into Git repo
+
+
+---- run the following three artwork notebooks next in this order - they generate some data files used later
+
+artwork_hierarchical_cluster_vgsc.ipynb - perform hierarchical clustering based on technique used in Ag1000g Nature paper and produces figure
+
+artwork_median_joining_networks.ipynb - performs median joining network analysis and produces figures
+
+artwork_ehh_decay_final.ipynb - performs ehh analysis using hierarchical clustering haplotype clusters
+
+
+---- once the above have been run the following notebooks can then be run in any order
+
+
+
+supp_tables.ipynb
+
+
+----@@AM
+
+artwork_assay_design -  used clust_dict - not generated here I don't think
+analyse_moving_haplotype_homozygosity - doesn't use the haps_phase1.npz, needs updating
+analyse_Dxy_using_ag1k_clusters - doesn't use the haps_phase1.npz, needs updating
+map - broken
