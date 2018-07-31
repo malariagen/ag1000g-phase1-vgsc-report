@@ -1,11 +1,11 @@
 
 ---- run data notebooks first in the following order
 
-data_phasing_extra_phase1 - uses mvncall to phase two multiallelics and N1570Y SNP filtered out of PASS dataset
+data_phasing_extra_phase1.ipynb - uses mvncall to phase two multiallelics and N1570Y SNP filtered out of PASS dataset
 
 data_combined_haplotypes.ipynb - combines the haplotype data with extras phased by mvncall
 
-data_variants_phase1 - extracts data on all VGSC mutations
+data_variants_phase1.ipynb - extracts data on all VGSC mutations
 
 data_misc.ipynb - brings some small data files directly into Git repo
 
@@ -21,9 +21,12 @@ artwork_ehh_decay_final.ipynb - performs ehh analysis using hierarchical cluster
 
 ---- once the above have been run the following notebooks can then be run in any order
 
+artwork_hapfreq_map.ipynb - generates network cluster map artwork
 
+supp_tables.ipynb - generates supplementary data tables
 
-supp_tables.ipynb
+artwork_assay_design.ipynb -  analyses number of SNPs required in genetic assay to define haplotype groups and generates figure
+
 
 
 ----@@TO DO
@@ -31,5 +34,4 @@ supp_tables.ipynb
 
 analyse_moving_haplotype_homozygosity - doesn't use the haps_phase1.npz, needs updating
 analyse_Dxy_using_ag1k_clusters - doesn't use the haps_phase1.npz, needs updating
-map - broken - several methods here - needs updating - potential to create clust_dict here.
-artwork_assay_design -  used clust_dict - not generated in this repo i think
+
