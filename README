@@ -26,9 +26,10 @@ artwork_ehh_decay_final.ipynb - performs ehh analysis using hierarchical cluster
 supp_tables.ipynb
 
 
-----@@AM
+----@@TO DO
 
-artwork_assay_design -  used clust_dict - not generated here I don't think
+
 analyse_moving_haplotype_homozygosity - doesn't use the haps_phase1.npz, needs updating
 analyse_Dxy_using_ag1k_clusters - doesn't use the haps_phase1.npz, needs updating
-map - broken
+map - broken - several methods here - needs updating - potential to create clust_dict here.
+artwork_assay_design -  used clust_dict - not generated in this repo i think
