@@ -127,3 +127,59 @@ a Jupyter notebook server:
 $ source env.sh
 $ jupyter notebook
 ```
+
+
+
+
+## Running the repo notebooks
+
+Due to dependencies between the notebooks in this repository, if you would 
+like to re-run the analyses from this projects you will need to download 
+the Ag1000g phase1 data required from ftp then run the python notebooks 
+within the "notebooks/" directory in the following sequence:
+
+
+**run data notebooks first in the following order**
+
+1. data_phasing_extra_phase1.ipynb - uses mvncall to phase two multiallelics 
+and N1570Y SNP filtered out of PASS dataset.
+
+2. data_combined_haplotypes.ipynb - combines the haplotype data with extras 
+phased by mvncall.
+ 
+3. data_variants_phase1.ipynb - extracts data on all VGSC mutations.
+
+4. data_misc.ipynb - brings some small data files directly into Git repo.
+
+5. table_variants_missense.ipynb
+
+
+**run the following three artwork notebooks next in this order - they generate some data files used later**
+
+6. artwork_hierarchical_cluster_vgsc.ipynb - perform hierarchical clustering 
+based on technique used in Ag1000g Nature paper and produces figure.
+
+7. artwork_median_joining_networks.ipynb - performs median joining network 
+analysis and produces figures.
+
+8. artwork_ehh_decay.ipynb - performs ehh analysis using hierarchical 
+clustering haplotype clusters.
+
+
+**once the above have been run the following notebooks can then be run in any order**
+
+artwork_ld.ipynb - runs LD analysis and produces heatmap figure.
+
+artwork_hapfreq_map.ipynb - generates network cluster map artwork.
+
+artwork_assay_design.ipynb -  analyses number of SNPs required in genetic assay 
+to define haplotype groups and generates figure.
+
+analyse_Dxy_using_hierarchical_clusters.ipynb - analyses divergence between 
+clusters and produces figures.
+
+supp_tables.ipynb - generates supplementary data tables.
+
+analyse_moving_haplotype_homozygosity.ipynb - does what it says on the tin.
+
+table_variants_missense_display.ipynb - tables for LaTeX
