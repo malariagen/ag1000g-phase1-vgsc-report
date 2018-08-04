@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # clean
-rm -v main.aux
-rm -v main.bbl
-rm -v main.bcf
-rm -v main.blg
-rm -v main.log
-rm -v main.out
-rm -v main.pdf
-rm -v main.run.xml
-rm -v main.synctex.gz
+rm -vf main.aux
+rm -vf main.bbl
+rm -vf main.bcf
+rm -vf main.blg
+rm -vf main.log
+rm -vf main.out
+rm -vf main.pdf
+rm -vf main.run.xml
+rm -vf main.synctex.gz
 
 # ensure bail out on error
 set -eo pipefail
