@@ -1,4 +1,4 @@
-# agam-vgsc-report
+# ag1000g-phase1-vgsc-report
 
 [![Build Status](https://travis-ci.org/malariagen/agam-vgsc-report.svg?branch=master)](https://travis-ci.org/malariagen/agam-vgsc-report)
 
